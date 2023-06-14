@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEventPurchases"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_155"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEventPurchases"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_0"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_120"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/row_all_library" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExplore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_185"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/ivMusicNoContent"
+            android:layout_width="@dimen/dimen_84"
+            android:layout_height="@dimen/dimen_84"
+            android:background="@drawable/ic_new_purchase_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvnoContentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:text="@string/movie_str_20"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_18"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMusicNoContent" />
+
+        <TextView
+            android:id="@+id/tvNoContentBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:fontFamily="@font/sf_pro_text"
+            android:gravity="center"
+            android:text="@string/movie_str_21"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoContentTitle" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExplore"
+            android:layout_width="@dimen/dimen_164"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoContentBody"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_search"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/profile_str_19" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

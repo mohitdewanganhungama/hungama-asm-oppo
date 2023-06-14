@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/layoutEmptyMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/layout_empty_view_ivEmpty"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:visibility="gone"
+            android:contentDescription="@null"
+             />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/layout_empty_view_tvMessage"
+            style="@style/StyleTextView"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/discover_str_17"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/_12ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRefresh"
+            style="@style/StyleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_str_18"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+</layout>

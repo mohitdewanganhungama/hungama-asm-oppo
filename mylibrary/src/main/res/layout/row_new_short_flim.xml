@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_4sdp"
+        tools:background="@color/background"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:id="@+id/llBackground"
+            android:gravity="center"
+
+            android:orientation="vertical">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ivBackground"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
+
+                />
+
+
+            <com.hungama.music.utils.customview.circleimageview.CircleImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/bg_gradient_placeholder" />
+
+
+        </RelativeLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            tools:background="@color/background"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle1"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_2sdp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="@string/other_str_19"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle1"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:textAlignment="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/other_str_20" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
+
+
+</layout>

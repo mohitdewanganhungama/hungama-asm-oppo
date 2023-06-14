@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dimen_118"
+            android:layout_height="@dimen/dimen_118">
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_118"
+                android:background="@drawable/radio_bg"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+android:alpha="0.22"
+                />
+
+            <!--<com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_108"
+                android:layout_height="@dimen/dimen_108"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+
+                />-->
+
+            <com.hungama.music.utils.customview.circleimageview.CircleImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_108"
+                android:layout_height="@dimen/dimen_108"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@color/colorPlaceholder"
+                />
+
+            <TextView
+                android:id="@+id/tvTitlePlaceHolder"
+                style="@style/StyleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_8sdp"
+                android:includeFontPadding="false"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorPlaceholderText"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:text="@string/discover_str_32"
+                android:textAlignment="center" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:text="@string/discover_str_33"
+                android:textAlignment="center" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLang"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:text="Hindi"
+                android:textAlignment="center" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

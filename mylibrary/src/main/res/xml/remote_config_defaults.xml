@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+
+    <entry>
+        <key>Onboarding_Type</key>
+        <value>0</value>
+    </entry>
+
+    <entry>
+        <key>Advertisement_setting</key>
+        <value>0</value>
+    </entry>
+
+    <entry>
+        <key>onboarding_user_movies</key>
+        <value>0</value>
+    </entry>
+
+</defaultsMap>

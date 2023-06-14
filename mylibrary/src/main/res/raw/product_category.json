@@ -1,0 +1,71 @@
+{
+    "smart_collections": [
+        {
+            "id": 150922920036,
+            "handle": "movies",
+            "title": "Movies",
+            "updated_at": "2021-09-15T09:40:32+05:30",
+            "body_html": "",
+            "published_at": "2019-10-09T12:27:00+05:30",
+            "sort_order": "created-desc",
+            "template_suffix": "",
+            "disjunctive": false,
+            "rules": [
+                {
+                    "column": "tag",
+                    "relation": "equals",
+                    "condition": "tvod"
+                }
+            ],
+            "published_scope": "web",
+            "admin_graphql_api_id": "gid://shopify/Collection/150922920036",
+            "image": {
+                "created_at": "2019-10-14T19:51:32+05:30",
+                "alt": null,
+                "width": 1600,
+                "height": 400,
+                "src": "https://cdn.shopify.com/s/files/1/0104/7235/7988/collections/movies_3.jpg?v=1571065058"
+            }
+        },
+        {
+            "id": 122784940132,
+            "handle": "new-arrivals",
+            "title": "NEW ARRIVALS",
+            "updated_at": "2019-10-03T17:46:05+05:30",
+            "body_html": "",
+            "published_at": "2019-04-26T16:59:15+05:30",
+            "sort_order": "best-selling",
+            "template_suffix": "",
+            "disjunctive": false,
+            "rules": [
+                {
+                    "column": "tag",
+                    "relation": "equals",
+                    "condition": "newarrivals"
+                }
+            ],
+            "published_scope": "web",
+            "admin_graphql_api_id": "gid://shopify/Collection/122784940132"
+        },
+        {
+            "id": 122785038436,
+            "handle": "trending-now",
+            "title": "TRENDING NOW",
+            "updated_at": "2021-09-18T15:50:08+05:30",
+            "body_html": "",
+            "published_at": "2019-04-26T16:59:15+05:30",
+            "sort_order": "best-selling",
+            "template_suffix": "",
+            "disjunctive": false,
+            "rules": [
+                {
+                    "column": "tag",
+                    "relation": "equals",
+                    "condition": "TRENDING NOW"
+                }
+            ],
+            "published_scope": "web",
+            "admin_graphql_api_id": "gid://shopify/Collection/122785038436"
+        }
+    ]
+}

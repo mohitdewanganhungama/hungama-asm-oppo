@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/followAll"
+                android:layout_width="@dimen/dimen_218"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginTop="@dimen/dimen_84"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/corner_radius_18_bg_alpha_white"
+                android:visibility="gone">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_follow_all"/>
+
+                    <TextView
+                        android:id="@+id/tvFollowAll"
+                        style="@style/commonMediumButtonStyle"
+                        android:gravity="center"
+                        android:text="@string/profile_str_42"
+                        android:includeFontPadding="false" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFindFriend"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_18"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@id/followAll" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/common_header_action_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

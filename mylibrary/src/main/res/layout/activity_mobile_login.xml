@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hungama.music.ui.main.view.activity.MobileLogin">
+
+    <!--Edittext for getting users phone number-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter your phone"
+        android:id="@+id/idEdtPhoneNumber"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:importantForAutofill="no" />
+
+    <!--Button for getting OTP-->
+    <Button
+        android:id="@+id/idBtnGetOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtPhoneNumber"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="GET OTP"
+        android:textAllCaps="false" />
+
+
+
+    <!--Edittext for getting otp from user-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnGetOtp"
+        android:hint="@string/login_str_34"
+        android:inputType="phone"
+        android:id="@+id/idEdtOtp"
+        android:layout_margin="10dp"
+        android:importantForAutofill="no" />
+
+
+    <!--button for verifying user OTP-->
+    <Button
+        android:id="@+id/idBtnVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtOtp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/login_str_17"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:id="@+id/clMain"
+    android:background="@drawable/home_bg_layer">
+<include layout="@layout/common_blur_view"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_80">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUserDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_31_5">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUsernameDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvFName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_16"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clFName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvFName">
+
+                       <!-- <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etFName"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:text=""
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivfNamecheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:inputType="textCapCharacters"/>
+
+
+                        <!--android:background="@drawable/button_bg_gradient_follow"-->
+
+                        <ImageView
+                            android:id="@+id/ivfNamecheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvFNameError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="minimum 3 characters"
+                        android:textColor="#fa3a59"
+                        android:textSize="@dimen/font_15"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:visibility="gone"
+                        android:layout_marginStart="@dimen/dimen_27"
+                        app:layout_constraintTop_toBottomOf="@+id/clFName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserEmailDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUsernameDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_19"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clLName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserEmail">
+
+                       <!-- <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etLName"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:inputType="text"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivLNameCheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivLNameCheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvLNameError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_112"
+                        android:textSize="@dimen/dimen_15"
+                        android:textColor="#fa3a59"
+                        android:visibility="gone"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginStart="@dimen/dimen_27"
+                        app:layout_constraintTop_toBottomOf="@id/clLName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserMobileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserEmailDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_22"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMobileNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserMobile">
+
+                        <!--<com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etMobileNo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:inputType="number|textVisiblePassword"
+                            android:digits="0123456789"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivMobileNumberCheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivMobileNumberCheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvMobileNoError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_111"
+                        android:textColor="#fa3a59"
+                        android:textSize="@dimen/font_15"
+                        android:visibility="gone"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginStart="@dimen/dimen_27"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        app:layout_constraintTop_toBottomOf="@id/clMobileNumber"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserPincodeDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserMobileDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserPincode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_25"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserPincode">
+
+                        <!--<com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etPinCode"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="6"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:inputType="number"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivPinCodeCheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivPinCodeCheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvPincodeError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_110"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:visibility="gone"
+                        android:textColor="#fa3a59"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:textSize="@dimen/font_15"
+                        android:layout_marginStart="@dimen/dimen_27"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clPincode"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserAddressOneDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserPincodeDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserAddressOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_28"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clAddressOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserAddressOne">
+
+                        <!--<com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:inputType="textPostalAddress"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivAddressCheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivAddressCheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvAddressError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_109"
+                        android:textSize="@dimen/font_15"
+                        android:textColor="#fa3a59"
+                        android:visibility="gone"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginLeft="@dimen/dimen_27"
+                        app:layout_constraintTop_toBottomOf="@+id/clAddressOne"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserAddressTwoDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserAddressOneDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserAddressTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_31"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clAddressTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        android:background="@drawable/bg_edittext_shipping_detail"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserAddressTwo">
+
+                        <!--<com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etConformAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:text="@string/reward_str_113"
+                            android:inputType="textPostalAddress"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivAddressCheck2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivAddressCheck2"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvConformAddressError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_109"
+                        android:textSize="@dimen/font_15"
+                        android:textColor="#fa3a59"
+                        android:visibility="gone"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginLeft="@dimen/dimen_27"
+                        app:layout_constraintTop_toBottomOf="@+id/clAddressTwo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserCityDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserAddressTwoDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_35"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserCity">
+
+                       <!-- <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeBlurRadius="150dp"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />-->
+
+                        <EditText
+                            android:id="@+id/etCity"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:maxLength="50"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:inputType="text"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="@dimen/font_15"
+                            app:layout_constraintEnd_toStartOf="@id/ivCityCheck"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/ivCityCheck"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_8"
+                            android:src="@drawable/ic_order_confirmation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:visibility="gone"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvCityError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reward_str_108"
+                        android:textSize="@dimen/font_15"
+                        android:textColor="#fa3a59"
+                        android:visibility="gone"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginStart="@dimen/dimen_27"
+                        app:layout_constraintTop_toBottomOf="@+id/clCity"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserStateDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    app:layout_constraintTop_toBottomOf="@id/clUserCityDetail">
+
+                    <TextView
+                        android:id="@+id/tvTitleUserState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_40"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/reward_str_32"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_51"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleUserState">
+
+                        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                            android:id="@+id/blurViewState"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                        <com.hungama.music.utils.customview.customspinnerview.PowerSpinnerView
+                            android:id="@+id/spState"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/reward_str_32"
+                            android:paddingStart="@dimen/dimen_22"
+                            android:paddingTop="@dimen/dimen_12"
+                            android:paddingBottom="@dimen/dimen_12"
+                            android:paddingEnd="@dimen/dimen_12"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:textSize="@dimen/font_15"
+                            app:spinner_arrow_gravity="end"
+                            app:spinner_arrow_tint="@color/colorWhite"
+                            app:spinner_divider_color="@color/colorWarmGrey"
+                            app:spinner_divider_show="true"
+                            app:spinner_divider_size="0.4dp"
+                            app:spinner_item_array="@array/State"
+                            app:spinner_popup_animation="dropdown"
+                            app:spinner_popup_background="@color/blur_one_half_opacity_white_color"
+                            app:spinner_popup_elevation="0dp"
+                            tools:ignore="HardcodedText,UnusedAttribute" >
+                        </com.hungama.music.utils.customview.customspinnerview.PowerSpinnerView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_80"
+                    android:layout_alignParentBottom="true"
+                    android:elevation="@dimen/dimen_5"
+                    android:gravity="center"
+                    android:background="@color/home_bg_color"
+                    app:layout_constraintTop_toBottomOf="@+id/clUserStateDetail"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnsSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_18"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        android:layout_marginBottom="@dimen/dimen_18"
+                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            android:visibility="gone"
+                            app:fontText="@string/icon_continue" />
+
+                        <TextView
+                            style="@style/commonMediumButtonStyle"
+                            android:text="@string/reward_str_89" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llCountdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/dimen_18"
+                        android:background="@drawable/bg_profile_button"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:id="@+id/tvDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="01"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dimen_10"
+                            android:fontFamily="@font/sf_pro_text_thin"
+                            android:text="@string/live_events_str_5"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <TextView
+                            android:id="@+id/tvHour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="06"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dimen_10"
+                            android:fontFamily="@font/sf_pro_text_thin"
+                            android:text="@string/live_events_str_6"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <TextView
+                            android:id="@+id/tvMin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="25"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/sf_pro_text_thin"
+                            android:text="@string/live_events_str_7"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/common_header_action_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ivOrderCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginRight="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/ic_order_confirmation_bg"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+        <LinearLayout
+            android:id="@+id/llOderConform"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHungamaLogo"
+                android:layout_width="@dimen/dimen_167_5"
+                android:layout_height="@dimen/dimen_23_9"
+                android:visibility="visible"
+                app:srcCompat="@drawable/gold_subscription_detail_bg"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/app_name"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_45"/>
+            <ImageView
+                android:layout_width="@dimen/dimen_43"
+                android:layout_height="@dimen/dimen_43"
+                android:src="@drawable/ic_order_confirmation"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_21"
+                android:scaleType="fitXY"/>
+            <TextView
+                android:id="@+id/tvMyOrderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reward_str_52"
+                android:textSize="@dimen/font_21"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reward_str_116"
+                android:textSize="@dimen/font_15"
+                android:textColor="@color/item_sub_title_color"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/dimen_14"
+                android:layout_marginEnd="@dimen/dimen_12"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/btnCode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:background="@drawable/bg_coupan"
+                android:layout_marginEnd="@dimen/dimen_12"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text=""
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_13" />
+
+            <LinearLayout
+                android:id="@+id/copyToClipBoard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_copy"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reward_str_100"
+                    android:textColor="#c1c1c1"
+                    android:textSize="@dimen/font_11"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ivOrderCart2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginRight="@dimen/dimen_18"
+            android:visibility="visible"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivOrderCart">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/settings_item_bg_color"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/dimen_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="@string/order_details"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_17_5"
+                    android:alpha="0.3"
+                    android:background="#707070"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/order_id"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@+id/tvOrderId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dimen_19"
+                        android:text="-"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:alpha="0.3"
+                    android:background="#707070" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/reward_str_101"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@+id/tvOrderDt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dimen_19"
+                        android:text="-"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:alpha="0.3"
+                    android:background="#707070" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/reward_str_56"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_15_6"
+                        android:layout_height="@dimen/dimen_16"
+                        android:layout_toStartOf="@+id/tvRedeemableCoin"
+                        app:srcCompat="@drawable/bg_coin_profile" />
+
+                    <TextView
+                        android:id="@+id/tvRedeemableCoin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/dimen_4_2"
+                        android:layout_marginEnd="@dimen/dimen_19"
+                        android:text="0"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:alpha="0.3"
+                    android:background="#707070" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/reward_str_73"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_15_6"
+                        android:layout_height="@dimen/dimen_16"
+                        android:layout_toStartOf="@+id/tvCoinBalance"
+                        app:srcCompat="@drawable/bg_coin_profile" />
+
+                    <TextView
+                        android:id="@+id/tvCoinBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/dimen_4_2"
+                        android:layout_marginEnd="@dimen/dimen_19"
+                        android:text="0"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvNeedeHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/need_help"
+            android:visibility="gone"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_15"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivOrderCart2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

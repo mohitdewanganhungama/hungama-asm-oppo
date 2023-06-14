@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hungama.music.ui.main.view.fragment.MovieDownloadFragment">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMoviesData"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginRight="@dimen/dimen_18"
+        android:background="#282828"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dimen_180"
+        android:paddingBottom="@dimen/dimen_120"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/row_all_library" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

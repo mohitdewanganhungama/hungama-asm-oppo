@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg_color"
+    android:fitsSystemWindows="true">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/skeleton_swipable_view" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/swipablePlayerView"
+            layout="@layout/layout_swipable_player_view" />
+
+        <include
+            android:id="@+id/swipableAdsView"
+            layout="@layout/swipable_player_native_ads_view"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<androidx.mediarouter.app.MediaRouteButton
+        android:id="@+id/media_route_button"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:contentDescription="@string/login_str_2"
+        android:mediaRouteTypes="user"
+        android:padding="@dimen/dimen_10"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_cast" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_cast_menu_dots"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:contentDescription="@string/login_str_2"
+        android:mediaRouteTypes="user"
+        android:padding="@dimen/dimen_10"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_cast" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCast"
+        android:layout_width="@dimen/dimen_35"
+        android:layout_height="@dimen/dimen_35"
+        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible">
+        <androidx.mediarouter.app.MediaRouteButton
+            android:id="@+id/media_route_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:mediaRouteTypes="user"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_cast" />
+        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:topLeftRadius="@dimen/dimen_100"
+            app:topRightRadius="@dimen/dimen_100"
+            app:bottomLeftRadius="@dimen/dimen_100"
+            app:bottomRightRadius="@dimen/dimen_100"
+            app:realtimeBlurRadius="150dp"
+            app:realtimeOverlayColor="@color/half_of_half_opacity_white_color"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_cast"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivCast"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_cast"
+                app:fontTextSize="@dimen/font_16"
+                android:layout_marginEnd="@dimen/dimen_0"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

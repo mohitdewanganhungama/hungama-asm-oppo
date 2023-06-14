@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorOffWhite"
+    tools:context="com.hungama.music.ui.main.view.activity.PaymentSuccessActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/tvLabel"
+        style="@style/StyleTextView"
+        android:textColor="@color/colorBlack"
+        android:text="@string/payment_str_1" />
+
+    <Button
+        style="@style/StyleButtonView"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/tvLabel"
+        android:layout_centerInParent="true"
+        android:id="@+id/btnContinue"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:text="@string/payment_str_2" />
+
+</RelativeLayout>

@@ -1,0 +1,4406 @@
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "head": {
+      "id": "24907",
+      "type": 4,
+      "hscroll": 1,
+      "items": [
+        {
+          "id": "0",
+          "title": "All"
+        },
+        {
+          "id": "1",
+          "title": "Movies"
+        },
+        {
+          "id": "2",
+          "title": "TV Shows"
+        },
+        {
+          "id": "3",
+          "title": "My List"
+        },
+        {
+          "id": "4",
+          "title": "Bhakti"
+        },
+        {
+          "id": "5",
+          "title": "Hindi"
+        },
+        {
+          "id": "6",
+          "title": "Music Video"
+        }
+      ]
+    },
+    "body": {
+      "rows": [
+        {
+          "id": "1",
+          "type": 4,
+          "heading": "Continue Watching",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 13,
+              "data": {
+                "id": "33189526",
+                "title": "My Virgin Diary",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/81a/02a/33189526/33189526_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "FVOD"
+                  ],
+                  "vendor_id": 10249,
+                  "explicit_i": 1,
+                  "releasedate": "2018-01-18T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 22258169,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "30959885",
+                "title": "Scandalous Housewives",
+                "subtitle": "2015",
+                "image": "https://images.hungama.com/c/1/34c/131/30959885/30959885_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 8708,
+                  "explicit_i": 1,
+                  "releasedate": "2015-07-20T00:00:00+05:30",
+                  "genre": "Lifestyle",
+                  "genre_id": 727,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 20247264,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "48090339",
+                "title": "Boys With Toys",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/ca7/b38/48090339/48090339_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2019-05-30T00:00:00+05:30",
+                  "genre": "Adult Comedy",
+                  "genre_id": 1113,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36714691,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "57115495",
+                "title": "Raita Phail Gaya",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/92e/b36/57115495/57115495_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2020-09-07T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37438416,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "48525707",
+                "title": "Side Effectz",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/006/20f/48525707/48525707_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD"
+                  ],
+                  "vendor_id": 13022,
+                  "explicit_i": 0,
+                  "releasedate": "2019-07-09T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36743875,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "5",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "36",
+          "type": 4,
+          "heading": "Because You Like Comedy Shows",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958275",
+                "title": "Rajani",
+                "subtitle": "1985",
+                "image": "https://images.hungama.com/c/1/741/76c/29958275/29958275_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1985-01-01T00:00:00+05:30",
+                  "genre": "Social",
+                  "genre_id": 116,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 550598,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "33189526",
+                "title": "My Virgin Diary",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/81a/02a/33189526/33189526_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "FVOD"
+                  ],
+                  "vendor_id": 10249,
+                  "explicit_i": 1,
+                  "releasedate": "2018-01-18T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 22258169,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "19",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40923787",
+                "title": "Happy Hours",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/ef6/aa8/40923787/40923787_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-10-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 17120477,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "46919157",
+                "title": "9XM StarTruck",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/b7c/57f/46919157/46919157_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 1324,
+                  "explicit_i": 0,
+                  "releasedate": "2019-01-01T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36160301,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "44139461",
+                "title": "Padded Ki Pushup",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/329/e2f/44139461/44139461_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2018-12-18T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 33393732,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "7",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958246",
+                "title": "Indradhanush",
+                "subtitle": "1988",
+                "image": "https://images.hungama.com/c/1/e2f/c0b/29958246/29958246_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1988-01-01T00:00:00+05:30",
+                  "genre": "Sci-Fi",
+                  "genre_id": 601,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 12612845,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "11",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958260",
+                "title": "Isi Bahane",
+                "subtitle": "1988",
+                "image": "https://images.hungama.com/c/1/e0d/6bb/29958260/29958260_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1988-01-01T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271051,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "16",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958196",
+                "title": "Idhar Udhar",
+                "subtitle": "1985",
+                "image": "https://images.hungama.com/c/1/026/2dd/29958196/29958196_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1985-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271049,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "58018817",
+                "title": "Cookiees",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/799/b05/58018817/58018817_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    ""
+                  ],
+                  "vendor_id": 13040,
+                  "explicit_i": 1,
+                  "releasedate": "2020-09-22T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37527137,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "35230792",
+                "title": "Damaged",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/0eb/8f8/35230792/35230792_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-06-06T00:00:00+05:30",
+                  "genre": "Psychological Crime Drama",
+                  "genre_id": 1102,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 25727807,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "23",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "48158529",
+                "title": "Non-Alcoholic Breakup",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/223/217/48158529/48158529_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12985,
+                  "explicit_i": 0,
+                  "releasedate": "2019-05-27T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Gujarati",
+                  "lang_id": "guj",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36718931,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40923762",
+                "title": "Dheenamma Jeevitham",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/b78/227/40923762/40923762_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-10-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 30172465,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "27",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436432",
+                "title": "O Chinnadhana",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/630/5f5/40436432/40436432_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29158958,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "26",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436423",
+                "title": "Anando Brahma",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/fc5/0e7/40436423/40436423_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29158949,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "25",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958123",
+                "title": "Dekh Bhai Dekh",
+                "subtitle": "1993",
+                "image": "https://images.hungama.com/c/1/a49/9b6/29958123/29958123_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1993-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 64977,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "36375556",
+                "title": "18 Plus Jobseekers",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/b56/eff/36375556/36375556_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 11530,
+                  "explicit_i": 0,
+                  "releasedate": "2018-05-22T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 25424644,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "22",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436353",
+                "title": "Hum Tum",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/a28/573/40436353/40436353_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 65065,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40711096",
+                "title": "Bar Code",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/f0c/a00/40711096/40711096_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-10-09T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29963618,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "20",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "37305408",
+                "title": "Hankaar",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/8da/993/37305408/37305408_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-07-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 26447893,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "24",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958095",
+                "title": "Aasmaan Se Aagay",
+                "subtitle": "1994",
+                "image": "https://images.hungama.com/c/1/409/3f9/29958095/29958095_640x360.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1994-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271047,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "353",
+          "type": 4,
+          "heading": "Top 10 Movies Today",
+          "hscroll": 1,
+          "more": 0,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 5,
+              "data": {
+                "id": "64666116",
+                "title": "The Witches",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/6b9/f1d/64666116/64666116_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "TVOD-Premium"
+                  ],
+                  "vendor_id": 1366,
+                  "explicit_i": 0,
+                  "releasedate": "2020-10-26T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "IN_A,LK_A",
+                  "propertyid": 37326454,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63653219",
+                "title": "Wonder Woman 1984",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/dcb/d9f/63653219/63653219_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "TVOD-Premium"
+                  ],
+                  "vendor_id": 1366,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-20T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "IN_A,LK_A",
+                  "propertyid": 36959032,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64557559",
+                "title": "RATHNAGIRI",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/5b9/5d8/64557559/64557559_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-12T00:00:00+05:30",
+                  "genre": "Thriller",
+                  "genre_id": 128,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38186207,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63653223",
+                "title": "Zack Snyder's Justice League",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/700/4df/63653223/63653223_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "TVOD-Premium"
+                  ],
+                  "vendor_id": 1366,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-18T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "IN_A,LK_A",
+                  "propertyid": 38089672,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "5",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64560508",
+                "title": "Hum Bhi Agar Bachche Hote",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/633/da8/64560508/64560508_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-15T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38186581,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64552605",
+                "title": "RIFLE GANJ",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/f4b/178/64552605/64552605_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 23891,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-10T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38185729,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "13",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64630096",
+                "title": "pari",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/bc6/653/64630096/64630096_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 23865,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-15T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Punjabi",
+                  "lang_id": "pan",
+                  "territory_rights": "AA_A",
+                  "propertyid": 1126913,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64393414",
+                "title": "Gayatri House",
+                "subtitle": "2017",
+                "image": "https://images.hungama.com/c/1/c88/4bb/64393414/64393414_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 3426,
+                  "explicit_i": 0,
+                  "releasedate": "2017-10-13T00:00:00+05:30",
+                  "genre": "Thriller",
+                  "genre_id": 128,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38169731,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "19",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64116460",
+                "title": "The Tree Have Eyes",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/2de/61b/64116460/64116460_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13031,
+                  "explicit_i": 0,
+                  "releasedate": "2020-07-21T00:00:00+05:30",
+                  "genre": "Horror",
+                  "genre_id": 147,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38136593,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64557560",
+                "title": "Strangers",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/84b/602/64557560/64557560_312x446.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-16T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 508179,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "6",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "26",
+          "type": 5,
+          "hscroll": 1,
+          "more": 0,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 3,
+              "data": {
+                "id": "89302",
+                "title": "Kids Express",
+                "subtitle": "33 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/bc/5/bcea3a077af9a372da40c87daf379373_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "18"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "60354",
+                "title": "Midnight Masti",
+                "subtitle": "45 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/e6/5/e6900a30dcc73797c2c7879505111d85_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "10"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "108154",
+                "title": "Wonder Woman 1984",
+                "subtitle": "4 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/83/5/83cbd3ffa3c973b2e69d5ea6befc3dc6_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "3"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "64645",
+                "title": "Heat Is On",
+                "subtitle": "19 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/ba/5/ba75605b783b2360276df8d4055cc71c_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "5"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "88125",
+                "title": "Horror In Hindi",
+                "subtitle": "12 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/a9/5/a90243b20174b3ff924d803db5d82e0a_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "11"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "17704",
+                "title": "What Women Want",
+                "subtitle": "20 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/8e/5/8e88e58e9031b8067eca786920c96a86_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "8"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "38569",
+                "title": "Wow Like A Woman",
+                "subtitle": "19 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/a2/5/a21d22243d504b59c451eb711b2fbdd8_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "7"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "91455",
+                "title": "2020 Most Watched Dubbed In Hindi Movies",
+                "subtitle": "8 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/94/5/94ccf0b84c803ed82d0a06971daf7aac_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "15"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "38125",
+                "title": "Family Time",
+                "subtitle": "38 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/b3/5/b36bc7a420e43e9d94e79b184df6cb89_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "12"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "61433",
+                "title": "Binge Sequels",
+                "subtitle": "30 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/d8/5/d825b19e91630c69f40e93ccb2833a49_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "6"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "64207",
+                "title": "Speed Demons",
+                "subtitle": "9 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/90/5/9045e8b6ae1af3b73239cecd7a0c7011_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "20"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "35885",
+                "title": "DC Universe",
+                "subtitle": "26 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/d3/5/d3ed0e324d4aa62bc6b780aeafea7bbc_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "4"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "89297",
+                "title": "Binge At Campfire",
+                "subtitle": "26 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/6f/5/6f071587d2961ecca9d4c5dd3323d603_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "9"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "17610",
+                "title": "Indian Cinema's Finest",
+                "subtitle": "7 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/4e/5/4effd84cbd2482cb614544b4228c3a31_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "13"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "36845",
+                "title": "The Conjuring Universe",
+                "subtitle": "7 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/b6/5/b653938cb85dbe59721debda1313ae0f_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "2"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "16953",
+                "title": "Oscars: Hall Of Fame",
+                "subtitle": "41 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/ab/5/ab03ff392977ef6fc94af9063940751c_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "1"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "94568",
+                "title": "New On Play 2021",
+                "subtitle": "35 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/77/5/7714e34d1dff81fb8f3ae097824c691e_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "16"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "89292",
+                "title": "Punjabi Filmi Pitaara",
+                "subtitle": "10 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/e5/5/e54ce668fbbaf8485000952e5387756e_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "17"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "91415",
+                "title": "2020 Most Watched Movies",
+                "subtitle": "42 Movies",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/87/5/87e4079307c3912bdec009744c8e32b3_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "14"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "64232",
+                "title": "Fight Club",
+                "subtitle": "9 Movies",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/16/5/16374656b907c8248ee126e6df9d1411_582x255.jpg",
+                "type": "movieTheme",
+                "misc": {
+                  "priority": "19"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "30",
+          "type": 4,
+          "heading": "Recommended Movies",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 6,
+              "data": {
+                "id": "15062549",
+                "title": "Shootout At Wadala",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/542/3c6/15062549/15062549_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-05-03T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "47370512",
+                "title": "Yamdas",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/42f/3f4/47370512/47370512_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2019-03-20T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "23103910",
+                "title": "Farzeen-A Conspiracy Theory",
+                "subtitle": "2017",
+                "image": "https://images.hungama.com/c/1/03a/173/23103910/23103910_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2017-01-07T00:00:00+05:30",
+                  "genre": "Thriller",
+                  "genre_id": 128,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "60521192",
+                "title": "MOST COMMON BUDBAK",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/55a/b87/60521192/60521192_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2020-03-06T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "44129919",
+                "title": "Kahaani 2",
+                "subtitle": "2016",
+                "image": "https://images.hungama.com/c/1/a90/981/44129919/44129919_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2016-12-02T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "61396239",
+                "title": "Chousar Firangi",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/f27/e66/61396239/61396239_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2021-01-09T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "24422154",
+                "title": "Gailya",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/1d9/b6c/24422154/24422154_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-03-07T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "31438145",
+                "title": "Dragon Of Camelot",
+                "subtitle": "2014",
+                "image": "https://images.hungama.com/c/1/627/da5/31438145/31438145_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2014-12-24T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "24422162",
+                "title": "Gopa",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/eb4/697/24422162/24422162_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-04-12T00:00:00+05:30",
+                  "genre": "Biography",
+                  "genre_id": 1072,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "61480538",
+                "title": "Pyar Karle",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/f8a/21d/61480538/61480538_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2020-12-22T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "1561148",
+                "title": "Valentine's Night",
+                "subtitle": "2012",
+                "image": "https://images.hungama.com/c/1/e9d/f4f/1561148/1561148_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2012-02-10T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "15062552",
+                "title": "Once Upon a Time in Mumbai Dobaara!",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/025/03a/15062552/15062552_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-08-13T00:00:00+05:30",
+                  "genre": "Crime",
+                  "genre_id": 122,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "44129902",
+                "title": "Haseena Parkar",
+                "subtitle": "2017",
+                "image": "https://images.hungama.com/c/1/170/b60/44129902/44129902_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2017-09-22T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "22867586",
+                "title": "Tara",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/acd/6c0/22867586/22867586_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-01-01T00:00:00+05:30",
+                  "genre": "Social",
+                  "genre_id": 116,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "16463678",
+                "title": "Barkhaa",
+                "subtitle": "2015",
+                "image": "https://images.hungama.com/c/1/bf0/163/16463678/16463678_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2015-03-27T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "44129979",
+                "title": "Machine",
+                "subtitle": "2017",
+                "image": "https://images.hungama.com/c/1/dcc/184/44129979/44129979_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2017-03-17T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "52703603",
+                "title": "Kissebaaz",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/a60/df6/52703603/52703603_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2019-06-14T00:00:00+05:30",
+                  "genre": "Drama,Romance,Crime",
+                  "genre_id": "9,117,122",
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "2167439",
+                "title": "The Hero-Abhimanyu",
+                "subtitle": "2011",
+                "image": "https://images.hungama.com/c/1/c51/5e3/2167439/2167439_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2011-12-12T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "31438142",
+                "title": "Dead Drop",
+                "subtitle": "2013",
+                "image": "https://images.hungama.com/c/1/539/ea7/31438142/31438142_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2013-10-11T00:00:00+05:30",
+                  "genre": "Action",
+                  "genre_id": 24,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "53886642",
+                "title": "Dirty Marriage",
+                "subtitle": "2014",
+                "image": "https://images.hungama.com/c/1/1bd/c75/53886642/53886642_336x480.jpg",
+                "type": "movie",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "2014-06-25T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "certificate": "",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "45",
+          "type": 4,
+          "heading": "Categories",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 10,
+              "data": {
+                "id": "132",
+                "title": "Animation",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/33/7/33868d5db25fd89115ed3373d41c0e07.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "9",
+                  "priority": 6
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "129",
+                "title": "Action",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/06/9/06e8c1dc973ca8beb42c5533f3be6a19.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "2",
+                  "priority": 1
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "131",
+                "title": "Horror",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/3c/5/3c579274eb41a4bc687a69852b250835.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "8",
+                  "priority": 4
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "135",
+                "title": "Family",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/86/3/86a55f7c72b573a9f787b434f4921f73.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "5",
+                  "priority": 9
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "278",
+                "title": "Romance",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/bf/6/bf773e5bf225fc172f743f04df1b9716.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "3",
+                  "priority": 5
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "134",
+                "title": "Thriller",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/f3/5/f35e6dab45543a517ea14bf70611a605.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "6",
+                  "priority": 8
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "133",
+                "title": "Crime",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/a4/1/a417dad2e892e401a3a6b48cd027cf81.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "7",
+                  "priority": 7
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "130",
+                "title": "Comedy",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/0d/c/0d58b7468fae50fa2f38e9e086f2a1ac.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "4",
+                  "priority": 2
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "128",
+                "title": "Drama",
+                "image": "http://d368qv66y0shpj.cloudfront.net/featured_content_cms/4f/7/4f3e9842bbd56d908fdb295797c43867.png",
+                "type": "genre",
+                "misc": {
+                  "genre_id": "1",
+                  "priority": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "19",
+          "type": 4,
+          "heading": "Quicks",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329298",
+                "title": "Jennifer Salke & James Farrell",
+                "subtitle": "12K views",
+                "image": "https://images.hungama.com/c/1/d70/436/49329298/49329298_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-05-16T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 1032
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329339",
+                "title": "Mona Singh & Ronit Roy Interview",
+                "subtitle": "30K views",
+                "image": "https://images.hungama.com/c/1/f1e/1b0/49329339/49329339_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-23T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "16",
+                  "duration": 346
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329355",
+                "title": "Soni Razdan & Ashvin Kumar Interview",
+                "subtitle": "64K views",
+                "image": "https://images.hungama.com/c/1/402/737/49329355/49329355_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-04-06T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 1165
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49615943",
+                "title": "Aishwarya Rai Bachchan Interview,Maleficent",
+                "subtitle": "83K views",
+                "image": "https://images.hungama.com/c/1/023/2ca/49615943/49615943_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-02-06T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 1,
+                  "priority": "3",
+                  "duration": 917
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49322110",
+                "title": "Akshay Kumar Ke Saath (Kesari)",
+                "subtitle": "45K views",
+                "image": "https://images.hungama.com/c/1/28c/d84/49322110/49322110_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49322074,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-13T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36805673,
+                  "ctag": [],
+                  "fav_count": 3,
+                  "priority": "19",
+                  "duration": 223
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49368510",
+                "title": "Rani Mukerji Interview With Anupama Chopra",
+                "subtitle": "52K views",
+                "image": "https://images.hungama.com/c/1/926/5ef/49368510/49368510_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49368496,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2018-02-26T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36810391,
+                  "ctag": [],
+                  "fav_count": 6,
+                  "priority": "1",
+                  "duration": 2055
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49322091",
+                "title": "What Is Crowd Dubbing?",
+                "subtitle": "90K views",
+                "image": "https://images.hungama.com/c/1/1cc/5c5/49322091/49322091_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49322073,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-04-10T00:00:00+05:30",
+                  "genre": "Behind The Scenes",
+                  "genre_id": 1096,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36805672,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 476
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329272",
+                "title": "Bappi Lahiri Interview With Anupama Chopra",
+                "subtitle": "90K views",
+                "image": "https://images.hungama.com/c/1/326/418/49329272/49329272_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-04-22T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "7",
+                  "duration": 2331
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329262",
+                "title": "Zakir Khan,Kaneez Surka & Kenny Sebastian On Comicstaan,#Metoo And Learning From Young Talent",
+                "subtitle": "92K views",
+                "image": "https://images.hungama.com/c/1/0cd/7e1/49329262/49329262_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329237,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-06-25T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806501,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "9",
+                  "duration": 1419
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329308",
+                "title": "Lisa Ray Interview With Anupama Chopra",
+                "subtitle": "36K views",
+                "image": "https://images.hungama.com/c/1/808/fe3/49329308/49329308_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-05-15T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "5",
+                  "duration": 2111
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329291",
+                "title": "Guru Randhawa Interview With Anupama Chopra",
+                "subtitle": "92K views",
+                "image": "https://images.hungama.com/c/1/0dd/a54/49329291/49329291_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-05-20T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 1,
+                  "priority": "4",
+                  "duration": 1923
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329307",
+                "title": "Lilly Singh Interview With Anupama Chopra",
+                "subtitle": "7K views",
+                "image": "https://images.hungama.com/c/1/9fb/14c/49329307/49329307_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-04-02T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "13",
+                  "duration": 2228
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49322077",
+                "title": "Rishi Chandna",
+                "subtitle": "46K views",
+                "image": "https://images.hungama.com/c/1/f29/758/49322077/49322077_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49322072,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-14T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36805671,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "18",
+                  "duration": 624
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329264",
+                "title": "Akshay Kumar Interview With Anupama Chopra",
+                "subtitle": "67K views",
+                "image": "https://images.hungama.com/c/1/646/0b5/49329264/49329264_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-13T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "20",
+                  "duration": 1434
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49322075",
+                "title": "Hardik Mehta",
+                "subtitle": "61K views",
+                "image": "https://images.hungama.com/c/1/32a/010/49322075/49322075_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49322072,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-31T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36805671,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 782
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49990430",
+                "title": "Saand Ki Aankh - Not A Movie Review by Sucharita Tyagi",
+                "subtitle": "29K views",
+                "image": "https://images.hungama.com/c/1/375/c22/49990430/49990430_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49990426,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-10-25T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36854143,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "6",
+                  "duration": 267
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329261",
+                "title": "What’S It Like Being A Political Satirist In Election Season Anupama Chopra Film Companion",
+                "subtitle": "86K views",
+                "image": "https://images.hungama.com/c/1/04c/f82/49329261/49329261_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329237,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-04-08T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806501,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "11",
+                  "duration": 2630
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49990428",
+                "title": "Housefull 4 - Not A Movie Review by Sucharita Tyagi",
+                "subtitle": "8K views",
+                "image": "https://images.hungama.com/c/1/03f/00c/49990428/49990428_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49990426,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-10-25T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36854143,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 227
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329258",
+                "title": "The Streaming Stars Adda Anupama Chopra Film Companion",
+                "subtitle": "43K views",
+                "image": "https://images.hungama.com/c/1/b2f/9a1/49329258/49329258_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329237,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-18T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806501,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "17",
+                  "duration": 2897
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "49329266",
+                "title": "Ammy Virk Interview With Anupama Chopra",
+                "subtitle": "27K views",
+                "image": "https://images.hungama.com/c/1/1fc/b1f/49329266/49329266_1280x720.jpg",
+                "type": "eventsandBroadcastsVideo",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 49329238,
+                  "p_name": "",
+                  "vendor_id": 11711,
+                  "explicit_i": 0,
+                  "releasedate": "2019-03-28T00:00:00+05:30",
+                  "genre": "Interview",
+                  "genre_id": 71,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36806502,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 2012
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "38",
+          "type": 4,
+          "heading": "More Like Friends",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 11,
+              "data": {
+                "id": "56178492",
+                "title": "Happily Ever After",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/65d/8d6/56178492/56178492_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13611,
+                  "explicit_i": 1,
+                  "releasedate": "2020-08-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37352362,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "7",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "56178425",
+                "title": "Imperfect",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/867/427/56178425/56178425_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13611,
+                  "explicit_i": 1,
+                  "releasedate": "2020-08-25T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37352330,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "13",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "56178458",
+                "title": "Mom & Co.",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/dcb/847/56178458/56178458_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13611,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37352346,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "11",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "59873311",
+                "title": "Bang Bang",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/084/134/59873311/59873311_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13447,
+                  "explicit_i": 0,
+                  "releasedate": "2020-11-09T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37706420,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "59873314",
+                "title": "Boomerang",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/f69/a0e/59873314/59873314_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13447,
+                  "explicit_i": 0,
+                  "releasedate": "2020-11-12T00:00:00+05:30",
+                  "genre": "Horror",
+                  "genre_id": 147,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37706421,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "54041864",
+                "title": "Monkey Heist",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/4c4/753/54041864/54041864_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13454,
+                  "explicit_i": 0,
+                  "releasedate": "2020-04-21T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37168835,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "17",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "58145031",
+                "title": "Half Chaddi",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/963/558/58145031/58145031_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 8508,
+                  "explicit_i": 1,
+                  "releasedate": "2020-09-25T00:00:00+05:30",
+                  "genre": "Crime",
+                  "genre_id": 122,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37539206,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "63071129",
+                "title": "Gud Boy",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/4f8/e02/63071129/63071129_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-02T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38034700,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "56178530",
+                "title": "The Reunion",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/00a/148/56178530/56178530_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13611,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37352369,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "60637427",
+                "title": "Sanam Hotline - Marathi",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/6e6/85c/60637427/60637427_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-07T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37783526,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "6",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "57819663",
+                "title": "Best of K-Pop",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/704/b25/57819663/57819663_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13247,
+                  "explicit_i": 0,
+                  "releasedate": "2020-09-24T00:00:00+05:30",
+                  "genre": "Music",
+                  "genre_id": 1116,
+                  "lang": "Korean",
+                  "lang_id": "kor",
+                  "territory_rights": "IN_A,KH_A,LK_A",
+                  "propertyid": 37509038,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "20",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "58018817",
+                "title": "Cookiees",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/799/b05/58018817/58018817_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    ""
+                  ],
+                  "vendor_id": 13040,
+                  "explicit_i": 1,
+                  "releasedate": "2020-09-22T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37527137,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "63071130",
+                "title": "Gud Boy",
+                "subtitle": "2021",
+                "image": "https://images.hungama.com/c/1/337/541/63071130/63071130_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-02T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38034700,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "5",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "59010233",
+                "title": "Helo Maro Sambhdo",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/bfd/6a1/59010233/59010233_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13688,
+                  "explicit_i": 0,
+                  "releasedate": "2020-10-15T00:00:00+05:30",
+                  "genre": "Folk",
+                  "genre_id": 10,
+                  "lang": "Gujarati",
+                  "lang_id": "guj",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37630250,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "60637428",
+                "title": "Sanam Hotline - Hindi",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/b94/245/60637428/60637428_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-07T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37783527,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "9",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "29958123",
+                "title": "Dekh Bhai Dekh",
+                "subtitle": "1993",
+                "image": "https://images.hungama.com/c/1/a49/9b6/29958123/29958123_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1993-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 64977,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "52949699",
+                "title": "Strange Story",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/65c/81d/52949699/52949699_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13371,
+                  "explicit_i": 0,
+                  "releasedate": "2020-04-09T00:00:00+05:30",
+                  "genre": "Suspense",
+                  "genre_id": 127,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37083545,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "16",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "56178584",
+                "title": "Ready 2 Mingle",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/e18/e78/56178584/56178584_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13611,
+                  "explicit_i": 1,
+                  "releasedate": "2020-08-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37352371,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "52568342",
+                "title": "U Turn",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/d91/5dc/52568342/52568342_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13347,
+                  "explicit_i": 0,
+                  "releasedate": "2019-07-23T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37052266,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "18",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "55656001",
+                "title": "Locked In Love",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/b1c/f1b/55656001/55656001_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 13533,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-10T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37303573,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "21",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "34",
+          "type": 4,
+          "heading": "Hot Shorts",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 5,
+              "data": {
+                "id": "21455751",
+                "title": "Suhaag Raat",
+                "subtitle": "41K views",
+                "image": "https://images.hungama.com/c/1/b38/1e1/21455751/21455751_640x400.jpeg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 8508,
+                  "explicit_i": 0,
+                  "releasedate": "2016-08-16T00:00:00+05:30",
+                  "genre": "Documentary",
+                  "genre_id": 655,
+                  "lang": "Instrumental",
+                  "lang_id": "zxx",
+                  "territory_rights": "AA_A",
+                  "propertyid": 11035803,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "20",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "54720882",
+                "title": "Trial Before Marriage",
+                "subtitle": "15K views",
+                "image": "https://images.hungama.com/c/1/52f/851/54720882/54720882_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2020-07-10T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37237710,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "17",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59001641",
+                "title": "Blackmail",
+                "subtitle": "72K views",
+                "image": "https://images.hungama.com/c/1/5ff/48d/59001641/59001641_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13574,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-16T00:00:00+05:30",
+                  "genre": "Romance, Thriller",
+                  "genre_id": "117, 128",
+                  "lang": "Bengali",
+                  "lang_id": "ben",
+                  "territory_rights": "AA_A",
+                  "propertyid": 54480,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "5",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59788947",
+                "title": "Keera",
+                "subtitle": "69K views",
+                "image": "https://images.hungama.com/c/1/6ac/d3a/59788947/59788947_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13566,
+                  "explicit_i": 0,
+                  "releasedate": "2020-10-31T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37698929,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64071358",
+                "title": "Biwi Bhag Gayi",
+                "subtitle": "91K views",
+                "image": "https://images.hungama.com/c/1/878/e60/64071358/64071358_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13134,
+                  "explicit_i": 0,
+                  "releasedate": "2017-04-09T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38132315,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "60775531",
+                "title": "Prostitute",
+                "subtitle": "92K views",
+                "image": "https://images.hungama.com/c/1/49c/e0f/60775531/60775531_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-03T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 1577673,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "11",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59001640",
+                "title": "Abaidha",
+                "subtitle": "99K views",
+                "image": "https://images.hungama.com/c/1/1cb/475/59001640/59001640_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13574,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-16T00:00:00+05:30",
+                  "genre": "Suspense",
+                  "genre_id": 127,
+                  "lang": "Bengali",
+                  "lang_id": "ben",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37629177,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "6",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "60775510",
+                "title": "Compromise",
+                "subtitle": "89K views",
+                "image": "https://images.hungama.com/c/1/008/7f8/60775510/60775510_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-03T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 593607,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "13",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "54720881",
+                "title": "Wife Xchange",
+                "subtitle": "94K views",
+                "image": "https://images.hungama.com/c/1/669/4b2/54720881/54720881_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2020-07-10T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37237709,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "16",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "53972224",
+                "title": "Wrong Number",
+                "subtitle": "97K views",
+                "image": "https://images.hungama.com/c/1/b7a/b41/53972224/53972224_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 8673,
+                  "explicit_i": 0,
+                  "releasedate": "2020-03-03T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 738594,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "18",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59740349",
+                "title": "Butta Bomma",
+                "subtitle": "96K views",
+                "image": "https://images.hungama.com/c/1/2e7/3dc/59740349/59740349_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2020-11-02T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37694731,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "60775539",
+                "title": "Tharki",
+                "subtitle": "31K views",
+                "image": "https://images.hungama.com/c/1/0bb/cbc/60775539/60775539_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12395,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-03T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37796628,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "60711010",
+                "title": "Ishq Beimaan",
+                "subtitle": "43K views",
+                "image": "https://images.hungama.com/c/1/762/879/60711010/60711010_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13744,
+                  "explicit_i": 0,
+                  "releasedate": "2020-12-08T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37791280,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "9",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59001648",
+                "title": "Happy",
+                "subtitle": "77K views",
+                "image": "https://images.hungama.com/c/1/de2/5b3/59001648/59001648_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13574,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-16T00:00:00+05:30",
+                  "genre": "Horror",
+                  "genre_id": 147,
+                  "lang": "Bengali",
+                  "lang_id": "ben",
+                  "territory_rights": "AA_A",
+                  "propertyid": 561199,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "7",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61274451",
+                "title": "CAB DRIVER",
+                "subtitle": "97K views",
+                "image": "https://images.hungama.com/c/1/bba/4de/61274451/61274451_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2021-01-02T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36892446,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59001644",
+                "title": "Dark",
+                "subtitle": "75K views",
+                "image": "https://images.hungama.com/c/1/421/681/59001644/59001644_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13574,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-16T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Bengali",
+                  "lang_id": "ben",
+                  "territory_rights": "AA_A",
+                  "propertyid": 11482731,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63650432",
+                "title": "Newly Married",
+                "subtitle": "25K views",
+                "image": "https://images.hungama.com/c/1/1da/931/63650432/63650432_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-16T00:00:00+05:30",
+                  "genre": "Erotic",
+                  "genre_id": 12762702,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38089295,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61314415",
+                "title": "Lust Vs Love",
+                "subtitle": "41K views",
+                "image": "https://images.hungama.com/c/1/5ba/7fc/61314415/61314415_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13566,
+                  "explicit_i": 0,
+                  "releasedate": "2021-01-05T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37878554,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "59001642",
+                "title": "Blood",
+                "subtitle": "23K views",
+                "image": "https://images.hungama.com/c/1/7bd/e69/59001642/59001642_640x400.jpg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13574,
+                  "explicit_i": 0,
+                  "releasedate": "2020-08-16T00:00:00+05:30",
+                  "genre": "Thriller",
+                  "genre_id": 128,
+                  "lang": "Bengali",
+                  "lang_id": "ben",
+                  "territory_rights": "AA_A",
+                  "propertyid": 915673,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "21454111",
+                "title": "Hotline.Com",
+                "subtitle": "92K views",
+                "image": "https://images.hungama.com/c/1/6ba/513/21454111/21454111_640x400.jpeg",
+                "type": "shortFilms",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD"
+                  ],
+                  "vendor_id": 8508,
+                  "explicit_i": 0,
+                  "releasedate": "2016-08-16T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 10854499,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "19",
+                  "duration": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "95",
+          "type": 4,
+          "heading": "Trending Music Videos",
+          "hscroll": 1,
+          "more": 1,
+          "numrow": 1,
+          "items": [
+            {
+              "itype": 5,
+              "data": {
+                "id": "63766203",
+                "title": "Patli Kamariya",
+                "subtitle": "92K views",
+                "image": "https://images.hungama.com/c/1/643/202/63766203/63766203_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63766202,
+                  "p_name": "Patli Kamariya",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-16T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38100341,
+                  "ctag": [],
+                  "fav_count": 9,
+                  "priority": "8",
+                  "duration": 177
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64104209",
+                "title": "Radha",
+                "subtitle": "53K views",
+                "image": "https://images.hungama.com/c/1/6f0/06e/64104209/64104209_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 64104208,
+                  "p_name": "Radha",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-22T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38135646,
+                  "ctag": [],
+                  "fav_count": 76,
+                  "priority": "3",
+                  "duration": 192
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63452766",
+                "title": "Har Funn Maula",
+                "subtitle": "26K views",
+                "image": "https://images.hungama.com/c/1/986/9e7/63452766/63452766_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63452762,
+                  "p_name": "Koi Jaane Na",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-12T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38063035,
+                  "ctag": [],
+                  "fav_count": 1,
+                  "priority": "9",
+                  "duration": 197
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64393341",
+                "title": "Beautiful Mistakes",
+                "subtitle": "99K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 64393338,
+                  "p_name": "Beautiful Mistakes",
+                  "vendor_id": 251,
+                  "explicit_i": 1,
+                  "releasedate": "2021-03-11T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "propertyid": 16183301,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 228
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63747386",
+                "title": "Parinda",
+                "subtitle": "83K views",
+                "image": "https://images.hungama.com/c/1/838/013/63747386/63747386_640x480.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63747384,
+                  "p_name": "Saina",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-16T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38098309,
+                  "ctag": [],
+                  "fav_count": 2,
+                  "priority": "7",
+                  "duration": 149
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63161333",
+                "title": "Aur Pyaar Karna Hai",
+                "subtitle": "85K views",
+                "image": "https://images.hungama.com/c/1/20b/021/63161333/63161333_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63161327,
+                  "p_name": "Aur Pyaar Karna Hai",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-03T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38042672,
+                  "ctag": [],
+                  "fav_count": 46,
+                  "priority": "19",
+                  "duration": 250
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63304544",
+                "title": "Thok De Killi",
+                "subtitle": "11K views",
+                "image": "https://images.hungama.com/c/1/8b6/e78/63304544/63304544_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63160036,
+                  "p_name": "Time To Dance",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-08T00:00:00+05:30",
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38042470,
+                  "ctag": [],
+                  "fav_count": 4,
+                  "priority": "17",
+                  "duration": 159
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63452767",
+                "title": "Time To Dance",
+                "subtitle": "46K views",
+                "image": "https://images.hungama.com/c/1/fd1/398/63452767/63452767_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63160036,
+                  "p_name": "Time To Dance",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-08T00:00:00+05:30",
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38042470,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 154
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63171221",
+                "title": "Shor Machega",
+                "subtitle": "48K views",
+                "image": "https://images.hungama.com/c/1/2e4/dec/63171221/63171221_640x480.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63171220,
+                  "p_name": "Mumbai Saga",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-02T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38043959,
+                  "ctag": [],
+                  "fav_count": 3,
+                  "priority": "20",
+                  "duration": 209
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63260938",
+                "title": "Fly",
+                "subtitle": "1K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD"
+                  ],
+                  "p_id": 63260937,
+                  "p_name": "Fly",
+                  "vendor_id": 6728,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-05T00:00:00+05:30",
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AF_A,BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                  "propertyid": 1034769,
+                  "ctag": [],
+                  "fav_count": 18,
+                  "priority": "16",
+                  "duration": 158
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63452764",
+                "title": "Town Vich",
+                "subtitle": "7K views",
+                "image": "https://images.hungama.com/c/1/2a2/b3d/63452764/63452764_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63452760,
+                  "p_name": "Town Vich",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-12T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Punjabi",
+                  "lang_id": "pan",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38071355,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 189
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63170811",
+                "title": "Nadiyon Paar (Let the Music Play Again) From \"Roohi\"",
+                "subtitle": "18K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD"
+                  ],
+                  "p_id": 63170807,
+                  "p_name": "Nadiyon Paar (Let the Music Play Again) (From \"Roohi\")",
+                  "vendor_id": 6728,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-03T00:00:00+05:30",
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AF_A,BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                  "propertyid": 38042778,
+                  "ctag": [],
+                  "fav_count": 140,
+                  "priority": "11",
+                  "duration": 143
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64393356",
+                "title": "Dancing With The Devil",
+                "subtitle": "38K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 64393355,
+                  "p_name": "Dancing With The Devil",
+                  "vendor_id": 251,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-02T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "propertyid": 1852503,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 312
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63452763",
+                "title": "Oye Hoye Hoye",
+                "subtitle": "38K views",
+                "image": "https://images.hungama.com/c/1/bb9/6d7/63452763/63452763_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63452759,
+                  "p_name": "Oye Hoye Hoye",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-12T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Punjabi",
+                  "lang_id": "pan",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38071354,
+                  "ctag": [],
+                  "fav_count": 1,
+                  "priority": "10",
+                  "duration": 177
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64394045",
+                "title": "Galat",
+                "subtitle": "38K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 64394044,
+                  "p_name": "Galat",
+                  "vendor_id": 251,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-06T00:00:00+05:30",
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Punjabi",
+                  "lang_id": "pan",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "propertyid": 38169822,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 232
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63675584",
+                "title": "Ishq Karo Dil Se",
+                "subtitle": "17K views",
+                "image": "https://images.hungama.com/c/1/aee/641/63675584/63675584_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63452762,
+                  "p_name": "Koi Jaane Na",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-12T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38063035,
+                  "ctag": [],
+                  "fav_count": 1,
+                  "priority": "6",
+                  "duration": 137
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63452765",
+                "title": "Tanhaai Reprise",
+                "subtitle": "51K views",
+                "image": "https://images.hungama.com/c/1/5bf/b22/63452765/63452765_640x360.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 63452761,
+                  "p_name": "Tanhaai Reprise",
+                  "vendor_id": 19,
+                  "explicit_i": 0,
+                  "releasedate": "2021-03-12T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38071356,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "13",
+                  "duration": 145
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63053565",
+                "title": "Kiston From \"Roohi\"",
+                "subtitle": "71K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD"
+                  ],
+                  "p_id": 63053564,
+                  "p_name": "Kiston (From \"Roohi\")",
+                  "vendor_id": 6728,
+                  "explicit_i": 0,
+                  "releasedate": "2021-02-26T00:00:00+05:30",
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AF_A,BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                  "propertyid": 38028294,
+                  "ctag": [],
+                  "fav_count": 5,
+                  "priority": "18",
+                  "duration": 116
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64450246",
+                "title": "Kaancheck",
+                "subtitle": "47K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "p_id": 64450245,
+                  "p_name": "Kaancheck",
+                  "vendor_id": 251,
+                  "explicit_i": 0,
+                  "releasedate": "2021-04-09T00:00:00+05:30",
+                  "genre": "Hip Hop",
+                  "genre_id": 56,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "propertyid": 38175144,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 182
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64110241",
+                "title": "Peaches",
+                "subtitle": "78K views",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "p_id": 64110232,
+                  "p_name": "Peaches",
+                  "vendor_id": 251,
+                  "explicit_i": 1,
+                  "releasedate": "2021-03-19T00:00:00+05:30",
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "propertyid": 10346342,
+                  "ctag": [],
+                  "fav_count": 12,
+                  "priority": "5",
+                  "duration": 197
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

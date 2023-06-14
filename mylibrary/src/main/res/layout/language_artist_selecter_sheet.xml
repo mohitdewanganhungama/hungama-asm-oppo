@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include layout="@layout/common_blur_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="#4c4c4c" />
+
+        <RelativeLayout
+            android:id="@+id/rlHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topView">
+            <RelativeLayout
+                android:id="@+id/rlMusicLanguageHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_18">
+
+                <TextView
+                    android:id="@+id/tvMusicLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_20"
+                    app:tooltipText="Choose your Music Language" />
+
+                <TextView
+                    android:id="@+id/tvSelectAtLeast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMusicLanguage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:visibility="gone"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15"
+                    app:tooltipText="Select at least 3" />
+
+                <RelativeLayout
+                    android:id="@+id/rlSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_below="@+id/tvSelectAtLeast"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:realtimeBlurRadius="150dp"
+                        app:topLeftRadius="100dp"
+                        app:topRightRadius="100dp"
+                        app:bottomLeftRadius="100dp"
+                        app:bottomRightRadius="100dp"
+                        app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                    <LinearLayout
+                        android:id="@+id/llSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontTextColor="@color/item_sub_title_color"
+                            android:layout_gravity="center"
+                            app:fontText="@string/icon_search2"
+                            android:layout_marginStart="@dimen/dimen_19"/>
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/country_search"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="start|center"
+                            android:hint="@string/download_str_23"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textVisiblePassword|textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingEnd="@dimen/_6sdp"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="#33C6C6C6"
+                            android:textSize="12sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlHeading"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dimen_85" />
+
+        <View
+            android:id="@+id/bottomView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_178"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:background="@drawable/language_selection_sheet_gradient" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/bottomButtonView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginEnd="@dimen/dimen_9"
+                android:layout_marginBottom="@dimen/dimen_33"
+                android:layout_weight="1">
+
+                <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/blurView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:realtimeBlurRadius="150dp"
+                    app:topLeftRadius="100dp"
+                    app:topRightRadius="100dp"
+                    app:bottomLeftRadius="100dp"
+                    app:bottomRightRadius="100dp"
+                    app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llAskLater"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivAsk"
+                        style="@style/commonMediumIconStyle"
+                        android:visibility="gone"
+                        app:fontText="@string/icon_help"
+                        app:fontTextSize="@dimen/font_13" />
+
+                    <TextView
+                        android:id="@+id/btnAsk"
+                        style="@style/commonMediumButtonStyle"
+                        android:includeFontPadding="false"
+                        android:textSize="@dimen/font_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llSave"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/dimen_9"
+                android:layout_marginBottom="@dimen/dimen_33"
+                android:layout_weight="1"
+                android:background="@drawable/corner_radius_18_bg_blue"
+                android:gravity="center">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivSave"
+                    style="@style/commonMediumIconStyle"
+                    android:visibility="gone"
+                    app:fontText="@string/icon_save"
+                    app:fontTextSize="@dimen/font_13" />
+
+                <TextView
+                    android:id="@+id/btnSave"
+                    style="@style/commonMediumButtonStyle"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/font_14" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/font_color" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEventPurchases"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_180"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvEventPurchaseTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:lineSpacingExtra="4sp"
+            android:lineHeight="@dimen/font_17"
+            android:text="@string/general_setting_str_26"
+            android:layout_marginStart="@dimen/dimen_19"
+            android:textColor="#c6c6c6"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEventPurchases"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_0"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_120"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:layout_marginLeft="@dimen/dimen_18"
+            android:layout_marginRight="@dimen/dimen_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventPurchaseTitle"
+            tools:listitem="@layout/row_all_library" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExplore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_170"
+        android:paddingBottom="@dimen/dimen_120"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/EventPurchases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/ivTicketPurchases"
+            android:layout_width="@dimen/dimen_142"
+            android:layout_height="@dimen/dimen_98"
+            android:layout_marginTop="@dimen/dimen_21"
+            android:src="@drawable/image_ticket_purchases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EventPurchases" />
+
+        <TextView
+            android:id="@+id/tvTicketPurchasesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_29"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/general_setting_str_27"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTicketPurchases" />
+
+        <TextView
+            android:id="@+id/tvTicketPurchasesSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_13"
+            android:layout_marginRight="@dimen/dimen_24"
+            android:gravity="center"
+            android:lineHeight="@dimen/font_20"
+            android:lineSpacingExtra="@dimen/dimen_7"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/general_setting_str_28"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTicketPurchasesTitle" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExplore"
+            android:layout_width="@dimen/dimen_193"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTicketPurchasesSubTitle"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_search"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/profile_str_19" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

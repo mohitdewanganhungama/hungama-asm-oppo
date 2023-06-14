@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="@dimen/dimen_118"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="@dimen/dimen_118"
+            android:layout_height="@dimen/dimen_66"
+            android:src="@color/colorPlaceholder"
+            android:background="@drawable/bg_gradient_placeholder"
+            android:scaleType="fitXY"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

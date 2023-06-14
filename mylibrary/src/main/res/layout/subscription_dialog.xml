@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/common_blur_view"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ProgressBar
+        android:id="@+id/pb_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+
+        android:indeterminateTint="@color/font_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vDevider1"
+                android:layout_width="@dimen/dimen_42"
+                android:layout_height="@dimen/dimen_4"
+                android:layout_marginTop="@dimen/dimen_9"
+                android:background="@drawable/bottomsheet_icon_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSubscriptionPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:paddingBottom="@dimen/dimen_10"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vDevider1">
+
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_23_9"
+                    android:src="@drawable/subscription_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_29"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="@string/reward_str_76"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_21"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+                <com.hungama.music.utils.customview.ShowMoreTextView
+                    android:id="@+id/tvSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:lineHeight="@dimen/font_24"
+                    android:lineSpacingExtra="@dimen/font_5"
+                    android:text="@string/reward_str_77"
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+                <TextView
+                    android:id="@+id/tvBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:lineHeight="@dimen/font_24"
+                    android:lineSpacingExtra="@dimen/font_8"
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
+
+                <LinearLayout
+                    android:id="@+id/llPlans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_60"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:layout_marginEnd="@dimen/dimen_60"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBody">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_39"
+                            android:layout_height="@dimen/dimen_39"
+                            android:src="@drawable/image_download" />
+
+                        <TextView
+                            android:id="@+id/tvImage1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_9"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:lineHeight="@dimen/dimen_16"
+                            android:maxLines="2"
+                            android:text="@string/reward_str_79"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_11" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_39"
+                            android:layout_height="@dimen/dimen_39"
+                            android:src="@drawable/image_hd" />
+
+                        <TextView
+                            android:id="@+id/tvImage2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_9"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:lineHeight="@dimen/dimen_16"
+                            android:maxLines="2"
+                            android:text="@string/reward_str_80"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_11" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_39"
+                            android:layout_height="@dimen/dimen_39"
+                            android:src="@drawable/image_no_ads" />
+
+                        <TextView
+                            android:id="@+id/tvImage3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_9"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:lineHeight="@dimen/dimen_16"
+                            android:maxLines="2"
+                            android:text="@string/reward_str_81"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_11" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_39"
+                            android:layout_height="@dimen/dimen_39"
+                            android:src="@drawable/icon_exclusive_access" />
+
+                        <TextView
+                            android:id="@+id/tvImage4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_9"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:lineHeight="@dimen/dimen_16"
+                            android:maxLines="2"
+                            android:text="@string/drawer_download_mymusic_image4"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_11" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llBuyPlan"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_marginLeft="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_18"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llPlans">
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        style="@style/commonMediumIconStyle"
+                        app:fontText="@string/icon_crown" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUpgradePlan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_4"
+                        android:ellipsize="marquee"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4sp"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:text="@string/reward_str_82"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16"
+                        android:textStyle="normal"
+                        app:lineHeight="@dimen/font_20" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <RelativeLayout
+                    android:id="@+id/llShowPlan"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_marginLeft="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:layout_marginRight="@dimen/dimen_18"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llBuyPlan">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_tranperent_bg_white_outline" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShowPlan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:lineHeight="@dimen/font_20"
+                        android:text="@string/reward_str_83"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/font_16"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRentPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_27"
+                android:layout_marginTop="@dimen/dimen_29"
+                android:layout_marginEnd="@dimen/dimen_27"
+                android:paddingBottom="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/vDevider1">
+
+                <TextView
+                    android:id="@+id/tvHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:maxLines="1"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_21"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSubTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:text="@string/reward_str_102"
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_13"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+                <View
+                    android:id="@+id/devider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:alpha="0.3"
+                    android:background="@color/colorWarmGrey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSubTitle2"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_26"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@string/reward_str_84"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/devider" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_26"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/devider" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llRent"
+                    android:layout_width="@dimen/dimen_204"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_marginTop="@dimen/dimen_87"
+                    android:background="@drawable/corner_radius_18_bg_blue"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/devider">
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        style="@style/commonMediumIconStyle"
+                        android:visibility="gone"
+                        app:fontText="@string/icon_continue"
+                        app:fontTextSize="@dimen/font_16" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtRent"
+                        style="@style/commonMediumButtonStyle"
+                        android:text="@string/download_str_9"
+                        android:textSize="@dimen/font_14" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

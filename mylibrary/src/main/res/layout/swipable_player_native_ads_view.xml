@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical">
+    <!-- Template View for native ad -->
+
+    <LinearLayout
+        android:id="@+id/companionAdSlotFrame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/clProgressView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_70"
+        android:background="@drawable/gnt_round_shape_bg"
+        app:layout_constraintTop_toBottomOf="@+id/companionAdSlotFrame"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:visibility="visible">
+        <TextView
+            android:id="@+id/tvWillBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:textSize="@dimen/font_14"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/your_music_will_resume_in" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_below="@+id/tvWillBack"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/font_12"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="00:00"/>
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvProgress"
+            android:layout_alignBottom="@+id/tvProgress"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_toStartOf="@+id/tvProgress"
+            android:indeterminate="false" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

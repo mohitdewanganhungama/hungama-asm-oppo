@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!--<item android:id="@+id/layer_bg_color" android:drawable="@color/home_bg_color" />-->
+<item android:id="@+id/layer_bg_image">
+    <bitmap android:src="@drawable/audio_player_bg_two"/>
+</item>
+    <item android:id="@+id/layer_bg_gradient">
+        <shape>
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#00000000"
+                android:centerColor="#000000"
+                android:endColor="#00282828"
+                android:gradientRadius="50%"
+                />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "type": "image",
+    "contents": {
+      "bg_image": "http://35.200.196.46:3000/media/splash-bg.png",
+      "fg_image": "http://35.200.196.46:3000/media/splash-fg.png"
+    },
+    "made_in_india": true
+  }
+}

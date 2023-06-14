@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_download_audio_circle" />
+    <!--<item android:gravity="center" android:top="@dimen/_3sdp" android:left="@dimen/_3sdp">
+        <bitmap android:src="@drawable/download_img"
+            android:gravity="center"  />
+    </item>-->
+
+    <!--updated by prakash parmar on 18/08/2021-->
+    <!--<item android:drawable="@drawable/ic_download_audio_player_new"/>-->
+</layer-list>

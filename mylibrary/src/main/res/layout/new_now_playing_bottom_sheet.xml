@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nowPlayingBottomSheet"
+    style="?attr/bottomSheetStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:elevation="@dimen/design_appbar_elevation"
+    android:focusable="true"
+    app:behavior_fitToContents="true"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/dimen_62"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <!--app:layout_behavior="com.hungama.music.utils.LockableBottomSheetBehavior"-->
+    <!--android:background="@drawable/audio_player_bg_layer"-->
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bottomSheetToolbar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_62"
+            app:layout_constraintBottom_toBottomOf="@id/shortPlayerControlView"
+            app:layout_constraintEnd_toEndOf="@id/shortPlayerControlView"
+            app:layout_constraintStart_toStartOf="@id/shortPlayerControlView"
+            app:layout_constraintTop_toTopOf="@id/shortPlayerControlView" />
+
+
+        <androidx.media3.ui.PlayerControlView
+            android:id="@+id/shortPlayerControlView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:controller_layout_id="@layout/exo_player_bottom_sheet_controller"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:show_timeout="0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainFullScreeen"
+    android:background="@drawable/home_bg_layer"
+    android:keepScreenOn="true">
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/topBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/transparent">-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--            android:theme="@style/CustomActionBar"-->
+<!--            android:background="@color/transparent">-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/head"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            >-->
+<!--            <ImageView-->
+<!--                android:id="@+id/img_back_player"-->
+<!--                app:srcCompat="@drawable/ic_back_right_arrow"-->
+<!--                android:layout_width="@dimen/dimen_13_1"-->
+<!--                android:layout_height="@dimen/dimen_24"-->
+<!--                app:tint="@color/colorWhite"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:contentDescription="@string/app_name" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/ivAirplay"-->
+<!--                app:srcCompat="@drawable/ic_airplay"-->
+<!--                android:layout_width="@dimen/dimen_24"-->
+<!--                android:layout_height="@dimen/dimen_24"-->
+<!--                app:tint="@color/colorWhite"-->
+<!--                android:layout_toStartOf="@+id/ivCast"-->
+<!--                android:layout_marginEnd="@dimen/dimen_30"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:contentDescription="@string/app_name" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/ivCast"-->
+<!--                app:srcCompat="@drawable/ic_cast"-->
+<!--                android:layout_width="@dimen/dimen_24"-->
+<!--                android:layout_height="@dimen/dimen_24"-->
+<!--                android:layout_marginEnd="@dimen/dimen_18"-->
+<!--                app:tint="@color/colorWhite"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:contentDescription="@string/app_name" />-->
+<!--            &lt;!&ndash;<ImageView-->
+<!--                android:id="@+id/img_cast_menu_dots"-->
+<!--                android:layout_margin="@dimen/_10sdp"-->
+<!--                app:srcCompat="@drawable/ic_baseline_more_vert_24"-->
+<!--                android:layout_width="@dimen/_20sdp"-->
+<!--                android:layout_height="@dimen/_20sdp"-->
+<!--                app:tint="@color/colorBlack"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:contentDescription="@string/app_name" />&ndash;&gt;-->
+
+<!--        </RelativeLayout>-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/flMain"
+        android:layout_height="match_parent">
+
+        <androidx.media3.ui.SubtitleView
+            android:id="@+id/subtitle"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:controller_layout_id="@layout/video_player_custum_control"
+            app:default_artwork="@drawable/bg_gradient_placeholder"
+            app:hide_on_touch="false"
+            app:repeat_toggle_modes="one"
+            app:resize_mode="fill"
+            app:show_subtitle_button="true"
+            app:show_timeout="0"
+            app:use_artwork="true"
+            app:use_controller="true">
+
+            <ProgressBar
+                android:id="@+id/loading_exoplayer"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </androidx.media3.ui.PlayerView>
+
+    </FrameLayout>
+    <TextView
+        style="@style/StyleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flMain"
+        android:text="@string/discover_str_14"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_50sdp"
+        />
+    <!--</RelativeLayout>-->
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/font_color"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,303 @@
+{
+  "head": {
+    "rows": [
+      {
+        "type": 1,
+        "data": {}
+      },
+      {
+        "type": 2,
+        "data": {}
+      }
+    ]
+  },
+  "body": {
+    "rows": [
+      {
+        "type": 4,
+        "heading": "Movies",
+        "hscroll": 1,
+        "more": 1,
+        "itype": 6,
+        "items": [
+          {
+            "itype": 6,
+            "data": {
+              "image": "url",
+              "title": "Slum Dog Millionaire",
+              "subTitle": "2008 | 2h 3min"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Music",
+        "hscroll": 1,
+        "numrow": 6,
+        "itype": 8,
+        "more": 1,
+        "items": [
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "image": "url",
+              "title": "Song Name",
+              "subTitle": "Artist Name"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Music Videos",
+        "hscroll": 1,
+        "more": 1,
+        "itype": 5,
+        "items": [
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "Music Videos",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "Music Videos",
+              "subTitle": "Artist Name"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "Music Videos",
+              "subTitle": "Artist Name"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Live Performance",
+        "hscroll": 1,
+        "more": 1,
+        "itype": 5,
+        "items": [
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "A.R.Rahman Performnig",
+              "subTitle": "A.R.Rahman"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "A.R.Rahman Performnig",
+              "subTitle": "A.R.Rahman"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "image": "url",
+              "title": "A.R.Rahman Performnig",
+              "subTitle": "A.R.Rahman"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "rows": [
+      {
+        "type": 3,
+        "data": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@drawable/bg_itype_16"
+
+        android:orientation="vertical">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/dimen_15"
+            android:paddingStart="@dimen/dimen_18"
+
+            android:paddingEnd="@dimen/dimen_16"
+            android:layout_height="@dimen/dimen_204"
+            android:background="@drawable/bg_itype_16"
+            android:orientation="horizontal">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_170"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="2:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/bg_gradient_placeholder"
+                android:scaleType="fitXY"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|top"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/discover_str_32"
+                    android:id="@+id/tvTitle"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:textSize="@dimen/font_15"
+                    android:textColor="@color/item_title_color"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/font_9"
+                    android:layout_marginTop="0dp"
+                    style="@style/StyleTextView"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:maxLines="1"
+                    android:id="@+id/tvSubTitle"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/font_13"
+                    android:textColor="@color/item_sub_title_color"
+                    android:lineSpacingExtra="@dimen/font_7"
+                    android:text=""
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:id="@+id/tvSubTitle2"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:textSize="@dimen/font_13"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:textColor="@color/third_text_color"
+
+                    android:text=""
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:id="@+id/txtRent"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dimen_17"
+                    android:textSize="@dimen/font_15"
+                    android:background="@drawable/bg_btn_blue"
+                    android:textColor="@color/colorWhite"
+                    android:lineSpacingExtra="@dimen/font_4"
+                    android:text="@string/movie_str_5"
+                    android:textAllCaps="false"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

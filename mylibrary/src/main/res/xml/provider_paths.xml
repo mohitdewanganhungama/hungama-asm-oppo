@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="external_files"
+        path="." />
+    <external-path
+        name="share"
+        path="/" />
+    <cache-path name="cache_path" path="."/>
+    <!--store in Android app package name directory. Associate with getExternalFilesDir
+    file path will be storage/emulated/0/Android/data/com.example.ex/files/Example Images/-->
+    <external-files-path name="my_downloads" path="downloads/"/>
+    <files-path
+        name="files"
+        path="." />
+    <external-files-path name="my_images" path="Pictures" />
+</paths>

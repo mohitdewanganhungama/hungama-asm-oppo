@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dimen_375"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/ic_video_subtitle_bg">
+<include layout="@layout/common_blur_view"/>
+    <RelativeLayout
+        android:id="@+id/rlHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_32"
+        android:layout_marginTop="@dimen/dimen_27"
+        android:layout_marginEnd="@dimen/dimen_28">
+
+        <ImageView
+            android:id="@+id/ivSubtitle"
+            android:layout_width="@dimen/dimen_25_1"
+            android:layout_height="@dimen/dimen_18_1"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_cc_new"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12_9"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ivSubtitle"
+            android:fontFamily="@font/sf_pro_text"
+            android:includeFontPadding="false"
+            android:text="@string/video_player_str_16"
+            android:textColor="@color/item_title_color"
+            android:textSize="@dimen/font_17" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_32"
+        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_28"
+        android:layout_below="@id/rlHeading">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--<ImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="@dimen/dimen_25_1"
+            android:layout_height="@dimen/dimen_18_1"
+            android:src="@drawable/ic_checked"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tvEng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12_9"
+            android:layout_toEndOf="@id/ivCheck"
+            android:fontFamily="@font/sf_pro_text"
+            android:text="English"
+            android:textColor="@color/item_title_color"
+            android:textSize="@dimen/font_17" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_below="@+id/tvEng"
+            android:background="#707070"
+            android:layout_marginTop="@dimen/dimen_13_5"/>
+
+        <TextView
+            android:id="@+id/tvOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/tvEng"
+            android:layout_below="@id/divider"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_text"
+            android:text="Off"
+            android:textColor="#909090"
+            android:textSize="@dimen/font_17" />-->
+    </RelativeLayout>
+</RelativeLayout>

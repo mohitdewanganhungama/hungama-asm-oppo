@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:visibility="visible">
+    <!-- Template View for native ad -->
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id= "@+id/nativeTemplateView"
+        app:gnt_template_type= "@layout/gnt_music_video_template_view"
+        android:layout_width= "match_parent"
+        android:layout_height= "wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

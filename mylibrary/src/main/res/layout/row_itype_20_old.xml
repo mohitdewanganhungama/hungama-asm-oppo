@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:background="@drawable/itype_20_button_style"
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/dimen_277"
+            android:paddingTop="@dimen/dimen_15"
+            android:paddingStart="@dimen/dimen_18"
+            android:paddingBottom="@dimen/dimen_20"
+            android:paddingEnd="@dimen/dimen_18"
+            android:layout_height="@dimen/dimen_180"
+            android:background="@drawable/bg_itype_20"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dimen_40"
+                android:gravity="start|center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Music Videos &amp; Movies"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:textSize="@dimen/font_13"
+                    android:textColor="@color/item_sub_title_color"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/font_2"
+                    style="@style/StyleTextView"
+                    android:layout_marginTop="0dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/collection_str_1"
+                    android:textSize="@dimen/font_17"
+                    android:textColor="@color/item_title_color"
+                    android:lineSpacingExtra="@dimen/font_7"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_26"
+                android:layout_height="@dimen/dimen_40"
+                android:src="@drawable/bg_gradient_placeholder"
+                android:scaleType="centerInside"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/dimen_160"
+                        android:layout_height="@dimen/dimen_88"
+                        android:background="@drawable/bg_gradient_placeholder"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_gradient_placeholder"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/dimen_31"
+                        android:layout_height="@dimen/dimen_31"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_play_circle_filled"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+
+                </RelativeLayout>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_88"
+                    android:layout_marginStart="@dimen/dimen_4"
+                    android:orientation="vertical">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/dimen_80"
+                        android:layout_height="@dimen/dimen_44"
+                        android:src="@drawable/bg_gradient_placeholder"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/bg_gradient_placeholder"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dimen_2"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/dimen_38"
+                            android:layout_height="@dimen/dimen_42"
+                            android:src="@drawable/bg_gradient_placeholder"
+                            android:background="@drawable/bg_gradient_placeholder"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="@dimen/dimen_38"
+                            android:layout_height="@dimen/dimen_42"
+                            android:layout_marginStart="@dimen/dimen_2"
+                            android:src="@drawable/bg_gradient_placeholder"
+                            android:background="@drawable/bg_gradient_placeholder"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

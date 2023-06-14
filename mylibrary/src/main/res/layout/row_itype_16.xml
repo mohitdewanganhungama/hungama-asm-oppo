@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dimen_132"
+        android:layout_height="@dimen/dimen_132"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:layout_marginEnd="@dimen/dimen_20"
+        app:cardCornerRadius="@dimen/dimen_7">
+
+        <RelativeLayout
+            android:id="@+id/rootParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_gradient_itype_16">
+
+            <include layout="@layout/blur_layout_view" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llMain"
+                android:layout_width="@dimen/dimen_132"
+                android:layout_height="@dimen/dimen_132"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dimen_70"
+                    android:layout_height="@dimen/dimen_77">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_70"
+                        android:layout_height="@dimen/dimen_77"
+                        android:id="@+id/ivUshape"
+                        android:visibility="gone"
+                        android:src="@drawable/u_shape"/>
+
+                <com.hungama.music.utils.customview.circleimageview.CircleImageView
+                    android:id="@+id/ivUserImage"
+                    android:layout_width="@dimen/dimen_68"
+                    android:layout_centerInParent="true"
+                    android:layout_height="@dimen/dimen_66"
+                    android:src="@color/colorPlaceholder"
+                    app:civ_circle_background_color="@color/colorPlaceholder"
+              />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:ellipsize="end"
+                    android:id="@+id/tvTitle"
+                    android:paddingStart="@dimen/dimen_10"
+                    android:paddingEnd="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:lineSpacingExtra="@dimen/font_2"
+                    android:maxLines="1"
+                    android:text="@string/other_str_19"
+                    android:textColor="@color/item_title_color"
+                    android:textSize="@dimen/font_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:lineSpacingExtra="@dimen/font_2"
+                    android:maxLines="1"
+                    android:text="@string/podcast_str_8"
+                    android:textColor="@color/third_text_color"
+                    android:textSize="@dimen/font_9" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:lineSpacingExtra="@dimen/font_2"
+                    android:maxLines="1"
+                    android:id="@+id/tvSubTitle"
+                    android:text="27.5M"
+                    android:textColor="@color/four_text_color"
+                    android:textSize="@dimen/font_11" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

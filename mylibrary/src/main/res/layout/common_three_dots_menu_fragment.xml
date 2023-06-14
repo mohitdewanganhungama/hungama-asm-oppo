@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/common_three_dots_menu_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false">
+
+    <include layout="@layout/common_blur_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/three_dot_gradient_layer"
+        android:alpha="0.5"/>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_popup_on_dots"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <RelativeLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="#4c4c4c" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvThreeMenuDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topView"
+            android:layout_marginTop="@dimen/dimen_10"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/three_dot_menu_close"
+            android:layout_width="@dimen/dimen_122"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:layout_below="@+id/rvThreeMenuDots"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/corner_radius_18_bg_alpha_white">
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_delete"
+                android:visibility="gone"
+                app:fontTextSize="@dimen/font_12"/>
+                <TextView
+                    android:id="@+id/btnAsk"
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/music_player_str_15" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

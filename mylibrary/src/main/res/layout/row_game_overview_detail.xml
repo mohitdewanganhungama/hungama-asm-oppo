@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/dimen_16"
+    android:layout_marginEnd="@dimen/dimen_16"
+    android:layout_marginTop="@dimen/dimen_16"
+    android:background="@color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/ivGamePerview"
+            android:layout_width="@dimen/dimen_129"
+            android:layout_height="@dimen/dimen_185"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/bg_gradient_placeholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

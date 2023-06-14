@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlActionBarHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_60"
+    android:elevation="@dimen/dimen_4"
+    android:layout_alignParentTop="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+        <include android:id="@+id/headBarBlur" layout="@layout/common_blur_view"/>
+        <!--<ImageView
+            android:id="@+id/ivBack"
+            app:srcCompat="@drawable/ic_back_right_arrow"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:paddingStart="@dimen/dimen_15_5"
+            android:paddingEnd="@dimen/dimen_15_5"
+            android:paddingTop="@dimen/dimen_12"
+            android:paddingBottom="@dimen/dimen_12"
+            app:tint="@color/colorWhite"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_2"
+            android:contentDescription="@string/login_str_2" />-->
+    <RelativeLayout
+        android:id="@+id/rlBack"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen_2">
+        <!-- Do not remove imageView id-ivBack -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:contentDescription="@string/login_str_2" />
+
+        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            android:id="@+id/ivBackIcon"
+            style="@style/commonMediumIconStyle"
+            android:layout_centerInParent="true"
+            app:fontText="@string/icon_back" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvActionBarHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_17"
+        android:textStyle="normal" />
+
+<!--Do not visible this(rlMenu) view here. Enable it in code.-->
+    <RelativeLayout
+        android:id="@+id/rlMenu"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/dimen_2"
+        android:visibility="gone">
+        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            android:id="@+id/ivMenu"
+            style="@style/commonMediumIconStyle"
+            app:fontText="@string/icon_option"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    </RelativeLayout>

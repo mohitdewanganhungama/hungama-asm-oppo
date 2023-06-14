@@ -1,0 +1,846 @@
+{
+    "body": {
+        "id": "64666116",
+        "title": "The Witches",
+        "itype": 6,
+        "description": "In late 1967, a young orphaned boy goes to live with his loving grandma in the rural Alabama town of Demopolis. As the boy and his grandmother encounter some deceptively glamorous but thoroughly diabolical witches, she wisely whisks him away to a seaside resort. Regrettably, they arrive at precisely the same time that the world's Grand High Witch has gathered her fellow cronies from around the globe -- under cover -- to carry out her nefarious plans.",
+        "genre": [
+            "Comedy"
+        ],
+        "language": [
+            "English"
+        ],
+        "artist": [
+            "86370|Robert Zemeckis",
+            "87078|Stanley Tucci",
+            "47410|Anne Hathaway",
+            "8340904|Warner Bros.",
+            "178402245|Octavia Spencer",
+            "42667734|Guillermo del Toro",
+            "11030885|Luke Kelly",
+            "2277700|Alfonso Cuaron"
+        ],
+        "releasedate": "2020-10-26T00:00:00.000Z",
+        "image": "https://images.hungama.com/c/1/6b9/f1d/64666116/64666116_350x525.jpg",
+        "imageFileSubTypeId": 1082,
+        "items": [
+
+        ],
+        "similar": [
+            {
+                "itype": 6,
+                "data": {
+                    "id": "23715447",
+                    "title": "Dennis the Menace",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/6c7/ed0/23715447/23715447_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "2978483",
+                    "title": "Un-Indian",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Romance"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/d0f/088/2978483/2978483_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "14990723",
+                    "title": "Inside Out",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Animation"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7a9/bff/14990723/14990723_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902911",
+                    "title": "Three To Tango",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/755/4f7/22902911/22902911_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "19791862",
+                    "title": "My Big Fat Greek Wedding",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/245/77d/19791862/19791862_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417021",
+                    "title": "License To Wed",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/65a/994/22417021/22417021_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417018",
+                    "title": "Fred Claus",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/cc3/fe2/22417018/22417018_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417036",
+                    "title": "Monster-In-Law",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7d8/db0/22417036/22417036_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22596692",
+                    "title": "Ghosts of Girlfriends Past",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/9da/63c/22596692/22596692_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902914",
+                    "title": "Two Weeks Notice",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/06e/381/22902914/22902914_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            }
+        ],
+        "trailers": [
+            {
+                "itype": 6,
+                "data": {
+                    "id": "23715447",
+                    "title": "Dennis the Menace",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/6c7/ed0/23715447/23715447_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "2978483",
+                    "title": "Un-Indian",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Romance"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/d0f/088/2978483/2978483_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "14990723",
+                    "title": "Inside Out",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Animation"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7a9/bff/14990723/14990723_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902911",
+                    "title": "Three To Tango",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/755/4f7/22902911/22902911_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "19791862",
+                    "title": "My Big Fat Greek Wedding",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/245/77d/19791862/19791862_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417021",
+                    "title": "License To Wed",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/65a/994/22417021/22417021_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417018",
+                    "title": "Fred Claus",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/cc3/fe2/22417018/22417018_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417036",
+                    "title": "Monster-In-Law",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7d8/db0/22417036/22417036_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22596692",
+                    "title": "Ghosts of Girlfriends Past",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/9da/63c/22596692/22596692_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902914",
+                    "title": "Two Weeks Notice",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/06e/381/22902914/22902914_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            }
+        ],
+        "castcrew": [
+            {
+                "itype": 6,
+                "data": {
+                    "id": "23715447",
+                    "title": "Dennis the Menace",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/6c7/ed0/23715447/23715447_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "2978483",
+                    "title": "Un-Indian",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Romance"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/d0f/088/2978483/2978483_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "14990723",
+                    "title": "Inside Out",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Animation"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7a9/bff/14990723/14990723_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902911",
+                    "title": "Three To Tango",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/755/4f7/22902911/22902911_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "19791862",
+                    "title": "My Big Fat Greek Wedding",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/245/77d/19791862/19791862_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417021",
+                    "title": "License To Wed",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/65a/994/22417021/22417021_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417018",
+                    "title": "Fred Claus",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/cc3/fe2/22417018/22417018_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417036",
+                    "title": "Monster-In-Law",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7d8/db0/22417036/22417036_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22596692",
+                    "title": "Ghosts of Girlfriends Past",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/9da/63c/22596692/22596692_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902914",
+                    "title": "Two Weeks Notice",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/06e/381/22902914/22902914_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            }
+        ],
+        "watched": [
+            {
+                "itype": 6,
+                "data": {
+                    "id": "23715447",
+                    "title": "Dennis the Menace",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/6c7/ed0/23715447/23715447_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "2978483",
+                    "title": "Un-Indian",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Romance"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/d0f/088/2978483/2978483_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "14990723",
+                    "title": "Inside Out",
+                    "description": "",
+                    "genre": [
+                        "Comedy",
+                        "Animation"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7a9/bff/14990723/14990723_100x100.jpg",
+                    "imageFileSubTypeId": -1
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902911",
+                    "title": "Three To Tango",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/755/4f7/22902911/22902911_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "19791862",
+                    "title": "My Big Fat Greek Wedding",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/245/77d/19791862/19791862_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417021",
+                    "title": "License To Wed",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/65a/994/22417021/22417021_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417018",
+                    "title": "Fred Claus",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/cc3/fe2/22417018/22417018_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22417036",
+                    "title": "Monster-In-Law",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/7d8/db0/22417036/22417036_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22596692",
+                    "title": "Ghosts of Girlfriends Past",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/9da/63c/22596692/22596692_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            },
+            {
+                "itype": 6,
+                "data": {
+                    "id": "22902914",
+                    "title": "Two Weeks Notice",
+                    "description": "",
+                    "genre": [
+                        "Comedy"
+                    ],
+                    "language": [
+
+                    ],
+                    "artist": [
+
+                    ],
+                    "releasedate": "",
+                    "image": "https://images.hungama.com/c/1/06e/381/22902914/22902914_350x525.jpg",
+                    "imageFileSubTypeId": 1082
+                }
+            }
+        ]
+    }
+}

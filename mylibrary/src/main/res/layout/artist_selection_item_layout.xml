@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMain"
+    android:layout_width="@dimen/dimen_103"
+    android:layout_height="@dimen/dimen_116"
+    android:layout_marginEnd="@dimen/dimen_8"
+    android:layout_marginTop="@dimen/dimen_8"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="@dimen/dimen_150"
+            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivArtistImage"
+            android:layout_width="@dimen/dimen_52"
+            android:layout_height="@dimen/dimen_52"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cast_album_art_placeholder_large"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_16"
+            />
+        <ImageView
+            android:id="@+id/ivSelection"
+            android:layout_width="@dimen/dimen_16"
+            android:layout_height="@dimen/dimen_16"
+            android:src="@drawable/ic_round_un_selection"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:contentDescription="@string/login_str_2"/>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_7"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/ivArtistImage"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textSize="@dimen/font_13"
+            android:textColor="@color/item_title_color"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</RelativeLayout>

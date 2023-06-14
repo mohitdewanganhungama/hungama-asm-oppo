@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llMain"
+    android:orientation="horizontal"
+    android:gravity="start|center"
+    android:layout_marginTop="@dimen/dimen_24"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivLibraryMusic"
+        android:layout_width="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_48"
+        app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="centerInside"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.MidRoundCorner"
+        />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_all_str_1"
+            android:maxLines="1"
+            style="@style/StyleTextView"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="0dp"
+            android:textSize="@dimen/font_17" />
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150 Songs"
+            style="@style/StyleTextView"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:textColor="@color/item_sub_title_color"
+            android:maxLines="1"
+            android:layout_marginTop="0dp"
+            android:textSize="@dimen/font_13"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

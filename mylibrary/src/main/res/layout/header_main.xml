@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_50"
+    android:focusableInTouchMode="true"
+    android:id="@+id/rlHeaderMain">
+
+    <!--<include layout="@layout/common_blur_view" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_18"
+            app:srcCompat="@drawable/hungama_text_icon_new" />
+
+    <TextView
+        style="@style/StyleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:text="@string/discover_str_1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="@dimen/dimen_36"
+        android:layout_height="@dimen/dimen_36"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:layout_toStartOf="@+id/rlNotification"
+        android:paddingStart="@dimen/dimen_8"
+        android:paddingTop="@dimen/dimen_4"
+        android:paddingEnd="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_4"
+        android:tint="@color/colorWhite"
+        app:srcCompat="@drawable/ic_search_actionbar" />
+
+    <RelativeLayout
+        android:id="@+id/rlNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/ivUserPersonalImage"
+        android:contentDescription="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/dimen_36"
+            android:layout_height="@dimen/dimen_36"
+            android:paddingStart="@dimen/dimen_8_5"
+            android:paddingTop="@dimen/dimen_7_75"
+            android:paddingEnd="@dimen/dimen_8_5"
+            android:paddingBottom="@dimen/dimen_7_75"
+            app:srcCompat="@drawable/ic_notification_action_bar"
+            app:tint="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCount"
+            style="@style/StyleTextView"
+            android:layout_width="@dimen/dimen_14"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_alignTop="@id/ivNotification"
+            android:layout_alignEnd="@id/ivNotification"
+            android:layout_alignRight="@id/ivNotification"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_button_gray_round"
+            android:gravity="center"
+            android:text="0"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginEnd="@dimen/dimen_3"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_6"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserPersonalImage"
+            android:layout_width="@dimen/dimen_36"
+            android:layout_height="@dimen/dimen_36"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_4_7"
+            android:layout_marginEnd="@dimen/dimen_19"
+            android:contentDescription="@null"
+            android:padding="@dimen/dimen_4"
+            android:src="@drawable/ic_no_user_img"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.Circle" />
+
+        <RelativeLayout
+            android:id="@+id/ivMenuCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivUserPersonalImage"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dimen_17"
+            android:background="@drawable/ic_round_count_bg_home_action_bar"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:minWidth="@dimen/dimen_40"
+            android:visibility="invisible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCoin"
+                android:layout_width="@dimen/dimen_7_7"
+                android:layout_height="@dimen/dimen_7_7"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginEnd="@dimen/dimen_1"
+                app:srcCompat="@drawable/bg_coin_profile" />
+
+            <TextView
+                android:id="@+id/tvCoinCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_2"
+                android:layout_toEndOf="@id/ivCoin"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_10"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlSearch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_weight="1"
+        android:background="@drawable/drawable_search"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_search"
+            app:tint="@color/colorBlack" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            style="@style/StyleTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:hint="@string/search_str_10"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="200"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:srcCompat="@drawable/ic_voice"
+            app:tint="@color/colorBlack" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</RelativeLayout>

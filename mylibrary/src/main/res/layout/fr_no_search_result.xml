@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:paddingTop="@dimen/dimen_39"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_search_bucket"
+        app:layout_constraintEnd_toStartOf="@+id/llbtnCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="@dimen/dimen_17"
+            android:layout_height="@dimen/dimen_17"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_search_actionbar"
+            app:tint="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_Search"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="0dp"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:hint="@string/search_str_11"
+            android:fontFamily="@font/sf_pro_text"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:maxLength="200"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:lines="1"
+            android:textColorHint="@color/item_sub_title_color"
+            android:textColor="@color/colorWhite" />
+
+
+        <ImageView
+            android:id="@+id/iv_mic_cancel"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dimen_16"
+            app:srcCompat="@drawable/ic_cancel_search"
+            app:tint="@color/colorWhite" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llbtnCancel"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginRight="@dimen/dimen_17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:lineHeight="@dimen/font_50"
+            android:text="@string/popup_str_75"
+            android:textColor="#c6c6c6"
+            android:textSize="@dimen/font_15" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivNoSearchResult"
+        android:layout_width="@dimen/dimen_204"
+        android:layout_height="@dimen/dimen_135"
+        android:layout_marginTop="@dimen/dimen_62"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_gradient_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSearch" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:layout_marginTop="@dimen/dimen_28"
+        android:gravity="center_horizontal"
+        android:text="@string/search_str_22"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_21"
+        app:layout_constraintEnd_toEndOf="@+id/ivNoSearchResult"
+        app:layout_constraintStart_toStartOf="@+id/ivNoSearchResult"
+        app:layout_constraintTop_toBottomOf="@+id/ivNoSearchResult" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_7"
+        android:fontFamily="@font/sf_pro_text"
+        android:gravity="center_horizontal"
+        android:lineHeight="@dimen/font_20"
+        android:text="@string/search_str_21"
+        android:textColor="#c6c6c6"
+        android:textSize="@dimen/font_13"
+        app:layout_constraintEnd_toEndOf="@+id/ivNoSearchResult"
+        app:layout_constraintStart_toStartOf="@+id/ivNoSearchResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_19_1"
+        android:text="@string/search_str_23"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:textSize="@dimen/font_16"
+        android:fontFamily="@font/sf_pro_text"
+        android:background="@drawable/bg_btn_blue"
+        app:layout_constraintEnd_toEndOf="@+id/ivNoSearchResult"
+        app:layout_constraintStart_toStartOf="@+id/ivNoSearchResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

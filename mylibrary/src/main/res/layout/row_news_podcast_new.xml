@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:src="@drawable/ic_mic"/>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle1"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:paddingStart="@dimen/_2sdp"
+                android:text="@string/other_str_19" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle1"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:paddingStart="@dimen/_2sdp"
+                android:text="@string/other_str_20" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--<androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivNews2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle2"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_2sdp"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Corona Virus Daily"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/helvetica_bold"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/colorWhite" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle2"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:text="NPR"
+                android:textSize="@dimen/_8ssp"
+
+                android:textColor="@color/font_color" />
+        </androidx.appcompat.widget.LinearLayoutCompat>-->
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

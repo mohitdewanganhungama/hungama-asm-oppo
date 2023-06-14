@@ -1,0 +1,46 @@
+<RelativeLayout android:id="@+id/rlSubtitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rlHeading"
+    android:layout_marginTop="@dimen/dimen_15"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="@dimen/dimen_25_1"
+        android:layout_height="@dimen/dimen_18_1"
+        android:src="@drawable/ic_checked"
+        app:tint="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/tvEng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_12_9"
+        android:layout_toEndOf="@id/ivCheck"
+        android:fontFamily="@font/sf_pro_text"
+        android:text="@string/other_str_14"
+        android:textColor="@color/item_title_color"
+        android:textSize="@dimen/font_17" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_below="@+id/tvEng"
+        android:background="#707070"
+        android:layout_marginTop="@dimen/dimen_13_5"
+        android:alpha="0.3"/>
+
+    <!--<TextView
+        android:id="@+id/tvOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tvEng"
+        android:layout_below="@id/divider"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:fontFamily="@font/sf_pro_text"
+        android:text="Off"
+        android:textColor="#909090"
+        android:textSize="@dimen/font_17" />-->
+</RelativeLayout>

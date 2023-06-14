@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dimen_285"
+        android:layout_height="@dimen/dimen_162"
+        app:cardCornerRadius="@dimen/dimen_7"
+        android:layout_marginEnd="@dimen/dimen_20"
+        app:cardBackgroundColor="#1A1A1A"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_itype_3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/blur_layout_view" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen_18"
+                    android:paddingEnd="@dimen/dimen_22"
+
+                android:paddingBottom="@dimen/dimen_17">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_weight="1"
+
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/StyleTextView"
+                android:textSize="@dimen/font_15"
+                android:maxLines="2"
+                android:minLines="2"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:layout_gravity="start|center"
+                android:text="" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:textSize="@dimen/font_13"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:layout_gravity="start|center"
+                android:text="" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvConentTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:textSize="@dimen/font_13"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:layout_gravity="start|center"
+                android:text="" />
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:src="@drawable/ic_play_itype_3"/>-->
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="@dimen/dimen_24"
+                        app:fontText="@string/icon_play_round"
+                        app:fontTextColor="@color/colorWhite"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:layout_width="@dimen/dimen_104"
+            android:layout_height="@dimen/dimen_127">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivUserImage3"
+                android:layout_width="@dimen/dimen_85"
+                android:layout_height="@dimen/dimen_127"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_32"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_gradient_placeholder" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_85"
+                android:id="@+id/ivUserImage2"
+                android:layout_height="@dimen/dimen_127"
+
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_gradient_placeholder"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivUserImage1"
+                android:layout_width="@dimen/dimen_85"
+                android:layout_height="@dimen/dimen_127"
+                android:scaleType="centerInside"
+
+                android:src="@drawable/bg_gradient_placeholder" />
+        </RelativeLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

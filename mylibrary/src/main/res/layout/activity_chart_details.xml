@@ -1,0 +1,234 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chartDetailroot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg_layer">
+
+    <include layout="@layout/common_blur_view"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout"
+        android:background="@color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_40">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/albumArtImageView"
+                    android:layout_width="@dimen/dimen_178"
+                    android:layout_height="@dimen/dimen_178"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/albumArtImageView">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:text="@string/chart_str_7"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_21"
+                        app:lineHeight="@dimen/font_25" />
+
+                    <TextView
+                        android:id="@+id/tvSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_2"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/chart_str_6"
+                        android:textColor="@color/item_title_color"
+                        android:textSize="@dimen/font_15"
+                        app:lineHeight="@dimen/font_18" />
+
+                    <TextView
+                        android:id="@+id/tvSubTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_2"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/chart_str_5"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13"
+                        app:lineHeight="@dimen/font_15" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_23"
+                        android:layout_height="@dimen/dimen_22"
+                        app:srcCompat="@drawable/ic_heart_chart" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/dimen_130"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginStart="@dimen/dimen_15_3"
+                        android:layout_marginEnd="@dimen/dimen_13"
+                        android:background="@drawable/common_button_bg_gradient"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="@string/podcast_str_4"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_10_4"
+                            android:layout_height="@dimen/dimen_12_2"
+                            android:layout_marginStart="@dimen/dimen_4"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_play_common_button"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_29"
+                        android:layout_height="@dimen/dimen_29"
+                        app:srcCompat="@drawable/ic_download_chart" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:id="@+id/tvReadMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginEnd="@dimen/dimen_28"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textSize="@dimen/font_13"
+                    app:lineHeight="@dimen/font_22"
+                    android:layout_marginTop="@dimen/dimen_17"
+                    app:layout_constraintTop_toBottomOf="@id/llDetails2"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReadMore"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginStart="@dimen/dimen_18_5"
+                    android:layout_marginEnd="@dimen/dimen_18_5"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_63"
+                android:elevation="@dimen/dimen_2"
+                app:layout_collapseMode="pin"
+                app:buttonGravity="center_vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:id="@+id/llToolbar"
+                    android:layout_height="wrap_content"
+android:visibility="gone"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_23"
+                        android:layout_height="@dimen/dimen_22"
+                        app:srcCompat="@drawable/ic_heart_chart" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/dimen_130"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginStart="@dimen/dimen_15_3"
+                        android:layout_marginEnd="@dimen/dimen_13"
+                        android:background="@drawable/common_button_bg_gradient"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="@string/artist_str_2"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_10_4"
+                            android:layout_height="@dimen/dimen_12_2"
+                            android:layout_marginStart="@dimen/dimen_4"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_play_common_button"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_29"
+                        android:layout_height="@dimen/dimen_29"
+                        app:srcCompat="@drawable/ic_download_chart" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Scrollable content -->
+        <include layout="@layout/chart_detail_content" />
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

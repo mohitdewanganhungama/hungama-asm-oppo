@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_dialog_background_round">
+    <View
+        android:id="@+id/vDevider"
+        android:layout_width="@dimen/dimen_42"
+        android:layout_height="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_7"
+        android:background="@drawable/bottomsheet_icon_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_str_11"
+        android:textSize="@dimen/font_17"
+        android:textColor="#ffffff"
+        android:alpha="0.9"
+        android:layout_marginTop="@dimen/dimen_26"
+        android:layout_marginRight="@dimen/dimen_36"
+        android:layout_marginLeft="@dimen/dimen_37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDevider"/>
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_str_90"
+        android:textSize="@dimen/dimen_13"
+        android:layout_marginTop="@dimen/dimen_3"
+        android:layout_marginLeft="@dimen/dimen_43"
+        android:layout_marginRight="@dimen/dimen_43"
+        android:textColor="#c6c6c6"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="@dimen/dimen_122"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginLeft="@dimen/dimen_51"
+        android:layout_marginTop="@dimen/dimen_33"
+        android:layout_marginBottom="@dimen/dimen_31"
+        android:background="@drawable/bottom_dialog_delete_btn_background"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineHeight="@dimen/font_20"
+        android:lineSpacingExtra="@dimen/font_4"
+        android:text="@string/popup_str_75"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody" />
+
+    <View
+        android:id="@+id/vDelete"
+        android:layout_width="@dimen/dimen_122"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginLeft="@dimen/dimen_17"
+        android:layout_marginTop="@dimen/dimen_33"
+        android:layout_marginBottom="@dimen/dimen_31"
+        android:background="@drawable/btn_download_delete_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@id/tvBody" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_str_5"
+        android:textSize="@dimen/font_16"
+        android:textColor="#ffffff"
+        android:lineHeight="@dimen/font_20"
+        android:lineSpacingExtra="@dimen/font_4"
+        app:layout_constraintTop_toTopOf="@id/vDelete"
+        app:layout_constraintBottom_toBottomOf="@id/vDelete"
+        app:layout_constraintEnd_toEndOf="@id/vDelete"
+        app:layout_constraintStart_toStartOf="@id/vDelete"/>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

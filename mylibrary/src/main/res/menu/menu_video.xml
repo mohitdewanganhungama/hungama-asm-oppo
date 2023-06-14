@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_download_video"
+        android:title="@string/video_player_str_1"/>
+    <item
+        android:id="@+id/action_enable_next_previous"
+        android:title="@string/video_player_str_3"/>
+    <item
+        android:id="@+id/action_enable_forword_backword"
+        android:title="@string/video_player_str_5"/>
+    <item
+        android:id="@+id/action_enable_shuffle"
+        android:title="@string/video_player_str_7"/>
+    <item
+        android:id="@+id/action_enable_repeat"
+        android:title="@string/video_player_str_9"/>
+    <item
+        android:id="@+id/action_enable_play_speed"
+        android:title="@string/video_player_str_11"/>
+    <item
+        android:id="@+id/action_enable_equilizer"
+        android:title="@string/video_player_str_13"/>
+    <item
+        android:id="@+id/media_route_menu_item"
+        android:title="@string/media_route_menu_title"
+        app:actionProviderClass="androidx.mediarouter.app.MediaRouteActionProvider"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+</menu>

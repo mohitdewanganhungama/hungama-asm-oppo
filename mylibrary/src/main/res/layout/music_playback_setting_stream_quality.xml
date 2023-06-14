@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false">
+
+    <include layout="@layout/common_blur_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="#4c4c4c" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topView"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_34"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:text="@string/general_setting_str_17"
+                android:textColor="#f5f5f5"
+                android:textSize="@dimen/font_17"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_11"
+                android:alpha="0.3"
+                android:background="@color/home_mini_player_bg" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvStreamQuality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                tools:itemCount="6"
+                tools:listitem="@layout/row_select_music_playback_quality" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llAskLater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llMain"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/three_dot_menu_close"
+                android:layout_width="@dimen/dimen_122"
+                android:layout_height="@dimen/dimen_35"
+                android:layout_marginTop="@dimen/dimen_26"
+                android:layout_marginBottom="@dimen/dimen_33"
+                android:background="@drawable/corner_radius_18_bg_alpha_white"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    android:visibility="gone"
+                    app:fontText="@string/icon_delete" />
+
+                <TextView
+                    android:id="@+id/btnAsk"
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/music_player_str_15" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llBuyPlanNewPreview"
+                android:layout_width="220dp"
+                android:visibility="gone"
+                android:layout_height="@dimen/dimen_35"
+                android:layout_marginLeft="@dimen/dimen_12"
+                android:layout_marginTop="@dimen/dimen_26"
+                android:layout_marginBottom="@dimen/dimen_33"
+                android:background="@drawable/corner_radius_18_bg_gold"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gradient_rl">
+
+                <!--<ImageView
+                        android:layout_width="@dimen/dimen_17"
+                        android:layout_height="@dimen/dimen_15"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:src="@drawable/ic_upgrade_plan" />-->
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_crown" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUpgradePlanNewPreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_4"
+                    android:ellipsize="marquee"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4sp"
+                    android:marqueeRepeatLimit="1"
+                    android:singleLine="true"
+                    android:text="@string/drawer_download_all_CTA"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_16"
+                    android:textStyle="normal"
+                    app:lineHeight="@dimen/font_20" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/font_color" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

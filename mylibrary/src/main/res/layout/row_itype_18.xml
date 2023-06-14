@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main"
+        android:layout_marginEnd="@dimen/dimen_20"
+        >
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserImage"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/bg_gradient_placeholder"
+                            app:layout_constraintDimensionRatio="16:9"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:background="@drawable/bg_gradient_placeholder"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:id="@+id/llMain"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginEnd="@dimen/dimen_20"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dimen_166">-->
+
+<!--                <com.google.android.material.imageview.ShapeableImageView-->
+<!--                    android:id="@+id/ivUserImage"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_166"-->
+<!--                    android:src="@drawable/banner"-->
+<!--                    android:background="@drawable/bg_gradient_placeholder"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/tvTitlePlaceHolder"-->
+<!--                    style="@style/StyleTextView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_margin="@dimen/dimen_10"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:padding="@dimen/dimen_4"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:text="Hello"-->
+<!--                    android:textColor="@color/colorPlaceholderText"-->
+<!--                    android:textSize="@dimen/_8ssp"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="@dimen/dimen_110"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_height="@dimen/dimen_32"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_marginStart="@dimen/dimen_25"-->
+<!--                    android:layout_marginBottom="@dimen/dimen_17_7"-->
+
+<!--                    >-->
+
+<!--                    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        app:realtimeBlurRadius="50dp"-->
+<!--                        app:realtimeOverlayColor="@color/colorTransparentBlack"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvCheckOut"-->
+<!--                        style="@style/StyleTextView"-->
+<!--                        android:layout_width="@dimen/dimen_110"-->
+<!--                        android:layout_height="@dimen/dimen_32"-->
+<!--                        android:layout_marginTop="0dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="Check Out"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:lineSpacingExtra="@dimen/font_6"-->
+<!--                        android:textColor="@color/colorWhite"-->
+<!--                        android:textSize="@dimen/font_11"-->
+<!--                        android:visibility="visible"-->
+<!--                        android:background="@drawable/itype_18_button_style"-->
+<!--                        />-->
+<!--                </RelativeLayout>-->
+
+
+<!--            </RelativeLayout>-->
+
+
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+</layout>

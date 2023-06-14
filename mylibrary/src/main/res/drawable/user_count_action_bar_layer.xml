@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_round_count_bg_home_action_bar" />
+    <item android:gravity="center" android:drawable="@drawable/ic_count_home_action_bar">
+    </item>
+</layer-list>

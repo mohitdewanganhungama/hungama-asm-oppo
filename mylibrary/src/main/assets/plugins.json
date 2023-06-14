@@ -1,0 +1,28 @@
+{
+    "plugins": [
+        {
+            "name": "rtm",
+            "class": "com.apxor.androidsdk.plugins.realtimeui.ApxorRealtimeUIPlugin"
+        },
+        {
+            "name": "push",
+            "class": "com.apxor.androidsdk.plugins.push.PushPlugin"
+        },
+        {
+            "name": "surveys",
+            "class": "com.apxor.androidsdk.plugins.survey.SurveyPlugin"
+        },
+        {
+            "name": "wysiwyg",
+            "class": "com.apxor.androidsdk.plugins.wysiwyg.WYSIWYGPlugin"
+        },
+        {
+            "name": "cf",
+            "class": "com.apxor.androidsdk.plugins.cf.ApxorCFPlugin"
+        },
+        {
+            "name": "jitlog",
+            "class": "com.apxor.androidsdk.plugins.jitlog.ApxorJITLogPlugin"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item android:drawable="@drawable/ic_otp_box_background" android:height="@dimen/dimen_45" android:width="@dimen/dimen_45"/>
+    <item android:drawable="@color/colorBlack" android:height="@dimen/dimen_45" android:width="@dimen/dimen_45"/>
+</layer-list>

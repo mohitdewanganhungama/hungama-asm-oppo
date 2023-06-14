@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:cardCornerRadius="@dimen/dimen_7"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardPreventCornerOverlap="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160">
+                <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:realtimeBlurRadius="50dp"
+                    app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUserImage"
+                    android:layout_width="@dimen/dimen_56"
+                    android:layout_height="@dimen/dimen_56"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/dimen_11"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="शिव के बाहर कुछ नहीं"
+                    style="@style/StyleTextView"
+                    android:layout_marginTop="@dimen/dimen_18"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/ivUserImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/tvSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 23 2020    55 Min"
+                    style="@style/StyleTextView"
+                    android:layout_marginTop="@dimen/dimen_40"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/ivUserImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.00"
+                    android:layout_marginEnd="@dimen/dimen_11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_chart_more" />
+
+                <TextView
+                    android:id="@+id/tvSubTitle2"
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    android:layout_marginEnd="@dimen/dimen_11"
+                    android:layout_marginTop="@dimen/dimen_75"
+                    android:text="@string/other_str_17"
+                    android:maxLines="2"
+                    android:textSize="@dimen/font_11"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/ivDownload"
+                    android:layout_width="@dimen/dimen_30"
+                    android:layout_height="@dimen/dimen_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="1.00"
+                    android:layout_marginEnd="@dimen/dimen_11"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:layout_marginTop="@dimen/dimen_116"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_chart_download" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    android:text="15 Min left"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPlay"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    android:layout_marginBottom="@dimen/dimen_21_3"
+                    app:layout_constraintStart_toEndOf="@+id/ivUserImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_width="@dimen/dimen_30"
+                    android:layout_height="@dimen/dimen_30"
+                    android:layout_marginTop="@dimen/dimen_116"
+                    android:layout_marginEnd="@dimen/dimen_11"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_play_circle_filled" />
+
+                <ProgressBar
+                    android:id="@+id/pbSong"
+                    style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_6"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/colorWhite"
+                    android:progressTint="@color/colorWhite"
+                    android:secondaryProgressTint="@color/home_mini_player_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

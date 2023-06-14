@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_to_playlist_menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false">
+
+    <include layout="@layout/common_blur_view" />
+
+    <RelativeLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/vDevider"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@drawable/bottomsheet_icon_background"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/tvAddToPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_below="@+id/vDevider"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_17"
+            android:textColor="@color/colorWhite"
+            android:text="@string/menu_str_3"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llCreatePlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_below="@+id/tvAddToPlaylist"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_18"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dimen_25"
+            android:paddingEnd="@dimen/dimen_25">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_create_playlist" />
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:includeFontPadding="false"
+                android:text="@string/library_playlist_str_10" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/tvAllPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_26"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_15"
+            android:textColor="@color/colorWhite"
+            android:text="@string/library_playlist_str_9"
+            android:layout_below="@+id/llCreatePlaylist"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAddToPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_below="@+id/tvAllPlaylist">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddToPlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="@dimen/dimen_280"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/add_to_playlist_menu_close"
+            android:layout_width="@dimen/dimen_118"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_below="@+id/clAddToPlaylist"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_21"
+            android:background="@drawable/corner_radius_18_bg_alpha_white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                android:visibility="gone"
+                app:fontText="@string/icon_delete" />
+
+            <TextView
+                android:id="@+id/btnAsk"
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/music_player_str_15" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <ProgressBar
+            android:id="@+id/pb_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/font_color" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

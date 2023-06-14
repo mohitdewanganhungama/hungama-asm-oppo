@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <RelativeLayout
+            android:id="@+id/rlSlider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_183"
+            android:layout_marginTop="@dimen/dimen_50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerRedeem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_str_37"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_21"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:layout_marginStart="@dimen/dimen_18"
+            app:layout_constraintTop_toBottomOf="@+id/rlSlider"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reward_str_6"
+            android:textSize="@dimen/font_15"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textColor="#C1C1C1"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_3"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vCoin"
+            android:layout_width="@dimen/dimen_16"
+            android:layout_height="@dimen/dimen_16"
+            app:srcCompat="@drawable/bg_coin_profile"
+            android:layout_marginTop="@dimen/dimen_5_5"
+            android:layout_marginStart="@dimen/dimen_3_5"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvSubTitle"/>
+
+        <TextView
+            android:id="@+id/tvCountPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toEndOf="@+id/vCoin"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <Switch
+            android:id="@+id/svMobileNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="start|center"
+            android:checked="false"
+            android:contentDescription="@string/login_str_2"
+            android:switchMinWidth="@dimen/dimen_30"
+            android:layout_marginEnd="@dimen/dimen_23"
+            android:thumb="@drawable/coin_switch_thumb"
+            android:track="@drawable/coin_switch_track"
+            app:layout_constraintEnd_toEndOf="@+id/clView"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clNoCoinAvailable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountPoint">
+
+            <ImageView
+                android:id="@+id/ivNoRedeemCoin"
+                android:layout_width="@dimen/dimen_95"
+                android:layout_height="@dimen/dimen_95"
+                android:layout_marginTop="@dimen/dimen_31_5"
+                android:src="@drawable/ic_no_redeem_coin"
+                app:layout_constraintEnd_toEndOf="@+id/clNoCoinAvailable"
+                app:layout_constraintStart_toStartOf="@+id/clNoCoinAvailable"
+                app:layout_constraintTop_toTopOf="@+id/clNoCoinAvailable" />
+
+            <TextView
+                android:id="@+id/tvNoRedeemCoinTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:gravity="center"
+                android:text="@string/reward_str_103"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintEnd_toEndOf="@+id/clNoCoinAvailable"
+                app:layout_constraintStart_toStartOf="@+id/clNoCoinAvailable"
+                app:layout_constraintTop_toBottomOf="@+id/ivNoRedeemCoin" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btnEarnCoin"
+                android:layout_width="@dimen/dimen_215"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginTop="@dimen/dimen_26"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNoRedeemCoinTitle"
+                android:background="@drawable/corner_radius_18_bg_blue"
+                android:gravity="center"
+                android:layout_centerHorizontal="true">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_earn_coin"/>
+                <TextView
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/reward_str_88" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginBottom="@dimen/dimen_50"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/row_redeem_coins"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCountPoint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

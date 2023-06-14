@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSaved"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMusicPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_5"
+            android:visibility="visible"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/row_all_library" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExplore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_170"
+        android:paddingBottom="@dimen/dimen_120"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/createPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/ivMusicNoContent"
+            android:layout_width="@dimen/dimen_84"
+            android:layout_height="@dimen/dimen_84"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:src="@drawable/ic_music_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createPlaylist" />
+
+        <TextView
+            android:id="@+id/tvnoContentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20_7"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/library_video_str_31"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/font_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMusicNoContent" />
+
+        <TextView
+            android:id="@+id/tvNoContentBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_28"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginRight="@dimen/dimen_28"
+            android:gravity="center"
+            android:lineHeight="@dimen/font_20"
+            android:fontFamily="@font/sf_pro_text"
+            android:lineSpacingExtra="@dimen/dimen_7"
+            android:text="@string/library_video_str_30"
+            android:textColor="#c6c6c6"
+            android:textSize="@dimen/font_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoContentTitle" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExplore"
+            android:layout_width="@dimen/dimen_163"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_21_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoContentBody"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_search"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/profile_str_19" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/layout_progress"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/constantParentFreeMinute"
+    android:clickable="false"
+    android:background="@color/colorTransparentBlack">
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/common_blur_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSubscription_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_70sdp"
+        android:background="@drawable/layout_tranperent_bg_white_outline"
+        android:backgroundTint="#52292828"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include5"
+        tools:ignore="MissingDefaultResource">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/backgroundAnimation1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_250"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true" />
+
+
+        <TextView
+            android:id="@+id/tvinloack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="Unlock"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_28"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundAnimation1" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivFavoriteActionBar"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:contentDescription="@string/login_str_2"
+            app:layout_constraintBottom_toBottomOf="@+id/tvinloack"
+            app:layout_constraintStart_toEndOf="@+id/tvinloack"
+            app:layout_constraintTop_toTopOf="@+id/tvinloack"
+            app:lottie_rawRes="@raw/unlock" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="@string/nudge_stream_unlock_your_favourite_songs"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_18"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvinloack"
+            app:layout_constraintTop_toBottomOf="@+id/tvinloack" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/nudge_stream_preview_new_subheading1"
+            android:textAlignment="textStart"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <HorizontalScrollView
+            android:id="@+id/gradient_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_23sdp"
+                app:layout_constraintBottom_toTopOf="@+id/llBuyPlanNewPreview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_4sdp"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/image_no_ads" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_minute_quota_exhausted_image1"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:src="@drawable/ic_listen_watch_offline" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_stream_preview_image5"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11"
+                        app:autoSizeTextType="none" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_exclusive_contents" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_stream_preview_image4"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/image_hd" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_stream_preview_image3"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:src="@drawable/image_download" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_stream_preview_image2"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_1sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_35"
+                        android:layout_height="@dimen/dimen_35"
+                        android:src="@drawable/ic_live_digital_concerts" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="@string/nudge_stream_preview_image6"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_11" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llBuyPlanNewPreview"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/dimen_15"
+            android:background="@drawable/corner_radius_18_bg_gold"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradient_rl">
+
+            <!--<ImageView
+                    android:layout_width="@dimen/dimen_17"
+                    android:layout_height="@dimen/dimen_15"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_upgrade_plan" />-->
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_crown" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUpgradePlanNewPreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="4sp"
+                android:marqueeRepeatLimit="1"
+                android:singleLine="true"
+                android:text="@string/drawer_download_all_CTA"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_16"
+                android:textStyle="normal"
+                app:lineHeight="@dimen/font_20" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/tnSeeAllNewPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:lineHeight="@dimen/font_20"
+            android:lineSpacingExtra="@dimen/font_4"
+            android:text="@string/txt_see_all"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/font_16"
+            android:visibility="visible"
+            android:paddingBottom="@dimen/_20sdp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llBuyPlanNewPreview" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

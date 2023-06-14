@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_173"
+                android:layout_height="@dimen/dimen_120"
+                android:scaleType="centerInside"
+                android:background="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+            <!--</androidx.cardview.widget.CardView>-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_28"
+                android:layout_height="@dimen/dimen_28"
+                android:layout_marginBottom="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:src="@drawable/ic_play_audio"
+                android:visibility="visible"
+                android:layout_gravity="end|bottom"
+                android:elevation="@dimen/dimen_10"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/colorPlaceholderText"
+                android:includeFontPadding="false"
+                style="@style/StyleTextView"
+                android:padding="@dimen/_2sdp"
+                android:visibility="gone"
+                android:id="@+id/tvTitlePlaceHolder"
+                android:text="@string/discover_str_1"
+                android:layout_margin="@dimen/_8sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|bottom"
+                android:text="4:05"
+                android:visibility="visible"
+                android:id="@+id/tvTime"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/sf_pro_text"
+                android:textSize="@dimen/_8ssp"
+                android:background="@drawable/bg_button_gradient_time"
+                android:includeFontPadding="false"
+                android:padding="@dimen/dimen_4"
+                android:layout_margin="@dimen/dimen_8"
+                />
+
+        </FrameLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/StyleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text=""
+            android:visibility="visible"
+            android:textSize="@dimen/font_15"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/font_18"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/StyleTextViewSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/dimen_2"
+            android:text=""
+            android:visibility="visible"
+            android:fontFamily="@font/sf_pro_text"
+            android:textSize="@dimen/font_13"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/font_15"
+            android:textColor="@color/item_sub_title_color"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLanguageView"
+            style="@style/StyleTextViewSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/dimen_2"
+            android:text=""
+            android:visibility="visible"
+            android:fontFamily="@font/sf_pro_text"
+            android:textSize="@dimen/font_13"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/font_15"
+            android:textColor="@color/item_sub_title_2_color"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

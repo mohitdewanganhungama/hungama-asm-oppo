@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_bg_layer">
+        <!--<include layout="@layout/common_blur_view"/>-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bgSplash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+             />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSplash"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_8"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text=""/>
+
+        <include
+            layout="@layout/layout_progress"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- Template View for native ad -->
+        <com.google.android.ads.nativetemplates.TemplateView
+            android:layout_alignParentTop="true"
+            android:visibility= "gone"
+            android:id= "@+id/nativeTemplateView"
+            app:gnt_template_type= "@layout/gnt_splash_template_view"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_20"/>
+
+        <ImageView
+            android:id="@+id/ivCloseAd"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:padding="@dimen/dimen_15"
+            android:src="@drawable/ic_close"
+            android:layout_alignTop="@+id/nativeTemplateView"
+            android:layout_alignEnd="@+id/nativeTemplateView"
+            app:tint="@color/colorWhite"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/clProgressView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_70"
+            android:background="@drawable/gnt_round_shape_bg"
+            android:layout_below="@+id/nativeTemplateView"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tvWillBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:textSize="@dimen/font_14"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="@string/login_str_58" />
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:layout_below="@+id/tvWillBack"
+                android:layout_alignParentEnd="true"
+                android:textSize="@dimen/font_12"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="00:00"/>
+            <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/tvProgress"
+                android:layout_alignTop="@+id/tvProgress"
+                android:layout_alignBottom="@+id/tvProgress"
+                android:layout_marginStart="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:indeterminate="false"
+                style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+                />
+        </RelativeLayout>
+
+
+
+        <!-- vertical linear layout with 3  button -->
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_margin= "16dp"
+            android:orientation= "vertical"
+            android:layout_width= "match_parent"
+            android:layout_height= "wrap_content">
+
+            <!-- Simple Buttons to Load Native Ad when clicked -->
+            <Button
+                android:textSize= "24dp"
+                android:layout_margin= "8dp"
+                android:id= "@+id/loadNativeBtn"
+                android:text=""
+                android:fontFamily= "serif"
+                android:textStyle= "bold"
+                android:textColor= "#ffffff"
+                android:background= "@color/colorPrimary"
+                android:layout_width= "match_parent"
+                android:layout_height= "50dp"
+                android:visibility="gone"/>
+
+            <!-- Simple Buttons to Show  Native Ad if is is loaded when clicked -->
+            <Button
+                android:textSize= "24dp"
+                android:layout_margin= "8dp"
+                android:id= "@+id/showNativeBtn"
+                android:text=""
+                android:fontFamily= "serif"
+                android:textStyle= "bold"
+                android:textColor= "#ffffff"
+                android:background= "@color/colorPrimary"
+                android:layout_width= "match_parent"
+                android:layout_height= "50dp"
+                android:visibility="gone"/>
+
+            <!-- Simple Buttons to Hide  Native Ad if it is shown  -->
+            <Button
+                android:textSize= "24dp"
+                android:layout_margin= "8dp"
+                android:id= "@+id/hideNativeBtn"
+                android:text=""
+                android:fontFamily= "serif"
+                android:textStyle= "bold"
+                android:textColor= "#ffffff"
+                android:background= "@color/colorPrimary"
+                android:layout_width= "match_parent"
+                android:layout_height= "50dp"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStoryV2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:paddingStart="@dimen/dimen_20"
+            android:paddingEnd="@dimen/dimen_20"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvStoryV2"
+                style="@style/commonMediumButtonStyle"
+                android:fontFamily="@font/sf_pro_text"
+                android:textStyle="normal"
+                android:textSize="@dimen/font_16"
+                android:layout_marginStart="@dimen/dimen_0"
+                android:text="@string/login_str_57"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</layout>

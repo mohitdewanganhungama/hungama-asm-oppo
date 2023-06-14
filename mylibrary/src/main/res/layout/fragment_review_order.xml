@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg_layer"
+    tools:context="com.hungama.music.ui.main.view.fragment.ReviewOrderFragment">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_redeem_coins_physical_1"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <include layout="@layout/common_blur_view"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_80"
+        android:paddingTop="@dimen/dimen_60">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clcard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_163"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_21"
+        android:layout_marginRight="@dimen/dimen_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/settings_item_bg_color"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_21"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/reward_str_95"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clcard" />
+
+        <ImageView
+            android:id="@+id/ivproduct"
+            android:layout_width="@dimen/dimen_132"
+            android:layout_height="@dimen/dimen_75"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@drawable/bg_gradient_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvproductTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text=""
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_15"
+            app:layout_constraintStart_toEndOf="@+id/ivproduct"
+            app:layout_constraintTop_toTopOf="@+id/ivproduct"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/vDelivery"
+            android:layout_width="@dimen/dimen_122"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@drawable/bg_row_processing"
+            app:layout_constraintStart_toEndOf="@+id/ivproduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvproductTitle"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvDeliveryTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reward_str_44"
+            android:textColor="#c6c6c6"
+            android:textSize="@dimen/font_11"
+            app:layout_constraintBottom_toBottomOf="@+id/vDelivery"
+            app:layout_constraintEnd_toEndOf="@+id/vDelivery"
+            app:layout_constraintStart_toStartOf="@+id/vDelivery"
+            app:layout_constraintTop_toTopOf="@+id/vDelivery"
+            android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clcard2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clcard"
+        android:visibility="gone">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/settings_item_bg_color"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_21"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="@string/reward_str_96"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_17" />
+
+               <!-- <ImageView
+                    android:layout_width="@dimen/dimen_17"
+                    android:layout_height="@dimen/dimen_17"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_28" />-->
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivEditShippingDetail"
+                    android:layout_width="@dimen/dimen_44"
+                    android:layout_height="@dimen/dimen_44"
+                    android:padding="@dimen/dimen_13_5"
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_edit"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_5"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvShippingDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_21"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_18"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:textColor="@color/item_sub_title_color"
+                android:textSize="@dimen/font_15" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clcard3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clcard2">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/settings_item_bg_color"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/coin"
+                    android:layout_width="@dimen/dimen_20"
+                    android:layout_height="@dimen/dimen_21"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_17"
+                    app:srcCompat="@drawable/bg_coin_profile" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_6"
+                    android:layout_marginTop="@dimen/dimen_17"
+                    android:layout_toEndOf="@+id/coin"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="@string/reward_str_97"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/font_16" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_marginTop="@dimen/dimen_13"
+                android:alpha="0.3"
+                android:background="#707070" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="@string/reward_str_48"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/userCoins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_19"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="1,430"
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_marginTop="@dimen/dimen_13"
+                android:alpha="0.3"
+                android:background="#707070" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="@string/profile_str_37"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/redeemCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_19"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text=""
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_marginTop="@dimen/dimen_13"
+                android:alpha="0.3"
+                android:background="#707070" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginBottom="@dimen/dimen_18">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="@string/reward_str_49"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tvBalanceCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_19"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text=""
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_15" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/language_selection_sheet_gradient" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:layout_marginBottom="@dimen/dimen_32"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnMyOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/dimen_5"
+            app:layout_constraintTop_toBottomOf="@+id/clcard3"
+            android:background="@drawable/corner_radius_18_bg_alpha_white"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_delete"
+                android:visibility="gone"
+                app:fontTextSize="@dimen/font_13"/>
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/reward_str_42"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnOrderContinue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clcard3"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_redeem_coin"/>
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/reward_str_41"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <include layout="@layout/common_header_action_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

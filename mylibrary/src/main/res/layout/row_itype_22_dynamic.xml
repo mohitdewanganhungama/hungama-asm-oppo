@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--<com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_230"
+            android:scaleType="centerInside"
+            android:background="@drawable/bg_gradient_placeholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+-->
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="2:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"
+                app:srcCompat="@drawable/bg_gradient_placeholder" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="@dimen/dimen_35"
+                android:layout_height="@dimen/dimen_32"
+                android:layout_marginStart="@dimen/dimen_9"
+                android:background="@drawable/ic_bg_live"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/view1"
+                app:layout_constraintStart_toStartOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@id/view1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09"
+                    android:layout_gravity="center"
+                    android:id="@+id/tvDay"
+                    android:textSize="@dimen/font_9"
+                    android:lineSpacingExtra="@dimen/dimen_0"
+                    android:lineHeight="@dimen/font_9"
+                    android:textColor="@color/colorWhite" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAR"
+                    android:layout_gravity="center"
+                    android:id="@+id/tvMonth"
+                    android:lineSpacingExtra="@dimen/dimen_0"
+                    android:lineHeight="@dimen/font_9"
+                    android:textSize="@dimen/font_9"
+                    android:textColor="@color/colorWhite"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

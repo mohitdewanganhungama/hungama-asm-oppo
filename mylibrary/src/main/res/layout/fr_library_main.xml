@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rlMain"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <include
+            layout="@layout/layout_progress"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true"
+        android:fitsSystemWindows="true"
+        android:background="#00000000"
+        app:layout_behavior="com.hungama.music.utils.FixedAppBarLayoutBehavior"
+        android:elevation="0dp"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:background="#00000000"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include layout="@layout/common_blur_view"/>
+                <include android:id="@+id/headerHome"
+                    layout="@layout/header_main"/>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/common_blur_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_104"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_34"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginBottom="@dimen/dimen_14"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:tabGravity="fill"
+                app:tabMaxWidth="0dp"
+                app:tabIndicatorHeight="0dp"
+
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/colorWhite"
+                app:tabTextAppearance="@style/LibTabTextAppearance" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/childTabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_34"
+                android:layout_below="@+id/tabs"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginBottom="@dimen/dimen_14"
+                android:paddingEnd="@dimen/dimen_18"
+                app:tabBackground="@drawable/selector_tab_home"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="0dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/tab_selected_color"
+                app:tabTextAppearance="@style/TabTextAppearance" />
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

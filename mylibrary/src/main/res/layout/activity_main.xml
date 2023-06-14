@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/home_bg_layer">
+    <!--<include layout="@layout/blur_layout_view"/>-->
+       <!--This is fragmen container -->
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/swipablePlayerShimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/skeleton_swipable_view" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <!-- id->rlBottomSheetAndMiniPlayerBlurView
+    This view is background for combination of bottom navigation and mini player.
+    If you change one of view height then you have to change it in every place where this id exist. -->
+    <RelativeLayout
+        android:id="@+id/rlBottomSheetAndMiniPlayerBlurView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_124"
+        android:layout_alignBottom="@+id/llBottomNavigation">
+
+        <include layout="@layout/common_blur_view" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlStickyAdsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1px"
+        android:layout_above="@+id/rlBottomSheetAndMiniPlayerBlurView"
+        android:visibility="gone">
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/sticky_ad_view_container"
+            android:layout_alignBottom="@id/sticky_ad_view_container"
+            android:background="@color/home_bg_color_2"/>-->
+        <include layout="@layout/common_blur_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/sticky_ad_view_container"
+            android:layout_alignBottom="@id/sticky_ad_view_container"/>
+        <FrameLayout
+            android:id="@+id/sticky_ad_view_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/clRemoveAds"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRemoveAds"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_17"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:paddingStart="@dimen/dimen_15"
+            android:paddingEnd="@dimen/dimen_15"
+            android:layout_alignEnd="@id/sticky_ad_view_container"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvStoryV2"
+                style="@style/commonMediumButtonStyle"
+                android:fontFamily="@font/sf_pro_text"
+                android:textStyle="normal"
+                android:textSize="@dimen/font_10"
+                android:layout_marginStart="@dimen/dimen_0"
+                android:text="@string/remove_ads"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/devider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorBlack"
+            android:visibility="gone"
+            />
+        <com.hungama.music.utils.customview.CustomTabView
+            android:id="@+id/tabMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/clParentBotoomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layout_above="@+id/llBottomNavigation">
+
+        <include layout="@layout/new_now_playing_bottom_sheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

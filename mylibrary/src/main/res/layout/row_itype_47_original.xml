@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_two_bucket_space_listing_page">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMainView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_gradient_placeholder"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_gradient_placeholder"
+                android:visibility="visible"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.media3.ui.PlayerView
+                android:id="@+id/episode_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200"
+                android:background="@drawable/bg_gradient_placeholder"
+                android:visibility="gone"
+                app:default_artwork="@drawable/bg_gradient_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:use_controller="false" />
+
+            <ProgressBar
+                android:id="@+id/preViewProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                style="?android:attr/progressBarStyle"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llMute"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_18"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:background="@drawable/round_mute_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/episode_player_view"
+                app:layout_constraintEnd_toEndOf="@+id/episode_player_view">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivMuteUnmute"
+                    style="@style/commonMediumIconStyle"
+                    android:layout_marginStart="@dimen/dimen_3"
+                    app:fontText="@string/icon_mute" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llHeaderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clMainView">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/StyleTextView"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_21"
+                        android:textStyle="normal"
+                        android:layout_marginTop="@dimen/dimen_0"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="@dimen/dimen_44"
+                    android:layout_height="@dimen/dimen_44"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/login_str_2"
+                    android:paddingStart="@dimen/dimen_16"
+                    android:paddingTop="@dimen/dimen_14"
+                    android:paddingEnd="@dimen/dimen_18"
+                    android:paddingBottom="@dimen/dimen_14"
+                    android:src="@drawable/ic_more"
+                    android:visibility="visible"
+                    app:tint="@color/colorWhite" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llHeaderSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llHeaderTitle">
+
+            <com.hungama.music.utils.customview.ShowMoreTextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:textColor="@color/item_sub_title_color"
+                android:textSize="@dimen/font_13" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/tvEpisodesHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/podcast_str_9"
+            android:textColor="@color/item_title_color"
+            android:textSize="@dimen/font_17"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llHeaderSubTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOriginalEpisodes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dimen_18"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tvEpisodesHeader"
+            app:spanCount="3"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_itype_orignal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,810 @@
+{
+  "head": {
+    "rows": [
+      {
+        "type": 1,
+        "data": {}
+      },
+      {
+        "type": 2,
+        "data": {}
+      }
+    ]
+  },
+  "body": {
+    "rows": [
+      {
+        "type": 4,
+        "heading": "My Favorites and Downaload",
+        "hscroll": 1,
+        "numrow": 2,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "D/F Playlist",
+              "subTitle": "User Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "D/F Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "D/F Podcast",
+              "subTitle": "User Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Favorite Radio",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Favorite Artist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Recommended For You",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "Clickabke Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "D/F Podcast",
+              "subTitle": "User Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Favorite Radio",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Favorite Artist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Most Played D/F",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Morning Radio",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Radio",
+              "subTitle": "xxx listening",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Trending Today",
+        "hscroll": 1,
+        "numrow": 2,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Moods and Genre",
+        "hscroll": 1,
+        "numrow": 3,
+        "more": 1,
+        "itype": 10,
+        "items": [
+          {
+            "itype": 10,
+            "data": {
+              "title": "Relax",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Travel",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Romance",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Hip-Hop",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Focus",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "EDM",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Workout",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Energy Boosters",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "2000s",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Rocks",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Pop",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 10,
+            "data": {
+              "title": "Feel Good",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Artist Similar to(User's Fav)",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 4,
+        "items": [
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 4,
+            "data": {
+              "title": "Artist Name",
+              "subTitle": "xxx Followers",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Podcast(Fav Category)",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist/Album",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Playlist(Fav Category)",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 2,
+        "items": [
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 2,
+            "data": {
+              "title": "Playlist",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Songs Picked for you",
+        "hscroll": 1,
+        "numrow": 5,
+        "more": 1,
+        "itype": 8,
+        "items": [
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 8,
+            "data": {
+              "title": "Songs Name",
+              "subTitle": "Artist Name",
+              "image": "url"
+            }
+          }
+        ]
+      },
+      {
+        "type": 4,
+        "heading": "Best Music Video",
+        "hscroll": 1,
+        "numrow": 1,
+        "more": 1,
+        "itype": 5,
+        "items": [
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          },
+          {
+            "itype": 5,
+            "data": {
+              "title": "Music Video",
+              "subTitle": "xxx views",
+              "image": "url"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "rows": [
+      {
+        "type": 3,
+        "data": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_62">
+    <!--<include layout="@layout/common_blur_view"/>-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMainView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_62"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_5">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llDiscover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTabDiscover"
+                android:layout_width="@dimen/dimen_21_4"
+                android:layout_height="@dimen/dimen_21_4"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_home_bottom_navigation_main" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabDiscoverAnim"
+                android:layout_width="@dimen/dimen_31"
+                android:layout_height="@dimen/dimen_31"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/login_str_2"
+                android:visibility="visible"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/discover_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabDiscover"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_5"
+                android:textColor="@color/colorWhite" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMusic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTabMusic"
+                android:layout_width="@dimen/dimen_25_9"
+                android:layout_height="@dimen/dimen_21_4"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_music_bottom_navigation_main" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabMusicAnim"
+                android:layout_width="@dimen/dimen_35"
+                android:layout_height="@dimen/dimen_31"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/login_str_2"
+                android:visibility="visible"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/listen_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabMusic"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_6" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llTabPlayer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivTabPlayerBg"
+                    android:layout_width="@dimen/dimen_45"
+                    android:layout_height="@dimen/dimen_45"
+                    android:alpha="0.18"
+                    android:layout_centerInParent="true"
+                    android:background="@color/colorWhite"
+                    android:contentDescription="@null"
+                    android:visibility="gone"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+
+                <ProgressBar
+                    android:id="@+id/pbTabPlayer"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:background="@drawable/circle_shape_progrssbar"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular_progress_bar_free_user"
+                    android:secondaryProgress="0" />
+
+                <!--<com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/pbTabPlayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:progress="10"
+                    android:visibility="visible"
+                    app:indicatorColor="@color/color_subscription_progress_free"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:trackColor="@color/colorMidGray"
+                    app:trackCornerRadius="@dimen/dimen_7"
+                    app:trackThickness="@dimen/dimen_7" />-->
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivTabPlayer"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+                    app:srcCompat="@drawable/bg_gradient_placeholder" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivTabPlayerFg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:visibility="gone"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+                    app:srcCompat="@drawable/player_tab_blackdrop" />
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivTabPlayPause"
+                    style="@style/commonMediumIconStyle"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/dimen_0"
+                    android:visibility="gone"
+                    app:fontText="@string/icon_play"
+                    app:fontTextSize="@dimen/font_9" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabPlayer"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_3"
+                android:includeFontPadding="false"
+                android:text="@string/now_playing"
+                android:visibility="gone" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llVideo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTabVideo"
+                android:layout_width="@dimen/dimen_25_8"
+                android:layout_height="@dimen/dimen_21_4"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_video_bottom_navigation_main" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabVideoAnim"
+                android:layout_width="@dimen/dimen_35"
+                android:layout_height="@dimen/dimen_31"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/login_str_2"
+                android:visibility="visible"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/watch_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabVideo"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_7" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTabSearch"
+                android:layout_width="@dimen/dimen_21_4"
+                android:layout_height="@dimen/dimen_21_4"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_search_bottom_navigation_main" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabSearchAnim"
+                android:layout_width="@dimen/dimen_28"
+                android:layout_height="@dimen/dimen_28"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:contentDescription="@string/login_str_2"
+                android:visibility="visible"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/search_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabSearch"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_8" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llLibrary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTabLibrary"
+                android:layout_width="@dimen/dimen_21_3"
+                android:layout_height="@dimen/dimen_21_4"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_library_bottom_navigation_main" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabLibraryAnim"
+                android:layout_width="@dimen/dimen_28"
+                android:layout_height="@dimen/dimen_28"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:contentDescription="@string/login_str_2"
+                android:visibility="visible"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/library_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTabLibrary"
+                style="@style/StyleBottomTextView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_9" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

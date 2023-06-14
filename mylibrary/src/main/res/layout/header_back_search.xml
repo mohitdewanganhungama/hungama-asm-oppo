@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_70"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="start|center"
+    android:orientation="horizontal">
+
+    <!--
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
+        android:id="@+id/ivBack"
+        app:tint="@color/colorWhite"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:src="@drawable/ic_back"/>
+    -->
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlSearch"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:layout_marginStart="@dimen/dimen_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:realtimeBlurRadius="150dp"
+            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_gradient_follow">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_14"
+                android:layout_height="@dimen/dimen_14"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dimen_14_4"
+                app:srcCompat="@drawable/ic_search_actionbar"
+                app:tint="@color/colorWhite" />
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etSearch"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text"
+                android:gravity="start|center"
+                android:hint="@string/discover_str_15"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="200"
+                android:maxLines="1"
+                android:paddingStart="@dimen/dimen_6"
+                android:paddingEnd="@dimen/dimen_6"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/half_opacity_white_color"
+                android:textSize="@dimen/font_14" />-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text"
+                android:gravity="start|center"
+                android:hint="@string/search_str_11"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="200"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_6sdp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/item_sub_title_color"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/iv_mic_cancel"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dimen_16"
+                app:srcCompat="@drawable/ic_mic_search_actionbar"
+                app:tint="@color/colorWhite" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,80 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/purchasesRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <include layout="@layout/blur_layout_view" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_142"
+            android:layout_marginTop="@dimen/dimen_56"
+            android:descendantFocusability="blocksDescendants">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/tabView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+        <!-- Scrollable content -->
+
+
+    </androidx.core.widget.NestedScrollView>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_60">
+    <include layout="@layout/common_blur_view"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_34"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:minHeight="@dimen/dimen_34"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/selector_tab_home"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/tab_selected_color"
+        app:tabTextAppearance="@style/TabTextAppearance" />
+</RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <include
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+</RelativeLayout>

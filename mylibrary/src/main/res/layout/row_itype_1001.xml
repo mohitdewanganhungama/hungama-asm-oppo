@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Main"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/dimen_15"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="@dimen/dimen_86"
+        android:layout_height="@dimen/dimen_110"
+        android:background="@drawable/common_corner_radius"
+        android:id="@+id/rlMain">
+
+        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:realtimeBlurRadius="150dp"
+            app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMain"
+            android:layout_width="@dimen/dimen_85"
+            android:layout_height="@dimen/dimen_111"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_52"
+                android:layout_height="@dimen/dimen_56"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_7">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUserImage"
+                    android:layout_width="@dimen/dimen_52"
+                    android:layout_height="@dimen/dimen_52"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_gradient_placeholder"
+                    app:shapeAppearance="@style/ShapeAppearanceOverlay.App.Circle" />
+
+                <!--<androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCast"
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/dimen_4"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:letterSpacing="0.16"
+                    android:maxLines="2"
+                    android:padding="@dimen/dimen_2"
+
+                    android:text="Patty Jenkins"
+                    android:textColor="@color/cast_color"
+                    android:textSize="@dimen/font_7" />-->
+                <RelativeLayout
+                    android:layout_width="@dimen/dimen_60"
+                    android:layout_height="@dimen/dimen_15"
+                    android:layout_alignParentBottom="true">
+
+                    <!--android:background="@drawable/movie_bg_gradient_common"-->
+
+                    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:realtimeBlurRadius="150dp"
+                        app:realtimeOverlayColor="@color/colorSemiTransparent" />
+
+                    <TextView
+                        android:id="@+id/tvCast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/dimen_4"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:letterSpacing="0.16"
+                        android:maxLines="1"
+                        android:textColor="@color/cast_color"
+                        android:textSize="@dimen/font_7"
+                        android:visibility="visible"
+                        app:lineHeight="@dimen/font_15" />
+
+
+                </RelativeLayout>
+
+                <!--            <androidx.cardview.widget.CardView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                app:cardCornerRadius="8dp"-->
+                <!--                android:elevation="10dp">-->
+                <!--            <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                android:id="@+id/ivUserImage"-->
+                <!--                android:layout_width="@dimen/_178sdp"-->
+                <!--                android:layout_height="@dimen/_113sdp"-->
+                <!--                android:scaleType="fitXY"-->
+                <!--                android:src="@drawable/bg_gradient_placeholder" />-->
+                <!--            </androidx.cardview.widget.CardView>-->
+                <TextView
+                    android:id="@+id/tvTitlePlaceHolder"
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/discover_str_1"
+                    android:textColor="@color/colorPlaceholderText"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:lineHeight="@dimen/font_17"
+                android:maxLines="2"
+                android:text="@string/other_str_19"
+                android:textAlignment="center"
+                android:textSize="@dimen/font_13"
+                android:textStyle="normal" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

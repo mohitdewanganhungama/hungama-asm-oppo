@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="@dimen/dimen_21"
+        android:layout_height="@dimen/dimen_21"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:background="@drawable/bg_shimmer_view_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@dimen/dimen_6"
+        android:layout_height="@dimen/dimen_26"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:background="@drawable/bg_shimmer_view_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="@dimen/dimen_21"
+        android:layout_height="@dimen/dimen_21"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:layout_marginEnd="@dimen/dimen_21"
+        android:background="@drawable/bg_shimmer_view_icon"
+        app:layout_constraintEnd_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="@dimen/dimen_21"
+        android:layout_height="@dimen/dimen_21"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:layout_marginEnd="@dimen/dimen_21"
+        android:background="@drawable/bg_shimmer_view_icon"
+        app:layout_constraintEnd_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/llView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        android:layout_marginTop="@dimen/dimen_65"
+        android:orientation="horizontal"
+        >
+        <View
+            android:layout_width="@dimen/dimen_21"
+            android:layout_height="@dimen/dimen_21"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_shimmer_view_icon"/>
+        <View
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_marginStart="@dimen/dimen_27"
+            android:layout_marginEnd="@dimen/dimen_28"
+            android:background="@drawable/bg_shimmer_view_icon"/>
+        <View
+            android:layout_width="@dimen/dimen_21"
+            android:layout_height="@dimen/dimen_21"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_shimmer_view_icon"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/view5"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_2"
+        android:background="#FFFFFF"
+        android:alpha="0.5"
+        android:layout_marginTop="@dimen/dimen_38"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_4"
+        app:layout_constraintEnd_toStartOf="@+id/view8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llView1"/>
+    <View
+        android:id="@+id/view6"
+        android:layout_width="@dimen/dimen_11"
+        android:layout_height="@dimen/dimen_11"
+        android:background="@drawable/bg_skeleton_seekbar"
+        app:layout_constraintTop_toTopOf="@id/view5"
+        app:layout_constraintBottom_toBottomOf="@id/view5"
+        app:layout_constraintStart_toStartOf="@id/view5"
+        android:layout_marginStart="@dimen/dimen_50"/>
+    <View
+        android:id="@+id/view7"
+        android:layout_width="@dimen/dimen_21"
+        android:layout_height="@dimen/dimen_21"
+        android:background="@drawable/bg_shimmer_view_icon"
+        android:layout_marginTop="@dimen/dimen_28"
+        android:layout_marginEnd="@dimen/dimen_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llView1"/>
+    <View
+        android:id="@+id/view8"
+        android:layout_width="@dimen/dimen_26"
+        android:layout_height="@dimen/dimen_11"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@id/llView1"
+        app:layout_constraintEnd_toStartOf="@+id/view7"
+        android:layout_marginEnd="@dimen/dimen_22"
+        android:layout_marginTop="@dimen/dimen_33"/>
+    <View
+        android:id="@+id/view9"
+        android:layout_width="@dimen/dimen_194"
+        android:layout_height="@dimen/dimen_18"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/dimen_43"/>
+    <View
+        android:id="@+id/view10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_18"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dimen_23"
+        android:layout_marginEnd="@dimen/dimen_23"
+        android:layout_marginTop="@dimen/dimen_11"/>
+    <LinearLayout
+        android:id="@+id/llView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/view10"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_36"
+            android:background="@drawable/bg_skeleton_buttons"/>
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_36"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:background="@drawable/bg_skeleton_buttons"/>
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_36"
+            android:background="@drawable/bg_skeleton_buttons"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/view11"
+        android:layout_width="@dimen/dimen_203"
+        android:layout_height="@dimen/dimen_24"
+        android:background="@drawable/bg_skeleton_video_detials"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_35"
+        app:layout_constraintTop_toBottomOf="@+id/llView2"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <View
+        android:id="@+id/view12"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_85"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_25"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/view12"
+        app:layout_constraintTop_toTopOf="@+id/view12">
+
+        <View
+            android:layout_width="@dimen/dimen_157"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_135"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view13"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_85"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view12"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_20"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/view13"
+        app:layout_constraintTop_toTopOf="@+id/view13">
+
+        <View
+            android:layout_width="@dimen/dimen_157"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_135"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+    </LinearLayout>
+    <View
+        android:id="@+id/view14"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_85"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view13"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_20"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/view14"
+        app:layout_constraintTop_toTopOf="@+id/view14">
+
+        <View
+            android:layout_width="@dimen/dimen_157"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_135"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+    </LinearLayout>
+    <View
+        android:id="@+id/view15"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_85"
+        android:background="@drawable/bg_shimmer_item_view"
+        app:layout_constraintTop_toBottomOf="@+id/view14"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_20"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/view15"
+        app:layout_constraintTop_toTopOf="@+id/view15">
+
+        <View
+            android:layout_width="@dimen/dimen_157"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_9"
+            android:background="@drawable/bg_shimmer_item_view" />
+
+        <View
+            android:layout_width="@dimen/dimen_135"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/bg_shimmer_item_view" />
+    </LinearLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

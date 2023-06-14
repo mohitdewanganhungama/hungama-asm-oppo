@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <View
+        android:id="@+id/vNowPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dimen_8"
+        app:layout_constraintTop_toTopOf="@+id/llMain"
+        app:layout_constraintBottom_toBottomOf="@+id/llMain"
+        android:background="@drawable/now_playing_bg"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_8"
+        android:paddingStart="@dimen/dimen_8"
+        android:id="@+id/llMain"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rlImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:scaleType="centerInside"
+                android:background="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivEqualizer"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_equalizer"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivEqualizerAnim"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/login_str_2"
+                app:lottie_loop="true"
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/equalizer" />
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/StyleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/ivDownload"
+            android:text="AAAAAAAAAAAAAAAAAAAAAAAA"
+            />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/ivDownload"
+        android:layout_marginStart="@dimen/dimen_14"
+        android:layout_below="@id/tvTitle"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/ivE"
+            android:layout_width="@dimen/dimen_11"
+            android:layout_height="@dimen/dimen_11"
+            app:srcCompat="@drawable/ic_explicit"
+            app:tint="@color/item_sub_title_color"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dimen_5"
+            android:visibility="gone"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/StyleTextViewSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:text="AAAAAAAAAAAAAAAAAAAAAAAA"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivMore"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:paddingTop="@dimen/dimen_13"
+        android:paddingBottom="@dimen/dimen_13"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_chart_more"/>
+
+    <ImageView
+        android:id="@+id/ivDownload"
+        android:layout_width="@dimen/dimen_40"
+        android:layout_height="@dimen/dimen_44"
+        android:paddingStart="@dimen/dimen_12"
+        android:paddingEnd="@dimen/dimen_0"
+        android:paddingTop="@dimen/dimen_12"
+        android:paddingBottom="@dimen/dimen_12"
+        android:layout_toStartOf="@id/ivMore"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_chart_download"
+        app:tint="@color/colorWhite" />
+</RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

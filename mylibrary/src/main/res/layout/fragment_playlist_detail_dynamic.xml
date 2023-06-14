@@ -1,0 +1,519 @@
+<RelativeLayout
+    android:id="@+id/playlistDetailroot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/home_bg_color">
+    <!--<include layout="@layout/common_blur_view"/>-->
+    <!-- <ImageView
+         android:id="@+id/iv_collapsingImageBg"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/dimen_420"/>-->
+
+
+    <View
+        android:id="@+id/centerGradient"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_350"
+        android:layout_marginTop="@dimen/dimen_250"
+        android:background="@drawable/movie_center_gradient"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/iv_collapsingImageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <include layout="@layout/common_blur_view"/>
+    <View
+        android:id="@+id/fullGradient"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/podcast_gradient_layer"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_chart_details"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:visibility="visible">
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <View
+                android:id="@+id/v2Bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_480"
+                android:visibility="gone"/>
+
+            <View
+                android:id="@+id/mainGradientView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/podcast_gradient_layer"
+                android:visibility="gone"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_40">
+
+                <RelativeLayout
+                    android:id="@+id/rlImage"
+                    android:layout_width="@dimen/dimen_178"
+                    android:layout_height="@dimen/dimen_178"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/playlistAlbumArtImageViewLayer"
+                        android:layout_width="@dimen/dimen_178"
+                        android:layout_height="@dimen/dimen_178"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:layout_collapseMode="parallax"
+                        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/playlistAlbumArtImageView"
+                        android:layout_width="@dimen/dimen_178"
+                        android:layout_height="@dimen/dimen_178"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax"
+
+                        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlImage">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_20" />
+
+                    <TextView
+                        android:id="@+id/tvSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_18"
+                        android:layout_marginTop="@dimen/dimen_6"
+                        android:layout_marginEnd="@dimen/dimen_18"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/item_title_color"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/tvSubTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_6"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails">
+
+
+                    <!--<androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivFavorite"
+                        android:layout_width="@dimen/dimen_44"
+                        android:layout_height="@dimen/dimen_44"
+                        android:paddingStart="@dimen/dimen_10_5"
+                        android:paddingEnd="@dimen/dimen_10_5"
+                        android:paddingTop="@dimen/dimen_11"
+                        android:paddingBottom="@dimen/dimen_11"
+                        app:srcCompat="@drawable/ic_heart_chart" />-->
+                    <!--<com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivFavorite"
+                        android:layout_width="@dimen/dimen_44"
+                        android:layout_height="@dimen/dimen_44"
+                        android:paddingStart="@dimen/dimen_8_5"
+                        android:paddingEnd="@dimen/dimen_8_5"
+                        android:paddingTop="@dimen/dimen_9"
+                        android:paddingBottom="@dimen/dimen_9"
+                        app:fontText="@string/icon_like"
+                        app:fontTextColor="@color/colorWhite"/>-->
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/ivFavorite"
+                        android:layout_width="@dimen/dimen_45"
+                        android:layout_height="@dimen/dimen_45"
+                        android:contentDescription="@string/login_str_2"
+                        app:lottie_autoPlay="false"
+                        app:lottie_loop="false"
+                        app:lottie_rawRes="@raw/like_anim" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/llPlayAllAnim"
+                        android:layout_width="@dimen/dimen_130"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginStart="@dimen/dimen_4_8"
+                        android:layout_marginEnd="@dimen/dimen_4_5"
+                        android:visibility="gone"
+                        app:lottie_autoPlay="false"
+                        app:lottie_loop="false"
+                        app:lottie_rawRes="@raw/play_all" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llPlayAll"
+                        android:layout_width="@dimen/dimen_130"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginStart="@dimen/dimen_4_8"
+                        android:layout_marginEnd="@dimen/dimen_4_5"
+                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:gravity="center"
+                        android:hapticFeedbackEnabled="true"
+                        android:orientation="horizontal">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/ivPlayAll"
+                            style="@style/commonMediumIconStyle"
+                            app:fontText="@string/icon_play_2" />
+
+                        <TextView
+                            android:id="@+id/tvPlayAll"
+                            style="@style/commonMediumButtonStyle"
+                            android:text="@string/podcast_str_4" />
+
+                        <!--<ImageView
+                            android:layout_width="@dimen/dimen_10_4"
+                            android:layout_height="@dimen/dimen_12_2"
+                            android:layout_marginStart="@dimen/dimen_4"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_play_common_button"
+                            app:tint="@color/colorWhite" />-->
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!--<androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivDownloadFullList"
+                        android:layout_width="@dimen/dimen_44"
+                        android:layout_height="@dimen/dimen_44"
+                        android:padding="@dimen/dimen_7_5"
+                        app:srcCompat="@drawable/ic_download_chart" />-->
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivDownloadFullList"
+                        android:layout_width="@dimen/dimen_44"
+                        android:layout_height="@dimen/dimen_44"
+                        android:padding="@dimen/dimen_8_5"
+                        app:fontText="@string/icon_download"
+                        app:fontTextColor="@color/colorWhite" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <!--                <TextView-->
+                <!--                    android:ellipsize="marquee"-->
+                <!--                    android:gravity="center"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:scrollbars="none"-->
+                <!--                    android:scrollHorizontally="true"-->
+                <!--                    android:layout_marginTop="@dimen/dimen_17"-->
+                <!--                    android:paddingStart="@dimen/dimen_18"-->
+                <!--                    android:paddingEnd="@dimen/dimen_18"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/llDetails2"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:focusable="true"-->
+                <!--                    android:id="@+id/tvReadMore"-->
+                <!--                    android:fontFamily="@font/sf_pro_text"-->
+                <!--                    android:textColor="@color/item_sub_title_color"-->
+                <!--                    android:textSize="@dimen/font_13"-->
+                <!--                    android:layout_height="@dimen/dimen_22"-->
+                <!--                    android:singleLine="true" />-->
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llDetails2">
+
+                    <HorizontalScrollView
+                        android:id="@+id/hsvReadMore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:paddingStart="@dimen/dimen_18"
+                        android:paddingEnd="@dimen/dimen_18"
+                        android:scrollbars="none"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvReadMore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:includeFontPadding="false"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_13"
+                            app:lineHeight="@dimen/font_22" />
+
+                    </HorizontalScrollView>
+
+                    <com.hungama.music.utils.customview.ShowMoreTextView
+                        android:id="@+id/tvReadMoreDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/dimen_18"
+                        android:paddingEnd="@dimen/dimen_18"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13"
+                        android:visibility="gone"
+                        app:lineHeight="@dimen/font_22" />
+
+                    <View
+                        android:id="@+id/devider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1_5"
+                        android:layout_marginStart="@dimen/dimen_18_5"
+                        android:layout_marginTop="@dimen/dimen_19"
+                        android:layout_marginEnd="@dimen/dimen_18_5"
+                        android:alpha="0.2"
+                        android:background="@color/colorWhite"
+                        android:visibility="gone" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPlaylistList"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_below="@+id/topView">
+
+                <ImageView
+                    android:id="@+id/iv_banner"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:src="@drawable/corner_radius_18_bg_gold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPlaylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:clipToPadding="false"
+                    android:layout_below="@id/iv_banner"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="20" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRecommended"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/rlPlaylistList">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecomendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_marginTop="@dimen/dimen_9"
+                    android:clipToPadding="false"
+                    tools:itemCount="20" />
+
+
+            </RelativeLayout>
+            <include
+                layout="@layout/layout_progress"
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:id="@+id/rlHeading"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60">
+        <include android:id="@+id/headBlur" android:visibility="invisible" layout="@layout/common_blur_view"/>
+
+        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:id="@+id/llToolbar"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFavoriteActionBar"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:paddingStart="@dimen/dimen_10_5"
+                android:paddingEnd="@dimen/dimen_10_5"
+                android:paddingTop="@dimen/dimen_11"
+                android:paddingBottom="@dimen/dimen_11"
+                app:srcCompat="@drawable/ic_heart_chart" />-->
+
+            <!--<com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivFavoriteActionBar"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:paddingStart="@dimen/dimen_8_5"
+                android:paddingEnd="@dimen/dimen_8_5"
+                android:paddingTop="@dimen/dimen_9"
+                android:paddingBottom="@dimen/dimen_9"
+                app:fontText="@string/icon_like"
+                app:fontTextColor="@color/colorWhite"/>-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivFavoriteActionBar"
+                android:layout_width="@dimen/dimen_45"
+                android:layout_height="@dimen/dimen_45"
+                android:contentDescription="@string/login_str_2"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/like_anim" />
+
+            <!--<androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llPlayAllActionBar"
+                android:layout_width="@dimen/dimen_130"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginStart="@dimen/dimen_4_2"
+                android:layout_marginEnd="@dimen/dimen_5_5"
+                android:background="@drawable/common_button_bg_gradient"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_4"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:text="@string/chart_str_2"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_16"
+                    app:lineHeight="@dimen/font_20" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_10_4"
+                    android:layout_height="@dimen/dimen_12_2"
+                    android:layout_marginStart="@dimen/dimen_4"
+                    android:contentDescription="@string/login_str_2"
+                    android:src="@drawable/ic_play_common_button"
+                    app:tint="@color/colorWhite" />
+            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llPlayAllActionBar"
+                android:layout_width="@dimen/dimen_130"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginStart="@dimen/dimen_4_8"
+                android:layout_marginEnd="@dimen/dimen_4_5"
+                android:background="@drawable/corner_radius_18_bg_blue"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivPlayAllActionBar"
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_play"/>
+
+                <TextView
+                    android:id="@+id/tvPlayAllActionBar"
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/podcast_str_4" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivDownloadFullListActionBar"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:padding="@dimen/dimen_8_5"
+                app:fontText="@string/icon_download"
+                app:fontTextColor="@color/colorWhite"/>
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDownloadFullListActionBar"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:padding="@dimen/dimen_7_5"
+                app:srcCompat="@drawable/ic_download_chart" />-->
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</RelativeLayout>

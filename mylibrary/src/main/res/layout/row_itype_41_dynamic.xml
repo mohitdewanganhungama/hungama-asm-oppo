@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160"
+                app:cardCornerRadius="@dimen/dimen_7">
+                <RelativeLayout
+                    android:id="@+id/rootParent"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvName1"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/discover_str_22"
+                        android:lineSpacingExtra="@dimen/font_2"
+                        android:textSize="@dimen/font_13"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        style="@style/StyleTextView"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvName1"
+                        android:id="@+id/tvName2"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/discover_str_25"
+                        android:lineSpacingExtra="@dimen/font_2"
+                        android:textSize="@dimen/font_13"
+                        android:layout_marginTop="@dimen/dimen_0"
+                        style="@style/StyleTextView"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/dimen_6"
+                        android:layout_below="@+id/tvName2"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="@dimen/minus_dimen_20"
+                            android:id="@+id/ivLeftImage"
+                            android:background="@color/colorPlaceholder"
+                            android:src="@drawable/bg_gradient_placeholder" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivUserImage"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/dimen_5"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:scaleType="centerInside"
+                            android:background="@color/colorPlaceholder"
+                            android:src="@drawable/bg_gradient_placeholder"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginEnd="@dimen/minus_dimen_20"
+                            android:id="@+id/ivRightImage"
+                            android:scaleType="centerInside"
+                            android:background="@color/colorPlaceholder"
+                            android:src="@drawable/bg_gradient_placeholder" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_10"
+                android:textColor="@color/colorPlaceholderText"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                style="@style/StyleTextView"
+                android:padding="@dimen/dimen_2"
+                android:visibility="gone"
+                android:id="@+id/tvTitlePlaceHolder"
+                android:text="@string/discover_str_1"
+                android:layout_margin="@dimen/dimen_10"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/StyleTextView"
+            android:paddingStart="@dimen/dimen_2"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:text="@string/discover_str_32"
+            app:lineHeight="@dimen/font_18"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/StyleTextViewSubtitle"
+            android:layout_gravity="start"
+            android:paddingStart="@dimen/dimen_2"
+            android:text="@string/discover_str_33"
+            app:lineHeight="@dimen/font_15"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

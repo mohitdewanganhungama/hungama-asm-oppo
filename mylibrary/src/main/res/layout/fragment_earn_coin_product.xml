@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg_layer"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/common_blur_view"/>
+    <include
+        android:id="@+id/rlHeader"
+        layout="@layout/common_header_action_bar" />
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_redeem_coin_physical_product"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainView"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/dimen_70"
+        android:paddingBottom="@dimen/dimen_92">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/earncoin_product_header" />
+    </androidx.core.widget.NestedScrollView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_92"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.hungama.music.utils.customview.blurview.CustomBlurView
+            android:id="@+id/realtimeBlurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="150dp"
+            app:realtimeOverlayColor="#40000000" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnOutOfStock"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginLeft="@dimen/dimen_18"
+            android:layout_marginRight="@dimen/dimen_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivOutOfStock"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_redeem_coin"/>
+            <TextView
+                android:id="@+id/tvEarn"
+                style="@style/commonMediumButtonStyle"
+                android:visibility="gone"
+                android:text="@string/profile_str_46"/>
+<!--            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView-->
+<!--                android:id="@+id/ivEarnCoin"-->
+<!--                android:visibility="gone"-->
+<!--                style="@style/commonMediumIconStyle"-->
+<!--                app:fontText="@string/icon_reward_coin"/>-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_18"
+                android:layout_height="@dimen/dimen_18"
+                app:srcCompat="@drawable/bg_coin_profile"
+                android:id="@+id/ivEarnCoin"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/tvOutOfStock"
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/profile_str_54"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

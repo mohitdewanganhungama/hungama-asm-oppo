@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+
+    android:clipToPadding="false"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlPurchaseHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/mainGradientView"
+            android:layout_width="match_parent"
+            android:layout_height="812dp"
+            android:background="@drawable/home_bg"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_19"
+            android:layout_marginTop="@dimen/dimen_22"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/general_setting_str_26"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/dimen_15" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPurchaseHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:clipToPadding="true"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            tools:itemCount="1"
+            tools:listitem="@layout/ticket_view" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlNoHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_21"
+            android:src="@drawable/ic_event"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/tvNoEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTicket"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/dimen_20"
+            android:text="@string/general_setting_str_27"
+            tools:text="No Upcoming Events" />
+
+        <TextView
+            android:id="@+id/tvNoEventSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNoEvent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center_horizontal"
+            android:text="@string/general_setting_str_28"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            app:lineHeight="@dimen/dimen_15" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="@dimen/dimen_194"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_below="@+id/tvNoEventSummary"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginBottom="@dimen/dimen_26"
+            android:background="@drawable/bg_profile_free"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sf_pro_text"
+                android:gravity="center"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/profile_str_19"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_16"
+                android:textStyle="normal"
+                app:lineHeight="@dimen/font_20" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/layout_empty_view"
+        android:visibility="gone" />
+</RelativeLayout>

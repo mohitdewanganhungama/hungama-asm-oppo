@@ -1,0 +1,585 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/transparent</item>-->
+<!--        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>-->
+
+        <!--- Customize popmenu -->
+        <item name="android:dropDownListViewStyle">@style/popupMenuDivider</item>
+        <!--- Customize popmenu style -->
+        <item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
+    </style>
+    <style name="AppThemeNoActionBar" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+
+    </style>
+    <style name="StyleNativeAdsView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dimen_8</item>
+
+
+    </style>
+    <style name="StyleEditTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_36sdp</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorHint">@color/colorGrey</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textDirection">anyRtl</item>
+
+    </style>
+
+    <style name="StyleTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="hintTextColor">@color/font_color</item>
+    </style>
+
+
+
+    <style name="StyleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/item_title_color</item>
+        <item name="android:textSize">@dimen/font_15</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="android:layout_marginTop">@dimen/dimen_12</item>
+    </style>
+
+    <style name="StyleTextViewSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/item_sub_title_color</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_2</item>
+        <item name="android:layout_marginTop">@dimen/dimen_3</item>
+    </style>
+
+    <style name="StyleTextViewSubtitle2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/item_sub_title_2_color</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_2</item>
+        <item name="android:layout_marginTop">@dimen/dimen_3</item>
+    </style>
+
+    <style name="StyleButtonView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:background">@drawable/bg_button_border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="StyleBottomTextView" parent="StyleTextView">
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textColor">@color/bottom_navigation_color</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">@dimen/_10ssp</item>
+    </style>
+    <style name="StyleHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+    </style>
+
+    <style name="StyleHeaderIcons">
+        <item name="android:layout_width">@dimen/_35sdp</item>
+        <item name="android:layout_height">@dimen/_35sdp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_5sdp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+
+    </style>
+
+    <style name="StyleBackIcons">
+        <item name="android:layout_width">@dimen/dimen_44</item>
+        <item name="android:layout_height">@dimen/dimen_44</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingStart">@dimen/dimen_15_5</item>
+        <item name="android:paddingEnd">@dimen/dimen_15_5</item>
+        <item name="android:paddingTop">@dimen/dimen_12</item>
+        <item name="android:paddingBottom">@dimen/dimen_12</item>
+        <item name="srcCompat">@drawable/ic_back_right_arrow</item>
+        <item name="tint">@color/colorWhite</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginStart">@dimen/dimen_2</item>
+
+
+    </style>
+
+    <style name="StyleSideMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+<!--    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">-->
+<!--        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>-->
+<!--        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+<!--        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>-->
+<!--    </style>-->
+
+
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="StyleCommonDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+    <style name="StyleFullScreenDialog" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+
+
+    <style name="StyleRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="useMaterialThemeColors">true</item>
+        <item name="android:minWidth">?attr/minTouchTargetSize</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:minHeight">?attr/minTouchTargetSize</item>
+    </style>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+<!--    <style name="PayUMoney" parent="PayumoneyAppTheme">-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@android:color/holo_orange_dark</item>-->
+<!--        <item name="colorButtonNormal">@android:color/holo_orange_dark</item>-->
+<!--        <item name="alertDialogTheme">@style/AlertDialogStylePayUMoney</item>-->
+<!--        <item name="actionMenuTextColor">@color/font_color</item>-->
+<!--    </style>-->
+<!--    <style name="AlertDialogStylePayUMoney" parent="Theme.AppCompat.Light.Dialog.Alert">-->
+<!--        <item name="colorAccent">@color/colorPrimary</item>-->
+<!--        <item name="android:textColorPrimary">@color/font_color</item>-->
+<!--    </style>-->
+
+    <style name="ShapeAppearanceOverlay.App.MidRoundCorner" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCorner" parent="">
+        <item name="cornerSize">@dimen/dimen_12</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCorners" parent="">
+        <item name="cornerSize">@dimen/dimen_18</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCornerBucket" parent="">
+        <item name="cornerSize">@dimen/dimen_7</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.Circle" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.RoundCornerImageLeft" parent="">
+        <item name="cornerSizeTopLeft">@dimen/dimen_7</item>
+        <item name="cornerSizeBottomLeft">@dimen/dimen_7</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.RoundCornerImageTopLeftRight" parent="">
+        <item name="cornerSizeTopLeft">@dimen/dimen_7</item>
+        <item name="cornerSizeTopRight">@dimen/dimen_7</item>
+    </style>
+
+    <style name="FilterSwitchThemeGreen" parent="AppTheme">
+        <item name="colorAccent">@color/font_color</item>
+    </style>
+
+
+
+    <style name="popupMenuDivider" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/border</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="myPopupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="fontFamily">@font/sf_pro_text</item>
+    </style>
+
+    <style name="myPopupMenuTextAppearanceSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="fontFamily">@font/sf_pro_text_bold</item>
+    </style>
+    <style name="TrackSelectionDialogThemeOverlay" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="StyleTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/StyleTextAppearance</item>
+    </style>
+
+    <style name="StyleTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/sf_pro_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="tabSelectedTextColor">@color/tab_selected_color</item>
+    </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/my_choice_chip_background_color</item>
+        <item name="android:textColor">@color/my_choice_chip_text_color</item>
+    </style>
+
+    <style name="btnWhiteBorder">
+        <item name="android:background">@drawable/btn_with_white_border</item>
+        <item name="android:height">@dimen/_30sdp</item>
+        <item name="android:minHeight">@dimen/_20sdp</item>
+    </style>
+
+    <style name="MyToolbarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
+
+    <style name="Theme.Custom" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+    </style>
+
+    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+
+<!-- ****************   spinner Style *****************************-->
+    <style name="spinner_style">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:dropDownWidth">@dimen/dimen_380</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:popupBackground">@drawable/normal_bg_edittext</item>
+        <item name="android:dropDownHeight">0dp</item>
+        <item name="android:dropDownSelector">@color/colorWhite</item>
+
+    </style>
+
+    <style name="LibTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">#808080</item>
+        <item name="fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/tab_un_selected_color</item>
+        <item name="fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="expandedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="collapsedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="superBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="DropDown_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_show_down_center</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+
+    <style name="Elastic_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_elastic_down</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+
+    <style name="Fade_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateVisible</item>
+
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+
+    <style name="MoECardTheme" parent="Theme.AppCompat.Light" />
+
+    <style name="MoECardTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="MoETheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MoETheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MoECardToolbarTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textSize">@dimen/moe_card_tab_font_size</item>
+    </style>
+    <style name="MoECardTabTextStyle">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textSize">@dimen/moe_card_tab_font_size</item>
+    </style>
+
+    <!-- Header style -->
+    <style name="MoECardHeaderTextStyle">
+        <item name="android:textSize">@dimen/moe_card_header_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_card_header_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <!-- Message style -->
+    <style name="MoECardMessageTextStyle">
+        <item name="android:textSize">@dimen/moe_card_content_font_size</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/moe_card_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <!-- Button style -->
+    <style name="MoECardCtaStyle">
+        <item name="android:textColor">@color/moe_card_cta_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/moe_card_cta_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+    <!-- Timestamp Style -->
+    <style name="MoECardTimeTextStyle">
+        <item name="android:textSize">@dimen/moe_card_time_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_card_timestamp_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="MoEInboxTheme.NoActionBar">
+        <item name="colorPrimary">@color/moe_inbox_color_primary</item>
+        <item name="colorPrimaryDark">@color/moe_inbox_color_primary_dark</item>
+        <item name="colorControlNormal">@color/moe_inbox_control_color</item>
+        <item name="android:background">@color/moe_inbox_background_color</item>
+    </style>
+
+    <!--  Toolbar Text Style-->
+    <style name="MoEInboxToolbarTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/moe_inbox_toolbar_text_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/moe_inbox_tab_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Header style -->
+    <style name="MoEInboxHeaderTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_header_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_inbox_header_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Message style -->
+    <style name="MoEInboxMessageTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_content_font_size</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/moe_inbox_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <!-- List Item Separator style -->
+    <style name="MoEInboxSeparatorStyle">
+        <item name="android:background">@drawable/moe_inbox_item_divider</item>
+    </style>
+
+    <!-- Timestamp Style -->
+    <style name="MoEInboxTimeTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_time_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_inbox_timestamp_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <!--  Empty List Style-->
+    <style name="MoEInboxEmptyBoxTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_empty_box_text_size</item>
+        <item name="android:textColor">@color/moe_inbox_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <!--  Scrollbar style-->
+    <style name="MoEInboxScrollbarStyle">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/moe_inbox_vertical_scroller_thumb</item>
+        <item name="android:scrollbarSize">30dp</item>
+    </style>
+
+    <!--  Common medium button style-->
+    <style name="commonMediumButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dimen_3</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!--  Common medium icon style-->
+    <style name="commonMediumIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_3</item>
+        <item name="fontTextSize">@dimen/font_16</item>
+        <item name="fontTextColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.AdAttribution">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">#ffcc66</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/ad_attribution</item>
+        <item name="android:height">15dp</item>
+        <item name="android:width">15dp</item>
+    </style>
+
+    <style name="Widget.PictureInPicture.MovieView" parent="android:Widget">
+        <item name="android:src">@null</item>
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+
+    <style name="ScrollingPagerIndicator">
+        <item name="spi_dotColor">@android:color/darker_gray</item>
+        <item name="spi_dotSelectedColor">@android:color/darker_gray</item>
+        <item name="spi_dotSize">6dp</item>
+        <item name="spi_dotSelectedSize">10dp</item>
+        <item name="spi_dotSpacing">8dp</item>
+        <item name="spi_visibleDotCount">5</item>
+        <item name="spi_visibleDotThreshold">2</item>
+        <item name="spi_looped">false</item>
+    </style>
+</resources>

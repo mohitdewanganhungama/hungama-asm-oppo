@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:focusable="true"
+    android:background="@drawable/bottom_dialog_background_round">
+
+    <View
+        android:id="@+id/vDevider1"
+        android:layout_width="@dimen/dimen_42"
+        android:layout_height="4dp"
+        android:background="@drawable/bottomsheet_icon_background"
+        android:layout_marginTop="@dimen/dimen_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_38"
+        android:text="@string/profile_str_33"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDevider1" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_9"
+        android:lineHeight="@dimen/dimen_18"
+        android:lineSpacingExtra="@dimen/dimen_5"
+        android:text="@string/profile_str_109"
+        android:textColor="#c6c6c6c6"
+        android:textSize="@dimen/font_13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ivCancel"
+        android:layout_width="@dimen/dimen_146"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginStart="@dimen/dimen_13"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:layout_marginEnd="@dimen/dimen_27"
+        android:layout_marginBottom="@dimen/dimen_31"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnLogout"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/corner_radius_18_bg_blue">
+        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            style="@style/commonMediumIconStyle"
+            android:visibility="gone"
+            app:fontText="@string/icon_delete"/>
+        <TextView
+            android:id="@+id/tv_cancel"
+            style="@style/commonMediumButtonStyle"
+            android:text="@string/download_str_3" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btnLogout"
+        android:layout_width="@dimen/dimen_146"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginBottom="@dimen/dimen_31"
+        android:layout_marginStart="@dimen/dimen_28"
+        android:layout_marginTop="@dimen/dimen_32"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/corner_radius_18_bg_alpha_white">
+        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            style="@style/commonMediumIconStyle"
+            android:visibility="gone"
+            app:fontText="@string/icon_logout"/>
+        <TextView
+            android:id="@+id/btnAsk"
+            style="@style/commonMediumButtonStyle"
+            android:text="@string/profile_str_33" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

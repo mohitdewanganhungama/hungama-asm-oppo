@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/home_bg_layer">
+    <include layout="@layout/common_blur_view"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_select_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text=""
+            android:textSize="@dimen/font_21"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:layout_marginBottom="@dimen/dimen_10"
+            />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_sub_title_color"
+            android:text=""
+            android:textSize="@dimen/font_15"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/dimen_18"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:id="@+id/pb_progress_lan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_48"
+        android:layout_margin="@dimen/dimen_18"
+        android:background="@drawable/corner_radius_18_bg_blue"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            android:id="@+id/ivNextBtnIcon"
+            style="@style/commonMediumIconStyle"
+            android:layout_marginEnd="@dimen/dimen_7_8"
+            app:fontText="@string/icon_next"/>
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/commonMediumButtonStyle"
+            android:text="@string/login_str_52"
+            android:textSize="@dimen/font_20"
+            android:fontFamily="@font/sf_pro_text_medium"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>
+</RelativeLayout>

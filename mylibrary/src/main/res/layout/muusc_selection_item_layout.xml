@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMain"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_95"
+    android:layout_marginEnd="@dimen/dimen_20"
+    android:layout_marginTop="@dimen/dimen_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="@dimen/dimen_160"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_placeholder"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+    <ImageView
+        android:id="@+id/ivSelection"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:src="@drawable/ic_round_un_selection"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:contentDescription="@string/login_str_2"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_45"
+        android:layout_marginStart="@dimen/dimen_10"/>
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginStart="@dimen/dimen_10"/>
+</RelativeLayout>

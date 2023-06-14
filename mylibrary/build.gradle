@@ -1,0 +1,587 @@
+plugins {
+//    id 'com.android.application'
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+//    id 'kotlin-parcelize'
+//    id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics'
+//    id 'newrelic'
+
+//    id 'com.huawei.agconnect'
+}
+
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas".toString())
+    }
+}
+
+android {
+
+    namespace 'com.hungama.music'
+//    namespace 'com.hungama.myplay.activity'
+
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String","VERSION_NAME","\"${defaultConfig.versionName}\"")
+        }
+        debug {
+            ext.enableCrashlytics = false
+
+            minifyEnabled false
+            zipAlignEnabled false
+            debuggable true
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String","VERSION_NAME","\"${defaultConfig.versionName}\"")
+        }
+    }
+
+/*    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+
+        buildConfig = true
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    //implementation project(path: ':imagelazyloader')
+    //implementation project(':fetch2rx')
+    implementation project(':fetch2')
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation project(':datepicker')
+    //adding native templates
+    implementation project(':nativetemplates')
+/*    implementation files('aars/gamification-sdk-release.aar')
+    implementation files('aars/triton-android-sdk-3.2.2.197.aar')*/
+
+    implementation 'androidx.core:core-ktx:1.1.16' // change from 1.8.0
+    implementation 'androidx.appcompat:appcompat:1.5.0' // change from 1.5.0
+
+    implementation 'com.google.android.material:material:1.6.0'
+//    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.72"
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    androidTestImplementation 'junit:junit:4.12'
+
+    def media3_version = "1.0.2"
+    implementation "androidx.media3:media3-exoplayer:$media3_version"
+    implementation "androidx.media3:media3-datasource:$media3_version"
+    implementation "androidx.media3:media3-ui:$media3_version"
+    implementation "androidx.media3:media3-session:$media3_version"
+    implementation "androidx.media3:media3-cast:$media3_version"
+    implementation "androidx.media3:media3-common:$media3_version"
+    implementation "androidx.media3:media3-datasource-cronet:$media3_version"
+    implementation "androidx.media3:media3-exoplayer-ima:$media3_version"
+    implementation "androidx.media3:media3-exoplayer-hls:$media3_version"
+    implementation "androidx.media3:media3-exoplayer-dash:$media3_version"
+//    implementation 'androidx.lifecycle:lifecycle-common-java8:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    kapt "androidx.lifecycle:lifecycle-compiler:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+
+    /**
+     * scalable size unit
+     */
+    implementation "com.intuit.sdp:sdp-android:1.0.6"
+    implementation "com.intuit.ssp:ssp-android:1.0.6"
+
+
+    implementation "androidx.palette:palette-ktx:1.0.0"
+    /**
+     *  image loading framework
+     */
+    api 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    compileOnly 'org.checkerframework:checker-qual:3.3.0'
+    /*implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-ima:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-cronet:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-mediasession:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-cast:2.18.1'*/
+    implementation "androidx.mediarouter:mediarouter:1.3.1"
+
+
+    /**
+     * Import the BoM for the Firebase platform
+     */
+    implementation platform('com.google.firebase:firebase-bom:30.5.0')
+    implementation 'com.google.firebase:firebase-iid'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+/**
+ * google login
+ */
+    implementation "com.google.android.gms:play-services-auth:20.3.0"
+    implementation 'com.google.android.gms:play-services-ads:21.2.0'
+    implementation 'com.google.android.gms:play-services-cast:21.1.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+
+
+/**
+ * facebook login
+ */
+
+    implementation "com.facebook.android:facebook-android-sdk:13.1.0"
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'com.facebook.android:audience-network-sdk:5.3.0'
+
+
+
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+
+    implementation "com.android.volley:volley:1.2.1"
+
+    /**
+     * Room Database
+     */
+//    implementation "androidx.room:room-runtime:2.4.3"
+    implementation "androidx.room:room-runtime:2.4.0"
+    kapt "androidx.room:room-compiler:2.4.3"
+
+
+    implementation 'com.facebook.stetho:stetho:1.6.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+
+    /**
+     * MoEngage integration for analytics-android.
+     */
+    implementation "com.moengage:moe-android-sdk:11.4.00"
+//    implementation "com.moengage:moe-android-sdk:12.3.02"        // updated
+    implementation "com.moengage:rich-notification:2.3.00"
+//    implementation "com.moengage:rich-notification:4.0.1"
+    implementation "com.moengage:cards:2.1.00"
+    implementation "com.moengage:inbox-ui:1.0.01"
+//    implementation "com.moengage:inbox-ui:2.1.2"
+    implementation "com.moengage:push-amp-plus:3.2.00"
+//    implementation "com.moengage:push-amp-plus:6.0.0"
+
+//    implementation "com.huawei.hms:push:6.1.0.300"
+//    implementation "com.moengage:hms-pushkit:2.4.00"
+    /**
+     * Amplitude for analytics
+     */
+    implementation 'com.amplitude:android-sdk:3.35.1'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.10'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    /**
+     * appsflyer
+     */
+    implementation 'com.appsflyer:af-android-sdk:6.9.1'
+
+    /**
+     * apxor
+     */
+//    implementation 'com.apxor.androidx:apxor-android-sdk-core:2.7.7@aar'
+
+    // Add this to track uninstalls and send push notifications from Apxor dashboard
+    // Note: We don't support firebase-messaging >= 22.0.0 yet
+//    implementation('com.apxor.androidx:apxor-android-sdk-push:1.2.5@aar') {
+//        exclude group: 'com.google.firebase'
+//    }
+
+    // Add these for Realtime Actions and Surveys
+//    implementation 'com.apxor.androidx:apxor-android-sdk-qe:1.4.5@aar'
+//    implementation 'com.apxor.androidx:apxor-android-sdk-rtm:1.7.3@aar'
+//    implementation 'com.apxor.androidx:surveys:1.3.1@aar'
+
+
+    // Helper plugin to create walkthroughs
+//    implementation 'com.apxor.androidx:wysiwyg:1.1.9@aar'
+
+    // Add this to execute Client Functions
+//    implementation 'com.apxor.androidx:apxor-cf:1.0.0@aar'
+
+    // Add this to log events without attributes at runtime
+//    implementation 'com.apxor.androidx:jit-log:1.0.0@aar'
+
+    implementation 'com.android.billingclient:billing-ktx:5.0.0'
+
+    implementation 'androidx.browser:browser:1.4.0'
+    /**
+     * comscore sdk
+     */
+    implementation 'com.comscore:android-analytics:6.9.1'
+
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    //implementation 'io.sentry:sentry-android:6.1.4'
+
+//    implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0' //https://github.com/SalomonBrys/ANR-WatchDog
+
+    //implementation 'com.github.Dimezis:BlurView:version-2.0.2'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.5.2"
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+
+    implementation 'com.google.android.gms:play-services-basement:18.1.0'
+
+//    implementation 'com.newrelic.agent.android:android-agent:6.9.0' // nurelic
+
+    // these for Apsflyer
+
+    implementation "com.android.installreferrer:installreferrer:2.2"
+    implementation "com.miui.referrer:homereferrer:1.0.0.6"
+}
+
+
+/*
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+
+//    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+
+//    id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics'
+//    id 'newrelic'
+}
+
+android {
+
+//    namespace 'com.hungama.music'
+    namespace 'com.hungama.music'
+
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 32
+
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    //implementation project(path: ':imagelazyloader')
+    //implementation project(':fetch2rx')
+    implementation project(':fetch2')
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation project(':datepicker')
+    //adding native templates
+    implementation project(':nativetemplates')
+    implementation files('aars/gamification-sdk-release.aar')
+    implementation files('aars/triton-android-sdk-3.2.2.197.aar')
+
+    implementation 'androidx.core:core-ktx:1.8.0' // change from 1.8.0
+    implementation 'androidx.appcompat:appcompat:1.5.0' // change from 1.5.0
+
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.72"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.30"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.0"
+
+
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.30"
+
+    implementation "androidx.media3:media3-exoplayer:1.0.0-beta02"
+    implementation "androidx.media3:media3-datasource:1.0.0-beta02"
+    implementation "androidx.media3:media3-ui:1.0.0-beta02"
+    implementation "androidx.media3:media3-session:1.0.0-beta02"
+    implementation "androidx.media3:media3-cast:1.0.0-beta02"
+    implementation "androidx.media3:media3-common:1.0.0-beta02"
+    implementation "androidx.media3:media3-datasource-cronet:1.0.0-beta02"
+    implementation "androidx.media3:media3-exoplayer-ima:1.0.0-beta02"
+    implementation "androidx.media3:media3-exoplayer-hls:1.0.0-beta02"
+    implementation "androidx.media3:media3-exoplayer-dash:1.0.0-beta02"
+//    implementation 'androidx.lifecycle:lifecycle-common-java8:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    kapt "androidx.lifecycle:lifecycle-compiler:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+
+    */
+/**
+     * scalable size unit
+     *//*
+
+    implementation "com.intuit.sdp:sdp-android:1.0.6"
+    implementation "com.intuit.ssp:ssp-android:1.0.6"
+
+
+    implementation "androidx.palette:palette-ktx:1.0.0"
+    */
+/**
+     *  image loading framework
+     *//*
+
+    api 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    compileOnly 'org.checkerframework:checker-qual:3.3.0'
+    */
+/*implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-ima:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-cronet:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-mediasession:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-cast:2.18.1'*//*
+
+    implementation "androidx.mediarouter:mediarouter:1.3.1"
+
+
+    */
+/**
+     * Import the BoM for the Firebase platform
+     *//*
+
+    implementation platform('com.google.firebase:firebase-bom:30.5.0')
+    implementation 'com.google.firebase:firebase-iid'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+*/
+/**
+ * google login
+ *//*
+
+    implementation "com.google.android.gms:play-services-auth:20.3.0"
+    implementation 'com.google.android.gms:play-services-ads:21.2.0'
+    implementation 'com.google.android.gms:play-services-cast:21.1.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+
+*/
+/**
+ * facebook login
+ *//*
+
+
+    implementation "com.facebook.android:facebook-android-sdk:13.1.0"
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'com.facebook.android:audience-network-sdk:5.3.0'
+
+
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+
+    implementation "com.android.volley:volley:1.2.1"
+
+    */
+/**
+     * Room Database
+     *//*
+
+    implementation "androidx.room:room-runtime:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+
+
+    implementation 'com.facebook.stetho:stetho:1.6.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+
+    */
+/**
+     * MoEngage integration for analytics-android.
+     *//*
+
+    implementation "com.moengage:moe-android-sdk:11.4.00"
+//    implementation "com.moengage:moe-android-sdk:12.3.02"        // updated
+    implementation "com.moengage:rich-notification:2.3.00"
+//    implementation "com.moengage:rich-notification:4.0.1"
+    implementation "com.moengage:cards:2.1.00"
+    implementation "com.moengage:inbox-ui:1.0.01"
+//    implementation "com.moengage:inbox-ui:2.1.2"
+    implementation "com.moengage:push-amp-plus:3.2.00"
+//    implementation "com.moengage:push-amp-plus:6.0.0"
+
+//    implementation "com.huawei.hms:push:6.1.0.300"
+//    implementation "com.moengage:hms-pushkit:2.4.00"
+    */
+/**
+     * Amplitude for analytics
+     *//*
+
+    implementation 'com.amplitude:android-sdk:3.35.1'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.10'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    */
+/**
+     * appsflyer
+     *//*
+
+    implementation 'com.appsflyer:af-android-sdk:6.9.1'
+
+    */
+/**
+     * apxor
+     *//*
+
+//    implementation 'com.apxor.androidx:apxor-android-sdk-core:2.7.7@aar'
+
+    // Add this to track uninstalls and send push notifications from Apxor dashboard
+    // Note: We don't support firebase-messaging >= 22.0.0 yet
+//    implementation('com.apxor.androidx:apxor-android-sdk-push:1.2.5@aar') {
+//        exclude group: 'com.google.firebase'
+//    }
+
+    // Add these for Realtime Actions and Surveys
+//    implementation 'com.apxor.androidx:apxor-android-sdk-qe:1.4.5@aar'
+//    implementation 'com.apxor.androidx:apxor-android-sdk-rtm:1.7.3@aar'
+//    implementation 'com.apxor.androidx:surveys:1.3.1@aar'
+
+
+    // Helper plugin to create walkthroughs
+//    implementation 'com.apxor.androidx:wysiwyg:1.1.9@aar'
+
+    // Add this to execute Client Functions
+//    implementation 'com.apxor.androidx:apxor-cf:1.0.0@aar'
+
+    // Add this to log events without attributes at runtime
+//    implementation 'com.apxor.androidx:jit-log:1.0.0@aar'
+
+    implementation 'com.android.billingclient:billing-ktx:5.0.0'
+
+    implementation 'androidx.browser:browser:1.4.0'
+    */
+/**
+     * comscore sdk
+     *//*
+
+    implementation 'com.comscore:android-analytics:6.9.1'
+
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    //implementation 'io.sentry:sentry-android:6.1.4'
+
+//    implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0' //https://github.com/SalomonBrys/ANR-WatchDog
+
+    //implementation 'com.github.Dimezis:BlurView:version-2.0.2'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.5.2"
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+
+    implementation 'com.google.android.gms:play-services-basement:18.1.0'
+
+    implementation 'com.newrelic.agent.android:android-agent:6.9.0' // nurelic
+
+    // these for Apsflyer
+
+    implementation "com.android.installreferrer:installreferrer:2.2"
+    implementation "com.miui.referrer:homereferrer:1.0.0.6"
+
+}*/

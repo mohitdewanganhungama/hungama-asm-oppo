@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rlMain"
+        android:clipToPadding="false"
+        android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/childTabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_34"
+            app:tabGravity="fill"
+            app:tabMaxWidth="0dp"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@null"
+            app:tabBackground="@drawable/selector_tab_home"
+            app:tabSelectedTextColor="@color/tab_selected_color"
+            app:tabTextAppearance="@style/TabTextAppearance"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/childVPTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/childTabs"
+            android:clipChildren="true"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <include
+            layout="@layout/layout_progress"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

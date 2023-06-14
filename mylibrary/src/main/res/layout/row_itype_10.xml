@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="@dimen/dimen_118"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="@dimen/dimen_20"
+       android:layout_marginTop="@dimen/dimen_20"
+       android:id="@+id/llMain"
+       android:gravity="center"
+       android:orientation="vertical">
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+         <!--<androidx.cardview.widget.CardView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:cardCornerRadius="@dimen/dimen_7">-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_64"
+                android:scaleType="fitXY"
+                android:background="@drawable/bg_gradient_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+<!--         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"-->
+         <!--</androidx.cardview.widget.CardView>-->
+         <androidx.appcompat.widget.AppCompatTextView
+             android:id="@+id/tvTitle"
+             style="@style/StyleTextView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="@dimen/dimen_8"
+             android:layout_marginStart="@dimen/dimen_10"
+             android:layout_marginTop="@dimen/dimen_0"
+             android:src="@drawable/ic_play_audio"
+             android:visibility="visible"
+             android:layout_gravity="bottom"
+             android:textSize="@dimen/font_13"
+             android:maxLines="2"
+             android:letterSpacing="0.02"
+             android:elevation="@dimen/dimen_10"
+             android:text=""/>
+      </FrameLayout>
+   </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

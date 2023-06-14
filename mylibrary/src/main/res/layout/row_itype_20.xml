@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="@dimen/dimen_277"
+        android:layout_height="@dimen/dimen_180"
+        android:scaleType="centerInside"
+        android:id="@+id/ivUserImage"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="#141414"
+        android:src="@drawable/bg_itype_20"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+</layout>

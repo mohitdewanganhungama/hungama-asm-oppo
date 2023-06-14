@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/dimen_118"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_118"
+                android:scaleType="centerInside"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserImage2"
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_118"
+                android:scaleType="centerInside"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_10"
+                android:textColor="@color/colorPlaceholderText"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                style="@style/StyleTextView"
+                android:padding="@dimen/dimen_2"
+                android:visibility="gone"
+                android:id="@+id/tvTitlePlaceHolder"
+                android:text="Hello"
+                android:layout_margin="@dimen/dimen_10"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/StyleTextView"
+           android:paddingStart="@dimen/dimen_2"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:text="Radio One sdf df ds sdsdf  sd df dsf"
+            app:lineHeight="@dimen/font_18"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTitle"
+            style="@style/StyleTextViewSubtitle"
+            android:layout_gravity="start"
+            android:paddingStart="@dimen/dimen_2"
+            android:text="1,123 playing"
+            app:lineHeight="@dimen/font_15"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/rlSimilarSongs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/audio_player_bg">
+
+    <ImageView
+        android:id="@+id/ivNextInQueueTwoLine"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:scaleType="fitXY"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/login_str_2"
+        app:srcCompat="@drawable/ic_two_line_next_in_queue" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardImageNextInQueue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        android:elevation="10dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_centerVertical="true">
+        <ImageView
+            android:id="@+id/ivNextInQueueImage"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/login_str_2"
+            android:visibility="visible"
+            app:srcCompat="@drawable/bg_gradient_placeholder" />
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/llSimilarSongDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:layout_toEndOf="@+id/cardImageNextInQueue"
+        android:layout_toStartOf="@+id/ivNextInQueueDots"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <TextView
+            style="@style/StyleTextView"
+            android:id="@+id/txtNextInQueueTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            app:lineHeight="@dimen/_15ssp"
+            android:layout_marginTop="0dp"/>
+
+        <TextView
+            style="@style/StyleTextViewSubtitle"
+            android:id="@+id/txtNextInQueueSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            app:lineHeight="@dimen/_12ssp"
+            android:layout_marginTop="0dp"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/ivNextInQueueDots"
+        android:layout_width="@dimen/_3sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:src="@drawable/ic_menu_dot_audio"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/login_str_2"/>
+</RelativeLayout>

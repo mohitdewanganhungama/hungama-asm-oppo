@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_3_5"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlHeader"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_13"
+            android:id="@+id/tvHeaderTitle"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:layout_marginStart="@dimen/dimen_14_5"
+            android:textColor="@color/colorWhite"
+            android:text="@string/music_player_str_27"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/ivStatus"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:paddingStart="@dimen/dimen_14_5"
+            android:paddingEnd="@dimen/dimen_14_5"
+            android:paddingTop="@dimen/dimen_16_3"
+            android:paddingBottom="@dimen/dimen_16_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_humberg" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivSong"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:src="@drawable/bg_gradient_placeholder"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="@dimen/dimen_0_5"
+            app:layout_constraintStart_toEndOf="@+id/ivStatus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:gravity="start|center"
+            android:orientation="vertical"
+            android:id="@+id/llSong"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+            app:layout_constraintStart_toEndOf="@+id/ivSong"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:gravity="start|center"
+                android:text="@string/other_str_23" />
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:text="@string/other_str_23" />
+
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:paddingStart="@dimen/dimen_14"
+            android:paddingTop="@dimen/dimen_16"
+            android:paddingBottom="@dimen/dimen_16"
+            android:paddingEnd="@dimen/dimen_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false">
+
+    <include layout="@layout/common_blur_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="#4c4c4c" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topView"
+            android:id="@+id/llMain"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            >
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dimen_11"
+                    android:layout_height="@dimen/dimen_18"
+                    android:id="@+id/ivBack"
+                    android:src="@drawable/ic_back_right_arrow"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:gravity="start|center"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/font_17"
+                        android:textColor="#f5f5f5"
+                        android:lineSpacingExtra="43sp"
+                        android:text="@string/music_player_str_21"/>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_11"
+                android:background="@color/home_mini_player_bg"
+                android:alpha="0.3"
+                android:layout_height="1dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16"
+                tools:listitem="@layout/row_select_mood_popup"
+                tools:itemCount="6"
+                android:clipToPadding="false"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_355"
+            android:alpha="0"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/language_selection_sheet_gradient" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llAskLater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/llMain"
+            android:orientation="horizontal"
+            >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="@dimen/dimen_118"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginBottom="@dimen/dimen_33"
+                android:layout_marginTop="@dimen/dimen_26"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/corner_radius_18_bg_alpha_white">
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_delete"
+                    android:visibility="visible"
+                    app:fontTextSize="@dimen/font_13"/>
+                <TextView
+                    android:id="@+id/btnAsk"
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/music_player_str_15"
+                    android:textSize="@dimen/font_14"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/font_color" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

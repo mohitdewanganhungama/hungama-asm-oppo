@@ -1,0 +1,1311 @@
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "body": {
+      "rows": [
+        {
+          "id": "204",
+          "type": 4,
+          "heading": "My Playlists",
+          "hscroll": 1,
+          "numrow": 9,
+          "more": 1,
+          "items": [
+            {
+              "itype": 8,
+              "data": {
+                "id": "60471277",
+                "title": "Bewafa Tera",
+                "image": "https://images.hungama.com/c/1/b62/03b/60471268/60471268_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 60471268,
+                  "p_name": "Bewafa Tera Masoom Chehra",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 176588,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "62645337",
+                "title": "Lut Gaye",
+                "image": "https://images.hungama.com/c/1/ea3/d6a/62645335/62645335_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62645335,
+                  "p_name": "Lut Gaye (Feat. Emraan Hashmi)",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 187917,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "64192433",
+                "title": "Baarish Ki Jaaye",
+                "image": "https://images.hungama.com/c/1/9ee/bd9/64192432/64192432_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 64192432,
+                  "p_name": "Baarish Ki Jaaye",
+                  "lang": "Hindi",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "fav_count": 25917,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "62418416",
+                "title": "Thoda Thoda Pyaar",
+                "image": "https://images.hungama.com/c/1/a69/a53/62418415/62418415_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62418415,
+                  "p_name": "Thoda Thoda Pyaar",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 56811,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "59138430",
+                "title": "Naach Meri Rani",
+                "image": "https://images.hungama.com/c/1/c48/17c/59138429/59138429_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 59138429,
+                  "p_name": "Naach Meri Rani (Feat. Guru Randhawa Nora Fatehi)",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 216149,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "62774404",
+                "title": "Panghat",
+                "image": "https://images.hungama.com/c/1/bd6/a33/62774403/62774403_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62774403,
+                  "p_name": "Panghat (From \"Roohi\")",
+                  "lang": "Hindi",
+                  "territory_rights": "AF_A,BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                  "fav_count": 38843,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "63900344",
+                "title": "Main Hoon Na",
+                "image": "https://images.hungama.com/c/1/5b6/d45/63900343/63900343_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 63900343,
+                  "p_name": "Main Hoon Na Tere Saath (From \"Saina\")",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 11900,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "61779570",
+                "title": "Saiyaan Ji",
+                "image": "https://images.hungama.com/c/1/ab6/6bf/61779569/61779569_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 61779569,
+                  "p_name": "Saiyaan Ji (Ft. Nushrratt Bharuccha)",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 76525,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "61500044",
+                "title": "Faraar",
+                "image": "https://images.hungama.com/c/1/d99/d76/61500037/61500037_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 61500037,
+                  "p_name": "Faraar",
+                  "lang": "Hindi",
+                  "territory_rights": "BD_A,BT_A,IN_A,LK_A,NP_A,PK_A",
+                  "fav_count": 79488,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "62251014",
+                "title": "Main Jis Din",
+                "image": "https://images.hungama.com/c/1/266/bbf/62251012/62251012_180x180.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62251012,
+                  "p_name": "Main Jis Din Bhulaa Du",
+                  "lang": "Hindi",
+                  "territory_rights": "AA_A",
+                  "fav_count": 61141,
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "24861",
+          "type": 4,
+          "heading": "My Top 10 Songs",
+          "subhead": "Make it public",
+          "public": 1,
+          "hscroll": 1,
+          "numrow": 5,
+          "items": [
+            {
+              "itype": 7,
+              "data": {
+                "id": "6532",
+                "title": "Bollywood Top 40",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/c6ed67dfc7cba62a77df4c71dd85b483_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "priority": "1",
+                  "section_id": "52",
+                  "lang_id": "hin",
+                  "lang": "Hindi",
+                  "store_id": 1,
+                  "moviecount": 40,
+                  "playcount": 4050365,
+                  "fav_count": 3457277
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "63993593",
+                "title": "Namastey India",
+                "image": "https://files.hubhopper.com/podcast/311834/namastey-india.jpg?v=1604330279&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210406000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123593,
+                  "ctag": [],
+                  "fav_count": 39,
+                  "certificate": "",
+                  "priority": "1",
+                  "duration": 0,
+                  "playcount": 515
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "62520995",
+                "subtitle": "2021",
+                "type": "shortFilms",
+                "image": "https://images.hungama.com/c/1/f5d/832/62520995/62520995_500x500.jpg",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13716,
+                  "explicit_i": 0,
+                  "releasedate": "2021-02-15T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Korean",
+                  "lang_id": "kor",
+                  "territory_rights": "AA_A",
+                  "propertyid": 2560780,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "58562318",
+                "title": "25 Essentials - Navratri",
+                "type": "audioAlbum",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/4de7e172541fbeb5605eb5836039098a_924x520.jpg",
+                "misc": {
+                  "vendor_id": 7775,
+                  "explicit_i": 0,
+                  "releasedate": 20201009000000,
+                  "genre": "Devotional",
+                  "genre_id": 8,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37578827,
+                  "raw": "488|https://36.hungamacontent.com/488/6224421940.jpg",
+                  "ctag": [],
+                  "fav_count": 401,
+                  "content_title": "25 Essentials - Navratri",
+                  "content_text": "25 Essentials - Navratri",
+                  "certificate": "",
+                  "priority": "4",
+                  "duration": 0,
+                  "playcount": 1252426
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "6637",
+                "title": "International Top 40",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/e7a3593a058bb7627a7a9fa42729bf43_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "priority": "2",
+                  "section_id": "52",
+                  "lang_id": "eng",
+                  "lang": "English",
+                  "store_id": 1,
+                  "moviecount": 40,
+                  "playcount": 3902267,
+                  "fav_count": 288233
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "62165035",
+                "title": "TENET",
+                "image": "https://images.hungama.com/c/1/f94/e86/62165035/62165035_320x180.jpg",
+                "type": "movie",
+                "misc": {
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "",
+                  "movierights": null,
+                  "genre": "",
+                  "genre_id": -1,
+                  "lang": "",
+                  "lang_id": "",
+                  "rating": null,
+                  "users_rating": {
+                    "maxrating": 0,
+                    "avgrating": 0,
+                    "user_rating": 0
+                  },
+                  "api": "",
+                  "duration": 0,
+                  "primary_cast": null,
+                  "sub_id": 0,
+                  "episode_no": 0,
+                  "season_number": 0,
+                  "purchase_api": "",
+                  "details": null,
+                  "subtitle": null,
+                  "certificate": "",
+                  "synopsis": "",
+                  "played": 37,
+                  "runtime": 150
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "63071217",
+                "title": "EP 02 - Love Traingle",
+                "image": "https://images.hungama.com/c/1/356/3bd/63071217/63071217_320x180.jpg",
+                "type": "tVSeriesEpisode",
+                "misc": {
+                  "p_id": 0,
+                  "p_name": "",
+                  "releasedate": "",
+                  "movierights": null,
+                  "genre": "",
+                  "genre_id": -1,
+                  "lang": "",
+                  "lang_id": "",
+                  "rating": null,
+                  "users_rating": {
+                    "maxrating": 0,
+                    "avgrating": 0,
+                    "user_rating": 0
+                  },
+                  "images": [
+                    {
+                      "image": "https://images.hungama.com/c/1/356/3bd/63071217/63071217_320x180.jpg",
+                      "width": 320,
+                      "height": 180,
+                      "extn": "jpg"
+                    }
+                  ],
+                  "api": "",
+                  "duration": 0,
+                  "primary_cast": null,
+                  "sub_id": 0,
+                  "episode_no": 0,
+                  "season_number": 0,
+                  "purchase_api": "",
+                  "details": null,
+                  "subtitle": null,
+                  "certificate": "",
+                  "synopsis": "",
+                  "played": 19,
+                  "runtime": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "3243",
+          "type": 4,
+          "heading": "My Top 10 Movies",
+          "subhead": "Make it public",
+          "public": 0,
+          "hscroll": 1,
+          "numrow": 2,
+          "more": 1,
+          "items": [
+            {
+              "itype": 2,
+              "data": {
+                "id": "63993593",
+                "title": "Namastey India",
+                "image": "https://files.hubhopper.com/podcast/311834/namastey-india.jpg?v=1604330279&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210406000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123593,
+                  "ctag": [],
+                  "fav_count": 39,
+                  "certificate": "",
+                  "priority": "1",
+                  "duration": 0,
+                  "playcount": 515
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64000399",
+                "title": "Bumpy Journey With Therhappy",
+                "image": "https://files.hubhopper.com/podcast/315803/bumpy-journey-with-therhappy.jpg?v=1604154177&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20201128000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38124245,
+                  "ctag": [],
+                  "fav_count": 12,
+                  "certificate": "",
+                  "priority": "2",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63997794",
+                "title": "Unconventional Ghalib",
+                "image": "https://files.hubhopper.com/podcast/314415/unconventional-ghalib.jpg?v=1615274263&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200827000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38124012,
+                  "ctag": [],
+                  "fav_count": 40,
+                  "certificate": "",
+                  "priority": "3",
+                  "duration": 0,
+                  "playcount": 8
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63992788",
+                "title": "GuruCool",
+                "image": "https://files.hubhopper.com/podcast/309145/gurucool.jpg?v=1585894851&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200407000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123520,
+                  "ctag": [],
+                  "fav_count": 9,
+                  "certificate": "",
+                  "priority": "4",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61311356",
+                "title": "Music To Calm The Mind",
+                "image": "https://files.hubhopper.com/podcast/309012/music-to-calm-the-mind.jpg?v=1588416852&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200504000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37156827,
+                  "ctag": [],
+                  "fav_count": 65,
+                  "certificate": "",
+                  "priority": "5",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61314154",
+                "title": "Shri Ganesha",
+                "image": "https://files.hubhopper.com/podcast/13098/shri-ganesha.jpg?v=1576490237&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20191208000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37156956,
+                  "ctag": [],
+                  "fav_count": 56,
+                  "certificate": "",
+                  "priority": "6",
+                  "duration": 0,
+                  "playcount": 2
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64491043",
+                "title": "WhatsApp University: Jhakaas ya Bakwaas!",
+                "image": "https://files.hubhopper.com/podcast/314521/whatsapp-university-jhakaas-ya-bakwaas.jpg?s=hungama-hls",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210416000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38178829,
+                  "ctag": [],
+                  "fav_count": 8,
+                  "certificate": "",
+                  "priority": "7",
+                  "duration": 0,
+                  "playcount": 3
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63992256",
+                "title": "Sadhguru",
+                "image": "https://files.hubhopper.com/podcast/316340/sadhguru.jpg?v=1612347490&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210405000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123476,
+                  "ctag": [],
+                  "fav_count": 102,
+                  "certificate": "",
+                  "priority": "8",
+                  "duration": 0,
+                  "playcount": 709
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61311492",
+                "title": "She Says She''s Fine",
+                "image": "https://files.hubhopper.com/podcast/7993/400x400/she-says-shes-fine.jpg?v=1597280997&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20190418000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37156838,
+                  "ctag": [],
+                  "fav_count": 57,
+                  "certificate": "",
+                  "priority": "9",
+                  "duration": 0,
+                  "playcount": 113
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63998008",
+                "title": "Kya Woh Sach Tha",
+                "image": "https://files.hubhopper.com/podcast/10648/kya-woh-sach-tha.jpeg?v=1569584442&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20191207000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38124045,
+                  "ctag": [],
+                  "fav_count": 54,
+                  "certificate": "",
+                  "priority": "10",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64067959",
+                "title": "Motivation Spark",
+                "image": "https://files.hubhopper.com/podcast/259093/motivation-spark.jpg?v=1618583469&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210417000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38131992,
+                  "ctag": [],
+                  "fav_count": 5,
+                  "certificate": "",
+                  "priority": "11",
+                  "duration": 0,
+                  "playcount": 179
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64067871",
+                "title": "Malini''s World",
+                "image": "https://files.hubhopper.com/podcast/316539/malinis-world.jpg?v=1608365795&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210419000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38131986,
+                  "ctag": [],
+                  "fav_count": 71,
+                  "certificate": "",
+                  "priority": "12",
+                  "duration": 0,
+                  "playcount": 824
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63996091",
+                "title": "Jeevan Ki Prerna",
+                "image": "https://files.hubhopper.com/podcast/312501/jivana-ki-prerana.jpg?v=1591467541&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200702000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123867,
+                  "ctag": [],
+                  "fav_count": 22,
+                  "certificate": "",
+                  "priority": "13",
+                  "duration": 0,
+                  "playcount": 33
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63994650",
+                "title": "Storytime With Gurudev Sri Sri Ravi Shankar",
+                "image": "https://files.hubhopper.com/podcast/313123/storytime-with-gurudev-sri-sri-ravi-shankar.jpg?v=1598432706&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200623000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123693,
+                  "ctag": [],
+                  "fav_count": 10,
+                  "certificate": "",
+                  "priority": "14",
+                  "duration": 0,
+                  "playcount": 15
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63992908",
+                "title": "Dhai Kilo Ka Show",
+                "image": "https://files.hubhopper.com/podcast/313717/dhai-kilo-ka-show.jpg?v=1595712197&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210407000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123528,
+                  "ctag": [],
+                  "fav_count": 14,
+                  "certificate": "",
+                  "priority": "15",
+                  "duration": 0,
+                  "playcount": 182
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61315000",
+                "title": "DessTalks",
+                "image": "https://files.hubhopper.com/podcast/13115/desstalks.jpg?s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20200908000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37878561,
+                  "ctag": [],
+                  "fav_count": 9,
+                  "certificate": "",
+                  "priority": "16",
+                  "duration": 0,
+                  "playcount": 189
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63996089",
+                "title": "Jeff''s Podcast Academy",
+                "image": "https://files.hubhopper.com/podcast/314178/podcast-for-podcasters.jpg?v=1618493683&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210416000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38123866,
+                  "ctag": [],
+                  "fav_count": 7,
+                  "certificate": "",
+                  "priority": "17",
+                  "duration": 0,
+                  "playcount": 41
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63999995",
+                "title": "Bakbak Tanushri",
+                "image": "https://files.hubhopper.com/podcast/9251/bakbak-tanushri.jpg?v=1599605586&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210214000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "English",
+                  "lang_id": "eng",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38124209,
+                  "ctag": [],
+                  "fav_count": 34,
+                  "certificate": "",
+                  "priority": "18",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64068004",
+                "title": "Amazing India by Gurudev Sri Sri Ravi Shankar",
+                "image": "https://files.hubhopper.com/podcast/316846/amazing-india-by-gurudev-sri-sri-rabi-shankar.jpg?v=1610712430&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210106000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38131997,
+                  "ctag": [],
+                  "fav_count": 13,
+                  "certificate": "",
+                  "priority": "19",
+                  "duration": 0,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63999846",
+                "title": "Charlie Chikna",
+                "image": "https://files.hubhopper.com/podcast/10649/charlie-chikna.jpeg?v=1569475197&s=hungama",
+                "type": "podcastAudioAlbum",
+                "misc": {
+                  "vendor_id": 13384,
+                  "explicit_i": 0,
+                  "releasedate": 20210415000000,
+                  "genre": "PodCast Genre",
+                  "genre_id": 13678520,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 38124194,
+                  "ctag": [],
+                  "fav_count": 37,
+                  "certificate": "",
+                  "priority": "20",
+                  "duration": 0,
+                  "playcount": 1909
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "204",
+          "type": 4,
+          "heading": "My Top 10 Artists",
+          "subhead": "Make it public",
+          "public": 0,
+          "hscroll": 1,
+          "more": 1,
+          "items": [
+            {
+              "itype": 4,
+              "data": {
+                "id": "40869",
+                "title": "enrique iglesias",
+                "image": "https://images.hungama.com/a/1/e4c/5f4/40869/40869_200x200.jpg",
+                "type": "artist",
+                "subtitle": "77K followers",
+                "misc": {
+                  "description": "<p>Enrique Iglesias (born Enrique Miguel Iglesias Preysler; May 8, 1975) is a Spanish singer, songwriter and occasional actor, popular in both the Latin market and the Hispanic American market in the United States. He is the son of the famous Spanish singer Julio Iglesias.</p>"
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "15298",
+                "title": "Neha Kakkar",
+                "image": "https://images.hungama.com/a/1/71e/10d/15298/15298_200x200.jpg",
+                "type": "artist",
+                "subtitle": "8K followers",
+                "misc": {
+                  "description": "<p>Neha Kakkar, a quality playback singer in making has come a long way only because of her unique talent in singing and dancing. She has already performed in more than 1000 live shows.</p>"
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "81472488",
+                "title": "Camila Cabello",
+                "image": "https://images.hungama.com/a/1/3bc/9d0/81472488/81472488_200x200.jpg",
+                "type": "artist",
+                "subtitle": "77K followers",
+                "misc": {}
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "7069",
+                "title": "Shreya Ghoshal",
+                "image": "https://images.hungama.com/a/1/831/875/7069/7069_200x200.jpg",
+                "type": "artist",
+                "subtitle": "62K followers",
+                "misc": {
+                  "description": "<p>Shreya Ghoshal (Bengali:born 12 March 1984) is an Indian singer. Best known as a playback singer in Hindi films, she has also performed several songs for other Indian film industries such as Assamese, Bengali, Kannada, Malayalam, Marathi, Punjabi, Tamil and Telugu songs.</p>"
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "4294",
+                "title": "Mika Singh",
+                "image": "https://images.hungama.com/a/1/11d/867/4294/4294_200x200.jpg",
+                "type": "artist",
+                "subtitle": "64K followers",
+                "misc": {
+                  "description": "Amrik Singh on June 10, 1977, in Durgapur, West Bengal known by his stage name Mika is an Indian Pop singer and Rapper. He is considered a highly acclaimed Punjabi singer. He has done songs for many Bollywood films, which include Singh Is Kinng and Jab We Met. His range as a playback singer is limited, but commercially he is successful with hit songs."
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "11833815",
+                "title": "J Balvin",
+                "image": "https://images.hungama.com/a/1/0e8/43e/11833815/11833815_200x200.jpg",
+                "type": "artist",
+                "subtitle": "63K followers",
+                "misc": {
+                  "description": "J Balvin"
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "45939826",
+                "title": "Darshan Raval",
+                "image": "https://images.hungama.com/a/1/f88/d90/45939826/45939826_200x200.jpg",
+                "type": "artist",
+                "subtitle": "64K followers",
+                "misc": {}
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "5914290",
+                "title": "Guru Randhawa",
+                "image": "https://images.hungama.com/a/1/cf2/520/5914290/5914290_200x200.jpg",
+                "type": "artist",
+                "subtitle": "17K followers",
+                "misc": {}
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "52107396",
+                "title": "Jordan Sandhu",
+                "image": "https://images.hungama.com/a/1/df5/ec8/52107396/52107396_200x200.jpg",
+                "type": "artist",
+                "subtitle": "75K followers",
+                "misc": {}
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "42221",
+                "title": "Justin Bieber",
+                "image": "https://images.hungama.com/a/1/b42/a46/42221/42221_200x200.jpg",
+                "type": "artist",
+                "subtitle": "23K followers",
+                "misc": {
+                  "description": "<p>Justin Drew Bieber (born March 1, 1994) is a Canadian pop/R&amp;B singer, songwriter and actor. Bieber was discovered in 2008 by Scooter Braun, who came across Bieber's videos on YouTube and later became his manager.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "24862",
+          "type": 4,
+          "heading": "Hungama Specials",
+          "hscroll": 1,
+          "more": 0,
+          "items": [
+            {
+              "itype": 3,
+              "data": {
+                "id": "79",
+                "title": "Zubaan Kesari",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/39/2/394bf87ea5ded251356cbc03024c7092.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/66/c/665430f4769ecbc9f449a2e9ebd3c1bc.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "41",
+                "title": "McDowell",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/b7/1/b799554c9e6b0c7deba39cd1c8ffce01.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/e7/9/e7e3b27b6ebe645b87553c238608c3a9.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61",
+                "title": "IIMA Nominee",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/9e/9/9e96d969dadc3db555cf114d949bd559.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/4d/4/4d264fced46c85159a521e05d3f12164.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "76",
+                "title": "Party",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/e8/5/e8b88938f4ca17e8c101837aabb96205.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/cb/5/cb7e98891017211675b2786176e855d5.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 4,
+              "data": {
+                "id": "27",
+                "title": "Devotional",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/45/a/4501b56029cdfacdcb22154cc8a301ca.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/34/2/34014144d2ed7507aef1b703545a1232.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "47",
+                "title": "All About Love",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/22/3/22e2860db3f7ec9c19b1d9ffdd53e573.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/ed/8/ed23b51ad2d923ed2dce7b9e16310588.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 6,
+              "data": {
+                "id": "24",
+                "title": "Retro",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/c0/f/c0fdb6ff76bb2a1807f453497572e4df.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/b5/2/b5fdbbce21dc1099606d0dfeffd415e2.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 7,
+              "data": {
+                "id": "54",
+                "title": "Editor of the Week - Badshah",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/83/2/83f5c5f921a571a0ecf7f14671b8db92.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/be/3/beadccc1d2762d99b3535fc9de7fec73.jpg",
+                  "full_page_image": ""
+                }
+              }
+            },
+            {
+              "itype": 8,
+              "data": {
+                "id": "74",
+                "title": "Best of 2020",
+                "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/98/4/980de49c31608073ef6953ce2b002574.jpg",
+                "type": "brandCategory",
+                "misc": {
+                  "brand_type": "basic",
+                  "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/c3/b/c372b3475f02284ed606da1da7a0144b.jpg",
+                  "full_page_image": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "3243",
+          "type": 4,
+          "heading": "Morning Radio",
+          "hscroll": 1,
+          "numrow": 1,
+          "more": 1,
+          "items": [
+            {
+              "itype": 2,
+              "data": {
+                "id": "16835",
+                "title": "Hot Now International",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/07f68afc158e51b5c3b104096564e816_200x200.jpg",
+                "type": "live_radio",
+                "misc": {
+                  "lang": "English",
+                  "moviecount": "0",
+                  "store_id": "1",
+                  "live_url": "https://securestreams8.autopo.st:3012/1",
+                  "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=english-hits&site_url=",
+                  "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/07f68afc158e51b5c3b104096564e816_500x500.jpg"
+                }
+              }
+            },
+            {
+              "itype": 9,
+              "data": {
+                "id": "16836",
+                "title": "Evergreen International",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/58b7f2ca727aa7e28723da5c3cd68202_200x200.jpg",
+                "type": "live_radio",
+                "misc": {
+                  "lang": "English",
+                  "moviecount": "0",
+                  "store_id": "1",
+                  "live_url": "https://securestreams8.autopo.st:3013/1",
+                  "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=english-classics&site_url=",
+                  "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/58b7f2ca727aa7e28723da5c3cd68202_500x500.jpg"
+                }
+              }
+            },
+            {
+              "itype": 10,
+              "data": {
+                "id": "16823",
+                "title": "Bollywood Dil Se",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/94e23c3b64ab6d4bb69a2731d7c177c2_200x200.jpg",
+                "type": "live_radio",
+                "misc": {
+                  "lang": "Hindi",
+                  "moviecount": "0",
+                  "store_id": "1",
+                  "live_url": "https://securestreams8.autopo.st:3001/1",
+                  "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=16823&site_url=",
+                  "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/94e23c3b64ab6d4bb69a2731d7c177c2_500x500.jpg"
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "49693",
+                "title": "Hot Now Bollywood",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/6cdfc511ae6a49907bd583696aecc55a_200x200.jpg",
+                "type": "live_radio",
+                "misc": {
+                  "lang": "Hindi",
+                  "moviecount": "0",
+                  "store_id": "1",
+                  "live_url": "https://securestreams8.autopo.st:3027/1",
+                  "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=49693&site_url=",
+                  "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/6cdfc511ae6a49907bd583696aecc55a_500x500.jpg"
+                }
+              }
+            },
+            {
+              "itype": 3,
+              "data": {
+                "id": "16837",
+                "title": "Dance Masti International",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/23447465cc0910522754bcc594f11b53_200x200.jpg",
+                "type": "live_radio",
+                "misc": {
+                  "lang": "English",
+                  "moviecount": "0",
+                  "store_id": "1",
+                  "live_url": "https://securestreams8.autopo.st:3014/1",
+                  "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=international-dance-hits&site_url=",
+                  "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/23447465cc0910522754bcc594f11b53_500x500.jpg"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

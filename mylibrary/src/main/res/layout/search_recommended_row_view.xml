@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ivArtistImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleType="centerCrop" />-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/clMain"
+    android:layout_marginTop="@dimen/dimen_10"
+    android:layout_marginEnd="@dimen/dimen_10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clImageMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+
+        <RelativeLayout
+            android:id="@+id/rlRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivRadioImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_bg"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+                android:alpha="0.22"
+                />
+
+            <!--<com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivRadioImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_6"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPlaceholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+
+                />-->
+            <com.hungama.music.utils.customview.circleimageview.CircleImageView
+                android:id="@+id/ivRadioImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:padding="@dimen/dimen_6"
+                android:layout_centerInParent="true"
+                android:src="@color/colorPlaceholder"
+                />
+        </RelativeLayout>
+
+        <!--<com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivArtistImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:background="@color/colorPlaceholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+
+            />-->
+        <com.hungama.music.utils.customview.circleimageview.CircleImageView
+            android:id="@+id/ivArtistImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:src="@color/colorPlaceholder"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

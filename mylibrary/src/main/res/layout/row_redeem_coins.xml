@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clMain"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dimen_18"
+    android:layout_marginTop="@dimen/dimen_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/settings_item_bg_color"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/clCart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_75"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:scaleType="centerInside"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:background="@drawable/bg_gradient_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivimage"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_0"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_gradient_placeholder"
+            app:layout_constraintBottom_toBottomOf="@+id/clCart"
+            app:layout_constraintEnd_toEndOf="@+id/clCart"
+            app:layout_constraintStart_toStartOf="@+id/clCart"
+            app:layout_constraintTop_toTopOf="@+id/clCart"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"/>
+
+
+        <TextView
+            android:id="@+id/tvcartTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/font_13"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/font_13"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clCart" />
+
+        <View
+            android:id="@+id/vDevider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:background="@drawable/bg_dash_line"
+            android:layerType="software"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvcartTitle"
+            app:layout_constraintBottom_toTopOf="@+id/llCoin"
+            android:alpha="0.3"/>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/llCoin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_10"
+    android:layout_marginEnd="@dimen/dimen_10"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="@dimen/dimen_10"
+    android:gravity="center_horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/btnRedeem">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCoin"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_marginStart="@dimen/dimen_5"
+        app:srcCompat="@drawable/bg_coin_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvCartCounPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_7"
+        android:layout_marginEnd="@dimen/dimen_5"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_13"
+        android:fontFamily="@font/sf_pro_text_medium"
+        app:layout_constraintStart_toEndOf="@+id/ivCoin"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnRedeem"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_marginStart="@dimen/dimen_13"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivIcon"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_redeem_coin"
+                app:fontTextSize="@dimen/font_16"/>
+            <TextView
+                android:id="@+id/tvRedeem"
+                style="@style/commonMediumButtonStyle"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:text="@string/profile_str_50"
+                android:textSize="@dimen/font_13"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

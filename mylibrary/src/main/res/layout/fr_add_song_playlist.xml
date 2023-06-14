@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#282828"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlActionBarHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_60"
+            android:elevation="@dimen/dimen_4"
+            android:layout_alignParentTop="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <include android:id="@+id/headBarBlur" layout="@layout/common_blur_view"/>
+
+            <RelativeLayout
+                android:id="@+id/rlBack"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_2">
+                <!-- Do not remove imageView id-ivBack -->
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/dimen_44"
+                    android:layout_height="@dimen/dimen_44"
+                    android:contentDescription="@string/login_str_2" />
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivBackIcon"
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_back"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvActionBarHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_5"
+                android:layout_toEndOf="@+id/rlBack"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:id="@+id/rlMenu"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dimen_2"
+                android:visibility="invisible">
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivMenu"
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_option"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginBottom="@dimen/dimen_18"
+            android:layout_below="@+id/rlActionBarHeader">
+
+            <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:realtimeBlurRadius="150dp"
+                app:topLeftRadius="100dp"
+                app:topRightRadius="100dp"
+                app:bottomLeftRadius="100dp"
+                app:bottomRightRadius="100dp"
+                app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+            <LinearLayout
+                android:id="@+id/llSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontTextColor="@color/item_sub_title_color"
+                    android:layout_gravity="center"
+                    app:fontText="@string/icon_search2"
+                    android:layout_marginStart="@dimen/dimen_19"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_Search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:gravity="start|center"
+                    android:hint="@string/download_str_23"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textVisiblePassword|textNoSuggestions"
+                    android:lines="1"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_6sdp"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="#33C6C6C6"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecomandedSong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlSearch"
+            android:layout_marginStart="@dimen/dimen_19"
+            android:layout_marginEnd="@dimen/dimen_19"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_playlist_add_song" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_19"
+            android:layout_marginEnd="@dimen/dimen_19"
+            android:layout_below="@+id/rlSearch"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/row_playlist_add_song"
+            tools:itemCount="3"
+            android:visibility="gone"/>
+        <include
+            layout="@layout/layout_progress"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+</layout>

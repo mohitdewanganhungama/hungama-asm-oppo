@@ -1,0 +1,26 @@
+<androidx.appcompat.widget.LinearLayoutCompat android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    android:gravity="center"
+    android:layout_marginLeft="@dimen/dimen_18"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_7">-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dimen_213"
+            android:layout_height="@dimen/dimen_120"
+            android:scaleType="centerInside"
+            android:background="@drawable/bg_gradient_placeholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+        <!--</androidx.cardview.widget.CardView>-->
+
+    </FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/home_bg_layer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_userprofile_followers"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_60">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/coinView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_244"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_18"
+                android:visibility="visible">
+
+                <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:realtimeBlurRadius="50dp"
+                    app:realtimeOverlayColor="#1AFFFFFF"/>
+
+                <ImageView
+                    android:id="@+id/ivCoinView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_user_following_bg" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCoinDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/dimen_18">
+                    <TextView
+                        android:id="@+id/tvCoinTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_59"
+                        android:layout_marginEnd="@dimen/dimen_59"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:gravity="center_horizontal"
+                        android:text="@string/profile_str_11"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_18"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        app:layout_constraintTop_toBottomOf="@id/tvCoinTitle">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCoin"
+                            android:layout_width="@dimen/dimen_22_5"
+                            android:layout_height="@dimen/dimen_22_5"
+                            android:layout_marginEnd="@dimen/dimen_8"
+                            app:srcCompat="@drawable/bg_coin_profile"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tvCoin"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvCoin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_5_minus"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:includeFontPadding="false"
+                            android:text="500"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_26"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.55"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clConnectFacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_32"
+                    android:layout_marginStart="@dimen/dimen_23"
+                    android:layout_marginTop="@dimen/dimen_132"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivConnectFacebook"
+                        android:layout_width="@dimen/dimen_32"
+                        android:layout_height="@dimen/dimen_32"
+                        android:src="@drawable/ic_facebook_bordered"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvConnectFacebook"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_12"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/profile_str_6"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_14"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@+id/btnConnectFacebook"
+                        app:layout_constraintStart_toEndOf="@id/ivConnectFacebook"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvFollowFriends"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_12"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/profile_str_7"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_12"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@+id/btnConnectFacebook"
+                        app:layout_constraintStart_toEndOf="@id/ivConnectFacebook"
+                        app:layout_constraintTop_toBottomOf="@id/tvConnectFacebook" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnConnectFacebook"
+                        android:layout_width="@dimen/dimen_80"
+                        android:layout_height="@dimen/dimen_32"
+                        app:layout_constraintBottom_toBottomOf="@id/ivConnectFacebook"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontText="@string/icon_connect"
+                            app:fontTextSize="@dimen/font_13"
+                            android:visibility="gone"
+                            android:layout_marginEnd="@dimen/dimen_2"/>
+
+                        <TextView
+                            style="@style/commonMediumButtonStyle"
+                            android:text="@string/profile_str_8"
+                            android:textSize="@dimen/font_13"
+                            android:layout_marginStart="@dimen/dimen_2"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/devider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginStart="@dimen/dimen_19_5"
+                    android:layout_marginTop="@dimen/dimen_13_2"
+                    android:layout_marginEnd="@dimen/dimen_38_5"
+                    android:alpha="0.7"
+                    android:background="#707070"
+                    app:layout_constraintTop_toBottomOf="@id/clConnectFacebook" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clConnectContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_23"
+                    android:layout_marginTop="@dimen/dimen_13_2"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    app:layout_constraintTop_toBottomOf="@id/devider">
+
+                    <ImageView
+                        android:id="@+id/ivConnectContact"
+                        android:layout_width="@dimen/dimen_32"
+                        android:layout_height="@dimen/dimen_32"
+                        android:src="@drawable/ic_contact_borderd"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvConnectContact"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_12"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/profile_str_9"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_14"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@+id/btnConnectContact"
+                        app:layout_constraintStart_toEndOf="@id/ivConnectContact"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvFollowPeople"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_12"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/profile_str_10"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_12"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@+id/btnConnectContact"
+                        app:layout_constraintStart_toEndOf="@id/ivConnectContact"
+                        app:layout_constraintTop_toBottomOf="@id/tvConnectContact" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnConnectContact"
+                        android:layout_width="@dimen/dimen_80"
+                        android:layout_height="@dimen/dimen_32"
+                        app:layout_constraintBottom_toBottomOf="@id/ivConnectContact"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ivConnectContact"
+                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontText="@string/icon_connect"
+                            android:visibility="gone"
+                            app:fontTextSize="@dimen/font_13"
+                            android:layout_marginEnd="@dimen/dimen_2"/>
+
+                        <TextView
+                            style="@style/commonMediumButtonStyle"
+                            android:text="@string/profile_str_8"
+                            android:textSize="@dimen/font_13"
+                            android:layout_marginStart="@dimen/dimen_2"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFollowing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coinView"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_6"
+                android:clipToPadding="false" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/common_header_action_bar" />
+    <include
+        layout="@layout/layout_progress"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

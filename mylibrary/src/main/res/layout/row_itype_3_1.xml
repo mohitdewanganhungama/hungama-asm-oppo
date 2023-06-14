@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_20"
+        >
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="21:9"
+        app:cardCornerRadius="@dimen/dimen_7"
+        app:cardBackgroundColor="#282828"
+
+        android:elevation="10dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_itype_3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_centerInParent="true">
+
+                <include layout="@layout/blur_layout_view" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen_18"
+                    android:paddingEnd="@dimen/dimen_22"
+
+                    android:paddingBottom="@dimen/dimen_17">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dimen_16"
+                        android:layout_weight="1"
+
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTitle"
+                            style="@style/StyleTextView"
+                            android:layout_gravity="start|center"
+                            android:layout_marginTop="@dimen/dimen_0"
+                            android:maxLines="2"
+                            android:minLines="2"
+                            android:text=""
+                            android:textSize="@dimen/font_15" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSubTitle"
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_gravity="start|center"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textSize="@dimen/font_13" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvConentTitle"
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_gravity="start|center"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textSize="@dimen/font_13" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_24"
+                            android:layout_height="@dimen/dimen_24"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:src="@drawable/ic_play_itype_3" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dimen_104"
+                        android:layout_height="@dimen/dimen_127">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivUserImage3"
+                            android:layout_width="@dimen/dimen_85"
+                            android:layout_height="@dimen/dimen_127"
+                            android:layout_marginStart="@dimen/dimen_30"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:background="@color/colorPlaceholder"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/bg_gradient_placeholder" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivUserImage2"
+                            android:layout_width="@dimen/dimen_85"
+                            android:layout_height="@dimen/dimen_127"
+                            android:layout_marginStart="@dimen/dimen_11"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:background="@color/colorPlaceholder"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/bg_gradient_placeholder" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivUserImage1"
+                            android:layout_width="@dimen/dimen_85"
+                            android:layout_height="@dimen/dimen_127"
+                            android:background="@color/colorPlaceholder"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/bg_gradient_placeholder" />
+                    </RelativeLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

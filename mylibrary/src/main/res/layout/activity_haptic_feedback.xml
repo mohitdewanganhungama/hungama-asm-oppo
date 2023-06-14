@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--Button to generate normal vibration-->
+            <Button
+                android:id="@+id/normalVibrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="NORMAL VIBRATION"
+                android:textColor="@android:color/white" />
+
+            <!--Button to generate click vibration-->
+            <Button
+                android:id="@+id/clickVibrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/normalVibrationButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="CLOCK_TICK"
+                android:textColor="@android:color/white" />
+
+            <!--Button to generate double click vibration-->
+            <Button
+                android:id="@+id/doubleClickVibrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clickVibrationButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="CONFIRM"
+                android:textColor="@android:color/white" />
+
+            <!--Button to generate tick vibration-->
+            <Button
+                android:id="@+id/tickVibrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/doubleClickVibrationButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="CONTEXT_CLICK"
+                android:textColor="@android:color/white" />
+
+            <!--Button to generate heavy click vibration-->
+            <Button
+                android:id="@+id/heavyClickVibrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tickVibrationButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="GESTURE_END"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnGestureStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/heavyClickVibrationButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="GESTURE_START"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnKeyBoardPress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnGestureStart"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="KEYBOARD_PRESS"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnKeyBoardRelease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnKeyBoardPress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="KEYBOARD_RELEASE"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnKeyboardTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnKeyBoardRelease"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="KEYBOARD_TAP"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnLongPress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnKeyboardTab"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="LONG_PRESS"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnReject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnLongPress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="REJECT"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnTextHangleMove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnReject"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="TEXT_HANDLE_MOVE"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnVirtualKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnTextHangleMove"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="VIRTUAL_KEY"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnVirtualKeyRelease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnVirtualKey"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="VIRTUAL KEY RELEASE"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+</ScrollView>
+

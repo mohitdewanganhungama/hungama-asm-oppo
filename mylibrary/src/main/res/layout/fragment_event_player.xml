@@ -1,0 +1,248 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlParent"
+    android:background="@color/home_bg_color">
+
+    <View
+        android:id="@+id/bgMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.26"
+        android:background="@drawable/home_bg_layer" />
+
+    <include layout="@layout/common_blur_view" />
+
+    <RelativeLayout
+        android:id="@+id/rlActionBarHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:elevation="@dimen/dimen_4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_alignParentTop="true">
+        <View
+            android:id="@+id/headingBgColor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"/>
+        <include android:id="@+id/headBarBlur" layout="@layout/common_blur_view"/>
+        <ImageView
+            android:id="@+id/ivBack"
+            app:srcCompat="@drawable/ic_back_right_arrow"
+            android:layout_width="@dimen/dimen_13_1"
+            android:layout_height="@dimen/dimen_20"
+            app:tint="@color/colorWhite"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:contentDescription="@string/login_str_2" />
+
+        <TextView
+            android:id="@+id/tvActionBarHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            app:srcCompat="@drawable/ic_share"
+            android:layout_width="@dimen/dimen_17"
+            android:layout_height="@dimen/dimen_17"
+            app:tint="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:contentDescription="@string/login_str_2" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlActionBarHeaderLandscape"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:elevation="@dimen/dimen_4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:visibility="gone"
+        android:layout_alignParentTop="true">
+        <View
+            android:id="@+id/headingBgColorLandscape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"/>
+        <ImageView
+            android:id="@+id/ivBackLandscape"
+            app:srcCompat="@drawable/ic_back_right_arrow"
+            android:layout_width="@dimen/dimen_13_1"
+            android:layout_height="@dimen/dimen_20"
+            app:tint="@color/colorWhite"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:contentDescription="@string/login_str_2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLiveLandscape"
+            android:layout_width="26dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_live"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ivBackLandscape"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivViewLandscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_view"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ivLiveLandscape" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_6"
+            android:id="@+id/tvLiveEventCountLandscape"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_view"
+            android:layout_toEndOf="@id/ivViewLandscape"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sf_pro_text"
+            android:textStyle="normal"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_13"
+            app:lineHeight="@dimen/dimen_15"
+            android:visibility="gone"
+            android:gravity="center_vertical"
+            tools:text="222"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlActionBarHeader"
+        android:layout_gravity="center_horizontal">
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:use_controller="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/loading_exoplayer"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:visibility="visible" />
+        </androidx.media3.ui.PlayerView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLive"
+            android:layout_width="26dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_live"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_view"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/ivLive"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLiveEventCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_6"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:fontFamily="@font/sf_pro_text"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_view"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_13"
+            android:textStyle="normal"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/ivView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="@dimen/dimen_15"
+            tools:text="222" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOrientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/ic_screen_rotation"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLive"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_6"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:fontFamily="@font/sf_pro_text"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_13"
+            android:text="@string/rotate_your_device_for_fullscreen"
+            android:textStyle="normal"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivOrientation"
+            app:lineHeight="@dimen/dimen_15"
+            tools:text="222" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/font_color"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

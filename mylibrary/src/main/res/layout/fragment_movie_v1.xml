@@ -1,0 +1,547 @@
+<RelativeLayout
+    android:id="@+id/movieDetailroot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/home_bg_color">
+    <include layout="@layout/common_blur_view" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/view1"
+        android:background="@drawable/podcast_gradient_layer"/>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_movie_details_v1"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+            <!--app:fel_edge="top|left|bottom|right"-->
+            <com.hungama.music.utils.FadingEdgeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:fel_edge="bottom"
+                app:fel_size_bottom="400dp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/movieAlbumArtImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_395"
+                    android:scaleType="centerCrop" />
+            </com.hungama.music.utils.FadingEdgeLayout>
+
+    <View
+        android:id="@+id/vCenterGradient"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_395"
+        android:layout_marginTop="@dimen/dimen_197"
+        android:alpha="0.9"
+        android:background="@drawable/movie_center_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+
+                <View
+                    android:id="@+id/vTopGradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_115"
+                    android:background="@drawable/movie_top_gradient"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_260"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:lineSpacingExtra="@dimen/font_6"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_27"
+                        app:lineHeight="@dimen/font_33"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="1"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        android:fadingEdge="horizontal"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/rlNudity"
+                        android:layout_width="@dimen/dimen_38"
+                        android:layout_height="@dimen/dimen_23"
+                        android:layout_marginStart="@dimen/dimen_14"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!--android:background="@drawable/movie_bg_gradient_common"-->
+
+                            <com.hungama.music.utils.customview.blurview.CustomShapeBlurView2 xmlns:tools="http://schemas.android.com/tools"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:realtimeBlurRadius="50dp"
+                                app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                            <TextView
+                                android:id="@+id/tvNudity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:lineSpacingExtra="@dimen/font_2"
+                                android:text="18+"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_13"
+                                android:visibility="visible"
+                                app:lineHeight="@dimen/font_15" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <TextView
+                        android:id="@+id/tvSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_9"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:lineSpacingExtra="@dimen/font_2"
+                        android:text="2020 •"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_13"
+                        android:visibility="gone"
+                        app:lineHeight="@dimen/font_15" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails2">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llPlayMovie"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_weight="1"
+                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/ivDetailBtnIcon"
+                            style="@style/commonMediumIconStyle"
+                            android:visibility="gone"
+                            app:fontText="@string/icon_play_2"
+                            app:fontTextSize="@dimen/font_20" />
+
+                        <TextView
+                            android:id="@+id/tvDetailBtnTitle"
+                            style="@style/commonMediumButtonStyle"
+                            android:text="@string/movie_str_7"
+                            android:visibility="visible" />
+
+                        <!--<ImageView
+                                        android:id="@+id/ivDetailBtnIcon"
+                                        android:layout_width="@dimen/dimen_10_4"
+                                        android:layout_height="@dimen/dimen_12_2"
+                                        android:layout_marginStart="@dimen/dimen_4"
+                                        android:layout_marginTop="@dimen/dimen_2"
+                                        android:contentDescription="@string/login_str_2"
+                                        android:src="@drawable/ic_play_common_button"
+                                        app:tint="@color/colorWhite"
+                                        android:visibility="visible"/>-->
+
+                        <TextView
+                            android:id="@+id/tvDetailBtnPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="₹149"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_16"
+                            android:visibility="gone"
+                            app:lineHeight="@dimen/font_20" />
+
+                        <ProgressBar
+                            android:id="@+id/contentStatusProgress"
+                            android:layout_width="@dimen/dimen_24"
+                            android:layout_height="@dimen/dimen_24"
+                            android:layout_gravity="center"
+                            android:indeterminateTint="@color/colorWhite"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetailsActions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails3">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvRatingCritic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_3"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:text="0"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_18"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:text="@string/movie_str_1"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_11"
+                            android:textStyle="normal"
+
+                            />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llWatchlist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <!--<ImageView
+                                        android:id="@+id/ivWatchlist"
+                                        android:layout_width="@dimen/dimen_18"
+                                        android:layout_height="@dimen/dimen_18"
+                                        android:layout_marginTop="@dimen/dimen_7"
+                                        android:contentDescription="@string/login_str_2"
+                                        android:src="@drawable/ic_add_movie_watch_list"/>-->
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/ivWatchlist"
+                            android:layout_width="@dimen/dimen_15_9"
+                            android:layout_height="@dimen/dimen_15_9"
+                            android:layout_marginTop="@dimen/dimen_7"
+                            app:fontText="@string/icon_watchlist"
+                            app:fontTextColor="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/tvWatchlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:lineSpacingExtra="@dimen/font_2"
+                            android:text="@string/movie_str_4"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_11"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/rlDownload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <!--<ImageView
+                                        android:id="@+id/ivDownload"
+                                        android:layout_width="@dimen/dimen_24"
+                                        android:layout_height="@dimen/dimen_24"
+                                        android:layout_marginTop="@dimen/dimen_5"
+                                        android:contentDescription="@string/login_str_2"
+                                        android:src="@drawable/ic_download_movie"/>-->
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/ivDownload"
+                            android:layout_width="@dimen/dimen_16"
+                            android:layout_height="@dimen/dimen_16"
+                            app:fontText="@string/icon_download"
+                            app:fontTextColor="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/tvDownload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_4"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:lineSpacingExtra="@dimen/font_2"
+                            android:text="@string/movie_str_3"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_11"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/rlShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <!--<ImageView
+                                        android:layout_width="@dimen/dimen_20"
+                                        android:layout_height="@dimen/dimen_20"
+                                        android:layout_marginTop="@dimen/dimen_6"
+                                        android:contentDescription="@string/login_str_2"
+                                        android:src="@drawable/ic_baseline_share_24"/>-->
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/ivShare"
+                            android:layout_width="@dimen/dimen_16"
+                            android:layout_height="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_5"
+                            app:fontText="@string/icon_share"
+                            app:fontTextColor="@color/colorWhite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_3"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:lineSpacingExtra="@dimen/font_2"
+                            android:text="@string/movie_str_2"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_11"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.hungama.music.utils.customview.ShowMoreTextView
+                    android:id="@+id/tvReadMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_24"
+                    android:layout_marginEnd="@dimen/dimen_28"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:lineSpacingExtra="@dimen/font_9"
+                    android:text=""
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_13"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llDetailsActions"
+                    app:lineHeight="@dimen/font_22" />
+
+                <TextView
+                    android:id="@+id/tvDetailsLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:layout_marginEnd="@dimen/dimen_28"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:text=""
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_13"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvReadMore" />
+
+                <TextView
+                    android:id="@+id/tvDetailsContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:layout_marginEnd="@dimen/dimen_28"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:text=""
+                    android:textColor="@color/item_sub_title_color"
+                    android:textSize="@dimen/font_13"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailsLanguage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/topView">
+
+                <RelativeLayout
+                    android:id="@+id/rlRecommended"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dimen_27"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRecomendation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:itemCount="20" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- Scrollable content -->
+
+        </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:id="@+id/rlHeading"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60">
+        <include android:id="@+id/headBlur" android:visibility="invisible" layout="@layout/common_blur_view"/>
+
+        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llToolbar"
+            android:layout_width="@dimen/dimen_165"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/ivBack"
+            android:layout_toStartOf="@+id/menu"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llPlayMovieActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_weight="1"
+                android:background="@drawable/corner_radius_18_bg_blue"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivDetailBtnIconActionBar"
+                    style="@style/commonMediumIconStyle"
+                    app:fontText="@string/icon_play_2"
+                    app:fontTextSize="@dimen/font_20"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvDetailBtnTitleActionBar"
+                    style="@style/commonMediumButtonStyle"
+                    android:text="@string/movie_str_7"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvBtnPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_4"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:text="₹149"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_16"
+                    android:visibility="gone"
+                    app:lineHeight="@dimen/font_20" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

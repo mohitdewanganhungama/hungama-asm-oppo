@@ -1,0 +1,529 @@
+{
+  "body": {
+    "rows": [
+      {
+        "itype": 7,
+        "data": {
+          "id": "63993593",
+          "title": "Namastey India",
+          "image": "https://files.hubhopper.com/podcast/311834/namastey-india.jpg?v=1604330279&s=hungama",
+          "type": "podcastAudioAlbum",
+          "misc": {
+            "vendor_id": 13384,
+            "explicit_i": 0,
+            "releasedate": 20210406000000,
+            "genre": "PodCast Genre",
+            "genre_id": 13678520,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 38123593,
+            "ctag": [],
+            "fav_count": 39,
+            "certificate": "",
+            "priority": "1",
+            "duration": 0,
+            "playcount": 515
+          }
+        }
+      },
+      {
+        "itype": 7,
+        "data": {
+          "id": "58562318",
+          "title": "25 Essentials - Navratri",
+          "type": "audioAlbum",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/4de7e172541fbeb5605eb5836039098a_924x520.jpg",
+          "misc": {
+            "vendor_id": 7775,
+            "explicit_i": 0,
+            "releasedate": 20201009000000,
+            "genre": "Devotional",
+            "genre_id": 8,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 37578827,
+            "raw": "488|https://36.hungamacontent.com/488/6224421940.jpg",
+            "ctag": [],
+            "fav_count": 401,
+            "content_title": "25 Essentials - Navratri",
+            "content_text": "25 Essentials - Navratri",
+            "certificate": "",
+            "priority": "4",
+            "duration": 0,
+            "playcount": 1252426
+          }
+        }
+      },
+      {
+        "itype": 6,
+        "data": {
+          "id": "23715458",
+          "subtitle": "1993",
+          "type": "movie",
+          "misc": {
+            "movierights": [
+              "TVOD"
+            ],
+            "vendor_id": 1366,
+            "explicit_i": 0,
+            "releasedate": "1993-08-06T00:00:00+05:30",
+            "genre": "Action",
+            "genre_id": 24,
+            "lang": "English",
+            "lang_id": "eng",
+            "territory_rights": "IN_A,LK_A",
+            "propertyid": 13220541,
+            "ctag": [],
+            "fav_count": 0,
+            "priority": "9",
+            "duration": 0
+          }
+        }
+      },
+      {
+        "itype": 5,
+        "data": {
+          "id": "48625559",
+          "subtitle": "21K views",
+          "type": "musicVideoTrack",
+          "misc": {
+            "movierights": [
+              "AVOD",
+              "FVOD",
+              "SVOD"
+            ],
+            "p_id": 48625558,
+            "p_name": "Yaad Karke",
+            "vendor_id": 8346,
+            "explicit_i": 0,
+            "releasedate": "2019-07-18T00:00:00+05:30",
+            "genre": "Pop",
+            "genre_id": 46,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 36749674,
+            "ctag": [],
+            "fav_count": 142,
+            "priority": "5",
+            "duration": 228
+          }
+        }
+      },
+      {
+        "itype": 5,
+        "data": {
+          "id": "50095973",
+          "subtitle": "34K views",
+          "type": "musicVideoTrack",
+          "misc": {
+            "movierights": [
+              "AVOD",
+              "FVOD",
+              "SVOD"
+            ],
+            "p_id": 50092279,
+            "p_name": "Mera Jahan",
+            "vendor_id": 19,
+            "explicit_i": 0,
+            "releasedate": "2017-07-26T00:00:00+05:30",
+            "genre": "Pop",
+            "genre_id": 46,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 36861593,
+            "ctag": [],
+            "fav_count": 1,
+            "priority": "10",
+            "duration": 281
+          }
+        }
+      },
+      {
+        "itype": 5,
+        "data": {
+          "id": "20252765",
+          "subtitle": "46K views",
+          "type": "musicVideoTrack",
+          "misc": {
+            "movierights": [
+              "AVOD",
+              "FVOD",
+              "SVOD"
+            ],
+            "p_id": 20252764,
+            "p_name": "From Lost to Found",
+            "vendor_id": 8346,
+            "explicit_i": 0,
+            "releasedate": "2016-06-29T00:00:00+05:30",
+            "genre": "Pop",
+            "genre_id": 46,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 9876774,
+            "ctag": [],
+            "fav_count": 52,
+            "priority": "14",
+            "duration": 342
+          }
+        }
+      },
+      {
+        "itype": 5,
+        "data": {
+          "id": "50734042",
+          "subtitle": "63K views",
+          "type": "musicVideoTrack",
+          "misc": {
+            "movierights": [
+              "AVOD",
+              "FVOD",
+              "SVOD"
+            ],
+            "p_id": 50734040,
+            "p_name": "Tera Ghata",
+            "vendor_id": 8346,
+            "explicit_i": 0,
+            "releasedate": "2019-05-19T00:00:00+05:30",
+            "genre": "Pop",
+            "genre_id": 46,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 36915533,
+            "ctag": [],
+            "fav_count": 38,
+            "priority": "12",
+            "duration": 252
+          }
+        }
+      },
+      {
+        "itype": 11,
+        "data": {
+          "id": "40869",
+          "title": "enrique iglesias",
+          "image": "https://images.hungama.com/a/1/e4c/5f4/40869/40869_200x200.jpg",
+          "type": "artist",
+          "subtitle": "77K followers",
+          "misc": {
+            "description": "<p>Enrique Iglesias (born Enrique Miguel Iglesias Preysler; May 8, 1975) is a Spanish singer, songwriter and occasional actor, popular in both the Latin market and the Hispanic American market in the United States. He is the son of the famous Spanish singer Julio Iglesias.</p>"
+          }
+        }
+      },
+      {
+        "itype": 11,
+        "data": {
+          "id": "15298",
+          "title": "Neha Kakkar",
+          "image": "https://images.hungama.com/a/1/71e/10d/15298/15298_200x200.jpg",
+          "type": "artist",
+          "subtitle": "8K followers",
+          "misc": {
+            "description": "<p>Neha Kakkar, a quality playback singer in making has come a long way only because of her unique talent in singing and dancing. She has already performed in more than 1000 live shows.</p>"
+          }
+        }
+      },
+      {
+        "itype": 11,
+        "data": {
+          "id": "81472488",
+          "title": "Camila Cabello",
+          "image": "https://images.hungama.com/a/1/3bc/9d0/81472488/81472488_200x200.jpg",
+          "type": "artist",
+          "subtitle": "77K followers",
+          "misc": {}
+        }
+      },
+      {
+        "itype": 8,
+        "data": {
+          "id": "60471277",
+          "title": "Bewafa Tera Masoom Chehra",
+          "image": "https://images.hungama.com/c/1/b62/03b/60471268/60471268_180x180.jpg",
+          "type": "audioTrack",
+          "misc": {
+            "p_id": 60471268,
+            "p_name": "Bewafa Tera Masoom Chehra",
+            "lang": "Hindi",
+            "territory_rights": "AA_A",
+            "fav_count": 176588,
+            "duration": 0,
+            "playcount": 0
+          }
+        }
+      },
+      {
+        "itype": 12,
+        "data": {
+          "id": 36755,
+          "title": "Hot Right NOW!",
+          "subtitle": "Hot Right NOW!",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/7634edc61ed915c5ed2f7f2c4875547a_500x500.jpg",
+          "type": "playlist",
+          "misc": {
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "fav_count": 2178190,
+            "priority": "1",
+            "playcount": 266207
+          }
+        }
+      },
+      {
+        "itype": 12,
+        "data": {
+          "id": 39538,
+          "title": "Ek Number Emiway Bantai",
+          "subtitle": "Ek Number Emiway Bantai",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/d7710ac33537ed213ca16f803ce0f04a_500x500.jpg",
+          "type": "playlist",
+          "misc": {
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "fav_count": 417237,
+            "priority": "2",
+            "playcount": 23599639
+          }
+        }
+      },
+      {
+        "itype": 12,
+        "data": {
+          "id": 83936,
+          "title": "Navratri Bhajan",
+          "subtitle": "Navratri Bhajan",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/96d50cb4c92a3f8b55014fb69a9c6b61_500x500.jpg",
+          "type": "playlist",
+          "misc": {
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "fav_count": 21702,
+            "priority": "3",
+            "playcount": 703041
+          }
+        }
+      },
+      {
+        "itype": 12,
+        "data": {
+          "id": 24955,
+          "title": "Awesome Twosome: Arijit & Armaan",
+          "subtitle": "Awesome Twosome: Arijit & Armaan",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/3ad95f12a6040277b73a7294a7451971_500x500.jpg",
+          "type": "playlist",
+          "misc": {
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "fav_count": 6844725,
+            "priority": "4",
+            "playcount": 1026239895
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "108154",
+          "title": "Wonder Woman 1984",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/83/5/83cbd3ffa3c973b2e69d5ea6befc3dc6_582x255.jpg",
+          "type": "movieTheme",
+          "misc": {
+            "typeid": "mvt_details",
+            "moviecount": 4,
+            "priority": "2",
+            "section_id": "2",
+            "store_id": "1",
+            "api": "https://mapi.hungama.com/content/movieapp/collection_details.php?section_id=9&bucket_id=108154"
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "35885",
+          "title": "DC Universe",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/d3/5/d3ed0e324d4aa62bc6b780aeafea7bbc_582x255.jpg",
+          "type": "movieTheme",
+          "misc": {
+            "typeid": "mvt_details",
+            "moviecount": 26,
+            "priority": "3",
+            "section_id": "2",
+            "store_id": "1",
+            "api": "https://mapi.hungama.com/content/movieapp/collection_details.php?section_id=9&bucket_id=35885"
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "91415",
+          "title": "2020 Most Watched Movies",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/87/5/87e4079307c3912bdec009744c8e32b3_582x255.jpg",
+          "type": "movieTheme",
+          "misc": {
+            "typeid": "mvt_details",
+            "moviecount": 42,
+            "priority": "13",
+            "section_id": "2",
+            "store_id": "1",
+            "api": "https://mapi.hungama.com/content/movieapp/collection_details.php?section_id=9&bucket_id=91415"
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "94568",
+          "name": "New On Play 2021",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/77/5/7714e34d1dff81fb8f3ae097824c691e_582x255.jpg",
+          "type": "movieTheme",
+          "misc": {
+            "typeid": "mvt_details",
+            "moviecount": 34,
+            "priority": "15",
+            "section_id": "2",
+            "store_id": "1",
+            "api": "https://mapi.hungama.com/content/movieapp/collection_details.php?section_id=9&bucket_id=94568"
+          }
+        }
+      },
+      {
+        "itype": 2,
+        "data": {
+          "id": "63993593",
+          "title": "Namastey India",
+          "image": "https://files.hubhopper.com/podcast/311834/namastey-india.jpg?v=1604330279&s=hungama",
+          "type": "podcastAudioAlbum",
+          "misc": {
+            "vendor_id": 13384,
+            "explicit_i": 0,
+            "releasedate": 20210406000000,
+            "genre": "PodCast Genre",
+            "genre_id": 13678520,
+            "lang": "Hindi",
+            "lang_id": "hin",
+            "territory_rights": "AA_A",
+            "propertyid": 38123593,
+            "ctag": [],
+            "fav_count": 39,
+            "certificate": "",
+            "priority": "1",
+            "duration": 0,
+            "playcount": 515
+          }
+        }
+      },
+      {
+        "itype": 2,
+        "data": {
+          "id": "64000399",
+          "title": "Bumpy Journey With Therhappy",
+          "image": "https://files.hubhopper.com/podcast/315803/bumpy-journey-with-therhappy.jpg?v=1604154177&s=hungama",
+          "type": "podcastAudioAlbum",
+          "misc": {
+            "vendor_id": 13384,
+            "explicit_i": 0,
+            "releasedate": 20201128000000,
+            "genre": "PodCast Genre",
+            "genre_id": 13678520,
+            "lang": "English",
+            "lang_id": "eng",
+            "territory_rights": "AA_A",
+            "propertyid": 38124245,
+            "ctag": [],
+            "fav_count": 12,
+            "certificate": "",
+            "priority": "2",
+            "duration": 0,
+            "playcount": 0
+          }
+        }
+      },
+      {
+        "itype": 2,
+        "data": {
+          "id": "16835",
+          "title": "Hot Now International",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/07f68afc158e51b5c3b104096564e816_200x200.jpg",
+          "type": "live_radio",
+          "misc": {
+            "lang": "English",
+            "moviecount": "0",
+            "store_id": "1",
+            "live_url": "https://securestreams8.autopo.st:3012/1",
+            "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=english-hits&site_url=",
+            "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/07f68afc158e51b5c3b104096564e816_500x500.jpg"
+          }
+        }
+      },
+      {
+        "itype": 2,
+        "data": {
+          "id": "16836",
+          "title": "Evergreen International",
+          "image": "htttps://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/58b7f2ca727aa7e28723da5c3cd68202_200x200.jpg",
+          "type": "live_radio",
+          "misc": {
+            "lang": "English",
+            "moviecount": "0",
+            "store_id": "1",
+            "live_url": "https://securestreams8.autopo.st:3013/1",
+            "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=english-classics&site_url=",
+            "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/58b7f2ca727aa7e28723da5c3cd68202_500x500.jpg"
+          }
+        }
+      },
+      {
+        "itype": 2,
+        "data": {
+          "id": "16823",
+          "title": "Bollywood Dil Se",
+          "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/94e23c3b64ab6d4bb69a2731d7c177c2_200x200.jpg",
+          "type": "live_radio",
+          "misc": {
+            "lang": "Hindi",
+            "moviecount": "0",
+            "store_id": "1",
+            "live_url": "https://securestreams8.autopo.st:3001/1",
+            "url_np": "http://api.hungama.com/webservice/hungama/content/radio/stationInfo?act=get&radio_name=16823&site_url=",
+            "image_500": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/94e23c3b64ab6d4bb69a2731d7c177c2_500x500.jpg"
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "79",
+          "title": "Zubaan Kesari",
+          "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/39/2/394bf87ea5ded251356cbc03024c7092.jpg",
+          "type": "brandCategory",
+          "misc": {
+            "brand_type": "basic",
+            "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/66/c/665430f4769ecbc9f449a2e9ebd3c1bc.jpg",
+            "full_page_image": ""
+          }
+        }
+      },
+      {
+        "itype": 3,
+        "data": {
+          "id": "41",
+          "title": "McDowell",
+          "image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/b7/1/b799554c9e6b0c7deba39cd1c8ffce01.jpg",
+          "type": "brandCategory",
+          "misc": {
+            "brand_type": "basic",
+            "header_image": "http://dev-resws-hungamatech-com.storage.googleapis.com/featured_content_cms/e7/9/e7e3b27b6ebe645b87553c238608c3a9.jpg",
+            "full_page_image": ""
+          }
+        }
+      }
+    ]
+  }
+}

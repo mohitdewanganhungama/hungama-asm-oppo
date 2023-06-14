@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/dimen_26_8"
+    android:height="@dimen/dimen_30"
+    android:viewportWidth="26.8"
+    android:viewportHeight="30">
+
+    <item android:drawable="@drawable/ic_repeat_audio" android:gravity="center" />
+    <item android:drawable="@drawable/ic_repeat_one_dot_audio" android:top="@dimen/dimen_30" android:gravity="bottom|center_horizontal" />
+</layer-list>

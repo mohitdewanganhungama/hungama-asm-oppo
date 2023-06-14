@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_22"
+        android:layout_marginEnd="@dimen/dimen_14"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--            62dp-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_gradient_placeholder"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+            <!--            70dp-->
+    <com.hungama.music.utils.customview.stories.CircularStatusView
+        android:id="@+id/circular_status_view"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        app:layout_constraintDimensionRatio="1:1"
+        app:portion_color="@color/font_color"
+        app:portion_spacing="@dimen/dimen_2"
+        app:portion_width="1.5dp"
+        app:portions_count="8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/ivUserImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_60sdp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/bg_gradient_placeholder"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"-->
+<!--            app:strokeColor="@color/colorGrey"-->
+<!--            app:strokeWidth="@dimen/_1sdp" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_text"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_11"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/story_not_seen_text"
+            android:lineSpacingExtra="@dimen/font_2"
+            app:lineHeight="@dimen/font_13"
+            android:textAlignment="center"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

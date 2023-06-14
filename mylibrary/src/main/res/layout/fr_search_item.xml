@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <!-- Search bar layout -->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/search_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dimen_70"-->
+<!--            android:background="@color/home_bg_color">-->
+
+<!--            <include layout="@layout/blur_layout_view" />-->
+
+<!--            <include-->
+<!--                android:id="@+id/header"-->
+<!--                layout="@layout/header_back_search_item"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_toStartOf="@+id/cancel_button" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/cancel_button"-->
+<!--                style="@style/StyleTextViewSubtitle"-->
+<!--                android:layout_marginRight="@dimen/dimen_18"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:textSize="@dimen/font_15"-->
+<!--                app:lineHeight="@dimen/font_18"-->
+<!--                android:text="@string/cancel"-->
+<!--                tools:text="Cancel"/>-->
+<!--        </RelativeLayout>-->
+
+        <!-- Search result list layout -->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rl_search_result"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/search_bar"-->
+<!--            android:background="@drawable/bg_event_gradient"-->
+<!--            android:visibility="visible">-->
+
+<!--            <include layout="@layout/common_blur_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dimen_52"/>-->
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tabs"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dimen_52"-->
+<!--                android:layout_marginBottom="@dimen/dimen_14"-->
+<!--                android:background="@color/home_bg_color"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabMaxWidth="0dp"-->
+<!--                app:tabIndicatorHeight="0dp"-->
+<!--                app:tabMode="scrollable"-->
+<!--                app:tabRippleColor="@null"-->
+<!--                app:tabBackground="@drawable/selector_tab_home"-->
+<!--                app:tabSelectedTextColor="@color/tab_selected_color"-->
+<!--                app:tabTextAppearance="@style/TabTextAppearance" />-->
+
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/viewPager"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_below="@id/tabs"></androidx.viewpager2.widget.ViewPager2>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash; Recent search list layout &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/rl_recent_search"-->
+<!--            android:layout_below="@+id/search_bar"-->
+<!--            android:background="@drawable/bg_event_gradient"-->
+<!--            android:visibility="visible">-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tv_recent_search"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginStart="@dimen/dimen_18"-->
+<!--                android:layout_marginTop="@dimen/font_19"-->
+<!--                android:layout_marginBottom="@dimen/font_15"-->
+<!--                android:fontFamily="@font/sf_pro_text_semibold"-->
+<!--                android:textStyle="normal"-->
+<!--                android:textSize="@dimen/font_15"-->
+<!--                android:textColor="@color/item_sub_title_color"-->
+<!--                android:lineSpacingExtra="37sp"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:text="Recent Searches"-->
+<!--                tools:text="Recent Searches"/>-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tv_clear_search"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginEnd="@dimen/dimen_17"-->
+<!--                android:layout_marginTop="@dimen/font_19"-->
+<!--                android:layout_marginBottom="@dimen/font_15"-->
+<!--                android:fontFamily="@font/sf_pro_text_semibold"-->
+<!--                android:textStyle="normal"-->
+<!--                android:textSize="@dimen/font_15"-->
+<!--                android:textColor="@color/item_sub_title_color"-->
+<!--                android:lineSpacingExtra="37sp"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:text="Clear"-->
+<!--                tools:text="Clear"/>-->
+
+<!--            <View-->
+<!--                android:id="@+id/divider"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_below="@+id/tv_recent_search"-->
+<!--                android:layout_marginStart="@dimen/dimen_18"-->
+<!--                android:layout_marginEnd="@dimen/dimen_18"-->
+<!--                android:background="@color/blur_one_half_opacity_white_color" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/search_results_list"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/divider"-->
+<!--                android:layout_marginTop="@dimen/font_15"-->
+<!--                android:layout_marginStart="@dimen/dimen_18"-->
+<!--                android:layout_marginEnd="@dimen/dimen_18"-->
+<!--                android:clipToPadding="false"-->
+<!--                tools:itemCount="5"-->
+<!--                tools:listitem="@layout/row_itype_8" />-->
+
+<!--        </RelativeLayout>-->
+
+        <!-- Search suggestion list layout -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_suggestions_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:visibility="visible"
+            tools:itemCount="5"
+            tools:listitem="@layout/search_results_list_item" />
+
+        <!-- No search result layout -->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/rl_no_result"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_below="@+id/search_bar"-->
+<!--            android:background="@drawable/bg_event_gradient"-->
+<!--            android:visibility="visible">-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:layout_width="@dimen/dimen_200"-->
+<!--                android:layout_height="@dimen/dimen_135"-->
+<!--                android:layout_marginTop="@dimen/dimen_48"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:src="@drawable/ic_no_activity"/>-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dimen_30"-->
+<!--                android:fontFamily="@font/sf_pro_text_semibold"-->
+<!--                android:textStyle="normal"-->
+<!--                android:textSize="@dimen/font_21"-->
+<!--                app:lineHeight="@dimen/font_25"-->
+<!--                android:textColor="@color/colorWhite"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:text="No Results"-->
+<!--                tools:text="No Results"/>-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dimen_6"-->
+<!--                android:textStyle="normal"-->
+<!--                android:textSize="@dimen/font_13"-->
+<!--                app:lineHeight="@dimen/font_15"-->
+<!--                android:textColor="@color/item_sub_title_color"-->
+<!--                android:fontFamily="@font/sf_pro_text"-->
+<!--                android:lineSpacingExtra="7sp"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:text="Try different keyword"-->
+<!--                tools:text="Try different keyword"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btnExplore"-->
+<!--                android:layout_width="@dimen/dimen_163"-->
+<!--                android:layout_height="@dimen/dimen_42"-->
+<!--                android:layout_marginTop="@dimen/dimen_21_1"-->
+<!--                android:background="@drawable/bottom_dialog_btn_logout_image"-->
+<!--                android:text="Try Again"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/colorWhite"-->
+<!--                android:textSize="@dimen/dimen_16"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tvNoContentBody" />-->
+
+<!--        </LinearLayout>-->
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/layout_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

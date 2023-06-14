@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/shimmer_status_view" />
+
+        <include layout="@layout/shimmer_status_view" />
+
+        <include layout="@layout/shimmer_status_view" />
+
+        <include layout="@layout/shimmer_status_view" />
+
+        <include layout="@layout/shimmer_status_view" />
+
+        <include layout="@layout/shimmer_status_view" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_55"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <View
+            android:layout_width="@dimen/dimen_216"
+            android:layout_height="@dimen/dimen_27"
+            android:layout_marginLeft="@dimen/dimen_18"
+            android:background="@drawable/bg_shimmer_header_tab" />
+
+        <View
+            android:layout_width="@dimen/dimen_153"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_marginLeft="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:background="@drawable/bg_shimmer_header_tab" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        android:orientation="horizontal">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view2">
+
+        <include layout="@layout/shimmer_song_view" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/dimen_48"
+                    android:layout_height="@dimen/dimen_48"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:scaleType="centerInside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/dimen_92"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_14"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/tvTitle"
+                        android:layout_width="@dimen/dimen_52"
+                        android:layout_height="@dimen/dimen_10"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:maxLines="2" />
+
+                    <View
+                        android:layout_width="@dimen/dimen_60"
+                        android:layout_height="@dimen/dimen_16"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:visibility="visible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:id="@+id/llMain"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/dimen_48"
+                    android:layout_height="@dimen/dimen_48"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/dimen_92"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/dimen_14">
+
+                    <View
+                        style="@style/StyleTextView"
+                        android:layout_width="@dimen/dimen_52"
+                        android:layout_height="@dimen/dimen_10"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:layout_gravity="start|center"
+                        android:maxLines="2"/>
+
+                    <View
+                        style="@style/StyleTextViewSubtitle"
+                        android:layout_width="@dimen/dimen_60"
+                        android:layout_height="@dimen/dimen_16"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:visibility="visible"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:paddingLeft="@dimen/dimen_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/dimen_48"
+                    android:layout_height="@dimen/dimen_48"
+                    android:background="@drawable/bg_gradient_placeholder"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/dimen_92"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_14"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="@dimen/dimen_52"
+                        android:layout_height="@dimen/dimen_10"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:maxLines="2" />
+
+                    <View
+                        android:layout_width="@dimen/dimen_60"
+                        android:layout_height="@dimen/dimen_16"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:visibility="visible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_5"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/dimen_48"
+                    android:layout_height="@dimen/dimen_48"
+                    android:scaleType="centerInside"
+                    android:paddingLeft="@dimen/dimen_10"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/dimen_92"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/dimen_14">
+
+                    <View
+                        style="@style/StyleTextView"
+                        android:layout_width="@dimen/dimen_52"
+                        android:layout_height="@dimen/dimen_10"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:layout_gravity="start|center"
+                        android:maxLines="2"/>
+
+                    <View
+                        style="@style/StyleTextViewSubtitle"
+                        android:layout_width="@dimen/dimen_60"
+                        android:layout_height="@dimen/dimen_16"
+                        android:background="@drawable/bg_shimmer_header_tab"
+                        android:layout_gravity="start|center"
+                        android:layout_marginTop="@dimen/dimen_3"
+                        android:visibility="visible"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_55"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view3">
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="@dimen/dimen_216"
+            android:layout_height="@dimen/dimen_27"
+            android:layout_marginLeft="@dimen/dimen_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_shimmer_header_tab" />
+
+        <View
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_marginRight="@dimen/dimen_18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_simmer_icon"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginLeft="@dimen/dimen_20"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view4">
+
+        <include layout="@layout/shimmer_music_view" />
+
+        <include layout="@layout/shimmer_music_view" />
+
+        <include layout="@layout/shimmer_music_view" />
+
+        <include layout="@layout/shimmer_music_view" />
+
+        <include layout="@layout/shimmer_music_view" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view5">
+
+        <include layout="@layout/shimmer_video_view" />
+
+        <include layout="@layout/shimmer_video_view" />
+
+        <include layout="@layout/shimmer_video_view" />
+
+        <include layout="@layout/shimmer_video_view" />
+
+        <include layout="@layout/shimmer_video_view" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view6">
+
+        <include layout="@layout/shimmer_movie_view" />
+
+        <include layout="@layout/shimmer_movie_view" />
+
+        <include layout="@layout/shimmer_movie_view" />
+
+        <include layout="@layout/shimmer_movie_view" />
+
+        <include layout="@layout/shimmer_movie_view" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

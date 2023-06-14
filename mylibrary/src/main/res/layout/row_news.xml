@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/itemView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page">
+
+            <ImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/bg_gradient_placeholder" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_14"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:id="@+id/tvTitle"
+                    android:textColor="#f5f5f5"
+                    style="@style/StyleTextView"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    android:lineSpacingExtra="3sp"
+                    tools:text=""
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:id="@+id/tvSubTitle"
+                    android:textSize="@dimen/font_13"
+                    style="@style/StyleTextView"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    android:textColor="#c6c6c6"
+                    android:lineSpacingExtra="2sp"
+                    tools:text=""
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

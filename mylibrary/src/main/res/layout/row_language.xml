@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/itemView"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageMain"
+            android:layout_width="@dimen/dimen_160"
+            android:layout_height="@dimen/dimen_95"
+            android:background="@drawable/bg_gradient_placeholder"
+            android:scaleType="fitXY"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+        <ImageView
+            android:id="@+id/imageRadio"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:src="@drawable/ic_round_selection"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</layout>

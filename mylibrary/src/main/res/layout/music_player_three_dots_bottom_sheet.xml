@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/music_player_three_dots_bottom_sheet_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="false">
+
+    <include layout="@layout/common_blur_view" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/three_dot_gradient_layer"
+        android:alpha="0.5"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/vDevider"
+            android:layout_width="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_6"
+            android:background="@drawable/bottomsheet_icon_background" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llTopMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llShuffle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/vShuffle"
+                        android:layout_width="@dimen/dimen_56"
+                        android:layout_height="@dimen/dimen_56"
+                        android:background="@drawable/circular_shadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivShuffleMenu"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="wrap_content"
+                        app:fontText="@string/icon_shuffle"
+                        app:fontTextColor="@color/colorWhite"
+                        app:fontTextSize="@dimen/font_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/vShuffle"
+                        app:layout_constraintEnd_toEndOf="@+id/vShuffle"
+                        app:layout_constraintStart_toStartOf="@+id/vShuffle"
+                        app:layout_constraintTop_toTopOf="@+id/vShuffle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/tvShuffle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/shuffle"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLoop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/vLoop"
+                        android:layout_width="@dimen/dimen_56"
+                        android:layout_height="@dimen/dimen_56"
+                        android:background="@drawable/circular_shadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivLoopMenu"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="wrap_content"
+                        app:fontText="@string/icon_repeat_loop"
+                        app:fontTextColor="@color/colorWhite"
+                        app:fontTextSize="@dimen/font_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/vLoop"
+                        app:layout_constraintEnd_toEndOf="@+id/vLoop"
+                        app:layout_constraintStart_toStartOf="@+id/vLoop"
+                        app:layout_constraintTop_toTopOf="@+id/vLoop" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/tvRepeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/repeat"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFavourite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/vFavorite"
+                        android:layout_width="@dimen/dimen_56"
+                        android:layout_height="@dimen/dimen_56"
+                        android:background="@drawable/circular_shadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivFavoriteMenu"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="wrap_content"
+                        app:fontText="@string/icon_like2"
+                        app:fontTextColor="@color/colorWhite"
+                        app:fontTextSize="@dimen/font_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/vFavorite"
+                        app:layout_constraintEnd_toEndOf="@+id/vFavorite"
+                        app:layout_constraintStart_toStartOf="@+id/vFavorite"
+                        app:layout_constraintTop_toTopOf="@+id/vFavorite" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/menu_str_10"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llDownload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/vDownload"
+                        android:layout_width="@dimen/dimen_56"
+                        android:layout_height="@dimen/dimen_56"
+                        android:background="@drawable/circular_shadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivDownloadMenu"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="wrap_content"
+                        app:fontText="@string/icon_download_new"
+                        app:fontTextColor="@color/colorWhite"
+                        app:fontTextSize="@dimen/font_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/vDownload"
+                        app:layout_constraintEnd_toEndOf="@+id/vDownload"
+                        app:layout_constraintStart_toStartOf="@+id/vDownload"
+                        app:layout_constraintTop_toTopOf="@+id/vDownload" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/video_player_str_1"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_share_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llTopMenu"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_28"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_share_story"
+                android:layout_width="@dimen/dimen_18"
+                android:layout_height="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:src="@drawable/ic_share"
+                app:tint="@color/colorWhite" />-->
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_share_story"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_share_friends"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_share_story"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_share_story"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/general_str_7"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_share_story"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_below="@+id/rl_music_player_menu_share_story"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_share"
+                android:layout_width="@dimen/dimen_18"
+                android:layout_height="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:src="@drawable/ic_share"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_share"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_share_new"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_share"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/popup_str_101"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_share"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_share"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_add_to_playlist"
+                android:layout_width="@dimen/dimen_23_1"
+                android:layout_height="@dimen/dimen_25"
+                android:src="@drawable/ic_add_to_playlist"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_add_to_playlist"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_add_to_playlist"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_add_to_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_add_to_playlist"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_3"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_add_to_playlist"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_go_to_podcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_playlist"
+            android:layout_marginStart="@dimen/dimen_19_1"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_view_album"
+                android:layout_width="@dimen/dimen_21_1"
+                android:layout_height="@dimen/dimen_21_1"
+                android:src="@drawable/ic_view_album"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_go_to_podcast"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_podcast"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_go_to_podcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_go_to_podcast"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_27"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_go_to_podcast"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_go_to_queue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_go_to_podcast"
+            android:layout_marginStart="@dimen/dimen_19_1"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_view_album"
+                android:layout_width="@dimen/dimen_21_1"
+                android:layout_height="@dimen/dimen_21_1"
+                android:src="@drawable/ic_view_album"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_go_to_queue"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_queue2"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_go_to_queue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_go_to_queue"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/popup_str_100"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_go_to_queue"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_go_to_album_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_go_to_queue"
+            android:layout_marginStart="@dimen/dimen_19_1"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_view_album"
+                android:layout_width="@dimen/dimen_21_1"
+                android:layout_height="@dimen/dimen_21_1"
+                android:src="@drawable/ic_view_album"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_go_to_album_playlist"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_more_playlist"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_go_to_album_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_go_to_album_playlist"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/go_to_playlist"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_go_to_album_playlist"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_view_album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_go_to_album_playlist"
+            android:layout_marginStart="@dimen/dimen_19_1"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_view_album"
+                android:layout_width="@dimen/dimen_21_1"
+                android:layout_height="@dimen/dimen_21_1"
+                android:src="@drawable/ic_view_album"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_view_album"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_more_playlist"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_view_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_view_album"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_23"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_view_album"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_show_similar_song"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_view_album"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_show_similar_song"
+                android:layout_width="@dimen/dimen_23_3"
+                android:layout_height="@dimen/dimen_25"
+                android:src="@drawable/ic_song_details"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_show_similar_song"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_more_playlist"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_show_similar_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_show_similar_song"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_25"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_show_similar_song"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_song_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_show_similar_song"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_song_details"
+                android:layout_width="@dimen/dimen_23_3"
+                android:layout_height="@dimen/dimen_25"
+                android:src="@drawable/ic_song_details"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_song_details"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_song_detail"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_song_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_song_details"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_14"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_song_details"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_sleep_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_song_details"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_sleep_timer"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_22"
+                android:src="@drawable/ic_player_mode_ic"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_sleep_timer"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_sleep_timer"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_sleep_timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/iv_music_player_menu_sleep_timer"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_29"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_sleep_timer"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_playback_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_sleep_timer"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_playback_speed"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_speed_1x"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_playback_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_playback_speed"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/popup_str_102"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider11"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_playback_speed"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_audio_quality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_playback_speed"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_quality2"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_audio_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_audio_quality"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/menu_str_28"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider9"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_audio_quality"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_mood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_audio_quality"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_mood"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_radio"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_mood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_mood"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/music_player_str_21"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider12"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_mood"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_era"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_mood"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_era"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_radio"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_era"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_era"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/music_player_str_43"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider13"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_era"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_tempo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_era"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_tempo"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_radio"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_tempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_tempo"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/tempo"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider14"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_tempo"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_language_preference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_tempo"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_language_preference"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_language"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_language_preference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_language_preference"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/discover_str_31"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider15"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_language_preference"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_music_player_menu_cast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_music_player_menu_language_preference"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible">
+
+
+
+            <!--<ImageView
+                android:id="@+id/iv_music_player_menu_audio_quality"
+                android:layout_width="@dimen/dimen_22_7"
+                android:layout_height="@dimen/dimen_21"
+                android:src="@drawable/ic_video_quality"
+                app:tint="@color/colorWhite" />-->
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/iv_music_player_menu_cast"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_cast"
+                app:fontTextSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/txt_music_player_menu_cast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/iv_music_player_menu_cast"
+                android:fontFamily="@font/sf_pro_text"
+                android:includeFontPadding="false"
+                android:text="@string/cast_screen"
+                android:textColor="@color/item_title_color"
+                android:textSize="@dimen/font_17"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/devider16"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_below="@+id/txt_music_player_menu_cast"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:alpha="0.3"
+                android:background="#707070"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/music_player_menu_close"
+            android:layout_width="@dimen/dimen_122"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_below="@+id/rl_music_player_menu_cast"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_22"
+            android:background="@drawable/corner_radius_18_bg_alpha_white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                android:visibility="gone"
+                app:fontText="@string/icon_delete"
+                app:fontTextSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/btnAsk"
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/music_player_str_15" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/font_color" />
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

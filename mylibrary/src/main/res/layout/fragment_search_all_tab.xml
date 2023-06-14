@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="@drawable/home_bg_layer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hungama.music.ui.main.view.fragment.SearchAllTabFragment">
+    <!--<include layout="@layout/common_blur_view"/>-->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/clMain"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_search_mainscreen"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_container_recommanded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <com.hungama.music.utils.customview.blurview.CustomBlurView
+        android:id="@+id/topBlurView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_180"
+        app:layout_constraintTop_toTopOf="parent"
+        app:realtimeBlurRadius="150dp"
+        app:realtimeOverlayColor="@color/colorTransparentBlack"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clNoResultFound"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/clMain"
+        android:layout_marginTop="@dimen/dimen_42"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/dimen_205"
+            android:layout_height="@dimen/dimen_137"
+            android:background="@drawable/ic_search_not_found"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_str_22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivSearch"
+            android:layout_marginTop="@dimen/dimen_28"
+            android:textSize="@dimen/font_21"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_str_21"
+            android:textColor="@color/item_sub_title_color"
+            android:layout_marginStart="@dimen/dimen_50"
+            android:layout_marginEnd="@dimen/dimen_50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:layout_marginTop="@dimen/dimen_6"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExplore"
+            android:layout_width="@dimen/dimen_164"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_search"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/search_str_23" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/rlSearch"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="@dimen/dimen_42"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:realtimeBlurRadius="150dp"
+                    app:topLeftRadius="100dp"
+                    app:topRightRadius="100dp"
+                    app:bottomLeftRadius="100dp"
+                    app:bottomRightRadius="100dp"
+                    app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+                    <LinearLayout
+                        android:id="@+id/llSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <!--<ImageView
+                            android:layout_width="@dimen/dimen_17"
+                            android:layout_height="@dimen/dimen_17"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            app:srcCompat="@drawable/ic_search_actionbar"
+                            app:tint="@color/colorWhite" />-->
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontTextColor="@color/item_sub_title_color"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_10"
+                            app:fontText="@string/icon_search2" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_Search"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:gravity="start|center"
+                            android:hint="@string/search_str_11"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textVisiblePassword|textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="200"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingEnd="@dimen/_6sdp"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/item_sub_title_color"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            android:focusableInTouchMode="true"/>
+
+
+                        <!--<ImageView
+                            android:id="@+id/iv_mic"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            app:srcCompat="@drawable/ic_mic_search_actionbar"
+                            app:tint="@color/colorWhite" />-->
+
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/iv_mic"
+                            style="@style/commonMediumIconStyle"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            app:fontText="@string/icon_voice_search" />
+
+                        <!--<ImageView
+                            android:id="@+id/iv_mic_cancel"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_cancel_search"
+                            app:tint="@color/colorWhite" />-->
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            android:id="@+id/iv_cancel_search"
+                            style="@style/commonMediumIconStyle"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            app:fontText="@string/icon_close"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/actionButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:id="@+id/llbtnCancel"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginRight="@dimen/dimen_17"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:lineHeight="@dimen/font_50"
+                            android:text="@string/download_str_3"
+                            android:textColor="#c6c6c6"
+                            android:textSize="@dimen/font_15" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llbtnSearch"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_42"
+                        android:layout_marginRight="@dimen/dimen_17"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:lineHeight="@dimen/font_50"
+                            android:text="@string/search_str_10"
+                            android:textColor="#c6c6c6"
+                            android:textSize="@dimen/font_15" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_suggestions_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clMain"
+            android:clipToPadding="false"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/clMain"
+            tools:itemCount="5"
+        />
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/rlTabs">
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vpTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:clipChildren="false"
+                android:orientation="horizontal"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/dimen_130"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/rv_search_suggestions_list"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_34"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginBottom="@dimen/dimen_14"
+                android:visibility="gone"
+                app:tabBackground="@drawable/selector_tab_home"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="0dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/tab_selected_color"
+                app:tabTextAppearance="@style/TabTextAppearance" />
+        </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dimen_40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlTabs">
+
+        <TextView
+            android:id="@+id/tvRecentSearches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:text="@string/search_str_13"
+            android:textColor="#c6c6c6"
+            android:textSize="@dimen/font_15"
+            app:layout_constraintStart_toStartOf="parent"
+            android:includeFontPadding="false"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvClearSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:text="@string/search_str_14"
+            android:textColor="#c6c6c6"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:includeFontPadding="false"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/vDevider"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_17_1"
+            android:alpha="0.3"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecentSearches" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecentHistory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0"
+        android:visibility="gone"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_120"
+        android:layout_marginTop="@dimen/dimen_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clHeader"
+        tools:listitem="@layout/row_search_item" />
+
+    <RelativeLayout
+        android:id="@+id/rlRecommendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clMain"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_21">
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:textStyle="normal"
+            android:visibility="gone"
+            android:textSize="@dimen/font_21"
+            android:textColor="@color/colorWhite"
+            android:text="@string/search_str_2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecomanded"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvLabel"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dimen_130"
+            android:visibility="gone"/>
+        <!--<FrameLayout
+            android:id="@+id/fl_container_recommanded"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvLabel"
+            android:layout_marginTop="@dimen/dimen_19"
+            />-->
+    </RelativeLayout>
+
+    <include android:id="@+id/vHeader" layout="@layout/common_header_action_bar" />
+    <include
+        android:id="@+id/progress"
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

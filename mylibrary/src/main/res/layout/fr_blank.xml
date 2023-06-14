@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.hungama.music.home.HomeFragment">
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_main" />
+        <TextView
+            android:id="@+id/tvCommingSoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/StyleTextView"
+            android:layout_centerInParent="true"
+            android:text="@string/discover_str_14"
+            android:visibility="gone"/>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/comingSoonShimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:visibility="visible">
+            <include layout="@layout/shimmer_layout_header"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/shimmer_layout_header"/>
+                <include layout="@layout/shimmer_layout"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </RelativeLayout>
+</layout>

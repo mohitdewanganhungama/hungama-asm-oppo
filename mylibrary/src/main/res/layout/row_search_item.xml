@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_15">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clImageMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_19"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivEqualizerAnim"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:contentDescription="@string/login_str_2"
+            app:lottie_loop="true"
+            android:visibility="gone"
+            app:lottie_rawRes="@raw/equalizer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+            android:id="@+id/blImage"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:realtimeBlurRadius="150dp"
+            app:realtimeOverlayColor="@color/colorTransparentBlack" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMovie"
+            android:layout_width="@dimen/dimen_34"
+            android:layout_height="@dimen/dimen_48"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivTvShow"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_36"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMusicVideo"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_27"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rlRadio"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:alpha="0.22"
+                android:background="@drawable/radio_bg"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivRadioImage"
+                android:layout_width="@dimen/dimen_42"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPlaceholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+
+                />
+        </RelativeLayout>
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivArtistImage"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_centerInParent="true"
+            android:background="@color/colorPlaceholder"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFreeStrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/clImageMain"
+        app:layout_constraintTop_toTopOf="@+id/clImageMain"
+        android:layout_marginStart="@dimen/_minus5sdp">
+
+        <ImageView
+            android:id="@+id/ivfreeStrips"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/image_free_ribbon_strip" />
+
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_14"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:maxLines="1"
+        android:text="95.0 Hit FM"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintBottom_toTopOf="@+id/tvSubTitle"
+        app:layout_constraintEnd_toStartOf="@+id/ivRowSearchBack"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/clImageMain"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_14"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:maxLines="1"
+        android:textColor="#c6c6c6"
+        android:textSize="@dimen/dimen_13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivRowSearchBack"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/clImageMain"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+    <!--<ImageView
+        android:id="@+id/ivRowSearchBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_forward"
+        android:layout_marginRight="@dimen/dimen_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/clImageMain"
+        app:layout_constraintBottom_toBottomOf="@id/clImageMain"/>-->
+
+    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+        android:id="@+id/ivRowSearchBack"
+        style="@style/commonMediumIconStyle"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/dimen_18"
+        app:fontText="@string/icon_left"
+        app:layout_constraintBottom_toBottomOf="@id/clImageMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/clImageMain" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

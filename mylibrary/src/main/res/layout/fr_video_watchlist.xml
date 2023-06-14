@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <include layout="@layout/common_blur_view"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clWhatchlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_150"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rlSearch"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:realtimeBlurRadius="150dp"
+                app:topLeftRadius="100dp"
+                app:topRightRadius="100dp"
+                app:bottomLeftRadius="100dp"
+                app:bottomRightRadius="100dp"
+                app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+
+            <LinearLayout
+                android:id="@+id/llSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_42"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    style="@style/commonMediumIconStyle"
+                    app:fontTextColor="@color/item_sub_title_color"
+                    android:layout_gravity="center"
+                    app:fontText="@string/icon_search2"
+                    android:layout_marginStart="@dimen/dimen_19"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/downloadSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:gravity="start|center"
+                    android:hint="@string/download_str_23"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textVisiblePassword|textNoSuggestions"
+                    android:lines="1"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_6sdp"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="#33C6C6C6"
+                    android:textSize="@dimen/font_13"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMusicPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:paddingBottom="@dimen/dimen_120"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlSearch"
+            tools:listitem="@layout/row_all_video_library" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExplore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_170"
+        android:paddingBottom="@dimen/dimen_120"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/createPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/ivMusicNoContent"
+            android:layout_width="@dimen/dimen_84"
+            android:layout_height="@dimen/dimen_84"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:src="@drawable/ic_new_watchlist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createPlaylist" />
+
+        <TextView
+            android:id="@+id/tvnoContentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center_horizontal"
+            android:text="@string/library_video_str_29"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/font_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMusicNoContent" />
+
+        <TextView
+            android:id="@+id/tvNoContentBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_28"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginRight="@dimen/dimen_28"
+            android:gravity="center"
+            android:lineHeight="@dimen/font_20"
+            android:lineSpacingExtra="@dimen/dimen_7"
+            android:text="@string/library_video_str_28"
+            android:textColor="#c6c6c6"
+            android:textSize="@dimen/font_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoContentTitle" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExplore"
+            android:layout_width="@dimen/dimen_163"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginTop="@dimen/dimen_21_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoContentBody"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_search"
+                android:visibility="gone"/>
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/profile_str_19" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/layout_progress"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

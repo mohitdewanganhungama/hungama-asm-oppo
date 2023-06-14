@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_46"
+        android:layout_gravity="center"
+        android:background="@color/colorBlackSemiTransparent"
+        >
+        <ImageView
+            android:layout_width="@dimen/dimen_17"
+            android:layout_height="@dimen/dimen_17"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dimen_33_6"
+            app:srcCompat="@drawable/ic_search_actionbar"
+            app:tint="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSearchItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_13_2"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:inputType="text"
+            android:lines="1"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_15"
+            app:lineHeight="@dimen/font_18"
+            android:text=""
+            tools:text="Bads"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSearchItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:maxLength="200"
+            android:inputType="text"
+            android:lines="1"
+            android:textColor="@color/half_opacity_white_color"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_15"
+            app:lineHeight="@dimen/font_18"
+            android:text=""
+            tools:text="hah"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rlSearch"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_45"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:background="@color/blur_one_half_opacity_white_color" />
+
+</androidx.cardview.widget.CardView>

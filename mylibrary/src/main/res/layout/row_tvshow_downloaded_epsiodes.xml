@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:orientation="vertical">
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:cardCornerRadius="@dimen/dimen_7"
+            app:cardBackgroundColor="@color/blur_one_half_opacity_white_color"
+            app:cardPreventCornerOverlap="true">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.hungama.music.utils.customview.blurview.CustomShapeBlurView xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:realtimeBlurRadius="150dp"
+                app:realtimeOverlayColor="@color/colorTransparentBlack" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/podcast_item_corner_radius">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUserImage"
+                    android:layout_width="@dimen/dimen_160"
+                    android:layout_height="@dimen/dimen_90"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginTop="@dimen/dimen_11"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_9_5"
+                    android:layout_marginTop="@dimen/dimen_18"
+                    android:layout_toEndOf="@+id/ivUserImage"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/rlMoreInfo"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:lineSpacingExtra="@dimen/font_3"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/item_title_color"
+                            android:textSize="@dimen/font_15"
+                            android:textStyle="normal"
+                            android:tooltipText="Ready to Mingle"
+                            app:lineHeight="@dimen/dimen_18" />
+
+                        <TextView
+                            android:id="@+id/tvSubTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:lineSpacingExtra="@dimen/font_2"
+                            android:maxLines="2"
+                            android:text=""
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_11"
+                            android:textStyle="normal"
+                            android:tooltipText="S01 ‧ EP02 ‧ 52 Min" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMoreInfo"
+                        android:layout_width="@dimen/dimen_40"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_alignParentEnd="true">
+
+                        <ImageView
+                            android:id="@+id/ivMore"
+                            android:layout_width="@dimen/dimen_4"
+                            android:layout_height="@dimen/dimen_18"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="-1dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="1dp"
+                            android:contentDescription="@string/app_name"
+                            android:padding="@dimen/dimen_10"
+                            android:src="@drawable/image_more_info" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <com.hungama.music.utils.customview.ShowMoreTextView
+                    android:id="@+id/tvSubTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivUserImage"
+                    android:layout_marginStart="@dimen/dimen_11"
+                    android:layout_marginTop="@dimen/dimen_10_4"
+                    android:layout_marginEnd="@dimen/dimen_3"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:lineHeight="@dimen/font_18"
+                    android:lineSpacingExtra="@dimen/font_7"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_11"
+                    android:textStyle="normal"
+                    android:tooltipText="Introduce us to nirav Chabbra (27) and MYRA BANRJEE (28) and no one have any idea what's going....read more" />
+
+                <ImageView
+                    android:id="@+id/ivDownload"
+                    android:layout_width="@dimen/dimen_39"
+                    android:layout_height="@dimen/dimen_39"
+                    android:layout_below="@+id/tvSubTitle2"
+                    android:layout_marginLeft="@dimen/dimen_6"
+                    android:layout_marginTop="@dimen/dimen_7"
+                    android:padding="@dimen/dimen_7"
+                    app:srcCompat="@drawable/image_downloading_complate" />
+
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_width="@dimen/dimen_28"
+                    android:layout_height="@dimen/dimen_28"
+                    android:layout_below="@+id/tvSubTitle2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dimen_7"
+                    android:layout_marginEnd="@dimen/dimen_12"
+                    app:srcCompat="@drawable/ic_play_circle_filled" />
+
+                <ProgressBar
+                    android:id="@+id/pbSong"
+                    style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_6"
+                    android:layout_below="@id/ivPlay"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:layout_marginEnd="@dimen/dimen_1"
+                    android:foregroundGravity="center"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/colorWhite"
+                    android:progressTint="@color/colorWhite"
+                    android:secondaryProgressTint="@color/home_mini_player_bg"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSelection"
+                    android:layout_width="@dimen/dimen_35"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_alignStart="@+id/ivUserImage"
+                    android:layout_alignTop="@+id/ivUserImage"
+                    android:visibility="visible">
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivSelection"
+                        style="@style/commonMediumIconStyle"
+                        android:layout_marginEnd="@dimen/dimen_0"
+                        app:fontText="@string/icon_success"
+                        app:fontTextColor="@color/half_opacity_white_color"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!--</androidx.cardview.widget.CardView>-->
+    </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,1083 @@
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "head": {
+      "id": "24860",
+      "type": 4,
+      "hscroll": 1,
+      "items": [
+        {
+          "id": "0",
+          "title": "All"
+        },
+        {
+          "id": "1",
+          "title": "Top 40"
+        },
+        {
+          "id": "2",
+          "title": "Chill Winters"
+        },
+        {
+          "id": "3",
+          "title": "Podcasts"
+        },
+        {
+          "id": "4",
+          "title": "Morning Vibes"
+        },
+        {
+          "id": "5",
+          "title": "Movies"
+        },
+        {
+          "id": "6",
+          "title": "Short Videos"
+        },
+        {
+          "id": "7",
+          "title": "Radio"
+        }
+      ]
+    },
+    "body": {
+      "rows": [
+        {
+          "id": "24860",
+          "type": 4,
+          "hscroll": 1,
+          "items": [
+            {
+              "itype": 1,
+              "data": {
+                "id": "1",
+                "title": "Real SRK",
+                "image": "https://images.hungama.com/a/1/f5e/536/6793/6793_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://html5demos.com/assets/dizzy.mp4",
+                    "storyDate": 1618841145116,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618844793029,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://player.vimeo.com/external/409206405.sd.mp4?s=0bc456b6ff355d9907f285368747bf54323e5532&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618848419671,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Ayushman K",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Zuban Kesari",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "4",
+                "title": "Badshah",
+                "image": "https://images.hungama.com/a/1/670/d33/10415/10415_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/403295710.sd.mp4?s=788b046826f92983ada6e5caf067113fdb49e209&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1591382/pexels-photo-1591382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859405825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "5",
+                "title": "Hardy Sandhu",
+                "image": "https://images.hungama.com/a/1/072/789/99926523/99926523_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "1",
+                "title": "Real SRK",
+                "image": "https://images.hungama.com/a/1/f5e/536/6793/6793_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://html5demos.com/assets/dizzy.mp4",
+                    "storyDate": 1618841145116,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618844793029,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://player.vimeo.com/external/409206405.sd.mp4?s=0bc456b6ff355d9907f285368747bf54323e5532&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618848419671,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Ayushman K",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Zuban Kesari",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "4",
+                "title": "Badshah",
+                "image": "https://images.hungama.com/a/1/670/d33/10415/10415_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/403295710.sd.mp4?s=788b046826f92983ada6e5caf067113fdb49e209&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1591382/pexels-photo-1591382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859405825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "5",
+                "title": "Hardy Sandhu",
+                "image": "https://images.hungama.com/a/1/072/789/99926523/99926523_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "1",
+                "title": "Real SRK",
+                "image": "https://images.hungama.com/a/1/f5e/536/6793/6793_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://html5demos.com/assets/dizzy.mp4",
+                    "storyDate": 1618841145116,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618844793029,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://player.vimeo.com/external/409206405.sd.mp4?s=0bc456b6ff355d9907f285368747bf54323e5532&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618848419671,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Ayushman K",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Zuban Kesari",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "4",
+                "title": "Badshah",
+                "image": "https://images.hungama.com/a/1/670/d33/10415/10415_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/403295710.sd.mp4?s=788b046826f92983ada6e5caf067113fdb49e209&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1591382/pexels-photo-1591382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859405825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "5",
+                "title": "Hardy Sandhu",
+                "image": "https://images.hungama.com/a/1/072/789/99926523/99926523_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "1",
+                "title": "Real SRK",
+                "image": "https://images.hungama.com/a/1/f5e/536/6793/6793_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://html5demos.com/assets/dizzy.mp4",
+                    "storyDate": 1618841145116,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618844793029,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://player.vimeo.com/external/409206405.sd.mp4?s=0bc456b6ff355d9907f285368747bf54323e5532&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618848419671,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Ayushman K",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "2",
+                "title": "Zuban Kesari",
+                "image": "https://images.hungama.com/a/1/a13/89b/93128/93128_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                    "storyDate": 1618852069717,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/134020/pexels-photo-134020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859292108,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "3",
+                "title": "Honey Singh",
+                "image": "https://images.hungama.com/a/1/83f/818/90878/90878_175x175.jpg",
+                "type": "stories",
+
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/394678700.sd.mp4?s=353646e34d7bde02ad638c7308a198786e0dff8f&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618862933514,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618866533515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/2260800/pexels-photo-2260800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618870133515,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "itype": 1,
+              "data": {
+                "id": "4",
+                "title": "Badshah",
+                "image": "https://images.hungama.com/a/1/670/d33/10415/10415_175x175.jpg",
+                "type": "stories",
+                "viewInex": 0,
+                "isAllStorySeen": false,
+                "stories": [
+                  {
+                    "url": "https://player.vimeo.com/external/403295710.sd.mp4?s=788b046826f92983ada6e5caf067113fdb49e209&profile_id=165&oauth2_token_id=57447761",
+                    "storyDate": 1618852205825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  },
+                  {
+                    "url": "https://images.pexels.com/photos/1591382/pexels-photo-1591382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "storyDate": 1618859405825,
+                    "ctaText": "",
+                    "ctaUrl": "",
+                    "commentsList": [
+                      {
+                        "userComment": "",
+                        "userProfileUrl": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="."/>
+    <include domain="database" path="."/>
+    <exclude domain="sharedpref" path="preferences_application_configurations.xml"/>
+    <exclude domain="database" path="MOEInteractions"/>
+    <exclude domain="sharedpref" path="pref_moe.xml"/>
+    <exclude domain="sharedpref" path="appsflyer-data"/>
+</full-backup-content>

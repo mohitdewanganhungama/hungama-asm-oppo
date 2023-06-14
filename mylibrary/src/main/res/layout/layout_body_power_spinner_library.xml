@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/body"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:focusable="true">
+<com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:realtimeBlurRadius="150dp"
+    app:topLeftRadius="@dimen/dimen_0"
+    app:topRightRadius="@dimen/dimen_0"
+    app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color"/>
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:fadeScrollbars="false"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:scrollbars="vertical"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:listitem="@layout/item_default_power_spinner_library" />
+
+</FrameLayout>

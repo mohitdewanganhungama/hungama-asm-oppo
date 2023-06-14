@@ -1,0 +1,1656 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 25,
+    "identityHash": "828c95ac2ed2b018d64602940d874d2c",
+    "entities": [
+      {
+        "tableName": "track",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uniquePosition` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` INTEGER NOT NULL, `title` TEXT, `subTitle` TEXT, `image` TEXT, `url` TEXT, `drmlicence` TEXT, `defaultAlbumArtRes` INTEGER NOT NULL, `state` TEXT NOT NULL, `songLyricsUrl` TEXT, `heading` TEXT, `artistName` TEXT, `playerType` TEXT, `isLiked` INTEGER NOT NULL, `isDownloaded` INTEGER NOT NULL, `parentId` TEXT, `pName` TEXT, `pSubName` TEXT, `pImage` TEXT, `pType` INTEGER NOT NULL, `contentType` INTEGER NOT NULL, `explicit` INTEGER NOT NULL, `restrictedDownload` INTEGER NOT NULL, `attributeCensorRating` TEXT NOT NULL, `pid` TEXT NOT NULL, `shareUrl` TEXT NOT NULL, `favCount` TEXT NOT NULL, `urlKey` TEXT NOT NULL, `onErrorPlayableUrl` TEXT NOT NULL, `movierights` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "uniquePosition",
+            "columnName": "uniquePosition",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subTitle",
+            "columnName": "subTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "drmlicence",
+            "columnName": "drmlicence",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "defaultAlbumArtRes",
+            "columnName": "defaultAlbumArtRes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "songLyricsUrl",
+            "columnName": "songLyricsUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heading",
+            "columnName": "heading",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "artistName",
+            "columnName": "artistName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "playerType",
+            "columnName": "playerType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isLiked",
+            "columnName": "isLiked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDownloaded",
+            "columnName": "isDownloaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pName",
+            "columnName": "pName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pSubName",
+            "columnName": "pSubName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pImage",
+            "columnName": "pImage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pType",
+            "columnName": "pType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "explicit",
+            "columnName": "explicit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "restrictedDownload",
+            "columnName": "restrictedDownload",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attributeCensorRating",
+            "columnName": "attributeCensorRating",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pid",
+            "columnName": "pid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shareUrl",
+            "columnName": "shareUrl",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "favCount",
+            "columnName": "favCount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "urlKey",
+            "columnName": "urlKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "onErrorPlayableUrl",
+            "columnName": "onErrorPlayableUrl",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movierights",
+            "columnName": "movierights",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uniquePosition"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "BodyRowsItemsItem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER NOT NULL, `data` TEXT, `type` TEXT, `added_date_Time` TEXT, `itype` INTEGER, `sr_no` INTEGER, `adUnitId` TEXT NOT NULL, PRIMARY KEY(`itemId`))",
+        "fields": [
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "data",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "addedDateTime",
+            "columnName": "added_date_Time",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itype",
+            "columnName": "itype",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sr_no",
+            "columnName": "sr_no",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adUnitId",
+            "columnName": "adUnitId",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "itemId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "download_queue",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`qId` INTEGER PRIMARY KEY AUTOINCREMENT, `contentId` TEXT, `title` TEXT, `subTitle` TEXT, `playableUrl` TEXT, `downloadUrl` TEXT, `lyricsUrl` TEXT, `downloadManagerId` INTEGER NOT NULL, `downloadStatus` INTEGER NOT NULL, `parentId` TEXT, `pName` TEXT, `pType` INTEGER NOT NULL, `contentType` INTEGER NOT NULL, `originalAlbumName` TEXT, `podcastAlbumName` TEXT, `releaseDate` TEXT, `actor` TEXT, `singer` TEXT, `lyricist` TEXT, `genre` TEXT, `subGenre` TEXT, `mood` TEXT, `tempo` TEXT, `language` TEXT, `musicDirectorComposer` TEXT, `releaseYear` TEXT, `category` TEXT, `rating` TEXT, `cast_enabled` INTEGER NOT NULL, `ageRating` TEXT, `criticRating` TEXT, `keywords` TEXT, `episodeNumber` TEXT, `seasonNumber` TEXT, `subtitleEnabled` INTEGER NOT NULL, `selectedSubtitleLanguage` TEXT, `lyricsType` TEXT, `userRating` TEXT, `videoQuality` TEXT, `audioQuality` TEXT, `label` TEXT, `labelId` TEXT, `isOriginal` TEXT, `contentPayType` TEXT, `itype` INTEGER NOT NULL, `type` INTEGER NOT NULL, `image` TEXT, `duration` INTEGER NOT NULL, `cast` TEXT, `explicit` INTEGER NOT NULL, `pid` TEXT, `movierights` TEXT, `attribute_censor_rating` TEXT, `nudity` TEXT, `playcount` INTEGER NOT NULL, `s_artist` TEXT, `artist` TEXT, `lyricsLanguage` TEXT, `lyricsLanguageId` TEXT, `lyricsFilePath` TEXT, `fav_count` INTEGER NOT NULL, `synopsis` TEXT, `description` TEXT, `vendor` TEXT, `countEraFrom` TEXT, `countEraTo` TEXT, `skipCreditET` INTEGER NOT NULL, `skipCreditST` INTEGER NOT NULL, `skipIntroET` INTEGER NOT NULL, `skipIntroST` INTEGER NOT NULL, `userId` TEXT, `thumbnailPath` TEXT, `pSubName` TEXT, `pReleaseDate` TEXT, `pDescription` TEXT, `pNudity` TEXT, `pRatingCritics` TEXT, `pMovieRights` TEXT, `pGenre` TEXT, `pLanguage` TEXT, `pImage` TEXT, `heading` TEXT, `downloadAll` INTEGER NOT NULL, `parentThumbnailPath` TEXT, `downloadRetry` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `downloadedFilePath` TEXT NOT NULL, `totalDownloadBytes` INTEGER NOT NULL, `downloadedBytes` INTEGER NOT NULL, `downloadNetworkType` INTEGER NOT NULL, `createdDT` INTEGER NOT NULL, `planName` TEXT NOT NULL, `planType` INTEGER NOT NULL, `contentStreamDate` INTEGER NOT NULL, `contentStreamDuration` INTEGER NOT NULL, `percentDownloaded` INTEGER NOT NULL, `contentStartDate` TEXT NOT NULL, `contentExpiryDate` TEXT NOT NULL, `contentPlayValidity` INTEGER NOT NULL, `drmLicense` TEXT NOT NULL, `contentShareLink` TEXT NOT NULL, `isSelected` INTEGER NOT NULL, `isDeleted` INTEGER NOT NULL, `restrictedDownload` INTEGER NOT NULL, `downloadManagerExoPlayerId` TEXT NOT NULL, `source` TEXT NOT NULL, `f_playcount` TEXT NOT NULL, `f_fav_count` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "qId",
+            "columnName": "qId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contentId",
+            "columnName": "contentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subTitle",
+            "columnName": "subTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "playableUrl",
+            "columnName": "playableUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadUrl",
+            "columnName": "downloadUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsUrl",
+            "columnName": "lyricsUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadManagerId",
+            "columnName": "downloadManagerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadStatus",
+            "columnName": "downloadStatus",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pName",
+            "columnName": "pName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pType",
+            "columnName": "pType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "originalAlbumName",
+            "columnName": "originalAlbumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "podcastAlbumName",
+            "columnName": "podcastAlbumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "releaseDate",
+            "columnName": "releaseDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "actor",
+            "columnName": "actor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "singer",
+            "columnName": "singer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricist",
+            "columnName": "lyricist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "genre",
+            "columnName": "genre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subGenre",
+            "columnName": "subGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mood",
+            "columnName": "mood",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempo",
+            "columnName": "tempo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "musicDirectorComposer",
+            "columnName": "musicDirectorComposer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "releaseYear",
+            "columnName": "releaseYear",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "rating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cast_enabled",
+            "columnName": "cast_enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageRating",
+            "columnName": "ageRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "criticRating",
+            "columnName": "criticRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "keywords",
+            "columnName": "keywords",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "episodeNumber",
+            "columnName": "episodeNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "seasonNumber",
+            "columnName": "seasonNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subtitleEnabled",
+            "columnName": "subtitleEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedSubtitleLanguage",
+            "columnName": "selectedSubtitleLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsType",
+            "columnName": "lyricsType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userRating",
+            "columnName": "userRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoQuality",
+            "columnName": "videoQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "audioQuality",
+            "columnName": "audioQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "labelId",
+            "columnName": "labelId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isOriginal",
+            "columnName": "isOriginal",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contentPayType",
+            "columnName": "contentPayType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itype",
+            "columnName": "itype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cast",
+            "columnName": "cast",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "explicit",
+            "columnName": "explicit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pid",
+            "columnName": "pid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "movierights",
+            "columnName": "movierights",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "attribute_censor_rating",
+            "columnName": "attribute_censor_rating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nudity",
+            "columnName": "nudity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "playcount",
+            "columnName": "playcount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "s_artist",
+            "columnName": "s_artist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "artist",
+            "columnName": "artist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsLanguage",
+            "columnName": "lyricsLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsLanguageId",
+            "columnName": "lyricsLanguageId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsFilePath",
+            "columnName": "lyricsFilePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fav_count",
+            "columnName": "fav_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "synopsis",
+            "columnName": "synopsis",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vendor",
+            "columnName": "vendor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "countEraFrom",
+            "columnName": "countEraFrom",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "countEraTo",
+            "columnName": "countEraTo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipCreditET",
+            "columnName": "skipCreditET",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skipCreditST",
+            "columnName": "skipCreditST",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skipIntroET",
+            "columnName": "skipIntroET",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skipIntroST",
+            "columnName": "skipIntroST",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "thumbnailPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pSubName",
+            "columnName": "pSubName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pReleaseDate",
+            "columnName": "pReleaseDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pDescription",
+            "columnName": "pDescription",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pNudity",
+            "columnName": "pNudity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pRatingCritics",
+            "columnName": "pRatingCritics",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pMovieRights",
+            "columnName": "pMovieRights",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pGenre",
+            "columnName": "pGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pLanguage",
+            "columnName": "pLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pImage",
+            "columnName": "pImage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heading",
+            "columnName": "heading",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadAll",
+            "columnName": "downloadAll",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentThumbnailPath",
+            "columnName": "parentThumbnailPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadRetry",
+            "columnName": "downloadRetry",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadedFilePath",
+            "columnName": "downloadedFilePath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalDownloadBytes",
+            "columnName": "totalDownloadBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadedBytes",
+            "columnName": "downloadedBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadNetworkType",
+            "columnName": "downloadNetworkType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdDT",
+            "columnName": "createdDT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planName",
+            "columnName": "planName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planType",
+            "columnName": "planType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStreamDate",
+            "columnName": "contentStreamDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStreamDuration",
+            "columnName": "contentStreamDuration",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "percentDownloaded",
+            "columnName": "percentDownloaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStartDate",
+            "columnName": "contentStartDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentExpiryDate",
+            "columnName": "contentExpiryDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentPlayValidity",
+            "columnName": "contentPlayValidity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drmLicense",
+            "columnName": "drmLicense",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentShareLink",
+            "columnName": "contentShareLink",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSelected",
+            "columnName": "isSelected",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "restrictedDownload",
+            "columnName": "restrictedDownload",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadManagerExoPlayerId",
+            "columnName": "downloadManagerExoPlayerId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "f_playcount",
+            "columnName": "f_playcount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "f_fav_count",
+            "columnName": "f_fav_count",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "qId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "downloaded_audio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aId` INTEGER PRIMARY KEY AUTOINCREMENT, `contentId` TEXT, `title` TEXT, `subTitle` TEXT, `playableUrl` TEXT, `downloadUrl` TEXT, `lyricsUrl` TEXT, `downloadManagerId` INTEGER NOT NULL, `downloadedFilePath` TEXT NOT NULL, `totalDownloadBytes` INTEGER NOT NULL, `downloadedBytes` INTEGER NOT NULL, `downloadStatus` INTEGER NOT NULL, `downloadNetworkType` INTEGER NOT NULL, `createdDT` INTEGER NOT NULL, `parentId` TEXT, `pName` TEXT, `pType` INTEGER NOT NULL, `contentType` INTEGER NOT NULL, `originalAlbumName` TEXT, `podcastAlbumName` TEXT, `releaseDate` TEXT, `actor` TEXT, `singer` TEXT, `lyricist` TEXT, `genre` TEXT, `subGenre` TEXT, `mood` TEXT, `tempo` TEXT, `language` TEXT, `musicDirectorComposer` TEXT, `releaseYear` TEXT, `category` TEXT, `rating` TEXT, `cast_enabled` INTEGER, `ageRating` TEXT, `criticRating` TEXT, `keywords` TEXT, `episodeNumber` TEXT, `seasonNumber` TEXT, `subtitleEnabled` INTEGER, `selectedSubtitleLanguage` TEXT, `lyricsType` TEXT, `userRating` TEXT, `videoQuality` TEXT, `audioQuality` TEXT, `label` TEXT, `labelId` TEXT, `isOriginal` TEXT, `contentPayType` TEXT, `itype` INTEGER, `type` INTEGER, `image` TEXT, `duration` INTEGER, `cast` TEXT, `explicit` INTEGER, `pid` TEXT, `movierights` TEXT, `attribute_censor_rating` TEXT, `nudity` TEXT, `playcount` INTEGER, `s_artist` TEXT, `artist` TEXT, `lyricsLanguage` TEXT, `lyricsLanguageId` TEXT, `lyricsFilePath` TEXT, `fav_count` INTEGER, `synopsis` TEXT, `description` TEXT, `vendor` TEXT, `countEraFrom` TEXT, `countEraTo` TEXT, `skipCreditET` INTEGER, `skipCreditST` INTEGER, `skipIntroET` INTEGER, `skipIntroST` INTEGER, `userId` TEXT, `thumbnailPath` TEXT, `pSubName` TEXT, `pReleaseDate` TEXT, `pDescription` TEXT, `pNudity` TEXT, `pRatingCritics` TEXT, `pMovieRights` TEXT, `pGenre` TEXT, `pLanguage` TEXT, `pImage` TEXT, `heading` TEXT, `downloadAll` INTEGER NOT NULL, `parentThumbnailPath` TEXT, `downloadRetry` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `planName` TEXT NOT NULL, `planType` INTEGER NOT NULL, `contentStreamDate` INTEGER NOT NULL, `contentStreamDuration` INTEGER NOT NULL, `percentDownloaded` INTEGER NOT NULL, `contentStartDate` TEXT NOT NULL, `contentExpiryDate` TEXT NOT NULL, `contentPlayValidity` INTEGER NOT NULL, `drmLicense` TEXT NOT NULL, `contentShareLink` TEXT NOT NULL, `isSelected` INTEGER NOT NULL, `isDeleted` INTEGER NOT NULL, `restrictedDownload` INTEGER NOT NULL, `downloadManagerExoPlayerId` TEXT NOT NULL, `source` TEXT NOT NULL, `f_playcount` TEXT NOT NULL, `f_fav_count` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "aId",
+            "columnName": "aId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contentId",
+            "columnName": "contentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subTitle",
+            "columnName": "subTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "playableUrl",
+            "columnName": "playableUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadUrl",
+            "columnName": "downloadUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsUrl",
+            "columnName": "lyricsUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadManagerId",
+            "columnName": "downloadManagerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadedFilePath",
+            "columnName": "downloadedFilePath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalDownloadBytes",
+            "columnName": "totalDownloadBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadedBytes",
+            "columnName": "downloadedBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadStatus",
+            "columnName": "downloadStatus",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadNetworkType",
+            "columnName": "downloadNetworkType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdDT",
+            "columnName": "createdDT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pName",
+            "columnName": "pName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pType",
+            "columnName": "pType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "originalAlbumName",
+            "columnName": "originalAlbumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "podcastAlbumName",
+            "columnName": "podcastAlbumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "releaseDate",
+            "columnName": "releaseDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "actor",
+            "columnName": "actor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "singer",
+            "columnName": "singer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricist",
+            "columnName": "lyricist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "genre",
+            "columnName": "genre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subGenre",
+            "columnName": "subGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mood",
+            "columnName": "mood",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempo",
+            "columnName": "tempo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "musicDirectorComposer",
+            "columnName": "musicDirectorComposer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "releaseYear",
+            "columnName": "releaseYear",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "rating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cast_enabled",
+            "columnName": "cast_enabled",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ageRating",
+            "columnName": "ageRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "criticRating",
+            "columnName": "criticRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "keywords",
+            "columnName": "keywords",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "episodeNumber",
+            "columnName": "episodeNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "seasonNumber",
+            "columnName": "seasonNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subtitleEnabled",
+            "columnName": "subtitleEnabled",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "selectedSubtitleLanguage",
+            "columnName": "selectedSubtitleLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsType",
+            "columnName": "lyricsType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userRating",
+            "columnName": "userRating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoQuality",
+            "columnName": "videoQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "audioQuality",
+            "columnName": "audioQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "labelId",
+            "columnName": "labelId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isOriginal",
+            "columnName": "isOriginal",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contentPayType",
+            "columnName": "contentPayType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itype",
+            "columnName": "itype",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cast",
+            "columnName": "cast",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "explicit",
+            "columnName": "explicit",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pid",
+            "columnName": "pid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "movierights",
+            "columnName": "movierights",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "attribute_censor_rating",
+            "columnName": "attribute_censor_rating",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nudity",
+            "columnName": "nudity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "playcount",
+            "columnName": "playcount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "s_artist",
+            "columnName": "s_artist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "artist",
+            "columnName": "artist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsLanguage",
+            "columnName": "lyricsLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsLanguageId",
+            "columnName": "lyricsLanguageId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lyricsFilePath",
+            "columnName": "lyricsFilePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fav_count",
+            "columnName": "fav_count",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "synopsis",
+            "columnName": "synopsis",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vendor",
+            "columnName": "vendor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "countEraFrom",
+            "columnName": "countEraFrom",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "countEraTo",
+            "columnName": "countEraTo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipCreditET",
+            "columnName": "skipCreditET",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipCreditST",
+            "columnName": "skipCreditST",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipIntroET",
+            "columnName": "skipIntroET",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipIntroST",
+            "columnName": "skipIntroST",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "thumbnailPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pSubName",
+            "columnName": "pSubName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pReleaseDate",
+            "columnName": "pReleaseDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pDescription",
+            "columnName": "pDescription",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pNudity",
+            "columnName": "pNudity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pRatingCritics",
+            "columnName": "pRatingCritics",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pMovieRights",
+            "columnName": "pMovieRights",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pGenre",
+            "columnName": "pGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pLanguage",
+            "columnName": "pLanguage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pImage",
+            "columnName": "pImage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heading",
+            "columnName": "heading",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadAll",
+            "columnName": "downloadAll",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentThumbnailPath",
+            "columnName": "parentThumbnailPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "downloadRetry",
+            "columnName": "downloadRetry",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planName",
+            "columnName": "planName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planType",
+            "columnName": "planType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStreamDate",
+            "columnName": "contentStreamDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStreamDuration",
+            "columnName": "contentStreamDuration",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "percentDownloaded",
+            "columnName": "percentDownloaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentStartDate",
+            "columnName": "contentStartDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentExpiryDate",
+            "columnName": "contentExpiryDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentPlayValidity",
+            "columnName": "contentPlayValidity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drmLicense",
+            "columnName": "drmLicense",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentShareLink",
+            "columnName": "contentShareLink",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSelected",
+            "columnName": "isSelected",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "restrictedDownload",
+            "columnName": "restrictedDownload",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "downloadManagerExoPlayerId",
+            "columnName": "downloadManagerExoPlayerId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "f_playcount",
+            "columnName": "f_playcount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "f_fav_count",
+            "columnName": "f_fav_count",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "aId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "songDuration",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uniquePosition` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `hungama_user_id` TEXT NOT NULL, `user_streamed_min` INTEGER, `entry_created_time` TEXT, `first_stream_start_time` TEXT, `activity_last_updated` TEXT, `current_timestampm` TEXT NOT NULL, `Is_first_stream_started` INTEGER, `stream_max_min_allowed` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "uniquePosition",
+            "columnName": "uniquePosition",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hungama_user_id",
+            "columnName": "hungama_user_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_streamed_min",
+            "columnName": "user_streamed_min",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "entry_created_time",
+            "columnName": "entry_created_time",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "first_stream_start_time",
+            "columnName": "first_stream_start_time",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activity_last_updated",
+            "columnName": "activity_last_updated",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "current_timestampm",
+            "columnName": "current_timestampm",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Is_first_stream_started",
+            "columnName": "Is_first_stream_started",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stream_max_min_allowed",
+            "columnName": "stream_max_min_allowed",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uniquePosition"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '828c95ac2ed2b018d64602940d874d2c')"
+    ]
+  }
+}

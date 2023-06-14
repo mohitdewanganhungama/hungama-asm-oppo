@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_16"
+    android:id="@+id/llMain">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivFollowingImage"
+        android:layout_width="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_48"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_gradient_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.Circle"/>
+
+    <TextView
+        android:id="@+id/tvFollowingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_12"
+        app:layout_constraintStart_toEndOf="@+id/ivFollowingImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivAddedFollowing"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="Abc Xyz"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:textStyle="normal"
+        android:textSize="@dimen/font_17"
+        android:textColor="@color/colorWhite"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/tvFollowingCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_12"
+        app:layout_constraintStart_toEndOf="@+id/ivFollowingImage"
+        app:layout_constraintTop_toBottomOf="@id/tvFollowingName"
+        app:layout_constraintEnd_toStartOf="@id/ivAddedFollowing"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="@string/podcast_str_8"
+        android:fontFamily="@font/sf_pro_text"
+        android:textStyle="normal"
+        android:textSize="@dimen/font_13"
+        android:ellipsize="end"
+        android:textColor="#c6c6c6"/>
+
+    <ImageView
+        android:id="@+id/ivAddedFollowing"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:paddingStart="@dimen/dimen_11_75"
+        android:paddingEnd="@dimen/dimen_11_75"
+        android:paddingTop="@dimen/dimen_14"
+        android:paddingBottom="@dimen/dimen_14"
+        android:src="@drawable/ic_tick"
+        app:layout_constraintBottom_toBottomOf="@id/ivFollowingImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivFollowingImage"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

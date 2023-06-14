@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">commondatastorage.googleapis.com</domain>
+        <domain includeSubdomains="true">games.saeculumsolutions.com/</domain>
+        <domain includeSubdomains="true">hungama.com/</domain>
+        <domain includeSubdomains="true">images.hungama.com/</domain>
+        <domain includeSubdomains="true">dev-resws-hungamatech-com.storage.googleapis.com</domain>
+        <domain includeSubdomains="true">dev-resws-hungamatech-com</domain>
+        <domain includeSubdomains="true">35.200.196.46</domain>
+        <domain includeSubdomains="true">35.200.232.228</domain>
+        <domain includeSubdomains="true">35.200.223.104</domain>
+        <domain includeSubdomains="true">page.api.hungama.com</domain>
+        <domain includeSubdomains="true">cpage.api.hungama.com</domain>
+        <domain includeSubdomains="true">ugc.api.hungama.com</domain>
+        <domain includeSubdomains="true">accounts.hungama.com</domain>
+        <domain includeSubdomains="true">h-accounts.hungama.com</domain>
+        <domain includeSubdomains="true">urls.api.hungama.com</domain>
+        <domain includeSubdomains="true">curls.api.hungama.com</domain>
+        <domain includeSubdomains="true">*.hungama.com</domain>
+        <domain includeSubdomains="true">payapi.hungama.com</domain>
+        <domain includeSubdomains="true">payments.hungama.com</domain>
+        <domain includeSubdomains="true">api.hungama.com/</domain>
+        <domain includeSubdomains="true">rewards.api.hungama.com</domain>
+        <domain includeSubdomains="true">192.168.0.7:9010/</domain>
+        <domain includeSubdomains="true">127.0.0.1:5500/</domain>
+        <domain includeSubdomains="true">192.168.0.7/</domain>
+        <domain includeSubdomains="true">localhost:5500/</domain>
+        <domain includeSubdomains="true">gist.githubusercontent.com/</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">i.picsum.photos</domain>
+        <domain includeSubdomains="true">i.picsum.photos/</domain>
+        <domain includeSubdomains="true">gamezone-files.hungama.com</domain>
+        <domain includeSubdomains="true">www.hungama.com/privacy-policy/</domain>
+        <domain includeSubdomains="true">www.hungama.com/</domain>
+        <domain includeSubdomains="true">ibb.co/</domain>
+        <domain includeSubdomains="true">files.hubhopper.com/</domain>
+        <domain includeSubdomains="true">gamezone-files.hungama.com/</domain>
+        <domain includeSubdomains="true">search.api.hungama.com/</domain>
+        <domain includeSubdomains="true">6c06c9c9337cdfb6e91b109a3338138d:b1a07e71f4a4aedee5410a3a49a3b3f9@hungama-digital-store.myshopify.com/</domain>
+        <domain includeSubdomains="true">hungama-digital-store.myshopify.com/</domain>
+        <domain includeSubdomains="true">rewards.api.hungama.com/</domain>
+        <domain includeSubdomains="true">communication.api.hungama.com</domain>
+        <domain includeSubdomains="true">pac.hungama.com</domain>
+        <domain includeSubdomains="true">user.api.hungama.com</domain>
+        <domain includeSubdomains="true">un.hungama.com</domain>
+        <domain includeSubdomains="true">34.93.192.18</domain>
+        <domain includeSubdomains="true">images1.hungama.com</domain>
+        <domain includeSubdomains="true">images2.hungama.com</domain>
+        <domain includeSubdomains="true">images3.hungama.com</domain>
+        <domain includeSubdomains="true">images4.hungama.com</domain>
+        <domain includeSubdomains="true">images5.hungama.com</domain>
+        <domain includeSubdomains="true">hungama.com</domain>
+        <domain includeSubdomains="true">storage.googleapis.com</domain>
+        <domain includeSubdomains="true">35.200.137.158</domain>
+        <domain includeSubdomains="true">180.179.149.11</domain>
+        <domain includeSubdomains="true">202.87.41.147</domain>
+        <domain includeSubdomains="true">admanager.google.com</domain>
+        <domain includeSubdomains="true">akamaihd.net</domain>
+        <domain includeSubdomains="true">85mum-content.hungama.com</domain>
+        <domain includeSubdomains="true">34.117.248.225</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+<!--            <certificates src="@raw/hungama" />-->
+        </trust-anchors>
+
+    </domain-config>
+</network-security-config>

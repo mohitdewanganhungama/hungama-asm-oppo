@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hungama.music.ui.main.view.fragment.OrderConformationFragment"
+    android:background="@drawable/home_bg_layer">
+    <include layout="@layout/common_blur_view" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/skeleton_payment_conformation" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlActionBarHeader"
+        app:layout_constraintVertical_bias="0.0"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/dimen_60"
+        android:paddingBottom="@dimen/dimen_100">
+
+        <include
+            android:id="@+id/cardImage"
+            layout="@layout/layout_order_conformation" />
+    </androidx.core.widget.NestedScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/language_selection_sheet_gradient" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginStart="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_21"
+        android:layout_marginBottom="@dimen/dimen_32"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnMyOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dimen_5"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:background="@drawable/corner_radius_18_bg_alpha_white"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_order"/>
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/reward_str_90"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_continue"/>
+            <TextView
+                android:id="@+id/tvContinue"
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/download_str_9"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <include layout="@layout/common_header_action_bar" />
+    <include
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

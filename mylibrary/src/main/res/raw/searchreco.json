@@ -1,0 +1,1741 @@
+{
+  "data": {
+    "body": {
+      "rows": [
+        {
+          "id": "",
+          "type": 4,
+          "heading": "Recommended For You",
+          "hscroll": 1,
+          "more": 1,
+          "items": [
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958246",
+                "title": "Indradhanush",
+                "subtitle": "1988",
+                "image": "https://images.hungama.com/c/1/e2f/c0b/29958246/29958246_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1988-01-01T00:00:00+05:30",
+                  "genre": "Sci-Fi",
+                  "genre_id": 601,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 12612845,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "11",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "33189526",
+                "title": "My Virgin Diary",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/81a/02a/33189526/33189526_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "FVOD"
+                  ],
+                  "vendor_id": 10249,
+                  "explicit_i": 1,
+                  "releasedate": "2018-01-18T00:00:00+05:30",
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 22258169,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "19",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "62418416",
+                "title": "Thoda Thoda Pyaar",
+                "subtitle": "Pop",
+                "image": "https://images.hungama.com/c/1/a69/a53/62418415/62418415_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62418415,
+                  "p_name": "Thoda Thoda Pyaar",
+                  "vendor_id": 11570,
+                  "releasedate": 20210212000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37977366,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64116392",
+                "title": "Ishq Tumpe Aise",
+                "subtitle": "Ishq Tumpe Aise",
+                "image": "https://images.hungama.com/c/1/ad7/a96/64116392/64116392_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 64116391,
+                  "p_name": "Ishq Tumpe Aise",
+                  "vendor_id": 11570,
+                  "releasedate": 20210322000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38136588,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 192,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "7639",
+                "title": "Suresh Wadkar",
+                "subtitle": "78K followers",
+                "image": "https://images.hungama.com/a/1/08f/b10/7639/7639_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Suresh Ishwar Wadkar is an Indian playback singer. He performs in both Hindi and Marathi films.He has sung songs in some Bhojpuri Films",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "36375556",
+                "title": "18 Plus Jobseekers",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/b56/eff/36375556/36375556_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 11530,
+                  "explicit_i": 0,
+                  "releasedate": "2018-05-22T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 25424644,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "22",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "25178",
+                "title": "Dance Bollywood",
+                "subtitle": "34 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/00c1f89937b8121c9e0656052ea4356f_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20180620110135,
+                  "genre": [
+                    "Bollywood",
+                    "Dance"
+                  ],
+                  "genre_id": [
+                    23,
+                    50
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "58018817",
+                "title": "Cookiees",
+                "subtitle": "2020",
+                "image": "https://images.hungama.com/c/1/799/b05/58018817/58018817_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    ""
+                  ],
+                  "vendor_id": 13040,
+                  "explicit_i": 1,
+                  "releasedate": "2020-09-22T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 37527137,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "1",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61500044",
+                "title": "Faraar",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/d99/d76/61500037/61500037_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 61500037,
+                  "p_name": "Faraar",
+                  "vendor_id": 251,
+                  "releasedate": 20210115000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 505818,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 8563
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "17896",
+                "title": "Sufiyana",
+                "subtitle": "32 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/6505489ae704e5271a499ad6c7636cd6_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20170922105024,
+                  "genre": [
+                    "Bollywood",
+                    "Sufi"
+                  ],
+                  "genre_id": [
+                    23,
+                    21
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63082205",
+                "title": "Kaal Ke Hain Mahakal 2.0 (Big Bell Remix)",
+                "subtitle": "World",
+                "image": "https://images.hungama.com/c/1/9c8/5f9/63082205/63082205_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 7823,
+                  "releasedate": 20210308000000,
+                  "genre": "World",
+                  "genre_id": 13360982,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38035275,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 16
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958095",
+                "title": "Aasmaan Se Aagay",
+                "subtitle": "1994",
+                "image": "https://images.hungama.com/c/1/409/3f9/29958095/29958095_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1994-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271047,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "15",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436432",
+                "title": "O Chinnadhana",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/630/5f5/40436432/40436432_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29158958,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "26",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61491354",
+                "title": "Hare Krishna Hare",
+                "subtitle": "Hare Krishna Hare",
+                "image": "https://images.hungama.com/c/1/04a/cd5/61491354/61491354_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 61491350,
+                  "p_name": "Hare Krishna Hare",
+                  "vendor_id": 19,
+                  "releasedate": 20210114000000,
+                  "genre": "Devotional",
+                  "genre_id": 8,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37904777,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 172,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61651631",
+                "title": "Fitrat",
+                "subtitle": "Fitrat",
+                "image": "https://images.hungama.com/c/1/bdf/643/61651631/61651631_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 61651629,
+                  "p_name": "Fitrat",
+                  "vendor_id": 13805,
+                  "releasedate": 20210121000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37919093,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 171,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40923787",
+                "title": "Happy Hours",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/ef6/aa8/40923787/40923787_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-10-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 17120477,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "14",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64598040",
+                "title": "Majhdhaar",
+                "subtitle": "Har Khushi Ab",
+                "image": "https://images.hungama.com/c/1/1c7/990/64598040/64598040_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 64598004,
+                  "p_name": "Har Khushi Ab",
+                  "vendor_id": 13339,
+                  "releasedate": 20210412000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38189065,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 155,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958260",
+                "title": "Isi Bahane",
+                "subtitle": "1988",
+                "image": "https://images.hungama.com/c/1/e0d/6bb/29958260/29958260_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1988-01-01T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271051,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "16",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "78731",
+                "title": "Hindi Hip Hop - So Far 2020",
+                "subtitle": "20 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/3f500879b257036ef5d60f152077b1de_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20200901235818,
+                  "genre": "Hip Hop",
+                  "genre_id": 56,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "494",
+                "title": "Anup Jalota",
+                "subtitle": "78K followers",
+                "image": "https://images.hungama.com/a/1/1be/3bc/494/494_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Known as the Emperor of bhajans, Anup Jalota has sung over 1200 bhajans, ghazals and songs which back the statement. His famous tracks include Jag Mein Sundar Hai Do Naam, Kategi Ye Zindagi Ab Rote Rote and Rukh Se Parda Hata De.",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64194763",
+                "title": "Aaj Sajeya",
+                "subtitle": "Pop",
+                "image": "https://images.hungama.com/c/1/e5c/a6c/64194762/64194762_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 64194762,
+                  "p_name": "Aaj Sajeya",
+                  "vendor_id": 271,
+                  "releasedate": 20210330000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38146306,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 519
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958123",
+                "title": "Dekh Bhai Dekh",
+                "subtitle": "1993",
+                "image": "https://images.hungama.com/c/1/a49/9b6/29958123/29958123_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1993-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 64977,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "8",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64808143",
+                "title": "Qubool Hai 2.0 Title Track (From \"Qubool Hai 2.0\")",
+                "subtitle": "Soundtrack",
+                "image": "https://images.hungama.com/c/1/cfe/c20/64808143/64808143_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 11570,
+                  "releasedate": 20210422000000,
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38211658,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "44139461",
+                "title": "Padded Ki Pushup",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/329/e2f/44139461/44139461_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 0,
+                  "releasedate": "2018-12-18T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Marathi",
+                  "lang_id": "mar",
+                  "territory_rights": "AA_A",
+                  "propertyid": 33393732,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "7",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "26425",
+                "title": "Nakash Aziz",
+                "subtitle": "26K followers",
+                "image": "https://images.hungama.com/a/1/069/ad7/26425/26425_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "NAKASH AZIZ",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63162071",
+                "title": "Nadiyon Paar (Let the Music Play Again) (From \"Roohi\")",
+                "subtitle": "Soundtrack",
+                "image": "https://images.hungama.com/c/1/cc3/f6b/63162069/63162069_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 63162069,
+                  "p_name": "Nadiyon Paar (Let the Music Play Again) (From \"Roohi\")",
+                  "vendor_id": 6728,
+                  "releasedate": 20210303000000,
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38042778,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "52545731",
+                "title": "I Am A Disco Dancer 2.0 - Tiger Shroff",
+                "subtitle": "Pop",
+                "image": "https://images.hungama.com/c/1/8d4/877/52545731/52545731_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 271,
+                  "releasedate": 20200318000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37050245,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 2773293
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64345170",
+                "title": "Koi Jaane Na - Title Track",
+                "subtitle": "Koi Jaane Na",
+                "image": "https://images.hungama.com/c/1/471/70d/64345170/64345170_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 63452762,
+                  "p_name": "Koi Jaane Na",
+                  "vendor_id": 19,
+                  "releasedate": 20210402000000,
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38063035,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 170,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "48158529",
+                "title": "Non-Alcoholic Breakup",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/223/217/48158529/48158529_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "FVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 12985,
+                  "explicit_i": 0,
+                  "releasedate": "2019-05-27T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Gujarati",
+                  "lang_id": "guj",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36718931,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "2",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "73592",
+                "title": "Romance in the 90s",
+                "subtitle": "50 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/0a3815b6b268b5d47c0307f5f2c5d2f4_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20200721133015,
+                  "genre": [
+                    "Bollywood",
+                    "Soundtrack",
+                    "Retro",
+                    "Romance"
+                  ],
+                  "genre_id": [
+                    23,
+                    20,
+                    739,
+                    117
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958275",
+                "title": "Rajani",
+                "subtitle": "1985",
+                "image": "https://images.hungama.com/c/1/741/76c/29958275/29958275_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1985-01-01T00:00:00+05:30",
+                  "genre": "Social",
+                  "genre_id": 116,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 550598,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "10",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61779570",
+                "title": "Saiyaan Ji (Ft. Nushrratt Bharuccha)",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/ab6/6bf/61779569/61779569_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 61779569,
+                  "p_name": "Saiyaan Ji (Ft. Nushrratt Bharuccha)",
+                  "vendor_id": 19,
+                  "releasedate": 20210127000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37930677,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "46919157",
+                "title": "9XM StarTruck",
+                "subtitle": "2019",
+                "image": "https://images.hungama.com/c/1/b7c/57f/46919157/46919157_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 1324,
+                  "explicit_i": 0,
+                  "releasedate": "2019-01-01T00:00:00+05:30",
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 36160301,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "3",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "62774697",
+                "title": "Jazbaa",
+                "subtitle": "Pop",
+                "image": "https://images.hungama.com/c/1/885/373/62774697/62774697_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 10505,
+                  "releasedate": 20210117000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 6188341,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436423",
+                "title": "Anando Brahma",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/fc5/0e7/40436423/40436423_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29158949,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "25",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "51873206",
+                "title": "Dus Bahane 2.0 (From \"Baaghi 3\")",
+                "subtitle": "Bollywood",
+                "image": "https://images.hungama.com/c/1/8c5/591/51873206/51873206_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 19,
+                  "releasedate": 20200212000000,
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37000680,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 9247264
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61790948",
+                "title": "Azaad 2.0",
+                "subtitle": "World",
+                "image": "https://images.hungama.com/c/1/a68/c23/61790948/61790948_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 7823,
+                  "releasedate": 20210205000000,
+                  "genre": "World",
+                  "genre_id": 13360982,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37931526,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 1
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "4746",
+                "title": "Neeraj Shridhar",
+                "subtitle": "17K followers",
+                "image": "https://images.hungama.com/a/1/de9/051/4746/4746_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Neeraj Shridhar is a member of a pop and rock group Bombay Viking. He is a popular (Bollywood playback-)Singer. He is also a Music Director and a Lyricist",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40711096",
+                "title": "Bar Code",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/f0c/a00/40711096/40711096_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-10-09T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 29963618,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "20",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40436353",
+                "title": "Hum Tum",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/a28/573/40436353/40436353_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-09-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 65065,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "4",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "37305408",
+                "title": "Hankaar",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/8da/993/37305408/37305408_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-07-25T00:00:00+05:30",
+                  "genre": "Drama",
+                  "genre_id": 9,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 26447893,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "24",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "62774404",
+                "title": "Panghat (From \"Roohi\")",
+                "subtitle": "Soundtrack",
+                "image": "https://images.hungama.com/c/1/bd6/a33/62774403/62774403_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62774403,
+                  "p_name": "Panghat (From \"Roohi\")",
+                  "vendor_id": 6728,
+                  "releasedate": 20210222000000,
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 506242,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "50966037",
+                "title": "Illegal Weapon 2.0 (From \"Street Dancer 3D\")",
+                "subtitle": "Bollywood",
+                "image": "https://images.hungama.com/c/1/728/eba/50966037/50966037_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 19,
+                  "releasedate": 20200104000000,
+                  "genre": "Bollywood",
+                  "genre_id": 23,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 36934703,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 7143069
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "6638",
+                "title": "With Love - Shreya Ghoshal",
+                "subtitle": "30 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/17e9b5ba7b982abecf43265bbba030a1_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20170208071856,
+                  "genre": "Romance",
+                  "genre_id": 117,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61497091",
+                "title": "Phir Chala From \"Ginny Weds Sunny \"",
+                "subtitle": "Phir Chala (From \"Ginny Weds Sunny \")",
+                "image": "https://images.hungama.com/c/1/10d/403/61497091/61497091_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 61497090,
+                  "p_name": "Phir Chala (From \"Ginny Weds Sunny \")",
+                  "vendor_id": 6728,
+                  "releasedate": 20210115000000,
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37564932,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 302,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "20802",
+                "title": "Chitra Singh",
+                "subtitle": "8K followers",
+                "image": "https://images.hungama.com/a/1/412/9fc/20802/20802_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": null,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "40923762",
+                "title": "Dheenamma Jeevitham",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/b78/227/40923762/40923762_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 6168,
+                  "explicit_i": 0,
+                  "releasedate": "2018-10-12T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Telugu",
+                  "lang_id": "tel",
+                  "territory_rights": "AA_A",
+                  "propertyid": 30172465,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "27",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "4120",
+                "title": "Manna Dey",
+                "subtitle": "74K followers",
+                "image": "https://images.hungama.com/a/1/b98/670/4120/4120_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": null,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "1009",
+                "title": "Bollywood DJ Mixes",
+                "subtitle": "23 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/a95b420124a027532f8a23c0c00f46ae_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20140128092532,
+                  "genre": [
+                    "Bollywood",
+                    "Soundtrack"
+                  ],
+                  "genre_id": [
+                    23,
+                    20
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "10350659",
+                "title": "Raja Kumari",
+                "subtitle": "9K followers",
+                "image": "https://images.hungama.com/a/1/30e/5d5/10350659/10350659_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Raja Kumari",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "61965392",
+                "title": "Jab Koi Bat Bigad Jaye Bollywood Melody Mashup Cover Song",
+                "subtitle": "Jab Koi Bat Bigad Jaye Bollywood Melody Mashup Cover Song",
+                "image": "https://images.hungama.com/c/1/9b6/35f/61965392/61965392_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 61965377,
+                  "p_name": "Jab Koi Bat Bigad Jaye Bollywood Melody Mashup Cover Song",
+                  "vendor_id": 13287,
+                  "releasedate": 20210201000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37946941,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 300,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "98824",
+                "title": "Valentines Day",
+                "subtitle": "40 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/fdcd2cca0425902f81c8d56392b60b52_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20210127195018,
+                  "genre": [
+                    "Bollywood",
+                    "Romance"
+                  ],
+                  "genre_id": [
+                    23,
+                    117
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "52978867",
+                "title": "Masakali 2.0",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/bd6/612/52978867/52978867_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 19,
+                  "releasedate": 20200408000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37086468,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 1684720
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "64194763",
+                "title": "Aaj Sajeya",
+                "subtitle": "Pop",
+                "image": "https://images.hungama.com/c/1/e5c/a6c/64194762/64194762_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 64194762,
+                  "p_name": "Aaj Sajeya",
+                  "vendor_id": 271,
+                  "releasedate": 20210330000000,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38146306,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 519
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "62251014",
+                "title": "Main Jis Din Bhulaa Du",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/266/bbf/62251012/62251012_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62251012,
+                  "p_name": "Main Jis Din Bhulaa Du",
+                  "vendor_id": 19,
+                  "releasedate": 20210210000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37966926,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "5028",
+                "title": "Pankaj Udhas",
+                "subtitle": "41K followers",
+                "image": "https://images.hungama.com/a/1/bf8/dd8/5028/5028_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Pankaj Udhas is an Indian singer, credited in the Indian music industry, along with other musicians like Jagjit Singh and Talat Aziz, with bringing the style to the realm of popular music. Udhas rose to fame for singing in the film Naam (1986 film), in which his song Chitthi Aayee Hai became an instant hit.",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "119654",
+                "title": "DIVINE",
+                "subtitle": "80K followers",
+                "image": "https://images.hungama.com/a/1/e75/5ce/119654/119654_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": null,
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64450246",
+                "title": "Kaancheck",
+                "subtitle": "Kaancheck",
+                "image": "https://images.hungama.com/c/1/b5d/ccc/64450246/64450246_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 64450245,
+                  "p_name": "Kaancheck",
+                  "vendor_id": 251,
+                  "releasedate": 20210409000000,
+                  "genre": "Hip Hop",
+                  "genre_id": 56,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38175144,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 182,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "29958196",
+                "title": "Idhar Udhar",
+                "subtitle": "1985",
+                "image": "https://images.hungama.com/c/1/026/2dd/29958196/29958196_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "AVOD",
+                    "SVOD"
+                  ],
+                  "vendor_id": 13677,
+                  "explicit_i": 0,
+                  "releasedate": "1985-01-01T00:00:00+05:30",
+                  "genre": "Comedy",
+                  "genre_id": 6,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A,IN_A,LK_A,TH_A",
+                  "propertyid": 19271049,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "12",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "89",
+                "title": "Beete Lamhein",
+                "subtitle": "37 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/6fd85927f1795a6fc4ba6bbed6419d85_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20150216123147,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "39340",
+                "title": "Retro Unplugged",
+                "subtitle": "40 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/ffb8e38d56736778c4dfd59e3667d262_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20190616000632,
+                  "genre": [
+                    "Bollywood",
+                    "Soundtrack",
+                    "Oldies",
+                    "Retro"
+                  ],
+                  "genre_id": [
+                    23,
+                    20,
+                    33214,
+                    739
+                  ],
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "62645337",
+                "title": "Lut Gaye (Feat. Emraan Hashmi)",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/ea3/d6a/62645335/62645335_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 62645335,
+                  "p_name": "Lut Gaye (Feat. Emraan Hashmi)",
+                  "vendor_id": 19,
+                  "releasedate": 20210217000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37992822,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "63089802",
+                "title": "Baba 0.5",
+                "subtitle": "World",
+                "image": "https://images.hungama.com/c/1/527/621/63089802/63089802_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 7823,
+                  "releasedate": 20210223000000,
+                  "genre": "World",
+                  "genre_id": 13360982,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38036619,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "64434853",
+                "title": "Kaise Juda Rahein Lyric Video",
+                "subtitle": "Kaise Juda Rahein (Lyric Video)",
+                "image": "https://images.hungama.com/c/1/6b9/cdc/64434853/64434853_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 64434851,
+                  "p_name": "Kaise Juda Rahein (Lyric Video)",
+                  "vendor_id": 6728,
+                  "releasedate": 20210414000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 38143069,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 260,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "2413",
+                "title": "Weekend Fresh",
+                "subtitle": "24 Songs",
+                "image": "https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/b3e87f9310dbe289e231cdbbab4b6916_500x500.jpg",
+                "type": "playlist",
+                "misc": {
+                  "vendor_id": null,
+                  "releasedate": 20160819120839,
+                  "genre": "Pop",
+                  "genre_id": 46,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": null,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": ""
+                }
+              }
+            },
+            {
+              "itype": 13,
+              "data": {
+                "id": "35230792",
+                "title": "Damaged",
+                "subtitle": "2018",
+                "image": "https://images.hungama.com/c/1/0eb/8f8/35230792/35230792_720x540.jpg",
+                "type": "tVSeries",
+                "misc": {
+                  "movierights": [
+                    "SVOD"
+                  ],
+                  "vendor_id": 10035,
+                  "explicit_i": 1,
+                  "releasedate": "2018-06-06T00:00:00+05:30",
+                  "genre": "Psychological Crime Drama",
+                  "genre_id": 1102,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "territory_rights": "AA_A",
+                  "propertyid": 25727807,
+                  "ctag": [],
+                  "fav_count": 0,
+                  "priority": "23",
+                  "duration": 0
+                }
+              }
+            },
+            {
+              "itype": 5,
+              "data": {
+                "id": "63073157",
+                "title": "Chup",
+                "subtitle": "Chup",
+                "image": "https://images.hungama.com/c/1/0a9/755/63073157/63073157_700x394.jpg",
+                "type": "musicVideoTrack",
+                "misc": {
+                  "p_id": 63073156,
+                  "p_name": "Chup",
+                  "vendor_id": 6728,
+                  "releasedate": 20210226000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 4165190,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": 202,
+                  "playcount": null
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "31255161",
+                "title": "2.0",
+                "subtitle": "Soundtrack",
+                "image": "https://images.hungama.com/c/1/9ea/35f/31255161/31255161_500x500.jpg",
+                "type": "album",
+                "misc": {
+                  "p_id": "",
+                  "p_name": "",
+                  "vendor_id": 4506,
+                  "releasedate": 20181106000000,
+                  "genre": "Soundtrack",
+                  "genre_id": 20,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 20532522,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": 11104755
+                }
+              }
+            },
+            {
+              "itype": 11,
+              "data": {
+                "id": "143",
+                "title": "Adnan Sami",
+                "subtitle": "7K followers",
+                "image": "https://images.hungama.com/a/1/903/ce9/143/143_200x200.jpg",
+                "type": "artist",
+                "misc": {
+                  "description": "Adnan Sami (born 15 August 1973) is a British-born Indian-Canadian singer, musician, pianist,actor and composer of Pakistani origin. He currently holds Canadian citizenship and works and lives in Mumbai, India. His style merges Asian and Western music styles and instrumentation and ranges from classical to jazz to modern pop-rock.",
+                  "playcount": 0
+                }
+              }
+            },
+            {
+              "itype": 2,
+              "data": {
+                "id": "61993731",
+                "title": "Chhor Denge (Feat. Nora Fatehi)",
+                "subtitle": "Indian Pop",
+                "image": "https://images.hungama.com/c/1/907/53d/61993730/61993730_500x500.jpg",
+                "type": "audioTrack",
+                "misc": {
+                  "p_id": 61993730,
+                  "p_name": "Chhor Denge (Feat. Nora Fatehi)",
+                  "vendor_id": 19,
+                  "releasedate": 20210204000000,
+                  "genre": "Indian Pop",
+                  "genre_id": 13360416,
+                  "lang": "Hindi",
+                  "lang_id": "hin",
+                  "propertyid": 37949103,
+                  "certificate": "",
+                  "priority": "",
+                  "duration": null,
+                  "playcount": null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

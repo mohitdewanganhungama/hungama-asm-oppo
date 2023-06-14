@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_60"
+    android:elevation="@dimen/dimen_2"
+    android:focusableInTouchMode="true"
+    android:id="@+id/rlHeaderMain">
+    <include layout="@layout/common_blur_view"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:paddingStart="@dimen/dimen_15_5"
+        android:paddingEnd="@dimen/dimen_15_5"
+        android:paddingTop="@dimen/dimen_12"
+        android:paddingBottom="@dimen/dimen_12"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimen_2"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_back_white"/>
+
+    <TextView
+        style="@style/StyleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:text=""
+        android:id="@+id/tvTitle"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dimen_0"
+        android:textSize="@dimen/font_17"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+</RelativeLayout>

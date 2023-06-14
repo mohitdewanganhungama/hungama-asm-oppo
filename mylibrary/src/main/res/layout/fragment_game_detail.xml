@@ -1,0 +1,333 @@
+<RelativeLayout
+    android:id="@+id/gamelistDetailroot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/home_bg_color">
+
+    <ImageView
+        android:id="@+id/iv_collapsingImageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <include layout="@layout/common_blur_view"/>
+
+    <View
+        android:id="@+id/fullGradient"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/podcast_gradient_layer"
+        android:alpha="0.5"/>
+    <View
+        android:id="@+id/centerGradient"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_350"
+        android:layout_marginTop="@dimen/dimen_250"
+        android:background="@drawable/movie_center_gradient"
+        android:visibility="gone"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playlistDetailroot_sub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+
+        <com.hungama.music.utils.FadingEdgeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:fel_edge="top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_MainImage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="fitCenter"/>
+        </com.hungama.music.utils.FadingEdgeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants">
+
+                <RelativeLayout
+                    android:id="@+id/rlHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_60"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@+id/headBlur"
+                        layout="@layout/common_blur_view"
+                        android:visibility="invisible" />
+
+                    <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llPlayNowActionBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_head_line"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/item_title_color" />
+
+                            <ImageView
+                                android:id="@+id/ic_play"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:visibility="gone"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:background="@drawable/icon_play_all" />
+                        </RelativeLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_const"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_below="@+id/rlHeading">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/topView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:id="@+id/rlImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_190"
+                            android:gravity="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/playlistAlbumArtImageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen_190"
+                                android:fitsSystemWindows="true"
+                                android:scaleType="centerCrop"
+                                app:layout_collapseMode="parallax"
+
+                                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/topView">
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:maxLines="2"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_20" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/rlRating"
+                                android:layout_width="@dimen/dimen_46"
+                                android:layout_height="@dimen/dimen_23"
+                                android:layout_marginTop="@dimen/_6sdp">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bg_alpha_with_4dp_round_corner_tv_show"
+                                    android:layout_centerInParent="true"
+                                    android:gravity="center_horizontal">
+                                    <ImageView
+                                        android:id="@+id/ivImdbRatingStar"
+                                        android:layout_width="@dimen/dimen_8_5"
+                                        android:layout_height="@dimen/dimen_8_1"
+                                        android:layout_marginTop="@dimen/dimen_8"
+                                        android:src="@drawable/ic_rating_star"
+                                        android:visibility="visible" />
+
+                                    <TextView
+                                        android:id="@+id/tvRating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="@dimen/dimen_3"
+                                        android:layout_toEndOf="@id/ivImdbRatingStar"
+                                        android:fontFamily="@font/sf_pro_text_medium"
+                                        android:lineSpacingExtra="@dimen/font_2"
+                                        android:text="0.0"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/font_13"
+                                        android:visibility="visible"
+                                        app:lineHeight="@dimen/font_15" />
+                                </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llPlayNow"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_42"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:background="@drawable/corner_radius_18_bg_blue"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                                android:id="@+id/ivDetailBtnIcon"
+                                style="@style/commonMediumIconStyle"
+                                android:visibility="visible"
+                                app:fontText="@string/icon_play_2" />
+                            <TextView
+                                android:id="@+id/tvPlay"
+                                style="@style/commonMediumButtonStyle"
+                                android:text="@string/play_now" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <com.hungama.music.utils.customview.ShowMoreTextView
+                            android:id="@+id/tvReadMoreDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_17"
+                            android:fontFamily="@font/sf_pro_text"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/item_sub_title_color"
+                            android:textSize="@dimen/font_13"
+                            android:visibility="visible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/llDetails2"
+                            app:lineHeight="@dimen/font_22" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPlaylistList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/main_const"
+                    android:layout_marginTop="@dimen/dimen_16">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/StyleTextView"
+                        android:id="@+id/tvGamePreviewLabel"
+                        android:text="Game Preview"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/font_21"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorWhite"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:visibility="gone"
+                        android:includeFontPadding="false"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvGamePreviewlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        tools:itemCount="5"
+                        android:layout_below="@id/tvGamePreviewLabel"/>
+
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/progress"
+                    layout="@layout/layout_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_repeat_mode="restart"
+        android:visibility="visible"
+        app:shimmer_shape="radial">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/skeleton_game_details" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+</RelativeLayout>

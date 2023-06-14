@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:topLeftRadius="@dimen/common_popup_round_corner"
+        app:topRightRadius="@dimen/common_popup_round_corner"
+        app:realtimeBlurRadius="150dp"
+        app:realtimeOverlayColor="@color/colorTransparentBlack"/>
+    <View
+        android:id="@+id/vDevider1"
+        android:layout_width="@dimen/dimen_42"
+        android:layout_height="4dp"
+        android:background="@drawable/bottomsheet_icon_background"
+        android:layout_marginTop="@dimen/dimen_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_26"
+        android:text="@string/allow_background_activity"
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_17"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDevider1" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_9"
+        android:lineSpacingExtra="@dimen/dimen_5"
+        android:text="@string/hungama_requires_your_permission_to_play_in_the_background"
+        android:textColor="@color/item_sub_title_color"
+        android:textSize="@dimen/font_13"
+        android:gravity="center"
+        android:fontFamily="@font/sf_pro_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_31"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/tvCancel"
+            android:layout_width="@dimen/dimen_130"
+            android:layout_height="@dimen/dimen_42"
+            android:background="@drawable/corner_radius_18_bg_alpha_white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/deny"
+                android:textSize="@dimen/font_14"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/tvGotoSettings"
+            android:layout_width="@dimen/dimen_130"
+            android:layout_height="@dimen/dimen_42"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:background="@drawable/corner_radius_18_bg_blue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/commonMediumButtonStyle"
+                android:text="@string/allow"
+                android:textSize="@dimen/font_14"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

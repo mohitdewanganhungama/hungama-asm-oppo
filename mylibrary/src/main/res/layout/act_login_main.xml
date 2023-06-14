@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/home_bg_layer"
+            tools:context="com.hungama.music.ui.main.view.activity.LoginMainActivity">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:context="com.hungama.music.ui.main.view.activity.LoginMainActivity">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--                <View-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:background="@drawable/login_patch"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent" />-->
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_26"
+                    android:layout_marginBottom="@dimen/dimen_13"
+                    android:src="@drawable/hungama_text_icon_new"
+                    app:layout_constraintBottom_toTopOf="@id/textView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.29"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/StyleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_52"
+                    android:layout_marginTop="@dimen/dimen_13"
+                    android:layout_marginEnd="@dimen/dimen_52"
+                    android:layout_marginBottom="@dimen/dimen_9"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:textColor="@color/colorWhite"
+                    android:maxLines="2"
+                    android:text="@string/login_slider_str_7"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/font_21"
+                    app:layout_constraintBottom_toTopOf="@id/textView3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/StyleTextViewSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_42"
+                    android:layout_marginEnd="@dimen/dimen_42"
+                    android:layout_marginBottom="@dimen/dimen_25"
+                    android:maxLines="2"
+                    android:gravity="center"
+                    android:text="@string/login_slider_str_8"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/font_15"
+                    android:fontFamily="@font/sf_pro_text"
+                    app:layout_constraintBottom_toTopOf="@id/ivImageThreeDots"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/ivImageThreeDots"-->
+<!--                    android:layout_width="@dimen/dimen_42"-->
+<!--                    android:layout_height="@dimen/dimen_8"-->
+<!--                    android:src="@drawable/ic_login_image_three_dots"-->
+<!--                    android:layout_marginBottom="@dimen/dimen_24"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/ll_LoginMobile"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+                <LinearLayout
+                    android:id="@+id/ivImageThreeDots"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_8"
+                    android:layout_marginBottom="@dimen/dimen_26"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_LoginMobile"
+                    android:orientation="horizontal" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clLanguage"
+                    android:layout_width="@dimen/dimen_62"
+                    android:layout_height="@dimen/dimen_34"
+                    android:layout_marginTop="@dimen/dimen_39"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+                    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:topLeftRadius="@dimen/dimen_100"
+                        app:topRightRadius="@dimen/dimen_100"
+                        app:bottomLeftRadius="@dimen/dimen_100"
+                        app:bottomRightRadius="@dimen/dimen_100"
+                        app:realtimeBlurRadius="150dp"
+                        app:realtimeOverlayColor="@color/half_of_half_opacity_white_color"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_language"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/round_button_stroke">
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontText="@string/icon_language"
+                            app:fontTextSize="@dimen/font_24"
+                            android:layout_marginEnd="@dimen/dimen_0"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/dimen_69"
+                    android:layout_height="@dimen/dimen_34"
+                    android:layout_marginTop="@dimen/dimen_39"
+                    android:layout_marginEnd="@dimen/dimen_17"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+                    <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:topLeftRadius="@dimen/dimen_100"
+                        app:topRightRadius="@dimen/dimen_100"
+                        app:bottomLeftRadius="@dimen/dimen_100"
+                        app:bottomRightRadius="@dimen/dimen_100"
+                        app:realtimeBlurRadius="150dp"
+                        app:realtimeOverlayColor="@color/half_of_half_opacity_white_color"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_Skip"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/round_button_stroke">
+                        <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                            style="@style/commonMediumIconStyle"
+                            app:fontText="@string/icon_next"
+                            app:fontTextSize="@dimen/font_16"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/txtSkip"
+                            style="@style/commonMediumButtonStyle"
+                            android:layout_marginStart="2dp"
+                            android:text="@string/login_str_16"
+                            android:textSize="@dimen/font_13" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_LoginMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_46"
+                    android:layout_margin="@dimen/dimen_18"
+                    android:layout_marginBottom="@dimen/dimen_17"
+                    android:background="@drawable/corner_radius_18_bg_blue"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:hapticFeedbackEnabled="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/llOrSocialLogin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:id="@+id/ivDetailBtnIcon"
+                        style="@style/commonMediumIconStyle"
+                        app:fontText="@string/icon_mobile"
+                        android:visibility="gone"
+                        app:fontTextSize="@dimen/font_14" />
+
+                    <TextView
+                        android:id="@+id/txtLoginMobile"
+                        style="@style/commonMediumButtonStyle"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:text="@string/login_str_15"
+                        android:textSize="@dimen/font_14" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <LinearLayout
+                    android:id="@+id/llOrSocialLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/dimen_30"
+                    android:layout_marginEnd="@dimen/dimen_30"
+                    android:layout_marginBottom="@dimen/dimen_30"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="#585858"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_14"
+                            android:layout_marginEnd="@dimen/dimen_14"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:gravity="center"
+                            android:text="@string/login_str_12"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_15" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="#585858"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAllLogins2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_17"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvLoginPlateformSequence"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            tools:itemCount="4"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/row_login_sequence_view"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAllLogins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_17"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/llEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_40"
+                                android:layout_height="@dimen/dimen_41"
+
+                                android:src="@drawable/ic_email"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="@string/login_str_18"
+                                android:textColor="@color/item_sub_title_color"
+                                android:textSize="@dimen/font_11"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llGoogle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_40"
+                                android:layout_height="@dimen/dimen_40"
+                                android:src="@drawable/ic_google"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="@string/login_str_21"
+                                android:textColor="@color/item_sub_title_color"
+                                android:textSize="@dimen/font_11"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llFacebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_40"
+                                android:layout_height="@dimen/dimen_40"
+
+                                android:src="@drawable/ic_facebook"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="@string/login_str_20"
+                                android:textColor="@color/item_sub_title_color"
+                                android:textSize="@dimen/font_11"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llAppleLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_40"
+                                android:layout_height="@dimen/dimen_40"
+
+                                android:src="@drawable/ic_apple"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="@string/login_str_23"
+                                android:textColor="@color/item_sub_title_color"
+                                android:textSize="@dimen/font_11"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llWhatsApp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_40"
+                                android:layout_height="@dimen/dimen_40"
+
+                                android:src="@drawable/ic_whatsapp"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="@string/login_str_19"
+                                android:textColor="@color/item_sub_title_color"
+                                android:textSize="@dimen/font_11"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+                        <!--                    <LinearLayout-->
+                        <!--                        android:id="@+id/llApple"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_gravity="center"-->
+                        <!--                        android:layout_weight="1"-->
+                        <!--                        android:gravity="center"-->
+                        <!--android:visibility="gone"-->
+                        <!--                        android:orientation="vertical">-->
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="@dimen/dimen_40"-->
+                        <!--                            android:layout_height="@dimen/dimen_40"-->
+                        <!--                            android:padding="5dp"-->
+                        <!--                            android:src="@drawable/ic_apple" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginBottom="@dimen/dimen_10"-->
+                        <!--                            android:fontFamily="@font/sf_pro_text_medium"-->
+                        <!--                            android:text="Apple"-->
+                        <!--                            android:visibility="gone"-->
+                        <!--                            android:textColor="@color/item_sub_title_color"-->
+                        <!--                            android:textSize="@dimen/font_11" />-->
+
+                        <!--                    </LinearLayout>-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_21"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvTermCondtion"
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginEnd="@dimen/dimen_3"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:maxLines="2"
+                            android:text="@string/login_str_51"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/llAllLogins"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/tvPrivacyPolicy"
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:maxLines="2"
+                            android:text="@string/login_str_59"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/llAllLogins"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/dimen_14"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:maxLines="2"
+                            android:text="@string/login_str_60"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/llAllLogins"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/tvTermsOfServices"
+                            style="@style/StyleTextViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="@dimen/dimen_3"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:maxLines="2"
+                            android:text="@string/login_str_61"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/font_10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/llAllLogins"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

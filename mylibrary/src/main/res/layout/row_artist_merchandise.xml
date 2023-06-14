@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_204"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:background="@drawable/bg_itype_16"
+
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rootParent"
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_itype_16"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_204"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_18"
+                android:paddingTop="@dimen/dimen_15"
+
+                android:paddingEnd="@dimen/dimen_18"
+                android:paddingBottom="@dimen/dimen_20">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dimen_118"
+                    android:layout_height="@dimen/dimen_170">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUserImage"
+                        android:layout_width="@dimen/dimen_129"
+                        android:layout_height="@dimen/dimen_162"
+                        android:background="@drawable/bg_gradient_placeholder"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_gradient_placeholder"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_27"
+                    android:gravity="top|center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/StyleTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_0"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:lineSpacingExtra="@dimen/font_4"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="Badshah Printed \nT-Shirt"
+                        android:textColor="@color/item_title_color"
+                        android:textSize="@dimen/font_15" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrice"
+                        style="@style/StyleTextViewSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_9"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:lineSpacingExtra="@dimen/font_7"
+                        android:maxLines="1"
+                        android:text="599.00"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13"
+                        android:textStyle="normal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSubTitle"
+                        style="@style/StyleTextViewSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_9"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:lineSpacingExtra="@dimen/font_7"
+                        android:maxLines="1"
+                        android:text="Valid Till 21 May"
+                        android:textColor="@color/item_sub_title_color"
+                        android:textSize="@dimen/font_13"
+                        android:textStyle="normal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/StyleTextView"
+                        android:layout_width="@dimen/dimen_77"
+                        android:layout_height="@dimen/dimen_36"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/dimen_30"
+                        android:background="@drawable/bg_btn_blue"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:gravity="start|center"
+                        android:lineSpacingExtra="@dimen/font_4"
+                        android:text="Buy"
+                        android:textAlignment="center"
+                        android:textColor="#c6c6c6"
+                        android:textSize="@dimen/font_15"
+                        android:textStyle="normal" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

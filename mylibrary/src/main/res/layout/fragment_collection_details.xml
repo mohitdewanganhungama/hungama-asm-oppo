@@ -1,0 +1,489 @@
+<RelativeLayout
+    android:id="@+id/collectionDetailroot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg_color">
+    <include layout="@layout/common_blur_view" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/collectionAlbumArtImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_240"
+                android:background="@drawable/bg_gradient_placeholder"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:id="@+id/vCenterGradient"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_240"
+                android:layout_marginTop="@dimen/dimen_120"
+                android:background="@drawable/movie_center_gradient"/>
+            <include layout="@layout/common_details_page_back_menu_header"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@id/collectionAlbumArtImageView">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_21"
+                        tools:text="T- Searies Collection" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:id="@+id/tvPlay"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_marginEnd="@dimen/dimen_18"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/font_13"
+                    android:textColor="#c6c6c6"
+                    android:lineSpacingExtra="2sp"
+                    tools:text="Music, Videos"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/topView">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llTopSong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:layout_below="@+id/llRelease"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llHeaderTitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvHeading3"
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:text="@string/artist_str_8"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivMore"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTopSong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="5"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/row_itype_8"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llAlbums"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llTopSong"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:id="@+id/tvHeaderAlbum"
+                                android:text="@string/collection_str_1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivMore2"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAlbum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_itype_2"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMusicVideos"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llAlbums"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:text="@string/artist_str_9"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivmore3"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMusicVideos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_artist_music_video"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMovies"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llMusicVideos"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:text="@string/artist_str_14"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivMore4"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMovies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_itype_6"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llTVShow"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llMovies"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:text="@string/artist_str_10"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivMore5"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTVShows"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_itype_13"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llShortFilms"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/llTVShow"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/common_two_bucket_space_detail_page"
+                        >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/StyleTextView"
+                                android:layout_marginTop="0dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/sf_pro_text_semibold"
+                                android:lineSpacingExtra="@dimen/font_4"
+                                android:maxLines="1"
+                                android:text="@string/collection_str_2"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/font_20"
+                                android:textStyle="normal"
+                                app:lineHeight="@dimen/font_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <ImageView
+                            android:id="@+id/ivMore6"
+                            android:layout_width="@dimen/dimen_9_5"
+                            android:layout_height="@dimen/dimen_15_8"
+                            android:layout_marginEnd="@dimen/dimen_18_7"
+                            android:contentDescription="@string/login_str_2"
+                            android:src="@drawable/ic_more"
+                            android:visibility="visible"
+                            app:tint="@color/colorWhite" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvShortFilms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/row_itype_6"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+            <!-- Scrollable content -->
+            <include
+                layout="@layout/layout_progress"
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rlHeading"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:visibility="invisible">
+        <include android:id="@+id/headBlur" android:visibility="invisible" layout="@layout/common_blur_view"/>
+
+        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible"/>
+        <TextView
+            android:id="@+id/tvActionBarHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+</RelativeLayout>

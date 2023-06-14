@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#656464</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#656464</color>
+    <color name="colorAccent1">#EF5F24</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorOffWhite">#F2F2F2</color>
+    <color name="colorOffWhite_trans">#CDFFFFFF</color>
+    <color name="colorBgDialog">#77000000</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#979797</color>
+    <color name="colorLightGrey">#CECECE</color>
+    <color name="colorYellow">#FFEB3B</color>
+
+    <color name="colorHint">#BDBEC0</color>
+    <color name="colorButton">#717171</color>
+    <color name="colorPlaceholder">#373a43</color>
+    <color name="colorPlaceholderText">#a6a7ab</color>
+    <color name="colorPlaceholderText2">#f0f0f1</color>
+    <color name="colorGreen">#A6CE41</color>
+    <color name="colorDetail">#18174D</color>
+    <color name="colorDarkGreen">#417505</color>
+    <color name="colorDarkRed">#EA0F21</color>
+
+    <color name="colorEndGradiant">#a6a7ab</color>
+    <color name="colorStartGradiant">#E5E5E5</color>
+    <color name="colorMidGray">#C4C4C4</color>
+    <color name="colorMidLightGray">#E6E6E6</color>
+    <color name="md_light_1">#C2C2C2</color>
+
+    <color name="colorText">@color/font_color</color>
+    <color name="colorTextSecond">#A4A4BD</color>
+    <color name="colorSocialBtnText">#4A4A4A</color>
+
+    <color name="md_green_700">#FF5C8131</color>
+    <color name="md_green_500">#ACF15C</color>
+
+    <color name="md_red_500">#E3185D</color>
+    <color name="md_red_700">#830E36</color>
+
+    <color name="colorSemiTransparent">#20000000</color>
+    <color name="colorBlackSemiTransparent">#CC000000</color>
+    <color name="semiTransparentColor">#40FFFFFF</color>
+
+    <!--New colors-->
+    <color name="yellow">#FEB247</color>
+    <color name="red">#ED2127</color>
+    <color name="red_dark_gradient">#B9080C</color>
+    <color name="green">#73C442</color>
+    <color name="green_dark_gradient">#84D572</color>
+    <color name="background">@color/colorWhite</color>
+    <color name="transparentColor">#00CFCCCC</color>
+    <color name="box_card">@color/colorPrimaryDark</color>
+    <color name="heading_bg">#102823</color>
+    <color name="border">#4B5F5B</color>
+    <color name="disable_font">#61726E</color>
+    <!--<color name="font_color">#4A4A4A</color>-->
+    <color name="font_color">#999ea2</color>
+    <color name="font_color_sub_heading">#b7b7b7</color>
+    <color name="active_stock_color">#BECCC9</color>
+    <color name="heading_text">#FFFFFF</color>
+    <color name="coins_text">#FDFDFD</color>
+    <color name="bg_email">#1870B7</color>
+    <color name="blue2">#2b68e8</color>
+
+    <!--for override default text input color-->
+    <color name="mtrl_textinput_default_box_stroke_color"
+        tools:override="true">#4B5F5B</color>
+    <color name="user_profile_border">#AA7A6F</color>
+
+    <color name="visited_story_color">#33009988</color>
+    <color name="pending_story_color">#e95950</color>
+
+    <color name="gray_scale">#8AFFFFFF</color>
+    <color name="purple_500">#FF6200EE</color>
+
+    <!-- Story Display Progress-->
+    <color name="progress_primary">@color/colorWhite</color>
+    <color name="progress_secondary">@color/gray_scale</color>
+    <color name="progress_max_active">@color/colorWhite</color>
+
+    <color name="home_bg_color">#282828</color>
+    <color name="home_bg_color_2">#383838</color>
+    <color name="home_mini_player_bg">#707070</color>
+    <color name="story_not_seen">#0F7EF2</color>
+    <color name="story_seen_text">#828282</color>
+    <color name="story_not_seen_text">#ffffff</color>
+    <color name="lyric_mini_bg_color">#432f2a</color>
+    <color name="itype14_bg_color">#131f24</color>
+    <color name="item_title_color">#F5F5F5</color>
+    <color name="item_sub_title_color">#C6C6C6</color>
+    <color name="item_sub_title_2_color">#909090</color>
+    <color name="tab_selected_color">#323232</color>
+    <color name="tab_un_selected_color">#C1C1C1</color>
+    <color name="half_opacity_white_color">#80FFFFFF</color>
+    <color name="half_of_half_opacity_white_color">#40FFFFFF</color>
+    <color name="blur_one_half_opacity_white_color">#26FFFFFF</color>
+    <color name="close_button_color">#78ffffff</color>
+    <color name="colorOverlay">#78ffffff</color>
+    <color name="colorTransparentBlack">#14000000</color>
+    <color name="colorTransparentBlackDialog">#AB292828</color>
+    <color name="bottom_navigation_color">#C6C6C6</color>
+    <color name="lrc_second_text_color">#808080</color>
+    <color name="third_text_color">#909090</color>
+    <color name="four_text_color">#dcdcdc</color>
+    <color name="line_color">#585858</color>
+    <color name="search_chip_unselected_bg_color">#c6c6c6</color>
+    <color name="cast_color">#dbdbdb</color>
+
+    <color name="colorWarmGrey">#707070</color>
+    <color name="colorGolden">#ebc97d</color>
+    <color name="colorkRed">#ff4848</color>
+    <color name="color_free_user">#2b68e8</color>
+    <color name="color_ad_free_user">#cbc1ac</color>
+    <color name="color_ad_free_button">#7c6d4c</color>
+    <color name="color_gamification_user">#d4d2ce</color>
+    <color name="color_gamification_button">#8f8f8f</color>
+    <color name="blue_switch">#2b68e8</color>
+    <color name="color_setting_summary">#c6c6c6</color>
+    <color name="color_setting_bg">#66373a43</color>
+
+    <color name="black_op_70">#B3000000</color>
+    <color name="settings_item_bg_color">#1AFFFFFF</color>
+
+    <color name="color_dash_line">#CCCCCC</color>
+    <color name="color_thank_you_text">#969696</color>
+    <color name="color_chart_song_down">#d7311e</color>
+    <color name="color_chart_song_new">#5494fd</color>
+    <color name="color_subscription_expired">#7d7b7b</color>
+    <color name="color_subscription_progress_gold">#d79617</color>
+    <color name="color_subscription_progress_free">#2b68e8</color>
+    <!--#4A9A9797-->
+    <color name="color_search_bg">#CC4a423e</color>
+    <color name="disable_icons">#999ea2</color>
+
+    <color name="moe_card_tab_selected_text_color">#1C64D0</color>
+    <color name="moe_card_tab_unselected_text_color">#8E8E8E</color>
+    <color name="moe_card_tab_background_selected">@color/moe_white</color>
+    <color name="moe_card_tab_background_unselected">@color/moe_white</color>
+
+    <!-- Text Color -->
+    <color name="moe_card_header_color">#424242</color>
+    <color name="moe_card_message_color">#616161</color>
+    <color name="moe_card_timestamp_color">#9E9E9E</color>
+
+    <color name="moe_card_unclicked_indicator_color">#5956D6</color>
+    <color name="moe_card_background_color">@color/moe_white</color>
+
+    <color name="moe_inbox_color_primary_dark">@color/colorPrimaryDark</color>
+
+    <!--  Rating Bar Colors  -->
+    <color name="rate_color_awful">#DE4A3D</color>
+    <color name="rate_color_bad">#E2701C</color>
+    <color name="rate_color_okay">#ECB036</color>
+    <color name="rate_color_good_">#77C179</color>
+    <color name="rate_color_great">#5F9868</color>
+
+    <color name="connectedDevice">#2ca1f7</color>
+    <color name="rippelColor">#0099CC</color>
+    <color name="nudgCicle">#D8D29B13</color>
+
+    <color name="skeleton_view_background">#565655</color>
+    <color name="splash_ads_bg">#383838</color>
+    <color name="expired">#f1080a</color>
+    <color name="transparent">@android:color/transparent</color>
+</resources>

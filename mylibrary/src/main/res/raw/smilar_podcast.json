@@ -1,0 +1,227 @@
+{
+    "status": 200,
+    "message": "OK",
+    "data": {
+        "head": {
+            "id": "24860",
+            "type": 4,
+            "hscroll": 1,
+            "items": [{
+                "id": "0",
+                "title": "Season 1"
+            },
+                {
+                    "id": "1",
+                    "title": "Season 2"
+                },
+                {
+                    "id": "2",
+                    "title": "Season 3"
+                },
+                {
+                    "id": "3",
+                    "title": "Season 4"
+                },
+                {
+                    "id": "4",
+                    "title": "Season 5"
+                }
+            ]
+        },
+
+        "body": {
+            "rows": [
+                {
+                    "id": "213",
+                    "type": 1000,
+                    "heading": "12 Episodes",
+                    "hscroll": 0,
+                    "numrow": 1,
+                    "more": 0,
+                    "items": [
+                        {
+                            "itype": 1000,
+                            "data": {
+                                "id": "38345667",
+                                "title": "शिव के बाहर कुछ नहीं",
+                                "subtitle": "June 23 2020 • 55 Min",
+                                "image": "https://images.hungama.com/c/1/475/c8a/38345667/38345667_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "SVOD"
+                                    ],
+                                    "vendor_id": 4746,
+                                    "explicit_i": 1,
+                                    "releasedate": "2014-12-25T00:00:00+05:30",
+                                    "genre": "Biography",
+                                    "genre_id": 1072,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "BD_A,IN_A,LK_A,NP_A,PK_A",
+                                    "propertyid": 27621442,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "5",
+                                    "duration": 0
+                                }
+                            }
+                        },
+                        {
+                            "itype": 1000,
+                            "data": {
+                                "id": "24154521",
+                                "title": "रावण राम के दुश्मन नहीं ,पुरोहित थे|",
+                                "subtitle": "June 23 2020 • 16 Min",
+                                "image": "https://images.hungama.com/c/1/a67/40a/24154521/24154521_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "TVOD"
+                                    ],
+                                    "vendor_id": 1366,
+                                    "explicit_i": 0,
+                                    "releasedate": "1965-12-22T00:00:00+05:30",
+                                    "genre": "Drama",
+                                    "genre_id": 9,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "IN_A,LK_A",
+                                    "propertyid": 1122852,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "18",
+                                    "duration": 0
+                                }
+                            }
+                        },
+                        {
+                            "itype": 1000,
+                            "data": {
+                                "id": "23915448",
+                                "title": "मुल्ला तेरी मन की बाज़ी, चित भी तेरी",
+                                "subtitle": "June 23 2020 • 60 Min",
+                                "image": "https://images.hungama.com/c/1/c0d/bdb/23915448/23915448_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "AVOD",
+                                        "SVOD"
+                                    ],
+                                    "vendor_id": 1456,
+                                    "explicit_i": 0,
+                                    "releasedate": "1937-04-20T00:00:00+05:30",
+                                    "genre": "Drama",
+                                    "genre_id": 9,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                                    "propertyid": 837428,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "15",
+                                    "duration": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "213",
+                    "type": 13,
+                    "heading": "Music by 43",
+                    "hscroll": 1,
+                    "numrow": 1,
+                    "more": 1,
+                    "items": [
+                        {
+                            "itype": 43,
+                            "data": {
+                                "id": "38345667",
+                                "title": "The Imitation Game",
+                                "subtitle": "2014",
+                                "image": "https://images.hungama.com/c/1/475/c8a/38345667/38345667_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "SVOD"
+                                    ],
+                                    "vendor_id": 4746,
+                                    "explicit_i": 1,
+                                    "releasedate": "2014-12-25T00:00:00+05:30",
+                                    "genre": "Biography",
+                                    "genre_id": 1072,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "BD_A,IN_A,LK_A,NP_A,PK_A",
+                                    "propertyid": 27621442,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "5",
+                                    "duration": 0
+                                }
+                            }
+                        },
+                        {
+                            "itype": 43,
+                            "data": {
+                                "id": "24154521",
+                                "title": "Doctor Zhivago",
+                                "subtitle": "1965",
+                                "image": "https://images.hungama.com/c/1/a67/40a/24154521/24154521_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "TVOD"
+                                    ],
+                                    "vendor_id": 1366,
+                                    "explicit_i": 0,
+                                    "releasedate": "1965-12-22T00:00:00+05:30",
+                                    "genre": "Drama",
+                                    "genre_id": 9,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "IN_A,LK_A",
+                                    "propertyid": 1122852,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "18",
+                                    "duration": 0
+                                }
+                            }
+                        },
+                        {
+                            "itype": 43,
+                            "data": {
+                                "id": "23915448",
+                                "title": "A Star Is Born (1937)",
+                                "subtitle": "1937",
+                                "image": "https://images.hungama.com/c/1/c0d/bdb/23915448/23915448_350x525.jpg",
+                                "type": "movie",
+                                "misc": {
+                                    "movierights": [
+                                        "AVOD",
+                                        "SVOD"
+                                    ],
+                                    "vendor_id": 1456,
+                                    "explicit_i": 0,
+                                    "releasedate": "1937-04-20T00:00:00+05:30",
+                                    "genre": "Drama",
+                                    "genre_id": 9,
+                                    "lang": "English",
+                                    "lang_id": "eng",
+                                    "territory_rights": "BD_A,BT_A,IN_A,LK_A,MV_A,NP_A,PK_A",
+                                    "propertyid": 837428,
+                                    "ctag": [],
+                                    "fav_count": 0,
+                                    "priority": "15",
+                                    "duration": 0
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

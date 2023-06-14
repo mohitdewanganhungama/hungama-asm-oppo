@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cvMain"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvBgView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="@dimen/dimen_13"
+        android:paddingBottom="@dimen/dimen_13" 
+        android:paddingStart="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_12">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivTVShowImage"
+            android:layout_width="@dimen/dimen_110"
+            android:layout_height="@dimen/dimen_82"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/circleImageView." />
+
+        <ImageView
+            android:id="@+id/ivTVShowDownloading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_movie_downloading_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTVShowImage"
+            app:layout_constraintEnd_toEndOf="@+id/ivTVShowImage"
+            app:layout_constraintStart_toStartOf="@+id/ivTVShowImage"
+            app:layout_constraintTop_toTopOf="@+id/ivTVShowImage" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSelection"
+            android:layout_width="@dimen/dimen_35"
+            android:layout_height="@dimen/dimen_35"
+            app:layout_constraintTop_toTopOf="@+id/ivTVShowImage"
+            app:layout_constraintStart_toStartOf="@+id/ivTVShowImage"
+            android:visibility="gone">
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivSelection"
+                style="@style/commonMediumIconStyle"
+                app:fontText="@string/icon_success"
+                app:fontTextColor="@color/half_opacity_white_color"
+                android:layout_marginEnd="@dimen/dimen_0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvTVShowTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:alpha="0.9"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_15"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@+id/ivTVShowImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rlMoreInfo"/>
+
+        <TextView
+            android:id="@+id/tvTVShowSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_text"
+            android:text="@string/podcast_str_9"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/ivTVShowImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvTVShowTitle" />
+
+
+        <TextView
+            android:id="@+id/tvTVShowDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="16+"
+            android:fontFamily="@font/sf_pro_text"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/ivTVShowImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvTVShowSubTitle" />
+
+        <View
+            android:id="@+id/vDevider"
+            android:layout_width="@dimen/dimen_3"
+            android:layout_height="@dimen/dimen_3"
+            android:layout_marginStart="@dimen/dimen_3"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:background="@color/item_sub_title_color"
+            app:layout_constraintStart_toEndOf="@+id/tvTVShowDownload"
+            app:layout_constraintTop_toTopOf="@+id/tvTVShowDownload"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTVShowDownload" />
+
+
+        <TextView
+            android:id="@+id/tvTVShowLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_3"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/other_str_14"
+            android:fontFamily="@font/sf_pro_text"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/vDevider"
+            app:layout_constraintTop_toBottomOf="@+id/tvTVShowSubTitle" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/dimen_3"
+            android:layout_height="@dimen/dimen_3"
+            android:layout_marginStart="@dimen/dimen_3"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:background="@color/item_sub_title_color"
+            app:layout_constraintStart_toEndOf="@id/tvTVShowLanguage"
+            app:layout_constraintTop_toTopOf="@+id/tvTVShowDownload"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTVShowDownload" />
+
+        <TextView
+            android:id="@+id/tvTVShowAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="Action"
+            android:fontFamily="@font/sf_pro_text"
+            android:textColor="@color/item_sub_title_color"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/tvTVShowSubTitle" />
+
+        <TextView
+            android:id="@+id/tvTvShowSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:text="760 MB"
+            android:fontFamily="@font/sf_pro_text"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_13"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/ivTVShowImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvTVShowDownload" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlMoreInfo"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivMoreInfo"
+                android:layout_width="@dimen/dimen_4"
+                android:layout_height="@dimen/dimen_18"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="1dp"
+                android:contentDescription="@string/app_name"
+                android:paddingStart="@dimen/dimen_10"
+                android:paddingEnd="@dimen/dimen_10"
+                android:paddingBottom="@dimen/dimen_20"
+                android:src="@drawable/image_more_info" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

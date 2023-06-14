@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hungama.music.ui.main.view.fragment.PaymentFailFragment">
+    <RelativeLayout
+        android:id="@+id/rlActionBarHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:elevation="@dimen/dimen_4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/common_blur_view"/>
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_2"
+            android:contentDescription="@string/login_str_2"
+            android:paddingStart="@dimen/dimen_15_5"
+            android:paddingTop="@dimen/dimen_12"
+            android:paddingEnd="@dimen/dimen_15_5"
+            android:paddingBottom="@dimen/dimen_12"
+            app:srcCompat="@drawable/ic_back_right_arrow"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tvActionBarHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center_horizontal"
+            android:text="@string/other_str_13"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17"
+            android:textStyle="normal" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btnStartExploring"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginRight="@dimen/dimen_18"
+        android:text="@string/download_str_1"
+        android:layout_marginBottom="@dimen/dimen_60"
+        android:fontFamily="@font/sf_pro_text_bold"
+        android:textColor="#FFFFFF"
+        android:lineHeight="@dimen/font_20"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_btn_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0"
+        android:layout_marginBottom="@dimen/dimen_21"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartExploring"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlActionBarHeader">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ivOrderCart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_285"
+                android:layout_marginLeft="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:layout_marginRight="@dimen/dimen_18"
+                android:background="@drawable/bg_order_details"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/llOderConform"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivHungamaLogo"
+                        android:layout_width="@dimen/dimen_166"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_45"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/subscription_logo"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_43"
+                        android:layout_height="@dimen/dimen_43"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_19"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_payment_failed" />
+
+                    <TextView
+                        android:id="@+id/tvMyOrderTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_16"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:text="@string/payment_str_1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/font_21" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_14"
+                        android:layout_gravity="center"
+                        android:paddingLeft="@dimen/dimen_20"
+                        android:paddingRight="@dimen/dimen_20"
+                        android:paddingBottom="@dimen/dimen_20"
+                        android:gravity="center"
+                        android:text="@string/popup_str_90"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/font_15" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ivOrderCart2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_17"
+                android:layout_marginRight="@dimen/dimen_18"
+                android:background="@drawable/bg_order_details"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivOrderCart">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_12"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_20"
+                        android:layout_marginTop="@dimen/dimen_17"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:text="@string/reward_str_53"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/font_16" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1"
+                        android:layout_marginTop="@dimen/dimen_17_5"
+                        android:alpha="0.3"
+                        android:background="#707070" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_17">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:text="@string/reward_str_54"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/dimen_15" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dimen_19"
+                            android:lineHeight="@dimen/dimen_17"
+                            android:text="1234567890251"
+                            android:textColor="#c6c6c6"
+                            android:textSize="@dimen/dimen_13" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1"
+                        android:layout_marginTop="@dimen/dimen_17"
+                        android:alpha="0.3"
+                        android:background="#707070" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_13_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:lineHeight="@dimen/font_17"
+                            android:text="@string/reward_str_55"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/dimen_15" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dimen_19"
+                            android:text="8 Aug 2021 | 3:30PM"
+                            android:textColor="#c6c6c6"
+                            android:textSize="@dimen/dimen_13" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1"
+                        android:layout_marginTop="@dimen/dimen_13"
+                        android:alpha="0.3"
+                        android:background="#707070" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_17"
+                        android:layout_marginTop="@dimen/dimen_14_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:text="@string/general_setting_str_60"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/dimen_15" />
+
+                        <TextView
+                            android:id="@+id/coinCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="@dimen/dimen_4_2"
+                            android:layout_marginRight="@dimen/dimen_19"
+                            android:text="Rs 499"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/dimen_13" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvNeedeHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="@string/need_help"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_15"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivOrderCart2" />
+            <View
+                android:layout_width="@dimen/dimen_86"
+                android:layout_height="@dimen/dimen_1"
+                android:background="@drawable/bg_desh"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNeedeHelp"
+                app:layout_constraintStart_toStartOf="@+id/tvNeedeHelp"
+                app:layout_constraintEnd_toEndOf="@+id/tvNeedeHelp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

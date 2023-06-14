@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:orientation="vertical">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:layout_marginEnd="@dimen/dimen_10"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbYes"
+            style="@style/StyleRadioButton"
+            android:text="@string/other_str_4"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_height="wrap_content"
+            style="@style/StyleRadioButton"
+            android:id="@+id/rbNo"
+            android:text="@string/other_str_3"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/StyleRadioButton"
+            android:id="@+id/rbDontKnow"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:text="@string/other_str_1"/>
+
+    </RadioGroup>
+        <Button
+            android:layout_width="@dimen/dimen_120"
+            android:layout_height="wrap_content"
+            android:text="@string/other_str_2"
+            style="@style/StyleButtonView"
+            android:layout_margin="@dimen/dimen_10"
+            android:textAllCaps="false"
+            android:id="@+id/btnSubmit"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/dimen_14"
+        android:id="@+id/llMain"
+        android:orientation="vertical"
+        >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <!--<com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="@dimen/dimen_62"
+        android:layout_height="@dimen/dimen_62"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_gradient_placeholder"
+        android:layout_centerInParent="true"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
+        />-->
+    <com.hungama.music.utils.customview.circleimageview.CircleImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="@dimen/dimen_62"
+        android:layout_height="@dimen/dimen_62"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        android:src="@color/colorPlaceholder"
+        />
+    <com.hungama.music.utils.customview.stories.CircularStatusView
+        android:id="@+id/circular_status_view"
+        android:layout_width="@dimen/dimen_70"
+        android:layout_height="@dimen/dimen_70"
+        android:layout_centerInParent="true"
+        app:portion_color="@color/font_color"
+        app:portion_spacing="@dimen/dimen_2"
+        app:portion_width="1.5dp"
+        app:portions_count="8" />
+</RelativeLayout>
+
+
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/ivUserImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_60sdp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/bg_gradient_placeholder"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"-->
+<!--            app:strokeColor="@color/colorGrey"-->
+<!--            app:strokeWidth="@dimen/_1sdp" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_text"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_11"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/story_not_seen_text"
+            android:lineSpacingExtra="@dimen/font_2"
+            app:lineHeight="@dimen/font_13"
+            android:textAlignment="center"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

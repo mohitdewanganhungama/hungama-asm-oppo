@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_dialog_background_round">
+    <View
+        android:id="@+id/vDevider"
+        android:layout_width="@dimen/dimen_42"
+        android:layout_height="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_7"
+        android:background="@drawable/bottomsheet_icon_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_26"
+        android:text="@string/popup_str_11"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vDevider"/>
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_3"
+        android:text="@string/popup_str_90"
+        android:textSize="@dimen/font_13"
+        android:textColor="#c6c6c6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="@dimen/dimen_122"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_33"
+        android:background="@drawable/bottom_dialog_delete_btn_background"
+        android:lineSpacingExtra="@dimen/font_4"
+        android:text="@string/popup_str_75"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_16"
+        android:layout_marginBottom="@dimen/dimen_31"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvSubTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
+
+    <Button
+        android:id="@+id/btnDeleteMovie"
+        android:layout_width="@dimen/dimen_122"
+        android:layout_height="@dimen/dimen_42"
+        android:layout_marginTop="@dimen/dimen_33"
+        android:layout_marginRight="@dimen/dimen_7"
+        android:background="@drawable/bottom_dialog_btn_logout_image"
+        android:lineSpacingExtra="@dimen/dimen_4"
+        android:text="@string/popup_str_5"
+        android:layout_marginBottom="@dimen/dimen_31"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvSubTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

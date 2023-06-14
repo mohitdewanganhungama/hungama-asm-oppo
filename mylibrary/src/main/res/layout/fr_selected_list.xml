@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/home_bg_color">
+
+    <include layout="@layout/common_blur_view"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="radial"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/skeleton_genre_details"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <include layout="@layout/common_header_action_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <RelativeLayout
+            android:id="@+id/rlSelectedList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+        <include layout="@layout/common_blur_view"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/rlMood"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_215">
+
+            <ImageView
+                android:id="@+id/ivHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_215"
+                android:scaleType="centerCrop"
+                android:visibility="visible"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginBottom="@dimen/dimen_66"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:lineSpacingExtra="@dimen/font_13"
+                android:maxLines="1"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_31"
+                android:textStyle="normal"
+                app:lineHeight="@dimen/dimen_44" />
+
+        </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/bgMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_627"
+                android:layout_marginTop="@dimen/dimen_135"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlMood" />
+
+    </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/layout_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+</RelativeLayout>

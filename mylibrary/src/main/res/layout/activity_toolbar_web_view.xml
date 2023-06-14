@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hungama.music.ui.main.view.activity.PaymentWebViewActivity">
+    <!--    <include layout="@layout/header_back"-->
+    <!--        android:id="@+id/header"/>-->
+
+    <RelativeLayout
+        android:id="@+id/rlHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_60"
+        android:visibility="visible"
+        android:background="@color/colorBlack">
+        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible"/>
+        <TextView
+            android:id="@+id/tvActionBarHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:textStyle="normal"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <include
+        layout="@layout/layout_progress"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

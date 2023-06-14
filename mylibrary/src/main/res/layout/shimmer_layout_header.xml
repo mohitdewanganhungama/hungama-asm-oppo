@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="@dimen/dimen_59"
+            android:layout_height="@dimen/dimen_34"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_19"
+            android:background="@drawable/bg_shimmer_header" />
+
+        <View
+            android:layout_width="@dimen/dimen_70"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:background="@drawable/bg_shimmer_header_tab" />
+
+        <View
+            android:layout_width="@dimen/dimen_107"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:background="@drawable/bg_shimmer_header_tab" />
+
+        <View
+            android:layout_width="@dimen/dimen_70"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:background="@drawable/bg_shimmer_header_tab" />
+
+        <View
+            android:layout_width="@dimen/dimen_70"
+            android:layout_height="@dimen/dimen_16"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:background="@drawable/bg_shimmer_header_tab" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llMain"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:orientation="vertical">
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="21:9"
+        app:cardCornerRadius="@dimen/dimen_7"
+        app:cardBackgroundColor="#1A1A1A"
+        android:elevation="10dp">-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUserImage"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="21:9"
+                        android:background="#1A1A1A"
+                        app:srcCompat="@drawable/bg_itype_3"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
+                    <!--<include layout="@layout/blur_layout_view" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/clImages"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen_18"
+                    android:paddingEnd="@dimen/dimen_22">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/StyleTextView"
+                        android:includeFontPadding="false"
+                android:textSize="@dimen/font_15"
+                android:maxLines="2"
+                android:minLines="2"
+                android:layout_marginTop="@dimen/dimen_0"
+                android:layout_gravity="start|center"
+                android:text="" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:textSize="@dimen/font_13"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_gravity="start|center"
+                android:text="" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvConentTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:textSize="@dimen/font_13"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:layout_gravity="start|center"
+                android:text="" />
+           <!-- <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_marginStart="@dimen/dimen_2_minus"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:src="@drawable/ic_play_itype_3"/>-->
+
+                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="@dimen/dimen_24"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        app:fontText="@string/icon_play_round"
+                        app:fontTextColor="@color/colorWhite"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <RelativeLayout
+                    android:id="@+id/clImages"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dimen_18"
+                    android:layout_marginBottom="@dimen/dimen_18"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUserImage3"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_0"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2:3"
+                        android:layout_marginTop="@dimen/dimen_32"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_gradient_placeholder" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUserImage2"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_0"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2:3"
+                        android:layout_marginTop="@dimen/dimen_16"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_gradient_placeholder"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUserImage1"
+                        android:layout_width="@dimen/dimen_0"
+                        android:layout_height="@dimen/dimen_0"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2:3"
+                        android:layout_marginEnd="@dimen/dimen_20"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_gradient_placeholder" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+    <!--</androidx.cardview.widget.CardView>-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

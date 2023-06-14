@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This bucket width and height
+    set programatically in BucketParentAdapter -->
+<!-- ================================================== -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:elevation="10dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/dimen_7"
+        app:cardPreventCornerOverlap="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.hungama.music.utils.customview.blurview.CustomShapeBlurView
+                android:id="@+id/blurView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:realtimeBlurRadius="150dp"
+                app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/imageMain"
+                    android:layout_width="@dimen/dimen_212"
+                    android:layout_height="@dimen/dimen_120">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUserImage"
+                        android:layout_width="@dimen/dimen_212"
+                        android:layout_height="@dimen/dimen_120"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_gradient_placeholder"
+                        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.RoundCornerImageTopLeftRight"/>
+
+                    <!--            <androidx.cardview.widget.CardView-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                app:cardCornerRadius="8dp"-->
+                    <!--                android:elevation="10dp">-->
+                    <!--            <androidx.appcompat.widget.AppCompatImageView-->
+                    <!--                android:id="@+id/ivUserImage"-->
+                    <!--                android:layout_width="@dimen/_178sdp"-->
+                    <!--                android:layout_height="@dimen/_113sdp"-->
+                    <!--                android:scaleType="fitXY"-->
+                    <!--                android:src="@drawable/bg_gradient_placeholder" />-->
+                    <!--            </androidx.cardview.widget.CardView>-->
+                    <TextView
+                        android:id="@+id/tvTitlePlaceHolder"
+                        style="@style/StyleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/_2sdp"
+                        android:text="@string/discover_str_1"
+                        android:textColor="@color/colorPlaceholderText"
+                        android:textSize="@dimen/_8ssp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/dimen_7"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:src="@drawable/ic_play_audio"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_minus10sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:src="@drawable/ic_play_audio"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/StyleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="@string/other_str_19" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                style="@style/StyleTextViewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="@string/other_str_20" />
+
+            <ProgressBar
+                android:id="@+id/pbSong"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_6"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginStart="@dimen/dimen_3"
+                android:layout_marginEnd="@dimen/dimen_3"
+                android:layout_marginBottom="@dimen/dimen_2_minus"
+                android:progress="0"
+                android:progressBackgroundTint="@color/colorWhite"
+                android:progressTint="@color/colorWhite"
+                android:secondaryProgressTint="@color/home_mini_player_bg" />
+            <!--            <com.google.android.material.progressindicator.LinearProgressIndicator-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:layout_marginTop="2dp"-->
+            <!--                android:id="@+id/pbSong"-->
+            <!--                android:maxHeight="2dp"-->
+            <!--                android:max="100"-->
+            <!--                app:indicatorColor="@color/colorWhite"-->
+            <!--                app:trackColor="@color/home_mini_player_bg"-->
+            <!--                android:progress="50" />-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

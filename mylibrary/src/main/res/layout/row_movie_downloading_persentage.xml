@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#282828">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivMovieDownloadingImage"
+        android:layout_width="@dimen/dimen_90"
+        android:layout_height="@dimen/dimen_129"
+        android:layout_marginLeft="@dimen/dimen_18"
+        android:layout_marginTop="@dimen/dimen_12_9"
+        android:layout_marginBottom="@dimen/dimen_13_1"
+        android:src="@drawable/bg_gradient_placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDownloadingstaring"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_marginLeft="@dimen/dimen_7"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:alpha="0.4"
+        android:src="@drawable/ic_check_circle_icon"
+        app:layout_constraintStart_toStartOf="@id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toTopOf="@id/ivMovieDownloadingImage" />
+
+    <ImageView
+        android:id="@+id/ivMovieDownloading"
+        android:layout_width="@dimen/dimen_21_6"
+        android:layout_height="@dimen/dimen_21_6"
+        android:src="@drawable/image_movie_downloading_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMovieDownloadingImage"
+        app:layout_constraintEnd_toEndOf="@+id/ivMovieDownloadingImage"
+        app:layout_constraintStart_toStartOf="@+id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toTopOf="@+id/ivMovieDownloadingImage" />
+
+    <TextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_13"
+        android:layout_marginLeft="@dimen/dimen_23"
+        android:text="@string/other_str_19"
+        android:textColor="#ffffff"
+        android:alpha="0.9"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintStart_toEndOf="@+id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="@dimen/dimen_3"
+        android:layout_height="@dimen/dimen_3"
+        android:layout_marginLeft="@dimen/dimen_24"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:background="#c6c6c6"
+        app:layout_constraintStart_toStartOf="@+id/tvBody"
+        app:layout_constraintTop_toTopOf="@+id/tvBody" />
+
+
+    <View
+        android:layout_width="@dimen/dimen_3"
+        android:layout_height="@dimen/dimen_3"
+        android:layout_marginRight="@dimen/dimen_41"
+        android:background="#c6c6c6"
+        android:layout_marginTop="@dimen/dimen_5"
+        app:layout_constraintEnd_toEndOf="@+id/tvBody"
+        app:layout_constraintTop_toTopOf="@+id/tvBody" />
+
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#c6c6c6"
+        android:textSize="@dimen/dimen_13"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:layout_marginLeft="@dimen/dimen_23"
+        app:layout_constraintStart_toEndOf="@id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"/>
+
+    <View
+        android:id="@+id/vDownloadingDesign"
+        android:layout_width="@dimen/dimen_119"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_marginLeft="@dimen/dimen_23"
+        android:layout_marginTop="@dimen/dimen_7"
+        android:alpha="0.5"
+        android:background="@drawable/bg_download_awaited"
+        app:layout_constraintStart_toEndOf="@id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="@dimen/font_11"
+        app:layout_constraintBottom_toBottomOf="@+id/vDownloadingDesign"
+        app:layout_constraintEnd_toEndOf="@+id/vDownloadingDesign"
+        app:layout_constraintStart_toStartOf="@+id/vDownloadingDesign"
+        app:layout_constraintTop_toTopOf="@+id/vDownloadingDesign" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#c1c1c1"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_23"
+        android:textSize="@dimen/font_13"
+        app:layout_constraintStart_toEndOf="@id/ivMovieDownloadingImage"
+        app:layout_constraintTop_toBottomOf="@id/vDownloadingDesign"/>
+    <ImageView
+        android:layout_width="@dimen/dimen_4"
+        android:layout_height="@dimen/dimen_18"
+        android:src="@drawable/image_more_info"
+        android:layout_marginTop="@dimen/dimen_13"
+        android:layout_marginRight="@dimen/dimen_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
