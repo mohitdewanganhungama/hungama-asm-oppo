@@ -77,17 +77,6 @@ class CustomTabView @JvmOverloads constructor(
         tvTabDiscover?.setTextColor(ContextCompat.getColor(mContext, R.color.colorBlack))
         ivTabDiscover?.isSelected = false
         llDiscover?.performClick()
-        //llTabPlayer?.hide()
-        llSearch?.hide()
-
-        /*anim = ObjectAnimator.ofFloat(ivTabPlayer, "rotation", 0F, 360F)
-        anim?.duration = 5000
-        anim?.repeatCount = ObjectAnimator.INFINITE
-        anim?.repeatMode = ObjectAnimator.RESTART
-        anim?.start()*/
-
-        //llTabPlayer?.hide()
-        llSearch?.hide()
     }
 
     override fun onClick(view: View) {

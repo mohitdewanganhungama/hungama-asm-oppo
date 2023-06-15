@@ -506,7 +506,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
         if(!CommonUtils.isUserHasGoldSubscription()) {
             callSongDurationAPI()
-            getPlayableContentUrl(CommonUtils.getNudgeAudioId(), true)
+//            getPlayableContentUrl(CommonUtils.getNudgeAudioId(), true)
         }
 
         var nonRepeatBroadCast = 0
@@ -580,7 +580,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (savedInstanceState != null) {
             bottomSheetState = savedInstanceState.getInt(KEY_BOTTOM_SHEET_STATE, BottomSheetBehavior.STATE_HIDDEN)
         }
-        setBottomSheet(bottomSheetState)
+//        setBottomSheet(bottomSheetState)
 
         nowPlayingViewModel = NowPlayingViewModel(
             this,
@@ -691,7 +691,6 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     fun getPlayableContentUrl(id:String, isNundge:Boolean){
         if (ConnectionUtil(this).isOnline) {
-            setLog("AudioAdid", " $id $isNundge")
             playableContentViewModel.getPlayableContentList(applicationContext, id)?.observe(this,
                 Observer {
                     when(it.status){

@@ -285,7 +285,7 @@ class PlayableContentRepos {
             val contentType=4
             val url= WSConstants.METHOD_PLAYABLE_CONTENT+id+"/url/playable?quality="+quality+"&contentType="+contentType+"&certificate=widevine"+ "&user=" + if (CommonUtils.isUserHasGoldSubscription()) "gold" else "free"
             HungamaMusicApp.getInstance().userStreamIDList.add(id)
-            setLog("playableApi", "PlayableContentList: getPlayableContentList- $url")
+            setLog("playableApi", "PlayableContentList: getPlayableContentList- $id $url")
 
             var requestTime = DateUtils.getCurrentDateTime()
             dataResp.postValue(Resource.loading(null))

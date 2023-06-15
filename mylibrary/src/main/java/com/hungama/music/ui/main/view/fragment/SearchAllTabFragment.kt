@@ -544,7 +544,7 @@ class SearchAllTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                 )
                 fragmentName.add("Albums")
             }
-            if (!searchRespModel?.data?.body?.artist.isNullOrEmpty()) {
+            if (!searchRespModel.data?.body?.artist.isNullOrEmpty()) {
                 fragmentList.add(
                     SearchAllFragment(
                     searchRespModel,

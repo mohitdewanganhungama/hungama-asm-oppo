@@ -291,6 +291,17 @@ class BucketParentAdapter(
                     setLog("onBindViewHolder", "heading:${parent.heading} numrow:${parent.numrow}")
                 }
 
+                if (parent.itype == 6 || parent.itype == 13 || parent.itype == 5 || parent.itype == 47 || parent.itype == 15 || parent.itype == 20 || parent.itype == 3
+                    || parent.itype == 14 || parent.itype == 22 || parent.itype == 21 || parent.itype == 23 || parent.itype == 10 || parent.itype == 45
+                    || parent.itype == 46 || parent.itype == 47 || parent.itype == 48){
+                    holder.llMain.visibility = View.GONE
+                    holder.llHeaderTitle.visibility = View.GONE
+                }
+                else {
+                    holder.llMain.visibility = View.VISIBLE
+                    holder.llHeaderTitle.visibility = View.VISIBLE
+                }
+
                 when (parent.itype) {
                     1 -> {
                         var layoutManager: GridLayoutManager? = null
@@ -322,7 +333,7 @@ class BucketParentAdapter(
                         )
 
                     }
-                    2, 3,4,5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 22, 25, 41, 42, 43, 44,45,46,48,1000, 9999 -> {
+                    2, 4, 7, 8, 9, 11, 12, 16, 17, 25, 41, 42, 43, 44,1000, 9999 -> {
 
                         setChildRecyclerView(holder, layoutManager, parent, position)
                         holder.rvChildItem.setPadding(

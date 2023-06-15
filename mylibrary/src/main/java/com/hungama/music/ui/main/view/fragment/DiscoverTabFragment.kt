@@ -767,7 +767,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     ).get(PlayableContentViewModel::class.java)
                 }
 
-                playableContentViewModel?.getPlayableContentList(requireContext(), id)?.observe(this,
+                playableContentViewModel.getPlayableContentList(requireContext(), id)?.observe(this,
                     Observer {
                         when(it.status){
                             com.hungama.music.data.webservice.utils.Status.SUCCESS->{

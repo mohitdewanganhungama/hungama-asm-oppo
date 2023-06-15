@@ -73,7 +73,7 @@ import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import com.hungama.fetch2.Status
-import com.hungama.fetch2.encryptiondecryption.CMEncryptor
+import com.hungama.fetch2.encryptiondecryption.CMEncryptor2
 import com.hungama.fetch2.util.DEVICE_ID
 import com.hungama.music.BuildConfig
 import com.hungama.music.HungamaMusicApp
@@ -653,8 +653,7 @@ object CommonUtils {
                         val bitmap: Bitmap? = result.await()
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
-//                                color = palette!!.getMutedColor(R.color.colorPrimary)
-                                color = palette!!.getLightMutedColor(R.color.colorPrimaryDark)
+                                color = palette!!.getMutedColor(R.color.colorPrimary)
                                 view.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
 //                    view.setBackgroundColor(color)
 //                    rootLayout.setBackground(getGradientDrawable(getTopColor(palette), getCenterLightColor(palette), getBottomDarkColor(palette)))
@@ -692,8 +691,8 @@ object CommonUtils {
                         val bitmap: Bitmap? = result.await()
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
-                                //color = palette!!.getMutedColor(R.attr.colorPrimary)
-                                color = palette!!.getMutedColor(R.color.colorPrimaryDark)
+//                                color = palette!!.getMutedColor(R.attr.colorPrimary)
+                                color = palette!!.getMutedColor(R.color.colorPrimary)
                                 //rootLayout.setBackgroundColor(color)
                                 rootLayout.background = getGradientDrawable(
                                     getTopColor(palette),
@@ -735,7 +734,7 @@ object CommonUtils {
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
                                 //color = palette!!.getMutedColor(R.attr.colorPrimary)
-                                color = palette!!.getMutedColor(R.color.colorPrimaryDark)
+                                color = palette!!.getMutedColor(R.color.colorPrimary)
                                 //rootLayout.setBackgroundColor(color)
                                 rootLayout.background = getGradientDrawable(
                                     getTopColor(palette),
@@ -1861,7 +1860,7 @@ object CommonUtils {
                             // Transfer bytes from in to out
                             val buf = ByteArray(1024)
                             var len: Int
-                            val cmEncryptor = CMEncryptor(DEVICE_ID)
+                            val cmEncryptor = CMEncryptor2(DEVICE_ID)
                             while (`in`.read(buf).also { len = it } > 0) {
                                 cmEncryptor.decrypt(buf, 0, len)
                                 out.write(buf, 0, len)
@@ -3655,28 +3654,28 @@ object CommonUtils {
         val durationConfigModel = SongDurationConfigModel()
         durationConfigModel.enable_minutes_quota = remoteConfig.getBoolean("enable_minutes_quota")
         val nudge_stream_preview = remoteConfig.getString("nudge_stream_preview")
-        val jsonObjec_nudge_stream_preview = JSONObject(nudge_stream_preview)
-        durationConfigModel.nudge_stream_preview = Gson().fromJson(jsonObjec_nudge_stream_preview.toString(), SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java)
+/*        val jsonObjec_nudge_stream_preview = JSONObject(nudge_stream_preview)
+        durationConfigModel.nudge_stream_preview = Gson().fromJson(jsonObjec_nudge_stream_preview.toString(), SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java)*/
         val global_limited_minutes_quota = remoteConfig.getString("global_limited_minutes_quota")
         durationConfigModel.global_limited_minutes_quota =
             if (!global_limited_minutes_quota.isNullOrEmpty()) global_limited_minutes_quota.toInt() else 0
         durationConfigModel.is_free_trial_eligible = remoteConfig.getBoolean("is_free_trial_eligible")
         val drawer_minute_quota_exhausted = remoteConfig.getString("drawer_minute_quota_exhausted")
-        val jsonObjec = JSONObject(drawer_minute_quota_exhausted)
+/*        val jsonObjec = JSONObject(drawer_minute_quota_exhausted)
         durationConfigModel.drawer_minute_quota_exhausted = Gson().fromJson(
             jsonObjec.toString(),
             SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java
-        )
+        )*/
         val nudge_minute_quota_exhausted = remoteConfig.getString("nudge_minute_quota_exhausted")
-        val jsonObject = JSONObject(nudge_minute_quota_exhausted)
+/*        val jsonObject = JSONObject(nudge_minute_quota_exhausted)
         durationConfigModel.nudge_minute_quota_exhausted = Gson().fromJson(
             jsonObject.toString(),
             SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java
-        )
+        )*/
         val global_limited_stream_preview_quota =
             remoteConfig.getString("global_limited_stream_preview_quota")
-        durationConfigModel.global_limited_stream_preview_quota =
-            if (!global_limited_stream_preview_quota.isNullOrEmpty()) global_limited_stream_preview_quota.toInt() else 0
+        durationConfigModel.global_limited_stream_preview_quota = if (!global_limited_stream_preview_quota.isNullOrEmpty()) global_limited_stream_preview_quota.toInt() else 0
+        setLog("lahghoas", durationConfigModel.toString())
         durationConfigModel
     }
 

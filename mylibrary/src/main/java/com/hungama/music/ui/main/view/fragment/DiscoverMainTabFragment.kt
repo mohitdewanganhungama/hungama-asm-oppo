@@ -176,6 +176,18 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
     /**
      * initialise view model and setup-observer
      */
+
+    fun removeMainData(id: String, items: MutableList<HeadItemsItem>){
+        for (item in items.indices) {
+            if (item >= items.size)
+                break
+
+            if (items[item].id == id) {
+                items.removeAt(item)
+            }
+        }
+    }
+
     private fun setUpViewModel() {
         try {
             if (ConnectionUtil(activity).isOnline) {
@@ -187,7 +199,13 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                     Observer {
                         when(it.status){
                             Status.SUCCESS->{
-                                setData(it?.data!!)
+                                val items: MutableList<HeadItemsItem> = it.data?.data?.head?.items as MutableList<HeadItemsItem>
+                                removeMainData("1", items)
+                                removeMainData("2", items)
+                                removeMainData("4", items)
+                                removeMainData("7", items)
+                                removeMainData("9", items)
+                                setData(it?.data)
                                 HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
                             }
 
