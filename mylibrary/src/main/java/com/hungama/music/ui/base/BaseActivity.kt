@@ -9902,7 +9902,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         } else if (gcEventModel?.popupType?.contains("popup", true) == true) {
                             gcEventModel.addedCoin = added
                             gcEventModel.totalCoin = total
-                            CommonUtils.displayPopup(this!!, gcEventModel)
+                            CommonUtils.displayPopup(this, gcEventModel)
                         }
                     }
                 }else{

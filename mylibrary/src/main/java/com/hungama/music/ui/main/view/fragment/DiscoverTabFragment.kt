@@ -356,7 +356,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     runBlocking{
                         bucketRespModel =  async {setAdsData(bucketRespModel!!, headItemsItem!!)}.await()
                         setLog(TAG, "setMoengageData 2 getCacheAdsTab  setAdsData called")
-                        bucketRespModel =  async {addMoengageSelfHandleInAppData(bucketRespModel!!, headItemsItem!!)}.await()
+//                        bucketRespModel =  async {addMoengageSelfHandleInAppData(bucketRespModel!!, headItemsItem!!)}.await()
                         setLog(TAG, "setMoengageData 3 getCacheAdsTab  setAdsData addMoengageSelfHandleInAppData called")
 
                         if(rvRecentHistory != null) {

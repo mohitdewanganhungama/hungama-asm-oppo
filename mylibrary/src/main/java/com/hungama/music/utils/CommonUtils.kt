@@ -3672,8 +3672,7 @@ object CommonUtils {
             jsonObject.toString(),
             SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java
         )*/
-        val global_limited_stream_preview_quota =
-            remoteConfig.getString("global_limited_stream_preview_quota")
+        val global_limited_stream_preview_quota = remoteConfig.getString("global_limited_stream_preview_quota")
         durationConfigModel.global_limited_stream_preview_quota = if (!global_limited_stream_preview_quota.isNullOrEmpty()) global_limited_stream_preview_quota.toInt() else 0
         setLog("lahghoas", durationConfigModel.toString())
         durationConfigModel
