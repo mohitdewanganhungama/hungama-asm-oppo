@@ -29,7 +29,7 @@
                     android:textStyle="normal"
                     android:textSize="@dimen/font_21"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorBlack"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:layout_marginTop="0dp"

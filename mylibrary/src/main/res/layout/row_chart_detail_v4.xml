@@ -151,7 +151,7 @@
                 android:layout_toStartOf="@id/ivMore"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_chart_download"
-                app:tint="@color/colorWhite" />
+                 />
         </RelativeLayout>
 
 

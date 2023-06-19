@@ -3088,7 +3088,7 @@ object CommonUtils {
     //Button blue
     fun setAppButton1(context: Context, view: View) {
         val colors = intArrayOf(
-            Color.parseColor("#2b68e8"), Color.parseColor("#2ca1f7")
+            Color.parseColor("#E32E27"), Color.parseColor("#E32E27")
         )
         val position = floatArrayOf(
             0f, 1f

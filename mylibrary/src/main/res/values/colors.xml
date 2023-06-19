@@ -82,7 +82,7 @@
     <color name="progress_secondary">@color/gray_scale</color>
     <color name="progress_max_active">@color/colorWhite</color>
 
-    <color name="home_bg_color">#282828</color>
+    <color name="home_bg_color">#ffffff</color>
     <color name="home_bg_color_2">#383838</color>
     <color name="home_mini_player_bg">#707070</color>
     <color name="story_not_seen">#0F7EF2</color>
@@ -121,6 +121,7 @@
     <color name="blue_switch">#2b68e8</color>
     <color name="color_setting_summary">#c6c6c6</color>
     <color name="color_setting_bg">#66373a43</color>
+    <color name="subtitle_grey_color">#8C000000</color>
 
     <color name="black_op_70">#B3000000</color>
     <color name="settings_item_bg_color">#1AFFFFFF</color>
