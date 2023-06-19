@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY" />
 
-    <include layout="@layout/common_blur_view" />
+<!--    <include layout="@layout/common_blur_view" />-->
 
     <View
         android:id="@+id/fullGradient"

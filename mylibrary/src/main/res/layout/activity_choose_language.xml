@@ -3,8 +3,9 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/home_bg_layer">
-    <include layout="@layout/common_blur_view"/>
+<!--    <include layout="@layout/common_blur_view"/>-->
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -25,20 +26,27 @@
             android:id="@+id/tv_select_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorBlack"
             android:text=""
-            android:textSize="@dimen/font_21"
+            android:textSize="@dimen/font_40"
             android:fontFamily="@font/sf_pro_text_medium"
-            android:layout_marginBottom="@dimen/dimen_10"
+            android:lineHeight="@dimen/font_56"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            tools:text ="Select Language"
             />
 
         <TextView
             android:id="@+id/tv_sub_title"
+            style="@style/chooseLanguageSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/item_sub_title_color"
             android:text=""
-            android:textSize="@dimen/font_15"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:lineHeight="@dimen/font_16"
+            tools:text ="Choose your preferred language"
             />
 
     </LinearLayout>
@@ -62,11 +70,14 @@
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/ll_next"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_48"
-        android:layout_margin="@dimen/dimen_18"
+        android:layout_marginStart="@dimen/dimen_70"
+        android:layout_marginTop="@dimen/dimen_18"
+        android:layout_marginEnd="@dimen/dimen_70"
+        android:layout_marginBottom="@dimen/dimen_18"
         android:background="@drawable/corner_radius_18_bg_blue"
         android:gravity="center"
         android:orientation="horizontal">
@@ -74,16 +85,17 @@
             android:id="@+id/ivNextBtnIcon"
             style="@style/commonMediumIconStyle"
             android:layout_marginEnd="@dimen/dimen_7_8"
+            android:visibility="gone"
             app:fontText="@string/icon_next"/>
 
         <TextView
             android:id="@+id/tv_next"
             style="@style/commonMediumButtonStyle"
-            android:text="@string/login_str_52"
+            android:text="Hello"
             android:textSize="@dimen/font_20"
             android:fontFamily="@font/sf_pro_text_medium"/>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
 </LinearLayout>
 </RelativeLayout>

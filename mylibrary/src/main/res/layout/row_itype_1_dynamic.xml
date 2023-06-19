@@ -9,6 +9,7 @@
         android:id="@+id/llMain"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@color/amp_dark_blue"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

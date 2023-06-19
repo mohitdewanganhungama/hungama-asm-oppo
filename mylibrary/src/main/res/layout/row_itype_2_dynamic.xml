@@ -9,7 +9,8 @@
         android:gravity="center"
         android:layout_marginEnd="@dimen/dimen_20"
         android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/amp_dark_blue">
 
 
         <RelativeLayout

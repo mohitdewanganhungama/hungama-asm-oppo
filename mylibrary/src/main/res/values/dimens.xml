@@ -43,7 +43,9 @@
     <dimen name="font_31">31sp</dimen>
     <dimen name="font_33">33sp</dimen>
     <dimen name="font_35">35sp</dimen>
+    <dimen name="font_40">40sp</dimen>
     <dimen name="font_50">50sp</dimen>
+    <dimen name="font_56">56sp</dimen>
     <dimen name="font_60">60sp</dimen>
     <dimen name="font_80">80sp</dimen>
     <dimen name="font_90">90sp</dimen>
