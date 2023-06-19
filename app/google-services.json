@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "782379641388-mefcq1bfhkcvamsq931hi9i3eiqi8ajc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.heytap.music.wsdebug",
+            "certificate_hash": "5135534d33705e8f792aab63594854795b9e58bc"
+          }
+        },
+        {
           "client_id": "782379641388-14g22u6sob4vvapd0cfjt6fn3f4l70a9.apps.googleusercontent.com",
           "client_type": 3
         }

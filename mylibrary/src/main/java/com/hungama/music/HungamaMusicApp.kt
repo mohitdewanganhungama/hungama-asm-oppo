@@ -25,10 +25,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.FirebaseRemoteConfigClientException
 import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.hungama.fetch2.Fetch.Impl.setDefaultInstanceConfiguration
 import com.hungama.fetch2.FetchConfiguration
 import com.hungama.fetch2.HttpUrlConnectionDownloader
@@ -229,7 +226,7 @@ class HungamaMusicApp : Application() {
             setDefaultInstanceConfiguration(fetchConfiguration)
 
 
-            setUpStartAppRemoteConfig()
+//            setUpStartAppRemoteConfig()
             comscoreSetUp()
 
 //        sentryInit()
@@ -301,7 +298,7 @@ class HungamaMusicApp : Application() {
 
 
     private fun setUpStartAppRemoteConfig(){
-        Firebase.remoteConfig.apply {
+/*        Firebase.remoteConfig.apply {
             setDefaultsAsync(
                 mapOf(
                     "user_login" to "[\"google\", \"facebook\", \"email\", \"apple\"]",
@@ -345,7 +342,7 @@ class HungamaMusicApp : Application() {
             setConfigSettingsAsync(remoteConfigSettings {
                 minimumFetchIntervalInSeconds = 1
             })
-        }
+        }*/
         RemoteConfigFetcherWorker.enqueue(this)
 
         /*val remoteConfig = Firebase.remoteConfig
@@ -398,7 +395,7 @@ class HungamaMusicApp : Application() {
                         setLog("RemoteWorkDone", "setUpRemoteConfig: 1.1")
                         CoroutineScope(Dispatchers.IO).launch{
                             setLog("RemoteWorkDone", "setUpRemoteConfig: 1.2")
-                            Firebase.remoteConfig.fetchAndActivate()
+//                            Firebase.remoteConfig.fetchAndActivate()
                             setLog("RemoteWorkDone", "setUpRemoteConfig: 1.3")
                         }
                     }catch (e:Exception){
@@ -450,7 +447,7 @@ class HungamaMusicApp : Application() {
                 setLog("RemoteWorkDone-4", add4.toString())
                 setLog("RemoteWorkDone-5", add5.toString())*/
                 return Result.success()
-            } catch (e: ExecutionException) {
+            } /*catch (e: ExecutionException) {
                 // The Task failed, this is the same exception you'd get in a non-blocking failure handler.
                 return if (e.cause is FirebaseRemoteConfigClientException && e.cause?.cause is IOException) {
                     Result.retry()
@@ -458,7 +455,7 @@ class HungamaMusicApp : Application() {
                     // TODO Log the error here
                     Result.failure()
                 }
-            } catch (e: InterruptedException) {
+            }*/ catch (e: InterruptedException) {
                 // An interrupt occurred while waiting for the task to complete.
                 return Result.retry()
             } catch (e: TimeoutException) {

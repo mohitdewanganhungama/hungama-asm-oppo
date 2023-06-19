@@ -3730,9 +3730,10 @@ object CommonUtils {
                 val servePrerollAd = remoteConfig.getBoolean("serve_preroll_Ad")
                 val audioAdPreference = remoteConfig.getString("audio_ad_preference")
                 val homescreenBannerAds = remoteConfig.getString("homescreen_banner_ads")
+                val munna_mbbs = remoteConfig.getLong("munna_mbbs")
                 setLog(
-                    "homescreenBannerAds",
-                    "splash: " + splashAd + " serveAudioAd: " + serveAudioAd.toString() + " homescreenBannerAds:" + homescreenBannerAds.toString() + " Preroll: " + servePrerollAd.toString()
+                    "homescreenBannerAds", " munna " + munna_mbbs.toString() +
+                    " splash: " + splashAd + " serveAudioAd: " + serveAudioAd.toString() + " homescreenBannerAds:" + homescreenBannerAds.toString() + " Preroll: " + servePrerollAd.toString()
                 )
                 val onPlayerOverlay = remoteConfig.getString("on_player_overlay")
                 val playlistDetailsPage = remoteConfig.getString("playlist_details_page")
@@ -3754,6 +3755,7 @@ object CommonUtils {
                 val drawer_remove_ads = remoteConfig.getString("drawer_remove_ads")
                 val drawer_streaming_quality = remoteConfig.getString("drawer_streaming_quality")
                 val drawer_svod_download = remoteConfig.getString("drawer_svod_download")
+                setLog("drawerSvodDownd", " "+drawer_svod_download)
                 val drawer_restricted_download =
                     remoteConfig.getString("drawer_restricted_download")
                 val drawer_svod_purchase = remoteConfig.getString("drawer_svod_purchase")
