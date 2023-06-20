@@ -2433,7 +2433,6 @@ class MyPlaylistDetailFragment(val varient: Int,val listener : onBackPreesHendel
             ivFavoriteActionBar?.cancelAnimation()
             ivFavoriteActionBar?.progress = 0f
         }
-
     }
 
     override fun onContentLikedFromThreeDotMenu(isFavorite: Boolean, position: Int) {
