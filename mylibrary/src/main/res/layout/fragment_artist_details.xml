@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/skeleton_artist_detail_full_image" />
+<!--            <include layout="@layout/skeleton_artist_detail_full_image" />-->
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -91,6 +91,7 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/font_27"
                         app:lineHeight="@dimen/font_33"
+                        android:visibility="visible"
                         tools:text="Wonder Woman 1984" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -105,8 +106,9 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="2sp"
                     android:orientation="horizontal"
-                    android:textColor="#c6c6c6"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font_13"
+                    android:visibility="visible"
                     android:textStyle="normal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

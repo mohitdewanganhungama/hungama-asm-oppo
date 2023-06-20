@@ -66,6 +66,7 @@ import com.hungama.music.utils.CommonUtils.faDrawable
 import com.hungama.music.data.webservice.utils.Status
 import com.hungama.music.eventanalytic.eventreporter.PageViewEvent
 import com.hungama.music.utils.CommonUtils.applyButtonTheme
+import com.hungama.music.utils.CommonUtils.applyButtonTheme1
 import com.hungama.music.utils.CommonUtils.hideKeyboard
 import com.hungama.music.utils.CommonUtils.setLog
 import com.hungama.music.utils.customview.downloadmanager.model.DownloadedAudio
@@ -215,9 +216,9 @@ class MyPlaylistDetailFragment(val varient: Int,val listener : onBackPreesHendel
                 false
             )
         }
-        applyButtonTheme(requireContext(), llPlayAll)
+        applyButtonTheme1(requireContext(), llPlayAll)
         llPlayAll?.setOnClickListener(this)
-        applyButtonTheme(requireContext(), llPlayAllActionBar)
+        applyButtonTheme1(requireContext(), llPlayAllActionBar)
         llPlayAllActionBar?.setOnClickListener(this)
         threeDotMenu?.setOnClickListener(this)
         threeDotMenu2?.setOnClickListener(this)
@@ -2432,7 +2433,6 @@ class MyPlaylistDetailFragment(val varient: Int,val listener : onBackPreesHendel
             ivFavoriteActionBar?.cancelAnimation()
             ivFavoriteActionBar?.progress = 0f
         }
-
     }
 
     override fun onContentLikedFromThreeDotMenu(isFavorite: Boolean, position: Int) {

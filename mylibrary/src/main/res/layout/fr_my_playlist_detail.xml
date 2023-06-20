@@ -202,9 +202,9 @@
                         android:layout_marginStart="@dimen/dimen_18"
                         android:layout_marginTop="@dimen/dimen_2"
                         android:layout_marginEnd="@dimen/dimen_18"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:textColor="@color/item_title_color"
-                        android:textSize="@dimen/font_15" />
+                        android:fontFamily="@font/sf_pro_text_thin"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/font_14" />
 
                     <TextView
                         android:id="@+id/tvSubTitle2"
@@ -270,7 +270,7 @@
                     android:layout_marginTop="@dimen/dimen_24"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="horizontal"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/llDetails">
@@ -292,7 +292,8 @@
                         android:contentDescription="@string/login_str_2"
                         app:lottie_autoPlay="false"
                         app:lottie_loop="false"
-                        app:lottie_rawRes="@raw/like_anim" />
+                        app:lottie_rawRes="@raw/like_anim"
+                        android:tint="@color/colorBlack"/>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/llPlayAll"
@@ -300,9 +301,10 @@
                         android:layout_height="@dimen/dimen_42"
                         android:layout_marginStart="@dimen/dimen_4_8"
                         android:layout_marginEnd="@dimen/dimen_4_5"
-                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:background="@drawable/black_background_drawable"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
 
                         <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
                             android:id="@+id/ivPlayAll"
@@ -312,6 +314,7 @@
                         <TextView
                             android:id="@+id/tvPlayAll"
                             style="@style/commonMediumButtonStyle"
+                            android:textColor="#FFFFFF"
                             android:text="@string/podcast_str_4" />
 
                         <!--<ImageView
