@@ -159,7 +159,7 @@
                     android:paddingEnd="@dimen/dimen_0"
                     android:paddingBottom="@dimen/dimen_12"
                     app:srcCompat="@drawable/ic_chart_download"
-                    app:tint="@color/colorWhite" />
+                     />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/cancelPlaylist"

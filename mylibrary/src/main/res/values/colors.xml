@@ -5,7 +5,7 @@
     <color name="colorAccent">#656464</color>
     <color name="colorAccent1">#EF5F24</color>
 
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">#000000</color>
     <color name="colorOffWhite">#F2F2F2</color>
     <color name="colorOffWhite_trans">#CDFFFFFF</color>
     <color name="colorBgDialog">#77000000</color>

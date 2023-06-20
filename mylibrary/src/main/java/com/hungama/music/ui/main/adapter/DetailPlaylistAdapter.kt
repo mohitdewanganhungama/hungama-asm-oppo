@@ -122,11 +122,11 @@ class DetailPlaylistAdapter(
                 CommonUtils.setExplicitContent(ctx, llMain, list.misc.explicit, ivExplicit)
 
                 val ivMoreDrawable = FontDrawable(ctx, R.string.icon_option)
-                ivMoreDrawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                ivMoreDrawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivMore.setImageDrawable(ivMoreDrawable)
 
                 val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivDownload.setImageDrawable(drawable)
 
                 val downloadedAudio =
@@ -222,7 +222,7 @@ class DetailPlaylistAdapter(
 
                         if(CommonUtils.isUserHasGoldSubscription()){
                             val drawable = FontDrawable(ctx, R.string.icon_download_queue)
-                            drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                            drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                             ivDownload.setImageDrawable(drawable)
                             setLog(TAG, "bind: download img change")
                         }
@@ -297,22 +297,22 @@ class DetailPlaylistAdapter(
         when (status) {
             Status.NONE.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivDownload.setImageDrawable(drawable)
             }
             Status.QUEUED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download_queue)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivDownload.setImageDrawable(drawable)
             }
             Status.DOWNLOADING.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_downloading)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivDownload.setImageDrawable(drawable)
             }
             Status.COMPLETED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_downloaded2)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivDownload.setImageDrawable(drawable)
             }
             Status.FAILED.value -> {

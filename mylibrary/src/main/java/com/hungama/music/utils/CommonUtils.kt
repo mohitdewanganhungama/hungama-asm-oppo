@@ -3085,6 +3085,49 @@ object CommonUtils {
         }
     }
 
+    fun applyButtonTheme1(context: Context, view: View) {
+        if (getIsGoldUser()) {
+            setAppButton2(context, view)
+        } else {
+            blackButton(context, view)
+        }
+    }
+
+    fun blackButton(context: Context, view: View) {
+        val colors = intArrayOf(
+            Color.parseColor("#FFEB3B"), Color.parseColor("#FFEB3B")
+        )
+        val position = floatArrayOf(
+            0f, 1f
+        )
+        val startX = 84.564f
+        val startY = 44.184f
+        val endX = 268.92f
+        val endY = 2.184f
+        //val cornerRadius = 100f
+        val cornerRadius = floatArrayOf(
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//Top left
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//Top left
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//top Right
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//top Right
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//Bottom Right
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//Bottom Right
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat(),//bottom left
+            context.resources.getDimensionPixelSize(R.dimen.dimen_100).toFloat()//bottom left
+        )
+        applyAppButtonGradient(
+            startX,
+            startY,
+            endX,
+            endY,
+            cornerRadius,
+            colors,
+            position,
+            context,
+            view
+        )
+    }
+
     //Button blue
     fun setAppButton1(context: Context, view: View) {
         val colors = intArrayOf(
