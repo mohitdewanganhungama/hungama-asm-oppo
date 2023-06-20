@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "782379641388",
-    "project_id": "o-india-firebase-beta",
-    "storage_bucket": "o-india-firebase-beta.appspot.com"
+    "project_number": "431177551402",
+    "project_id": "asmdemo-bcd7c",
+    "storage_bucket": "asmdemo-bcd7c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:782379641388:android:eb4808cf992f8300a5bf89",
+        "mobilesdk_app_id": "1:431177551402:android:2a653967e7b79ad5b5fd53",
         "android_client_info": {
-          "package_name": "com.heytap.music.wsdebug"
+          "package_name": "com.heytap.music.wsdemo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "782379641388-mefcq1bfhkcvamsq931hi9i3eiqi8ajc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.heytap.music.wsdebug",
-            "certificate_hash": "5135534d33705e8f792aab63594854795b9e58bc"
-          }
-        },
-        {
-          "client_id": "782379641388-14g22u6sob4vvapd0cfjt6fn3f4l70a9.apps.googleusercontent.com",
+          "client_id": "431177551402-ssobiht4kr7k5at2c3p45uh1f153gad7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCJaKsptASWzxwC4XKAoU-aOzfhWYoGxQU"
+          "current_key": "AIzaSyACkA6UKkpz1kX62ezjup_6HywrLeoy_k8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "782379641388-14g22u6sob4vvapd0cfjt6fn3f4l70a9.apps.googleusercontent.com",
+              "client_id": "431177551402-ssobiht4kr7k5at2c3p45uh1f153gad7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -3697,27 +3697,27 @@ object CommonUtils {
         val durationConfigModel = SongDurationConfigModel()
         durationConfigModel.enable_minutes_quota = remoteConfig.getBoolean("enable_minutes_quota")
         val nudge_stream_preview = remoteConfig.getString("nudge_stream_preview")
-/*        val jsonObjec_nudge_stream_preview = JSONObject(nudge_stream_preview)
-        durationConfigModel.nudge_stream_preview = Gson().fromJson(jsonObjec_nudge_stream_preview.toString(), SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java)*/
+        val jsonObjec_nudge_stream_preview = JSONObject(nudge_stream_preview)
+        durationConfigModel.nudge_stream_preview = Gson().fromJson(jsonObjec_nudge_stream_preview.toString(), SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java)
         val global_limited_minutes_quota = remoteConfig.getString("global_limited_minutes_quota")
         durationConfigModel.global_limited_minutes_quota =
             if (!global_limited_minutes_quota.isNullOrEmpty()) global_limited_minutes_quota.toInt() else 0
         durationConfigModel.is_free_trial_eligible = remoteConfig.getBoolean("is_free_trial_eligible")
         val drawer_minute_quota_exhausted = remoteConfig.getString("drawer_minute_quota_exhausted")
-/*        val jsonObjec = JSONObject(drawer_minute_quota_exhausted)
+        val jsonObjec = JSONObject(drawer_minute_quota_exhausted)
         durationConfigModel.drawer_minute_quota_exhausted = Gson().fromJson(
             jsonObjec.toString(),
             SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java
-        )*/
+        )
         val nudge_minute_quota_exhausted = remoteConfig.getString("nudge_minute_quota_exhausted")
-/*        val jsonObject = JSONObject(nudge_minute_quota_exhausted)
+        val jsonObject = JSONObject(nudge_minute_quota_exhausted)
         durationConfigModel.nudge_minute_quota_exhausted = Gson().fromJson(
             jsonObject.toString(),
             SongDurationConfigModel.DrawerMinuteQuotaExhausted::class.java
-        )*/
+        )
         val global_limited_stream_preview_quota = remoteConfig.getString("global_limited_stream_preview_quota")
         durationConfigModel.global_limited_stream_preview_quota = if (!global_limited_stream_preview_quota.isNullOrEmpty()) global_limited_stream_preview_quota.toInt() else 0
-        setLog("lahghoas", durationConfigModel.toString())
+        setLog("lahgalghakhduoasoi", durationConfigModel.toString())
         durationConfigModel
     }
 

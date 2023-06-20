@@ -1,4 +1,4 @@
-package com.heytap.music.wsdebug
+package com.heytap.music.wsdemo
 
 import android.app.Application
 import com.google.firebase.FirebaseApp
@@ -23,8 +23,8 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         FirebaseApp.initializeApp(this)
-        val appLicatn = HungamaMusicApp()
-        appLicatn.onCreate()
+/*        val appLicatn = HungamaMusicApp()
+        appLicatn.onCreate()*/
         try {
             CommonUtils.setLog("RemoteWorkDone", "setUpRemoteConfig: 1.1")
             CoroutineScope(Dispatchers.IO).launch{

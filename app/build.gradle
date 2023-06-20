@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace 'com.heytap.music.wsdebug'
+    namespace 'com.heytap.music.wsdemo'
     compileSdk 33
 
     defaultConfig {
