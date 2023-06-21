@@ -216,7 +216,7 @@ class BucketChildAdapter(
                 val seenColor: Int =
                     itemView.context.resources.getColor(R.color.half_opacity_white_color)
                 val notSeenTextColor =
-                    itemView.context.resources.getColor(R.color.story_not_seen_text)
+                    itemView.context.resources.getColor(R.color.colorBlack)
                 val seenTextColor = itemView.context.resources.getColor(R.color.story_seen_text)
 
                 list.misc?.post?.count?.let { ivCircularStatusView.setPortionsCount(it) }

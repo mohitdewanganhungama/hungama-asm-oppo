@@ -9,7 +9,7 @@
         android:id="@+id/llMain"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@color/amp_dark_blue"
+        android:background="#FFFFFF"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -79,7 +79,7 @@
             android:textSize="@dimen/font_11"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textColor="@color/story_not_seen_text"
+            android:textColor="@color/colorBlack"
             android:textAlignment="center"
             android:includeFontPadding="false"
             />

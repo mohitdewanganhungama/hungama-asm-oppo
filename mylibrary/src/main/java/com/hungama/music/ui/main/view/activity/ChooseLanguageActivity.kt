@@ -232,12 +232,12 @@ class ChooseLanguageActivity : AppCompatActivity() {
         tv_sub_title.setText(subtitle)
         if(isFromGenSetting){
             tv_next.setText(getString(R.string.profile_str_43))
-            ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_save, R.color.colorWhite))
+            ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_save, R.color.colorWhite1))
             setLog("TAG"," data:${SharedPrefHelper.getInstance().getLanguageObject(PrefConstant.LANG_DATA)?.code}")
 
         }else{
             tv_next.setText(next)
-            ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_next, R.color.colorWhite))
+            ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_next, R.color.colorWhite1))
         }
 
 
@@ -294,10 +294,10 @@ class ChooseLanguageActivity : AppCompatActivity() {
             tv_sub_title.setText(languageRespModel.data?.body?.transliteration?.subheadding?.en)
             if(isFromGenSetting){
                 tv_next.setText(getString(R.string.profile_str_43))
-                ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_save, R.color.colorWhite))
+                ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_save, R.color.colorWhite1))
             }else{
                 tv_next.setText(languageRespModel.data?.body?.transliteration?.next?.en)
-                ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_next, R.color.colorWhite))
+                ivNextBtnIcon?.setImageDrawable(this.faDrawable(R.string.icon_next, R.color.colorWhite1))
             }
             //setUpUI()
             initRecyclerView()

@@ -241,7 +241,7 @@
                             android:id="@+id/tvPlayAll"
                             style="@style/commonMediumButtonStyle"
                             android:text="@string/podcast_str_4"
-                            android:textColor="@color/colorBlack" />
+                            android:textColor="@color/colorWhite1" />
 
                         <!--<ImageView
                             android:layout_width="@dimen/dimen_10_4"
@@ -513,7 +513,7 @@
                     android:id="@+id/tvPlayAllActionBar"
                     style="@style/commonMediumButtonStyle"
                     android:text="@string/podcast_str_4"
-                    android:textColor="@color/colorBlack" />
+                    android:textColor="@color/colorWhite1" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

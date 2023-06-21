@@ -176,13 +176,17 @@ class ChartDetailFragment : BaseFragment(), TracksContract.View,
                     CommonUtils.setAppButton2(requireContext(), llPlayAll)
                     CommonUtils.setAppButton2(requireContext(), llPlayAllActionBar)
                 } else {
-                    if (varient == 1) {
-                        CommonUtils.setAppButton1(requireContext(), llPlayAll)
-                        CommonUtils.setAppButton1(requireContext(), llPlayAllActionBar)
-                    } else {
-                        CommonUtils.setAppButton4(requireContext(), llPlayAll)
-                        CommonUtils.setAppButton4(requireContext(), llPlayAllActionBar)
-                    }
+//                    if (varient == 1) {
+//                        CommonUtils.setAppButton1(requireContext(), llPlayAll)
+//                        CommonUtils.setAppButton1(requireContext(), llPlayAllActionBar)
+//                    } else {
+//                        CommonUtils.setAppButton4(requireContext(), llPlayAll)
+//                        CommonUtils.setAppButton4(requireContext(), llPlayAllActionBar)
+//                    }
+
+                    CommonUtils.blackButton(requireContext(), llPlayAll)
+                    CommonUtils.blackButton(requireContext(), llPlayAllActionBar)
+
                 }
                 if (arguments != null) {
                     selectedContentId = requireArguments().getString("id").toString()
@@ -2243,11 +2247,11 @@ class ChartDetailFragment : BaseFragment(), TracksContract.View,
         isPlaying = status
         baseMainScope.launch {
             if (isAdded && context != null) {
-                var color = R.color.colorWhite
+                var color = R.color.colorWhite1
                 if (varient == 1) {
-                    color = R.color.colorWhite
+                    color = R.color.colorWhite1
                 } else {
-                    color = R.color.colorBlack
+                    color = R.color.colorWhite1
                 }
                 if (status) {
                     ivPlayAll?.setImageDrawable(

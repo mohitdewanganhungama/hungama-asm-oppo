@@ -3095,7 +3095,7 @@ object CommonUtils {
 
     fun blackButton(context: Context, view: View) {
         val colors = intArrayOf(
-            Color.parseColor("#FFEB3B"), Color.parseColor("#FFEB3B")
+            Color.parseColor("#000000"), Color.parseColor("#000000")
         )
         val position = floatArrayOf(
             0f, 1f

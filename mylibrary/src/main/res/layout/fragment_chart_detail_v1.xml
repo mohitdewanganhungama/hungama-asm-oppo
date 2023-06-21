@@ -192,7 +192,8 @@
                         android:contentDescription="@string/login_str_2"
                         app:lottie_autoPlay="false"
                         app:lottie_loop="false"
-                        app:lottie_rawRes="@raw/like_anim" />
+                        app:lottie_rawRes="@raw/like_anim"
+                        app:tint="@color/colorBlack"/>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/llPlayAll"

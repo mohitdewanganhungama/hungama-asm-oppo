@@ -246,7 +246,7 @@
         <item name="cornerSize">@dimen/dimen_18</item>
     </style>
     <style name="ShapeAppearanceOverlay.App.RoundCornerBucket" parent="">
-        <item name="cornerSize">@dimen/dimen_7</item>
+        <item name="cornerSize">@dimen/dimen_16</item>
     </style>
     <style name="ShapeAppearanceOverlay.App.Circle" parent="">
         <item name="cornerSize">50%</item>
@@ -535,7 +535,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/dimen_3</item>
         <item name="android:textSize">@dimen/font_16</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite1</item>
         <item name="android:fontFamily">@font/sf_pro_text</item>
         <item name="android:textStyle">normal</item>
         <item name="android:includeFontPadding">false</item>
