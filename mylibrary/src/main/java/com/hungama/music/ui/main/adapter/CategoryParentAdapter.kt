@@ -330,7 +330,7 @@ class CategoryParentAdapter(
         val tvTitle: TextView = itemView.tvTitle
         val tvSubTitle: TextView = itemView.tvSubTitle
         val switchPublic: SwitchCompat = itemView.switchPublic
-        val ivMore: ImageView = itemView.ivMore
+        val ivMore: LinearLayoutCompat = itemView.ivMore
         val llMain: LinearLayoutCompat = itemView.llMain
         val llHeaderTitle: LinearLayoutCompat = itemView.llHeaderTitle
         val dotedView = itemView.dotedView

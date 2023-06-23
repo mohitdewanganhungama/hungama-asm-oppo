@@ -114,9 +114,10 @@
             app:tabGravity="fill"
             app:tabIndicatorHeight="0dp"
             app:tabMaxWidth="0dp"
+            app:tabTextColor="@color/colorBlack"
             app:tabMode="scrollable"
             app:tabRippleColor="@null"
-            app:tabSelectedTextColor="@color/tab_selected_color"
+            app:tabSelectedTextColor="@color/colorWhite1"
             app:tabTextAppearance="@style/TabTextAppearance" />
 
     </RelativeLayout>

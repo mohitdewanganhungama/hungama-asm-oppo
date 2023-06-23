@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -85,7 +86,7 @@ class NextInQueueAdapter (private var parents: List<RowsItem?>,
         val tvTitle: TextView = itemView.tvTitle
         val tvSubTitle: TextView = itemView.tvSubTitle
         val switchPublic: SwitchCompat = itemView.switchPublic
-        val ivMore: ImageView = itemView.ivMore
+        val ivMore: LinearLayoutCompat = itemView.ivMore
     }
 
     private fun setChildRecyclerView(

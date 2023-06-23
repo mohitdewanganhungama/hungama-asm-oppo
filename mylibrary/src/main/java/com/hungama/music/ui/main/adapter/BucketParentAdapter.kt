@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.Observer
@@ -606,7 +607,7 @@ class BucketParentAdapter(
         val tvTitle: TextView = itemView.tvTitle
         val tvSubTitle: TextView = itemView.tvSubTitle
         val switchPublic: SwitchCompat = itemView.switchPublic
-        val ivMore: ImageView = itemView.ivMore
+        val ivMore: LinearLayoutCompat = itemView.ivMore
         val llMain: LinearLayoutCompat = itemView.llMain
         val llHeaderTitle: LinearLayoutCompat = itemView.llHeaderTitle
         val dotedView = itemView.dotedView

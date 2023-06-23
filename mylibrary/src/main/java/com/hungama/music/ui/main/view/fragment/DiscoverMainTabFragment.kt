@@ -326,6 +326,13 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                 tabs?.addOnTabSelectedListener(this@DiscoverMainTabFragment)
                 tabs?.getTabAt(defaultSelectedTabPosition)?.select()
 
+                for (i in 0 until tabs.tabCount) {
+                    val tab = (tabs.getChildAt(0) as ViewGroup).getChildAt(i)
+                    val p = tab.layoutParams as ViewGroup.MarginLayoutParams
+                    p.setMargins(10, 0, 10, 0)
+                    tab.requestLayout()
+                }
+
                 MainActivity.lastItemClickedForBTab = MainActivity.lastItemClicked
                 MainActivity.headerItemName = tabs?.getTabAt(defaultSelectedTabPosition)!!.text.toString()
                 MainActivity.headerItemNameForBTab = MainActivity.clickedLastTopNav(tabs?.getTabAt(defaultSelectedTabPosition)!!.text.toString())
