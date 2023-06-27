@@ -20,8 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen_18"
-            app:tint="@color/colorWhite"
-            app:srcCompat="@drawable/hungama_logo_black" />
+            app:srcCompat="@drawable/hungama_text_icon_new" />
 
     <TextView
         style="@style/StyleTextView"
