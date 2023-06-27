@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
+    android:background="@color/colorWhite1"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_62">
-    <!--<include layout="@layout/common_blur_view"/>-->
+<!--    <include layout="@layout/common_blur_view"/>-->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llMainView"
         android:layout_width="match_parent"
@@ -70,8 +71,9 @@
                 android:layout_height="@dimen/dimen_21_4"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:visibility="gone"
-                app:srcCompat="@drawable/ic_music_bottom_navigation_main" />
+                android:visibility="visible"
+                app:srcCompat="@drawable/music_icon"
+                />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/ivTabMusicAnim"
@@ -82,7 +84,8 @@
                 android:visibility="visible"
                 app:lottie_autoPlay="false"
                 app:lottie_loop="false"
-                app:lottie_rawRes="@raw/listen_icon" />
+                app:lottie_rawRes="@raw/listen_icon"
+                />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTabMusic"

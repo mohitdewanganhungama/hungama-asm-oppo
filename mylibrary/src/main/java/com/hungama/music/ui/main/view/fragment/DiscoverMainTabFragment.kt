@@ -329,7 +329,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                 for (i in 0 until tabs.tabCount) {
                     val tab = (tabs.getChildAt(0) as ViewGroup).getChildAt(i)
                     val p = tab.layoutParams as ViewGroup.MarginLayoutParams
-                    p.setMargins(10, 0, 10, 0)
+                    p.setMargins(10, 0, 40, 0)
                     tab.requestLayout()
                 }
 

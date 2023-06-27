@@ -2398,14 +2398,14 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 btn_play_mini?.setImageDrawable(
                     getContext().faDrawable(
                         R.string.icon_play,
-                        R.color.colorWhite,
+                        R.color.colorBlack,
                         resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
                     )
                 )
                 btn_pause_mini?.setImageDrawable(
                     getContext().faDrawable(
                             R.string.icon_pause_2,
-                            R.color.colorWhite,
+                            R.color.colorBlack,
                         resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
                         )
                     )

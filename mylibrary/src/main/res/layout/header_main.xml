@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_50"
     android:focusableInTouchMode="true"
+    android:background="@color/colorWhite1"
     android:id="@+id/rlHeaderMain">
 
     <!--<include layout="@layout/common_blur_view" />-->
@@ -19,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen_18"
-            app:srcCompat="@drawable/hungama_text_icon_new" />
+            app:tint="@color/colorWhite"
+            app:srcCompat="@drawable/hungama_logo_black" />
 
     <TextView
         style="@style/StyleTextView"
@@ -45,6 +47,7 @@
         android:paddingEnd="@dimen/dimen_8"
         android:paddingBottom="@dimen/dimen_4"
         android:tint="@color/colorWhite"
+        android:visibility="gone"
         app:srcCompat="@drawable/ic_search_actionbar" />
 
     <RelativeLayout
