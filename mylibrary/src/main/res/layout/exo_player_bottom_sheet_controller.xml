@@ -102,7 +102,7 @@
                 style="@style/commonMediumIconStyle"
                 app:fontTextSize="@dimen/font_18"
                 app:fontText="@string/icon_pause_2"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
 
             <!--<androidx.appcompat.widget.AppCompatImageButton
                 android:id="@id/exo_play"

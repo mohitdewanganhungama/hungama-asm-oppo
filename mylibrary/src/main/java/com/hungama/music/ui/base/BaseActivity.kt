@@ -2291,6 +2291,14 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 pauseAudio()
             }
 
+            if (getAudioPlayerPlayingStatus() == playing){
+                btn_play_mini?.visibility = View.GONE
+                btn_pause_mini?.visibility = View.VISIBLE
+            }else{
+                btn_play_mini?.visibility = View.VISIBLE
+                btn_pause_mini?.visibility = View.GONE
+            }
+
             if (playType == CONTENT_PODCAST) {
                 //mini player
                 llMiniExoNext?.visibility = View.GONE
@@ -2300,7 +2308,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 //mini player
                 player_view?.visibility = View.GONE
                 llMiniClose?.visibility = View.GONE
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.GONE
                 /*-------------------------------------------------------*/
 
@@ -2327,7 +2335,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 //mini player
                 player_view?.visibility = View.GONE
                 llMiniClose?.visibility = View.GONE
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.GONE
                 /*-------------------------------------------------------*/
                 //mini player
@@ -2345,7 +2353,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 //mini player
                 player_view?.visibility = View.GONE
                 llMiniClose?.visibility = View.GONE
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.GONE
                 /*-------------------------------------------------------*/
 
@@ -2365,7 +2373,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 //mini player
                 player_view?.visibility = View.GONE
                 llMiniClose?.visibility = View.GONE
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.GONE
                 /*-------------------------------------------------------*/
 
@@ -2438,7 +2446,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 //mini player
                 player_view?.visibility = View.GONE
                 llMiniClose?.visibility = View.GONE
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.GONE
                 /*-------------------------------------------------------*/
 
@@ -3395,7 +3403,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             setLog("TAG", "videopause${hashMap}")
                             EventManager.getInstance().sendEvent(VideoPlayerPlayEvent(hashMap))
                         }
-                        btn_play_mini?.visibility = View.GONE
+//                        btn_play_mini?.visibility = View.GONE
                         btn_pause_mini?.visibility = View.VISIBLE
                     }
                 }
@@ -3422,7 +3430,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     }
 
                 }
-                btn_play_mini?.visibility = View.VISIBLE
+//                btn_play_mini?.visibility = View.VISIBLE
                 btn_pause_mini?.visibility = View.GONE
             }
 
