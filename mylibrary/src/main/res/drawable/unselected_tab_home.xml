@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <corners android:radius="33pt" />
-    <solid android:color="@color/colorWhite1"
-        android:fillAlpha="0.85"/>
+    <solid android:color="@color/unselected_tab_color"
+        />
 
 </shape>

@@ -135,8 +135,8 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                 ivSearch?.setOnClickListener(this@DiscoverMainTabFragment)
                 ivUserPersonalImage?.setOnClickListener(this@DiscoverMainTabFragment)
 
-                shimmerLayout?.visibility = View.VISIBLE
-                shimmerLayoutTab?.visibility = View.VISIBLE
+                shimmerLayout?.visibility = View.GONE
+                shimmerLayoutTab?.visibility = View.GONE
                 shimmerLayoutTab?.startShimmer()
                 shimmerLayout?.startShimmer()
 
@@ -557,7 +557,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                             }else if((-distanceToScroll * ratio).toInt() <= 0 || (-distanceToScroll * ratio).toInt() < toolbarHeight){
                                 setLog("scrollUpp3", (-distanceToScroll * ratio).toInt().toString())
                                 if (nextChild.id == R.id.fullBlur){
-                                    nextChild.visibility = View.VISIBLE
+                                    nextChild.visibility = View.GONE
                                 }
                             }
                         }
@@ -567,12 +567,12 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                             if ((-distanceToScroll * ratio).toInt() == 0){
                                 setLog("scrollUpp5", (-distanceToScroll * ratio).toInt().toString())
                                 if (nextChild.id == R.id.fullBlur2){
-                                    nextChild.visibility = View.VISIBLE
+//                                    nextChild.visibility = View.GONE
                                 }
                             }else if((-distanceToScroll * ratio).toInt() <= 0 || (-distanceToScroll * ratio).toInt() < toolbarHeight){
                                 setLog("scrollUpp6", (-distanceToScroll * ratio).toInt().toString())
                                 if (nextChild.id == R.id.fullBlur2){
-                                    nextChild.visibility = View.GONE
+//                                    nextChild.visibility = View.GONE
                                 }
                             }
                         }

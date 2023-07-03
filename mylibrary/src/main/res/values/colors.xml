@@ -112,6 +112,7 @@
     <color name="line_color">#585858</color>
     <color name="search_chip_unselected_bg_color">#c6c6c6</color>
     <color name="cast_color">#dbdbdb</color>
+    <color name = "unselected_tab_color">#EBEBEB</color>
 
     <color name="colorWarmGrey">#707070</color>
     <color name="colorGolden">#ebc97d</color>

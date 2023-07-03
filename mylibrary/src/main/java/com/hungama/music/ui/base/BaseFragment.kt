@@ -5212,14 +5212,14 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                         requireActivity()!!, ivUserPersonalImage!!,
                         SharedPrefHelper.getInstance().get(
                             PrefConstant.USER_IMAGE, ""
-                        ), R.drawable.ic_no_user_img
+                        ), R.drawable.profile_icon
                     )
                 } else {
                     ImageLoader.loadImage(
                         requireActivity()!!,
                         ivUserPersonalImage!!,
                         "",
-                        R.drawable.ic_no_user_img
+                        R.drawable.profile_icon
                     )
                 }
                 if(SharedPrefHelper.getInstance().isUserLoggedIn()){

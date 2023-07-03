@@ -66,15 +66,16 @@
         android:layout_marginTop="-46dp"
         app:layout_behavior="com.hungama.music.ui.main.view.fragment.DiscoverMainTabFragment$ScrollingFABBehavior">
         <include android:id="@+id/fullBlur" layout="@layout/common_blur_view" android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_96"/>
+            android:layout_height="@dimen/dimen_96"
+            android:visibility="gone"/>
         <com.hungama.music.utils.customview.blurview.CustomBlurView
             android:id="@+id/fullBlur2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_48"
             android:layout_marginTop="@dimen/dimen_46"
             app:realtimeBlurRadius="150dp"
-            android:visibility="gone"
-            app:realtimeOverlayColor="@color/colorTransparentBlack" />
+            android:visibility="visible"
+            app:realtimeOverlayColor="@color/colorWhite1" />
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerLayoutTab"
             android:layout_width="match_parent"
@@ -82,14 +83,14 @@
             android:layout_marginTop="@dimen/dimen_40"
             app:shimmer_repeat_mode="restart"
             app:shimmer_shape="radial"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/shimmer_layout_header"/>
+<!--                <include layout="@layout/shimmer_layout_header"/>-->
                 <!--                    <include layout="@layout/shimmer_layout"-->
                 <!--                        android:layout_marginTop="@dimen/dimen_16"-->
                 <!--                        android:layout_height="wrap_content"-->
