@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.*
 import android.text.TextUtils
@@ -5214,6 +5215,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                             PrefConstant.USER_IMAGE, ""
                         ), R.drawable.profile_icon
                     )
+                    ivUserPersonalImage!!.setBackgroundColor(Color.parseColor("#000000"))
                 } else {
                     ImageLoader.loadImage(
                         requireActivity()!!,
