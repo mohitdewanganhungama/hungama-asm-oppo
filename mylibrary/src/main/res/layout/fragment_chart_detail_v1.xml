@@ -139,7 +139,7 @@
                         android:fontFamily="@font/sf_pro_text_semibold"
                         android:maxLines="2"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/colorBlack"
                         android:textSize="@dimen/font_20" />
 
                     <TextView
@@ -150,7 +150,7 @@
                         android:layout_marginTop="@dimen/dimen_2"
                         android:layout_marginEnd="@dimen/dimen_18"
                         android:fontFamily="@font/sf_pro_text_medium"
-                        android:textColor="@color/item_title_color"
+                        android:textColor="@color/colorButton"
                         android:textSize="@dimen/font_15" />
 
                     <TextView
@@ -457,6 +457,7 @@
                 android:layout_marginStart="@dimen/dimen_4_8"
                 android:layout_marginEnd="@dimen/dimen_4_5"
                 android:background="@drawable/corner_radius_18_bg_blue"
+                android:backgroundTint="@color/colorBlack"
                 android:gravity="center"
                 android:orientation="horizontal">
 

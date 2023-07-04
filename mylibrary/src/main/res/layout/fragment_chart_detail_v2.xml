@@ -168,7 +168,7 @@
                         android:layout_marginTop="@dimen/dimen_2"
                         android:layout_marginEnd="@dimen/dimen_18"
                         android:fontFamily="@font/sf_pro_text_medium"
-                        android:textColor="@color/item_title_color"
+                        android:textColor="@color/colorBlack"
                         android:textSize="@dimen/font_15" />
 
                     <TextView
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_2"
                         android:fontFamily="@font/sf_pro_text"
-                        android:textColor="@color/item_sub_title_color"
+                        android:textColor="@color/colorButton"
                         android:textSize="@dimen/font_13" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
