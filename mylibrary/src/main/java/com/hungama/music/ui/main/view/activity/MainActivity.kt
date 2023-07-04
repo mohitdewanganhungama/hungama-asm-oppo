@@ -1554,6 +1554,12 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                 //fragment.arguments = bundle
                 replaceFragment(R.id.fl_container, fragment, false)
                 setLastClickedBottomMenu(Constant.BOTTOM_NAV_MUSIC, position)
+//                val fragment = DiscoverTabFragment.newInstance(headItemsItem, bundle)
+//                replaceFragment(R.id.fl_container, fragment, false)
+//                setLastClickedBottomMenu(Constant.BOTTOM_NAV_PODCAST, position)
+
+
+//                fragmentList.add(fragment)
             }
             2 -> {
                 isDisplaySkeleton(false)

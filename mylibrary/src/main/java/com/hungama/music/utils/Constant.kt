@@ -19,6 +19,8 @@ object Constant {
     const val BOTTOM_NAV_LIBRARY = "Library"
     const val BOTTOM_NAV_PLAYER = "Player"
     const val BOTTOM_NAV_SEARCH = "Search"
+    const val BOTTOM_NAV_PODCAST = "Podcast"
+
 
     const val CACHE_DISCOVER_PAGE = "Discover_home"
     const val CACHE_MUSIC_PAGE = "Music_listen"

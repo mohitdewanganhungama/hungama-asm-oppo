@@ -5223,6 +5223,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                         "",
                         R.drawable.profile_icon
                     )
+                    ivUserPersonalImage!!.setBackgroundColor(Color.parseColor("#000000"))
                 }
                 if(SharedPrefHelper.getInstance().isUserLoggedIn()){
 
