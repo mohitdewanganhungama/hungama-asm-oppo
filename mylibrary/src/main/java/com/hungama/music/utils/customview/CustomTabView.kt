@@ -72,6 +72,7 @@ class CustomTabView @JvmOverloads constructor(
         llSearch?.setOnClickListener(this)
         llLibrary?.setOnClickListener(this)
         llTabPlayer?.setOnClickListener(this)
+        llPodcast?.setOnClickListener(this)
 
 
         tvTabDiscover?.setTextColor(ContextCompat.getColor(mContext, R.color.colorBlack))
@@ -110,6 +111,12 @@ class CustomTabView @JvmOverloads constructor(
                 onItemChange?.onTabItemClick(5)
             }
             setBottomTabSelection(5)
+        } else if (view === llPodcast && !ivTabPodcast.isSelected){
+            if (onItemChange != null) {
+                onItemChange?.onTabItemClick(6)
+            }
+            setBottomTabSelection(6)
+
         }
 
     }

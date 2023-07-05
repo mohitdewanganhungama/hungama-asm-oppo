@@ -1586,6 +1586,19 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
             5 -> {
                 openPlayerScreen(position, bundle)
             }
+            6 -> {
+
+                var fragment: Fragment? = null
+                setLog(
+                    "podcastTab",
+                    "on podcast tab click"
+                )
+                fragment = PodcastMainTabFragment.newInstance(this, bundle)
+                //fragment.arguments = bundle
+                replaceFragment(R.id.fl_container, fragment, false)
+                setLastClickedBottomMenu(Constant.BOTTOM_NAV_PODCAST, position)
+
+            }
             else -> {
                 isDisplaySkeleton(false)
                 val fragment = DiscoverMainTabFragment.newInstance(this, bundle)
