@@ -337,8 +337,6 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
         setLog(TAG, "showDeepLinkUrl onViewCreated")
 
         displayLanguageDialog()
-        val sheet = LanguageArtistSelectBottomSheetFragment(2)
-        sheet.show(supportFragmentManager, "OnboardingBottomSheetFragment")
         isMangeIntentCall = true
         setLog("BaseActivityLifecycleMethods", "MainActivity-onViewCreated-$isAppLanguageChanged")
         if (!isAppLanguageChanged){
