@@ -91,7 +91,7 @@
         <TextView
             android:id="@+id/tv_next"
             style="@style/commonMediumButtonStyle"
-            android:text="Hello"
+            android:text="Next"
             android:textSize="@dimen/font_20"
             android:fontFamily="@font/sf_pro_text_medium"/>
 

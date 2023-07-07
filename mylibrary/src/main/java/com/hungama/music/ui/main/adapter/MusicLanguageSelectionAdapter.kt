@@ -215,12 +215,12 @@ class MusicLanguageSelectionAdapter(
             if (list?.get(position)?.isSelected!!){
                 ivSelection.setImageDrawable(ContextCompat.getDrawable(ctx, R.drawable.ic_round_selection))
             }else{
-                ivSelection.setImageDrawable(ContextCompat.getDrawable(ctx, R.drawable.ic_round_un_selection))
+                ivSelection.setImageDrawable(ContextCompat.getDrawable(ctx, R.drawable.unselected_checkbox_grey_white))
             }
             llMain.setOnClickListener {
                 setLog("IsSelectedLang", "true")
                 if (list?.get(position)?.isSelected!!){
-                    ivSelection.setImageDrawable(ContextCompat.getDrawable(ctx, R.drawable.ic_round_un_selection))
+                    ivSelection.setImageDrawable(ContextCompat.getDrawable(ctx, R.drawable.unselected_checkbox_grey_white))
                     list?.get(position)?.isSelected = false
                     //lists?.get(position)?.isSelected = false
                 }else{

@@ -389,7 +389,7 @@ class LanguageArtistSelectBottomSheetFragment(var type:Int) : SuperBottomSheetFr
                         if (tvSelectAtLeast != null){
                             tvSelectAtLeast.visibility = View.VISIBLE
                         }else{
-                            tvSelectAtLeast.visibility = View.GONE
+                            tvSelectAtLeast.visibility = View.VISIBLE
                         }
                     }else{
                         tvMusicLanguage.visibility = View.INVISIBLE
@@ -502,7 +502,7 @@ class LanguageArtistSelectBottomSheetFragment(var type:Int) : SuperBottomSheetFr
                     //rvSelection?.addItemDecoration(GridSpacingItemDecoration(resources.getDimensionPixelSize(R.dimen.dimen_85), false, requireContext(), 2))
                 }
                 bottomButtonView?.show()
-                bottomView?.show()
+//                bottomView?.show()
             }else{
                 closeDialog()
             }

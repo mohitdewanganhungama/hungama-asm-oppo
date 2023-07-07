@@ -2,9 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/itemView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_marginEnd="@dimen/dimen_20"
         android:layout_marginTop="@dimen/dimen_20"
         android:layout_height="wrap_content">
@@ -13,19 +13,25 @@
             android:id="@+id/imageMain"
             android:layout_width="@dimen/dimen_160"
             android:layout_height="@dimen/dimen_95"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/bg_gradient_placeholder"
             android:scaleType="fitXY"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
 
         <ImageView
             android:id="@+id/imageRadio"
-            android:layout_width="@dimen/dimen_20"
-            android:layout_height="@dimen/dimen_20"
-            android:layout_marginStart="@dimen/dimen_10"
-            android:layout_marginTop="@dimen/dimen_8"
-            android:src="@drawable/ic_round_selection"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_marginBottom="@dimen/dimen_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/language_checkbox_red"
             android:visibility="visible" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

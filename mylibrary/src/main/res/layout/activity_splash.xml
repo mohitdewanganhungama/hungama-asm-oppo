@@ -9,8 +9,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/music_icon"
-            android:layout_width="@dimen/dimen_100"
-            android:layout_height="@dimen/dimen_100"
+            android:layout_width="@dimen/dimen_84"
+            android:layout_height="@dimen/dimen_84"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Music"
+            android:fontFamily="@font/oplus_sans_medium"
             app:layout_constraintTop_toBottomOf="@+id/music_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/dimen_10"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/font_30"/>
+            android:textSize="@dimen/font_24"/>
 
 
         <RelativeLayout

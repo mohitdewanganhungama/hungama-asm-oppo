@@ -116,7 +116,7 @@ internal class SuperBottomSheetDialog : AppCompatDialog {
 
     // endregion
 
-    // region Private methods
+    // region Private method
 
     @SuppressLint("ClickableViewAccessibility")
     private fun wrapInBottomSheet(layoutResId: Int, view: View?, params: ViewGroup.LayoutParams?): View {

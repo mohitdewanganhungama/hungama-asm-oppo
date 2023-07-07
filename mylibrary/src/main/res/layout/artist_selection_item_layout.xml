@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/llMain"
     android:layout_width="@dimen/dimen_103"
     android:layout_height="@dimen/dimen_116"
@@ -14,26 +15,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:realtimeBlurRadius="@dimen/dimen_150"
+            android:visibility="gone"
             app:realtimeOverlayColor="@color/blur_one_half_opacity_white_color" />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivArtistImage"
-            android:layout_width="@dimen/dimen_52"
-            android:layout_height="@dimen/dimen_52"
-            app:shapeAppearanceOverlay="@style/circleImageView"
-            android:adjustViewBounds="true"
-            android:src="@drawable/cast_album_art_placeholder_large"
-            android:scaleType="centerCrop"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ivArtistImageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dimen_16"
-            />
-        <ImageView
-            android:id="@+id/ivSelection"
-            android:layout_width="@dimen/dimen_16"
-            android:layout_height="@dimen/dimen_16"
-            android:src="@drawable/ic_round_un_selection"
-            android:layout_marginTop="@dimen/dimen_8"
-            android:layout_marginStart="@dimen/dimen_10"
-            android:contentDescription="@string/login_str_2"/>
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivArtistImage"
+                android:layout_width="@dimen/dimen_49"
+                android:layout_height="@dimen/dimen_49"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                android:adjustViewBounds="true"
+                android:src="@drawable/cast_album_art_placeholder_large"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/dimen_16"
+                />
+
+            <ImageView
+                android:id="@+id/ivSelection"
+                android:layout_width="@dimen/dimen_25"
+                android:layout_height="@dimen/dimen_25"
+                android:gravity="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/unselected_checkbox_grey_white"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:contentDescription="@string/login_str_2"
+                tools:src="@drawable/language_checkbox_red"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -41,12 +61,12 @@
             android:layout_marginTop="@dimen/dimen_7"
             android:layout_marginStart="@dimen/dimen_10"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/ivArtistImage"
+            android:layout_below="@id/ivArtistImageLayout"
             android:maxLines="2"
             android:textAlignment="center"
-            android:fontFamily="@font/sf_pro_text_medium"
+            android:fontFamily="@font/opplus_sans_regular"
             android:textSize="@dimen/font_13"
-            android:textColor="@color/item_title_color"
+            android:textColor="@color/colorBlack"
             android:ellipsize="end"/>
 
         <TextView
