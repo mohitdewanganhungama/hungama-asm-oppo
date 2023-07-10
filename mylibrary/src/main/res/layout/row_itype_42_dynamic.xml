@@ -6,67 +6,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/llMain"
-        android:gravity="center"
         android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
-        android:layout_marginEnd="@dimen/dimen_20"
         android:orientation="vertical">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:gravity="center"
             android:layout_height="wrap_content"
             >
-
-            <!--<com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivUserImage"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_160"
-                android:scaleType="centerInside"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />-->
+            <!--<androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimen_7">-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivUserImage"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:scaleType="centerCrop"
+                    android:layout_width="@dimen/dimen_98"
+                    android:layout_height="@dimen/dimen_98"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/rounded_card_background_drawble"                android:scaleType="centerInside"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <!--<com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivUserImage2"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_160"
-                android:scaleType="centerInside"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
--->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivUserImage2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:scaleType="centerInside"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dimen_16"
+                    android:layout_height="@dimen/dimen_16"
+                    android:layout_margin="@dimen/dimen_12"
+                    android:src="@drawable/transparent_play_button"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket" />
-
+                    android:elevation="@dimen/dimen_10"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--</androidx.cardview.widget.CardView>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,7 +58,6 @@
                 android:padding="@dimen/dimen_2"
                 android:visibility="gone"
                 android:id="@+id/tvTitlePlaceHolder"
-                android:text="@string/discover_str_1"
                 android:layout_margin="@dimen/dimen_10"/>
         </RelativeLayout>
 
@@ -90,7 +67,6 @@
             android:paddingStart="@dimen/dimen_2"
             android:layout_gravity="start"
             android:textAlignment="textStart"
-            android:text="@string/discover_str_32"
             app:lineHeight="@dimen/font_18"
             />
         <androidx.appcompat.widget.AppCompatTextView
@@ -98,7 +74,6 @@
             style="@style/StyleTextViewSubtitle"
             android:layout_gravity="start"
             android:paddingStart="@dimen/dimen_2"
-            android:text="@string/discover_str_33"
             app:lineHeight="@dimen/font_15"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

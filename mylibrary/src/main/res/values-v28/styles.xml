@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="StyleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/opplus_sans_regular</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lineHeight">@dimen/font_20</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="android:layout_marginTop">@dimen/dimen_12</item>
+    </style>
+</resources>

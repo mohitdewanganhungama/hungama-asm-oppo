@@ -200,11 +200,15 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                         when(it.status){
                             Status.SUCCESS->{
                                 val items: MutableList<HeadItemsItem> = it.data?.data?.head?.items as MutableList<HeadItemsItem>
+                                setLog("ITEMS LIST",items.toString())
+
                                 removeMainData("1", items)
                                 removeMainData("2", items)
                                 removeMainData("4", items)
-                                removeMainData("7", items)
+//                                removeMainData("7", items)
                                 removeMainData("9", items)
+                                removeMainData("3", items)
+
                                 setData(it?.data)
                                 HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
                             }

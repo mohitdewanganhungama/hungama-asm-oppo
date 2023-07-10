@@ -86,6 +86,7 @@
     <color name="progress_max_active">@color/colorWhite</color>
 
     <color name="home_bg_color">#ffffff</color>
+    <color name="home_bg_color_grey">#FAFAFA</color>
     <color name="home_bg_color_2">#383838</color>
     <color name="home_mini_player_bg">#707070</color>
     <color name="story_not_seen">#0F7EF2</color>

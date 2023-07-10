@@ -334,7 +334,7 @@ class BucketParentAdapter(
                         )
 
                     }
-                    2, 4, 7, 8, 9, 11, 12, 16, 17, 25, 41, 42, 43, 44,1000, 9999 -> {
+                    2, 4, 7, 8, 9, 10, 11, 12, 16, 17, 25, 41, 42, 43, 44,1000, 9999 -> {
 
                         setChildRecyclerView(holder, layoutManager, parent, position)
                         holder.rvChildItem.setPadding(

@@ -1894,7 +1894,7 @@ class BucketChildAdapter(
         var tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         var tvSubTitle: TextView = itemView.findViewById(R.id.tvSubTitle)
         val ivUserImage: ImageView = itemView.findViewById(R.id.ivUserImage)
-        val ivUserImage2: ImageView = itemView.findViewById(R.id.ivUserImage2)
+//        val ivUserImage2: ImageView = itemView.findViewById(R.id.ivUserImage2)
         val llMain: LinearLayoutCompat = itemView.findViewById(R.id.llMain)
         fun bind(position: Int) {
             if (!list.isNullOrEmpty() && list.size > position) {
@@ -1934,20 +1934,21 @@ class BucketChildAdapter(
                     ImageLoader.loadImage(
                         ctx, ivUserImage, turl, R.drawable.bg_gradient_placeholder
                     )
-                }
-                if (list.image != null) {
+                } else if(list.image != null){
                     val params: ViewGroup.LayoutParams = llMain.layoutParams
                     params.height = itemHeight.toInt()
                     params.width = itemWidth.toInt()
                     llMain.requestLayout()
-                    val params2: ViewGroup.LayoutParams = ivUserImage2.layoutParams
+                    val params2: ViewGroup.LayoutParams = ivUserImage.layoutParams
                     params2.height = imageHeightByAspectRatio.toInt()
                     params2.width = itemWidth.toInt()
-                    ivUserImage2.requestLayout()
+                    ivUserImage.requestLayout()
                     ImageLoader.loadImage(
-                        ctx, ivUserImage2, list.image, R.drawable.bg_gradient_placeholder
+                        ctx, ivUserImage, list.image, R.drawable.bg_gradient_placeholder
                     )
+
                 }
+
                 llMain.setOnClickListener {
                     if (onChildItemClick != null) {
                         onChildItemClick.onUserClick(position, llMain)

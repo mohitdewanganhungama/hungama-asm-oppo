@@ -369,6 +369,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
         fun setAnimation(inputStream: InputStream?){
             val animationView: LottieAnimationView = newPreviewModel.backgroundAnimation1
+            animationView.imageAssetsFolder = "flower"
             animationView.setAnimation(inputStream, "animate")
             animationView.playAnimation()
             newPreviewModel.backgroundAnimation1.visibility = View.VISIBLE
