@@ -515,6 +515,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                 } catch (e: Exception) {
 
                 }
+                setLog("POSITIONNNNN",position.toString())
                 applyScreen(position)
             }
         })

@@ -140,17 +140,16 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 shimmerLayoutTab?.startShimmer()
                 shimmerLayout?.startShimmer()
 
-                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)
+                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)
 
                 if(discoverHomeModel!=null){
                     setProgressBarVisible(false)
-                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)!!)
-                    setLog("DiscoverMainTabFragment", "setUpViewModel static call:${Constant.CACHE_DISCOVER_PAGE}")
+                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)!!)
+                    setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_PODCAST_PAGE}")
                 }
                 else{
-
                     setUpViewModel()
-                    setLog("DiscoverMainTabFragment", "setUpViewModel online call:${Constant.CACHE_DISCOVER_PAGE}")
+                    setLog("PodcastMainTabFragment", "setUpViewModel online call:${Constant.CACHE_PODCAST_PAGE}")
                 }
             }
         }
@@ -195,18 +194,18 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     this
                 ).get(HomeViewModel::class.java)
 
-                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_HOME)?.observe(this,
+                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_PODCAST)?.observe(this,
                     Observer {
                         when(it.status){
                             Status.SUCCESS->{
-                                val items: MutableList<HeadItemsItem> = it.data?.data?.head?.items as MutableList<HeadItemsItem>
-                                removeMainData("1", items)
-                                removeMainData("2", items)
-                                removeMainData("4", items)
-                                removeMainData("7", items)
-                                removeMainData("9", items)
-                                setData(it?.data)
-                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
+//                                val items: MutableList<HeadItemsItem> = it.data?.data?.head?.items as MutableList<HeadItemsItem>
+//                                removeMainData("1", items)
+//                                removeMainData("2", items)
+//                                removeMainData("4", items)
+//                                removeMainData("7", items)
+//                                removeMainData("9", items)
+                                it?.data?.let { it1 -> setData(it1) }
+                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_PODCAST_PAGE, it?.data!!)
                             }
 
                             Status.LOADING ->{

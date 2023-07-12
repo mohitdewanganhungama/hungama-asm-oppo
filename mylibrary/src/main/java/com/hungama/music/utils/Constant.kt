@@ -23,6 +23,7 @@ object Constant {
 
 
     const val CACHE_DISCOVER_PAGE = "Discover_home"
+    const val CACHE_PODCAST_PAGE = "Podcast_page"
     const val CACHE_MUSIC_PAGE = "Music_listen"
     const val CACHE_VIDEOS_PAGE = "Videos_watch"
 

@@ -85,6 +85,7 @@ object WSConstants {
         var USER_PREVIEW_DETAILS = SONG_DURATION_BASE_URL + "/getUserPreviewDetails"
         var UPDATE_USER_PREVIEW_DETAILS = SONG_DURATION_BASE_URL + "/updateUserPreviewDetails"
         var METHOD_HOME = "$PAGE/home"
+        var METHOD_PODCAST = "$PAGE/podcast"
         var METHOD_MUSIC = "$PAGE/listen"
         var METHOD_VIDEO = "$PAGE/watch"
         var METHOD_DETAIL_PAGE = "$PAGE/"

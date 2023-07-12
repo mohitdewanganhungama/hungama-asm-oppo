@@ -135,6 +135,8 @@ class CustomTabView @JvmOverloads constructor(
         tvTabSearch?.setTextColor(ContextCompat.getColor(mContext, R.color.colorGrey))
         tvTabLibrary?.setTextColor(ContextCompat.getColor(mContext, R.color.colorGrey))
         tvTabPlayer?.setTextColor(ContextCompat.getColor(mContext, R.color.colorGrey))
+        tvTabPodcast?.setTextColor(ContextCompat.getColor(mContext, R.color.colorGrey))
+
         removeAnimationProgress()
     }
 
@@ -163,7 +165,7 @@ class CustomTabView @JvmOverloads constructor(
         unselectAll()
         val typeface = ResourcesCompat.getFont(
             mContext,
-            R.font.sf_pro_text_medium
+            R.font.oplus_sans_medium
         )
         when (tabId) {
             0 -> {
@@ -219,6 +221,11 @@ class CustomTabView @JvmOverloads constructor(
                 ivTabPlayer?.isSelected = true
                 tvTabPlayer?.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite))
                 tvTabPlayer?.typeface = typeface
+            }
+            6 -> {
+                ivTabPodcast?.isSelected = true
+                tvTabPodcast?.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite))
+                tvTabPodcast?.typeface = typeface
             }
         }
     }

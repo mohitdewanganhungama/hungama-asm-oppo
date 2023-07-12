@@ -476,7 +476,15 @@ class DataManager {
                             WSConstants.HEADER_IDENTIFIER_KEY,
                             "watch",
                         )
+                    }else if(MainActivity.lastBottomItemPosClicked==6){
+                        params.put(
+                            WSConstants.HEADER_IDENTIFIER_KEY,
+                            "podcast",
+                        )
                     }
+                    setLog("lastBottomItemPosClickedTODO" +
+                            "",MainActivity.lastBottomItemPosClicked.toString())
+
                     setLog("TAG", "getVolleyRequest: finalURL :${finalURL} params:${params} Thread:${Thread.currentThread().name}")
                     return params
                 }
@@ -598,7 +606,14 @@ class DataManager {
                         WSConstants.HEADER_IDENTIFIER_KEY,
                         "watch",
                     )
+                }else if(MainActivity.lastBottomItemPosClicked==6) {
+                    params.put(
+                        WSConstants.HEADER_IDENTIFIER_KEY,
+                        "podcast",
+                    )
                 }
+                //TODO
+                setLog("lastBottomItemPosClicked",MainActivity.lastBottomItemPosClicked.toString())
 
                 setLog("TAG", "getVolleyRequest: finalURL :${finalURL} params:${params} Thread:${Thread.currentThread().name}")
                 return params

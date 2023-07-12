@@ -3973,25 +3973,23 @@ class BucketChildAdapter(
             itemPaddingEnd = 0.0
             itemPaddingTop = 0.0
             itemPaddingBottom = 0.0
-
             if (varient == ORIENTATION_VERTICAL) {
                 noOfColums = 2.0
             } else {
-                noOfColums = 2.30
+                noOfColums = 2.50
             }
             parentStartSpacing =
                 ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
             itemWidth =
                 (maxScreenWidth / noOfColums) - marginStart - marginEnd - itemPaddingStart - itemPaddingEnd - parentStartSpacing
             lineOne = ctx.resources.getDimensionPixelSize(R.dimen.font_15)
-                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_13).toDouble()
+                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_12).toDouble()
             lineTwo = ctx.resources.getDimensionPixelSize(R.dimen.font_13)
                 .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_3).toDouble()
             lineThree = 0.0
             textSize = lineOne + lineTwo + lineThree
             imageHeightByAspectRatio = itemWidth * 1 / 1
-            itemHeight =
-                imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
+            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom
             return IType42ViewHolder(
                 LayoutInflater.from(ctx).inflate(R.layout.row_itype_42_dynamic, parent, false)
             )

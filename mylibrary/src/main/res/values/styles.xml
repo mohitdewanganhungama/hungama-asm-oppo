@@ -124,9 +124,9 @@
         <item name="android:maxLines">1</item>
     </style>
     <style name="StyleBottomTextView" parent="StyleTextView">
-        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
         <item name="android:textColor">@color/bottom_navigation_color</item>
-        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="lineHeight">@dimen/_10ssp</item>
     </style>
