@@ -203,9 +203,9 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                                 setLog("ITEMS LIST",items.toString())
 
                                 removeMainData("1", items)
-                                removeMainData("2", items)
+//                                removeMainData("2", items)
                                 removeMainData("4", items)
-//                                removeMainData("7", items)
+                                removeMainData("5", items)
                                 removeMainData("9", items)
                                 removeMainData("3", items)
 
