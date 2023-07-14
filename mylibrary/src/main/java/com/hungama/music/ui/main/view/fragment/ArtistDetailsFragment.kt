@@ -51,6 +51,7 @@ import com.hungama.music.utils.Constant.EXTRA_MORE_PAGE_NAME
 import com.hungama.music.utils.Constant.defaultContentId
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.utils.CommonUtils.applyButtonTheme1
 import kotlinx.android.synthetic.main.common_details_page_back_menu_header.*
 import kotlinx.android.synthetic.main.common_details_page_back_menu_header_on_scroll_visible.*
 import kotlinx.android.synthetic.main.fragment_artist_details.*
@@ -125,8 +126,8 @@ class ArtistDetailsFragment : BaseFragment(), OnParentItemClickListener, TracksC
 
     override fun initializeComponent(view: View) {
         baseMainScope.launch {
-            applyButtonTheme(requireContext(), llPlayAllArtist)
-            applyButtonTheme(requireContext(), llPlayAllArtistActionBar)
+            applyButtonTheme1(requireContext(), llPlayAllArtist)
+            applyButtonTheme1(requireContext(), llPlayAllArtistActionBar)
             if (arguments != null){
                 //        artImageUrl =requireArguments().getString("image").toString()
                 if (requireArguments().containsKey(defaultContentId)){
@@ -1495,7 +1496,7 @@ class ArtistDetailsFragment : BaseFragment(), OnParentItemClickListener, TracksC
         isPlaying = status
         baseMainScope.launch {
             if (isAdded && context != null) {
-                val color = R.color.colorWhite
+                val color = R.color.colorWhite1
                 if (status) {
                     ivPlayAll?.setImageDrawable(
                         requireContext().faDrawable(

@@ -536,7 +536,7 @@
         <item name="android:layout_marginStart">@dimen/dimen_3</item>
         <item name="android:textSize">@dimen/font_16</item>
         <item name="android:textColor">@color/colorWhite1</item>
-        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:maxLines">1</item>
@@ -550,7 +550,7 @@
         <item name="android:layout_marginEnd">@dimen/dimen_3</item>
         <item name="fontTextSize">@dimen/font_16</item>
         <item name="fontTextColor">@color/colorWhite</item>
-        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:includeFontPadding">false</item>
     </style>

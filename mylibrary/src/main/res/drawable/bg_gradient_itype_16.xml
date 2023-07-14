@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" >
-    <gradient
-        android:startColor="#00000000"
-        android:endColor="#000000"
-        android:angle="270"
-        android:dither="true"
-        />
-</shape>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="98dp"
+    android:height="131dp"
+    android:viewportWidth="98"
+    android:viewportHeight="131"
+    >
+    <group>
+        <clip-path
+            android:pathData="M16 0H82C90.8366 0 98 7.16344 98 16V115C98 123.837 90.8366 131 82 131H16C7.16344 131 0 123.837 0 115V16C0 7.16344 7.16344 0 16 0Z"
+            />
+        <path
+            android:pathData="M0 0V131H98V0"
+            android:fillColor="#373a43"
+            />
+    </group>
+</vector>

@@ -20,6 +20,7 @@
 
     <color name="colorHint">#BDBEC0</color>
     <color name="colorButton">#717171</color>
+    <color name="moreArrowColor">#E5E5E5</color>
     <color name="colorPlaceholder">#373a43</color>
     <color name="colorPlaceholderText">#a6a7ab</color>
     <color name="colorPlaceholderText2">#f0f0f1</color>
