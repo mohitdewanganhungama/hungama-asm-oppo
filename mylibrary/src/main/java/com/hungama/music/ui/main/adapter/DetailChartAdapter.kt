@@ -125,7 +125,9 @@ class DetailChartAdapter(
 
                 val drawable = FontDrawable(ctx, R.string.icon_download)
                 drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
-                ivDownload.setImageDrawable(drawable)
+                ivDownload.setBackgroundResource(
+                        R.drawable.download_black
+                )
 
                 val downloadedAudio = AppDatabase.getInstance()?.downloadedAudio()?.findByContentId(list.id)
                 val downloadQueue = AppDatabase.getInstance()?.downloadQueue()?.findByContentId(list.id)

@@ -2,24 +2,25 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/common_three_dots_menu_root"
+    android:background="@color/colorWhite1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="false">
 
-    <include layout="@layout/common_blur_view" />
+<!--    <include layout="@layout/common_blur_view" />-->
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/three_dot_gradient_layer"
-        android:alpha="0.5"/>
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/three_dot_gradient_layer"-->
+<!--        android:alpha="0.5"/>-->
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:shimmer_repeat_mode="restart"
         app:shimmer_shape="radial"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,6 +41,7 @@
             android:layout_height="@dimen/dimen_4"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dimen_8"
+            android:alpha="0.5"
             android:background="#4c4c4c" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -58,6 +60,7 @@
             android:layout_below="@+id/rvThreeMenuDots"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:background="@drawable/corner_radius_18_bg_alpha_white">
             <com.hungama.music.utils.customview.fontview.FontAwesomeImageView

@@ -176,7 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_2"
-                        android:fontFamily="@font/sf_pro_text"
+                        android:fontFamily="@font/opplus_sans_regular"
                         android:textColor="@color/colorButton"
                         android:textSize="@dimen/font_13" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -226,7 +226,7 @@
                         android:layout_width="@dimen/dimen_130"
                         android:layout_height="@dimen/dimen_42"
                         android:layout_marginStart="@dimen/dimen_4_8"
-                        android:layout_marginEnd="@dimen/dimen_4_5"
+                        android:layout_marginEnd="@dimen/dimen_10"
                         android:background="@drawable/corner_radius_18_bg_white"
                         android:gravity="center"
                         android:orientation="horizontal">
@@ -258,12 +258,11 @@
                         android:layout_height="@dimen/dimen_44"
                         android:padding="@dimen/dimen_7_5"
                         app:srcCompat="@drawable/ic_download_chart" />-->
-                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivDownloadFullList"
-                        android:layout_width="@dimen/dimen_42"
-                        android:layout_height="@dimen/dimen_42"
-                        android:padding="@dimen/dimen_8_5"
-                        app:fontText="@string/icon_download"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="@dimen/dimen_24"
+                        android:padding="@dimen/dimen_14"
                         app:fontTextColor="@color/colorWhite" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!--        <TextView-->
@@ -498,7 +497,7 @@
                 android:layout_width="@dimen/dimen_130"
                 android:layout_height="@dimen/dimen_42"
                 android:layout_marginStart="@dimen/dimen_4_8"
-                android:layout_marginEnd="@dimen/dimen_4_5"
+                android:layout_marginEnd="@dimen/dimen_10"
                 android:background="@drawable/corner_radius_18_bg_white"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -517,12 +516,11 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivDownloadFullListActionBar"
-                android:layout_width="@dimen/dimen_44"
-                android:layout_height="@dimen/dimen_44"
-                android:padding="@dimen/dimen_8_5"
-                app:fontText="@string/icon_download"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:padding="@dimen/dimen_14"
                 app:fontTextColor="@color/colorWhite" />
 
             <!--<androidx.appcompat.widget.AppCompatImageView

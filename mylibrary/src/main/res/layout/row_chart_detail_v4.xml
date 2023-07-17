@@ -142,15 +142,14 @@
 
             <ImageView
                 android:id="@+id/ivDownload"
-                android:layout_width="@dimen/dimen_40"
-                android:layout_height="@dimen/dimen_44"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
                 android:paddingStart="@dimen/dimen_12"
                 android:paddingEnd="@dimen/dimen_0"
                 android:paddingTop="@dimen/dimen_12"
                 android:paddingBottom="@dimen/dimen_12"
                 android:layout_toStartOf="@id/ivMore"
                 android:layout_centerVertical="true"
-                app:srcCompat="@drawable/ic_chart_download"
                  />
         </RelativeLayout>
 

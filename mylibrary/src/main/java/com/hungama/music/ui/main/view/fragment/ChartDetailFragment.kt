@@ -1589,17 +1589,11 @@ class ChartDetailFragment : BaseFragment(), TracksContract.View,
                     ivDownloadFullListActionBar.setImageDrawable(drawable)*/
                     withContext(Dispatchers.Main) {
                         if (isAdded && context != null) {
-                            ivDownloadFullList?.setImageDrawable(
-                                requireContext().faDrawable(
-                                    R.string.icon_downloading,
-                                    R.color.colorWhite
-                                )
+                            ivDownloadFullList?.setBackgroundResource(
+                                R.drawable.download_black
                             )
-                            ivDownloadFullListActionBar?.setImageDrawable(
-                                requireContext().faDrawable(
-                                    R.string.icon_downloading,
-                                    R.color.colorWhite
-                                )
+                            ivDownloadFullListActionBar?.setBackgroundResource(
+                                R.drawable.download_black
                             )
                         }
                     }
@@ -2135,44 +2129,26 @@ class ChartDetailFragment : BaseFragment(), TracksContract.View,
     suspend fun setIsAllDownloadImage(isAllDownloadInQueue: Boolean, isAllDownloaded: Boolean) {
         baseMainScope.launch {
             if (isAllDownloadInQueue) {
-                ivDownloadFullList.setImageDrawable(
-                    requireContext().faDrawable(
-                        R.string.icon_downloading,
-                        R.color.colorWhite
-                    )
+                ivDownloadFullList.setBackgroundResource(
+                    R.drawable.download_black
                 )
-                ivDownloadFullListActionBar.setImageDrawable(
-                    requireContext().faDrawable(
-                        R.string.icon_downloading,
-                        R.color.colorWhite
-                    )
+                ivDownloadFullListActionBar.setBackgroundResource(
+                    R.drawable.download_black
                 )
             } else {
                 if (isAllDownloaded) {
-                    ivDownloadFullList.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_downloaded2,
-                            R.color.colorWhite
-                        )
+                    ivDownloadFullList.setBackgroundResource(
+                        R.drawable.download_black
                     )
-                    ivDownloadFullListActionBar.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_downloaded2,
-                            R.color.colorWhite
-                        )
+                    ivDownloadFullListActionBar.setBackgroundResource(
+                        R.drawable.download_black
                     )
                 } else {
-                    ivDownloadFullList.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_download,
-                            R.color.colorWhite
-                        )
+                    ivDownloadFullList.setBackgroundResource(
+                        R.drawable.download_black
                     )
-                    ivDownloadFullListActionBar.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_download,
-                            R.color.colorWhite
-                        )
+                    ivDownloadFullListActionBar.setBackgroundResource(
+                        R.drawable.download_black
                     )
                 }
             }

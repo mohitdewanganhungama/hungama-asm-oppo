@@ -38,11 +38,11 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dimen_10"
                 android:layout_toEndOf="@+id/iv_three_dot_menu"
-                android:fontFamily="@font/sf_pro_text"
+                android:fontFamily="@font/opplus_sans_regular"
                 android:includeFontPadding="false"
                 android:text="@string/menu_str_10"
-                android:textColor="@color/item_title_color"
-                android:textSize="@dimen/font_17"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_16"
                 android:textStyle="normal" />
         </RelativeLayout>
 
@@ -53,6 +53,7 @@
             android:layout_below="@+id/rlItemView"
             android:layout_marginTop="@dimen/dimen_14"
             android:alpha="0.3"
+            android:visibility="invisible"
             android:background="#707070" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
