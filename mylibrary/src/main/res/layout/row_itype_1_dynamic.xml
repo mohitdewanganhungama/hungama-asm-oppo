@@ -9,7 +9,6 @@
         android:id="@+id/llMain"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="#FFFFFF"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dimen_6"
-            android:fontFamily="@font/sf_pro_text"
+            android:fontFamily="@font/opplus_sans_regular"
             android:textStyle="normal"
             android:textSize="@dimen/font_11"
             android:ellipsize="end"

@@ -1716,7 +1716,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                     )
                     tvCoinCount?.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.colorWhite))
                 }
-                ivMenuCount?.visibility=View.VISIBLE
+                ivMenuCount?.visibility=View.GONE
             }
         } catch (e: Exception) {
 

@@ -21,7 +21,7 @@ public class CircularStatusView extends View {
 
     private static final float DEFAULT_PORTION_WIDTH = 10;
     private static final int DEFAULT_PORTION_SPACING = 5;
-    private static final int DEFAULT_COLOR = Color.parseColor("#D81B60");
+    private static final int DEFAULT_COLOR = Color.parseColor("#FFFFFF");
     private static final float DEFAULT_PORTIONS_COUNT = 1;
     private static final float START_DEGREE = -90;
 
@@ -121,7 +121,7 @@ public class CircularStatusView extends View {
         paint.setColor(portionColor);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
-        paint.setStrokeWidth(portionWidth);
+        paint.setStrokeWidth(0);
         paint.setStrokeCap(Paint.Cap.ROUND);
         return paint;
     }
@@ -174,7 +174,7 @@ public class CircularStatusView extends View {
 //            throw new IllegalArgumentException("Index is Bigger than the count!");
         } else {
             CommonUtils.INSTANCE.setLog("3llomi", "adding index to map " + index);
-            portionToUpdateMap.put(index, color);
+            portionToUpdateMap.put(index, DEFAULT_COLOR);
             invalidate();
         }
     }

@@ -13,9 +13,10 @@
             android:id="@+id/rootParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_gradient_itype_16">
+            android:background="@drawable/bg_gradient_itype_16"
+            >
 
-            <include layout="@layout/blur_layout_view" android:layout_height="wrap_content" android:layout_width="wrap_content" />
+<!--            <include layout="@layout/blur_layout_view" android:layout_height="wrap_content" android:layout_width="wrap_content" />-->
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llMain"
@@ -83,7 +84,7 @@
                     android:paddingStart="@dimen/dimen_10"
                     android:paddingEnd="@dimen/dimen_10"
                     android:text="@string/other_str_19"
-                    android:textColor="@color/item_title_color"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font_14" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -92,12 +93,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_3"
                     android:ellipsize="end"
-                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:fontFamily="@font/opplus_sans_regular"
                     android:lineSpacingExtra="@dimen/font_2"
                     android:maxLines="1"
                     android:text="@string/user_str_3"
                     android:textColor="@color/third_text_color"
-                    android:textSize="@dimen/font_9"
+                    android:textSize="@dimen/font_10"
                     app:textAllCaps="true" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -107,11 +108,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_3"
                     android:ellipsize="end"
-                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:fontFamily="@font/oplus_sans_bold"
                     android:lineSpacingExtra="@dimen/font_2"
                     android:maxLines="1"
                     android:text="27.5M"
-                    android:textColor="@color/four_text_color"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font_11" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </RelativeLayout>

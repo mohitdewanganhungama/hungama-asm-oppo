@@ -102,7 +102,6 @@
             android:layout_marginEnd="@dimen/dimen_19"
             android:contentDescription="@null"
             android:padding="@dimen/dimen_4"
-            android:backgroundTint="@color/colorBlack"
             android:src="@drawable/profile_icon"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.Circle" />
 
@@ -117,7 +116,7 @@
             android:contentDescription="@null"
             android:gravity="center"
             android:minWidth="@dimen/dimen_40"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivCoin"
