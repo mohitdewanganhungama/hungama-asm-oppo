@@ -278,11 +278,11 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
 
 
 
-/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
-            intent.data = Uri.parse("package:$packageName")
-            startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST)
-        }*/
+        /*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
+                    intent.data = Uri.parse("package:$packageName")
+                    startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST)
+                }*/
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -301,11 +301,11 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
         }
     }
 
-/*    override fun getLayoutResourceId(): Int {
+    /*    override fun getLayoutResourceId(): Int {
 
-        CommonUtils.setLog("getLayoutResourceId", "Main Activity getLayoutResourceId called")
-        return R.layout.activity_main
-    }*/
+            CommonUtils.setLog("getLayoutResourceId", "Main Activity getLayoutResourceId called")
+            return R.layout.activity_main
+        }*/
 
     override fun onResume() {
         super.onResume()
@@ -316,11 +316,11 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
 
     }
 
-/*    override fun onStart() {
-        super.onStart()
-        isDestroyedMainActivity = true
-        MoEInAppHelper.getInstance().getSelfHandledInApp(HungamaMusicApp.getInstance())
-    }*/
+    /*    override fun onStart() {
+            super.onStart()
+            isDestroyedMainActivity = true
+            MoEInAppHelper.getInstance().getSelfHandledInApp(HungamaMusicApp.getInstance())
+        }*/
 
     override fun onStop() {
         isDestroyedMainActivity = false
@@ -374,16 +374,16 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                 .setMinimumFetchIntervalInSeconds(3600)//3600
                 .build()
 
-/*            remoteConfig.setConfigSettingsAsync(configSettings)
+            /*            remoteConfig.setConfigSettingsAsync(configSettings)
 
-            remoteConfig.setDefaultsAsync(defaultValue)
-            setLog(TAG, "setUpRemoteConfig: 2")
-            val fetch = remoteConfig.fetch(0)
-            fetch.addOnSuccessListener {
-                setLog(TAG, "setUpRemoteConfig: 3")
-                remoteConfig.fetchAndActivate()
-                updateReview()
-            }*/
+                        remoteConfig.setDefaultsAsync(defaultValue)
+                        setLog(TAG, "setUpRemoteConfig: 2")
+                        val fetch = remoteConfig.fetch(0)
+                        fetch.addOnSuccessListener {
+                            setLog(TAG, "setUpRemoteConfig: 3")
+                            remoteConfig.fetchAndActivate()
+                            updateReview()
+                        }*/
         }
     }
 
@@ -404,10 +404,10 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
             reviewAlertDialog.setCancelable(false)
             val message = getString(R.string.login_str_56)
             reviewAlertDialog.setMessage(message)
-/*        reviewAlertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { dialog, which ->
-            dialog?.dismiss()
-            finish()
-        }*/
+            /*        reviewAlertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { dialog, which ->
+                        dialog?.dismiss()
+                        finish()
+                    }*/
 //        reviewAlertDialog.show()
         }
     }
@@ -515,7 +515,6 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                 } catch (e: Exception) {
 
                 }
-                setLog("POSITIONNNNN",position.toString())
                 applyScreen(position)
             }
         })
@@ -1172,8 +1171,8 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                             }
                         }
                         "music" -> {
-/*                            if (categoryName.contains("rewind"))
-                            BaseActivity.isDeeplink = true*/
+                            /*                            if (categoryName.contains("rewind"))
+                                                        BaseActivity.isDeeplink = true*/
                             applyScreen(1, bundle)
                         }
                         "rewind-2022" -> {
@@ -1669,27 +1668,27 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                         R.drawable.ic_no_user_img
                     )
                 }
-/*                if(SharedPrefHelper.getInstance().isUserLoggedIn()){
-                    var gmfSDKCoins = GamificationSDK.getPoints()
+                /*                if(SharedPrefHelper.getInstance().isUserLoggedIn()){
+                                    var gmfSDKCoins = GamificationSDK.getPoints()
 
-                    if (gmfSDKCoins < 0){
-                        gmfSDKCoins = 0
-                    }
-                    val userCoinDetailRespModel = SharedPrefHelper?.getInstance()?.getObjectUserCoin(
-                        PrefConstant.USER_COIN
-                    )
-                    userCoinDetailRespModel?.actions?.get(0)?.total = gmfSDKCoins
-                    if (userCoinDetailRespModel != null && userCoinDetailRespModel?.actions != null) {
-                        tvCoinCount?.text =
-                            CommonUtils?.ratingWithSuffix("" + userCoinDetailRespModel?.actions?.get(0)?.total!!)
-                    } else {
-                        tvCoinCount?.text = "" + gmfSDKCoins
-                    }
-                    setLog(TAG, "updateProfile tvCoinCount 2 login:${SharedPrefHelper.getInstance().isUserLoggedIn()} tvCoinCount:${tvCoinCount?.text}")
-                }else{
-                    tvCoinCount?.text = "0"
-                    setLog(TAG, "updateProfile tvCoinCount 3 login:${SharedPrefHelper.getInstance().isUserLoggedIn()} tvCoinCount:${tvCoinCount?.text}")
-                }*/
+                                    if (gmfSDKCoins < 0){
+                                        gmfSDKCoins = 0
+                                    }
+                                    val userCoinDetailRespModel = SharedPrefHelper?.getInstance()?.getObjectUserCoin(
+                                        PrefConstant.USER_COIN
+                                    )
+                                    userCoinDetailRespModel?.actions?.get(0)?.total = gmfSDKCoins
+                                    if (userCoinDetailRespModel != null && userCoinDetailRespModel?.actions != null) {
+                                        tvCoinCount?.text =
+                                            CommonUtils?.ratingWithSuffix("" + userCoinDetailRespModel?.actions?.get(0)?.total!!)
+                                    } else {
+                                        tvCoinCount?.text = "" + gmfSDKCoins
+                                    }
+                                    setLog(TAG, "updateProfile tvCoinCount 2 login:${SharedPrefHelper.getInstance().isUserLoggedIn()} tvCoinCount:${tvCoinCount?.text}")
+                                }else{
+                                    tvCoinCount?.text = "0"
+                                    setLog(TAG, "updateProfile tvCoinCount 3 login:${SharedPrefHelper.getInstance().isUserLoggedIn()} tvCoinCount:${tvCoinCount?.text}")
+                                }*/
 
                 if (CommonUtils.isUserHasGoldSubscription()) {
                     ivMenuCount?.background = ContextCompat.getDrawable(
@@ -1830,7 +1829,8 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                         //tabMenu?.updatePlayPauseIcon(Constant.noneAudio)
                     }
                 }
-            } catch (e: java.lang.Exception) {
+            }
+            catch (e: java.lang.Exception) {
 
             }
         } else if (event == Constant.AUDIO_MINI_PLAYER_CLICK_RESULT_CODE) {
@@ -1848,7 +1848,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                     "MainActivity-onLocalBroadcastEventCallBack-action-playerExpand"
                 )
 
-                applyScreen(5)
+//                applyScreen(5)
             }
         }else if (event == Constant.AUDIO_PLAYER_UI_RESULT_CODE) {
             setLog("MainActivity", "PlayerUIEvent-change")
@@ -1869,6 +1869,9 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                         "MainActivity-mMessageReceiver-" + intent.getIntExtra("EVENT", 0)
                     )
                     onLocalBroadcastEventCallBack(context, intent)
+                    if (intent.getIntExtra("EVENT", 0) == Constant.AUDIO_PLAYER_RESULT_CODE){
+                        setPlayPauseOnMiniPlayer(false)
+                    }
                 }
             }
         }
@@ -1928,7 +1931,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                                                     item.data.misc.explicit,
                                                     it1,
                                                     item?.data?.misc?.attributeCensorRating.toString(),
-                                                it.data.data.head.movierights.toString())
+                                                    it.data.data.head.movierights.toString())
                                             }
                                         track?.let { it1 -> songList.add(it1) }
                                     }
@@ -2138,7 +2141,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                     true
                 )
             ) {
-              onBackPressed()
+                onBackPressed()
             }
             CoroutineScope(Dispatchers.Main).launch {
                 delay(500)

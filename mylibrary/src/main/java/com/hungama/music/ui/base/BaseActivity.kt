@@ -339,8 +339,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         var drawerAduioAdUrl = ""
 
         fun setTouchData(){
-             isTouch = true
-             showAd = 0
+            isTouch = true
+            showAd = 0
 
             if(player11 != null) {
                 player11?.pause()
@@ -389,17 +389,17 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             CoroutineScope(Dispatchers.IO).launch{
                 //setLog("dbOperation", "BaseActivity-setTrackListData-1")
 //                withContext(Dispatchers.Default) {
-                    //setLog("dbOperation", "BaseActivity-setTrackListData-2")
-                    try {
-                        AppDatabase.getInstance()?.trackDao()?.deleteAll()
-                    }catch (e:Exception){
+                //setLog("dbOperation", "BaseActivity-setTrackListData-2")
+                try {
+                    AppDatabase.getInstance()?.trackDao()?.deleteAll()
+                }catch (e:Exception){
 
-                    }
-                    /*setLog(
-                        "dbOperation",
-                        "BaseActivity-setTrackListData-2.1-songDataList size:${songDataList?.size}"
-                    )*/
-                    //setLog("queue11", "deleteAll called songDataList size:${songDataList?.size}")
+                }
+                /*setLog(
+                    "dbOperation",
+                    "BaseActivity-setTrackListData-2.1-songDataList size:${songDataList?.size}"
+                )*/
+                //setLog("queue11", "deleteAll called songDataList size:${songDataList?.size}")
 //                }
                 //setLog("dbOperation", "BaseActivity-setTrackListData-3")
                 /*withContext(Dispatchers.Default) {
@@ -411,14 +411,14 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 setLog("dbOperation", "BaseActivity-setTrackListData-5")*/
                 withContext(Dispatchers.Default) {
                     try {
-                    //setLog("dbOperation", "BaseActivity-setTrackListData-6")
-                    songList.forEachIndexed { index, track ->
-                        if (track != null){
-                            track.uniquePosition = index + 1.toLong()
+                        //setLog("dbOperation", "BaseActivity-setTrackListData-6")
+                        songList.forEachIndexed { index, track ->
+                            if (track != null){
+                                track.uniquePosition = index + 1.toLong()
+                            }
                         }
-                    }
-                    //setLog("dbOperation", "BaseActivity-setTrackListData-6.1-songList size:${songList.size}")
-                    //setLog("queue11", "songDataList after size:${songList.size}")
+                        //setLog("dbOperation", "BaseActivity-setTrackListData-6.1-songList size:${songList.size}")
+                        //setLog("queue11", "songDataList after size:${songList.size}")
 
                         AppDatabase.getInstance()?.trackDao()?.insertOrReplaceAll(songList)
                     }catch (e:Exception){
@@ -535,7 +535,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             override fun onPlaybackStateChanged(playbackState: Int) {
                 if (playbackState == Player.STATE_READY){
                     pausePlayer()
-                   m_view_papger.setOnClickListener(null)
+                    m_view_papger.setOnClickListener(null)
                 }
                 else if(playbackState == Player.STATE_ENDED){
                     setTouchData()
@@ -543,10 +543,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     {
                         songPreviewModel.visibility = View.GONE
                     }
-                        if (HungamaMusicApp.getInstance().activityVisible && subscriptionDialogBottomsheetFragment.isVisible){
-                            subscriptionDialogBottomsheetFragment.dismiss()
-                        }
-                        playNextSong(true)
+                    if (HungamaMusicApp.getInstance().activityVisible && subscriptionDialogBottomsheetFragment.isVisible){
+                        subscriptionDialogBottomsheetFragment.dismiss()
+                    }
+                    playNextSong(true)
                 }
 
             }
@@ -649,13 +649,13 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         maxMinAllowed = it.data?.user_streamed_min?.toInt()!!
 
                         if (it.data?.is_first_stream_started.toString().contains("false")){
-/*                            if (songDurationData == null)
-                            {
-                                songDuration.user_streamed_min = it.data?.stream_max_minutes_allowed?.toInt()
-                            }
-                            else
-                            {
-*//*                               if (songDuration.hungama_user_id != SharedPrefHelper.getInstance().getUserId().toString()) {
+                            /*                            if (songDurationData == null)
+                                                        {
+                                                            songDuration.user_streamed_min = it.data?.stream_max_minutes_allowed?.toInt()
+                                                        }
+                                                        else
+                                                        {
+                            *//*                               if (songDuration.hungama_user_id != SharedPrefHelper.getInstance().getUserId().toString()) {
                                    songDuration.user_streamed_min = CommonUtils.getSongDurationConfig().global_limited_minutes_quota
                                }*//*
 
@@ -750,7 +750,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         MoEInAppHelper.getInstance().showInApp(this@BaseActivity)
 
         if (player11?.isPlaying == false && subscriptionDialogBottomsheetFragment.isVisible){
-                subscriptionDialogBottomsheetFragment.dismiss()
+            subscriptionDialogBottomsheetFragment.dismiss()
         }
     }
 
@@ -964,11 +964,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
 
 
-/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val serviceIntent = Intent(this, SongDurationService::class.java)
-            serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
-            startForegroundService(serviceIntent)
-        }*/
+        /*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    val serviceIntent = Intent(this, SongDurationService::class.java)
+                    serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
+                    startForegroundService(serviceIntent)
+                }*/
 
         if(!CommonUtils.isUserHasGoldSubscription()) {
             if (totalPlayedSongDuration >= 0) {
@@ -988,7 +988,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 val uploadWorkRequest = OneTimeWorkRequestBuilder<WorkManagerClass>()
                     .setConstraints(uploadDataConstraints)
                     .setInputData(inputData).build()
-                    WorkManager.getInstance(this@BaseActivity).enqueue(uploadWorkRequest)
+                WorkManager.getInstance(this@BaseActivity).enqueue(uploadWorkRequest)
                 val reqJsonObject = JSONObject()
                 reqJsonObject.put("uid", SharedPrefHelper.getInstance().getUserId())
                 reqJsonObject.put("user_streamed_min", sondDbData?.user_streamed_min.toString())
@@ -1202,13 +1202,13 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             }
 
         }else if(requestCode == 100){
-                val dataMap= java.util.HashMap<String, String>()
+            val dataMap= java.util.HashMap<String, String>()
 
-                if (resultCode == RESULT_OK)
-                    SharedPrefHelper.getInstance().save(PrefConstant.backgroundActivity, "Custom Allowed, Default Allowed")
-                else
-                    SharedPrefHelper.getInstance().save(PrefConstant.backgroundActivity, "Custom Allowed, Default Denied")
-            }
+            if (resultCode == RESULT_OK)
+                SharedPrefHelper.getInstance().save(PrefConstant.backgroundActivity, "Custom Allowed, Default Allowed")
+            else
+                SharedPrefHelper.getInstance().save(PrefConstant.backgroundActivity, "Custom Allowed, Default Denied")
+        }
     }
 
     open fun onViewCreated(savedInstanceState: Bundle?) {
@@ -1436,7 +1436,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     subtitleTextView?.text = track.subTitle
                     nowPlayingTitleTextView?.text = track.title
                     nowPlayingSubtitleTextView?.text = track.subTitle
-                    shortPlayerControlView?.setOnClickListener { toggleSheetBehavior() }
+//                    shortPlayerControlView?.setOnClickListener { toggleSheetBehavior() }
                     if (audioPlayer != null && audioPlayer?.repeatMode != Player.REPEAT_MODE_ALL){
                         callRecommendedApiOnEndOfSong()
                     }
@@ -1498,7 +1498,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                     if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex()) {
                         setLog("EventCheck", "Stream" + "1188")
-                       // callStreamEventAnalytics(songDataList?.get(nowPlayingCurrentIndex())!!, EventType.STREAM_START)
+                        // callStreamEventAnalytics(songDataList?.get(nowPlayingCurrentIndex())!!, EventType.STREAM_START)
                         if(HungamaMusicApp.getInstance().getIsFirstLaunchSong()){
                             setLog("IsFirstTimeLaunch","Launch${HungamaMusicApp.getInstance().getIsFirstLaunchSong()}")
                         }else{
@@ -1968,9 +1968,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 callUserStreamUpdate(-1, songDataList?.get(nowPlayingCurrentIndex()), nowPlayingCurrentIndex())
             }
-/*        if (boundToService) {
-            //pausePlayer()
-            *//*playerControlView.player = null
+            /*        if (boundToService) {
+                        //pausePlayer()
+                        *//*playerControlView.player = null
             shortPlayerControlView.player = null
             player_view.player = null
             audioPlayer?.removeListener(this)*//*
@@ -2182,9 +2182,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (status) {
             fl_container.visibility = View.GONE
             if (!TextUtils.isEmpty(artImageUrl)) {
-                    CoroutineScope(Dispatchers.IO).launch {
-                        changeStatusbarcolor(statusBarColor)
-                    }
+                CoroutineScope(Dispatchers.IO).launch {
+                    changeStatusbarcolor(statusBarColor)
+                }
             }
 
         } else {
@@ -2286,6 +2286,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     private fun setPlayerType(playType: Int) {
         CoroutineScope(Dispatchers.Main).launch {
+            btn_play_mini.setOnClickListener(this@BaseActivity)
+            btn_pause_mini.setOnClickListener(this@BaseActivity)
             if (getAudioPlayerPlayingStatus() == playing) {
                 playAudio()
             } else {
@@ -2293,10 +2295,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             }
 
             if (getAudioPlayerPlayingStatus() == playing){
-                btn_play_mini?.visibility = View.GONE
+//                btn_play_mini?.visibility = View.GONE
                 btn_pause_mini?.visibility = View.VISIBLE
             }else{
-                btn_play_mini?.visibility = View.VISIBLE
+//                btn_play_mini?.visibility = View.VISIBLE
                 btn_pause_mini?.visibility = View.GONE
             }
 
@@ -2398,10 +2400,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 player_view?.visibility = View.VISIBLE
                 llMiniClose?.visibility = View.VISIBLE
                 if (getAudioPlayerPlayingStatus() == playing){
-                    btn_play_mini?.visibility = View.GONE
-                    btn_pause_mini?.visibility = View.VISIBLE
+//                    btn_play_mini?.visibility = View.GONE
+//                    btn_pause_mini?.visibility = View.VISIBLE
                 }else{
-                    btn_play_mini?.visibility = View.VISIBLE
+//                    btn_play_mini?.visibility = View.VISIBLE
                     btn_pause_mini?.visibility = View.GONE
                 }
                 btn_play_mini?.setImageDrawable(
@@ -2413,11 +2415,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 btn_pause_mini?.setImageDrawable(
                     getContext().faDrawable(
-                            R.string.icon_pause_2,
-                            R.color.colorBlack,
+                        R.string.icon_pause_2,
+                        R.color.colorBlack,
                         resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
-                        )
                     )
+                )
                 img_close?.setImageDrawable(
                     getContext().faDrawable(
                         R.string.icon_delete,
@@ -2425,8 +2427,6 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
                     )
                 )
-                btn_play_mini.setOnClickListener(this@BaseActivity)
-                btn_pause_mini.setOnClickListener(this@BaseActivity)
 
 
                 /*-------------------------------------------------------*/
@@ -2812,7 +2812,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
             val batteryOptimization = SharedPrefHelper.getInstance()[PrefConstant.backgroundActivity, ""]
             if (batteryOptimization.isNotEmpty())
-            userDataMap[EventConstant.BACKGROUND_ACTIVITY] = batteryOptimization
+                userDataMap[EventConstant.BACKGROUND_ACTIVITY] = batteryOptimization
             else
                 userDataMap[EventConstant.BACKGROUND_ACTIVITY] = "-"
             setLog("BatteryOptimization", batteryOptimization)
@@ -3053,6 +3053,97 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     }
 
+    fun setPlayPauseOnMiniPlayer(isPausePlay:Boolean){
+        when {
+            getAudioPlayerPlayingStatus() == Constant.playing -> {
+                if (isPausePlay) {
+                    pausePlayer()
+                }
+
+                if (currentPlayerType == Constant.CONTENT_RADIO) {
+                    btn_play_mini?.setImageDrawable(
+                        faDrawable(
+                            R.string.icon_stop,
+                            R.color.colorWhite
+                        )
+                    )
+                } else {
+                    btn_play_mini?.setImageDrawable(
+                        getContext().faDrawable(
+                            R.string.icon_pause_2,
+                            R.color.colorBlack,
+                            resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
+                        )
+                    )
+                }
+
+                /*CoroutineScope(Dispatchers.IO).async {
+                    val hashMap = HashMap<String, String>()
+                    //setLog("AudioContentType", "SwipablePlayerViewFragment-contentType- ${track?.playerType}")
+                    if (!TextUtils.isEmpty(track?.playerType)) {
+                        var type = Utils.getContentTypeName(track?.playerType.toString())
+                        if (type.equals("Audio")) {
+                            type = "Music"
+                        }
+                        hashMap.put(EventConstant.CONTENTTYPESTREAMING_EPROPERTY, type)
+                    }else{
+                        hashMap.put(EventConstant.CONTENTTYPESTREAMING_EPROPERTY, "")
+                    }
+                    hashMap.put(
+                        EventConstant.PLAYERTYPE_EPROPERTY,
+                        EventConstant.PLAYERTYPE_EPROPERTY_VALUE_FULL_PLAYER
+                    )
+                    setLog("AUDIO", "PREVIOUS${hashMap}")
+                    EventManager.getInstance().sendEvent(AudioPlayerPauseEvent(hashMap))
+                }*/
+
+
+            }
+            getAudioPlayerPlayingStatus() == Constant.pause -> {
+                if (isPausePlay) {
+                    playPlayer()
+                }
+                btn_play_mini?.setImageDrawable(
+                    getContext().faDrawable(
+                        R.string.icon_play,
+                        R.color.colorBlack,
+                        resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
+                    )
+                )
+
+                /* CoroutineScope(Dispatchers.IO).async {
+                     val hashMap = HashMap<String, String>()
+                     if (!TextUtils.isEmpty(track?.playerType)) {
+                         var type = Utils.getContentTypeName(track?.playerType.toString())
+                         if (type.equals("Audio")) {
+                             type = "Music"
+                         }
+                         hashMap.put(EventConstant.CONTENTTYPESTREAMING_EPROPERTY, type)
+                     } else {
+                         hashMap.put(EventConstant.CONTENTTYPESTREAMING_EPROPERTY, "")
+                     }
+                     hashMap.put(
+                         EventConstant.PLAYERTYPE_EPROPERTY,
+                         EventConstant.PLAYERTYPE_EPROPERTY_VALUE_FULL_PLAYER
+                     )
+                     setLog("AUDIO", "PREVIOUS${hashMap}")
+                     EventManager.getInstance().sendEvent(AudioPlayerPlayEvent(hashMap))
+                 }*/
+
+
+            }
+            else -> {
+                btn_play_mini?.setImageDrawable(
+                    getContext().faDrawable(
+                        R.string.icon_play,
+                        R.color.colorBlack,
+                        resources.getDimensionPixelSize(R.dimen.font_18).toFloat()
+                    )
+                )
+            }
+        }
+    }
+
     override fun onClick(v: View) {
         Utils.hideSoftKeyBoard(v.context, v)
         setLog("BaseActivityLifecycleMethods", "onClick-isAudioAdPlaying-$isAudioAdPlaying")
@@ -3061,7 +3152,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 playNextSong(true)
             }
             R.id.btn_play_mini -> {
-               playPlayer()
+                Constant.isVideoStoryPlaying = false
+                setPlayPauseOnMiniPlayer(true)
             }
             R.id.btn_pause_mini -> {
                 pausePlayer()
@@ -3405,7 +3497,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             EventManager.getInstance().sendEvent(VideoPlayerPlayEvent(hashMap))
                         }
 //                        btn_play_mini?.visibility = View.GONE
-                        btn_pause_mini?.visibility = View.VISIBLE
+//                        btn_pause_mini?.visibility = View.VISIBLE
                     }
                 }
             }
@@ -4795,7 +4887,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     EventConstant.CONTENTTYPE_EPROPERTY,
                     "" + Utils.getContentTypeName("" + downloadQueue.type)
                 )
-               setLog("downloadQueue12","type${downloadQueue.type}")
+                setLog("downloadQueue12","type${downloadQueue.type}")
 
 
                 if (!TextUtils.isEmpty(eventModel.audioQuality)) {
@@ -4807,15 +4899,15 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 hashMap.put(EventConstant.EXTRA_EPROPERTY, "")
                 hashMap.put(
                     EventConstant.GENRE_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.genre)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.genre)
                 )
                 hashMap.put(
                     EventConstant.LANGUAGE_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.lang)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.lang)
                 )
                 hashMap.put(
                     EventConstant.LYRICIST_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.lyricist)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.lyricist)
                 )
                 hashMap.put(
                     EventConstant.MOOD_EPROPERTY,
@@ -4823,7 +4915,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 hashMap.put(
                     EventConstant.MUSICDIRECTOR_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.musicdirectorf)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.musicdirectorf)
                 )
 
                 hashMap.put(
@@ -4859,7 +4951,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 hashMap.put(
                     EventConstant.SINGER_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.singerf)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.singerf)
                 )
                 hashMap.put(
                     EventConstant.SONG_NAME_EPROPERTY,
@@ -4868,7 +4960,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                 hashMap.put(
                     EventConstant.SUB_GENRE_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.subgenre_name)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.subgenre_name)
                 )
 
                 try {
@@ -4906,7 +4998,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                 hashMap.put(
                     EventConstant.TEMPO_EPROPERTY,
-                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.tempo)
+                    Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.tempo)
                 )
                 hashMap.put(
                     EventConstant.YEAROFRELEASE_EPROPERTY,
@@ -6384,8 +6476,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             setLog("BroadcastReceiver", "mMessageReceiver-$intent")
             if (intent != null){
                 if (onLocalBroadcastEventCallBack != null && intent.hasExtra("EVENT")){
-                    setLog("BroadcastReceiver", "mMessageReceiver-"+intent.getIntExtra("EVENT", 0))
+                    setLog("BroadcastReceiver", "Base "+intent.getIntExtra("EVENT", 0))
                     onLocalBroadcastEventCallBack?.onLocalBroadcastEventCallBack(context, intent)
+                    /*                    if (intent.getIntExtra("EVENT", 0) == Constant.AUDIO_PLAYER_RESULT_CODE){
+                                            setPlayPauseOnMiniPlayer()
+                                        }*/
                 }
             }
         }
@@ -6770,7 +6865,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                     )
                                 }
 
-                        }
+                            }
 
 
                             setLog(
@@ -7157,7 +7252,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             hashMap.put(EventConstant.SOURCE_DETAILS_EPROPERTY, mSongTrack?.heading!!)
 
             EventManager.getInstance().sendEvent(StreamFailedEvent(hashMap))
-             streamName = "streamFailed"
+            streamName = "streamFailed"
         }
 
     }
@@ -7453,9 +7548,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (!isAdsLoadRequestInProgress && !isAudioAdPlaying && totalSongsPlayedAfterLastAudioAd > playAudioAdsAfterCounts) {
             isAdsLoadRequestInProgress = true
             setLog("PlayerAds:-", "googleIma=> Request for ads.")
-/*            if (companionAdSlotFrame != null) {
-                audioPlayerService?.initializeAds(this, companionAdSlotFrame)
-            }*/
+            /*            if (companionAdSlotFrame != null) {
+                            audioPlayerService?.initializeAds(this, companionAdSlotFrame)
+                        }*/
             if (audioPlayerService?.imaService != null) {
                 //audioAdsLoaded(googleImaAudioAds)
                 setLog("BannerAddShowing", "True")
@@ -9269,7 +9364,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         if (!supportFragmentManager.isDestroyed)
                             subscriptionDialogBottomsheetFragment.show(supportFragmentManager, "subscriptionDialogBottomsheetFragment")
                     }
-                    }
+                }
 
             }
             else if(showAd in 1.. global_limited_stream_preview_quota && isTouch) {
@@ -9305,16 +9400,16 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 }
             }
         }
-            if (BaseActivity.tvSleepTimer != null && localDuration>=0) {
-                BaseActivity.tvSleepTimer.text = if (localDuration<10)"0$localDuration" else localDuration.toString()
-            }
+        if (BaseActivity.tvSleepTimer != null && localDuration>=0) {
+            BaseActivity.tvSleepTimer.text = if (localDuration<10)"0$localDuration" else localDuration.toString()
+        }
 
-/*
-            var progress = if(maxMinAllowed>0)((localDuration.toDouble().div(maxMinAllowed) * 100)) else 0
-            progress = "100".toDouble().minus(progress.toDouble())
+        /*
+                    var progress = if(maxMinAllowed>0)((localDuration.toDouble().div(maxMinAllowed) * 100)) else 0
+                    progress = "100".toDouble().minus(progress.toDouble())
 
-        var progress = if(CommonUtils.getSongDurationConfig().global_limited_minutes_quota>0)((localDuration.toDouble().div(CommonUtils.getSongDurationConfig().global_limited_minutes_quota) * 100)) else 0
-*/
+                var progress = if(CommonUtils.getSongDurationConfig().global_limited_minutes_quota>0)((localDuration.toDouble().div(CommonUtils.getSongDurationConfig().global_limited_minutes_quota) * 100)) else 0
+        */
 
         var progress = if(songDuration.stream_max_min_allowed!! >0)((maxMinAllowed.toDouble().div(
             songDuration.stream_max_min_allowed!!) * 100)) else 0

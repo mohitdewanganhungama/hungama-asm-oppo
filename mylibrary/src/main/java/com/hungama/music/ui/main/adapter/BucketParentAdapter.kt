@@ -70,8 +70,7 @@ class BucketParentAdapter(
         viewType: Int
     ): ViewHolder {
         isKeywordWatchCall = 999
-        val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.row_bucket, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.row_bucket, parent, false)
 
         (context as MainActivity).addPlayItemChangeListener(this)
         return ViewHolder(v)
@@ -150,11 +149,7 @@ class BucketParentAdapter(
 
         if (position < parents.size) {
             val parent = parents[position]
-            setLog(
-                TAG,
-                "onBindViewHolder: keywords : ${parent?.keywords} parent?.heading : ${parent?.heading} parent?.type : ${parent?.type} parent?.itype : ${parent?.itype} "
-            )
-            setLog(TAG, "onBindViewHolder: parent?.items : ${parent?.items} ")
+            setLog("alhgdawuhgwa", parent?.heading.toString() + " " + parent?.itype.toString())
             commonSpaceBetweenBuckets =
                 context.resources.getDimensionPixelSize(R.dimen.common_two_bucket_space_listing_page)
             setLog("continue-watching", "continue-watching isKeywordWatchCall $isKeywordWatchCall")
@@ -276,7 +271,8 @@ class BucketParentAdapter(
                         GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
                     setLog("onBindViewHolder", "heading:${parent.heading} ORIENTATION_VERTICAL")
 
-                } else {
+                }
+                else {
                     if (parent.numrow != null && parent.numrow!! > 0) {
                         layoutManager = GridLayoutManager(
                             context,
@@ -334,7 +330,25 @@ class BucketParentAdapter(
                         )
 
                     }
-                    2, 4, 5, 7, 8, 9, 10, 11, 12, 16, 17, 25, 41, 42, 43, 44,1000, 9999 -> {
+                    2, 4, 7, 9, 10, 11, 17, 25, 42, 43, 44,1000, 9999 -> {
+
+                        setChildRecyclerView(holder, layoutManager, parent, position)
+                        holder.rvChildItem.setPadding(
+                            context.resources.getDimensionPixelSize(R.dimen.dimen_14),
+                            0,
+                            0,
+                            0
+                        )
+                        Utils.setMargins(
+                            holder.llHeaderTitle,
+                            context.resources.getDimensionPixelSize(R.dimen.dimen_12)
+                        )
+                        Utils.setMarginsTop(
+                            holder.llHeaderTitle,
+                            commonSpaceBetweenBuckets
+                        )
+                    }
+                    8 -> {
 
                         setChildRecyclerView(holder, layoutManager, parent, position)
                         holder.rvChildItem.setPadding(
@@ -352,7 +366,7 @@ class BucketParentAdapter(
                             commonSpaceBetweenBuckets
                         )
                     }
-                    18 -> {
+                    5, 12, 16, 18, 41 -> {
 
                         setChildRecyclerView(holder, layoutManager, parent, position)
                         holder.rvChildItem.setPadding(
