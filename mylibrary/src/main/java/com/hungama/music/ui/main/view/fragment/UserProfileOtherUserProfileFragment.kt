@@ -224,7 +224,7 @@ class UserProfileOtherUserProfileFragment(val otherUserId: String) : BaseFragmen
     private fun setUpViewModel(otherUserId: String) {
         if (!TextUtils.isEmpty(SharedPrefHelper.getInstance().get(PrefConstant.USER_IMAGE,""))){
             ImageLoader.loadImage(requireContext(),ivUser, SharedPrefHelper.getInstance().get(
-                PrefConstant.USER_IMAGE,""),R.drawable.ic_no_user_img)
+                PrefConstant.USER_IMAGE,""),R.drawable.profile_icon)
         }
         userViewModel = ViewModelProvider(
             this

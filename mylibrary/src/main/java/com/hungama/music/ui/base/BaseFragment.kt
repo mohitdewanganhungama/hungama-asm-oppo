@@ -5266,7 +5266,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                     )
                     tvCoinCount?.setTextColor(ContextCompat.getColor(requireActivity()!!, R.color.colorWhite))
                 }
-                ivMenuCount?.visibility=View.VISIBLE
+                ivMenuCount?.visibility=View.GONE
             }
         } catch (e: Exception) {
 e.printStackTrace()

@@ -1658,14 +1658,14 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                         this@MainActivity, ivUserPersonalImage!!,
                         SharedPrefHelper.getInstance().get(
                             PrefConstant.USER_IMAGE, ""
-                        ), R.drawable.ic_no_user_img
+                        ), R.drawable.profile_icon
                     )
                 } else {
                     ImageLoader.loadImage(
                         this@MainActivity,
                         ivUserPersonalImage!!,
                         "",
-                        R.drawable.ic_no_user_img
+                        R.drawable.profile_icon
                     )
                 }
                 /*                if(SharedPrefHelper.getInstance().isUserLoggedIn()){

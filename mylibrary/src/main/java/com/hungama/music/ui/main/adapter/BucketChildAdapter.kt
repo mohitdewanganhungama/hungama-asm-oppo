@@ -200,10 +200,8 @@ class BucketChildAdapter(
 
                 if (!TextUtils.isEmpty(list.image)) {
                     val params3: ViewGroup.LayoutParams = ivUserImage.layoutParams
-                    params3.height =
-                        imageHeightByAspectRatio.toInt() - ctx.resources.getDimensionPixelSize(R.dimen.dimen_8)
-                    params3.width =
-                        itemWidth.toInt() - ctx.resources.getDimensionPixelSize(R.dimen.dimen_8)
+                    params3.height = imageHeightByAspectRatio.toInt() - ctx.resources.getDimensionPixelSize(R.dimen.dimen_8)
+                    params3.width = itemWidth.toInt() - ctx.resources.getDimensionPixelSize(R.dimen.dimen_8)
                     ivUserImage.requestLayout()
                     ImageLoader.loadImage(
                         ctx, ivUserImage, list.image, R.color.colorPlaceholder
@@ -1321,21 +1319,15 @@ class BucketChildAdapter(
                     params.width = itemWidth.toInt()
                     llMain.requestLayout()
                     val params3: ViewGroup.LayoutParams = rootLayout.layoutParams
-                    params3.height =
-                        (itemHeight - ctx.resources.getDimensionPixelSize(R.dimen.dimen_10)).toInt()
+                    params3.height = (itemHeight - ctx.resources.getDimensionPixelSize(R.dimen.dimen_10)).toInt()
                     params3.width = itemWidth.toInt()
                     rootLayout.requestLayout()
                     val params2: ViewGroup.LayoutParams = ivUserImage.layoutParams
-                    params2.height =
-                        (imageHeightByAspectRatio - ctx.resources.getDimensionPixelSize(R.dimen.dimen_11) - ctx.resources.getDimensionPixelSize(
-                            R.dimen.dimen_67
-                        )).toInt()
-                    params2.width =
-                        (itemWidth - ctx.resources.getDimensionPixelSize(R.dimen.dimen_80)).toInt()
+                    setLog("fshgsalgba", " $imageHeightByAspectRatio $itemWidth")
+                    params2.height = (imageHeightByAspectRatio - ctx.resources.getDimensionPixelSize(R.dimen.dimen_11) - ctx.resources.getDimensionPixelSize(R.dimen.dimen_37)).toInt()
+                    params2.width = (itemWidth - ctx.resources.getDimensionPixelSize(R.dimen.dimen_45)).toInt()
                     ivUserImage.requestLayout()
-                    ImageLoader.loadImage(
-                        ctx, ivUserImage, list.image, R.color.colorPlaceholder
-                    )
+                    ImageLoader.loadImage(ctx, ivUserImage, list.image, R.color.colorPlaceholder)
 
                 }
 
@@ -1554,9 +1546,7 @@ class BucketChildAdapter(
 
                 if (list.misc != null && list.misc.movierights != null && list.misc.movierights?.size!! > 0) {
                     setLog("TAG", "bind: movie right:${list.misc.movierights}")
-                    Utils.setMovieRightTextForBucketWithPlay(
-                        txtRent, ivRent, list.misc.movierights!!, ctx, list.id.toString()
-                    )
+                    Utils.setMovieRightTextForBucketWithPlay(txtRent, ivRent, list.misc.movierights!!, ctx, list.id.toString())
                 } else {
                     txtRent.visibility = View.GONE
                 }
@@ -1894,7 +1884,7 @@ class BucketChildAdapter(
         var tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         var tvSubTitle: TextView = itemView.findViewById(R.id.tvSubTitle)
         val ivUserImage: ImageView = itemView.findViewById(R.id.ivUserImage)
-//        val ivUserImage2: ImageView = itemView.findViewById(R.id.ivUserImage2)
+        //        val ivUserImage2: ImageView = itemView.findViewById(R.id.ivUserImage2)
         val llMain: LinearLayoutCompat = itemView.findViewById(R.id.llMain)
         fun bind(position: Int) {
             if (!list.isNullOrEmpty() && list.size > position) {
@@ -2328,7 +2318,7 @@ class BucketChildAdapter(
 
                     btnYes.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
 
                             mInAppSelfHandledModel?.userAnswer = btnYes.text.toString()
@@ -2348,7 +2338,7 @@ class BucketChildAdapter(
                     btnNo.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
 
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
                             mInAppSelfHandledModel?.userAnswer = btnNo.text.toString()
                             MoEInAppHelper.getInstance()
@@ -2366,7 +2356,7 @@ class BucketChildAdapter(
                     ivClose.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
 
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
                             MoEInAppHelper.getInstance()
                                 .selfHandledClicked(ctx, mInAppSelfHandledModel?.inAppCampaign!!)
@@ -2484,7 +2474,7 @@ class BucketChildAdapter(
 
                     tv2.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
 
                             mInAppSelfHandledModel?.userAnswer = tv2.text.toString()
@@ -2510,7 +2500,7 @@ class BucketChildAdapter(
 
                     tv3.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
 
                             mInAppSelfHandledModel?.userAnswer = tv3.text.toString()
@@ -2536,7 +2526,7 @@ class BucketChildAdapter(
 
                     tv4.setOnClickListener {
                         if (InAppCallback.mInAppCampaignList.values.size > 0) {
-                //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                             // call whenever in-app is clicked
 
                             mInAppSelfHandledModel?.userAnswer = tv4.text.toString()
@@ -2647,7 +2637,7 @@ class BucketChildAdapter(
                 btnSumit.setOnClickListener {
                     if (InAppCallback.mInAppCampaignList.values.size > 0) {
 
-            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                        //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                         // call whenever in-app is clicked
                         mInAppSelfHandledModel?.userAnswer =
                             emojiRatingBar.getCurrentRateStatus().name
@@ -2664,7 +2654,7 @@ class BucketChildAdapter(
                 ivClose.setOnClickListener {
                     if (InAppCallback.mInAppCampaignList.values.size > 0) {
 
-            //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
+                        //                    SharedPrefHelper.getInstance().save(InAppCallback.mInAppCampaign?.campaignId!!,InAppCallback.mInAppCampaign?.campaignId!!)
                         // call whenever in-app is clicked
                         MoEInAppHelper.getInstance()
                             .selfHandledClicked(ctx, mInAppSelfHandledModel?.inAppCampaign!!)
@@ -2798,10 +2788,6 @@ class BucketChildAdapter(
                                 .selfHandledClicked(ctx, mInAppSelfHandledModel?.inAppCampaign!!)
 
                             if (onChildItemClick != null) {
-                                setLog(
-                                    "IType104ViewHolder",
-                                    "IType104ViewHolder deeplink call start:${com.hungama.music.utils.DateUtils.getCurrentDateTimeNewFormat()}"
-                                )
                                 if (!mInAppSelfHandledModel?.deeplink.isNullOrEmpty()) {
                                     val intent = CommonUtils.getDeeplinkIntentData(
                                         Uri.parse(
@@ -3204,8 +3190,8 @@ class BucketChildAdapter(
                                                 setLog("original", "Original-47-Up one")
                                             }
                                             rvOriginalEpisodes.parent.requestDisallowInterceptTouchEvent(
-                                                    false
-                                                )
+                                                false
+                                            )
                                         }
                                     }
                                 } catch (e: Exception) {
@@ -3324,23 +3310,25 @@ class BucketChildAdapter(
             itemPaddingEnd = 0.0
             itemPaddingTop = 0.0
             itemPaddingBottom = 0.0
+
             if (varient == ORIENTATION_VERTICAL) {
                 noOfColums = 2.0
             } else {
-                noOfColums = 2.50
+                noOfColums = 2.65
             }
             parentStartSpacing =
                 ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
             itemWidth =
                 (maxScreenWidth / noOfColums) - marginStart - marginEnd - itemPaddingStart - itemPaddingEnd - parentStartSpacing
             lineOne = ctx.resources.getDimensionPixelSize(R.dimen.font_15)
-                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_12).toDouble()
+                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_13).toDouble()
             lineTwo = ctx.resources.getDimensionPixelSize(R.dimen.font_13)
                 .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_3).toDouble()
             lineThree = 0.0
             textSize = lineOne + lineTwo + lineThree
             imageHeightByAspectRatio = itemWidth * 1 / 1
-            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom
+            itemHeight =
+                imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
             return IType2ViewHolder(
                 LayoutInflater.from(ctx).inflate(R.layout.row_itype_2_dynamic, parent, false)
             )
@@ -3623,7 +3611,7 @@ class BucketChildAdapter(
             if (varient == ORIENTATION_VERTICAL) {
                 noOfColums = 2.0
             } else {
-                noOfColums = 2.50
+                noOfColums = 2.85
             }
             parentStartSpacing =
                 ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
@@ -3741,19 +3729,17 @@ class BucketChildAdapter(
             if (varient == ORIENTATION_VERTICAL) {
                 noOfColums = 2.0
             } else {
-                noOfColums = 2.20
+                noOfColums = 2.90
             }
-            parentStartSpacing =
-                ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
-            itemWidth =
-                (maxScreenWidth / noOfColums) - marginStart - marginEnd - itemPaddingStart - itemPaddingEnd - parentStartSpacing
-            lineOne = 0.0
-            lineTwo = 0.0
-            lineThree = 0.0
+            parentStartSpacing = ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
+            itemWidth = (maxScreenWidth / noOfColums) - marginStart - marginEnd - itemPaddingStart - itemPaddingEnd - parentStartSpacing
+            lineOne = ctx.resources.getDimensionPixelSize(R.dimen.font_14).toDouble()
+            lineTwo = ctx.resources.getDimensionPixelSize(R.dimen.font_9).toDouble()
+            lineThree = ctx.resources.getDimensionPixelSize(R.dimen.font_11).toDouble()
             textSize = lineOne + lineTwo + lineThree
             imageHeightByAspectRatio = itemWidth * 1 / 1
-            itemHeight =
-                imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
+            setLog("fshgsalgba", "16 $itemWidth" + imageHeightByAspectRatio.toString())
+            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
             return IType16ViewHolder(
                 LayoutInflater.from(ctx).inflate(R.layout.row_itype_16_dynamic, parent, false)
             )
@@ -3781,8 +3767,8 @@ class BucketChildAdapter(
             lineThree = 0.0
             textSize = lineOne + lineTwo + lineThree
             imageHeightByAspectRatio = itemWidth * 9 / 16
-            itemHeight =
-                imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
+            setLog("fshgsalgba", "18 " + imageHeightByAspectRatio.toString())
+            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
             return IType18ViewHolder(
                 LayoutInflater.from(ctx).inflate(R.layout.row_itype_18_dynamic, parent, false)
             )
@@ -3945,7 +3931,7 @@ class BucketChildAdapter(
                 parentStartSpacing =
                     ctx.resources.getDimensionPixelSize(R.dimen.dimen_20).toDouble()
             } else {
-                noOfColums = 2.50
+                noOfColums = 2.95
                 parentStartSpacing =
                     ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble()
             }
@@ -3973,23 +3959,24 @@ class BucketChildAdapter(
             itemPaddingEnd = 0.0
             itemPaddingTop = 0.0
             itemPaddingBottom = 0.0
+
             if (varient == ORIENTATION_VERTICAL) {
                 noOfColums = 2.0
             } else {
-                noOfColums = 2.50
+                noOfColums = 2.65
             }
             parentStartSpacing =
                 ctx.resources.getDimensionPixelSize(R.dimen.dimen_18).toDouble() / noOfColums
             itemWidth =
                 (maxScreenWidth / noOfColums) - marginStart - marginEnd - itemPaddingStart - itemPaddingEnd - parentStartSpacing
             lineOne = ctx.resources.getDimensionPixelSize(R.dimen.font_15)
-                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_12).toDouble()
+                .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_13).toDouble()
             lineTwo = ctx.resources.getDimensionPixelSize(R.dimen.font_13)
                 .toDouble() + ctx.resources.getDimensionPixelSize(R.dimen.dimen_3).toDouble()
             lineThree = 0.0
             textSize = lineOne + lineTwo + lineThree
             imageHeightByAspectRatio = itemWidth * 1 / 1
-            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom
+            itemHeight = imageHeightByAspectRatio + textSize + marginTop + marginBottom + itemPaddingTop + itemPaddingBottom
             return IType42ViewHolder(
                 LayoutInflater.from(ctx).inflate(R.layout.row_itype_42_dynamic, parent, false)
             )

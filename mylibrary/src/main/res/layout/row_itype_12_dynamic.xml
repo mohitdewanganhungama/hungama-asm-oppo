@@ -6,7 +6,7 @@
         android:id="@+id/llMain"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_space_between_title_and_artwork_space_listing_page"
-        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_10"
         android:gravity="center"
         android:layout_width="match_parent"
         android:orientation="vertical">

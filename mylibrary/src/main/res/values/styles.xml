@@ -246,7 +246,7 @@
         <item name="cornerSize">@dimen/dimen_18</item>
     </style>
     <style name="ShapeAppearanceOverlay.App.RoundCornerBucket" parent="">
-        <item name="cornerSize">@dimen/dimen_16</item>
+        <item name="cornerSize">@dimen/dimen_8</item>
     </style>
     <style name="ShapeAppearanceOverlay.App.Circle" parent="">
         <item name="cornerSize">50%</item>
