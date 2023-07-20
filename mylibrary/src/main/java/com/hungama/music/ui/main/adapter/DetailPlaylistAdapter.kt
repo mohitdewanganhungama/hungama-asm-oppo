@@ -125,9 +125,7 @@ class DetailPlaylistAdapter(
                 ivMoreDrawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
                 ivMore.setImageDrawable(ivMoreDrawable)
 
-                val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
-                ivDownload.setImageDrawable(drawable)
+                ivDownload.setBackgroundResource(R.drawable.ic_chart_download)
 
                 val downloadedAudio =
                     AppDatabase.getInstance()?.downloadedAudio()?.findByContentId(list.id!!)
@@ -296,9 +294,8 @@ class DetailPlaylistAdapter(
     private fun downloadIconStates(status: Int, ivDownload: ImageView) {
         when (status) {
             Status.NONE.value -> {
-                val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
-                ivDownload.setImageDrawable(drawable)
+//                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorBlack))
+                ivDownload.setBackgroundResource(R.drawable.ic_chart_download)
             }
             Status.QUEUED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download_queue)

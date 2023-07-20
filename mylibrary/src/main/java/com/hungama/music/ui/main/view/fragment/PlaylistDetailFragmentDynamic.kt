@@ -162,7 +162,7 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         if (varient == 1) {
-            return inflater.inflate(R.layout.fragment_playlist_detail_dynamic, container, false)
+            return inflater.inflate(R.layout.fragment_playlist_detail_v2_dynamic, container, false)
         } else {
             return inflater.inflate(R.layout.fragment_playlist_detail_v2_dynamic, container, false)
         }
@@ -174,13 +174,16 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
             CommonUtils.setAppButton2(requireContext(), llPlayAll)
             CommonUtils.setAppButton2(requireContext(), llPlayAllActionBar)
         } else {
-            if (varient == 1) {
-                CommonUtils.setAppButton1(requireContext(), llPlayAll)
-                CommonUtils.setAppButton1(requireContext(), llPlayAllActionBar)
-            } else {
-                CommonUtils.setAppButton4(requireContext(), llPlayAll)
-                CommonUtils.setAppButton4(requireContext(), llPlayAllActionBar)
-            }
+//            if (varient == 1) {
+//                CommonUtils.setAppButton1(requireContext(), llPlayAll)
+//                CommonUtils.setAppButton1(requireContext(), llPlayAllActionBar)
+//            } else {
+//                CommonUtils.setAppButton4(requireContext(), llPlayAll)
+//                CommonUtils.setAppButton4(requireContext(), llPlayAllActionBar)
+//            }
+
+            CommonUtils.blackButton(requireContext(), llPlayAll)
+            CommonUtils.blackButton(requireContext(), llPlayAllActionBar)
         }
         Constant.screen_name ="PlayList Detail"
         setPlayAllButton()
@@ -338,14 +341,14 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                                         }
                                         setLog("artWorkHeight", artWorkHeight.toString())
                                         devider?.visibility = View.VISIBLE
-                                        if (varient == 1) {
-                                            iv_collapsingImageBg?.layoutParams?.height =
-                                                artWorkHeight
-                                            iv_collapsingImageBg?.requestLayout()
-                                            iv_collapsingImageBg?.background = artImage
-                                            centerGradient?.visibility = View.GONE
-                                            fullGradient?.visibility = View.VISIBLE
-                                        } else {
+//                                        if (varient == 1) {
+//                                            iv_collapsingImageBg?.layoutParams?.height =
+//                                                artWorkHeight
+//                                            iv_collapsingImageBg?.requestLayout()
+//                                            iv_collapsingImageBg?.background = artImage
+//                                            centerGradient?.visibility = View.GONE
+//                                            fullGradient?.visibility = View.VISIBLE
+//                                        } else {
                                             /*val displayMetrics = DisplayMetrics()
                                             requireActivity().windowManager.defaultDisplay.getMetrics(
                                                 displayMetrics
@@ -373,7 +376,7 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                                             Utils.setMarginsTop(centerGradient, (artworkHeight / 2))
                                             Utils.setMarginsTop(llDetails, (artworkHeight / 2))
                                             centerGradient?.visibility = View.GONE
-                                        }
+//                                        }
                                     } catch (e: Exception) {
 
                                     }
@@ -1054,39 +1057,40 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
             }
         }
 
-        if (varient == 1) {
-            if (!TextUtils.isEmpty(artImageUrl)) {
-                ImageLoader.loadImage(
-                    requireContext(),
-                    playlistAlbumArtImageView,
-                    artImageUrl!!,
-                    R.drawable.bg_gradient_placeholder
-                )
-
-                if (imageArray != null && imageArray?.size!! > 0) {
-                    val turl = imageArray?.get((0..imageArray?.size!! - 1).random())
-                    ImageLoader.loadImage(
-                        requireContext(),
-                        playlistAlbumArtImageViewLayer,
-                        turl!!,
-                        R.drawable.bg_gradient_placeholder
-                    )
-                    playlistAlbumArtImageViewLayer.visibility = View.VISIBLE
-                    artImageUrl = turl
-                } else {
-//                    playlistAlbumArtImageViewLayer.visibility = View.GONE
-                }
-                setArtImageBg(true)
-            } else {
-                ImageLoader.loadImage(
-                    requireContext(),
-                    playlistAlbumArtImageView,
-                    "",
-                    R.drawable.bg_gradient_placeholder
-                )
-                staticToolbarColor()
-            }
-        } else {
+//        if (varient == 1) {
+//            if (!TextUtils.isEmpty(artImageUrl)) {
+//                ImageLoader.loadImage(
+//                    requireContext(),
+//                    playlistAlbumArtImageView,
+//                    artImageUrl!!,
+//                    R.drawable.bg_gradient_placeholder
+//                )
+//
+//                if (imageArray != null && imageArray?.size!! > 0) {
+//                    val turl = imageArray?.get((0..imageArray?.size!! - 1).random())
+//                    ImageLoader.loadImage(
+//                        requireContext(),
+//                        playlistAlbumArtImageViewLayer,
+//                        turl!!,
+//                        R.drawable.bg_gradient_placeholder
+//                    )
+//                    playlistAlbumArtImageViewLayer.visibility = View.VISIBLE
+//                    artImageUrl = turl
+//                } else {
+////                    playlistAlbumArtImageViewLayer.visibility = View.GONE
+//                }
+//                setArtImageBg(true)
+//            } else {
+//                ImageLoader.loadImage(
+//                    requireContext(),
+//                    playlistAlbumArtImageView,
+//                    "",
+//                    R.drawable.bg_gradient_placeholder
+//                )
+//                staticToolbarColor()
+//            }
+//        }
+//        else {
             if (!TextUtils.isEmpty(artImageUrl)) {
                 playlistAlbumArtImageView.visibility = View.GONE
                 setArtImageBg(true)
@@ -1099,7 +1103,7 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                 )
                 staticToolbarColor()
             }
-        }
+//        }
 
         llDetails2.visibility = View.VISIBLE
         if (it?.data?.head?.data?.title != null && !TextUtils.isEmpty(it?.data?.head?.data?.title)) {
@@ -1433,14 +1437,14 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
             //val maxDistance: Int = iv_collapsingImageBg.getHeight()
             //val maxDistance: Int = resources.getDimensionPixelSize(R.dimen.dimen_420)
             var maxDistance = 0
-            if (varient == 1) {
-                maxDistance = resources.getDimensionPixelSize(R.dimen.dimen_373)
-            } else {
+//            if (varient == 1) {
+//                maxDistance = resources.getDimensionPixelSize(R.dimen.dimen_373)
+//            } else {
                 maxDistance += topView.marginTop + llDetails.marginTop + llDetails.marginBottom + llDetails.height + llDetails2.marginTop + llDetails2.marginBottom + llDetails2.height + resources.getDimensionPixelSize(
                     R.dimen.dimen_10_5
                 )
                 //maxDistance  += (artworkHeight / 2) + resources.getDimensionPixelSize(R.dimen.dimen_127)
-            }
+//            }
             /* how much we have scrolled */
             val movement = scrollView.scrollY
 
@@ -1623,19 +1627,12 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                 drawable.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorWhite))
                 ivDownloadFullList.setImageDrawable(drawable)
                 ivDownloadFullListActionBar.setImageDrawable(drawable)*/
-                ivDownloadFullList.setImageDrawable(
-                    requireContext().faDrawable(
-                        R.string.icon_downloading,
-                        R.color.colorWhite
-                    )
+                ivDownloadFullList?.setBackgroundResource(
+                    R.drawable.download_black
                 )
-                ivDownloadFullListActionBar.setImageDrawable(
-                    requireContext().faDrawable(
-                        R.string.icon_downloading,
-                        R.color.colorWhite
-                    )
+                ivDownloadFullListActionBar?.setBackgroundResource(
+                    R.drawable.download_black
                 )
-
             }
         }
     }
@@ -2124,17 +2121,11 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                         )
                     )
                 } else {
-                    ivDownloadFullList.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_download,
-                            R.color.colorWhite
-                        )
-                    )
-                    ivDownloadFullListActionBar.setImageDrawable(
-                        requireContext().faDrawable(
-                            R.string.icon_download,
-                            R.color.colorWhite
-                        )
+                    ivDownloadFullList?.setBackgroundResource(
+                    R.drawable.download_black
+                )
+                    ivDownloadFullListActionBar?.setBackgroundResource(
+                        R.drawable.download_black
                     )
                 }
             }
@@ -2191,9 +2182,9 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
         isPlaying = status
         var color = R.color.colorWhite
         if (varient == 1) {
-            color = R.color.colorWhite
+            color = R.color.colorWhite1
         } else {
-            color = R.color.colorBlack
+            color = R.color.colorWhite1
         }
         GlobalScope.launch(Dispatchers.Main){
             if (status) {
