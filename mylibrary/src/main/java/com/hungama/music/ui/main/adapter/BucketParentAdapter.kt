@@ -381,11 +381,7 @@ class BucketParentAdapter(
                         )
                         Utils.setMarginsTop(
                             holder.llHeaderTitle,
-                            context.resources.getDimensionPixelSize(R.dimen.dimen_25)
-                        )
-                        Utils.setMarginsBottom(
-                            holder.llHeaderTitle,
-                            context.resources.getDimensionPixelSize(R.dimen.dimen_20)
+                            commonSpaceBetweenBuckets
                         )
                     }
                     19 -> {

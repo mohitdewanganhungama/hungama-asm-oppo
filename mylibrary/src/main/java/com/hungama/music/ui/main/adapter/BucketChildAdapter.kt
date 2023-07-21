@@ -3391,7 +3391,7 @@ class BucketChildAdapter(
         } else if (viewType == ROW_ITYPE_5) {
             marginStart = 0.0
             marginEnd = ctx.resources.getDimensionPixelSize(R.dimen.dimen_20).toDouble()
-            marginTop = commonTopMargin
+            marginTop = 0.0
             marginBottom = 0.0
             itemPaddingStart = 0.0
             itemPaddingEnd = 0.0
@@ -3601,7 +3601,7 @@ class BucketChildAdapter(
         } else if (viewType == ROW_ITYPE_12) {
             marginStart = 0.0
             marginEnd = ctx.resources.getDimensionPixelSize(R.dimen.dimen_20).toDouble()
-            marginTop = commonTopMargin
+            marginTop = 0.0
             marginBottom = 0.0
             itemPaddingStart = 0.0
             itemPaddingEnd = 0.0
