@@ -140,16 +140,16 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 shimmerLayoutTab?.startShimmer()
                 shimmerLayout?.startShimmer()
 
-                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)
+                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)
 
                 if(discoverHomeModel!=null){
                     setProgressBarVisible(false)
-                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)!!)
-                    setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_PODCAST_PAGE}")
+                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)!!)
+                    setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_DISCOVER_PAGE}")
                 }
                 else{
                     setUpViewModel()
-                    setLog("PodcastMainTabFragment", "setUpViewModel online call:${Constant.CACHE_PODCAST_PAGE}")
+                    setLog("PodcastMainTabFragment", "setUpViewModel online call:${Constant.CACHE_DISCOVER_PAGE}")
                 }
             }
         }
@@ -194,7 +194,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     this
                 ).get(HomeViewModel::class.java)
 
-                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_PODCAST)?.observe(this,
+                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_HOME)?.observe(this,
                     Observer {
                         when(it.status){
                             Status.SUCCESS->{
@@ -205,7 +205,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
 //                                removeMainData("7", items)
 //                                removeMainData("9", items)
                                 it?.data?.let { it1 -> setData(it1) }
-                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_PODCAST_PAGE, it?.data!!)
+                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
                             }
 
                             Status.LOADING ->{

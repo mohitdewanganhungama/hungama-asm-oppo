@@ -64,6 +64,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
             style="@style/StyleTextView"
+            android:textSize="@dimen/font_12"
             android:layout_gravity="start"
             android:textAlignment="textStart"
             app:lineHeight="@dimen/font_18"
@@ -71,6 +72,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSubTitle"
             style="@style/StyleTextViewSubtitle"
+            android:textSize="@dimen/font_12"
             android:layout_gravity="start"
             app:lineHeight="@dimen/font_15"/>
     </androidx.appcompat.widget.LinearLayoutCompat>

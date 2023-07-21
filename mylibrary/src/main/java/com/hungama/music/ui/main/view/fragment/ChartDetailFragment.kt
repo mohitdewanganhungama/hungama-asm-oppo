@@ -1790,6 +1790,7 @@ class ChartDetailFragment : BaseFragment(), TracksContract.View,
             if (isFavourite) {
                 //ivFavorite.setImageDrawable(requireContext().faDrawable(R.string.icon_liked, R.color.colorWhite))
                 //ivFavoriteActionBar.setImageDrawable(requireContext().faDrawable(R.string.icon_liked, R.color.colorWhite))
+                ivFavorite?.imageAssetsFolder = "image"
                 ivFavorite?.playAnimation()
                 ivFavoriteActionBar?.playAnimation()
             } else {

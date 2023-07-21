@@ -142,7 +142,7 @@
                         android:layout_marginStart="@dimen/dimen_18"
                         android:layout_marginEnd="@dimen/dimen_18"
                         android:ellipsize="end"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/oplus_sans_medium"
                         android:includeFontPadding="false"
                         android:maxLines="2"
                         android:textAlignment="center"
@@ -156,9 +156,9 @@
                         android:layout_marginStart="@dimen/dimen_18"
                         android:layout_marginTop="@dimen/dimen_6"
                         android:layout_marginEnd="@dimen/dimen_18"
-                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:fontFamily="@font/opplus_sans_regular"
                         android:includeFontPadding="false"
-                        android:textColor="@color/item_title_color"
+                        android:textColor="@color/colorBlack"
                         android:textSize="@dimen/font_15" />
 
                     <TextView
@@ -166,9 +166,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_6"
-                        android:fontFamily="@font/sf_pro_text"
+                        android:fontFamily="@font/opplus_sans_regular"
                         android:includeFontPadding="false"
-                        android:textColor="@color/item_sub_title_color"
+                        android:textColor="@color/colorButton"
                         android:textSize="@dimen/font_13" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -229,7 +229,7 @@
                         android:layout_width="@dimen/dimen_130"
                         android:layout_height="@dimen/dimen_42"
                         android:layout_marginStart="@dimen/dimen_4_8"
-                        android:layout_marginEnd="@dimen/dimen_4_5"
+                        android:layout_marginEnd="@dimen/dimen_10"
                         android:background="@drawable/corner_radius_18_bg_white"
                         android:gravity="center"
                         android:orientation="horizontal"
@@ -239,13 +239,13 @@
                             android:id="@+id/ivPlayAll"
                             style="@style/commonMediumIconStyle"
                             app:fontText="@string/icon_play_2"
-                            app:fontTextColor="@color/colorBlack" />
+                            app:fontTextColor="@color/colorWhite1" />
 
                         <TextView
                             android:id="@+id/tvPlayAll"
                             style="@style/commonMediumButtonStyle"
                             android:text="@string/podcast_str_4"
-                            android:textColor="@color/colorBlack" />
+                            android:textColor="@color/colorWhite1" />
 
                         <!--<ImageView
                             android:layout_width="@dimen/dimen_10_4"
@@ -262,12 +262,12 @@
                         android:layout_height="@dimen/dimen_44"
                         android:padding="@dimen/dimen_7_5"
                         app:srcCompat="@drawable/ic_download_chart" />-->
-                    <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivDownloadFullList"
-                        android:layout_width="@dimen/dimen_44"
-                        android:layout_height="@dimen/dimen_44"
-                        android:padding="@dimen/dimen_8_5"
-                        app:fontText="@string/icon_download"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="@dimen/dimen_24"
+                        android:padding="@dimen/dimen_14"
                         app:fontTextColor="@color/colorWhite" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -497,7 +497,7 @@
                 android:layout_width="@dimen/dimen_130"
                 android:layout_height="@dimen/dimen_42"
                 android:layout_marginStart="@dimen/dimen_4_8"
-                android:layout_marginEnd="@dimen/dimen_4_5"
+                android:layout_marginEnd="@dimen/dimen_10"
                 android:background="@drawable/corner_radius_18_bg_white"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -516,13 +516,20 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+<!--            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView-->
+<!--                android:id="@+id/ivDownloadFullListActionBar"-->
+<!--                android:layout_width="@dimen/dimen_44"-->
+<!--                android:layout_height="@dimen/dimen_44"-->
+<!--                android:padding="@dimen/dimen_8_5"-->
+<!--                app:fontText="@string/icon_download"-->
+<!--                app:fontTextColor="@color/colorWhite"/>-->
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivDownloadFullListActionBar"
-                android:layout_width="@dimen/dimen_44"
-                android:layout_height="@dimen/dimen_44"
-                android:padding="@dimen/dimen_8_5"
-                app:fontText="@string/icon_download"
-                app:fontTextColor="@color/colorWhite"/>
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:padding="@dimen/dimen_14"
+                app:fontTextColor="@color/colorWhite" />
 
             <!--<androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivDownloadFullListActionBar"

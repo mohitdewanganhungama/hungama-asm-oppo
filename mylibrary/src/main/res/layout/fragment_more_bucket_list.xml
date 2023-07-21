@@ -38,6 +38,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         <RelativeLayout
             android:id="@+id/rlHead"
+            android:background="@color/colorWhite1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_60"
             android:visibility="gone"
@@ -46,20 +47,16 @@
             android:clickable="true"
             android:focusableInTouchMode="true"
             >
-            <include layout="@layout/common_blur_view"/>
+<!--            <include layout="@layout/common_blur_view"/>-->
             <ImageView
                 android:id="@+id/img_back"
-                app:srcCompat="@drawable/ic_back_right_arrow"
-                android:layout_width="@dimen/dimen_44"
-                android:layout_height="@dimen/dimen_44"
-                android:paddingStart="@dimen/dimen_20"
-                android:paddingEnd="@dimen/dimen_13"
-                android:paddingTop="@dimen/dimen_12"
-                android:paddingBottom="@dimen/dimen_12"
+                app:srcCompat="@drawable/white_back_arrow"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
                 app:tint="@color/colorWhite"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginStart="@dimen/dimen_20"
                 android:contentDescription="@string/login_str_2" />
             <TextView
                 android:id="@+id/tvHeading"

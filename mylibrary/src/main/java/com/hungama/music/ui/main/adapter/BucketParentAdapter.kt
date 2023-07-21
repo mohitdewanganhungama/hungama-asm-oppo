@@ -149,6 +149,7 @@ class BucketParentAdapter(
 
         if (position < parents.size) {
             val parent = parents[position]
+            //TODO
             setLog("alhgdawuhgwa", parent?.heading.toString() + " " + parent?.itype.toString())
             commonSpaceBetweenBuckets =
                 context.resources.getDimensionPixelSize(R.dimen.common_two_bucket_space_listing_page)

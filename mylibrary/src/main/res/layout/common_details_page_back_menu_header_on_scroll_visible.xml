@@ -16,8 +16,8 @@
         android:paddingEnd="@dimen/dimen_15_5"
         android:paddingTop="@dimen/dimen_12"
         android:paddingBottom="@dimen/dimen_12"
-        android:src="@drawable/ic_back_right_arrow"
-        app:tint="@color/colorWhite"
+        android:src="@drawable/white_back_arrow"
+        app:tint="@color/colorWhite1"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/dimen_2"/>
@@ -33,5 +33,5 @@
         android:paddingEnd="@dimen/dimen_18"
         android:paddingBottom="@dimen/dimen_13"
         android:src="@drawable/ic_menu_dot_audio"
-        app:tint="@color/colorWhite" />
+        app:tint="@color/colorWhite1" />
 </RelativeLayout>

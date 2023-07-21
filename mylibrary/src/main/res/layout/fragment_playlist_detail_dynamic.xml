@@ -1,38 +1,29 @@
-<RelativeLayout
-    android:id="@+id/playlistDetailroot"
+<RelativeLayout android:id="@+id/playlistDetailroot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/home_bg_color">
-    <!--<include layout="@layout/common_blur_view"/>-->
-    <!-- <ImageView
-         android:id="@+id/iv_collapsingImageBg"
-         android:layout_width="match_parent"
-         android:layout_height="@dimen/dimen_420"/>-->
-
-
-    <View
-        android:id="@+id/centerGradient"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_350"
-        android:layout_marginTop="@dimen/dimen_250"
-        android:background="@drawable/movie_center_gradient"
-        android:visibility="gone"
-        />
+    android:background="@color/home_bg_color"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/iv_collapsingImageBg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent"/>
+
     <include layout="@layout/common_blur_view"/>
     <View
-        android:id="@+id/fullGradient"
-        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/podcast_gradient_layer"/>
+    <View
+        android:id="@+id/fullGradient"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200"
+        android:layout_marginTop="@dimen/dimen_220"
+        android:background="@drawable/podcast_gradient_layer" />
+
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmerLayout"
@@ -44,11 +35,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <include layout="@layout/skeleton_chart_details"/>
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -58,11 +50,10 @@
         android:visibility="visible">
 
         <RelativeLayout
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:descendantFocusability="blocksDescendants">
-
+            <include layout="@layout/common_blur_view" android:layout_width="match_parent" android:layout_height="match_parent"/>
             <View
                 android:id="@+id/v2Bg"
                 android:layout_width="match_parent"
@@ -76,12 +67,33 @@
                 android:background="@drawable/podcast_gradient_layer"
                 android:visibility="gone"/>
 
+            <!--app:fel_edge="top|left|bottom|right"-->
+            <com.hungama.music.utils.FadingEdgeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_edge="bottom"
+                app:fel_size_bottom="400dp">
+                <ImageView
+                    android:id="@+id/iv_MainImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    />
+            </com.hungama.music.utils.FadingEdgeLayout>
+            <View
+                android:id="@+id/centerGradient"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_400"
+                android:background="@drawable/movie_center_gradient"
+                android:visibility="invisible"/>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/topView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dimen_40">
+                android:layout_marginTop="@dimen/dimen_20">
 
                 <RelativeLayout
                     android:id="@+id/rlImage"
@@ -118,12 +130,11 @@
                     android:id="@+id/llDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_16"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rlImage">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/tvTitle"
@@ -220,20 +231,22 @@
                         android:layout_height="@dimen/dimen_42"
                         android:layout_marginStart="@dimen/dimen_4_8"
                         android:layout_marginEnd="@dimen/dimen_4_5"
-                        android:background="@drawable/corner_radius_18_bg_blue"
+                        android:background="@drawable/corner_radius_18_bg_white"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
                             android:id="@+id/ivPlayAll"
                             style="@style/commonMediumIconStyle"
-                            app:fontText="@string/icon_play_2" />
+                            app:fontText="@string/icon_play_2"
+                            app:fontTextColor="@color/colorBlack" />
 
                         <TextView
                             android:id="@+id/tvPlayAll"
                             style="@style/commonMediumButtonStyle"
-                            android:text="@string/podcast_str_4" />
+                            android:text="@string/podcast_str_4"
+                            android:textColor="@color/colorBlack" />
 
                         <!--<ImageView
                             android:layout_width="@dimen/dimen_10_4"
@@ -258,25 +271,26 @@
                         app:fontText="@string/icon_download"
                         app:fontTextColor="@color/colorWhite" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
                 <!--                <TextView-->
-                <!--                    android:ellipsize="marquee"-->
-                <!--                    android:gravity="center"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:scrollbars="none"-->
-                <!--                    android:scrollHorizontally="true"-->
-                <!--                    android:layout_marginTop="@dimen/dimen_17"-->
-                <!--                    android:paddingStart="@dimen/dimen_18"-->
-                <!--                    android:paddingEnd="@dimen/dimen_18"-->
-                <!--                    app:layout_constraintTop_toBottomOf="@id/llDetails2"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:focusable="true"-->
-                <!--                    android:id="@+id/tvReadMore"-->
-                <!--                    android:fontFamily="@font/sf_pro_text"-->
-                <!--                    android:textColor="@color/item_sub_title_color"-->
-                <!--                    android:textSize="@dimen/font_13"-->
-                <!--                    android:layout_height="@dimen/dimen_22"-->
-                <!--                    android:singleLine="true" />-->
+                <!--                        android:ellipsize="marquee"-->
+                <!--                        android:gravity="center"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:scrollbars="none"-->
+                <!--                        android:scrollHorizontally="true"-->
+                <!--                        android:layout_marginTop="@dimen/dimen_17"-->
+                <!--                        android:paddingStart="@dimen/dimen_18"-->
+                <!--                        android:paddingEnd="@dimen/dimen_18"-->
+                <!--                        app:layout_constraintTop_toBottomOf="@id/llDetails2"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:focusable="true"-->
+                <!--                        android:id="@+id/tvReadMore"-->
+                <!--                        android:fontFamily="@font/sf_pro_text"-->
+                <!--                        android:textColor="@color/item_sub_title_color"-->
+                <!--                        android:textSize="@dimen/font_13"-->
+                <!--                        android:layout_height="@dimen/dimen_22"-->
+                <!--                        android:singleLine="true" />-->
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -348,7 +362,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_marginTop="@dimen/dimen_9"
                 android:layout_below="@+id/topView">
 
                 <ImageView
@@ -379,6 +393,7 @@
                 android:id="@+id/rlRecommended"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_9"
                 android:orientation="vertical"
                 android:layout_below="@+id/rlPlaylistList">
 
@@ -386,13 +401,13 @@
                     android:id="@+id/rvRecomendation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    android:layout_marginTop="@dimen/dimen_9"
                     android:clipToPadding="false"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     tools:itemCount="20" />
 
 
             </RelativeLayout>
+
             <include
                 layout="@layout/layout_progress"
                 android:id="@+id/progress"
@@ -408,7 +423,7 @@
         android:layout_height="@dimen/dimen_60">
         <include android:id="@+id/headBlur" android:visibility="invisible" layout="@layout/common_blur_view"/>
 
-        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible" />
+        <include layout="@layout/common_details_page_back_menu_header_on_scroll_visible"/>
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:id="@+id/llToolbar"
@@ -484,18 +499,20 @@
                 android:layout_height="@dimen/dimen_42"
                 android:layout_marginStart="@dimen/dimen_4_8"
                 android:layout_marginEnd="@dimen/dimen_4_5"
-                android:background="@drawable/corner_radius_18_bg_blue"
+                android:background="@drawable/corner_radius_18_bg_white"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
                     android:id="@+id/ivPlayAllActionBar"
                     style="@style/commonMediumIconStyle"
-                    app:fontText="@string/icon_play"/>
+                    app:fontText="@string/icon_play"
+                    app:fontTextColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/tvPlayAllActionBar"
                     style="@style/commonMediumButtonStyle"
+                    android:textColor="@color/colorBlack"
                     android:text="@string/podcast_str_4" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
