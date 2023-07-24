@@ -1,5 +1,6 @@
 package com.hungama.music.ui.main.view.fragment
 
+import MyMusicAdapter
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
@@ -17,6 +18,8 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT
@@ -27,6 +30,7 @@ import com.hungama.music.data.database.AppDatabase
 import com.hungama.music.R
 import com.hungama.music.data.model.ContentTypes
 import com.hungama.music.data.model.HeadItemsItem
+import com.hungama.music.data.model.MyMusicDetailModel
 import com.hungama.music.ui.base.BaseActivity
 import com.hungama.music.ui.base.BaseFragment
 import com.hungama.music.ui.main.view.activity.MainActivity
@@ -63,6 +67,7 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
     var mListener:onReloadListener?=null
     var childTabnName = ""
     var parentTabName = ""
+    private lateinit var myMusicRecyclerView : RecyclerView
     companion object{
 
         fun newInstance(mContext: Context?, bundle: Bundle): LibraryMainTabFragment {
@@ -78,6 +83,22 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fr_library_main, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        myMusicRecyclerView = myMusicRv
+        myMusicRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val data = ArrayList<MyMusicDetailModel>()
+        data.add(MyMusicDetailModel(R.drawable.red_drawble_background,"Favorites",R.drawable.mymusic_heart))
+        data.add(MyMusicDetailModel(R.drawable.orange_drawble_background,"Playlist",R.drawable.mymusic_playlist_logo))
+        data.add(MyMusicDetailModel(R.drawable.purple_drawble_background,"Recent",R.drawable.mymusic_clock))
+        data.add(MyMusicDetailModel(R.drawable.blue_drawble_background,"Download",R.drawable.mymusic_download))
+        data.add(MyMusicDetailModel(R.drawable.green_drawble_background,"Download",R.drawable.mymusic_download))
+
+        val adapter = MyMusicAdapter(requireContext(), data)
+        myMusicRecyclerView.adapter = adapter
     }
 
     override fun initializeComponent(view: View) {
@@ -167,16 +188,16 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val typeface = ResourcesCompat.getFont(
                     requireContext(),
-                    R.font.sf_pro_text_bold
+                    R.font.opplus_sans_regular
                 )
                 tab?.let {
-                    setStyleForTab(it, Typeface.BOLD, typeface)
+                    setStyleForTab(it, Typeface.NORMAL, typeface)
                 }
                 defaultSelectedSubTabPosition = 0
                 defaultSelectedTabPosition = tab?.position!!
                 getChildFragmentList(defaultSelectedTabPosition)
 
-                viewPagerSetUp()
+//                viewPagerSetUp()
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -213,11 +234,14 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
         }.attach()
 
 
+
         vpTransactions?.setCurrentItem(defaultSelectedSubTabPosition, false)
 
         tabs?.getTabAt(defaultSelectedTabPosition)?.select()
         childTabs.addOnTabSelectedListener(this)
         childTabs?.getTabAt(defaultSelectedSubTabPosition)?.select()
+
+
 
         vpTransactions?.registerOnPageChangeCallback(pageChangeCallback)
         vpTransactions.isUserInputEnabled = false
@@ -227,6 +251,15 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
 
         vpTransactions?.isUserInputEnabled = false
         setProgressBarVisible(false)
+
+        for (i in 0 until childTabs.tabCount) {
+            val tab = (childTabs.getChildAt(0) as ViewGroup).getChildAt(i)
+            val p = tab.layoutParams as ViewGroup.MarginLayoutParams
+            p.setMargins(10, 80, 80, 0)
+            tab.requestLayout()
+        }
+        setLog("childTabs","${childTabs.tabCount}")
+
     }
 
     private fun getChildFragmentList(i: Int): java.util.ArrayList<String> {

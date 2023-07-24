@@ -340,7 +340,7 @@
     <style name="LibTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/font_20</item>
         <item name="android:textColor">#808080</item>
-        <item name="fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="fontFamily">@font/opplus_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:lineSpacingExtra">@dimen/font_3</item>
         <item name="textAllCaps">false</item>

@@ -2,11 +2,15 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite1"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/rlMain"
+        android:background="@color/colorWhite1"
+        android:layout_marginTop="@dimen/dimen_118"
         android:layout_height="match_parent">
 
         <androidx.viewpager2.widget.ViewPager2
@@ -32,7 +36,7 @@
         android:layout_height="wrap_content"
         app:liftOnScroll="true"
         android:fitsSystemWindows="true"
-        android:background="#00000000"
+        android:background="@color/colorWhite1"
         app:layout_behavior="com.hungama.music.utils.FixedAppBarLayoutBehavior"
         android:elevation="0dp"
         app:elevation="0dp">
@@ -41,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_50"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:background="#00000000"
+            android:background="@color/colorWhite1"
             android:elevation="0dp"
             app:elevation="0dp"
             android:contentInsetLeft="0dp"
@@ -63,7 +67,8 @@
         </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite1">
             <include layout="@layout/common_blur_view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_104"/>
@@ -77,28 +82,61 @@
                 app:tabGravity="fill"
                 app:tabMaxWidth="0dp"
                 app:tabIndicatorHeight="0dp"
-
+                android:visibility="gone"
+                app:tabTextColor="@color/colorBlack"
+                app:tabBackground="@drawable/selector_tab_home"
                 app:tabMode="scrollable"
                 app:tabRippleColor="@null"
-                app:tabSelectedTextColor="@color/colorWhite"
-                app:tabTextAppearance="@style/LibTabTextAppearance" />
+                app:tabSelectedTextColor="@color/colorWhite1"
+                app:tabTextAppearance="@style/TabTextAppearance"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite1"
+                android:paddingStart="@dimen/dimen_16"
+                android:paddingTop="@dimen/dimen_24"
+                android:id="@+id/myMusicRv"/>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/childTabs"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_34"
-                android:layout_below="@+id/tabs"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:layout_marginStart="@dimen/dimen_18"
                 android:layout_marginBottom="@dimen/dimen_14"
+                android:layout_centerVertical="true"
                 android:paddingEnd="@dimen/dimen_18"
+                android:clipToPadding="false"
                 app:tabBackground="@drawable/selector_tab_home"
                 app:tabGravity="fill"
                 app:tabIndicatorHeight="0dp"
                 app:tabMaxWidth="0dp"
+                app:tabTextColor="@color/colorBlack"
                 app:tabMode="scrollable"
+                android:layout_below="@+id/myMusicRv"
                 app:tabRippleColor="@null"
-                app:tabSelectedTextColor="@color/tab_selected_color"
+                app:tabSelectedTextColor="@color/colorWhite1"
                 app:tabTextAppearance="@style/TabTextAppearance" />
+
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/childTabs"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dimen_34"-->
+<!--                android:layout_below="@+id/myMusicRv"-->
+<!--                android:layout_marginTop="@dimen/dimen_24"-->
+<!--                android:layout_marginStart="@dimen/dimen_18"-->
+<!--                android:layout_marginBottom="@dimen/dimen_14"-->
+<!--                android:paddingEnd="@dimen/dimen_18"-->
+<!--                app:tabBackground="@drawable/selector_tab_home"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabIndicatorHeight="0dp"-->
+<!--                app:tabMaxWidth="0dp"-->
+<!--                app:tabMode="scrollable"-->
+<!--                app:tabTextColor="@color/colorBlack"-->
+<!--                app:tabRippleColor="@null"-->
+<!--                app:tabSelectedTextColor="@color/colorWhite1"-->
+<!--                app:tabTextAppearance="@style/TabTextAppearance" />-->
 
         </RelativeLayout>
 
