@@ -9,7 +9,6 @@
         android:id="@+id/rvMusicPlaylist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/dimen_150"
         android:clipToPadding="false"
         android:nestedScrollingEnabled="false"
         android:visibility="visible"
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/myDevice"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/createPlaylist">
             <com.google.android.material.imageview.ShapeableImageView

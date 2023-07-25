@@ -95,7 +95,7 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
         data.add(MyMusicDetailModel(R.drawable.orange_drawble_background,"Playlist",R.drawable.mymusic_playlist_logo))
         data.add(MyMusicDetailModel(R.drawable.purple_drawble_background,"Recent",R.drawable.mymusic_clock))
         data.add(MyMusicDetailModel(R.drawable.blue_drawble_background,"Download",R.drawable.mymusic_download))
-        data.add(MyMusicDetailModel(R.drawable.green_drawble_background,"Download",R.drawable.mymusic_download))
+        data.add(MyMusicDetailModel(R.drawable.green_drawble_background,"Leaderboard",R.drawable.leaderboard))
 
         val adapter = MyMusicAdapter(requireContext(), data)
         myMusicRecyclerView.adapter = adapter
@@ -251,13 +251,6 @@ class LibraryMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener{
 
         vpTransactions?.isUserInputEnabled = false
         setProgressBarVisible(false)
-
-        for (i in 0 until childTabs.tabCount) {
-            val tab = (childTabs.getChildAt(0) as ViewGroup).getChildAt(i)
-            val p = tab.layoutParams as ViewGroup.MarginLayoutParams
-            p.setMargins(10, 80, 80, 0)
-            tab.requestLayout()
-        }
         setLog("childTabs","${childTabs.tabCount}")
 
     }

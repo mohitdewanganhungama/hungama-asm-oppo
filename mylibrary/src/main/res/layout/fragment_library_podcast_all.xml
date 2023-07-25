@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/dimen_160"
+        android:paddingTop="@dimen/dimen_120"
         android:visibility="visible"
         android:background="@color/transparent"
         tools:itemCount="2"

@@ -98,7 +98,7 @@ class PlaylistFragment : BaseFragment(), CreatePlaylistDialog.createPlayListList
         createPlaylist?.setOnClickListener(this)
         CommonUtils.applyButtonTheme(requireContext(), btnExplore)
         btnExplore?.setOnClickListener(this)
-        CommonUtils.setPageBottomSpacing(rvMusicPlaylist, requireContext(), resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_150), resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+        CommonUtils.setPageBottomSpacing(rvMusicPlaylist, requireContext(), resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_100), resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
     }
 
     override fun onClick(v: View) {
@@ -654,7 +654,7 @@ class PlaylistFragment : BaseFragment(), CreatePlaylistDialog.createPlayListList
             }
             if (event == Constant.AUDIO_PLAYER_RESULT_CODE) {
                 CommonUtils.setPageBottomSpacing(rvMusicPlaylist, requireContext(),
-                    resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_150),
+                    resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_100),
                     resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
             }
         }

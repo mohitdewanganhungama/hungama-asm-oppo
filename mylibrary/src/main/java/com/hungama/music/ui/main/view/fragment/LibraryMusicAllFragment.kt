@@ -313,7 +313,7 @@ class LibraryMusicAllFragment(tabName1:String) : BaseFragment(), CreatePlaylistD
         tracksViewModel = TracksViewModel(Injection.provideTrackRepository(), this)
 
         CommonUtils.setPageBottomSpacing(rvMusicPlaylist, requireContext(),
-            resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_150),
+            resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_110),
             resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
     }
 
@@ -532,13 +532,13 @@ class LibraryMusicAllFragment(tabName1:String) : BaseFragment(), CreatePlaylistD
                     )
                 )
 
-                musicplayList.add(
-                    LibraryMusicModel(
-                        "" + MY_DEVICE,
-                        getString(R.string.library_str_4),
-                        "", "", ""
-                    )
-                )
+//                musicplayList.add(
+//                    LibraryMusicModel(
+//                        "" + MY_DEVICE,
+//                        getString(R.string.library_str_4),
+//                        "", "", ""
+//                    )
+//                )
 
 
                 val downloadingSongTotal = AppDatabase?.getInstance()?.downloadQueue()
