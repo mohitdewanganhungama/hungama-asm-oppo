@@ -562,7 +562,7 @@ class BucketChildAdapter(
                     }
 
                     tvLanguageView.text = text
-                    tvLanguageView.visibility = View.VISIBLE
+                    tvLanguageView.visibility = View.GONE
                 } else {
                     tvLanguageView.visibility = View.GONE
                 }
@@ -1051,7 +1051,7 @@ class BucketChildAdapter(
                 if (list.misc != null && !TextUtils.isEmpty(list.misc.f_playcount)) {
                     tvSubTitle2.text =
                         list.misc.f_playcount + " " + ctx.getString(R.string.discover_str_24)
-                    tvSubTitle2.visibility = View.VISIBLE
+                    tvSubTitle2.visibility = View.GONE
                 } else {
                     tvSubTitle2.visibility = View.GONE
                 }
