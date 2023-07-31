@@ -9,13 +9,13 @@
         android:layout_marginEnd="@dimen/dimen_16"
         android:layout_marginTop="@dimen/dimen_16"
         android:orientation="vertical">
-        <!--<androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="10dp"
-            app:cardCornerRadius="@dimen/dimen_7"
-            app:cardBackgroundColor="@color/blur_one_half_opacity_white_color"
-            app:cardPreventCornerOverlap="true">-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:elevation="10dp"-->
+<!--            app:cardCornerRadius="@dimen/dimen_7"-->
+<!--            app:cardBackgroundColor="@color/blur_one_half_opacity_white_color"-->
+<!--            app:cardPreventCornerOverlap="true">-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -29,13 +29,16 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dimen_11"
+                    android:paddingBottom="@dimen/dimen_16"
+                    android:paddingStart="@dimen/dimen_18"
+                    android:paddingEnd="@dimen/dimen_18"
                     android:background="@drawable/podcast_item_corner_radius">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivUserImage"
                     android:layout_width="@dimen/dimen_56"
                     android:layout_height="@dimen/dimen_56"
                     android:layout_marginTop="@dimen/dimen_11"
-                    android:layout_marginStart="@dimen/dimen_11"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCornerBucket"
                     android:background="@drawable/bg_gradient_placeholder"
                     android:scaleType="centerInside"/>
@@ -79,13 +82,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="0dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:fontFamily="@font/oplus_sans_medium"
                             android:includeFontPadding="false"
                             android:lineSpacingExtra="@dimen/font_3"
                             android:maxLines="1"
                             android:text="शिव के बाहर कुछ नहीं"
-                            android:textColor="@color/item_title_color"
-                            android:textSize="@dimen/font_15"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_14"
                             android:textStyle="normal"
                             app:lineHeight="@dimen/dimen_18" />
 
@@ -95,12 +98,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="0dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/sf_pro_text"
+                            android:fontFamily="@font/opplus_sans_regular"
                             android:lineSpacingExtra="@dimen/font_2"
                             android:maxLines="1"
                             android:text="June 23 2020    55 Min"
-                            android:textColor="@color/item_sub_title_color"
-                            android:textSize="@dimen/font_13"
+                            android:textColor="@color/item_sub_title_2_color"
+                            android:textSize="@dimen/font_12"
                             android:textStyle="normal" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -120,26 +123,22 @@
                     android:id="@+id/tvSubTitle2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_11"
-                    android:layout_marginEnd="@dimen/dimen_3"
                     android:layout_marginTop="@dimen/dimen_9"
                     android:text="@string/other_str_17"
-                    android:fontFamily="@font/sf_pro_text"
+                    android:fontFamily="@font/opplus_sans_regular"
                     android:textStyle="normal"
                     android:textSize="@dimen/font_11"
-                    android:textColor="#ccffffff"
+                    android:textColor="@color/item_sub_title_2_color"
                     android:lineSpacingExtra="@dimen/font_7"
                     android:layout_below="@id/ivUserImage"/>
 
                     <ImageView
                         android:id="@+id/ivDownload"
-                        android:layout_width="@dimen/dimen_40"
-                        android:layout_height="@dimen/dimen_40"
-                        android:padding="@dimen/dimen_9"
-                        android:layout_marginStart="@dimen/dimen_2"
+                        android:layout_width="@dimen/dimen_24"
+                        android:layout_height="@dimen/dimen_24"
                         android:layout_below="@+id/tvSubTitle2"
-                        android:layout_marginTop="@dimen/dimen_2"
-                        app:srcCompat="@drawable/ic_chart_download" />
+                        android:layout_marginTop="@dimen/dimen_18"
+                        tools:srcCompat="@drawable/ic_chart_download" />
 
                     <ImageView
                         android:id="@+id/ivPlay"
@@ -148,7 +147,6 @@
                         android:layout_below="@+id/tvSubTitle2"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="@dimen/dimen_3"
-                        android:layout_marginEnd="@dimen/dimen_3"
                         android:padding="@dimen/dimen_7"
                         app:srcCompat="@drawable/ic_play_circle_filled" />
 
@@ -159,10 +157,10 @@
                     android:layout_marginTop="@dimen/dimen_16"
                     android:layout_marginEnd="@dimen/dimen_8"
                     android:text=""
-                    android:fontFamily="@font/sf_pro_text"
+                    android:fontFamily="@font/opplus_sans_regular"
                     android:textStyle="normal"
                     android:textSize="@dimen/font_13"
-                    android:textColor="@color/item_sub_title_color"
+                    android:textColor="@color/item_sub_title_2_color"
                     android:lineSpacingExtra="@dimen/font_2"
                     android:layout_below="@id/tvSubTitle2"
                     android:layout_toStartOf="@id/ivPlay"
@@ -171,7 +169,7 @@
                     android:id="@+id/pbSong"
                     style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_6"
+                    android:layout_height="@dimen/dimen_17"
                     android:layout_gravity="center"
                     android:foregroundGravity="center"
                     android:progress="0"
@@ -180,11 +178,9 @@
                     android:progressTint="@color/colorWhite"
                     android:secondaryProgressTint="@color/home_mini_player_bg"
                     android:layout_below="@id/ivPlay"
-                    android:layout_marginStart="@dimen/dimen_1"
-                    android:layout_marginEnd="@dimen/dimen_1"
                     />
                 </RelativeLayout>
             </RelativeLayout>
-        <!--</androidx.cardview.widget.CardView>-->
+<!--        </androidx.cardview.widget.CardView>-->
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

@@ -153,8 +153,8 @@ class DetailPodcastAdapter(
                 tvSubTitle2.setShowingLine(2)
                 tvSubTitle2.addShowMoreText("read more")
                 tvSubTitle2.addShowLessText("read less")
-                tvSubTitle2.setShowMoreColor(ContextCompat.getColor(ctx, R.color.colorWhite))
-                tvSubTitle2.setShowLessTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                tvSubTitle2.setShowMoreColor(ContextCompat.getColor(ctx, R.color.redAccent))
+                tvSubTitle2.setShowLessTextColor(ContextCompat.getColor(ctx, R.color.redAccent))
                 tvSubTitle2.setShowMoreStyle(Typeface.BOLD)
                 tvSubTitle2.setShowLessStyle(Typeface.BOLD)
                 tvSubTitle2.visibility = View.VISIBLE
@@ -181,9 +181,8 @@ class DetailPodcastAdapter(
             ivMoreDrawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
             ivMore.setImageDrawable(ivMoreDrawable)
 
-            val drawable = FontDrawable(ctx, R.string.icon_download)
-            drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
-            ivDownload.setImageDrawable(drawable)
+            ivDownload.setBackgroundResource(R.drawable.download_black)
+
 
             val downloadedAudio = AppDatabase?.getInstance()?.downloadedAudio()?.findByContentId(dataItemModel?.id!!)
             val downloadQueue = AppDatabase?.getInstance()?.downloadQueue()?.findByContentId(dataItemModel?.id!!)
@@ -231,8 +230,8 @@ class DetailPodcastAdapter(
                 tvTime.visibility=View.VISIBLE
                 pbSong.visibility=View.VISIBLE
             }else{
-                tvTime.visibility=View.GONE
-                pbSong.visibility=View.GONE
+                tvTime.visibility=View.VISIBLE
+                pbSong.visibility=View.VISIBLE
             }
 
 
@@ -322,8 +321,9 @@ class DetailPodcastAdapter(
         when (status){
             Status.NONE.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
-                ivDownload.setImageDrawable(drawable)
+//                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+//                ivDownload.setImageDrawable(drawable)
+                ivDownload.setBackgroundResource(R.drawable.download_black)
             }
             Status.QUEUED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download_queue)

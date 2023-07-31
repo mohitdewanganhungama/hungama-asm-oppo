@@ -137,7 +137,7 @@
                         android:layout_marginStart="@dimen/dimen_18"
                         android:layout_marginEnd="@dimen/dimen_18"
                         android:ellipsize="end"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/oplus_sans_medium"
                         android:maxLines="2"
                         android:textAlignment="center"
                         android:textColor="@color/colorWhite"
@@ -151,9 +151,9 @@
                         android:layout_marginStart="@dimen/dimen_18"
                         android:layout_marginTop="@dimen/dimen_6"
                         android:layout_marginEnd="@dimen/dimen_18"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:textColor="@color/item_title_color"
-                        android:textSize="@dimen/font_15"
+                        android:fontFamily="@font/opplus_sans_regular"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/font_14"
                         app:lineHeight="@dimen/font_18" />
 
                     <TextView
@@ -161,9 +161,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_2"
-                        android:fontFamily="@font/sf_pro_text"
-                        android:textColor="@color/item_sub_title_color"
-                        android:textSize="@dimen/font_13"
+                        android:fontFamily="@font/opplus_sans_regular"
+                        android:textColor="@color/item_sub_title_2_color"
+                        android:textSize="@dimen/font_12"
                         app:lineHeight="@dimen/font_15" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -233,6 +233,7 @@
                             <TextView
                                 android:id="@+id/tvFollow"
                                 style="@style/commonMediumButtonStyle"
+                                android:textColor="@color/colorBlack"
                                 android:text="@string/profile_str_2" />
 
                             <!--<TextView
@@ -262,8 +263,8 @@
                     android:layout_marginTop="@dimen/dimen_17"
                     android:layout_marginEnd="@dimen/dimen_28"
                     android:layout_marginBottom="@dimen/dimen_10"
-                    android:fontFamily="@font/sf_pro_text"
-                    android:textColor="#c6c6c6"
+                    android:fontFamily="@font/opplus_sans_regular"
+                    android:textColor="@color/item_sub_title_2_color"
                     android:textSize="@dimen/font_13"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/llDetails2"
@@ -386,19 +387,19 @@
                             android:layout_marginEnd="@dimen/dimen_5"
 
                             android:ellipsize="end"
-                            android:fontFamily="@font/sf_pro_text_semibold"
+                            android:fontFamily="@font/oplus_sans_bold"
                             android:maxLines="1"
-                            android:textColor="@color/item_title_color"
+                            android:textColor="@color/colorBlack"
                             android:textSize="@dimen/font_17"
                             app:lineHeight="@dimen/font_20" />
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:id="@+id/rlSort"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dimen_30"
+                            android:layout_height="@dimen/dimen_42"
                             android:layout_alignParentEnd="true"
                             android:layout_centerHorizontal="true"
-                            android:background="@drawable/corner_radius_18_bg_alpha_white_without_border"
+                            android:background="@drawable/black_button_drawble"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:paddingStart="@dimen/dimen_10"
@@ -407,6 +408,7 @@
                             <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
                                 android:id="@+id/ivShort"
                                 style="@style/commonMediumIconStyle"
+                                app:fontTextColor="@color/colorWhite1"
                                 app:fontText="@string/icon_sort2"
                                 app:fontTextSize="@dimen/font_16" />
 
@@ -414,8 +416,9 @@
                                 android:id="@+id/tvSort"
                                 style="@style/commonMediumButtonStyle"
                                 android:includeFontPadding="false"
+                                android:paddingEnd="@dimen/dimen_11"
                                 android:text="@string/podcast_str_2"
-                                android:textSize="@dimen/font_11" />
+                                android:textSize="@dimen/font_13" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
                     </RelativeLayout>
@@ -577,6 +580,7 @@
                     <TextView
                         android:id="@+id/tvFollowActionBar"
                         style="@style/commonMediumButtonStyle"
+                        android:textColor="@color/colorBlack"
                         android:text="@string/profile_str_2" />
 
                     <!--<TextView

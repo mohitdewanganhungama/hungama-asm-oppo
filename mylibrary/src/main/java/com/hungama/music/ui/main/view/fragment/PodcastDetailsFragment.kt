@@ -147,8 +147,8 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
     }
 
     override fun initializeComponent(view: View) {
-        applyButtonTheme(requireContext(), llPlayAll)
-        applyButtonTheme(requireContext(), llPlayAllActionBar)
+        CommonUtils.applyButtonTheme1(requireContext(), llPlayAll)
+        CommonUtils.applyButtonTheme1(requireContext(), llPlayAllActionBar)
         /*val icon_sort = FontDrawable(requireContext(), R.string.icon_sort)
         icon_sort.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorWhite))
         ivShort?.setImageDrawable(icon_sort)*/
@@ -193,7 +193,7 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
         llFollowActionBar?.setOnClickListener(this)
 
 
-        shimmerLayoutPodcast.visibility = View.VISIBLE
+        shimmerLayoutPodcast.visibility = View.GONE
         shimmerLayoutPodcast.startShimmer()
 
         (context as MainActivity).addPlayItemChangeListener(this)
@@ -540,7 +540,7 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
             //setLog(TAG, "isViewLoading $it")
             podcastRespModel = homedata
             chartDetailroot.visibility = View.VISIBLE
-            view1.visibility = View.VISIBLE
+//            view1.visibility = View.VISIBLE
             views.visibility = View.VISIBLE
             scrollView.visibility = View.VISIBLE
             setDetails(homedata!!, true)
@@ -1937,14 +1937,14 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
             ivPlayAll?.setImageDrawable(
                 requireContext().faDrawable(
                     R.string.icon_play_2,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
             tvPlayAll?.text = getString(R.string.podcast_str_4)
             ivPlayAllActionBar?.setImageDrawable(
                 requireContext().faDrawable(
                     R.string.icon_play_2,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
             tvPlayAllActionBar?.text = getString(R.string.podcast_str_4)
@@ -1952,14 +1952,14 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
             ivPlayAll?.setImageDrawable(
                 requireContext().faDrawable(
                     R.string.icon_pause,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
             tvPlayAll?.text = getString(R.string.general_str)
             ivPlayAllActionBar?.setImageDrawable(
                 requireContext().faDrawable(
                     R.string.icon_pause,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
             tvPlayAllActionBar?.text = getString(R.string.general_str)
