@@ -195,7 +195,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                     this
                 ).get(HomeViewModel::class.java)
 
-                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_HOME)?.observe(this,
+                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_MUSIC)?.observe(this,
                     Observer {
                         when(it.status){
                             Status.SUCCESS->{

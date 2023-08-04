@@ -22,8 +22,8 @@ object WSConstants {
             Page api region start
          */
         //Production
-       private var PAGE_BASE_URL = "https://cpage.api.hungama.com"
-//    private var PAGE_BASE_URL = "https://pagehmop.api.hungama.com"
+//       private var PAGE_BASE_URL = "https://cpage.api.hungama.com"
+    private var PAGE_BASE_URL = "https://pagehmop.api.hungama.com"
 
     private var PAGE_DETAIL_URL = "https://page.api.hungama.com"
 

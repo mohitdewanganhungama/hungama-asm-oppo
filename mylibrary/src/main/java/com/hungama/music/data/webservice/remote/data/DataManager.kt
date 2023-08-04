@@ -135,7 +135,7 @@ class DataManager {
                     if(MainActivity.lastBottomItemPosClicked==0){
                         params.put(
                             WSConstants.HEADER_IDENTIFIER_KEY,
-                            "home",
+                            "listen",
                         )
                     }else if(MainActivity.lastBottomItemPosClicked==1){
                         params.put(
@@ -373,7 +373,7 @@ class DataManager {
                     if(MainActivity.lastBottomItemPosClicked==0){
                         params.put(
                             WSConstants.HEADER_IDENTIFIER_KEY,
-                            "home",
+                            "listen",
                         )
                     }else if(MainActivity.lastBottomItemPosClicked==1){
                         params.put(
@@ -402,7 +402,7 @@ class DataManager {
 
     }
 
-    suspend fun getVolleyRequest(
+    suspend fun getVolleyRequest( //TODO: 1st breakpoint
         context: Context?,
         url: String?,
         reqJsonObject: JSONObject?,
@@ -420,7 +420,7 @@ class DataManager {
 
             val version = getApiVersion(url.toString())
             var finalURL=""
-
+//https://cugc.api.hungama.com/v1/user/1202635075/1/bookmark?alang=en&vlang=en,hi&mlang=en,hi&platform=a&device=Android&variant=v1&uid=1202635075&storeId=1&appVersion=1
         var deviceType:String="android"
         if(url?.contains("playable") == true){
             deviceType= "android1"
@@ -464,7 +464,7 @@ class DataManager {
                     if(MainActivity.lastBottomItemPosClicked==0){
                         params.put(
                             WSConstants.HEADER_IDENTIFIER_KEY,
-                            "home",
+                            "listen",
                         )
                     }else if(MainActivity.lastBottomItemPosClicked==1){
                         params.put(
@@ -594,7 +594,7 @@ class DataManager {
                 if(MainActivity.lastBottomItemPosClicked==0){
                     params.put(
                         WSConstants.HEADER_IDENTIFIER_KEY,
-                        "home",
+                        "listen",
                     )
                 }else if(MainActivity.lastBottomItemPosClicked==1){
                     params.put(
