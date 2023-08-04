@@ -45,7 +45,7 @@ class MoengageSubscriber(context: Context) : ISubscriber {
     val mContext = context
     var MOENGAGE_APP_ID = ""
     var MOENGAGE_APP_KEY = ""
-    var SENDERID = "102086738647"
+    var SENDERID = "431177551402"
     var iGnore = ArrayList<EventType>()
     var iGnoreProperty = ArrayList<String>()
     var lastStreamEventSongId = ""
@@ -87,13 +87,13 @@ class MoengageSubscriber(context: Context) : ISubscriber {
         setLog(TAG, "moengageSetUp")
 
         if(BuildConfig.DEBUG){
-            MOENGAGE_APP_ID = "AESG8OUL9LQ5CRALTHN7SFDR"
-            MOENGAGE_APP_KEY = "PXGA4LZ3VNHO"
-            SENDERID = "155634998008"
+            MOENGAGE_APP_ID = "QCQSCVFUMHFCN7HF0CGSACD0"
+//            MOENGAGE_APP_KEY = "PXGA4LZ3VNHO"
+            SENDERID = "431177551402"
         }else{
-            MOENGAGE_APP_ID = "GU1CJU9JH0K80P2J4G3ESGPB"
-            MOENGAGE_APP_KEY = "e1mrWX5J3MFYbrBOVVG+FALL"
-            SENDERID = "102086738647"
+            MOENGAGE_APP_ID = "QCQSCVFUMHFCN7HF0CGSACD0"
+//            MOENGAGE_APP_KEY = "e1mrWX5J3MFYbrBOVVG+FALL"
+            SENDERID = "431177551402"
         }
         // Set of activity classes on which in-app should not be shown
         val inAppOptOut = mutableSetOf<Class<*>>()
@@ -110,10 +110,10 @@ class MoengageSubscriber(context: Context) : ISubscriber {
                 .configureGeofence(GeofenceConfig (
                     isGeofenceEnabled = true,
                     isBackgroundSyncEnabled = true))
-                .configureMiPush(MiPushConfig(
-                    MOENGAGE_APP_ID,
-                    MOENGAGE_APP_KEY,
-                    true))
+//                .configureMiPush(MiPushConfig(
+//                    MOENGAGE_APP_ID,
+//                    MOENGAGE_APP_KEY,
+//                    true))
                 .build()
 
 
