@@ -111,7 +111,7 @@ class CustomTabView @JvmOverloads constructor(
                 onItemChange?.onTabItemClick(5)
             }
             setBottomTabSelection(5)
-        } else if (view === llPodcast && !ivTabPodcast.isSelected){
+        } else if (view === llPodcast ){
             if (onItemChange != null) {
                 onItemChange?.onTabItemClick(6)
             }

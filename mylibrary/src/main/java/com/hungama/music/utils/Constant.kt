@@ -229,6 +229,8 @@ object Constant {
     const val DISCOVER_TAB = 1
     const val LISTEN_TAB = 2
     const val WATCH_TAB = 3
+    const val PODCAST_TAB = 6
+
 
 
     //Radio content ids

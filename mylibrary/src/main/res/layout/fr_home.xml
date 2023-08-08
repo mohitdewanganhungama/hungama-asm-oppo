@@ -105,6 +105,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_16"
             android:layout_height="@dimen/dimen_34"
             app:tabContentStart="@dimen/dimen_30"
             android:layout_below="@+id/headerHome"

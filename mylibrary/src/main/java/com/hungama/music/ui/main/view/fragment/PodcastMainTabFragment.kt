@@ -140,16 +140,16 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 shimmerLayoutTab?.startShimmer()
                 shimmerLayout?.startShimmer()
 
-                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)
+                val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)
 
                 if(discoverHomeModel!=null){
                     setProgressBarVisible(false)
-                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)!!)
-                    setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_DISCOVER_PAGE}")
+                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)!!)
+                    setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_PODCAST_PAGE}")
                 }
                 else{
                     setUpViewModel()
-                    setLog("PodcastMainTabFragment", "setUpViewModel online call:${Constant.CACHE_DISCOVER_PAGE}")
+                    setLog("PodcastMainTabFragment", "setUpViewModel online call:${Constant.CACHE_PODCAST_PAGE}")
                 }
             }
         }
@@ -194,7 +194,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     this
                 ).get(HomeViewModel::class.java)
 
-                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_HOME)?.observe(this,
+                homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_PODCAST)?.observe(this,
                     Observer {
                         when(it.status){
                             Status.SUCCESS->{
@@ -205,7 +205,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
 //                                removeMainData("7", items)
 //                                removeMainData("9", items)
                                 it?.data?.let { it1 -> setData(it1) }
-                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
+                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_PODCAST_PAGE, it?.data!!)
+                                setLog("PODCASTCACHEBOTTOMTAB")
                             }
 
                             Status.LOADING ->{
@@ -235,10 +236,23 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
         mHomeModel=homeModel
         baseMainScope.launch {
             if (homeModel != null && homeModel.data != null) {
-                if (homeModel.data.head?.items != null) {
-                    homeModel.data.head.items.forEachIndexed { index, headItemsItem ->
+                homeModel.data.body?.let {
+                    val bundle = Bundle()
+
+                    bundle.putInt(Constant.isPlay, isDirectPlay)
+                    bundle.putString(Constant.defaultContentId, defaultContentId)
+                    bundle.putBoolean(Constant.isRadio, isRadio)
+                    bundle.putInt(Constant.radioType, radioType)
+                    bundle.putBoolean(Constant.isSearchScreen, isSearchScreen)
+                    bundle.putBoolean(Constant.isDeeplinkVoiceSearchText, isDeeplinkVoiceSearchText)
+                    bundle.putString(Constant.deeplinkVoiceSearchText, deeplinkVoiceSearchText)
+                    bundle.putString(Constant.EXTRA_PAGE_DETAIL_NAME, EXTRA_PAGE_DETAIL_NAME)
+//                    PodcastTabFragment.newInstanceInit(homeModel, bundle = bundle )
+                }
+                if (homeModel.data.body?.rows != null) {
+//                    homeModel.data.body.rows?.forEachIndexed { index, headItemsItem ->
                         val bundle = Bundle()
-                        if (index == 0){
+//                        if (index == 0){
                             bundle.putInt(Constant.isPlay, isDirectPlay)
                             bundle.putString(Constant.defaultContentId, defaultContentId)
                             bundle.putBoolean(Constant.isRadio, isRadio)
@@ -247,34 +261,41 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                             bundle.putBoolean(Constant.isDeeplinkVoiceSearchText, isDeeplinkVoiceSearchText)
                             bundle.putString(Constant.deeplinkVoiceSearchText, deeplinkVoiceSearchText)
                             bundle.putString(Constant.EXTRA_PAGE_DETAIL_NAME, EXTRA_PAGE_DETAIL_NAME)
-                            //bundle.putInt(Constant.EXTRA_PAGE_INDEX, index)
-                            //bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModel)
+                            bundle.putBoolean(Constant.EXTRA_IS_CATEGORY_PAGE, isCategoryPage)
+                            bundle.putString(Constant.EXTRA_CATEGORY_NAME, categoryName)
+                            bundle.putString(Constant.EXTRA_CATEGORY_ID, categoryId)
+//                            bundle.putInt(Constant.EXTRA_PAGE_INDEX, 0)
+                            bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModel)
+                            bundle.putBoolean(Constant.EXTRA_IS_CATEGORY_PAGE, isCategoryPage)
+                            bundle.putString(Constant.EXTRA_CATEGORY_NAME, categoryName)
+                            bundle.putString(Constant.EXTRA_CATEGORY_ID, categoryId)
 
-                        }
+//                        }
 
-                        if (isTabSelected && !TextUtils.isEmpty(tabName)
-                            && (headItemsItem?.page.toString().contains(tabName, true) ||  headItemsItem?.title.toString().contains(tabName, true))){
-                            defaultSelectedTabPosition = index
-                        }
-                        val fragment = DiscoverTabFragment.newInstance(headItemsItem, bundle)
-                        fragmentList.add(fragment)
-                        fragmentName.add(headItemsItem?.title!!)
-                    }
-                    if (!fragmentList.isNullOrEmpty() && fragmentList.size > defaultSelectedTabPosition && !homeModel.data.head.items.isNullOrEmpty() && homeModel.data.head.items.size > defaultSelectedTabPosition){
-                        var bundle = fragmentList.get(defaultSelectedTabPosition).arguments
-
-                        if (bundle == null) {
-                            bundle = Bundle()
-                        }else{
-                            CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--bundle=$bundle")
-                        }
+//                        if (isTabSelected && !TextUtils.isEmpty(tabName)
+//                            && (headItemsItem?.page.toString().contains(tabName, true) ||  headItemsItem?.title.toString().contains(tabName, true))){
+//                            defaultSelectedTabPosition = index
+//                        }
+                        defaultSelectedTabPosition = 0
+//                        val fragment = PodcastMainTabFragment.newInstance(requireActivity(), bundle)
+//                        fragmentList.add(fragment)
+//                        fragmentName.add("Podcast")
+//                    }
+//                    if (!fragmentList.isNullOrEmpty() && fragmentList.size > defaultSelectedTabPosition && !homeModel.data.head?.items.isNullOrEmpty() && homeModel.data.head?.items?.size!! > defaultSelectedTabPosition){
+//                        var bundle = fragmentList.get(defaultSelectedTabPosition).arguments
+//
+//                        if (bundle == null) {
+//                            bundle = Bundle()
+//                        }else{
+//                            CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--bundle=$bundle")
+//                        }
                         bundle.putBoolean(Constant.EXTRA_IS_CATEGORY_PAGE, isCategoryPage)
                         bundle.putString(Constant.EXTRA_CATEGORY_NAME, categoryName)
                         bundle.putString(Constant.EXTRA_CATEGORY_ID, categoryId)
-                        CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--tabName=${homeModel.data.head.items.get(defaultSelectedTabPosition)?.page} && isCategory=$isCategoryPage && categoryName=$categoryName && categoryId=$categoryId")
-                        fragmentList.set(defaultSelectedTabPosition, DiscoverTabFragment.newInstance(homeModel.data.head.items.get(defaultSelectedTabPosition), bundle))
-                        fragmentName.set(defaultSelectedTabPosition, homeModel.data.head.items.get(defaultSelectedTabPosition)?.title!!)
-                    }
+//                        CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--tabName=${homeModel.data.head.items.get(defaultSelectedTabPosition)?.page} && isCategory=$isCategoryPage && categoryName=$categoryName && categoryId=$categoryId")
+                        fragmentList.add(defaultSelectedTabPosition, PodcastTabFragment.newInstanceInit(homeModel, bundle))
+                        fragmentName.add(defaultSelectedTabPosition, "Podcast")
+//                    }
                     withContext(Dispatchers.Main){
                         if (isAdded){
                             viewPagerSetUp()
@@ -354,6 +375,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 shimmerLayout?.stopShimmer()
                 shimmerLayoutTab?.visibility = View.GONE
                 shimmerLayout?.visibility = View.GONE
+
+                tabs?.visibility = View.GONE
 
 
 //                delay(2000)
@@ -500,7 +523,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
 
     override fun onDestroy() {
         super.onDestroy()
-        setLog("onDestroy", "DiscoverMainTabFragment")
+        setLog("onDestroy", "PodcastMainTabFragment")
         vpTransactions?.removeOnPageChangeListener(pageChangeCallback)
         baseServiceJob.cancel()
         baseIOServiceJob.cancel()

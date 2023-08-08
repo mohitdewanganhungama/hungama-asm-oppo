@@ -1594,7 +1594,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
                     "on podcast tab click"
                 )
                 fragment = PodcastMainTabFragment.newInstance(this, bundle)
-                //fragment.arguments = bundle
+                fragment.arguments = bundle
                 replaceFragment(R.id.fl_container, fragment, false)
                 setLastClickedBottomMenu(Constant.BOTTOM_NAV_PODCAST, position)
 

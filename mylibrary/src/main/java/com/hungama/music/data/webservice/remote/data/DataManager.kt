@@ -430,9 +430,9 @@ class DataManager {
                 finalURL=url
             }else{
                 if(url?.contains("?",true)!!){
-                    finalURL=url+"&alang="+ SharedPrefHelper.getInstance().getLanguage()+"&vlang="+vlang+"&mlang="+mlang+"&platform=a&device=${deviceType}&variant="+version+ (if(url.contains("uid",true)) "" else "&uid=" +userId)+"&storeId="+Constant.DEFAULT_STORE_ID+"&appVersion="+BuildConfig.VERSION_CODE.toString()
+                    finalURL=url+"&alang="+ SharedPrefHelper.getInstance().getLanguage()+"&vlang="+vlang+"&mlang="+mlang+"&platform=a&device=${deviceType}&variant="+version+ (if(url.contains("uid",true)) "" else "&uid=" +userId)+"&storeId="+Constant.DEFAULT_STORE_ID+"&appVersion="+BuildConfig.VERSION_CODE.toString()+"&product=oppo"
                 }else{
-                    finalURL=url+"?alang="+ SharedPrefHelper.getInstance().getLanguage()+"&vlang="+vlang+"&mlang="+mlang+"&platform=a&device=${deviceType}&variant="+version+"&uid="+userId+"&storeId="+Constant.DEFAULT_STORE_ID+"&appVersion="+ BuildConfig.VERSION_CODE.toString()
+                    finalURL=url+"?alang="+ SharedPrefHelper.getInstance().getLanguage()+"&vlang="+vlang+"&mlang="+mlang+"&platform=a&device=${deviceType}&variant="+version+"&uid="+userId+"&storeId="+Constant.DEFAULT_STORE_ID+"&appVersion="+ BuildConfig.VERSION_CODE.toString()+"&product=oppo"
                 }
             }
 
@@ -479,7 +479,7 @@ class DataManager {
                     }else if(MainActivity.lastBottomItemPosClicked==6){
                         params.put(
                             WSConstants.HEADER_IDENTIFIER_KEY,
-                            "podcast",
+                            "listen",
                         )
                     }
                     setLog("lastBottomItemPosClickedTODO" +
