@@ -1604,7 +1604,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
             if (isVisible && context != null){
                 if (isNudgeViewVisible){
                     var nudgeHeight = 0
-                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
+                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_8)
 
                     if (nudge?.height != null){
                         nudgeHeight = nudge.height
@@ -1617,7 +1617,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
                 }else{
                     val nudgeHeight = 0
-                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
+                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_8)
                     rvTopPadding += nudgeHeight
 
                     setLog("MoengageNudgeView", "DiscoverTabFragment-setViewBottomSpacing-false-rvTopPadding-$rvTopPadding - nudgeHeight-$nudgeHeight")
