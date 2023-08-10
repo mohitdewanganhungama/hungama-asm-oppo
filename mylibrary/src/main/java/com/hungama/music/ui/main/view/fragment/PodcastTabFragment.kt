@@ -109,9 +109,10 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
         const val UPDATED_STORY_USER_LIST = "updatedStoryUserList"
 
 
-        fun newInstance(mHeadItemsItem: HeadItemsItem?, bundle: Bundle): PodcastTabFragment {
+        fun newInstance(mHeadItemsItem: HeadItemsItem?, homeModelData: HomeModel, bundle: Bundle): PodcastTabFragment {
             val fragment = PodcastTabFragment()
             bundle.putParcelable(Constant.BUNDLE_KEY_HEADITEMSITEM, mHeadItemsItem)
+            bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModelData)
             fragment.arguments = bundle
             return fragment
         }
