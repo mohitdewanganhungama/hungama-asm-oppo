@@ -1595,6 +1595,13 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                    headItemsItem?.page?.let {
+                        if(it=="podcast"){
+                            CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_8),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                        }
+                    }
                 }else{
                     val nudgeHeight = 0
                     var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
@@ -1604,6 +1611,14 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+
+                    headItemsItem?.page?.let {
+                        if(it=="podcast"){
+                            CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_8),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                        }
+                    }
                 }
             }
         }

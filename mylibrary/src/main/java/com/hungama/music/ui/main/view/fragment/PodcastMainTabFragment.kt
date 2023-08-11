@@ -36,7 +36,7 @@ import com.hungama.music.utils.CommonUtils.setLog
 import com.hungama.music.utils.ConnectionUtil
 import com.hungama.music.utils.Constant
 import com.hungama.music.utils.Utils
-import kotlinx.android.synthetic.main.fr_home.*
+import kotlinx.android.synthetic.main.fr_podcast_homepage.*
 import kotlinx.coroutines.*
 import java.io.*
 
@@ -81,7 +81,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fr_home, container, false)
+        return inflater.inflate(R.layout.fr_podcast_homepage, container, false)
     }
 
     override fun initializeComponent(view: View) {
@@ -132,10 +132,10 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 ivSearch?.setOnClickListener(this@PodcastMainTabFragment)
                 ivUserPersonalImage?.setOnClickListener(this@PodcastMainTabFragment)
 
-                shimmerLayout?.visibility = View.GONE
-                shimmerLayoutTab?.visibility = View.GONE
-                shimmerLayoutTab?.startShimmer()
-                shimmerLayout?.startShimmer()
+//                shimmerLayout?.visibility = View.GONE
+//                shimmerLayoutTab?.visibility = View.GONE
+//                shimmerLayoutTab?.startShimmer()
+//                shimmerLayout?.startShimmer()
 
                 val discoverHomeModel=HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)
 
@@ -378,10 +378,10 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 MainActivity.subHeaderItemName = ""
                 MainActivity.lastClickedDataSubTopNav.clear()
 
-                shimmerLayoutTab?.stopShimmer()
-                shimmerLayout?.stopShimmer()
-                shimmerLayoutTab?.visibility = View.GONE
-                shimmerLayout?.visibility = View.GONE
+//                shimmerLayoutTab?.stopShimmer()
+//                shimmerLayout?.stopShimmer()
+//                shimmerLayoutTab?.visibility = View.GONE
+//                shimmerLayout?.visibility = View.GONE
 
 //                tabs?.visibility = View.GONE
                 setLog("PodcastMainTabFragment: View Pager added","${fragmentList}")
