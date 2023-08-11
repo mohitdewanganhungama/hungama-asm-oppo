@@ -289,7 +289,7 @@ dependencies {
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 
-    implementation 'com.google.android.gms:play-services-basement:18.1.0'
+    implementation 'com.google.android.gms:play-services-basement:16.0.1'
 
 //    implementation 'com.newrelic.agent.android:android-agent:6.9.0' // nurelic
 
