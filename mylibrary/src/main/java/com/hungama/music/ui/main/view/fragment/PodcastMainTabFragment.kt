@@ -275,7 +275,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     }
                     withContext(Dispatchers.Main){
                         if (isAdded){
-                            viewPagerSetUp()
+//                            viewPagerSetUp()
                             /*shimmerLayoutTab?.stopShimmer()
                             shimmerLayout?.stopShimmer()
                             shimmerLayoutTab?.visibility = View.GONE
@@ -298,8 +298,10 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     bundle.putBoolean(Constant.isDeeplinkVoiceSearchText, isDeeplinkVoiceSearchText)
                     bundle.putString(Constant.deeplinkVoiceSearchText, deeplinkVoiceSearchText)
                     bundle.putString(Constant.EXTRA_PAGE_DETAIL_NAME, EXTRA_PAGE_DETAIL_NAME)
-                    fragmentList.add(0, PodcastTabFragment.newInstance(HeadItemsItem(page="podcast", title="podcast"), homeModel,bundle))
+                    fragmentList.add(0, PodcastTabFragment.newInstance(HeadItemsItem(page="podcast", title="podcast"),bundle))
                     fragmentName.add(0, "Podcast")
+
+                    setLog("PodcastMainTabFragment bundle added","${bundle}")
 
                     withContext(Dispatchers.Main){
                         if (isAdded){
@@ -381,7 +383,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                 shimmerLayoutTab?.visibility = View.GONE
                 shimmerLayout?.visibility = View.GONE
 
-                tabs?.visibility = View.GONE
+//                tabs?.visibility = View.GONE
+                setLog("PodcastMainTabFragment: View Pager added","${fragmentList}")
 
 
 //                delay(2000)

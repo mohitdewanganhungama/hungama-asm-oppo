@@ -67,7 +67,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PodcastTabFragment.newInstance] factory method to
+ * Use the [DiscoverTabFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksContract.View, BucketParentAdapter.OnMoreItemClick,
@@ -109,17 +109,9 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
         const val UPDATED_STORY_USER_LIST = "updatedStoryUserList"
 
 
-        fun newInstance(mHeadItemsItem: HeadItemsItem?, homeModelData: HomeModel, bundle: Bundle): PodcastTabFragment {
-            val fragment = PodcastTabFragment()
+        fun newInstance(mHeadItemsItem: HeadItemsItem?, bundle: Bundle): DiscoverTabFragment {
+            val fragment = DiscoverTabFragment()
             bundle.putParcelable(Constant.BUNDLE_KEY_HEADITEMSITEM, mHeadItemsItem)
-            bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModelData)
-            fragment.arguments = bundle
-            return fragment
-        }
-
-        fun newInstanceInit(homeModelData: HomeModel?, bundle: Bundle): PodcastTabFragment{
-            val fragment = PodcastTabFragment()
-            bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModelData)
             fragment.arguments = bundle
             return fragment
         }
@@ -139,7 +131,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
         baseMainScope.launch {
             if (arguments!=null){
                 if(arguments?.containsKey(Constant.BUNDLE_KEY_HEADITEMSITEM)!!){
-                    headItemsItem=arguments?.getParcelable(Constant.BUNDLE_KEY_HEADITEMSITEM)
+                    headItemsItem=HeadItemsItem(page="podcast", title="podcast")
                 }
 
                 if (arguments?.containsKey(Constant.isPlay)!!){
@@ -178,19 +170,6 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                 if (arguments?.containsKey(Constant.deeplinkVoiceSearchText)!!){
                     deeplinkVoiceSearchText = arguments?.getString(Constant.deeplinkVoiceSearchText)!!
                 }
-
-                if(arguments?.containsKey(Constant.BUNDLE_KEY_BODYDATA)!!){
-                    tempHomeData = arguments?.getParcelable(Constant.BUNDLE_KEY_BODYDATA)!!
-                    tempHomeData?.let {
-                        bucketRespModel = it
-                        tempHomeDataMain = it
-
-//                        setData(it, false)
-                        setLog("PODCASTBODYDATA: ${it.data.toString()}")
-
-                    }
-
-                }
             }
             if (isDirectPlay == 1 && isRadio && (radioType == CONTENT_RADIO || radioType == CONTENT_LIVE_RADIO)){
                 getPlayableContentUrl(defaultContentId)
@@ -201,15 +180,15 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
             shimmerLayout?.visibility = View.VISIBLE
             shimmerLayout?.startShimmer()
 
-            tempHomeData = HungamaMusicApp.getInstance().getCacheBottomTab("${Constant.BOTTOM_NAV_PODCAST}_podcast")
+            tempHomeData = HungamaMusicApp.getInstance().getCacheBottomTab("${Constant.Bottom_NAV_DISCOVER}_${headItemsItem?.page}")
             if(tempHomeData!=null){
                 setProgressBarVisible(false)
                 setData(CommonUtils.checkProUserBucket(tempHomeData),true)
                 tempHomeDataMain = CommonUtils.checkProUserBucket(tempHomeData)
-                setLog("PodcastTabFragment", "setUpViewModel static call:${Constant.BOTTOM_NAV_PODCAST}_podcast")
+                setLog("DiscoverTabFragment", "setUpViewModel static call:${Constant.Bottom_NAV_DISCOVER}_${headItemsItem?.page}")
 //                dailyDoseAPICall(DiscoverMainTabFragment.mHomeModel)
             }else{
-                setLog("PodcastTabFragment", "setUpViewModel API called")
+                setLog("DiscoverTabFragment", "setUpViewModel API called")
                 setUpViewModel()
             }
 
@@ -374,22 +353,22 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                 {
                     CoroutineScope(Dispatchers.IO).launch {
 //                        delay(3000)
-                    runBlocking{
-                        bucketRespModel =  async {setAdsData(bucketRespModel!!, headItemsItem!!)}.await()
-                        setLog(TAG, "setMoengageData 2 getCacheAdsTab  setAdsData called")
+                        runBlocking{
+                            bucketRespModel =  async {setAdsData(bucketRespModel!!, headItemsItem!!)}.await()
+                            setLog(TAG, "setMoengageData 2 getCacheAdsTab  setAdsData called")
 //                        bucketRespModel =  async {addMoengageSelfHandleInAppData(bucketRespModel!!, headItemsItem!!)}.await()
-                        setLog(TAG, "setMoengageData 3 getCacheAdsTab  setAdsData addMoengageSelfHandleInAppData called")
+                            setLog(TAG, "setMoengageData 3 getCacheAdsTab  setAdsData addMoengageSelfHandleInAppData called")
 
-                        if(rvRecentHistory != null) {
-                            rvRecentHistory.post(Runnable {
-                                if (bucketParentAdapter != null)
-                                    bucketParentAdapter!!.notifyItemRangeChanged(
-                                        0,
-                                        bucketRespModel?.data?.body?.rows?.size!! - 1
-                                    )
-                            })
+                            if(rvRecentHistory != null) {
+                                rvRecentHistory.post(Runnable {
+                                    if (bucketParentAdapter != null)
+                                        bucketParentAdapter!!.notifyItemRangeChanged(
+                                            0,
+                                            bucketRespModel?.data?.body?.rows?.size!! - 1
+                                        )
+                                })
+                            }
                         }
-                      }
                     }
                 }
 
@@ -400,7 +379,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                     varient = Constant.ORIENTATION_HORIZONTAL
                 }
                 bucketParentAdapter = BucketParentAdapter(
-                    bucketRespModel?.data?.body?.rows!!, requireContext(), this@PodcastTabFragment, this@PodcastTabFragment,Constant.PODCAST_TAB, headItemsItem, varient)
+                    bucketRespModel?.data?.body?.rows!!, requireContext(), this@PodcastTabFragment, this@PodcastTabFragment,Constant.DISCOVER_TAB, headItemsItem, varient)
 
                 mLayoutManager=LinearLayoutManager(
                     activity,
@@ -665,7 +644,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                 )
 
                 tracksViewModel.prepareTrackPlayback(0)
-                
+
             }*/
             playableItem = parent
             playableItemPosition = childPosition
@@ -943,156 +922,156 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
 
     fun setPlayableContentListData(playableContentModel: PlayableContentModel) {
 
-            if (playableContentModel != null && playableItem?.items!=null && playableItemPosition<playableItem?.items?.size!!) {
-                setLog("PlayableItem", playableContentModel?.data?.head?.headData?.id.toString())
-                songDataList = arrayListOf()
-                isLastDurationPlay = false
-                setLog(TAG, "setPlayableContentListData playerType: ${playableItem?.items?.get(playableItemPosition)?.data?.type}")
-                if(playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_MOOD_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_ON_DEMAND_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_ARTIST_RADIO, true)){
+        if (playableContentModel != null && playableItem?.items!=null && playableItemPosition<playableItem?.items?.size!!) {
+            setLog("PlayableItem", playableContentModel?.data?.head?.headData?.id.toString())
+            songDataList = arrayListOf()
+            isLastDurationPlay = false
+            setLog(TAG, "setPlayableContentListData playerType: ${playableItem?.items?.get(playableItemPosition)?.data?.type}")
+            if(playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_MOOD_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_ON_DEMAND_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_ARTIST_RADIO, true)){
 
-                   /* if(moodRadioListRespModel.isNullOrEmpty())*/
-                    for (i in moodRadioListRespModel?.indices!!){
+                /* if(moodRadioListRespModel.isNullOrEmpty())*/
+                for (i in moodRadioListRespModel?.indices!!){
 
-                        /* if (playableContentModel.id == moodRadioListRespModel?.get(i)?.data?.id){
-                             setRadioDataList(playableContentModel, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
-                         }else{
-                             setRadioDataList(null, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
-                         }*/
-                        if (playableContentModel?.data?.head?.headData?.id == moodRadioListRespModel?.get(i)?.data?.id){
-                            setRadioDataList(playableContentModel, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
-                        }
-                        if (i > playableItemPosition){
-                            setRadioDataList(null, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
-                        }
-
+                    /* if (playableContentModel.id == moodRadioListRespModel?.get(i)?.data?.id){
+                         setRadioDataList(playableContentModel, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
+                     }else{
+                         setRadioDataList(null, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
+                     }*/
+                    if (playableContentModel?.data?.head?.headData?.id == moodRadioListRespModel?.get(i)?.data?.id){
+                        setRadioDataList(playableContentModel, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
                     }
-                    setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
-                    val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
-                    BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
-
-                    if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
-
-                        HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
-                            if(it?.data?.id==playableContentModel?.data?.head?.headData?.id){
-                                if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
-                                    //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
-                                    tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
-
-                                }else{
-                                    //tracksViewModel.prepareTrackPlayback(playableItemPosition)
-                                    tracksViewModel.prepareTrackPlayback(0)
-
-                                }
-                                isLastDurationPlay=true
-                                return@forEach
-                            }
-                        }
-
-                        if(!isLastDurationPlay){
-                            tracksViewModel.prepareTrackPlayback(0)
-
-                        }
-                    }else{
-                        tracksViewModel.prepareTrackPlayback(0)
-
+                    if (i > playableItemPosition){
+                        setRadioDataList(null, moodRadioListRespModel?.get(i), playableItemPosition,playableItem)
                     }
-                }else if (playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_LIVE_RADIO, true)){
-                    setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
 
-                    setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
-                    val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
-                    BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
+                }
+                setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
+                val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
+                BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
 
-                    if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
+                if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
 
-                        HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
-                            if(it?.data?.id.equals(playableContentModel?.data?.head?.headData?.id,true)){
-                                if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
-                                    setLog(TAG, "onClick btn_next_play_mini size 3: ${songDataList?.size}")
-                                    //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
-                                    tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
+                    HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
+                        if(it?.data?.id==playableContentModel?.data?.head?.headData?.id){
+                            if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
+                                //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
+                                tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
 
-                                }else{
-                                    setLog(TAG, "onClick btn_next_play_mini size 4: ${songDataList?.size}")
-//                                tracksViewModel.prepareTrackPlayback(playableItemPosition)
-                                    tracksViewModel.prepareTrackPlayback(0)
+                            }else{
+                                //tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                                tracksViewModel.prepareTrackPlayback(0)
 
-                                }
-
-                                isLastDurationPlay=true
-                                return@forEach
                             }
+                            isLastDurationPlay=true
+                            return@forEach
                         }
+                    }
 
-                        if(!isLastDurationPlay){
-                            setLog(TAG, "onClick btn_next_play_mini size 5: ${songDataList?.size}")
-//                        tracksViewModel.prepareTrackPlayback(playableItemPosition)
-                            tracksViewModel.prepareTrackPlayback(0)
-
-                        }
-                    }else{
-                        setLog(TAG, "onClick btn_next_play_mini size 6: ${songDataList?.size}")
-//                    tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                    if(!isLastDurationPlay){
                         tracksViewModel.prepareTrackPlayback(0)
 
                     }
                 }else{
-                    for (i in playableItem.items!!.indices){
+                    tracksViewModel.prepareTrackPlayback(0)
 
-                        /*if (playableContentModel.id == playableItem.items?.get(i)?.data?.id){
-                            setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
-                        }else{
-                            setPlayableDataList(null, playableItem, i)
-                        }*/
-                        if (playableContentModel?.data?.head?.headData?.id == playableItem.items?.get(i)?.data?.id){
-                            setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
-                        }else if (i > playableItemPosition){
-                            setPlayableDataList(null, playableItem, i)
-                        }
+                }
+            }else if (playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_RADIO, true) || playableItem?.items?.get(playableItemPosition)?.data?.type!!.equals(Constant.PLAYER_LIVE_RADIO, true)){
+                setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
 
-                    }
-                    setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
-                    val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
-                    BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
-                    if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
+                setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
+                val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
+                BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
 
-                        HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
-                            if(it?.data?.id.equals(playableContentModel?.data?.head?.headData?.id,true)){
-                                if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
-                                    setLog(TAG, "onClick btn_next_play_mini size 3: ${songDataList?.size}")
-                                    //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
-                                    tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
+                if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
 
-                                }else{
-                                    setLog(TAG, "onClick btn_next_play_mini size 4: ${songDataList?.size}")
+                    HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
+                        if(it?.data?.id.equals(playableContentModel?.data?.head?.headData?.id,true)){
+                            if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
+                                setLog(TAG, "onClick btn_next_play_mini size 3: ${songDataList?.size}")
+                                //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
+                                tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
+
+                            }else{
+                                setLog(TAG, "onClick btn_next_play_mini size 4: ${songDataList?.size}")
 //                                tracksViewModel.prepareTrackPlayback(playableItemPosition)
-                                    tracksViewModel.prepareTrackPlayback(0)
+                                tracksViewModel.prepareTrackPlayback(0)
 
-                                }
-
-                                isLastDurationPlay=true
-                                return@forEach
                             }
-                        }
 
-                        if(!isLastDurationPlay){
-                            setLog(TAG, "onClick btn_next_play_mini size 5: ${songDataList?.size}")
+                            isLastDurationPlay=true
+                            return@forEach
+                        }
+                    }
+
+                    if(!isLastDurationPlay){
+                        setLog(TAG, "onClick btn_next_play_mini size 5: ${songDataList?.size}")
 //                        tracksViewModel.prepareTrackPlayback(playableItemPosition)
-                            tracksViewModel.prepareTrackPlayback(0)
-
-                        }
-                    }else{
-                        setLog(TAG, "onClick btn_next_play_mini size 6: ${songDataList?.size}")
-//                    tracksViewModel.prepareTrackPlayback(playableItemPosition)
                         tracksViewModel.prepareTrackPlayback(0)
 
                     }
+                }else{
+                    setLog(TAG, "onClick btn_next_play_mini size 6: ${songDataList?.size}")
+//                    tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                    tracksViewModel.prepareTrackPlayback(0)
 
+                }
+            }else{
+                for (i in playableItem.items!!.indices){
+
+                    /*if (playableContentModel.id == playableItem.items?.get(i)?.data?.id){
+                        setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
+                    }else{
+                        setPlayableDataList(null, playableItem, i)
+                    }*/
+                    if (playableContentModel?.data?.head?.headData?.id == playableItem.items?.get(i)?.data?.id){
+                        setPlayableDataList(playableContentModel, playableItem, playableItemPosition)
+                    }else if (i > playableItemPosition){
+                        setPlayableDataList(null, playableItem, i)
+                    }
+
+                }
+                setLog(TAG, "onClick btn_next_play_mini size 2: ${songDataList?.size}")
+                val tracklistDataModel = filterAndPlayAudioContent(songDataList, 0)
+                BaseActivity.setTrackListData(tracklistDataModel.trackListData as ArrayList<Track>)
+                if(HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()!=null&& HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.size!!>0){
+
+                    HungamaMusicApp?.getInstance()?.getContinueWhereLeftData()?.forEach {
+                        if(it?.data?.id.equals(playableContentModel?.data?.head?.headData?.id,true)){
+                            if(it?.data?.durationPlay!=null&&it?.data?.durationPlay?.toLong()!!>0){
+                                setLog(TAG, "onClick btn_next_play_mini size 3: ${songDataList?.size}")
+                                //tracksViewModel.prepareTrackPlayback(playableItemPosition, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay!!))
+                                tracksViewModel.prepareTrackPlayback(0, TimeUnit.SECONDS.toMillis(it?.data?.durationPlay?.toLong()!!))
+
+                            }else{
+                                setLog(TAG, "onClick btn_next_play_mini size 4: ${songDataList?.size}")
+//                                tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                                tracksViewModel.prepareTrackPlayback(0)
+
+                            }
+
+                            isLastDurationPlay=true
+                            return@forEach
+                        }
+                    }
+
+                    if(!isLastDurationPlay){
+                        setLog(TAG, "onClick btn_next_play_mini size 5: ${songDataList?.size}")
+//                        tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                        tracksViewModel.prepareTrackPlayback(0)
+
+                    }
+                }else{
+                    setLog(TAG, "onClick btn_next_play_mini size 6: ${songDataList?.size}")
+//                    tracksViewModel.prepareTrackPlayback(playableItemPosition)
+                    tracksViewModel.prepareTrackPlayback(0)
 
                 }
 
 
             }
+
+
+        }
 
     }
 
@@ -1605,7 +1584,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
             if (isVisible && context != null){
                 if (isNudgeViewVisible){
                     var nudgeHeight = 0
-                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_8)
+                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
 
                     if (nudge?.height != null){
                         nudgeHeight = nudge.height
@@ -1618,7 +1597,7 @@ class PodcastTabFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
                 }else{
                     val nudgeHeight = 0
-                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_8)
+                    var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
                     rvTopPadding += nudgeHeight
 
                     setLog("MoengageNudgeView", "DiscoverTabFragment-setViewBottomSpacing-false-rvTopPadding-$rvTopPadding - nudgeHeight-$nudgeHeight")
