@@ -89,7 +89,7 @@ import com.hungama.music.eventanalytic.event.EventManager
 import com.hungama.music.eventanalytic.event.EventType
 import com.hungama.music.eventanalytic.eventreporter.*
 import com.hungama.music.home.eventreporter.UserAttributeEvent
-import com.hungama.music.home.eventsubscriber.AmplitudeSubscriber
+import com.hungama.music.eventanalytic.eventsubscriber.AmplitudeSubscriber
 import com.hungama.music.player.audioplayer.Injection
 import com.hungama.music.player.audioplayer.Injection.provideAudioPlayer
 import com.hungama.music.player.audioplayer.NowPlayingContract

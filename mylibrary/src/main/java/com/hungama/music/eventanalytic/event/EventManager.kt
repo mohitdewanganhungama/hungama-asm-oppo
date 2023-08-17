@@ -1,7 +1,7 @@
 package com.hungama.music.eventanalytic.event
 
 import com.hungama.music.eventanalytic.EventConstant
-import com.hungama.music.home.eventsubscriber.AmplitudeSubscriber
+import com.hungama.music.eventanalytic.eventsubscriber.AmplitudeSubscriber
 import com.hungama.music.ui.base.BaseActivity
 import com.hungama.music.utils.CommonUtils.setLog
 import kotlinx.coroutines.CoroutineScope
@@ -70,7 +70,7 @@ class EventManager {
     }
 
 
-    fun findAmplitudeSubscriber():AmplitudeSubscriber{
+    fun findAmplitudeSubscriber(): AmplitudeSubscriber {
         setLog("GM-SDK-APP","findAmplitudeSubscriber subList size:${subList?.size}")
         subList.let {
             return subList?.get(0) as AmplitudeSubscriber

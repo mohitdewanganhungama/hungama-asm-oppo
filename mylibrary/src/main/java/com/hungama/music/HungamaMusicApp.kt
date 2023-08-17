@@ -33,6 +33,7 @@ import com.hungama.fetch2core.Downloader
 import com.hungama.music.data.database.oldappdata.DatabaseDataMigrationWorker
 import com.hungama.music.data.model.*
 import com.hungama.music.eventanalytic.event.EventManager
+import com.hungama.music.eventanalytic.eventsubscriber.AmplitudeSubscriber
 import com.hungama.music.home.eventsubscriber.*
 import com.hungama.music.utils.AppSignatureHelper
 import com.hungama.music.utils.CommonUtils.setLog
