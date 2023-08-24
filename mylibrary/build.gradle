@@ -297,6 +297,8 @@ dependencies {
 
     implementation "com.android.installreferrer:installreferrer:2.2"
     implementation "com.miui.referrer:homereferrer:1.0.0.6"
+
+    implementation 'com.mixpanel.android:mixpanel-android:7.+'
 }
 
 
