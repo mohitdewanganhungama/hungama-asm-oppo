@@ -229,9 +229,10 @@ class DetailPodcastAdapter(
                 tvTime.text = leftTimeInMinuts.toString() + ctx.getString(R.string.podcast_str_14)+" "+ ctx.getString(R.string.podcast_str_15)
                 tvTime.visibility=View.VISIBLE
                 pbSong.visibility=View.VISIBLE
+                setLog("podcast time in mins", leftTimeInMinuts.toString())
             }else{
-                tvTime.visibility=View.VISIBLE
-                pbSong.visibility=View.VISIBLE
+                tvTime.visibility=View.GONE
+                pbSong.visibility=View.GONE
             }
 
 
