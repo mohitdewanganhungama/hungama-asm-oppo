@@ -161,11 +161,11 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        if (varient == 1) {
+//        if (varient == 1) {
+//            return inflater.inflate(R.layout.fragment_playlist_detail_dynamic, container, false)
+//        } else {
             return inflater.inflate(R.layout.fragment_playlist_detail_v2_dynamic, container, false)
-        } else {
-            return inflater.inflate(R.layout.fragment_playlist_detail_v2_dynamic, container, false)
-        }
+//        }
 
     }
 
@@ -341,14 +341,13 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                                         }
                                         setLog("artWorkHeight", artWorkHeight.toString())
                                         devider?.visibility = View.VISIBLE
-//                                        if (varient == 1) {
-//                                            iv_collapsingImageBg?.layoutParams?.height =
-//                                                artWorkHeight
-//                                            iv_collapsingImageBg?.requestLayout()
-//                                            iv_collapsingImageBg?.background = artImage
-//                                            centerGradient?.visibility = View.GONE
-//                                            fullGradient?.visibility = View.VISIBLE
-//                                        } else {
+                                       if (varient == 1) {
+                                           iv_collapsingImageBg?.layoutParams?.height = artWorkHeight
+                                            iv_collapsingImageBg?.requestLayout()
+                                            iv_collapsingImageBg?.background = artImage
+                                            centerGradient?.visibility = View.VISIBLE
+                                            fullGradient?.visibility = View.GONE
+                                        } else {
                                             /*val displayMetrics = DisplayMetrics()
                                             requireActivity().windowManager.defaultDisplay.getMetrics(
                                                 displayMetrics
@@ -376,7 +375,7 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                                             Utils.setMarginsTop(centerGradient, (artworkHeight / 2))
                                             Utils.setMarginsTop(llDetails, (artworkHeight / 2))
                                             centerGradient?.visibility = View.GONE
-//                                        }
+                                        }
                                     } catch (e: Exception) {
 
                                     }
@@ -1057,40 +1056,53 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
             }
         }
 
-//        if (varient == 1) {
-//            if (!TextUtils.isEmpty(artImageUrl)) {
-//                ImageLoader.loadImage(
-//                    requireContext(),
-//                    playlistAlbumArtImageView,
-//                    artImageUrl!!,
-//                    R.drawable.bg_gradient_placeholder
-//                )
-//
-//                if (imageArray != null && imageArray?.size!! > 0) {
-//                    val turl = imageArray?.get((0..imageArray?.size!! - 1).random())
-//                    ImageLoader.loadImage(
-//                        requireContext(),
-//                        playlistAlbumArtImageViewLayer,
-//                        turl!!,
-//                        R.drawable.bg_gradient_placeholder
-//                    )
-//                    playlistAlbumArtImageViewLayer.visibility = View.VISIBLE
-//                    artImageUrl = turl
-//                } else {
-////                    playlistAlbumArtImageViewLayer.visibility = View.GONE
-//                }
-//                setArtImageBg(true)
-//            } else {
-//                ImageLoader.loadImage(
-//                    requireContext(),
-//                    playlistAlbumArtImageView,
-//                    "",
-//                    R.drawable.bg_gradient_placeholder
-//                )
-//                staticToolbarColor()
-//            }
-//        }
-//        else {
+        if (playlistRespModel?.data?.head?.data?.variant?.contains("v2") == true) {
+            varient = 2
+            rlImage.visibility = View.GONE
+//            tvPlayAll.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorBlack))
+        }
+        else{
+            val param = llDetails.layoutParams as ViewGroup.MarginLayoutParams
+            param.setMargins(0, requireContext().resources.getDimensionPixelSize(R.dimen.dimen_16),0,0)
+            llDetails.layoutParams = param
+            tvPlayAll.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorWhite1))
+            iv_MainImage.visibility = View.GONE
+        }
+
+        if (varient == 1) {
+            if (!TextUtils.isEmpty(artImageUrl)) {
+                ImageLoader.loadImage(
+                    requireContext(),
+                    playlistAlbumArtImageView,
+                    artImageUrl!!,
+                    R.drawable.bg_gradient_placeholder
+                )
+
+                if (imageArray != null && imageArray?.size!! > 0) {
+                    val turl = imageArray?.get((0..imageArray?.size!! - 1).random())
+                    ImageLoader.loadImage(
+                        requireContext(),
+                        playlistAlbumArtImageViewLayer,
+                        turl!!,
+                        R.drawable.bg_gradient_placeholder
+                    )
+                    playlistAlbumArtImageViewLayer.visibility = View.VISIBLE
+                    artImageUrl = turl
+                } else {
+//                    playlistAlbumArtImageViewLayer.visibility = View.GONE
+                }
+                setArtImageBg(true)
+            } else {
+                ImageLoader.loadImage(
+                    requireContext(),
+                    playlistAlbumArtImageView,
+                    "",
+                    R.drawable.bg_gradient_placeholder
+                )
+                staticToolbarColor()
+            }
+        }
+        else {
             if (!TextUtils.isEmpty(artImageUrl)) {
                 playlistAlbumArtImageView.visibility = View.GONE
                 setArtImageBg(true)
@@ -1103,7 +1115,7 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
                 )
                 staticToolbarColor()
             }
-//        }
+        }
 
         llDetails2.visibility = View.VISIBLE
         if (it?.data?.head?.data?.title != null && !TextUtils.isEmpty(it?.data?.head?.data?.title)) {

@@ -431,7 +431,9 @@ data class PlaylistModel(
                 @SerializedName("public")
                 var public: Boolean = false,
                 @SerializedName("playcount")
-                var playcount: String = "0"
+                var playcount: String = "0",
+                @SerializedName("variant")
+                var variant: String = ""
             ): Parcelable {
                 @Keep
                 @Parcelize
