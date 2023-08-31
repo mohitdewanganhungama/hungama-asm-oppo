@@ -33,7 +33,7 @@ class ChromeCustomTab : AppCompatActivity() {
         }
         CustomTabsClient.bindCustomTabsService(this, "com.android.chrome", serviceConnection)
         button.setOnClickListener {
-            val url = "https://payapihmopftd.hungama.com/payment?auth=13951dcd3d8c096ded040b10b108ee06&identity=717783271&product_id=1&country=in&platform_id=1&plan_type=TVOD-Premium&app_version=1.0&build_number=172&upilist=&hardware_id=49f4ef266efd8b90&aff_code=&content_id=77408690&live_event_id=&extra_data=&utm_source=&utm_medium=&utm_campaign=&lang=en&amp_user_id=null&amp_device_id=49f4ef266efd8b90"
+            val url = "https://payapihmopftd.hungama.com/payment?auth=13951dcd3d8c096ded040b10b108ee06&identity=717783271&product_id=1&country=in&platform_id=1&plan_type=TVOD-Premium&app_version=1.0&build_number=172&upilist=&hardware_id=49f4ef266efd8b90&aff_code=&content_id=77408690&live_event_id=&extra_data=&utm_source=&utm_medium=&utm_campaign=&lang=en&amp_user_id=null&amp_device_id=49f4ef266efd8b90&product=oppo"
             //val url = "https://www.wikipedia.org"
             val customTabsIntent: CustomTabsIntent = builder.build()
             builder.setShowTitle(false)
