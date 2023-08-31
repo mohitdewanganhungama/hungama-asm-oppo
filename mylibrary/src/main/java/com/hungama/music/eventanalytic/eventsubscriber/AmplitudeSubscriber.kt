@@ -38,7 +38,7 @@ class AmplitudeSubscriber : ISubscriber {
     var lastStreamStartEventSongId = ""
     var lastStreamTriggerEventSongId = ""
     private var mp: MixpanelAPI? = null
-    var PROJECT_TOKEN = "de8f8410bc7c8326fe280906655bae0e"
+    var PROJECT_TOKEN = "9f8bb79f2b03c03d03d1b3bb7be27c86"
 
 
     init {
