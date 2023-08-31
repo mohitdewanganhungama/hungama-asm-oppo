@@ -5045,7 +5045,7 @@ object CommonUtils {
             plan_type = "subscription"
 
             if (queryParam.contains("plan_id")) {
-                url = "https://payments.hungama.com/payment?"
+                url = "https://payapihmopftd.hungama.com/payment?"
                 val url1 = queryParam
                 val split = url1.split("&").toTypedArray()
                 if (split.size >= 9) {
@@ -5056,7 +5056,7 @@ object CommonUtils {
                         plan_type = "event"
                 }
             } else {
-                url = "https://payments.hungama.com/plan?"
+                url = "https://payapihmopftd.hungama.com/plan?"
             }
 
             val auth = md5(Constant.PRODUCT_KEY + ":" + SharedPrefHelper.getInstance().getUserId())
@@ -5153,6 +5153,8 @@ object CommonUtils {
 
             val amplitude_device_id = Amplitude.getInstance().deviceId
             url += "&amp_device_id=$amplitude_device_id"
+            url+= "&product=oppo"
+
 
             url
         }

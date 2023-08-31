@@ -317,6 +317,8 @@ class SwipablePlayerFragment : BaseFragment(), BaseActivity.OnLocalBroadcastEven
 
         val amplitude_device_id = Amplitude.getInstance().deviceId
         url += "&amp_device_id=$amplitude_device_id"
+        url+= "&product=oppo"
+
         setLog("uyfuyfyigkkuytdf ", url)
         return url
     }

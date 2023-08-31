@@ -25,7 +25,7 @@
         <domain includeSubdomains="true">curls.api.hungama.com</domain>
         <domain includeSubdomains="true">*.hungama.com</domain>
         <domain includeSubdomains="true">payapi.hungama.com</domain>
-        <domain includeSubdomains="true">payments.hungama.com</domain>
+        <domain includeSubdomains="true">payapihmopftd.hungama.com</domain>
         <domain includeSubdomains="true">api.hungama.com/</domain>
         <domain includeSubdomains="true">rewards.api.hungama.com</domain>
         <domain includeSubdomains="true">192.168.0.7:9010/</domain>

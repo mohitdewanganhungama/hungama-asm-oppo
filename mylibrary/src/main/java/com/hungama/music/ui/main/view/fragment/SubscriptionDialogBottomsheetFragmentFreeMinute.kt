@@ -291,14 +291,14 @@ class SubscriptionDialogBottomsheetFragmentFreeMinute(
     private fun setUrlParameters() {
         var plan_type = ""
         if (planName.contains(PlanNames.TVOD.name, true) || planName.contains(PlanNames.PTVOD.name, true)){
-            url = "https://payments.hungama.com/payment?"
+            url = "https://payapihmopftd.hungama.com/payment?"
             plan_type = planName
         }else if (planName.contains("LE")){
-            url = "https://payments.hungama.com/payment?"
+            url = "https://payapihmopftd.hungama.com/payment?"
 //            plan_type = "live_concert"
             plan_type = planName
         }else{
-            url = "https://payments.hungama.com/plan?"
+            url = "https://payapihmopftd.hungama.com/plan?"
             plan_type = "subscription"
         }
         val auth = CommonUtils.md5(Constant.PRODUCT_KEY.toString()+":"+ SharedPrefHelper.getInstance().getUserId())
@@ -405,6 +405,9 @@ class SubscriptionDialogBottomsheetFragmentFreeMinute(
 
         val amplitude_device_id = Amplitude.getInstance().deviceId
         url += "&amp_device_id=$amplitude_device_id"
+        url+= "&product=oppo"
+
+
 
         CoroutineScope(Dispatchers.IO).launch {
             val hashMap = HashMap<String,String>()
@@ -451,11 +454,11 @@ class SubscriptionDialogBottomsheetFragmentFreeMinute(
 
         if (!triggerPoint.isEmpty()) {
 
-            url2 = "https://payments.hungama.com/payment?"
+            url2 = "https://payapihmopftd.hungama.com/payment?"
             plan_type = "subscription"
 
         } else {
-            url2 = "https://payments.hungama.com/plan?"
+            url2 = "https://payapihmopftd.hungama.com/plan?"
             plan_type = "subscription"
         }
 
@@ -579,6 +582,8 @@ class SubscriptionDialogBottomsheetFragmentFreeMinute(
 
         val amplitude_device_id = Amplitude.getInstance().deviceId
         url2 += "&amp_device_id=$amplitude_device_id"
+
+        url2+= "&product=oppo"
 
         CoroutineScope(Dispatchers.IO).launch {
             val hashMap = HashMap<String, String>()

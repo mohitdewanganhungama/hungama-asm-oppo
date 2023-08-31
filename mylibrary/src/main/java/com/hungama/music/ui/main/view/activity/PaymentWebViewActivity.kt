@@ -184,12 +184,12 @@ class PaymentWebViewActivity : AppCompatActivity() {
                     }
                     return true
                 }
-                else if (request?.url.toString().contains("https://payments.hungama.com/payment_success") && !isPaymentSuccess) {
+                else if (request?.url.toString().contains("https://payapihmopftd.hungama.com/payment_success") && !isPaymentSuccess) {
                     getUserSubscriptionStatus()
                     setLog("PaymentSuccessFullURL", request?.url.toString())
                     isPaymentSuccess = true
                 }
-//                else if (request?.url.toString().contains("https://payments.hungama.com/payment_success")) {
+//                else if (request?.url.toString().contains("https://payapihmopftd.hungama.com/payment_success")) {
 //
 //                    val returnIntent = Intent()
 //                    returnIntent.putExtra("result", "success")
@@ -223,7 +223,7 @@ class PaymentWebViewActivity : AppCompatActivity() {
                             "http://hungama.com/payment/failed/"
                         )
                 ) {
-                    /*request?.url.toString().contains("https://payments.hungama.com/payment_fail")
+                    /*request?.url.toString().contains("https://payapihmopftd.hungama.com/payment_fail")
                     11-07-2021 - Above condition is removed as per discussed with @sushant shinde*/
                     if (isFromSplash){
                         startActivity(Intent(this@PaymentWebViewActivity, MainActivity::class.java))
@@ -717,7 +717,7 @@ class PaymentWebViewActivity : AppCompatActivity() {
                             if(it.data!=null) {
                                 if (gpOrdersplitArray.containsKey("order_id")) {
                                     val mURL =
-                                        "https://payments.hungama.com/order/" + gpOrdersplitArray?.get(
+                                        "https://payapihmopftd.hungama.com/order/" + gpOrdersplitArray?.get(
                                             "order_id"
                                         ) //+"/"+ SharedPrefHelper.getInstance().getLanguage()
                                     showToast("callGoogleNotifyBillingApi: mURL:${mURL}")
