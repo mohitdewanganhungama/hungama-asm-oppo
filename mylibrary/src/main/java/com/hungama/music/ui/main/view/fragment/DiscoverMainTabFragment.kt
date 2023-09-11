@@ -10,6 +10,7 @@ import android.view.*
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
@@ -40,6 +41,7 @@ import com.hungama.music.utils.Utils
 import kotlinx.android.synthetic.main.fr_home.*
 import kotlinx.android.synthetic.main.fr_home.shimmerLayout
 import kotlinx.android.synthetic.main.fr_main.*
+import kotlinx.android.synthetic.main.header_back_transparent.view.*
 import kotlinx.android.synthetic.main.header_main.*
 import kotlinx.coroutines.*
 import java.io.*
@@ -451,6 +453,14 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
         MainActivity.headerItemNameForBTab= MainActivity.clickedLastTopNav(tab!!.text.toString())
         MainActivity.headerItemPosition = tab.position
         BucketParentAdapter.isVisible = tab.position <= 0
+
+        setLog("alkghlasdhgf", " " +tab.position.toString())
+
+/*        if(tab.position==0){
+            headerHome.setBackgroundColor(resources.getColor(R.color.transparent))
+        }else
+            headerHome.setBackgroundColor(resources.getColor(R.color.colorWhite1))*/
+
         try {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                 if (tab != null) {

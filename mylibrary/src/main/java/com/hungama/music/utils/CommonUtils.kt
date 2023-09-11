@@ -3815,9 +3815,6 @@ object CommonUtils {
                 val enable_payment_nudge = remoteConfig.getBoolean("enable_payment_nudge") ?: false
                 val hero_section_control = remoteConfig.getString("hero_section_control")
 
-                setLog("HeroJson", " $hero_section_control")
-
-
                 val fConfigJsonObject = JsonObject()
                 fConfigJsonObject.add("splash_ad", convertStringToJsonObject(splashAd))
                 fConfigJsonObject.add(

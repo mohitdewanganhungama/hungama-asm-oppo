@@ -100,7 +100,7 @@ object WSConstants {
     var METHOD_SSO_USER_EXIST = "https://user.api.hungama.com/v1/sso/user/"
     var METHOD_SSO_LOGOUT = "https://h-accountshmop.hungama.com/webservice/music/logout_silent_user.php"
 //    var SONG_DURATION_BASE_URL = "https://preview.api.hungama.com/v1"
-var HOME_BANNER = "https://chbanner.api.hungama.com/v1/page/banner?"
+var HOME_BANNER = "https://bannerhmop.api.hungama.com/v1/page/banner?"
 
     //API for asm
     var SONG_DURATION_BASE_URL = "https://previewhmop.api.hungama.com/v1"

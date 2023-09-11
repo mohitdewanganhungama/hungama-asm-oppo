@@ -194,8 +194,10 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                 tempHomeDataMain = CommonUtils.checkProUserBucket(tempHomeData)
                 setLog("DiscoverTabFragment", "setUpViewModel static call:${Constant.Bottom_NAV_DISCOVER}_${headItemsItem?.page}")
 //                dailyDoseAPICall(DiscoverMainTabFragment.mHomeModel)
+                rvRecentHistory.setPadding(0, 0, 0, 0)
             }else{
                 setLog("DiscoverTabFragment", "setUpViewModel API called")
+                rvRecentHistory.setPadding(0, resources.getDimensionPixelSize(R.dimen.dimen_120), 0, 0)
                 setUpViewModel()
             }
 
@@ -1603,8 +1605,9 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     rvTopPadding += nudgeHeight
 
                     setLog("MoengageNudgeView", "DiscoverTabFragment-setViewBottomSpacing-true-rvTopPadding-$rvTopPadding - nudgeHeight-$nudgeHeight")
+
                     CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
-                        resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
+                        resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_0),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
                     headItemsItem?.page?.let {
                         if(it=="podcast"){
@@ -1619,9 +1622,9 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     rvTopPadding += nudgeHeight
 
                     setLog("MoengageNudgeView", "DiscoverTabFragment-setViewBottomSpacing-false-rvTopPadding-$rvTopPadding - nudgeHeight-$nudgeHeight")
-                    CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
+/*                    CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
-                        resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                        resources.getDimensionPixelSize(R.dimen.dimen_0), 0)*/
 
                     headItemsItem?.page?.let {
                         if(it=="podcast"){
