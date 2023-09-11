@@ -168,6 +168,7 @@ import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.utils.tritonbannerview.BannersWrapper
 import com.hungama.music.BuildConfig
 import com.hungama.music.R
+import com.hungama.music.ui.main.adapter.BucketParentAdapter
 import com.hungama.music.ui.main.adapter.Itype50PagerAdapter
 import com.hungama.music.utils.customview.fontview.FontAwesomeImageView
 import com.moengage.inapp.MoEInAppHelper
@@ -1145,6 +1146,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     override fun onBackPressed() {
         setLog("onBackPressed", "BaseActivity-onBackPressed-isFinishing-$isFinishing")
+        BucketParentAdapter.isVisible = true
         if (!isFinishing) {
             if (isSwipableActive) {
                 if (includeFreeMinute.visibility == View.VISIBLE || songPreviewModel.visibility == View.VISIBLE || newPreviewModel.visibility == View.VISIBLE) {
@@ -9276,6 +9278,13 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         override fun run() {
             updateDuration()
             durationHandler?.postDelayed(this, 1000)//1 seconds
+            if (!HungamaMusicApp.getInstance().activityVisible) {
+                if (Itype50PagerAdapter.callPlayerList()?.isPlaying == true) {
+                    Itype50PagerAdapter.callPlayerList()?.pause()
+                    Itype50PagerAdapter.isMute = true
+                    Itype50PagerAdapter.currentVolume = 0F
+                }
+            }
         }
     }
 

@@ -3813,6 +3813,10 @@ object CommonUtils {
                 val enable_payment_drawer =
                     remoteConfig.getBoolean("enable_payment_drawer") ?: false
                 val enable_payment_nudge = remoteConfig.getBoolean("enable_payment_nudge") ?: false
+                val hero_section_control = remoteConfig.getString("hero_section_control")
+
+                setLog("HeroJson", " $hero_section_control")
+
 
                 val fConfigJsonObject = JsonObject()
                 fConfigJsonObject.add("splash_ad", convertStringToJsonObject(splashAd))
@@ -3866,6 +3870,11 @@ object CommonUtils {
                 fConfigJsonObject.add(
                     "drawer_download_all",
                     convertStringToJsonObject(drawer_download_all)
+                )
+
+                fConfigJsonObject.add(
+                    "hero_section_control",
+                    convertStringToJsonObject(hero_section_control)
                 )
 
                 fConfigJsonObject.add(

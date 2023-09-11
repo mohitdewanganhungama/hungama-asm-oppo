@@ -38,14 +38,11 @@ import com.hungama.music.home.eventreporter.LiveConcertEvent
 import com.hungama.music.player.audioplayer.Injection
 import com.hungama.music.utils.*
 import com.hungama.music.player.videoplayer.VideoPlayerActivity
-import com.hungama.music.ui.main.adapter.EventAlbumAdapter
-import com.hungama.music.ui.main.adapter.EventLikeAdapter
-import com.hungama.music.ui.main.adapter.EventMusicVideoAdapter
-import com.hungama.music.ui.main.adapter.EventTopSongAdapter
 import com.hungama.music.ui.main.viewmodel.ArtistViewModel
 import com.hungama.music.ui.main.viewmodel.PlayableContentViewModel
 import com.hungama.music.data.webservice.utils.Status
 import com.hungama.music.eventanalytic.eventreporter.LiveConcertReminderEvent
+import com.hungama.music.ui.main.adapter.*
 import com.hungama.music.ui.main.viewmodel.UserSubscriptionViewModel
 import com.hungama.music.utils.CommonUtils.setLog
 import com.hungama.music.utils.customview.SaveState
@@ -119,6 +116,7 @@ class EventDetailFragment : BaseFragment(), TracksContract.View, ViewTreeObserve
     }
 
     override fun initializeComponent(view: View) {
+        BucketParentAdapter.isVisible = false
         CommonUtils.applyButtonTheme(requireContext(), llEventButton)
         CommonUtils.applyButtonTheme(requireContext(), llEventButtonLoading)
         if (arguments != null){

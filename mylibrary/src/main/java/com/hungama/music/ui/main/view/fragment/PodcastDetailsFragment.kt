@@ -895,6 +895,15 @@ class PodcastDetailsFragment : BaseFragment(), OnParentItemClickListener,
 
             })
         rvPodcastMain.adapter = episodeAdpter
+        CoroutineScope(Dispatchers.Main).launch {
+            if (requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                playPauseStatusChange(true)
+                if (podcastRespModel != null && podcastRespModel?.data?.body?.rows?.get(0)?.data?.misc?.tracks?.size!! > 0) {
+                    isPlaying = true
+                    playAllPodcast()
+                }
+            }
+        }
     }
 
     private fun setDetails(it: PlaylistDynamicModel?, status: Boolean) {

@@ -26,6 +26,7 @@ import com.hungama.music.data.webservice.WSConstants
 import com.hungama.music.data.webservice.utils.Status
 import com.hungama.music.ui.base.BaseActivity
 import com.hungama.music.ui.base.BaseFragment
+import com.hungama.music.ui.main.adapter.BucketParentAdapter
 import com.hungama.music.ui.main.adapter.TabsViewPagerAdapter
 import com.hungama.music.ui.main.view.activity.MainActivity
 import com.hungama.music.ui.main.viewmodel.HomeViewModel
@@ -146,6 +147,9 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                     setProgressBarVisible(false)
                     setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_DISCOVER_PAGE)!!)
                     setLog("DiscoverMainTabFragment", "setUpViewModel static call:${Constant.CACHE_DISCOVER_PAGE}")
+                    BucketParentAdapter.isVisible = true
+                    if (discoverHomeModel.data?.body?.rows?.get(0)?.itype != 50)
+                        requireActivity().resources?.getDimensionPixelSize(R.dimen.dimen_96)?.let { it1 -> rlMainDashboard.setPadding(0,it1,0,0) }
                 }
                 else{
 
@@ -446,6 +450,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
         MainActivity.headerItemName= tab!!.text.toString()
         MainActivity.headerItemNameForBTab= MainActivity.clickedLastTopNav(tab!!.text.toString())
         MainActivity.headerItemPosition = tab.position
+        BucketParentAdapter.isVisible = tab.position <= 0
         try {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                 if (tab != null) {
@@ -557,6 +562,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
         super.onDestroy()
         setLog("onDestroy", "DiscoverMainTabFragment")
         vpTransactions?.removeOnPageChangeListener(pageChangeCallback)
+        BucketParentAdapter.handler?.removeCallbacksAndMessages(null)
         baseServiceJob.cancel()
         baseIOServiceJob.cancel()
     }

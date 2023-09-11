@@ -779,6 +779,12 @@ class AlbumDetailFragment : BaseFragment(), TracksContract.View,
                         setLog("isCurrentContentPlayingFromThis", "isCurrentContentPlayingFromThis-106")
                         albumAdpter?.notifyDataSetChanged()
                     }
+                    withContext(Dispatchers.Main) {
+                        if (requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                            playPauseStatusChange(true)
+                            playAllAlbumList()
+                        }
+                    }
                 }
             }
         }

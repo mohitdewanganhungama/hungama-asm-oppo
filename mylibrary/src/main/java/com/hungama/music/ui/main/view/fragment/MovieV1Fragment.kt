@@ -737,7 +737,9 @@ class MovieV1Fragment(val varient:Int) : BaseFragment(), OnParentItemClickListen
         scrollView?.visibility = View.VISIBLE
             }
         }
-
+        if(requireArguments().getBoolean(Constant.isPlayFromBanner) && movieModel != null) {
+            directPlay()
+        }
     }
 
     private fun setDetails(movieModel: PlaylistDynamicModel) {

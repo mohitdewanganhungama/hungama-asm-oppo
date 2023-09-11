@@ -668,6 +668,16 @@ class ArtistDetailsFragment : BaseFragment(), OnParentItemClickListener, TracksC
                     }
 
                     async { checkAllContentDownloadedOrNot(topSongList) }.await()
+                    withContext(Dispatchers.Main) {
+                        delay(1000)
+                        if (requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                            if (!topSongList.isNullOrEmpty()) {
+                                setProgressBarVisible(true)
+                                isPlaying = true
+                                playAllArtistTopSong()
+                            }
+                        }
+                    }
                 }
             }
         }catch (e:Exception){

@@ -778,7 +778,17 @@ class TvShowDetailsFragment(val varient: Int) : BaseFragment(),
 
                     setRecommandedBuckets(it)
                 }
-
+                if(requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                    seasonList = ArrayList()
+                    if (tvShowDetailRespModel != null) {
+                        seasonList.add(
+                            tvShowDetailRespModel?.data?.body?.rows?.get(0)?.seasons?.get(
+                                currentSeasonNo
+                            )!!
+                        )
+                        callPlayTVShow()
+                    }
+                }
 
 
                 shimmerLayout?.stopShimmer()

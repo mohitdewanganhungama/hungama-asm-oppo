@@ -859,7 +859,14 @@ class MyPlaylistDetailFragment(val varient: Int,val listener : onBackPreesHendel
                 checkAllContentDownloadedOrNot(playlistSongList)
             }
             setPlayListSongAdapter(ascending)
-
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(1000)
+                if (requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                    setProgressBarVisible(true)
+                    isPlaying = true
+                    playAllPlaylist()
+                }
+            }
         }
     }
 

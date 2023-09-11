@@ -127,6 +127,8 @@ import com.hungama.music.utils.fontmanger.FontDrawable
 import com.hungama.music.utils.preference.PrefConstant
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.ui.main.adapter.BucketParentAdapter
+import com.hungama.music.ui.main.adapter.Itype50PagerAdapter
 import com.hungama.music.ui.main.view.activity.*
 import com.moengage.cards.MoECardHelper
 import com.moengage.cards.ui.CardActivity
@@ -440,6 +442,10 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
         commitAllowingStateLoss: Boolean
     ): Boolean {
         return if (activity != null) {
+            if (Itype50PagerAdapter.callPlayerList() != null){
+                Itype50PagerAdapter.callPlayerList()?.pause()
+            }
+            BucketParentAdapter.isVisible = false
             if (activity is BaseActivity) {
                 (activity as BaseActivity).addFragment(
                     container,
@@ -476,6 +482,10 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
 
 //        setLog("FragmentName",nextFragment.getN)
         return if (activity != null) {
+            if (Itype50PagerAdapter.callPlayerList() != null){
+                Itype50PagerAdapter.callPlayerList()?.pause()
+            }
+            BucketParentAdapter.isVisible = false
             if (activity is BaseActivity) {
                 (activity as BaseActivity).replaceFragment(
                     container,
@@ -508,6 +518,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                 (activity as BaseActivity).onBackPressed()
             }
         }
+        BucketParentAdapter.isVisible = true
     }
 
     open fun isOnClick(): Boolean {

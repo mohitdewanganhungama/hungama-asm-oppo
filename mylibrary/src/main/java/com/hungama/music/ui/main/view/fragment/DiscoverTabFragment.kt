@@ -23,6 +23,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import androidx.media3.common.util.Util
+import androidx.media3.exoplayer.offline.DownloadManager
+import com.hungama.fetch2.AbstractFetchListener
+import com.hungama.fetch2.Download
+import com.hungama.fetch2.Error
+import com.hungama.fetch2.FetchListener
+import com.hungama.fetch2core.Reason
 import com.hungama.music.HungamaMusicApp
 import com.hungama.music.data.model.*
 import com.hungama.music.data.webservice.WSConstants
@@ -71,7 +77,8 @@ import java.util.concurrent.TimeUnit
  * create an instance of this fragment.
  */
 class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksContract.View, BucketParentAdapter.OnMoreItemClick,
-    BaseActivity.OnLocalBroadcastEventCallBack, InAppLifeCycleListener {
+    BaseActivity.OnLocalBroadcastEventCallBack, InAppLifeCycleListener,OnUserSubscriptionUpdate, BaseActivity.OnDownloadQueueItemChanged,
+    BaseActivity.OnDownloadVideoQueueItemChanged  {
 
     var homeViewModel: HomeViewModel? = null
     var tempHomeData:HomeModel?=null
@@ -304,6 +311,14 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
         }
         //setLog("MoengageNudgeView", "DiscoverTabFragment-onResume-addInAppLifeCycleListener")
 //        nudgeViewSetUp()
+
+        (requireActivity() as MainActivity).addOrUpdateDownloadMusicQueue(
+            ArrayList(),
+            this,
+            fetchMusicDownloadListener,
+            true,
+            false
+        )
         BucketParentAdapter.isVisible = true
     }
 
@@ -411,6 +426,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                         val firstVisiable: Int = mLayoutManager?.findFirstVisibleItemPosition()!!
                         val lastVisiable: Int = mLayoutManager?.findLastVisibleItemPosition()!!
                         val fCompleteVisible = mLayoutManager?.findFirstCompletelyVisibleItemPosition()!!
+                        BucketParentAdapter.isVisible = completeVisiblePosition <= 0
                         setLog("DiscoverTabFragment", "DiscoverTabFragment-setData-onScrolled-findFirstCompletelyVisibleItemPosition-"+ completeVisiblePosition)
                         if (!rowList.isNullOrEmpty() && rowList?.size!! > completeVisiblePosition && completeVisiblePosition >= 0){
                             setLog("DiscoverTabFragment", "DiscoverTabFragment-setData-onScrolled-rowList?.get(completeVisiblePosition)?.itype-"+ rowList?.get(completeVisiblePosition)?.itype)
@@ -675,7 +691,10 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                 Constant.CONTENT_ARTIST_RADIO
             )
         }else {
-            onItemDetailPageRedirection(parent, parentPosition, childPosition, "")
+            if (parent.itype == 50)
+                onItemDetailPageRedirectionItype50(parent, parentPosition, childPosition, "")
+            else
+                onItemDetailPageRedirection(parent, parentPosition, childPosition, "")
         }
     }
 
@@ -1508,15 +1527,6 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
             }
         }
     }
-    var firstTime = true
-
-
-    private fun initGlide(): RequestManager {
-        val options = RequestOptions()
-        return Glide.with(this)
-            .setDefaultRequestOptions(options)
-    }
-
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
 
@@ -1751,5 +1761,148 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
         }
 
         return false
+    }
+
+    override fun onDownloadVideoQueueItemChanged(
+        downloadManager: DownloadManager,
+        download: androidx.media3.exoplayer.offline.Download
+    ) {
+
+    }
+
+    override fun onDownloadProgress(
+        downloads: List<androidx.media3.exoplayer.offline.Download?>?,
+        progress: Int,
+        currentExoDownloadPosition: Int
+    ) {
+
+    }
+
+    override fun onDownloadsPausedChanged(
+        downloadManager: DownloadManager,
+        downloadsPaused: Boolean?
+    ) {
+    }
+
+
+    private val fetchMusicDownloadListener: FetchListener = object : AbstractFetchListener() {
+        override fun onAdded(download: Download) {
+            super.onAdded(download)
+
+        }
+
+        override fun onQueued(download: Download, waitingOnNetwork: Boolean) {
+            super.onQueued(download, waitingOnNetwork)
+            setLog("DWProgrss-onQueued", download.id.toString())
+        }
+
+        override fun onCompleted(download: Download) {
+            super.onCompleted(download)
+            setLog("DWProgrss-onCompleted", download.id.toString())
+        }
+
+        override fun onError(download: Download, error: Error, throwable: Throwable?) {
+            super.onError(download, error, throwable)
+            setLog("DWProgrss-onError", error.toString())
+        }
+
+        override fun onProgress(
+            download: Download,
+            etaInMilliSeconds: Long,
+            downloadedBytesPerSecond: Long
+        ) {
+            super.onProgress(download, etaInMilliSeconds, downloadedBytesPerSecond)
+            setLog("DWProgrss", downloadedBytesPerSecond.toString())
+        }
+
+        override fun onPaused(download: Download) {
+            super.onPaused(download)
+
+        }
+
+        override fun onResumed(download: Download) {
+            super.onResumed(download)
+
+        }
+
+        override fun onCancelled(download: Download) {
+            super.onCancelled(download)
+
+        }
+
+        override fun onRemoved(download: Download) {
+            super.onRemoved(download)
+
+        }
+
+        override fun onDeleted(download: Download) {
+            super.onDeleted(download)
+
+        }
+    }
+
+    override fun onDownloadQueueItemChanged(data: Download, reason: Reason) {
+        baseIOScope.launch {
+
+            when (reason) {
+
+                Reason.DOWNLOAD_ADDED -> {
+                    setLog("DWProgrss-ADDED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_QUEUED -> {
+                    setLog("DWProgrss-QUEUED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_STARTED -> {
+                    setLog("DWProgrss-STARTED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_PROGRESS_CHANGED -> {
+                    setLog("DWProgrss-CHANGED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_RESUMED -> {
+                    setLog("DWProgrss-RESUMED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_PAUSED -> {
+                    setLog("DWProgrss-PAUSED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_COMPLETED -> {
+                }
+
+                Reason.DOWNLOAD_CANCELLED -> {
+                    setLog("DWProgrss-CANCELLED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_REMOVED -> {
+                    setLog("DWProgrss-REMOVED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_DELETED -> {
+                    setLog("DWProgrss-DELETED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_ERROR -> {
+                    setLog("DWProgrss-ERROR", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_BLOCK_UPDATED -> {
+                    setLog("DWProgrss-UPDATED", data.id.toString())
+                }
+
+                Reason.DOWNLOAD_WAITING_ON_NETWORK -> {
+                    setLog("DWProgrss-NETWORK", data.id.toString())
+                }
+
+                else -> {}
+            }
+        }
+    }
+    //listener
+
+    override fun onUserSubscriptionUpdateCall(status: Int, contentId: String) {
     }
 }

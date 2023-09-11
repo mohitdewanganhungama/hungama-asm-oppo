@@ -822,6 +822,14 @@ class PlaylistDetailFragmentDynamic : BaseFragment(),OnParentItemClickListener,B
             rlHeading?.show()
             scrollView?.show()
             setPlayAllButton()
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(1000)
+                if (requireArguments().getBoolean(Constant.isPlayFromBanner)) {
+                    setProgressBarVisible(true)
+                    isPlaying = true
+                    playAllPlaylist()
+                }
+            }
         }
     }
 

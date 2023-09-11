@@ -338,6 +338,10 @@ class MusicVideoDetailsFragment : BaseFragment(), BucketParentAdapter.OnMoreItem
         (requireActivity() as MainActivity).hideMiniPlayer()
         selectedContentId = requireArguments().getString(Constant.defaultContentId).toString()
 
+        if(requireArguments().getBoolean(Constant.isPlayFromBanner)){
+            setUpVideoListViewModel(selectedContentId)
+        }
+
         if(requireArguments()!=null&&requireArguments().containsKey(Constant.EXTRA_LIST)){
             musicvideoList=
                 (requireArguments().getSerializable(Constant.EXTRA_LIST) as ArrayList<DownloadedAudio>?)!!
