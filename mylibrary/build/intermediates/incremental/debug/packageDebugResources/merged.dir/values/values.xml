@@ -1,0 +1,2760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="Gender">
+    <item>Male</item>
+    <item>Female</item>
+    <item>Prefer not to say</item>
+  </string-array>
+    <string-array name="State">
+    <item>Andhra Pradesh</item>
+    <item>Arunachal Pradesh</item>
+    <item>Assam</item>
+    <item>Bihar</item>
+    <item>Chhattisgarh</item>
+    <item>Goa</item>
+    <item>Gujarat</item>
+    <item>Haryana</item>
+    <item>Himachal Pradesh</item>
+    <item>Jharkhand</item>
+    <item>Karnataka</item>
+    <item>Kerala</item>
+    <item>Madhya Pradesh</item>
+    <item>Maharashtra</item>
+    <item>Manipur</item>
+    <item>Meghalaya</item>
+    <item>Mizoram</item>
+    <item>Nagaland</item>
+    <item>Odisha</item>
+    <item>Punjab</item>
+    <item>Rajasthan</item>
+    <item>Sikkim</item>
+    <item>Tamil Nadu</item>
+    <item>Telangana</item>
+    <item>Tripura</item>
+    <item>Uttar Pradesh</item>
+    <item>Uttarakhand</item>
+    <item>West Bengal</item>
+    <item>Andaman and Nicobar Islands</item>
+    <item>Chandigarh</item>
+    <item>Dadra and Nagar Haveli and Daman and Diu</item>
+    <item>Delhi</item>
+    <item>Jammu and Kashmir</item>
+    <item>Ladakh</item>
+    <item>Lakshadweep</item>
+    <item>Puducherry</item>
+  </string-array>
+    <string-array name="crossfadeValues">
+    <item/>
+    <item>12</item>
+  </string-array>
+    <string-array name="rangeSliderValues">
+    <item>1970</item>
+    <item>2008</item>
+  </string-array>
+    <attr format="enum" name="pinViewInputType">
+        <enum name="pinViewText" value="0"/>
+        <enum name="pinViewNumber" value="1"/>
+    </attr>
+    <attr name="scrollingPagerIndicatorStyle"/>
+    <attr format="boolean" name="superBottomSheet_alwaysExpanded"/>
+    <attr format="boolean" name="superBottomSheet_animateCornerRadius"/>
+    <attr format="boolean" name="superBottomSheet_animateStatusBar"/>
+    <attr format="color" name="superBottomSheet_backgroundColor"/>
+    <attr format="boolean" name="superBottomSheet_cancelable"/>
+    <attr format="boolean" name="superBottomSheet_cancelableOnTouchOutside"/>
+    <attr format="dimension" name="superBottomSheet_cornerRadius"/>
+    <attr format="float" name="superBottomSheet_dim"/>
+    <attr format="enum" name="superBottomSheet_expandedHeight">
+        <enum name="match_parent" value="-1"/>
+        <enum name="wrap_content" value="-2"/>
+    </attr>
+    <attr format="dimension" name="superBottomSheet_peekHeight"/>
+    <attr format="color" name="superBottomSheet_statusBarColor"/>
+    <attr format="enum" name="superBottomSheet_width">
+        <enum name="match_parent" value="-1"/>
+        <enum name="wrap_content" value="-2"/>
+    </attr>
+    <bool name="super_bottom_sheet_animate_corner_radius">true</bool>
+    <bool name="super_bottom_sheet_animate_status_bar">true</bool>
+    <bool name="super_bottom_sheet_cancelable">true</bool>
+    <bool name="super_bottom_sheet_cancelableOnTouchOutside">true</bool>
+    <bool name="super_bottom_sheet_isAlwaysExpanded">false</bool>
+    <bool name="super_bottom_sheet_isTablet">false</bool>
+    <color name="active_stock_color">#BECCC9</color>
+    <color name="background">@color/colorWhite</color>
+    <color name="bg_email">#1870B7</color>
+    <color name="black_op_70">#B3000000</color>
+    <color name="blue2">#2b68e8</color>
+    <color name="blue_switch">#2b68e8</color>
+    <color name="blur_one_half_opacity_white_color">#26FFFFFF</color>
+    <color name="border">#4B5F5B</color>
+    <color name="bottom_navigation_color">#C6C6C6</color>
+    <color name="box_card">@color/colorPrimaryDark</color>
+    <color name="cast_color">#dbdbdb</color>
+    <color name="close_button_color">#78ffffff</color>
+    <color name="coins_text">#FDFDFD</color>
+    <color name="colorAccent">#656464</color>
+    <color name="colorAccent1">#EF5F24</color>
+    <color name="colorBgDialog">#77000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackSemiTransparent">#CC000000</color>
+    <color name="colorButton">#717171</color>
+    <color name="colorDarkGreen">#417505</color>
+    <color name="colorDarkRed">#EA0F21</color>
+    <color name="colorDetail">#18174D</color>
+    <color name="colorEndGradiant">#a6a7ab</color>
+    <color name="colorGolden">#ebc97d</color>
+    <color name="colorGreen">#A6CE41</color>
+    <color name="colorGrey">#979797</color>
+    <color name="colorHint">#BDBEC0</color>
+    <color name="colorLightGrey">#CECECE</color>
+    <color name="colorMidGray">#C4C4C4</color>
+    <color name="colorMidLightGray">#E6E6E6</color>
+    <color name="colorOffWhite">#F2F2F2</color>
+    <color name="colorOffWhite_trans">#CDFFFFFF</color>
+    <color name="colorOverlay">#78ffffff</color>
+    <color name="colorPlaceholder">#373a43</color>
+    <color name="colorPlaceholderText">#a6a7ab</color>
+    <color name="colorPlaceholderText2">#f0f0f1</color>
+    <color name="colorPrimary">#656464</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorSemiTransparent">#20000000</color>
+    <color name="colorSocialBtnText">#4A4A4A</color>
+    <color name="colorStartGradiant">#E5E5E5</color>
+    <color name="colorText">@color/font_color</color>
+    <color name="colorTextSecond">#A4A4BD</color>
+    <color name="colorTransparentBlack">#14000000</color>
+    <color name="colorTransparentBlackDialog">#AB292828</color>
+    <color name="colorWarmGrey">#707070</color>
+    <color name="colorWhite">#000000</color>
+    <color name="colorWhite1">#FFFFFF</color>
+    <color name="colorYellow">#FFEB3B</color>
+    <color name="color_ad_free_button">#7c6d4c</color>
+    <color name="color_ad_free_user">#cbc1ac</color>
+    <color name="color_chart_song_down">#d7311e</color>
+    <color name="color_chart_song_new">#5494fd</color>
+    <color name="color_dash_line">#CCCCCC</color>
+    <color name="color_free_user">#2b68e8</color>
+    <color name="color_gamification_button">#8f8f8f</color>
+    <color name="color_gamification_user">#d4d2ce</color>
+    <color name="color_search_bg">#CC4a423e</color>
+    <color name="color_setting_bg">#66373a43</color>
+    <color name="color_setting_summary">#c6c6c6</color>
+    <color name="color_subscription_expired">#7d7b7b</color>
+    <color name="color_subscription_progress_free">#2b68e8</color>
+    <color name="color_subscription_progress_gold">#d79617</color>
+    <color name="color_thank_you_text">#969696</color>
+    <color name="colorkRed">#ff4848</color>
+    <color name="connectedDevice">#2ca1f7</color>
+    <color name="disable_font">#61726E</color>
+    <color name="disable_icons">#999ea2</color>
+    <color name="expired">#f1080a</color>
+    <color name="font_color">#999ea2</color>
+    <color name="font_color_sub_heading">#b7b7b7</color>
+    <color name="four_text_color">#dcdcdc</color>
+    <color name="gray_scale">#8AFFFFFF</color>
+    <color name="green">#73C442</color>
+    <color name="green_dark_gradient">#84D572</color>
+    <color name="half_of_half_opacity_white_color">#40FFFFFF</color>
+    <color name="half_opacity_white_color">#80FFFFFF</color>
+    <color name="heading_bg">#102823</color>
+    <color name="heading_text">#FFFFFF</color>
+    <color name="home_bg_color">#ffffff</color>
+    <color name="home_bg_color_2">#383838</color>
+    <color name="home_bg_color_grey">#FAFAFA</color>
+    <color name="home_mini_player_bg">#707070</color>
+    <color name="ic_launcher_background">#BDBEC0</color>
+    <color name="item_sub_title_2_color">#909090</color>
+    <color name="item_sub_title_color">#C6C6C6</color>
+    <color name="item_title_color">#F5F5F5</color>
+    <color name="itype14_bg_color">#131f24</color>
+    <color name="line_color">#585858</color>
+    <color name="lrc_second_text_color">#808080</color>
+    <color name="lyric_mini_bg_color">#432f2a</color>
+    <color name="md_green_500">#ACF15C</color>
+    <color name="md_green_700">#FF5C8131</color>
+    <color name="md_light_1">#C2C2C2</color>
+    <color name="md_red_500">#E3185D</color>
+    <color name="md_red_700">#830E36</color>
+    <color name="moe_card_background_color">@color/moe_white</color>
+    <color name="moe_card_header_color">#424242</color>
+    <color name="moe_card_message_color">#616161</color>
+    <color name="moe_card_tab_background_selected">@color/moe_white</color>
+    <color name="moe_card_tab_background_unselected">@color/moe_white</color>
+    <color name="moe_card_tab_selected_text_color">#1C64D0</color>
+    <color name="moe_card_tab_unselected_text_color">#8E8E8E</color>
+    <color name="moe_card_timestamp_color">#9E9E9E</color>
+    <color name="moe_card_unclicked_indicator_color">#5956D6</color>
+    <color name="moe_inbox_color_primary_dark">@color/colorPrimaryDark</color>
+    <color name="moreArrowColor">#E5E5E5</color>
+    <color name="mtrl_textinput_default_box_stroke_color" ns1:override="true">#4B5F5B</color>
+    <color name="nudgCicle">#D8D29B13</color>
+    <color name="pending_story_color">#e95950</color>
+    <color name="progress_max_active">@color/colorWhite</color>
+    <color name="progress_primary">@color/colorWhite</color>
+    <color name="progress_secondary">@color/gray_scale</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="rate_color_awful">#DE4A3D</color>
+    <color name="rate_color_bad">#E2701C</color>
+    <color name="rate_color_good_">#77C179</color>
+    <color name="rate_color_great">#5F9868</color>
+    <color name="rate_color_okay">#ECB036</color>
+    <color name="red">#ED2127</color>
+    <color name="redAccent">#E32E27</color>
+    <color name="red_dark_gradient">#B9080C</color>
+    <color name="rippelColor">#0099CC</color>
+    <color name="search_chip_unselected_bg_color">#c6c6c6</color>
+    <color name="semiTransparentColor">#40FFFFFF</color>
+    <color name="settings_item_bg_color">#1AFFFFFF</color>
+    <color name="skeleton_view_background">#565655</color>
+    <color name="splash_ads_bg">#383838</color>
+    <color name="story_not_seen">#0F7EF2</color>
+    <color name="story_not_seen_text">#ffffff</color>
+    <color name="story_seen_text">#828282</color>
+    <color name="subtitle_grey_color">#8C000000</color>
+    <color name="tab_selected_color">#323232</color>
+    <color name="tab_un_selected_color">#C1C1C1</color>
+    <color name="third_text_color">#909090</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="transparentColor">#00CFCCCC</color>
+    <color name="unselected_tab_color">#EBEBEB</color>
+    <color name="user_profile_border">#AA7A6F</color>
+    <color name="visited_story_color">#33009988</color>
+    <color name="yellow">#FEB247</color>
+    <dimen name="cardview_corner_radius">3dp</dimen>
+    <dimen name="cardview_padding">7dp</dimen>
+    <dimen name="common_popup_round_corner">30dp</dimen>
+    <dimen name="common_space_between_title_and_artwork_space_detail_page">12dp</dimen>
+    <dimen name="common_space_between_title_and_artwork_space_listing_page">12dp</dimen>
+    <dimen name="common_two_bucket_space_detail_page">35dp</dimen>
+    <dimen name="common_two_bucket_space_listing_page">35dp</dimen>
+    <dimen name="dimen_0">0dp</dimen>
+    <dimen name="dimen_0_5">0.5dp</dimen>
+    <dimen name="dimen_1">1dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_101">101dp</dimen>
+    <dimen name="dimen_102">102dp</dimen>
+    <dimen name="dimen_103">103dp</dimen>
+    <dimen name="dimen_104">104dp</dimen>
+    <dimen name="dimen_105">105dp</dimen>
+    <dimen name="dimen_106">106dp</dimen>
+    <dimen name="dimen_107">107dp</dimen>
+    <dimen name="dimen_108">108dp</dimen>
+    <dimen name="dimen_109">109dp</dimen>
+    <dimen name="dimen_109_5">109.50dp</dimen>
+    <dimen name="dimen_10_3">10.30dp</dimen>
+    <dimen name="dimen_10_4">10.40dp</dimen>
+    <dimen name="dimen_10_5">10.50dp</dimen>
+    <dimen name="dimen_10_8">10.80dp</dimen>
+    <dimen name="dimen_10_9">10.90dp</dimen>
+    <dimen name="dimen_11">11dp</dimen>
+    <dimen name="dimen_110">110dp</dimen>
+    <dimen name="dimen_111">111dp</dimen>
+    <dimen name="dimen_112">112dp</dimen>
+    <dimen name="dimen_112_6">112.60dp</dimen>
+    <dimen name="dimen_113">113dp</dimen>
+    <dimen name="dimen_114">114dp</dimen>
+    <dimen name="dimen_115">115dp</dimen>
+    <dimen name="dimen_116">116dp</dimen>
+    <dimen name="dimen_117">117dp</dimen>
+    <dimen name="dimen_118">118dp</dimen>
+    <dimen name="dimen_119">119dp</dimen>
+    <dimen name="dimen_11_2">11.20dp</dimen>
+    <dimen name="dimen_11_4">11.40dp</dimen>
+    <dimen name="dimen_11_6">11.60dp</dimen>
+    <dimen name="dimen_11_7">11.70dp</dimen>
+    <dimen name="dimen_11_75">11.75dp</dimen>
+    <dimen name="dimen_11_8">11.80dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_120">120dp</dimen>
+    <dimen name="dimen_121">121dp</dimen>
+    <dimen name="dimen_122">122dp</dimen>
+    <dimen name="dimen_123">123dp</dimen>
+    <dimen name="dimen_124">124dp</dimen>
+    <dimen name="dimen_125">125dp</dimen>
+    <dimen name="dimen_125_8">125.80dp</dimen>
+    <dimen name="dimen_126">126dp</dimen>
+    <dimen name="dimen_127">127dp</dimen>
+    <dimen name="dimen_128">128dp</dimen>
+    <dimen name="dimen_129">129dp</dimen>
+    <dimen name="dimen_12_1">12.10dp</dimen>
+    <dimen name="dimen_12_2">12.20dp</dimen>
+    <dimen name="dimen_12_3">12.30dp</dimen>
+    <dimen name="dimen_12_4">12.40dp</dimen>
+    <dimen name="dimen_12_5">12.50dp</dimen>
+    <dimen name="dimen_12_6">12.60dp</dimen>
+    <dimen name="dimen_12_7">12.70dp</dimen>
+    <dimen name="dimen_12_8">12.80dp</dimen>
+    <dimen name="dimen_12_9">12.90dp</dimen>
+    <dimen name="dimen_13">13dp</dimen>
+    <dimen name="dimen_130">130dp</dimen>
+    <dimen name="dimen_132">132dp</dimen>
+    <dimen name="dimen_135">135dp</dimen>
+    <dimen name="dimen_135_80">135.80dp</dimen>
+    <dimen name="dimen_136">136dp</dimen>
+    <dimen name="dimen_137">137dp</dimen>
+    <dimen name="dimen_13_1">13.10dp</dimen>
+    <dimen name="dimen_13_2">13.20dp</dimen>
+    <dimen name="dimen_13_3">13.30dp</dimen>
+    <dimen name="dimen_13_4">13.40dp</dimen>
+    <dimen name="dimen_13_5">13.50dp</dimen>
+    <dimen name="dimen_13_8">13.80dp</dimen>
+    <dimen name="dimen_13_9">13.90dp</dimen>
+    <dimen name="dimen_14">14dp</dimen>
+    <dimen name="dimen_140">140dp</dimen>
+    <dimen name="dimen_141">141dp</dimen>
+    <dimen name="dimen_142">142dp</dimen>
+    <dimen name="dimen_143">143dp</dimen>
+    <dimen name="dimen_144">144dp</dimen>
+    <dimen name="dimen_145">145dp</dimen>
+    <dimen name="dimen_146">146dp</dimen>
+    <dimen name="dimen_14_2">14.20dp</dimen>
+    <dimen name="dimen_14_4">14.40dp</dimen>
+    <dimen name="dimen_14_5">14.50dp</dimen>
+    <dimen name="dimen_14_6">14.60dp</dimen>
+    <dimen name="dimen_14_7">14.70dp</dimen>
+    <dimen name="dimen_14_8">14.80dp</dimen>
+    <dimen name="dimen_14_9">14.90dp</dimen>
+    <dimen name="dimen_15">15dp</dimen>
+    <dimen name="dimen_150">150dp</dimen>
+    <dimen name="dimen_151">151dp</dimen>
+    <dimen name="dimen_152">152dp</dimen>
+    <dimen name="dimen_153">153dp</dimen>
+    <dimen name="dimen_154">154dp</dimen>
+    <dimen name="dimen_155">155dp</dimen>
+    <dimen name="dimen_157">157dp</dimen>
+    <dimen name="dimen_158">158dp</dimen>
+    <dimen name="dimen_159">159dp</dimen>
+    <dimen name="dimen_15_1">15.10dp</dimen>
+    <dimen name="dimen_15_2">15.20dp</dimen>
+    <dimen name="dimen_15_3">15.30dp</dimen>
+    <dimen name="dimen_15_4">15.40dp</dimen>
+    <dimen name="dimen_15_5">15.50dp</dimen>
+    <dimen name="dimen_15_6">15.60dp</dimen>
+    <dimen name="dimen_15_7">15.70dp</dimen>
+    <dimen name="dimen_15_75">15.75dp</dimen>
+    <dimen name="dimen_15_8">15.80dp</dimen>
+    <dimen name="dimen_15_9">15.90dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_160">160dp</dimen>
+    <dimen name="dimen_162">162dp</dimen>
+    <dimen name="dimen_163">163dp</dimen>
+    <dimen name="dimen_164">164dp</dimen>
+    <dimen name="dimen_165">165dp</dimen>
+    <dimen name="dimen_166">166dp</dimen>
+    <dimen name="dimen_167">167dp</dimen>
+    <dimen name="dimen_167_5">167.50dp</dimen>
+    <dimen name="dimen_16_1">16.10dp</dimen>
+    <dimen name="dimen_16_2">16.20dp</dimen>
+    <dimen name="dimen_16_3">16.30dp</dimen>
+    <dimen name="dimen_16_4">16.40dp</dimen>
+    <dimen name="dimen_16_5">16.50dp</dimen>
+    <dimen name="dimen_16_7">16.70dp</dimen>
+    <dimen name="dimen_16_8">16.80dp</dimen>
+    <dimen name="dimen_16_9">16.90dp</dimen>
+    <dimen name="dimen_17">17dp</dimen>
+    <dimen name="dimen_170">170dp</dimen>
+    <dimen name="dimen_172">172dp</dimen>
+    <dimen name="dimen_172_5">172.50dp</dimen>
+    <dimen name="dimen_173">173dp</dimen>
+    <dimen name="dimen_174_5">174.60dp</dimen>
+    <dimen name="dimen_178">178dp</dimen>
+    <dimen name="dimen_179">179dp</dimen>
+    <dimen name="dimen_17_1">17.10dp</dimen>
+    <dimen name="dimen_17_2">17.20dp</dimen>
+    <dimen name="dimen_17_4">17.40dp</dimen>
+    <dimen name="dimen_17_5">17.50dp</dimen>
+    <dimen name="dimen_17_7">17.70dp</dimen>
+    <dimen name="dimen_17_8">17.80dp</dimen>
+    <dimen name="dimen_17_9">17.90dp</dimen>
+    <dimen name="dimen_18">18dp</dimen>
+    <dimen name="dimen_180">180dp</dimen>
+    <dimen name="dimen_181">181dp</dimen>
+    <dimen name="dimen_182">182dp</dimen>
+    <dimen name="dimen_183">183dp</dimen>
+    <dimen name="dimen_184">184dp</dimen>
+    <dimen name="dimen_185">185dp</dimen>
+    <dimen name="dimen_18_1">18.10dp</dimen>
+    <dimen name="dimen_18_2">18.20dp</dimen>
+    <dimen name="dimen_18_3">18.30dp</dimen>
+    <dimen name="dimen_18_5">18.50dp</dimen>
+    <dimen name="dimen_18_6">18.60dp</dimen>
+    <dimen name="dimen_18_7">18.70dp</dimen>
+    <dimen name="dimen_19">19dp</dimen>
+    <dimen name="dimen_190">190dp</dimen>
+    <dimen name="dimen_191_5">191.5dp</dimen>
+    <dimen name="dimen_193">193dp</dimen>
+    <dimen name="dimen_194">194dp</dimen>
+    <dimen name="dimen_197">197dp</dimen>
+    <dimen name="dimen_19_1">19.10dp</dimen>
+    <dimen name="dimen_19_3">19.30dp</dimen>
+    <dimen name="dimen_19_4">19.40dp</dimen>
+    <dimen name="dimen_19_5">19.50dp</dimen>
+    <dimen name="dimen_19_7">19.70dp</dimen>
+    <dimen name="dimen_19_8">19.80dp</dimen>
+    <dimen name="dimen_19_9">19.90dp</dimen>
+    <dimen name="dimen_1_5">1.50dp</dimen>
+    <dimen name="dimen_1_75">1.75dp</dimen>
+    <dimen name="dimen_1_minus">-1dp</dimen>
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_200">200dp</dimen>
+    <dimen name="dimen_203">203dp</dimen>
+    <dimen name="dimen_204">204dp</dimen>
+    <dimen name="dimen_205">205dp</dimen>
+    <dimen name="dimen_20_1">20.10dp</dimen>
+    <dimen name="dimen_20_2">20.20dp</dimen>
+    <dimen name="dimen_20_4">20.40dp</dimen>
+    <dimen name="dimen_20_5">20.50dp</dimen>
+    <dimen name="dimen_20_6">20.60dp</dimen>
+    <dimen name="dimen_20_7">20.70dp</dimen>
+    <dimen name="dimen_20_8">20.80dp</dimen>
+    <dimen name="dimen_21">21dp</dimen>
+    <dimen name="dimen_210">210dp</dimen>
+    <dimen name="dimen_212">212dp</dimen>
+    <dimen name="dimen_213">213dp</dimen>
+    <dimen name="dimen_214">214dp</dimen>
+    <dimen name="dimen_215">215dp</dimen>
+    <dimen name="dimen_216">216dp</dimen>
+    <dimen name="dimen_218">218dp</dimen>
+    <dimen name="dimen_21_1">21.10dp</dimen>
+    <dimen name="dimen_21_3">21.30dp</dimen>
+    <dimen name="dimen_21_4">21.40dp</dimen>
+    <dimen name="dimen_21_5">21.50dp</dimen>
+    <dimen name="dimen_21_6">21.60dp</dimen>
+    <dimen name="dimen_21_9">21.90dp</dimen>
+    <dimen name="dimen_22">22dp</dimen>
+    <dimen name="dimen_220">220dp</dimen>
+    <dimen name="dimen_224">224dp</dimen>
+    <dimen name="dimen_225">225dp</dimen>
+    <dimen name="dimen_229">229dp</dimen>
+    <dimen name="dimen_22_1">22.10dp</dimen>
+    <dimen name="dimen_22_4">22.40dp</dimen>
+    <dimen name="dimen_22_5">22.50dp</dimen>
+    <dimen name="dimen_22_7">22.70dp</dimen>
+    <dimen name="dimen_22_8">22.80dp</dimen>
+    <dimen name="dimen_23">23dp</dimen>
+    <dimen name="dimen_230">230dp</dimen>
+    <dimen name="dimen_232">232dp</dimen>
+    <dimen name="dimen_233">233dp</dimen>
+    <dimen name="dimen_235">235dp</dimen>
+    <dimen name="dimen_236">236dp</dimen>
+    <dimen name="dimen_238">238dp</dimen>
+    <dimen name="dimen_23_1">23.10dp</dimen>
+    <dimen name="dimen_23_2">23.20dp</dimen>
+    <dimen name="dimen_23_3">23.30dp</dimen>
+    <dimen name="dimen_23_8">23.80dp</dimen>
+    <dimen name="dimen_23_9">23.90dp</dimen>
+    <dimen name="dimen_24">24dp</dimen>
+    <dimen name="dimen_240">240dp</dimen>
+    <dimen name="dimen_241">241dp</dimen>
+    <dimen name="dimen_242">242dp</dimen>
+    <dimen name="dimen_243">243dp</dimen>
+    <dimen name="dimen_244">244dp</dimen>
+    <dimen name="dimen_245">245dp</dimen>
+    <dimen name="dimen_246">246dp</dimen>
+    <dimen name="dimen_248">248dp</dimen>
+    <dimen name="dimen_24_2">24.20dp</dimen>
+    <dimen name="dimen_24_4">24.40dp</dimen>
+    <dimen name="dimen_24_5">24.50dp</dimen>
+    <dimen name="dimen_24_6">24.60dp</dimen>
+    <dimen name="dimen_25">25dp</dimen>
+    <dimen name="dimen_250">250dp</dimen>
+    <dimen name="dimen_255">255dp</dimen>
+    <dimen name="dimen_256">256dp</dimen>
+    <dimen name="dimen_25_1">25.10dp</dimen>
+    <dimen name="dimen_25_4">25.40dp</dimen>
+    <dimen name="dimen_25_8">25.80dp</dimen>
+    <dimen name="dimen_25_9">25.90dp</dimen>
+    <dimen name="dimen_26">26dp</dimen>
+    <dimen name="dimen_260">260dp</dimen>
+    <dimen name="dimen_26_8">26.80dp</dimen>
+    <dimen name="dimen_27">27dp</dimen>
+    <dimen name="dimen_270">270dp</dimen>
+    <dimen name="dimen_271">271dp</dimen>
+    <dimen name="dimen_272">272dp</dimen>
+    <dimen name="dimen_273">273dp</dimen>
+    <dimen name="dimen_274">274dp</dimen>
+    <dimen name="dimen_275">275dp</dimen>
+    <dimen name="dimen_276">276dp</dimen>
+    <dimen name="dimen_277">277dp</dimen>
+    <dimen name="dimen_27_5">27.50dp</dimen>
+    <dimen name="dimen_28">28dp</dimen>
+    <dimen name="dimen_280">280dp</dimen>
+    <dimen name="dimen_285">285dp</dimen>
+    <dimen name="dimen_288">288dp</dimen>
+    <dimen name="dimen_29">29dp</dimen>
+    <dimen name="dimen_290">290dp</dimen>
+    <dimen name="dimen_291">291dp</dimen>
+    <dimen name="dimen_295">295dp</dimen>
+    <dimen name="dimen_297">297dp</dimen>
+    <dimen name="dimen_2_5">2.50dp</dimen>
+    <dimen name="dimen_2_5_minus">-2.50dp</dimen>
+    <dimen name="dimen_2_8">2.80dp</dimen>
+    <dimen name="dimen_2_minus">-2dp</dimen>
+    <dimen name="dimen_3">3dp</dimen>
+    <dimen name="dimen_30">30dp</dimen>
+    <dimen name="dimen_300">300dp</dimen>
+    <dimen name="dimen_305">305dp</dimen>
+    <dimen name="dimen_30_7">30.70dp</dimen>
+    <dimen name="dimen_31">31dp</dimen>
+    <dimen name="dimen_310">310dp</dimen>
+    <dimen name="dimen_315">315dp</dimen>
+    <dimen name="dimen_318">318dp</dimen>
+    <dimen name="dimen_31_5">31.50dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+    <dimen name="dimen_320">320dp</dimen>
+    <dimen name="dimen_325">325dp</dimen>
+    <dimen name="dimen_32_9">32.90dp</dimen>
+    <dimen name="dimen_33">33dp</dimen>
+    <dimen name="dimen_330">330dp</dimen>
+    <dimen name="dimen_33_6">33.60dp</dimen>
+    <dimen name="dimen_34">34dp</dimen>
+    <dimen name="dimen_340">340dp</dimen>
+    <dimen name="dimen_344">344dp</dimen>
+    <dimen name="dimen_345">345dp</dimen>
+    <dimen name="dimen_34_3">34.30dp</dimen>
+    <dimen name="dimen_34_4">34.40dp</dimen>
+    <dimen name="dimen_35">35dp</dimen>
+    <dimen name="dimen_350">350dp</dimen>
+    <dimen name="dimen_355">355dp</dimen>
+    <dimen name="dimen_36">36dp</dimen>
+    <dimen name="dimen_360">360dp</dimen>
+    <dimen name="dimen_367">367dp</dimen>
+    <dimen name="dimen_37">37dp</dimen>
+    <dimen name="dimen_370">370dp</dimen>
+    <dimen name="dimen_373">373dp</dimen>
+    <dimen name="dimen_375">375dp</dimen>
+    <dimen name="dimen_378">378dp</dimen>
+    <dimen name="dimen_38">38dp</dimen>
+    <dimen name="dimen_380">380dp</dimen>
+    <dimen name="dimen_381">381dp</dimen>
+    <dimen name="dimen_382">382dp</dimen>
+    <dimen name="dimen_383">383dp</dimen>
+    <dimen name="dimen_384">384dp</dimen>
+    <dimen name="dimen_385">385dp</dimen>
+    <dimen name="dimen_386">386dp</dimen>
+    <dimen name="dimen_387">387dp</dimen>
+    <dimen name="dimen_388">388dp</dimen>
+    <dimen name="dimen_389">389dp</dimen>
+    <dimen name="dimen_38_5">38.50dp</dimen>
+    <dimen name="dimen_39">39dp</dimen>
+    <dimen name="dimen_390">390dp</dimen>
+    <dimen name="dimen_391">391dp</dimen>
+    <dimen name="dimen_392">392dp</dimen>
+    <dimen name="dimen_393">393dp</dimen>
+    <dimen name="dimen_394">394dp</dimen>
+    <dimen name="dimen_395">395dp</dimen>
+    <dimen name="dimen_396">396dp</dimen>
+    <dimen name="dimen_3_5">3.50dp</dimen>
+    <dimen name="dimen_3_7">3.70dp</dimen>
+    <dimen name="dimen_3_8">3.80dp</dimen>
+    <dimen name="dimen_3_minus">-3dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_400">400dp</dimen>
+    <dimen name="dimen_405">405dp</dimen>
+    <dimen name="dimen_406">406dp</dimen>
+    <dimen name="dimen_407">407dp</dimen>
+    <dimen name="dimen_408">408dp</dimen>
+    <dimen name="dimen_409">409dp</dimen>
+    <dimen name="dimen_40_7">40.70dp</dimen>
+    <dimen name="dimen_41">41dp</dimen>
+    <dimen name="dimen_410">410dp</dimen>
+    <dimen name="dimen_411">411dp</dimen>
+    <dimen name="dimen_412">412dp</dimen>
+    <dimen name="dimen_413">413dp</dimen>
+    <dimen name="dimen_414">414dp</dimen>
+    <dimen name="dimen_415">415dp</dimen>
+    <dimen name="dimen_416">416dp</dimen>
+    <dimen name="dimen_419">419dp</dimen>
+    <dimen name="dimen_42">42dp</dimen>
+    <dimen name="dimen_420">420dp</dimen>
+    <dimen name="dimen_422">422dp</dimen>
+    <dimen name="dimen_43">43dp</dimen>
+    <dimen name="dimen_430">430dp</dimen>
+    <dimen name="dimen_43_2">43.2dp</dimen>
+    <dimen name="dimen_44">44dp</dimen>
+    <dimen name="dimen_440">440dp</dimen>
+    <dimen name="dimen_448">448dp</dimen>
+    <dimen name="dimen_44_5">44.50dp</dimen>
+    <dimen name="dimen_44_6">44.60dp</dimen>
+    <dimen name="dimen_45">45dp</dimen>
+    <dimen name="dimen_450">450dp</dimen>
+    <dimen name="dimen_451">451dp</dimen>
+    <dimen name="dimen_452">452dp</dimen>
+    <dimen name="dimen_453">453dp</dimen>
+    <dimen name="dimen_454">454dp</dimen>
+    <dimen name="dimen_455">455dp</dimen>
+    <dimen name="dimen_456">456dp</dimen>
+    <dimen name="dimen_457">457dp</dimen>
+    <dimen name="dimen_458">458dp</dimen>
+    <dimen name="dimen_459">459dp</dimen>
+    <dimen name="dimen_46">46dp</dimen>
+    <dimen name="dimen_460">460dp</dimen>
+    <dimen name="dimen_465">465dp</dimen>
+    <dimen name="dimen_47">47dp</dimen>
+    <dimen name="dimen_470">470dp</dimen>
+    <dimen name="dimen_475">475dp</dimen>
+    <dimen name="dimen_48">48dp</dimen>
+    <dimen name="dimen_480">480dp</dimen>
+    <dimen name="dimen_485">485dp</dimen>
+    <dimen name="dimen_49">49dp</dimen>
+    <dimen name="dimen_490">490dp</dimen>
+    <dimen name="dimen_4_2">4.20dp</dimen>
+    <dimen name="dimen_4_4">4.40dp</dimen>
+    <dimen name="dimen_4_5">4.50dp</dimen>
+    <dimen name="dimen_4_6">4.60dp</dimen>
+    <dimen name="dimen_4_7">4.70dp</dimen>
+    <dimen name="dimen_4_8">4.80dp</dimen>
+    <dimen name="dimen_4_minus">-4dp</dimen>
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_500">500dp</dimen>
+    <dimen name="dimen_505">505dp</dimen>
+    <dimen name="dimen_50_6">50.60dp</dimen>
+    <dimen name="dimen_51">51dp</dimen>
+    <dimen name="dimen_510">510dp</dimen>
+    <dimen name="dimen_515">515dp</dimen>
+    <dimen name="dimen_51_9">51.90dp</dimen>
+    <dimen name="dimen_52">52dp</dimen>
+    <dimen name="dimen_520">520dp</dimen>
+    <dimen name="dimen_525">525dp</dimen>
+    <dimen name="dimen_53">53dp</dimen>
+    <dimen name="dimen_530">530dp</dimen>
+    <dimen name="dimen_533">533dp</dimen>
+    <dimen name="dimen_536">536dp</dimen>
+    <dimen name="dimen_54">54dp</dimen>
+    <dimen name="dimen_540">540dp</dimen>
+    <dimen name="dimen_541">541dp</dimen>
+    <dimen name="dimen_542">542dp</dimen>
+    <dimen name="dimen_543">543dp</dimen>
+    <dimen name="dimen_544">544dp</dimen>
+    <dimen name="dimen_545">545dp</dimen>
+    <dimen name="dimen_55">55dp</dimen>
+    <dimen name="dimen_550">550dp</dimen>
+    <dimen name="dimen_56">56dp</dimen>
+    <dimen name="dimen_560">560dp</dimen>
+    <dimen name="dimen_565">565dp</dimen>
+    <dimen name="dimen_57">57dp</dimen>
+    <dimen name="dimen_570">570dp</dimen>
+    <dimen name="dimen_575">575dp</dimen>
+    <dimen name="dimen_58">58dp</dimen>
+    <dimen name="dimen_580">580dp</dimen>
+    <dimen name="dimen_585">585dp</dimen>
+    <dimen name="dimen_59">59dp</dimen>
+    <dimen name="dimen_590">590dp</dimen>
+    <dimen name="dimen_595">595dp</dimen>
+    <dimen name="dimen_5_2">5.20dp</dimen>
+    <dimen name="dimen_5_5">5.50dp</dimen>
+    <dimen name="dimen_5_minus">-5dp</dimen>
+    <dimen name="dimen_6">6dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="dimen_600">600dp</dimen>
+    <dimen name="dimen_61">61dp</dimen>
+    <dimen name="dimen_62">62dp</dimen>
+    <dimen name="dimen_625">625dp</dimen>
+    <dimen name="dimen_627">627dp</dimen>
+    <dimen name="dimen_63">63dp</dimen>
+    <dimen name="dimen_64">64dp</dimen>
+    <dimen name="dimen_65">65dp</dimen>
+    <dimen name="dimen_66">66dp</dimen>
+    <dimen name="dimen_67">67dp</dimen>
+    <dimen name="dimen_68">68dp</dimen>
+    <dimen name="dimen_69">69dp</dimen>
+    <dimen name="dimen_6_5">6.50dp</dimen>
+    <dimen name="dimen_6_7">6.70dp</dimen>
+    <dimen name="dimen_6_minus">-6dp</dimen>
+    <dimen name="dimen_7">7dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
+    <dimen name="dimen_700">700dp</dimen>
+    <dimen name="dimen_72">72dp</dimen>
+    <dimen name="dimen_731">731dp</dimen>
+    <dimen name="dimen_732">732dp</dimen>
+    <dimen name="dimen_74">74dp</dimen>
+    <dimen name="dimen_75">75dp</dimen>
+    <dimen name="dimen_77">77dp</dimen>
+    <dimen name="dimen_78">78dp</dimen>
+    <dimen name="dimen_7_5">7.50dp</dimen>
+    <dimen name="dimen_7_6">7.60dp</dimen>
+    <dimen name="dimen_7_7">7.70dp</dimen>
+    <dimen name="dimen_7_75">7.75dp</dimen>
+    <dimen name="dimen_7_8">7.80dp</dimen>
+    <dimen name="dimen_7_9">7.90dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
+    <dimen name="dimen_81">81dp</dimen>
+    <dimen name="dimen_82">82dp</dimen>
+    <dimen name="dimen_83">83dp</dimen>
+    <dimen name="dimen_84">84dp</dimen>
+    <dimen name="dimen_84_5">84.5dp</dimen>
+    <dimen name="dimen_85">85dp</dimen>
+    <dimen name="dimen_86">86dp</dimen>
+    <dimen name="dimen_87">87dp</dimen>
+    <dimen name="dimen_88">88dp</dimen>
+    <dimen name="dimen_8_1">8.10dp</dimen>
+    <dimen name="dimen_8_2">8.20dp</dimen>
+    <dimen name="dimen_8_3">8.30dp</dimen>
+    <dimen name="dimen_8_5">8.50dp</dimen>
+    <dimen name="dimen_8_8">8.80dp</dimen>
+    <dimen name="dimen_9">9dp</dimen>
+    <dimen name="dimen_90">90dp</dimen>
+    <dimen name="dimen_91">91dp</dimen>
+    <dimen name="dimen_92">92dp</dimen>
+    <dimen name="dimen_93">93dp</dimen>
+    <dimen name="dimen_94">94dp</dimen>
+    <dimen name="dimen_95">95dp</dimen>
+    <dimen name="dimen_96">96dp</dimen>
+    <dimen name="dimen_97">97dp</dimen>
+    <dimen name="dimen_98">98dp</dimen>
+    <dimen name="dimen_98_8">98.8dp</dimen>
+    <dimen name="dimen_9_2">9.20dp</dimen>
+    <dimen name="dimen_9_5">9.50dp</dimen>
+    <dimen name="dimen_9_7">9.70dp</dimen>
+    <dimen name="dimen_9_75">9.75dp</dimen>
+    <dimen name="dimen_minus_17">-17dp</dimen>
+    <dimen name="dimen_minus_36">-36dp</dimen>
+    <dimen name="dimen_negative_10">-10dp</dimen>
+    <dimen name="dimen_negative_20">-20dp</dimen>
+    <dimen name="dimen_negative_30">-30dp</dimen>
+    <dimen name="dimen_negative_40">-40dp</dimen>
+    <dimen name="dimen_negative_50">-50dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="font_1">1sp</dimen>
+    <dimen name="font_10">10sp</dimen>
+    <dimen name="font_100">100sp</dimen>
+    <dimen name="font_11">11sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="font_13">13sp</dimen>
+    <dimen name="font_14">14sp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="font_17">17sp</dimen>
+    <dimen name="font_18">18sp</dimen>
+    <dimen name="font_19">19sp</dimen>
+    <dimen name="font_1_2">1.20sp</dimen>
+    <dimen name="font_2">2sp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <dimen name="font_21">21sp</dimen>
+    <dimen name="font_22">22sp</dimen>
+    <dimen name="font_23">23sp</dimen>
+    <dimen name="font_24">24sp</dimen>
+    <dimen name="font_25">25sp</dimen>
+    <dimen name="font_26">26sp</dimen>
+    <dimen name="font_27">27sp</dimen>
+    <dimen name="font_28">28sp</dimen>
+    <dimen name="font_29">29sp</dimen>
+    <dimen name="font_3">3sp</dimen>
+    <dimen name="font_30">30sp</dimen>
+    <dimen name="font_31">31sp</dimen>
+    <dimen name="font_33">33sp</dimen>
+    <dimen name="font_35">35sp</dimen>
+    <dimen name="font_4">4sp</dimen>
+    <dimen name="font_40">40sp</dimen>
+    <dimen name="font_5">5sp</dimen>
+    <dimen name="font_50">50sp</dimen>
+    <dimen name="font_56">56sp</dimen>
+    <dimen name="font_6">6sp</dimen>
+    <dimen name="font_60">60sp</dimen>
+    <dimen name="font_7">7sp</dimen>
+    <dimen name="font_8">8sp</dimen>
+    <dimen name="font_80">80sp</dimen>
+    <dimen name="font_8_5">8.50sp</dimen>
+    <dimen name="font_9">9sp</dimen>
+    <dimen name="font_90">90sp</dimen>
+    <dimen name="minus_dimen_10">-10dp</dimen>
+    <dimen name="minus_dimen_15">-15dp</dimen>
+    <dimen name="minus_dimen_18">-18dp</dimen>
+    <dimen name="minus_dimen_20">-20dp</dimen>
+    <dimen name="minus_dimen_24">-24dp</dimen>
+    <dimen name="minus_dimen_30">-30dp</dimen>
+    <dimen name="minus_dimen_40">-40dp</dimen>
+    <dimen name="minus_dimen_50">-50dp</dimen>
+    <dimen name="minus_dimen_60">-60dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="rippleRadius">64dp</dimen>
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="screen_padding_15">15dp</dimen>
+    <item format="float" name="super_bottom_sheet_dim" type="dimen">0.6</item>
+    <dimen name="super_bottom_sheet_peek_height">64dp</dimen>
+    <dimen name="super_bottom_sheet_radius">16dp</dimen>
+    <dimen name="super_bottom_sheet_width">0dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="video_sheet_rounded_corner">30dp</dimen>
+    <integer name="angle_rtl_0">0</integer>
+    <integer name="angle_rtl_180">180</integer>
+    <integer name="angle_rtl_270">270</integer>
+    <integer name="angle_rtl_45">45</integer>
+    <integer name="angle_rtl_90">90</integer>
+    <integer name="super_bottom_expanded_behaviour">-1</integer>
+    <string name="Gender"/>
+    <string name="State"/>
+    <string name="_150">150</string>
+    <string name="_add_the_following_to_the_allowed_callers_listn"/>
+    <string name="_but_its_package_doesnt_match_any_expected_package_for_the"/>
+    <string name="_doller">\u0024</string>
+    <string name="_rupee">\u20B9</string>
+    <string name="action_favorite_name">Toggle Favorite</string>
+    <string name="active_till">Active till</string>
+    <string name="ad_attribution">Ad</string>
+    <string name="added_to_favourite">Added To Favorite</string>
+    <string name="album_str_1">Similar Albums</string>
+    <string name="album_str_2">Albums</string>
+    <string name="album_str_3">Favourite album</string>
+    <string name="album_str_4">Added to favourited album</string>
+    <string name="allow">Allow</string>
+    <string name="allow_background_activity">Allow Background Activity</string>
+    <string name="allowed_caller_log"/>
+    <string name="app_id">C0868879</string>
+    <string name="app_name">Hungama</string>
+    <string name="app_name_gold">Hungama_Gold</string>
+    <string name="artist_str_1">Latest News</string>
+    <string name="artist_str_10">TV Shows</string>
+    <string name="artist_str_11">Upcoming Live Performance</string>
+    <string name="artist_str_12">Merchandise</string>
+    <string name="artist_str_13">You May Also Like</string>
+    <string name="artist_str_14">Movies</string>
+    <string name="artist_str_15">Songs</string>
+    <string name="artist_str_17">Yay, you\'re following artist</string>
+    <string name="artist_str_18">Unfollow</string>
+    <string name="artist_str_19">Ok, you\'ve stopped following artist</string>
+    <string name="artist_str_2">Play All</string>
+    <string name="artist_str_3">Follow</string>
+    <string name="artist_str_4">Plays</string>
+    <string name="artist_str_5">Followers</string>
+    <string name="artist_str_6">Artist for You</string>
+    <string name="artist_str_7">About</string>
+    <string name="artist_str_8">Top Songs</string>
+    <string name="artist_str_9">Music Videos</string>
+    <string name="at">at</string>
+    <string name="auto_repeat_current_song">Auto-repeat current song</string>
+    <string name="btn_seeall_plan_1">See all Plans</string>
+    <string name="btn_seeall_plan_2">Explore More Plans</string>
+    <string name="btn_seeall_plan_3">Other Plans</string>
+    <string name="by_bollywood_hungama">by Bollywood hungama</string>
+    <string name="cast_screen">Cast screen</string>
+    <string name="chart_str_1">By Hungama</string>
+    <string name="chart_str_2">Play All</string>
+    <string name="chart_str_3">More Top 100 Charts</string>
+    <string name="chart_str_4">Recommended Charts</string>
+    <string name="chart_str_5">10,25,695 Plays • 100 Songs</string>
+    <string name="chart_str_6">By Dj Smith</string>
+    <string name="chart_str_7">Top 100 Punjabi Hits</string>
+    <string name="chart_str_8">Playlist by Hungama</string>
+    <string name="chormecast_app_id" translatable="false">EECB0A51</string>
+    <string name="collection_str_1">T-Series Albums</string>
+    <string name="collection_str_2">Movies</string>
+    <string name="collection_str_3">People Also Watched</string>
+    <string name="collection_str_4">Trailers &amp; Extras</string>
+    <string name="collection_str_5">Cast &amp; Crew</string>
+    <string name="comming_soon">Coming soon</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="crossfadeValues"/>
+    <string name="data_saver">Data Saver</string>
+    <string name="default_notification_channel_id">com.hungama.music</string>
+    <string name="default_web_client_id" translatable="false">102086738647-25pcu0n66bs9l8qeb4s7f8ugign2u8et.apps.googleusercontent.com</string>
+    <string name="deny">Deny</string>
+    <string name="discover_str_1">Hungama</string>
+    <string name="discover_str_10">Device Language</string>
+    <string name="discover_str_11">User Country:</string>
+    <string name="discover_str_12">User Carrier</string>
+    <string name="discover_str_13">ok</string>
+    <string name="discover_str_14">Coming Soon</string>
+    <string name="discover_str_15">Search</string>
+    <string name="discover_str_16">Rent</string>
+    <string name="discover_str_17">No data available</string>
+    <string name="discover_str_18">Click here to refresh</string>
+    <string name="discover_str_19">Good Afternoon</string>
+    <string name="discover_str_2">Something is wrong! Please try again later</string>
+    <string name="discover_str_20">Good Evening</string>
+    <string name="discover_str_21">Good Night</string>
+    <string name="discover_str_22">Good Morning</string>
+    <string name="discover_str_23">Listening</string>
+    <string name="discover_str_24">Plays</string>
+    <string name="discover_str_25">Views</string>
+    <string name="discover_str_26">To exit, click back once more</string>
+    <string name="discover_str_29">Love Us?</string>
+    <string name="discover_str_3">No internet connection</string>
+    <string name="discover_str_30">How likely are you to tell your friends about Hungama?</string>
+    <string name="discover_str_31">Language Preference</string>
+    <string name="discover_str_32">Radio One sdf df ds sdsdf sd df dsf</string>
+    <string name="discover_str_33">1</string>
+    <string name="discover_str_4">No internet connection available</string>
+    <string name="discover_str_5">Discover</string>
+    <string name="discover_str_5_en">Discover</string>
+    <string name="discover_str_6">Music</string>
+    <string name="discover_str_6_en">Music</string>
+    <string name="discover_str_7">Videos</string>
+    <string name="discover_str_7_en">Videos</string>
+    <string name="discover_str_8">Search</string>
+    <string name="discover_str_8_en">Search</string>
+    <string name="discover_str_9">Library</string>
+    <string name="discover_str_9_en">Library</string>
+    <string name="discover_title">Discover</string>
+    <string name="download_eta_hrs">%1$dh %2$dm %3$ds left</string>
+    <string name="download_eta_min">%1$dm %2$ds left</string>
+    <string name="download_eta_sec">%1$ds left</string>
+    <string name="download_speed_bytes">%1$d bps</string>
+    <string name="download_speed_kb">%1$s Kbps</string>
+    <string name="download_speed_mb">%1$s Mbps</string>
+    <string name="download_str_1">Retry</string>
+    <string name="download_str_10">Downloaded Podcast Episodes</string>
+    <string name="download_str_11">In Queue</string>
+    <string name="download_str_12">You can pause download anytime</string>
+    <string name="download_str_13">Are you sure you want to resume all downloads?
+</string>
+    <string name="download_str_14">You won’t be able to listen offline</string>
+    <string name="download_str_15">Download Awaited</string>
+    <string name="download_str_16">Download Paused</string>
+    <string name="download_str_17">Oops! The Download Failed.</string>
+    <string name="download_str_18">Movies</string>
+    <string name="download_str_19">TV Shows</string>
+    <string name="download_str_2">Downloading</string>
+    <string name="download_str_20">Download Now</string>
+    <string name="download_str_21">Tap the \t icon to download videos and watch later</string>
+    <string name="download_str_22">Download and Watch offline</string>
+    <string name="download_str_23">Search</string>
+    <string name="download_str_24">No Song Downloading</string>
+    <string name="download_str_25">Movies Downloads</string>
+    <string name="download_str_26">TV Show Episodes</string>
+    <string name="download_str_3">Cancel</string>
+    <string name="download_str_4">Pause All</string>
+    <string name="download_str_5">Resume All</string>
+    <string name="download_str_6">Are you sure you want to cancel all downloads?</string>
+    <string name="download_str_7">Are you sure you want to pause all downloads?</string>
+    <string name="download_str_8">You can resume download anytime</string>
+    <string name="download_str_9">Continue</string>
+    <string name="drawer_download_all_CTA">Buy Hungama Gold</string>
+    <string name="drawer_download_all_heading">Enjoyed this playlist ?</string>
+    <string name="drawer_download_all_image1">Unlimited Downloads</string>
+    <string name="drawer_download_all_image2">High Quality Audio</string>
+    <string name="drawer_download_all_image3">Ad-Free Experience</string>
+    <string name="drawer_download_all_image4">Exclusive Access</string>
+    <string name="drawer_download_all_subheading">To download more playlists like these buy Hungama Gold today and enjoy offline listening</string>
+    <string name="drawer_download_mymusic_heading">Can\'t play this song offline</string>
+    <string name="drawer_download_mymusic_image1">Unlimited Downloads</string>
+    <string name="drawer_download_mymusic_image2">High Quality Audio</string>
+    <string name="drawer_download_mymusic_image3">Ad-Free Experience</string>
+    <string name="drawer_download_mymusic_image4">Exclusive Access</string>
+    <string name="drawer_download_mymusic_subheading">To continue with offline feature  renew Hungama Gold subscription</string>
+    <string name="drawer_downloads_exhausted_heading">Unlock Unlimited Downloads</string>
+    <string name="drawer_downloads_exhausted_image1">Unlimited Downloads</string>
+    <string name="drawer_downloads_exhausted_image2">High Quality Audio</string>
+    <string name="drawer_downloads_exhausted_image3">Ad-Free Experience</string>
+    <string name="drawer_downloads_exhausted_image4">Exclusive Access</string>
+    <string name="drawer_downloads_exhausted_subheading">Enjoy your music offline anytime, anywhere with Hungama Gold</string>
+    <string name="drawer_minute_quota_exhausted_heading">You\'re out of minutes!</string>
+    <string name="drawer_minute_quota_exhausted_image1">Ads Free Music</string>
+    <string name="drawer_minute_quota_exhausted_image2">Limitless Downloads</string>
+    <string name="drawer_minute_quota_exhausted_image3">2x Better Quality Music</string>
+    <string name="drawer_minute_quota_exhausted_image4">Save Mobile Data</string>
+    <string name="drawer_minute_quota_exhausted_image5">Listen &amp; Watch Offline</string>
+    <string name="drawer_minute_quota_exhausted_image6">Movies, TV Shows &amp; Originals</string>
+    <string name="drawer_minute_quota_exhausted_subheading">Get ready for Hungama Gold and keep the music going!</string>
+    <string name="drawer_remove_ads_heading">Tired of Ads</string>
+    <string name="drawer_remove_ads_image1">Unlimited Downloads</string>
+    <string name="drawer_remove_ads_image2">High Quality Audio</string>
+    <string name="drawer_remove_ads_image3">Ad-Free Experience</string>
+    <string name="drawer_remove_ads_image4">Exclusive Access</string>
+    <string name="drawer_remove_ads_subheading">Subscribe to Hungama Gold to enjoy ad-free entertainment.</string>
+    <string name="drawer_restricted_download_heading">Download Restricted</string>
+    <string name="drawer_restricted_download_image1">Unlimited Downloads</string>
+    <string name="drawer_restricted_download_image2">High Quality Audio</string>
+    <string name="drawer_restricted_download_image3">Ad-Free Experience</string>
+    <string name="drawer_restricted_download_image4">Exclusive Access</string>
+    <string name="drawer_restricted_download_subheading">Get unrestricted access to all the content with Hungama Gold subscription</string>
+    <string name="drawer_streaming_quality_heading">Need Best Quality Sound ?</string>
+    <string name="drawer_streaming_quality_image1">Unlimited Downloads</string>
+    <string name="drawer_streaming_quality_image2">High Quality Audio</string>
+    <string name="drawer_streaming_quality_image3">Ad-Free Experience</string>
+    <string name="drawer_streaming_quality_image4">Exclusive Access</string>
+    <string name="drawer_streaming_quality_subheading">Listen latest songs in highest quality audio with Hungama Gold</string>
+    <string name="drawer_svod_download_heading">Offline Movies on the go</string>
+    <string name="drawer_svod_download_image1">Unlimited Downloads</string>
+    <string name="drawer_svod_download_image2">High Quality Audio</string>
+    <string name="drawer_svod_download_image3">Ad-Free Experience</string>
+    <string name="drawer_svod_download_image4">Exclusive Access</string>
+    <string name="drawer_svod_download_subheading">Buy Hungama Gold and download latest movies, songs and much more</string>
+    <string name="drawer_svod_purchase_heading">Tv Shows, Movies and More</string>
+    <string name="drawer_svod_purchase_image1">Unlimited Downloads</string>
+    <string name="drawer_svod_purchase_image2">High Quality Audio</string>
+    <string name="drawer_svod_purchase_image3">Ad-Free Experience</string>
+    <string name="drawer_svod_purchase_image4">Exclusive Access</string>
+    <string name="drawer_svod_purchase_subheading">Buy Hungama Gold and dive deep in the world of entertainment</string>
+    <string name="drawer_svod_tv_show_episode_heading">Enjoy TV shows offline</string>
+    <string name="drawer_svod_tv_show_episode_image1">Unlimited Downloads</string>
+    <string name="drawer_svod_tv_show_episode_image2">High Quality Audio</string>
+    <string name="drawer_svod_tv_show_episode_image3">Ad-Free Experience</string>
+    <string name="drawer_svod_tv_show_episode_image4">Exclusive Access</string>
+    <string name="drawer_svod_tv_show_episode_subheading">Binge watch all TV shows offline with Hungama Gold</string>
+    <string name="earn_coin_how_to_use">Hungama Rewards does not offer returns for physical/digital products after the order has been placed on the Hungama Rewards Ecommerce Site
+
+Unless otherwise specified</string>
+    <string name="episode">Episode</string>
+    <string name="error_media_not_found">Could not locate requested media</string>
+    <string name="exo_download_notification_channel_name">Downloads</string>
+    <string name="exo_track_selection_title_audio">Audio</string>
+    <string name="exo_track_selection_title_text">Text</string>
+    <string name="exo_track_selection_title_video">Video</string>
+    <string name="facebook_app_id" translatable="false">103931556876</string>
+    <string name="favorites">Favorites</string>
+    <string name="favrited_str_1">Favorited Songs</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb103931556876</string>
+    <string name="general_setting_str_1">Notification</string>
+    <string name="general_setting_str_10">Set Hungama as default music service</string>
+    <string name="general_setting_str_11">Set Hungama as your default music player on Alexa and take control  through voice command by saying, \"Alexa, play music on Hungama\".</string>
+    <string name="general_setting_str_12">Some examples of what you can ask Alexa:</string>
+    <string name="general_setting_str_13">“Alexa, play music on Hungama”</string>
+    <string name="general_setting_str_14">“Alexa, play love songs by Arijit Singh on Hungama”</string>
+    <string name="general_setting_str_15">“Alexa, play music videos on Hungama”</string>
+    <string name="general_setting_str_16">Manage My Hungama Gold</string>
+    <string name="general_setting_str_17">Streaming Quality</string>
+    <string name="general_setting_str_18">Download on Mobile Data</string>
+    <string name="general_setting_str_19">Recommended Setting:Off</string>
+    <string name="general_setting_str_2">Email Notification</string>
+    <string name="general_setting_str_20">Music Download Quality</string>
+    <string name="general_setting_str_21">Auto</string>
+    <string name="general_setting_str_22">Video Download Quality</string>
+    <string name="general_setting_str_23">Push notification, new song added</string>
+    <string name="general_setting_str_24">Explicit</string>
+    <string name="general_setting_str_25">Download</string>
+    <string name="general_setting_str_26">Purchase History</string>
+    <string name="general_setting_str_27">No Upcoming Events</string>
+    <string name="general_setting_str_28">No upcoming events scheduled for you</string>
+    <string name="general_setting_str_29">Total Amount Paid</string>
+    <string name="general_setting_str_3">General Settings</string>
+    <string name="general_setting_str_30">Invite friends and relish a shared experience</string>
+    <string name="general_setting_str_31">Delete Your Account</string>
+    <string name="general_setting_str_32">About Hungama</string>
+    <string name="general_setting_str_33">Activate TV</string>
+    <string name="general_setting_str_34">Privacy Policy</string>
+    <string name="general_setting_str_35">Terms &amp; Conditions</string>
+    <string name="general_setting_str_36">Help &amp; Support</string>
+    <string name="general_setting_str_37">Share Hungama</string>
+    <string name="general_setting_str_38">Voice Assistants &amp; Apps</string>
+    <string name="general_setting_str_39">General</string>
+    <string name="general_setting_str_4">Music Playback Settings</string>
+    <string name="general_setting_str_40">Notification settings, App language, Display Explicit Content.</string>
+    <string name="general_setting_str_41">Current Plan </string>
+    <string name="general_setting_str_42">Autoplay, Audio Quality, Music Language Preference, Equalizer, Sleep Timer, Show Lyrics, Gapless</string>
+    <string name="general_setting_str_43">Autoplay, Video Quality</string>
+    <string name="general_setting_str_44">Downloads</string>
+    <string name="general_setting_str_45">Download on Cellular, Music Download Quality, Video Download Quality</string>
+    <string name="general_setting_str_46">Upgrade Your Plan</string>
+    <string name="general_setting_str_48">Choose a login method</string>
+    <string name="general_setting_str_49">Hey, Login now to earn coins</string>
+    <string name="general_setting_str_5">Video Playback Settings</string>
+    <string name="general_setting_str_50">Expired</string>
+    <string name="general_setting_str_51">Active</string>
+    <string name="general_setting_str_52">Days remaining</string>
+    <string name="general_setting_str_53">Recurring</string>
+    <string name="general_setting_str_54">Non Recurring</string>
+    <string name="general_setting_str_55">Unlocks endless entertainment with premium features like Ad-free Music, Unlimited Downloads, Highest Quality Audio Access to unlimited Movies and TV shows, Hungama Originals and more</string>
+    <string name="general_setting_str_56">Buy Gold Plan</string>
+    <string name="general_setting_str_57">Yearly</string>
+    <string name="general_setting_str_58">Rs.</string>
+    <string name="general_setting_str_59">Subscription Plan</string>
+    <string name="general_setting_str_6">Show Lyrics</string>
+    <string name="general_setting_str_60">Amount</string>
+    <string name="general_setting_str_61">Recurring Payment</string>
+    <string name="general_setting_str_62">Subscription valid till</string>
+    <string name="general_setting_str_63">Mobile Notification</string>
+    <string name="general_setting_str_64">App Language</string>
+    <string name="general_setting_str_65">Allow Explicit Content</string>
+    <string name="general_setting_str_66">Explicit content is denoted by E tag. Turn off to skip Explicit content. </string>
+    <string name="general_setting_str_67">Parental Control</string>
+    <string name="general_setting_str_68">Block explicit audio and video content to appear in your feed</string>
+    <string name="general_setting_str_69">Set restrictions for audio and video seperately</string>
+    <string name="general_setting_str_7">See All</string>
+    <string name="general_setting_str_70">Audio Content</string>
+    <string name="general_setting_str_71">Video Content</string>
+    <string name="general_setting_str_72">Explicit video content is rated 13+. Turn off to skip Explicit content. </string>
+    <string name="general_setting_str_73">Age confirmation</string>
+    <string name="general_setting_str_74">You are 18 years of age or older to access age appropriate content</string>
+    <string name="general_setting_str_8">Enjoy listening to music and podcasts across all devices by linking Alexa to your Hungama account</string>
+    <string name="general_setting_str_9">Amazon Alexa</string>
+    <string name="general_str">Pause</string>
+    <string name="general_str_10">Video added to the watchlist</string>
+    <string name="general_str_2">Remove from Downloads</string>
+    <string name="general_str_3">Select All</string>
+    <string name="general_str_4">Remove</string>
+    <string name="general_str_5">Speak now!</string>
+    <string name="general_str_6">Speech to Text is not supported on this device.</string>
+    <string name="general_str_7">Share Story</string>
+    <string name="general_str_8">No System Equalizer found on this device</string>
+    <string name="general_str_9">Watchlist</string>
+    <string name="general_str_ll">Remove From Library</string>
+    <string name="generic_error">The application has encountered an unexpected error</string>
+    <string name="george_eliot">George Eliot</string>
+    <string name="go_to_playlist">Go To Playlist</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="gold">Gold</string>
+    <string name="google_ad_id" translatable="false">ca-app-pub-3397707615957622~6782587159</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hero_banner_cta_str_1">Play Now</string>
+    <string name="hero_banner_cta_str_2">Explore Now</string>
+    <string name="hero_banner_cta_str_3">Watch Now</string>
+    <string name="hero_banner_cta_str_4">Subscribe Now </string>
+    <string name="hero_banner_cta_str_5">Remind Me</string>
+    <string name="hero_banner_cta_str_6">Buy Now</string>
+    <string name="hero_banner_cta_str_7">Rent Now</string>
+    <string name="hungama_playlist">Hungama Playlist</string>
+    <string name="hungama_requires_your_permission_to_play_in_the_background">Hungama requires your permission to play in\nthe background</string>
+    <string name="icon_add_playlist" translatable="false">🗾</string>
+    <string name="icon_add_to_playlist" translatable="false">🌯</string>
+    <string name="icon_add_to_queue" translatable="false">🌮</string>
+    <string name="icon_add_to_similar_album" translatable="false">🌬</string>
+    <string name="icon_add_to_wishlist" translatable="false">D</string>
+    <string name="icon_airplay" translatable="false">s</string>
+    <string name="icon_album_detail" translatable="false">q</string>
+    <string name="icon_back" translatable="false">N</string>
+    <string name="icon_ban" translatable="false">🔍</string>
+    <string name="icon_bluetooth" translatable="false">🍔</string>
+    <string name="icon_cast" translatable="false">🌟</string>
+    <string name="icon_clear_queue" translatable="false">📳</string>
+    <string name="icon_clock" translatable="false">🍍</string>
+    <string name="icon_close" translatable="false">🕴</string>
+    <string name="icon_connect" translatable="false">💵</string>
+    <string name="icon_constant_song" translatable="false">m</string>
+    <string name="icon_continue" translatable="false">🔕</string>
+    <string name="icon_copy" translatable="false">📯</string>
+    <string name="icon_create_playlist" translatable="false">🔃</string>
+    <string name="icon_crown" translatable="false">📲</string>
+    <string name="icon_delete" translatable="false">x</string>
+    <string name="icon_delete_all" translatable="false">📭</string>
+    <string name="icon_device" translatable="false">🏮</string>
+    <string name="icon_discover" translatable="false">🍗</string>
+    <string name="icon_down" translatable="false">💷</string>
+    <string name="icon_down_song" translatable="false">l</string>
+    <string name="icon_download" translatable="false">🌸</string>
+    <string name="icon_download_new" translatable="false">📽</string>
+    <string name="icon_download_pause" translatable="false">📱</string>
+    <string name="icon_download_queue" translatable="false">🍖</string>
+    <string name="icon_downloaded" translatable="false">🌶</string>
+    <string name="icon_downloaded2" translatable="false">🍉</string>
+    <string name="icon_downloading" translatable="false">🌷</string>
+    <string name="icon_earn_coin" translatable="false">🔇</string>
+    <string name="icon_edit" translatable="false">🔌</string>
+    <string name="icon_edit_profile" translatable="false">H</string>
+    <string name="icon_email" translatable="false">🔋</string>
+    <string name="icon_equalizer" translatable="false">🌒</string>
+    <string name="icon_error" translatable="false">💳</string>
+    <string name="icon_explicit" translatable="false">2</string>
+    <string name="icon_explore_playlist" translatable="false">🔂</string>
+    <string name="icon_follow" translatable="false">🌓</string>
+    <string name="icon_follow_all" translatable="false">🔅</string>
+    <string name="icon_following" translatable="false">🌥</string>
+    <string name="icon_help" translatable="false">📴</string>
+    <string name="icon_join" translatable="false">🔅</string>
+    <string name="icon_language" translatable="false">o</string>
+    <string name="icon_left" translatable="false">L</string>
+    <string name="icon_like" translatable="false">🌳</string>
+    <string name="icon_like2" translatable="false">📵</string>
+    <string name="icon_liked" translatable="false">🏡</string>
+    <string name="icon_listen" translatable="false">h</string>
+    <string name="icon_lock" translatable="false">B</string>
+    <string name="icon_logout" translatable="false">🍆</string>
+    <string name="icon_mobile" translatable="false">🔊</string>
+    <string name="icon_more_playlist" translatable="false">🌝</string>
+    <string name="icon_music" translatable="false">🗼</string>
+    <string name="icon_mute" translatable="false">I</string>
+    <string name="icon_my_order" translatable="false">📸</string>
+    <string name="icon_my_order2" translatable="false">💟</string>
+    <string name="icon_new_song" translatable="false">n</string>
+    <string name="icon_next" translatable="false">💱</string>
+    <string name="icon_notification" translatable="false">🔝</string>
+    <string name="icon_option" translatable="false">🌧</string>
+    <string name="icon_option_horizontal" translatable="false">🕑</string>
+    <string name="icon_order" translatable="false">🔔</string>
+    <string name="icon_out_of_stock" translatable="false">🔓</string>
+    <string name="icon_pause" translatable="false">🔀</string>
+    <string name="icon_pause_2" translatable="false">g</string>
+    <string name="icon_pause_3" translatable="false">🗻</string>
+    <string name="icon_pause_round" translatable="false">📮</string>
+    <string name="icon_play" translatable="false">f</string>
+    <string name="icon_play_2" translatable="false">🔖</string>
+    <string name="icon_play_next" translatable="false">R</string>
+    <string name="icon_play_round" translatable="false">5</string>
+    <string name="icon_podcast" translatable="false">🌑</string>
+    <string name="icon_quality2" translatable="false">📑</string>
+    <string name="icon_queue" translatable="false">🌭</string>
+    <string name="icon_queue2" translatable="false">🗽</string>
+    <string name="icon_radio" translatable="false">🌂</string>
+    <string name="icon_redeem_coin" translatable="false">🔉</string>
+    <string name="icon_rent" translatable="false">🕎</string>
+    <string name="icon_repeat_active" translatable="false">🏫</string>
+    <string name="icon_repeat_loop" translatable="false">📬</string>
+    <string name="icon_repeat_one" translatable="false">🔬</string>
+    <string name="icon_retry" translatable="false">🔏</string>
+    <string name="icon_reward_coin" translatable="false">Z</string>
+    <string name="icon_save" translatable="false">💴</string>
+    <string name="icon_search" translatable="false">e</string>
+    <string name="icon_search2" translatable="false">🔆</string>
+    <string name="icon_settings" translatable="false">🌏</string>
+    <string name="icon_share" translatable="false">🌵</string>
+    <string name="icon_share_friends" translatable="false">🕌</string>
+    <string name="icon_share_new" translatable="false">📿</string>
+    <string name="icon_shuffle" translatable="false">7</string>
+    <string name="icon_shuffle_active" translatable="false">🏯</string>
+    <string name="icon_sleep_timer" translatable="false">O</string>
+    <string name="icon_song_detail" translatable="false">🌪</string>
+    <string name="icon_sort" translatable="false">🌐</string>
+    <string name="icon_sort2" translatable="false">📚</string>
+    <string name="icon_speed_15x" translatable="false">📋</string>
+    <string name="icon_speed_1x" translatable="false">🌻</string>
+    <string name="icon_speed_2x" translatable="false">📌</string>
+    <string name="icon_stop" translatable="false">🕍</string>
+    <string name="icon_streaming_quality" translatable="false">🕊</string>
+    <string name="icon_subtitle" translatable="false">🌨</string>
+    <string name="icon_subtitle_new" translatable="false">🍇</string>
+    <string name="icon_success" translatable="false">💲</string>
+    <string name="icon_tick" translatable="false">p</string>
+    <string name="icon_ticket" translatable="false">🔛</string>
+    <string name="icon_unmute" translatable="false">J</string>
+    <string name="icon_up_song" translatable="false">k</string>
+    <string name="icon_video_quality" translatable="false">🌩</string>
+    <string name="icon_voice_search" translatable="false">🌱</string>
+    <string name="icon_watch" translatable="false">c</string>
+    <string name="icon_watch_later" translatable="false">🍊</string>
+    <string name="icon_watch_with_friends" translatable="false">c</string>
+    <string name="icon_watchlist" translatable="false">🌹</string>
+    <string name="lbl_earn_coins_with_every_content_you_play">Earn coins with every content you play</string>
+    <string name="lbl_how_to_earn_points">How to Earn Points</string>
+    <string name="lbl_listening">I\'m Listening</string>
+    <string name="lbl_plz_go_ahed">Please go ahead</string>
+    <string name="library_album_str_1">No favourited albums yet</string>
+    <string name="library_album_str_2">Keep your favourite albums all in one place in library</string>
+    <string name="library_all_str_1">Downloaded Songs</string>
+    <string name="library_all_str_2">Downloaded Episodes</string>
+    <string name="library_all_str_3">Favorite Songs</string>
+    <string name="library_all_str_4">Downloading In Progress</string>
+    <string name="library_all_str_5">This permission is required to access the media on your phone.</string>
+    <string name="library_all_str_6">Grant</string>
+    <string name="library_all_str_9">Album</string>
+    <string name="library_artist_str_1">No followed artists yet</string>
+    <string name="library_maintab_str_10">Events</string>
+    <string name="library_maintab_str_11">Rented Movies</string>
+    <string name="library_maintab_str_3">Albums</string>
+    <string name="library_maintab_str_4">Podcasts</string>
+    <string name="library_maintab_str_5">Artists</string>
+    <string name="library_maintab_str_6">Radio</string>
+    <string name="library_maintab_str_7">Downloads</string>
+    <string name="library_maintab_str_8">Watchlist</string>
+    <string name="library_maintab_str_9">Saved Videos</string>
+    <string name="library_music_str_1">All</string>
+    <string name="library_music_str_14">Explore Music</string>
+    <string name="library_music_str_15">Browse millions of songs and collect your favourites here</string>
+    <string name="library_music_str_16">Add music to your library</string>
+    <string name="library_music_str_2">Playlists</string>
+    <string name="library_music_str_3">Albums</string>
+    <string name="library_music_str_4">Podcasts</string>
+    <string name="library_music_str_5">Artists</string>
+    <string name="library_music_str_6">Radios</string>
+    <string name="library_music_str_7">Artist</string>
+    <string name="library_music_str_9">Playlist</string>
+    <string name="library_playlist_str_1">More Trending Playlists</string>
+    <string name="library_playlist_str_10">Create a New Playlist</string>
+    <string name="library_playlist_str_2">By</string>
+    <string name="library_playlist_str_25">Playlist added to your library</string>
+    <string name="library_playlist_str_26">Remove favourite Song</string>
+    <string name="library_playlist_str_27">Playlist removed from your library</string>
+    <string name="library_playlist_str_28">Favourite song</string>
+    <string name="library_playlist_str_3">Recommended Playlists</string>
+    <string name="library_playlist_str_4">Add Songs</string>
+    <string name="library_playlist_str_5">Create a playlist</string>
+    <string name="library_playlist_str_6">Name your playlist</string>
+    <string name="library_playlist_str_7">Let others discover your playlist</string>
+    <string name="library_playlist_str_8">Songs</string>
+    <string name="library_playlist_str_9">All Playlists</string>
+    <string name="library_podcast_str_4">No Podcast followed or</string>
+    <string name="library_podcast_str_4_">No Podcast followed or downloaded</string>
+    <string name="library_purchase_str_5">Harry potter live show</string>
+    <string name="library_purchase_str_6">3:45 PM Onwards</string>
+    <string name="library_purchase_str_7">July</string>
+    <string name="library_radio_str_1">No favorited radio</string>
+    <string name="library_radio_str_2">You can browse radio and save it into library</string>
+    <string name="library_str_1">Music</string>
+    <string name="library_str_17">Local</string>
+    <string name="library_str_2">Videos</string>
+    <string name="library_str_3">Purchases</string>
+    <string name="library_str_4">My Device</string>
+    <string name="library_title">Library</string>
+    <string name="library_video_str_1">Downloads</string>
+    <string name="library_video_str_10">My Movies</string>
+    <string name="library_video_str_11">Valid until</string>
+    <string name="library_video_str_12">Download Awaited</string>
+    <string name="library_video_str_13">Downloading</string>
+    <string name="library_video_str_14">Download Paused</string>
+    <string name="library_video_str_15">Music Video Downloads</string>
+    <string name="library_video_str_16">My Music Videos</string>
+    <string name="library_video_str_17">Short Film Downloads</string>
+    <string name="library_video_str_18">My Short Films</string>
+    <string name="library_video_str_19">Short Video Downloads</string>
+    <string name="library_video_str_2">Watchlist</string>
+    <string name="library_video_str_20">My Short Videos</string>
+    <string name="library_video_str_21">TV Show Downloads</string>
+    <string name="library_video_str_22">My TV Shows</string>
+    <string name="library_video_str_23">Episodes</string>
+    <string name="library_video_str_24">Season</string>
+    <string name="library_video_str_25">You can browse music videos and short videos and save them</string>
+    <string name="library_video_str_26">You haven’t saved any video yet</string>
+    <string name="library_video_str_28">Create a watchlist and never miss a movie or TV show</string>
+    <string name="library_video_str_29">Your watchlist is empty</string>
+    <string name="library_video_str_3">Saved Videos</string>
+    <string name="library_video_str_30">Explore and save your favourite music videos and short videos</string>
+    <string name="library_video_str_31">You haven’t saved any video yet</string>
+    <string name="library_video_str_32">40 videos • 1h 31min</string>
+    <string name="library_video_str_33">Bollywood Unwind</string>
+    <string name="library_video_str_4">Movies</string>
+    <string name="library_video_str_5">TV Shows</string>
+    <string name="library_video_str_6">Short Films</string>
+    <string name="library_video_str_7">Music Videos</string>
+    <string name="library_video_str_8">Short Videos</string>
+    <string name="library_video_str_9">Movie Downloads</string>
+    <string name="life_seems_to_go_on_without_effort_when_i_am_n_filled_with_music">Life seems to go on without effort when i am filled with music.</string>
+    <string name="live_events_str_1">LIVE</string>
+    <string name="live_events_str_10">Buy Ticket for</string>
+    <string name="live_events_str_11">Join Now</string>
+    <string name="live_events_str_2">Remind Me</string>
+    <string name="live_events_str_3">About Concert</string>
+    <string name="live_events_str_4">Ticket Confirmation</string>
+    <string name="live_events_str_5">Day</string>
+    <string name="live_events_str_6">Hrs</string>
+    <string name="live_events_str_7">Mins</string>
+    <string name="live_events_str_8">Sec</string>
+    <string name="live_events_str_9">Buy Ticket for</string>
+    <string name="login_slider_str_1">Watch movies and TV shows</string>
+    <string name="login_slider_str_2">Enjoy blockbuster movies, popular shows and hungama originals</string>
+    <string name="login_slider_str_5">Discover podcasts you\'ll love</string>
+    <string name="login_slider_str_6">Explore shows from entertainment and comedy to news and sports</string>
+    <string name="login_slider_str_7">Play millions of songs</string>
+    <string name="login_slider_str_8">Listen to your favourite playlists, artists, radio and personal daily mixes</string>
+    <string name="login_str_1">Submit</string>
+    <string name="login_str_11"><![CDATA[By proceeding, you agree to our <u> Privacy Policy <u> and <u> Terms of Use <u>]]></string>
+    <string name="login_str_12">Or continue with</string>
+    <string name="login_str_13">Enjoy Music &amp; Videos</string>
+    <string name="login_str_14">Discover your favourite artists, songs and movies</string>
+    <string name="login_str_15">Login with Mobile Number</string>
+    <string name="login_str_16">Skip</string>
+    <string name="login_str_17">Verify</string>
+    <string name="login_str_18">Email</string>
+    <string name="login_str_19">WhatsApp</string>
+    <string name="login_str_2">Hungama</string>
+    <string name="login_str_20">Facebook</string>
+    <string name="login_str_21">Google</string>
+    <string name="login_str_22">Or continue with</string>
+    <string name="login_str_23">Apple</string>
+    <string name="login_str_24">Enter your Email Address</string>
+    <string name="login_str_25">We will send an Email with a 4-digit OTP</string>
+    <string name="login_str_26">Send OTP on Email</string>
+    <string name="login_str_27">Mobile Number</string>
+    <string name="login_str_28">Enter your mobile number</string>
+    <string name="login_str_29">We will send an SMS with a 6-digit OTP</string>
+    <string name="login_str_3">Enter valid mobile number</string>
+    <string name="login_str_30">Validate your OTP</string>
+    <string name="login_str_31">We\'ve sent the OTP to</string>
+    <string name="login_str_32">Didn\'t receive OTP ? Resend OTP in</string>
+    <string name="login_str_33">Resend OTP in</string>
+    <string name="login_str_34">Send OTP</string>
+    <string name="login_str_35">Privacy Policy</string>
+    <string name="login_str_36">Terms of Services</string>
+    <string name="login_str_37">Select your country</string>
+    <string name="login_str_38">Close</string>
+    <string name="login_str_39">Search</string>
+    <string name="login_str_4">Your Mobile Number</string>
+    <string name="login_str_40">Verifying</string>
+    <string name="login_str_41">Verified</string>
+    <string name="login_str_42">OTP entered seems incorrect</string>
+    <string name="login_str_43">Resend OTP</string>
+    <string name="login_str_44">Didn\'t receive the OTP?</string>
+    <string name="login_str_45">Mobile</string>
+    <string name="login_str_5">Your Email Address</string>
+    <string name="login_str_51">By proceeding, you agree to our</string>
+    <string name="login_str_52">Next</string>
+    <string name="login_str_53">Enter OTP</string>
+    <string name="login_str_54">Invalid OTP. Please try again</string>
+    <string name="login_str_55">Select Language</string>
+    <string name="login_str_56">App preview has ended. Thanks for your participation!</string>
+    <string name="login_str_57">Go ad free</string>
+    <string name="login_str_58">We will be right back</string>
+    <string name="login_str_59"><u>Privacy Policy</u></string>
+    <string name="login_str_6">Enter Mobile no.</string>
+    <string name="login_str_60">and</string>
+    <string name="login_str_61"><u>Terms of Services</u></string>
+    <string name="login_str_62">Expired OTP</string>
+    <string name="login_str_63">We will sent an SMS with a 6-digit OTP</string>
+    <string name="login_str_64">Enter the 6-digit code sent to</string>
+    <string name="login_str_65">login_via_mobile_number_subtext</string>
+    <string name="login_str_66">You can continue with the same number or enter another</string>
+    <string name="login_str_7">Enter a valid email address</string>
+    <string name="login_str_8">Your Email Address</string>
+    <string name="login_via_mobile_number">Login via mobile number</string>
+    <string name="login_via_mobile_number_subtext">You can continue with the same number or enter another</string>
+    <string name="lsheet_str_1">Select your country</string>
+    <string name="macro_payment_buy_ft_cta">Start your %1$s Free trial</string>
+    <string name="macro_payment_buy_nonft_cta">Buy Hungama Gold @ %1$s %2$s/%3$s </string>
+    <string name="make_playlist_public">Make Playlist Public</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="menu_str_1">Share</string>
+    <string name="menu_str_10">Favourite</string>
+    <string name="menu_str_11">Shuffle Play</string>
+    <string name="menu_str_12">Play Next</string>
+    <string name="menu_str_13">Go to Album</string>
+    <string name="menu_str_14">Song Details</string>
+    <string name="menu_str_15">Edit Playlist</string>
+    <string name="menu_str_16">Make Playlist Private</string>
+    <string name="menu_str_17">Find More Songs</string>
+    <string name="menu_str_18">Delete Playlist</string>
+    <string name="menu_str_19">Add to other Playlist</string>
+    <string name="menu_str_2">Add to Queue</string>
+    <string name="menu_str_20">Remove from Playlist</string>
+    <string name="menu_str_21">Similar songs</string>
+    <string name="menu_str_22">Favourited</string>
+    <string name="menu_str_23">More From Album</string>
+    <string name="menu_str_24">View Artist</string>
+    <string name="menu_str_25">Show Similar Songs</string>
+    <string name="menu_str_26">Show Similar</string>
+    <string name="menu_str_27">Go to Podcast</string>
+    <string name="menu_str_28">Music Quality</string>
+    <string name="menu_str_29">Sleep Timer</string>
+    <string name="menu_str_3">Add to Playlist</string>
+    <string name="menu_str_30">Clear queue</string>
+    <string name="menu_str_4">Similar Albums</string>
+    <string name="menu_str_5">Watch with Friends</string>
+    <string name="menu_str_6">Video Quality</string>
+    <string name="menu_str_7">Language</string>
+    <string name="menu_str_8">Subtitle</string>
+    <string name="menu_str_9">Add to the List</string>
+    <string name="min_left">Min left</string>
+    <string name="moengage_str_1">Cards</string>
+    <string name="moengage_str_2">Are you sure want delete this?</string>
+    <string name="moengage_str_3">No new notifcations. Check again later</string>
+    <string name="moengage_str_4">Notification</string>
+    <string name="movie_deleted_successfully">Movie deleted successfully</string>
+    <string name="movie_str_1">IMDb Rating</string>
+    <string name="movie_str_10">HD</string>
+    <string name="movie_str_11">UA</string>
+    <string name="movie_str_12">Languages</string>
+    <string name="movie_str_13">Content Advisory</string>
+    <string name="movie_str_15">\u20B9</string>
+    <string name="movie_str_16">\u0024</string>
+    <string name="movie_str_17">Trailers &amp; Extras</string>
+    <string name="movie_str_18">Cast &amp; Crew</string>
+    <string name="movie_str_19">People Also Watched</string>
+    <string name="movie_str_2">Share</string>
+    <string name="movie_str_20">No movie rented</string>
+    <string name="movie_str_21">Find your rental, then download
+or stream it</string>
+    <string name="movie_str_3">Download</string>
+    <string name="movie_str_4">Watchlist</string>
+    <string name="movie_str_5">Rent</string>
+    <string name="movie_str_6">Subscribe</string>
+    <string name="movie_str_7">Play</string>
+    <string name="movie_str_8">Languages</string>
+    <string name="movie_str_9">Audio</string>
+    <string name="music_player_str_1">Select Songs</string>
+    <string name="music_player_str_10">Similar Songs</string>
+    <string name="music_player_str_11">No Similar Songs</string>
+    <string name="music_player_str_12">Next Episode</string>
+    <string name="music_player_str_13">Coming up next!</string>
+    <string name="music_player_str_14">Airpods</string>
+    <string name="music_player_str_15">Close</string>
+    <string name="music_player_str_16">Song dislike.</string>
+    <string name="music_player_str_17">Song like.</string>
+    <string name="music_player_str_18">Hey, check out some exciting Music &amp; Videos on Hungama</string>
+    <string name="music_player_str_19">Share on</string>
+    <string name="music_player_str_2">Unable to start your download!</string>
+    <string name="music_player_str_20">Up Next</string>
+    <string name="music_player_str_21">Mood</string>
+    <string name="music_player_str_22">Party</string>
+    <string name="music_player_str_23">Next Episode</string>
+    <string name="music_player_str_24">Choose Era between 1950 to 2021</string>
+    <string name="music_player_str_25">Next in Queue</string>
+    <string name="music_player_str_26">Now Playing</string>
+    <string name="music_player_str_27">History</string>
+    <string name="music_player_str_28">Up Next</string>
+    <string name="music_player_str_29">Clear Queue</string>
+    <string name="music_player_str_3">Failed to obtain offline license</string>
+    <string name="music_player_str_4">Downloading live content not supported</string>
+    <string name="music_player_str_42">Add songs and create your playlist</string>
+    <string name="music_player_str_43">Era</string>
+    <string name="music_player_str_44">NEW RELEASE</string>
+    <string name="music_player_str_5">DRM content not supported on API levels below 18</string>
+    <string name="music_player_str_6">Now Playing</string>
+    <string name="music_player_str_7">Bluetooth</string>
+    <string name="music_player_str_8">No Song playing</string>
+    <string name="music_player_str_9">Lyrics</string>
+    <string name="music_video_str_1">You may also like</string>
+    <string name="music_video_str_2">Similar Music Videos</string>
+    <string name="music_video_str_3">Music Videos Downloads</string>
+    <string name="music_video_str_4">Watch Later</string>
+    <string name="music_video_str_5">Recommended Music Videos</string>
+    <string name="music_video_str_6">Video has been saved for watch later</string>
+    <string name="music_video_str_7">Lock</string>
+    <string name="need_help">Need Help?</string>
+    <string name="new_release">NEW RELEASE</string>
+    <string name="no_album_found">Album not found.</string>
+    <string name="no_playlist_found">Playlist not found</string>
+    <string name="no_subtitle_available">No subtitle available</string>
+    <string name="notification_channel">Now Playing</string>
+    <string name="notification_channel_description">Shows what music is currently playing in Hungama</string>
+    <string name="notification_pause">Pause</string>
+    <string name="notification_play">Play</string>
+    <string name="notification_skip_to_next">Skip to next track</string>
+    <string name="notification_skip_to_previous">Skip to previous track</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="nudge_minute_quota_exhausted_heading1">Out of minutes!</string>
+    <string name="nudge_minute_quota_exhausted_heading2">Unlock limitless Music, Movies &amp; more </string>
+    <string name="nudge_minute_quota_exhausted_image1">Ads Free Music</string>
+    <string name="nudge_minute_quota_exhausted_image2">Limitless Downloads</string>
+    <string name="nudge_minute_quota_exhausted_image3">2x Better Quality Music</string>
+    <string name="nudge_minute_quota_exhausted_image4">Save Mobile Data</string>
+    <string name="nudge_minute_quota_exhausted_image5">Listen &amp; Watch Offline</string>
+    <string name="nudge_minute_quota_exhausted_image6">Movies, TV Shows &amp; Originals</string>
+    <string name="nudge_minute_quota_exhausted_subheading">Get ready for Hungama Gold and keep the music going!</string>
+    <string name="nudge_stream_preview_heading">Unlock This song</string>
+    <string name="nudge_stream_preview_image1">Ads Free Music</string>
+    <string name="nudge_stream_preview_image2">Limitless Downloads</string>
+    <string name="nudge_stream_preview_image3">2x Better Quality Music</string>
+    <string name="nudge_stream_preview_image4">Save Mobile Data</string>
+    <string name="nudge_stream_preview_image5">Listen &amp; Watch Offline</string>
+    <string name="nudge_stream_preview_image6">Movies, TV Shows &amp; Originals</string>
+    <string name="nudge_stream_preview_new_subheading1">Enjoy uninterrupted music with Hungama Gold.</string>
+    <string name="nudge_stream_preview_subheading1">Unlock all premium features on Hungama Gold and enjoy unlimited Music, Movies, Originals, and more</string>
+    <string name="nudge_stream_preview_subheading2">Get more with Hungama Gold</string>
+    <string name="nudge_stream_unlock_your_favourite_songs">Your Favourite Songs</string>
+    <string name="online">Online</string>
+    <string name="order_details">Order Details</string>
+    <string name="order_id">Order Id</string>
+    <string name="other_str_1">Don\'t Know</string>
+    <string name="other_str_10">BAD</string>
+    <string name="other_str_11">Chromecast</string>
+    <string name="other_str_12">Enter Valid OTP</string>
+    <string name="other_str_13">Order Confirmation</string>
+    <string name="other_str_14">English</string>
+    <string name="other_str_15">Love Poisoning</string>
+    <string name="other_str_16">S01 ‧ EP03 ‧ 52 Min</string>
+    <string name="other_str_17">Operating in 156 Countries, The art of Living is a non-profit, education and humanity... read more</string>
+    <string name="other_str_18">15 Min left</string>
+    <string name="other_str_19">The Pledge</string>
+    <string name="other_str_2">Submit</string>
+    <string name="other_str_20">Sky News</string>
+    <string name="other_str_21">Corona Virus Daily</string>
+    <string name="other_str_22">NPR</string>
+    <string name="other_str_23">Badshah tweet</string>
+    <string name="other_str_25">Heart Broken</string>
+    <string name="other_str_26">Heart Broken</string>
+    <string name="other_str_3">No</string>
+    <string name="other_str_4">Yes</string>
+    <string name="other_str_5">AWFUL</string>
+    <string name="other_str_6">POOR</string>
+    <string name="other_str_7">GOOD</string>
+    <string name="other_str_8">GREAT</string>
+    <string name="other_str_9">OKAY</string>
+    <string name="payment_str_1">Sorry Payment Failed</string>
+    <string name="payment_str_2">Continue to Home Screen</string>
+    <string name="payment_str_3">Payment Successful</string>
+    <string name="payment_str_4">Continue to Watch Video</string>
+    <string name="payment_str_5">No UPI app installed on this device. Try again?</string>
+    <string name="payment_str_6">Refer a Friend</string>
+    <string name="play_now">Play Now</string>
+    <string name="playall_general">Play All</string>
+    <string name="playlist_str_1">More Trending Playlists</string>
+    <string name="playlist_str_2">By</string>
+    <string name="playlist_str_3">Playlist Name</string>
+    <string name="playlist_str_4">Added to playlist</string>
+    <string name="playlist_str_5">Recommended Songs</string>
+    <string name="playlist_str_6">Add Songs</string>
+    <string name="playlist_str_7">No favourited playlist yet</string>
+    <string name="playlist_str_8">Playlists you add to your library or create will appear here</string>
+    <string name="playlist_str_remove_item">Are you sure you want to remove this song from playlist?</string>
+    <string name="plays_general">Plays</string>
+    <string name="please_enter_a_valid_phone_number">Please enter a valid phone number</string>
+    <string name="please_select_date_of_birth">Please select date of birth</string>
+    <string name="please_select_gender">Please select gender</string>
+    <string name="podcast_str_1">Oldest to Newest</string>
+    <string name="podcast_str_10">Show More</string>
+    <string name="podcast_str_11">No followed podcasts</string>
+    <string name="podcast_str_12">Discover the podcasts topics that interest you and follow your favourite podcasts</string>
+    <string name="podcast_str_13">Follow More Podcasts</string>
+    <string name="podcast_str_14">Min</string>
+    <string name="podcast_str_15">left</string>
+    <string name="podcast_str_16">Ask Siri to Play This Podcast:</string>
+    <string name="podcast_str_17">Add to Siri</string>
+    <string name="podcast_str_18">read more</string>
+    <string name="podcast_str_19">read less</string>
+    <string name="podcast_str_2">Newest to Oldest</string>
+    <string name="podcast_str_20">Min left</string>
+    <string name="podcast_str_4">Play All</string>
+    <string name="podcast_str_5">Follow</string>
+    <string name="podcast_str_6">Similar Podcasts</string>
+    <string name="podcast_str_7">Plays</string>
+    <string name="podcast_str_8">Followers</string>
+    <string name="podcast_str_9">Episodes</string>
+    <string name="podcast_title">Podcast</string>
+    <string name="popup_str_1">Please select at least one music language </string>
+    <string name="popup_str_100">Go to Queue</string>
+    <string name="popup_str_101">Share with Friends</string>
+    <string name="popup_str_102">Playback Speed</string>
+    <string name="popup_str_103">Streaming Quality</string>
+    <string name="popup_str_104">Romantic</string>
+    <string name="popup_str_105">Are you sure you want to clear all recent searches?</string>
+    <string name="popup_str_106">Language Preference</string>
+    <string name="popup_str_107">Are you sure you want to delete your Hungama account?</string>
+    <string name="popup_str_108">Delete 2 movies from downloads?</string>
+    <string name="popup_str_109">You won\'t be able to watch this video offline</string>
+    <string name="popup_str_11">Delete from Downloads?</string>
+    <string name="popup_str_110">Your music</string>
+    <string name="popup_str_111">Your saved music</string>
+    <string name="popup_str_112">Account history including \</string>
+    <string name="popup_str_113">Any purchase associated with this account will no longer be available for use</string>
+    <string name="popup_str_114">Coins you\'ve earned will lapse and cannot be redeemed in future</string>
+    <string name="popup_str_115">This cannot be undone By deleting this account</string>
+    <string name="popup_str_116">Get Unlimited Downloads</string>
+    <string name="popup_str_12">Resume Downloading</string>
+    <string name="popup_str_13">Pause Download</string>
+    <string name="popup_str_15">Add to playlist again?</string>
+    <string name="popup_str_16">You\'ve already saved this to your playlist </string>
+    <string name="popup_str_17">Add to My List</string>
+    <string name="popup_str_18">Share this playlist</string>
+    <string name="popup_str_2">Please select at least 1 artist</string>
+    <string name="popup_str_20">Not Now</string>
+    <string name="popup_str_21">Make Public</string>
+    <string name="popup_str_22">Remove song from playlist</string>
+    <string name="popup_str_23">Do you want to remove this song from the playlist?</string>
+    <string name="popup_str_24">Remove podcast episode</string>
+    <string name="popup_str_25">Do you want to remove this episode from the podcast?</string>
+    <string name="popup_str_28">Change Speed</string>
+    <string name="popup_str_29">Stop Audio in</string>
+    <string name="popup_str_3">Please select at least 1 video language</string>
+    <string name="popup_str_30">End of Episode</string>
+    <string name="popup_str_31">End of Song</string>
+    <string name="popup_str_4">Please select at least 1 Movie genre</string>
+    <string name="popup_str_40">Verify your age</string>
+    <string name="popup_str_41">You must be 18 years or older to view this video</string>
+    <string name="popup_str_42">I am under 18</string>
+    <string name="popup_str_43">I am 18+</string>
+    <string name="popup_str_44">This content is explicit</string>
+    <string name="popup_str_46">Go to Settings</string>
+    <string name="popup_str_47"/>
+    <string name="popup_str_48">Go to Downloads</string>
+    <string name="popup_str_49">Check if mobile or Wi-Fi data is turned on, then try again. Meanwhile, you can explore your offline downloads</string>
+    <string name="popup_str_5">Delete</string>
+    <string name="popup_str_50">Listening on</string>
+    <string name="popup_str_51">Choose a Device</string>
+    <string name="popup_str_52">This Phone</string>
+    <string name="popup_str_53">Airplay</string>
+    <string name="popup_str_54">Connect Device</string>
+    <string name="popup_str_55">Select atleast 1 language</string>
+    <string name="popup_str_56">Create</string>
+    <string name="popup_str_57">Ask me Later</string>
+    <string name="popup_str_59">minutes</string>
+    <string name="popup_str_60">To play this content, enable explicit content in settings tab</string>
+    <string name="popup_str_61">This video contains 13+ content</string>
+    <string name="popup_str_62">Change settings and allow 13+ video content to play it</string>
+    <string name="popup_str_63">Please verify your age</string>
+    <string name="popup_str_64">Rated U/A 18+</string>
+    <string name="popup_str_65">Get Unlimited Downloads</string>
+    <string name="popup_str_66">Unlock Hungama Gold and enjoy unlimited downloads</string>
+    <string name="popup_str_67">You have reached your free downloads limit. Subscribe now</string>
+    <string name="popup_str_68">Subscribe to Watch</string>
+    <string name="popup_str_69">Become Hungama Gold member to watch unlimited movies, TV shows and hungama originals</string>
+    <string name="popup_str_7">from Downloads?</string>
+    <string name="popup_str_70">Subscribe Now</string>
+    <string name="popup_str_72">Congratulations!</string>
+    <string name="popup_str_73">Challenged completed! Earn more coins by letting your friends know</string>
+    <string name="popup_str_75">Cancel</string>
+    <string name="popup_str_78">Make your playlist public to share with others</string>
+    <string name="popup_str_79">Age confirmation</string>
+    <string name="popup_str_80">Age 18+ or older</string>
+    <string name="popup_str_81">You must be 18 years or above to access age-appropriate content</string>
+    <string name="popup_str_82">Your sleep timer is set</string>
+    <string name="popup_str_83">Remove favourite album</string>
+    <string name="popup_str_84">Removed from favourited album</string>
+    <string name="popup_str_85">Clear queue</string>
+    <string name="popup_str_86">Queue cleared</string>
+    <string name="popup_str_87">Watch later</string>
+    <string name="popup_str_88">Download video</string>
+    <string name="popup_str_89">Video has been downloaded</string>
+    <string name="popup_str_9">You won’t be able to watch this video offline.</string>
+    <string name="popup_str_90">you won\'t be able to watch this video offline.</string>
+    <string name="popup_str_91">Are you sure you want to delete your Hungama account?</string>
+    <string name="popup_str_92">This cannot be undone. By deleting this account</string>
+    <string name="popup_str_93">Your music, podcast and video downloads will be deleted</string>
+    <string name="popup_str_94">Your saved music, playlists and followers can\'t be recovered</string>
+    <string name="popup_str_95">Account history including \"My List\" will be deleted forever and can\'t be accessed in future</string>
+    <string name="popup_str_96">Any purchase associated with this account will no longer be available for use</string>
+    <string name="popup_str_97">Coins you\'ve earned will lapse and cannot be redeemed in future</string>
+    <string name="popup_str_98">Delete from Watchlist?</string>
+    <string name="popup_str_99">from Watchlist?</string>
+    <string name="profile_str_1">Hello</string>
+    <string name="profile_str_10">Follow people you know</string>
+    <string name="profile_str_103">Crossfade</string>
+    <string name="profile_str_104">Tracks appears gradually as another disappears</string>
+    <string name="profile_str_108">High</string>
+    <string name="profile_str_109">Are you sure you want to log out?</string>
+    <string name="profile_str_11">Earn by following people you know</string>
+    <string name="profile_str_113">Video Language Preference</string>
+    <string name="profile_str_114">Set Content Restrictions</string>
+    <string name="profile_str_12">Find Friends</string>
+    <string name="profile_str_120">Earn coins and redeem exciting deals, digital coupons or merchandise with Hungama rewards program</string>
+    <string name="profile_str_121">Login Cancelled</string>
+    <string name="profile_str_122">Switch ON to get video recommendations on the player</string>
+    <string name="profile_str_123">Login Cancelled</string>
+    <string name="profile_str_13">Invite</string>
+    <string name="profile_str_14">Discover People</string>
+    <string name="profile_str_15">My Playlists</string>
+    <string name="profile_str_16">Most Heard Songs</string>
+    <string name="profile_str_17">Most Listened Artists</string>
+    <string name="profile_str_18">No recent activity</string>
+    <string name="profile_str_19">Explore Now</string>
+    <string name="profile_str_2">Follow</string>
+    <string name="profile_str_20">Edit Profile</string>
+    <string name="profile_str_21">Email Address</string>
+    <string name="profile_str_22">Mobile #</string>
+    <string name="profile_str_23">Gender</string>
+    <string name="profile_str_24">Male</string>
+    <string name="profile_str_25">Female</string>
+    <string name="profile_str_26">Prefer not to say</string>
+    <string name="profile_str_27">Guest</string>
+    <string name="profile_str_28">Public</string>
+    <string name="profile_str_29">Private</string>
+    <string name="profile_str_3">Followers</string>
+    <string name="profile_str_30">Favorites</string>
+    <string name="profile_str_31">Free User</string>
+    <string name="profile_str_32">Login</string>
+    <string name="profile_str_33">Log Out</string>
+    <string name="profile_str_34">View Profile</string>
+    <string name="profile_str_35">My Coins</string>
+    <string name="profile_str_36">Earn Coin</string>
+    <string name="profile_str_37">Redeem Coins</string>
+    <string name="profile_str_38">Unlock unlimited downloads/streaming</string>
+    <string name="profile_str_39">Login with Email</string>
+    <string name="profile_str_4">Playlists</string>
+    <string name="profile_str_40">Login with Mobile Number</string>
+    <string name="profile_str_41">Date of Birth</string>
+    <string name="profile_str_42">Follow All</string>
+    <string name="profile_str_43">Save</string>
+    <string name="profile_str_44">Handle Name</string>
+    <string name="profile_str_45">Account</string>
+    <string name="profile_str_46">Earn</string>
+    <string name="profile_str_47">Description</string>
+    <string name="profile_str_48">Shipping &amp; Returns</string>
+    <string name="profile_str_49">Coins</string>
+    <string name="profile_str_5">Following</string>
+    <string name="profile_str_50">Redeem</string>
+    <string name="profile_str_51">Redeem Now</string>
+    <string name="profile_str_52">more coins to redeem</string>
+    <string name="profile_str_53">Explore some new music and videos now</string>
+    <string name="profile_str_54">Out of Stock</string>
+    <string name="profile_str_6">Connect Facebook friends</string>
+    <string name="profile_str_65">No Current Plan</string>
+    <string name="profile_str_67">Music Language Preference</string>
+    <string name="profile_str_69">Autoplay</string>
+    <string name="profile_str_7">Follow your friends</string>
+    <string name="profile_str_70">Enjoy non-stop music by listening to similar tracks when your music ends</string>
+    <string name="profile_str_71">Audio Quality</string>
+    <string name="profile_str_72">Equalizer</string>
+    <string name="profile_str_73">Sleep Timer</string>
+    <string name="profile_str_74">Sing along with lyrics during playback</string>
+    <string name="profile_str_75">Gapless</string>
+    <string name="profile_str_76">Enable gapless playback</string>
+    <string name="profile_str_77">Smooth Song Transition</string>
+    <string name="profile_str_79">Switch ON to see videos on the player</string>
+    <string name="profile_str_8">Connect</string>
+    <string name="profile_str_9">Sync your phone device contacts</string>
+    <string name="profile_str_91">No Current Plan</string>
+    <string name="quality_1">Auto (Recommended)</string>
+    <string name="quality_2">Standard Definition</string>
+    <string name="quality_3">Data Saver</string>
+    <string name="quality_4">HD</string>
+    <string name="quality_5">Dolby Atmos</string>
+    <string name="quality_6">Preview</string>
+    <string name="rangeSliderValues"/>
+    <string name="recently_played_title">Recently Played</string>
+    <string name="record_audio_permission">This permission is required to access the audio record on your phone</string>
+    <string name="remove_ads">Remove Ads</string>
+    <string name="remove_from_watchlist">Remove from watchlist</string>
+    <string name="removed_from_favourite">Removed From Favorite</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_all">Repeat all</string>
+    <string name="repeat_all_songs">Repeat all songs</string>
+    <string name="repeat_one">Repeat one</string>
+    <string name="reward_str_1"/>
+    <string name="reward_str_10"/>
+    <string name="reward_str_100"/>
+    <string name="reward_str_101"/>
+    <string name="reward_str_102">You will have 30 days to start watching the movie after renting it and 48 hours to finish it once you start playback. You can also download this rental</string>
+    <string name="reward_str_103">No products are available to purchase within your current coin balance</string>
+    <string name="reward_str_104">minimum</string>
+    <string name="reward_str_105">characters</string>
+    <string name="reward_str_106">maximum</string>
+    <string name="reward_str_107">character is valid</string>
+    <string name="reward_str_108">Please enter city</string>
+    <string name="reward_str_109">Invalid Address</string>
+    <string name="reward_str_11">How to Redeem</string>
+    <string name="reward_str_110">Invalid Pincode</string>
+    <string name="reward_str_111">Invalid Mobile number</string>
+    <string name="reward_str_112">Invalid Last Name</string>
+    <string name="reward_str_113">Same as above</string>
+    <string name="reward_str_114">Watch Now</string>
+    <string name="reward_str_115">Copied.</string>
+    <string name="reward_str_116">Your are now a Hungama Gold member. Enjoy ad free music, podcast, movies, TV show &amp; hungama originals
+</string>
+    <string name="reward_str_117">Placed</string>
+    <string name="reward_str_118">Register on Hungama</string>
+    <string name="reward_str_119">Create you profile on Hungama and Earn 5 Coins</string>
+    <string name="reward_str_12">Similar Products</string>
+    <string name="reward_str_13">More coins to redeem</string>
+    <string name="reward_str_14">Out of stock</string>
+    <string name="reward_str_15">Enter Shipping Details</string>
+    <string name="reward_str_16">First Name*</string>
+    <string name="reward_str_17">First Name</string>
+    <string name="reward_str_18">Invalid First Name</string>
+    <string name="reward_str_19">Last Name*</string>
+    <string name="reward_str_2">Earn more coins</string>
+    <string name="reward_str_20">Last Name</string>
+    <string name="reward_str_21">Invalid Last Name</string>
+    <string name="reward_str_22">Mobile No*</string>
+    <string name="reward_str_23">Mobile No</string>
+    <string name="reward_str_24">Invalid Mobile Number</string>
+    <string name="reward_str_25">Pincode*</string>
+    <string name="reward_str_26">Pincode</string>
+    <string name="reward_str_27">Not Deliverable to this pincode</string>
+    <string name="reward_str_28">Address1*</string>
+    <string name="reward_str_29">Address1</string>
+    <string name="reward_str_3">My Coins:</string>
+    <string name="reward_str_30">Enter delivery address</string>
+    <string name="reward_str_31">Address2</string>
+    <string name="reward_str_32">State*</string>
+    <string name="reward_str_33">State</string>
+    <string name="reward_str_34">Invalid State</string>
+    <string name="reward_str_35">City*</string>
+    <string name="reward_str_36">City</string>
+    <string name="reward_str_37">Invalid City</string>
+    <string name="reward_str_38">Save &amp; Continue</string>
+    <string name="reward_str_39">Done</string>
+    <string name="reward_str_4">Earn</string>
+    <string name="reward_str_40">Review your Order</string>
+    <string name="reward_str_41">Redeem Now</string>
+    <string name="reward_str_42">Cancel</string>
+    <string name="reward_str_43">Order Summery</string>
+    <string name="reward_str_44">Delivery by</string>
+    <string name="reward_str_45">Days</string>
+    <string name="reward_str_46">Shipping Address</string>
+    <string name="reward_str_47">Coin Summery</string>
+    <string name="reward_str_48">Your Total Coins</string>
+    <string name="reward_str_49">Balance Coins</string>
+    <string name="reward_str_5">Redeem Coins</string>
+    <string name="reward_str_50">Order Confirmation</string>
+    <string name="reward_str_51">My Orders</string>
+    <string name="reward_str_52">Congratulations!</string>
+    <string name="reward_str_53">Order Details</string>
+    <string name="reward_str_54">Order id</string>
+    <string name="reward_str_55">Order Date &amp; Time</string>
+    <string name="reward_str_56">Coins Redeemed</string>
+    <string name="reward_str_57">Coin Balance</string>
+    <string name="reward_str_58">Need Help?</string>
+    <string name="reward_str_59">Processing</string>
+    <string name="reward_str_6">Show Price below</string>
+    <string name="reward_str_60">Delivered</string>
+    <string name="reward_str_61">Cancelled</string>
+    <string name="reward_str_62">Ordered Date</string>
+    <string name="reward_str_63">Expected Delivery</string>
+    <string name="reward_str_64">Business Days</string>
+    <string name="reward_str_65">Orders Detail</string>
+    <string name="reward_str_66">Status</string>
+    <string name="reward_str_67">Order Date</string>
+    <string name="reward_str_68">Coupon Code</string>
+    <string name="reward_str_69">Back to Home</string>
+    <string name="reward_str_7">Redeem</string>
+    <string name="reward_str_70">Start Exploring</string>
+    <string name="reward_str_72">How to Use</string>
+    <string name="reward_str_73">Coins Balance</string>
+    <string name="reward_str_74">Unlocks endless entertainment with premium features like Ad-free Music, Unlimited Downloads, Highest Quality Audio Access to unlimited Movies and TV shows, Hungama Originals and more</string>
+    <string name="reward_str_75">Upgrade to Gold Plan</string>
+    <string name="reward_str_76">Unlock Hungama Gold</string>
+    <string name="reward_str_77">Discover music &amp; movies in a whole new way.
+ Get Hungama Gold to unleash premium &amp;
+ uninterrupted entertainment</string>
+    <string name="reward_str_79">Unlimited Downloads</string>
+    <string name="reward_str_8">Coins</string>
+    <string name="reward_str_80">High Quality Audio</string>
+    <string name="reward_str_81">Ad free Experience</string>
+    <string name="reward_str_82">Buy Gold</string>
+    <string name="reward_str_83">See All Plans</string>
+    <string name="reward_str_84">Price</string>
+    <string name="reward_str_85">Cancel Subscription</string>
+    <string name="reward_str_86">Restore Purchases</string>
+    <string name="reward_str_87">Already have a subsciption? Restore now</string>
+    <string name="reward_str_88">Earn More Coin</string>
+    <string name="reward_str_89">Save &amp; Continue</string>
+    <string name="reward_str_9">Description</string>
+    <string name="reward_str_90">My Order</string>
+    <string name="reward_str_91">Earn More Coins</string>
+    <string name="reward_str_92">My Coins:</string>
+    <string name="reward_str_93">Status</string>
+    <string name="reward_str_94">Similar Products</string>
+    <string name="reward_str_95">Order Summery</string>
+    <string name="reward_str_96">Shipping Address</string>
+    <string name="reward_str_97">Coin Summary</string>
+    <string name="reward_str_98">You haven\'t redeemed any coins yet</string>
+    <string name="reward_str_99">Some exciting offers wait for you. Grab them now</string>
+    <string name="rotate_your_device_for_fullscreen">Rotate your device for fullscreen</string>
+    <string name="search_str_1">action voice rec</string>
+    <string name="search_str_10">Search</string>
+    <string name="search_str_11">Songs, podcasts, movies and more</string>
+    <string name="search_str_12">Search Country</string>
+    <string name="search_str_13">Recent Searches</string>
+    <string name="search_str_14">Clear</string>
+    <string name="search_str_15">Are you sure you want to clear all recent searches?</string>
+    <string name="search_str_2">Recommended for you</string>
+    <string name="search_str_21">Make sure words are spelled correctly or try again with other keywords</string>
+    <string name="search_str_22">No results found</string>
+    <string name="search_str_23">Try Again</string>
+    <string name="search_str_24">Try different keyword</string>
+    <string name="search_str_3">All</string>
+    <string name="search_str_4">Music</string>
+    <string name="search_str_5">Podcast</string>
+    <string name="search_str_6">Movies</string>
+    <string name="search_str_7">Short Videos</string>
+    <string name="search_str_8">TV Shows</string>
+    <string name="search_str_9">Radio</string>
+    <string name="search_subtitle">Tap and say again</string>
+    <string name="search_title">We didn\'t catch that</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="similar_video_not_found">No similar video found</string>
+    <string name="skip_to_next_episode">Skip to Next Episode</string>
+    <string name="song">Song</string>
+    <string name="song_details_str_1">Featured Artist</string>
+    <string name="song_details_str_2">Featured Playlist</string>
+    <string name="song_details_str_3">Lyricist</string>
+    <string name="song_details_str_4">Label</string>
+    <string name="song_details_str_5">Other Details</string>
+    <string name="song_details_str_6">Song Details</string>
+    <string name="songs_general">Songs</string>
+    <string name="str_1">Expired OTP</string>
+    <string name="string_name">String text</string>
+    <string name="tempo">Tempo</string>
+    <string name="testing_for_apxor">All Your Favourites &amp; Downloads</string>
+    <string name="this_phone">This Phone</string>
+    <string name="title_album">Album</string>
+    <string name="title_all">All</string>
+    <string name="title_artist">Artist</string>
+    <string name="title_downloaded">Downloaded Song</string>
+    <string name="title_favorited">Favorited Songs</string>
+    <string name="title_playlist">Playlist</string>
+    <string name="title_podcasts">Podcasts</string>
+    <string name="title_radio">Radio</string>
+    <string name="toast_message_11">Track has been downloaded</string>
+    <string name="toast_message_5">No internet connection. Turn on Wi-Fi or mobile data and try again</string>
+    <string name="toast_str_1">Please enter a valid email id</string>
+    <string name="toast_str_10">Short Film added to the watchlist</string>
+    <string name="toast_str_11">TV show added to the watchlist</string>
+    <string name="toast_str_12">Movie removed from the watchlist</string>
+    <string name="toast_str_13">Short Film removed from the watchlist</string>
+    <string name="toast_str_14">TV Show removed from the watchlist</string>
+    <string name="toast_str_15">Playlist added to your Library</string>
+    <string name="toast_str_16">Playlist removed from your Library</string>
+    <string name="toast_str_17">Song added to your favourites</string>
+    <string name="toast_str_18">Song removed from your favourites</string>
+    <string name="toast_str_19">Sleep timer has been set</string>
+    <string name="toast_str_2">Please enter valid mobile number</string>
+    <string name="toast_str_20">Sleep timer has been removed</string>
+    <string name="toast_str_21">You\'re following the artist</string>
+    <string name="toast_str_22">You\'re following the podcast</string>
+    <string name="toast_str_23">You are no longer following an artist</string>
+    <string name="toast_str_24">You are no longer following an podcast</string>
+    <string name="toast_str_25">Album added to your favourites</string>
+    <string name="toast_str_26">Podcast episode added to your favourites</string>
+    <string name="toast_str_27">Album removed  from your favourites</string>
+    <string name="toast_str_28">Podcast episode removed from your favourites</string>
+    <string name="toast_str_29">Video saved to watch later</string>
+    <string name="toast_str_3">Invalid OTP, please enter a valid OTP</string>
+    <string name="toast_str_30">Video removed from the watch later</string>
+    <string name="toast_str_31">Event remainder has been set</string>
+    <string name="toast_str_32">Wrong Email</string>
+    <string name="toast_str_33">Wrong Mobile No</string>
+    <string name="toast_str_34">Wrong OTP</string>
+    <string name="toast_str_35">No internet</string>
+    <string name="toast_str_36">Chromecast</string>
+    <string name="toast_str_37">Slow Internet</string>
+    <string name="toast_str_38">Sorry, due to slow internet. Song/Video taking time to buffer</string>
+    <string name="toast_str_39">Song added to queue</string>
+    <string name="toast_str_4">The OTP you\'ve entered has expired. Please enter a valid OTP</string>
+    <string name="toast_str_40">Song added to the queue</string>
+    <string name="toast_str_41">Song removed from the queue</string>
+    <string name="toast_str_42">Song added to the playlist</string>
+    <string name="toast_str_43">Track has been added to playlist</string>
+    <string name="toast_str_44">Play next song</string>
+    <string name="toast_str_45">Song downloaded</string>
+    <string name="toast_str_46">Favourite</string>
+    <string name="toast_str_47">Added to favourited song</string>
+    <string name="toast_str_48">Remove favourite Song</string>
+    <string name="toast_str_49">Removed from favourited song</string>
+    <string name="toast_str_50">Repeat all songs</string>
+    <string name="toast_str_51">Auto repeat current song</string>
+    <string name="toast_str_7">Song removed from the queue</string>
+    <string name="toast_str_77">No devices found chromecast</string>
+    <string name="toast_str_9">Movie added to the watchlist</string>
+    <string name="track_selection_title">Select tracks</string>
+    <string name="tv_show_deleted_successfully">TV Show deleted successfully</string>
+    <string name="tvshow_str_1">read more</string>
+    <string name="tvshow_str_10">People Also Watched</string>
+    <string name="tvshow_str_11">Season</string>
+    <string name="tvshow_str_2">read less</string>
+    <string name="tvshow_str_3">Min</string>
+    <string name="tvshow_str_4">People Also Watched</string>
+    <string name="tvshow_str_hd">HD</string>
+    <string name="tvshow_str_ua">UA</string>
+    <string name="txt_see_all"><u>See All Plans</u></string>
+    <string name="user_str_1">User Name</string>
+    <string name="user_str_2">Playlist</string>
+    <string name="user_str_3">Followers</string>
+    <string name="user_str_4">Following</string>
+    <string name="user_str_5">Edit Profile</string>
+    <string name="user_str_6">Settings</string>
+    <string name="user_str_7">Bio</string>
+    <string name="user_str_8">User</string>
+    <string name="user_str_9">Share</string>
+    <string name="video_player_str_1">Download</string>
+    <string name="video_player_str_10">Disable repeat</string>
+    <string name="video_player_str_11">Enable playing speed</string>
+    <string name="video_player_str_12">Disable playing speed</string>
+    <string name="video_player_str_13">Enable Equalizer</string>
+    <string name="video_player_str_14">Disable Equalizer</string>
+    <string name="video_player_str_15">Video Quality</string>
+    <string name="video_player_str_16">Subtitles</string>
+    <string name="video_player_str_17">Audio</string>
+    <string name="video_player_str_18">Settings</string>
+    <string name="video_player_str_19">Lock</string>
+    <string name="video_player_str_2">Downloaded</string>
+    <string name="video_player_str_20">Unlock</string>
+    <string name="video_player_str_21">Skip Intro</string>
+    <string name="video_player_str_22">Next Episode</string>
+    <string name="video_player_str_23">Subtitle not found</string>
+    <string name="video_player_str_24">Skip Credit</string>
+    <string name="video_player_str_25">Similar Videos</string>
+    <string name="video_player_str_26">Audio &amp; Subtitles</string>
+    <string name="video_player_str_27">Data Saver</string>
+    <string name="video_player_str_28">Good</string>
+    <string name="video_player_str_29">Better</string>
+    <string name="video_player_str_3">Enable next/previous</string>
+    <string name="video_player_str_30">Best</string>
+    <string name="video_player_str_4">Disable next/previous</string>
+    <string name="video_player_str_5">Enable forward/backward</string>
+    <string name="video_player_str_6">Disable forward/backward</string>
+    <string name="video_player_str_7">Enable shuffle</string>
+    <string name="video_player_str_8">Disable shuffle</string>
+    <string name="video_player_str_9">Enable repeat</string>
+    <string name="video_str_8">lock</string>
+    <string name="your_music_will_resume_in">Your music will resume in</string>
+    <string name="your_want_exit">Are you sure you want to exit ?</string>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        
+
+
+        
+        <item name="android:dropDownListViewStyle">@style/popupMenuDivider</item>
+        
+        <item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>
+    </style>
+    <style name="AppTheme.AdAttribution">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">#ffcc66</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/ad_attribution</item>
+        <item name="android:height">15dp</item>
+        <item name="android:width">15dp</item>
+    </style>
+    <style name="AppThemeNoActionBar" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateVisible</item>
+
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="Circular">
+        <item name="cornerSize">7%</item>
+    </style>
+    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/my_choice_chip_background_color</item>
+        <item name="android:textColor">@color/my_choice_chip_text_color</item>
+    </style>
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="DropDown_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_show_down_center</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+    <style name="Elastic_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_elastic_down</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+    <style name="Fade_PowerSpinner">
+        <item name="android:windowEnterAnimation">@anim/spinner_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/spinner_fade_out</item>
+    </style>
+    <style name="FilterSwitchThemeGreen" parent="AppTheme">
+        <item name="colorAccent">@color/font_color</item>
+    </style>
+    <style name="LibTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">#808080</item>
+        <item name="fontFamily">@font/opplus_sans_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="MoECardCtaStyle">
+        <item name="android:textColor">@color/moe_card_cta_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/moe_card_cta_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+    <style name="MoECardHeaderTextStyle">
+        <item name="android:textSize">@dimen/moe_card_header_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_card_header_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoECardMessageTextStyle">
+        <item name="android:textSize">@dimen/moe_card_content_font_size</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/moe_card_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoECardTabTextStyle">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textSize">@dimen/moe_card_tab_font_size</item>
+    </style>
+    <style name="MoECardTheme" parent="Theme.AppCompat.Light"/>
+    <style name="MoECardTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+    </style>
+    <style name="MoECardTimeTextStyle">
+        <item name="android:textSize">@dimen/moe_card_time_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_card_timestamp_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoECardToolbarTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textSize">@dimen/moe_card_tab_font_size</item>
+    </style>
+    <style name="MoEInboxEmptyBoxTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_empty_box_text_size</item>
+        <item name="android:textColor">@color/moe_inbox_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoEInboxHeaderTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_header_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_inbox_header_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MoEInboxMessageTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_content_font_size</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/moe_inbox_message_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoEInboxScrollbarStyle">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/moe_inbox_vertical_scroller_thumb</item>
+        <item name="android:scrollbarSize">30dp</item>
+    </style>
+    <style name="MoEInboxSeparatorStyle">
+        <item name="android:background">@drawable/moe_inbox_item_divider</item>
+    </style>
+    <style name="MoEInboxTheme.NoActionBar">
+        <item name="colorPrimary">@color/moe_inbox_color_primary</item>
+        <item name="colorPrimaryDark">@color/moe_inbox_color_primary_dark</item>
+        <item name="colorControlNormal">@color/moe_inbox_control_color</item>
+        <item name="android:background">@color/moe_inbox_background_color</item>
+    </style>
+    <style name="MoEInboxTimeTextStyle">
+        <item name="android:background">@color/moe_inbox_transparent_color</item>
+        <item name="android:textSize">@dimen/moe_inbox_time_font_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/moe_inbox_timestamp_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="MoEInboxToolbarTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/moe_inbox_toolbar_text_color</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/moe_inbox_tab_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MoETheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="MoETheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="MyToolbarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
+    <style name="ScrollingPagerIndicator">
+        <item name="spi_dotColor">@android:color/darker_gray</item>
+        <item name="spi_dotSelectedColor">@android:color/darker_gray</item>
+        <item name="spi_dotSize">6dp</item>
+        <item name="spi_dotSelectedSize">10dp</item>
+        <item name="spi_dotSpacing">8dp</item>
+        <item name="spi_visibleDotCount">5</item>
+        <item name="spi_visibleDotThreshold">2</item>
+        <item name="spi_looped">false</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.Circle" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.MidRoundCorner" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCorner" parent="">
+        <item name="cornerSize">@dimen/dimen_12</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCornerBucket" parent="">
+        <item name="cornerSize">@dimen/dimen_8</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCornerImageLeft" parent="">
+        <item name="cornerSizeTopLeft">@dimen/dimen_7</item>
+        <item name="cornerSizeBottomLeft">@dimen/dimen_7</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCornerImageTopLeftRight" parent="">
+        <item name="cornerSizeTopLeft">@dimen/dimen_7</item>
+        <item name="cornerSizeTopRight">@dimen/dimen_7</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCorners" parent="">
+        <item name="cornerSize">@dimen/dimen_18</item>
+    </style>
+    <style name="StyleBackIcons">
+        <item name="android:layout_width">@dimen/dimen_44</item>
+        <item name="android:layout_height">@dimen/dimen_44</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingStart">@dimen/dimen_15_5</item>
+        <item name="android:paddingEnd">@dimen/dimen_15_5</item>
+        <item name="android:paddingTop">@dimen/dimen_12</item>
+        <item name="android:paddingBottom">@dimen/dimen_12</item>
+        <item name="srcCompat">@drawable/ic_back_right_arrow</item>
+        <item name="tint">@color/colorWhite</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginStart">@dimen/dimen_2</item>
+
+
+    </style>
+    <style name="StyleBottomTextView" parent="StyleTextView">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/bottom_navigation_color</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">@dimen/_10ssp</item>
+    </style>
+    <style name="StyleButtonView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:background">@drawable/bg_button_border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="StyleCommonDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+    <style name="StyleEditTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_36sdp</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorHint">@color/colorGrey</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textDirection">anyRtl</item>
+
+    </style>
+    <style name="StyleFullScreenDialog" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+    <style name="StyleHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+    </style>
+    <style name="StyleHeaderIcons">
+        <item name="android:layout_width">@dimen/_35sdp</item>
+        <item name="android:layout_height">@dimen/_35sdp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_5sdp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+
+    </style>
+    <style name="StyleNativeAdsView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dimen_8</item>
+
+
+    </style>
+    <style name="StyleRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="useMaterialThemeColors">true</item>
+        <item name="android:minWidth">?attr/minTouchTargetSize</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:minHeight">?attr/minTouchTargetSize</item>
+    </style>
+    <style name="StyleSideMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+    <style name="StyleTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/StyleTextAppearance</item>
+    </style>
+    <style name="StyleTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/sf_pro_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="tabSelectedTextColor">@color/tab_selected_color</item>
+    </style>
+    <style name="StyleTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="hintTextColor">@color/font_color</item>
+    </style>
+    <style name="StyleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_15</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="android:layout_marginTop">@dimen/dimen_8</item>
+    </style>
+    <style name="StyleTextViewSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/subtitle_grey_color</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_2</item>
+        <item name="android:layout_marginTop">@dimen/dimen_3</item>
+    </style>
+    <style name="StyleTextViewSubtitle2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/item_sub_title_2_color</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/sf_pro_text</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lineSpacingExtra">@dimen/font_2</item>
+        <item name="android:layout_marginTop">@dimen/dimen_3</item>
+    </style>
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/tab_un_selected_color</item>
+        <item name="fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">@dimen/font_3</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="Theme.Custom" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+    </style>
+    <style name="TrackSelectionDialogThemeOverlay" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">false</item>
+    </style>
+    <style name="Widget.PictureInPicture.MovieView" parent="android:Widget">
+        <item name="android:src">@null</item>
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+    <style name="btnWhiteBorder">
+        <item name="android:background">@drawable/btn_with_white_border</item>
+        <item name="android:height">@dimen/_30sdp</item>
+        <item name="android:minHeight">@dimen/_20sdp</item>
+    </style>
+    <style name="chooseLanguageSubtitle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#8C000000</item>
+    </style>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="circleImageView.">
+        <item name="cornerSize">5%</item>
+    </style>
+    <style name="collapsedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="commonMediumButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dimen_3</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/colorWhite1</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <style name="commonMediumIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_3</item>
+        <item name="fontTextSize">@dimen/font_16</item>
+        <item name="fontTextColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/oplus_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="expandedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="myPopupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="fontFamily">@font/sf_pro_text</item>
+    </style>
+    <style name="myPopupMenuTextAppearanceSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="fontFamily">@font/sf_pro_text_bold</item>
+    </style>
+    <style name="popupMenuDivider" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/border</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+    <style name="spinner_style">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:dropDownWidth">@dimen/dimen_380</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:popupBackground">@drawable/normal_bg_edittext</item>
+        <item name="android:dropDownHeight">0dp</item>
+        <item name="android:dropDownSelector">@color/colorWhite</item>
+
+    </style>
+    <style name="superBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <declare-styleable name="BlurLayout">
+        <attr format="integer" name="blurRadiuss"/>
+        <attr format="float" name="scaleFactor"/>
+        <attr format="reference" name="targetView"/>
+        <attr format="boolean" name="cropSubArea"/>
+        <attr format="integer" name="updateFrequency"/>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_circle_background_color"/>
+    </declare-styleable>
+    <declare-styleable name="CircularStatusView">
+        <attr format="dimension" name="portion_width"/>
+        <attr format="color" name="portion_color"/>
+        <attr format="dimension" name="portion_spacing"/>
+        <attr format="integer" name="portions_count"/>
+    </declare-styleable>
+    <declare-styleable name="CustomBlurView">
+        <attr format="dimension" name="realtimeBlurRadius"/>
+        <attr format="float" name="realtimeDownsampleFactor"/>
+        <attr format="color" name="realtimeOverlayColor"/>
+        <attr format="dimension" name="topLeftRadius"/>
+        <attr format="dimension" name="bottomRightRadius"/>
+        <attr format="dimension" name="bottomLeftRadius"/>
+        <attr format="dimension" name="topRightRadius"/>
+    </declare-styleable>
+    <declare-styleable name="DragDropSwipeRecyclerView">
+        <attr format="reference" name="item_layout"/>
+        <attr format="reference" name="divider"/>
+        <attr format="reference" name="behind_swiped_item_icon"/>
+        <attr format="reference" name="behind_swiped_item_icon_secondary"/>
+        <attr format="dimension" name="behind_swiped_item_icon_margin"/>
+        <attr format="boolean" name="behind_swiped_item_icon_centered"/>
+        <attr format="color" name="behind_swiped_item_bg_color"/>
+        <attr format="color" name="behind_swiped_item_bg_color_secondary"/>
+        <attr format="reference" name="behind_swiped_item_custom_layout"/>
+        <attr format="reference" name="behind_swiped_item_custom_layout_secondary"/>
+        <attr format="boolean" name="swiped_item_opacity_fades_on_swiping"/>
+        <attr format="boolean" name="long_press_to_start_dragging"/>
+    </declare-styleable>
+    <declare-styleable name="DroidAwesomeTextDrawable">
+        <attr format="string" name="fontText"/>
+        <attr format="dimension" name="fontTextSize"/>
+        <attr format="color" name="fontTextColor"/>
+    </declare-styleable>
+    <declare-styleable name="ElevationImageView">
+        <attr format="dimension" name="compatEvelation"/>
+        <attr format="boolean" name="clipShadow"/>
+        <attr format="boolean" name="isTranslucent"/>
+        <attr format="boolean" name="forceClip"/>
+    </declare-styleable>
+    <declare-styleable name="EmojiRatingBar">
+        <attr format="boolean" name="showText"/>
+        <attr format="color" name="titleColor"/>
+        <attr name="android:fontFamily"/>
+        <attr format="enum" name="defaultSelectValue">
+            <enum name="AWFUL" value="0"/>
+            <enum name="BAD" value="1"/>
+            <enum name="OKAY" value="2"/>
+            <enum name="GOOD" value="3"/>
+            <enum name="GREAT" value="4"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="FadingEdgeLayout">
+        <attr format="integer" name="fel_edge">
+            <flag name="top" value="1"/>
+            <flag name="bottom" value="2"/>
+            <flag name="left" value="4"/>
+            <flag name="right" value="8"/>
+        </attr>
+        <attr format="dimension" name="fel_size_top"/>
+        <attr format="dimension" name="fel_size_bottom"/>
+        <attr format="dimension" name="fel_size_left"/>
+        <attr format="dimension" name="fel_size_right"/>
+    </declare-styleable>
+    <declare-styleable name="FontTextView">
+        <attr format="boolean" name="brand_icon"/>
+        <attr format="boolean" name="solid_icon"/>
+    </declare-styleable>
+    <declare-styleable name="LrcView">
+        <attr format="dimension" name="lrcTextSize"/>
+        <attr format="dimension" name="lrcLineSpaceSize"/>
+        <attr format="reference|color" name="lrcNormalTextColor"/>
+        <attr format="reference|color" name="lrcCurrentTextColor"/>
+        <attr format="integer" name="lrcTouchDelay"/>
+        <attr format="dimension" name="noLrcTextSize"/>
+        <attr format="reference|color" name="noLrcTextColor"/>
+        <attr format="dimension" name="indicatorLineHeight"/>
+        <attr format="dimension" name="indicatorTextSize"/>
+        <attr format="reference|color" name="indicatorTextColor"/>
+        <attr format="reference|color" name="currentIndicateLrcColor"/>
+        <attr format="integer" name="indicatorTouchDelay"/>
+        <attr format="reference|color" name="indicatorLineColor"/>
+        <attr format="dimension" name="indicatorStartEndMargin"/>
+        <attr format="dimension" name="iconLineGap"/>
+        <attr format="dimension" name="playIconWidth"/>
+        <attr format="dimension" name="playIconHeight"/>
+        <attr format="reference" name="playIcon"/>
+        <attr format="boolean" name="isLrcCurrentTextBold"/>
+        <attr format="boolean" name="isLrcIndicatorTextBold"/>
+    </declare-styleable>
+    <declare-styleable name="MovieView">
+        <attr name="android:src"/>
+        <attr name="android:title"/>
+        <attr name="android:adjustViewBounds"/>
+    </declare-styleable>
+    <declare-styleable name="Pinview">
+        <attr format="reference" name="pinViewBackground"/>
+        <attr format="integer" name="pinViewLength"/>
+        <attr format="dimension" name="pinViewWidth"/>
+        <attr format="dimension" name="pinViewHeight"/>
+        <attr format="dimension" name="pinViewSplitWidth"/>
+        <attr format="boolean" name="pinViewCursorVisible"/>
+        <attr format="boolean" name="pinViewPassword"/>
+        <attr format="boolean" name="pinViewForceKeyboard"/>
+        <attr format="string" name="pinViewHint"/>
+        <attr name="pinViewInputType"/>
+        <attr format="dimension" name="pinViewTextSize"/>
+    </declare-styleable>
+    <declare-styleable name="PowerSpinnerView">
+    
+    <attr format="reference" name="spinner_arrow_drawable"/>
+    
+    <attr format="boolean" name="spinner_arrow_show"/>
+    
+    <attr format="enum" name="spinner_arrow_gravity">
+      <enum name="start" value="0"/>
+      <enum name="top" value="1"/>
+      <enum name="end" value="2"/>
+      <enum name="bottom" value="3"/>
+    </attr>
+    
+    <attr format="dimension" name="spinner_arrow_padding"/>
+    
+    <attr format="color|reference" name="spinner_arrow_tint"/>
+    
+    <attr format="boolean" name="spinner_arrow_animate"/>
+    
+    <attr format="integer" name="spinner_arrow_animate_duration"/>
+    
+    <attr format="boolean" name="spinner_divider_show"/>
+    
+    <attr format="dimension" name="spinner_divider_size"/>
+    
+    <attr format="color|reference" name="spinner_divider_color"/>
+    
+    <attr format="color|reference" name="spinner_popup_background"/>
+    
+    <attr format="enum" name="spinner_popup_animation">
+      <enum name="dropdown" value="0"/>
+      <enum name="fade" value="1"/>
+      <enum name="bounce" value="2"/>
+      <enum name="normal" value="3"/>
+    </attr>
+    
+    <attr format="reference" name="spinner_popup_animation_style"/>
+    
+    <attr format="dimension" name="spinner_popup_width"/>
+    
+    <attr format="dimension" name="spinner_popup_height"/>
+    
+    <attr format="dimension" name="spinner_popup_elevation"/>
+    
+    <attr format="reference" name="spinner_item_array"/>
+    
+    <attr format="boolean" name="spinner_dismiss_notified_select"/>
+    
+    <attr format="integer" name="spinner_debounce_duration"/>
+    
+    <attr format="string" name="spinner_preference_name"/>
+    
+    <attr format="boolean" name="spinner_popup_focusable"/>
+  </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr format="color" name="rb_color"/>
+        <attr format="dimension" name="rb_strokeWidth"/>
+        <attr format="dimension" name="rb_radius"/>
+        <attr format="integer" name="rb_duration"/>
+        <attr format="integer" name="rb_rippleAmount"/>
+        <attr format="float" name="rb_scale"/>
+        <attr format="enum" name="rb_type">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ScrollingPagerIndicator">
+        <attr format="color" name="spi_dotColor"/>
+        <attr format="color" name="spi_dotSelectedColor"/>
+        <attr format="dimension" name="spi_dotSize"/>
+        <attr format="dimension" name="spi_dotSelectedSize"/>
+        <attr format="dimension" name="spi_dotMinimumSize"/>
+        <attr format="dimension" name="spi_dotSpacing"/>
+        <attr format="integer" name="spi_visibleDotCount"/>
+        <attr format="integer" name="spi_visibleDotThreshold"/>
+        <attr format="boolean" name="spi_looped"/>
+        <attr format="enum" name="spi_orientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="StoriesProgressView">
+        <attr format="integer|reference" name="progressCount"/>
+    </declare-styleable>
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="seekBarRotation">
+            
+            <enum name="CW90" value="90"/>
+            
+            <enum name="CW270" value="270"/>
+        </attr>
+    </declare-styleable>
+</resources>
