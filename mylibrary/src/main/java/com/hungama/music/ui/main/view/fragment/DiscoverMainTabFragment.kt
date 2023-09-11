@@ -191,9 +191,8 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
     private fun setUpViewModel() {
         try {
             if (ConnectionUtil(activity).isOnline) {
-                homeViewModel = ViewModelProvider(
-                    this
-                ).get(HomeViewModel::class.java)
+                homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+                var homeData: HomeModel? = null
 
                 homeViewModel?.getHomeListDataLatest(requireContext(), WSConstants.METHOD_MUSIC)?.observe(this,
                     Observer {
@@ -209,8 +208,48 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                                 removeMainData("9", items)
                                 removeMainData("3", items)
 
-                                setData(it?.data)
-                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
+                                homeData = it?.data
+
+                                homeViewModel?.getHomeBanner(requireContext(), WSConstants.HOME_BANNER)?.observe(this)
+                                {
+                                    when(it.status){
+                                        Status.SUCCESS->{
+                                            if (homeData != null){
+                                                it?.data?.data?.body?.rows?.let { it1 ->
+                                                    setLog("kghashfoasg", it1[0]?.items?.size.toString())
+
+                                                    if (CommonUtils.isUserHasGoldSubscription()){
+                                                        it1[0]?.items?.let { it2 -> removeBanner(it2) }
+                                                    }
+
+                                                    val lastData = it1[0]?.items?.get(0)
+                                                    setLog("kghashfoasg", it1[0]?.items?.size.toString())
+                                                    it1[0]?.items?.add((it1[0]?.items?.size!!), lastData)
+                                                    setLog("kghashfoasg", it1[0]?.items?.size.toString())
+                                                    homeData?.data?.body?.rows?.addAll(0, it1)
+                                                }
+                                                setData(homeData!!)
+                                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, homeData!!)
+                                            }
+                                        }
+
+                                        Status.LOADING ->{
+                                            setProgressBarVisible(true)
+                                        }
+
+                                        Status.ERROR ->{
+
+                                            requireActivity().resources?.getDimensionPixelSize(R.dimen.dimen_96)?.let { it1 -> rlMainDashboard.setPadding(0,it1,0,0) }
+                                            setData(homeData!!)
+                                            HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, homeData!!)
+                                            setProgressBarVisible(false)
+                                            Utils.showSnakbar(requireContext(),requireView(), true, it.message!!)
+                                        }
+                                    }
+                                }
+
+//                                setData(it?.data)
+//                                HungamaMusicApp.getInstance().setCacheBottomTab(Constant.CACHE_DISCOVER_PAGE, it?.data!!)
                             }
 
                             Status.LOADING ->{
@@ -231,7 +270,18 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
         }catch (ee:Exception){
 
         }
+    }
 
+    fun removeBanner(data: ArrayList<BodyRowsItemsItem?>){
+        for (i in data.indices){
+            if (i>= data.size)
+                break
+
+            if (data[i]?.data?.user.equals("0")){
+                data.removeAt(i)
+                removeBanner(data)
+            }
+        }
     }
 
 

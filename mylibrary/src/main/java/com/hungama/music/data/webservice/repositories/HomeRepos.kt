@@ -125,6 +125,101 @@ class HomeRepos {
         return homeResp
     }
 
+    fun getHomeBanner(context: Context, url: String): MutableLiveData<Resource<HomeModel>> {
+//        val currentSpan = Sentry.getSpan()
+//        val span = currentSpan?.startChild("discoverscreen_listing", javaClass.simpleName)
+//            ?: Sentry.startTransaction("discoverscreen_listing", "task")
+
+        CoroutineScope(Dispatchers.IO).launch{
+            try {
+                var requestTime = DateUtils.getCurrentDateTime()
+                homeResp.postValue(Resource.loading(null))
+                DataManager.getInstance(context)?.getVolleyRequest(context,url, JSONObject(),object : DataValues {
+                    override fun setJsonDataResponse(response: JSONObject?) {
+                        if (homeResp == null) {
+                            homeResp = MutableLiveData<Resource<HomeModel>>()
+                        }
+
+                        try {
+                            val homeModel = Gson().fromJson<HomeModel>(
+                                response.toString(),
+                                HomeModel::class.java
+                            ) as HomeModel
+                            //setLog("HomeApiResponse", "url-$url \nresponse-$response")
+                            homeResp.postValue(Resource.success(homeModel))
+
+                            /**
+                             * event property start
+                             */
+                            val responseTime = DateUtils.getCurrentDateTime()
+                            val diffInMillies: Long =
+                                Math.abs(requestTime.getTime() - responseTime.getTime())
+
+                            val diff: Long = TimeUnit.MILLISECONDS.toMillis(diffInMillies)
+                            setLog(
+                                TAG,
+                                "getHomeListData: diff:$diff diffInMillies:$diffInMillies requestTime: $requestTime responseTime:$responseTime"
+                            )
+
+                            val hashMap = HashMap<String, String>()
+                            hashMap.put(EventConstant.ERRORCODE_EPROPERTY, "")
+                            hashMap.put(
+                                EventConstant.NETWORKTYPE_EPROPERTY,
+                                "" + ConnectionUtil(context).networkType
+                            )
+                            hashMap.put(EventConstant.NAME_EPROPERTY, "discoverscreen_listing")
+                            hashMap.put(
+                                EventConstant.RESPONSECODE_EPROPERTY,
+                                EventConstant.RESPONSE_CODE_200
+                            )
+                            hashMap.put(EventConstant.SOURCE_NAME_EPROPERTY, "bottom_tab")
+                            hashMap.put(EventConstant.SOURCE_EPROPERTY, "bottom_tab")
+                            hashMap.put(EventConstant.RESPONSETIME_EPROPERTY,""+diff)
+                            hashMap.put(EventConstant.URL_EPROPERTY, com.hungama.music.utils.CommonUtils.getUrlWithoutParameters(url)!!)
+
+                            EventManager.getInstance().sendEvent(ApiPerformanceEvent(hashMap))
+
+//                            span.finish(SpanStatus.OK)
+//
+//                            val transaction = Sentry.getSpan()
+//                            transaction?.finish(SpanStatus.OK)
+
+                            /**
+                             * event property end
+                             */
+
+                        } catch (exp: Exception) {
+                            exp.printStackTrace()
+                            setLog("printErrorLog", exp.message.toString())
+                            homeResp.postValue(Resource.error(context.getString(R.string.discover_str_2), null))
+//                            Sentry.captureException(exp!!)
+//                            val transaction = Sentry.getSpan()
+//                            transaction?.finish(SpanStatus.INTERNAL_ERROR)
+                        }
+                    }
+
+                    override fun setVolleyError(volleyError: VolleyError?) {
+                        volleyError?.printStackTrace()
+//                        Sentry.captureException(volleyError?.cause!!)
+//                        val transaction = Sentry.getSpan()
+//                        transaction?.finish(SpanStatus.INTERNAL_ERROR)
+//                homeResp.postValue(Resource.error(context.getString(R.string.discover_str_2), null))
+                    }
+
+                })
+            }catch (e:Exception){
+                homeResp.postValue(Resource.error(context.getString(R.string.discover_str_2), null))
+//                Sentry.captureException(e)
+//                val transaction = Sentry.getSpan()
+//                transaction?.finish(SpanStatus.INTERNAL_ERROR)
+            }
+
+        }
+
+
+        return homeResp
+    }
+
     fun getCommonRecommendation(context: Context, url: String): MutableLiveData<Resource<DailyDoseRespModel>> {
         CoroutineScope(Dispatchers.IO).launch{
             var requestTime = DateUtils.getCurrentDateTime()

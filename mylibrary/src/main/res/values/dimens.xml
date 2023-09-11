@@ -60,6 +60,7 @@
     <dimen name="dimen_6_minus">-6dp</dimen>
     <dimen name="minus_dimen_10">-10dp</dimen>
     <dimen name="minus_dimen_18">-18dp</dimen>
+    <dimen name="minus_dimen_15">-15dp</dimen>
     <dimen name="minus_dimen_20">-20dp</dimen>
     <dimen name="minus_dimen_24">-24dp</dimen>
     <dimen name="minus_dimen_30">-30dp</dimen>

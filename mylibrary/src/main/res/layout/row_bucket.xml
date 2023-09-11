@@ -106,18 +106,16 @@
             tools:listitem="@layout/row_recent_history" />
 
         <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_235"
+            android:layout_height="@dimen/dimen_430"
             android:focusableInTouchMode="true"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/dotedView"
-            android:layout_marginTop="@dimen/dimen_24">
+            android:id="@+id/dotedView">
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/dimen_30"
+                android:paddingBottom="@dimen/dimen_15"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.hungama.music.utils.customview.scrollingpagerindicator.ScrollingPagerIndicator

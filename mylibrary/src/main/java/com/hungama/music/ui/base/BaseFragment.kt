@@ -52,9 +52,6 @@ import com.hungama.music.player.videoplayer.AudioSubtitleSelectBottomSheetFragme
 import com.hungama.music.player.videoplayer.SubtitleSelectBottomSheetFragment
 import com.hungama.music.player.videoplayer.VideoPlayerActivity
 import com.hungama.music.ui.main.adapter.BucketChildAdapter
-import com.hungama.music.ui.main.view.activity.CommonWebViewActivity
-import com.hungama.music.ui.main.view.activity.MainActivity
-import com.hungama.music.ui.main.view.activity.StoryDisplayActivity
 import com.hungama.music.ui.main.view.fragment.*
 import com.hungama.music.ui.main.viewmodel.PlayableContentViewModel
 import com.hungama.music.ui.main.viewmodel.PlaylistViewModel
@@ -130,6 +127,7 @@ import com.hungama.music.utils.fontmanger.FontDrawable
 import com.hungama.music.utils.preference.PrefConstant
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.ui.main.view.activity.*
 import com.moengage.cards.MoECardHelper
 import com.moengage.cards.ui.CardActivity
 import com.moengage.inapp.MoEInAppHelper
@@ -196,6 +194,8 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
         public var castPlayer: CastPlayer?=null
         var isCastPlayerAudio=false
         public var mediaRouteButton: MediaRouteButton?=null
+        var isPlayFromBanner : Boolean = false
+        var isPlayBannerVPlaying : Boolean = false
     }
 
 
@@ -1311,6 +1311,653 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
             Utils.showSnakbar(requireContext(),requireView(), false, "coming soon")
         }
     }
+
+    fun onItemDetailPageRedirectionItype50(parent: RowsItem, parentPosition: Int, childPosition: Int, parentTitle:String) {
+
+        val deeplink_url = parent?.items?.get(childPosition)?.data?.deeplink_url
+        val type = parent?.items?.get(childPosition)?.data?.contentTypeId
+        val image = parent?.items?.get(childPosition)?.data?.image
+        val id = parent?.items?.get(childPosition)?.data?.id
+        val title = parent?.items?.get(childPosition)?.data?.title
+        val varientType = parent?.items?.get(childPosition)?.data?.variant
+
+        val deeplink = parent?.items?.get(childPosition)?.data?.deepLink
+
+        val share = parent?.items?.get(childPosition)?.data?.share
+        setLog("DataTape", "Type${type}")
+        CoroutineScope(Dispatchers.IO).launch {
+            callPageViewEvent(
+                "" + MainActivity.lastItemClicked + "_" + MainActivity.headerItemName + parentTitle,
+                "" + parentPosition,
+                Utils.getContentTypeName("" + type),
+                title!!,
+                "" + varientType,
+                "" + id,
+                title
+            )
+        }
+
+        setLog(
+            "PageViewEventCheck", MainActivity.lastItemClicked + " " +
+                    MainActivity.headerItemName + " " + MainActivity.tempLastItemClicked + "\n" +
+                    parentPosition + " " + type + " " + title + " " + varientType + " " + id + " " + parentTitle
+        )
+
+        val bundle = Bundle()
+        bundle.putBoolean(Constant.isPlayFromBanner, true)
+        bundle.putString(defaultContentPlayerType, type)
+        //type = "20"
+
+        if (type.equals("35", true)) {
+            if (ConnectionUtil(requireContext()).isOnline) {
+
+                var genrtedURL =
+                    deeplink?.let { CommonUtils.genratePaymentPageURL(requireContext(), it) }
+
+                if (deeplink?.contains("plan_id") == true) {
+                    var temp_deep = deeplink?.split("?")?.toTypedArray()
+
+                    genrtedURL =
+                        CommonUtils.genratePaymentPageURL(requireContext(), temp_deep!![1])
+                }
+                var intent = Intent()
+                if (SharedPrefHelper.getInstance().isUserLoggedIn()) {
+                    intent = Intent(requireContext(), PaymentWebViewActivity::class.java)
+                    intent.putExtra("url", genrtedURL)
+                } else {
+                    intent = Intent(requireContext(), LoginMainActivity::class.java)
+                    intent.putExtra("action", 78)
+                }
+                setLog("PrintUrl", " deeplink " + genrtedURL)
+                intent.putExtra(Constant.DeepLink_Payment, genrtedURL)
+
+                startActivity(intent)
+                return
+            }
+        }else if (id.isNullOrBlank() && deeplink?.isNotEmpty() == true) {
+            val intent = CommonUtils.getDeeplinkIntentData(Uri.parse(deeplink))
+            intent.setClass(requireActivity(), MainActivity::class.java)
+            activity?.startActivity(intent)
+            return
+        }
+
+        if (type.equals("0", true)) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            var varient = 1
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    bundle.putBoolean(defaultContentVarient, true)
+                } else {
+                    bundle.putBoolean(defaultContentVarient, false)
+                }
+            } else {
+                bundle.putBoolean(defaultContentVarient, false)
+            }
+            val artistDetailsFragment = ArtistDetailsFragment()
+            artistDetailsFragment.arguments = bundle
+            addFragment(R.id.fl_container, this, artistDetailsFragment, false)
+
+        } else if (type.equals("1", true)) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+
+            val albumDetailFragment = AlbumDetailFragment()
+            albumDetailFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, albumDetailFragment, false)
+
+        } else if (type.equals("15", true)
+            || type.equals("44444", true)
+            || type.equals("66666", true)
+        ) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+
+            val collectionDetailsFragment = CollectionDetailsFragment()
+            collectionDetailsFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, collectionDetailsFragment, false)
+        } else if (type.equals("19", true)) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            if (parent.items!!.get(childPosition)!!.data?.images != null && parent.items!!.get(
+                    childPosition
+                )!!.data?.images?.size!! > 0 && parent?.items?.get(childPosition)?.itype == 42
+            ) {
+                bundle.putStringArrayList(
+                    "imageArray",
+                    parent.items!!.get(childPosition)!!.data?.images as java.util.ArrayList<String>?
+                )
+            }
+
+            if (parent.items!!.get(childPosition)!!.data?.variant_images != null && parent.items!!.get(
+                    childPosition
+                )!!.data?.variant_images?.size!! > 0
+            ) {
+                bundle.putStringArrayList(
+                    "variant_images",
+                    parent.items!!.get(childPosition)!!.data?.variant_images as java.util.ArrayList<String>?
+                )
+            }
+
+
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            var varient = 1
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    varient = 2
+                }
+            }
+            val chartDetailFragment = ChartDetailFragment.newInstance(varient)
+            chartDetailFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, chartDetailFragment, false)
+
+        } else if (type.equals("20", true)) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            if (parent?.items?.get(childPosition)?.data?.misc?.artistid != null) {
+                bundle.putString(
+                    Constant.defaultArtistId,
+                    parent?.items?.get(childPosition)?.data?.misc?.artistid
+                )
+            }
+
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(defaultContentVarient, true)
+
+            var varient = 1
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    varient = 2
+                }
+            }
+
+            /*id = "60f68ff50aa54e43e4570038"
+            bundle.putString("id", id)
+            bundle.putString("artistid","artist-81488978")*/
+
+            val eventDetailFragment = EventDetailFragment()
+            eventDetailFragment.arguments = bundle
+
+//            var eventDetailFragment= EventPlayerFragment()
+//            bundle.putString("eventName","Jubin Nautiyal Live_UN")
+//            bundle.putString("id","62c5875f082fc2226812c471")
+//            bundle.putString("liveEventUrl","https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4")
+//            bundle.putInt("mode",1)//1-Portrait Mode, 2-Landscape Mode
+//            eventDetailFragment.arguments=bundle
+
+            addFragment(R.id.fl_container, this, eventDetailFragment, false)
+
+        } else if (type.equals("25", true)) {
+
+            var catKeywords = ""
+            val bundle = Bundle()
+            setLog("basefragment", "type:${type} parent.keywords:${parent.keywords}")
+            if (!parent.keywords?.isNullOrEmpty()!!) {
+                catKeywords = parent?.keywords?.get(0).toString()
+                bundle.putString(Constant.EXTRA_CATEGORY_NAME, catKeywords)
+
+                setLog("basefragment", "added type:${type} parent.keywords:${parent.keywords}")
+            }
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            bundle.putString(
+                Constant.EXTRA_CATEGORY_ID,
+                parent.items?.get(childPosition)?.data?.id!!.toString()
+            )
+            bundle.putString("heading", parent.heading)
+            val categoryDetailFragment = CategoryDetailFragment(
+                parent.items?.get(childPosition)?.data?.id!!.toString(),
+                parent?.type
+            )
+            categoryDetailFragment.arguments = bundle
+            addFragment(R.id.fl_container, this, categoryDetailFragment, false)
+
+            setLog("basefragment", "bundle:${bundle}")
+            CoroutineScope(Dispatchers.IO).launch {
+                val hashMap = java.util.HashMap<String, String>()
+                hashMap.put(
+                    EventConstant.TYPE_EPROPERTY,
+                    "" + parent.items?.get(childPosition)?.data?.type
+                )
+                if (!catKeywords?.isNullOrBlank()!!) {
+                    hashMap.put(
+                        EventConstant.CONTENT_TYPE_EPROPERTY,
+                        "" + parent?.keywords?.get(0).toString()
+                    )
+                } else {
+                    hashMap.put(
+                        EventConstant.CONTENT_TYPE_EPROPERTY,
+                        "" + Utils.getContentTypeDetailName(parent.items?.get(childPosition)?.data?.type!!)
+                    )
+
+                }
+
+
+                hashMap.put(
+                    EventConstant.CATEGORYNAME_EPROPERTY,
+                    "" + parent.items?.get(childPosition)?.data?.title
+                )
+
+                if (parent?.heading?.contains("Good", true)!!) {
+                    hashMap.put(
+                        EventConstant.SOURCEPAGE_EPROPERTY,
+                        "" + MainActivity.lastItemClicked + "_" + MainActivity.headerItemName + "_" + EventConstant.CONTINUE_WATCHING_NAME
+                    )
+                } else {
+                    hashMap.put(
+                        EventConstant.SOURCEPAGE_EPROPERTY,
+                        "" + MainActivity.lastItemClicked + "_" + MainActivity.headerItemName + "_" + parent?.heading
+                    )
+                }
+
+
+
+                EventManager.getInstance().sendEvent(CategoryClickedEvent(hashMap))
+            }
+
+        } else if ((type.equals(
+                "93",
+                true
+            ) || type.equals(
+                "4",
+                true
+            ) || type.equals(
+                "65",
+                true
+            ) || type.equals("66", true))
+            && (parent.keywords.isNullOrEmpty() && !(!parent.keywords.isNullOrEmpty() && (parent.keywords?.get(
+                0
+            ).equals("movie-trailer") || parent.keywords?.get(0).equals("continue-watching"))))
+        ) {
+
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(defaultContentVarient, true)
+            bundle.putBoolean(Constant.isPlayFromBanner, true)
+
+            var varient = 1
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    varient = 2
+                    bundle.putString(
+                        "variant_image",
+                        parent.items!!.get(childPosition)!!.data!!.variant_images?.get(0)
+                    )
+                }
+            }
+            val movieDetailsFragment = MovieV1Fragment(varient)
+            movieDetailsFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, movieDetailsFragment, false)
+
+        } else if (type.equals("98", true) || type.equals("110", true)) {
+
+            val bundle = Bundle()
+
+            bundle.putBoolean(Constant.isPlayFromBanner, true)
+            bundle.putString(defaultContentPlayerType, type)
+            val intent = CommonUtils.getDeeplinkIntentData(Uri.parse(share))
+            intent.putExtras(bundle)
+            intent.setClass(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+
+        } else if ((type.equals(
+                "96",
+                true
+            ) || type.equals(
+                "97",
+                true
+            ) || type.equals(
+                "102",
+                true
+            ) || type.equals("107", true))
+            && (parent.keywords.isNullOrEmpty() && !(!parent.keywords.isNullOrEmpty() && (parent.keywords?.get(
+                0
+            ).equals("movie-trailer") || parent.keywords?.get(0).equals("continue-watching"))))
+        ) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+
+            bundle.putString(defaultContentId, id)
+
+            bundle.putParcelable("child_item", parent.items!!.get(childPosition))
+            if (childPosition % 2 == 0)
+                bundle.putBoolean(defaultContentVarient, true)
+            else
+                bundle.putBoolean(defaultContentVarient, false)
+            var varient = 1
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    varient = 2
+                }
+            }
+            bundle.putString(defaultContentPlayerType, type)
+            val tvShowDetailsFragment = TvShowDetailsFragment(varient)
+            tvShowDetailsFragment.arguments = bundle
+            addFragment(R.id.fl_container, this, tvShowDetailsFragment, false)
+
+        } else if (type.equals("109", true)) {
+
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            //bundle.putParcelable("details", parent)
+            //bundle.putInt("childPosition", childPosition)
+            if (childPosition % 2 == 0)
+                bundle.putBoolean(defaultContentVarient, true)
+            else
+                bundle.putBoolean(defaultContentVarient, false)
+
+
+            val podcastDetailsFragment = PodcastDetailsFragment()
+            podcastDetailsFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, podcastDetailsFragment, false)
+
+        } else if (type.equals("105", true)) {
+
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            //bundle.putParcelable("details", parent)
+            //bundle.putInt("childPosition", childPosition)
+            if (childPosition % 2 == 0)
+                bundle.putBoolean(defaultContentVarient, true)
+            else
+                bundle.putBoolean(defaultContentVarient, false)
+
+            val podcastDetailsFragment = EventDetailFragment()
+            podcastDetailsFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, podcastDetailsFragment, false)
+
+        } else if (type.equals("55555", true)) {
+
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            if (parent.items!!.get(childPosition)!!.data?.images != null && parent.items!!.get(
+                    childPosition
+                )!!.data?.images?.size!! > 0
+            ) {
+                bundle.putStringArrayList(
+                    "imageArray",
+                    parent.items!!.get(childPosition)!!.data?.images as java.util.ArrayList<String>?
+                )
+            }
+
+            if (parent.items!!.get(childPosition)!!.data?.variant_images != null && parent.items!!.get(
+                    childPosition
+                )!!.data?.variant_images?.size!! > 0
+            ) {
+                bundle.putStringArrayList(
+                    "variant_images",
+                    parent.items!!.get(childPosition)!!.data?.variant_images as java.util.ArrayList<String>?
+                )
+            }
+            /*
+            var varient = 0
+            if (!TextUtils.isEmpty(varientType)) {
+                if (varientType.equals("v2", true)) {
+                    varient = 2
+                }
+            }
+//            val playlistDetailFragment = PlaylistDetailFragmentDynamic(varient)*/
+            val playlistDetailFragment = PlaylistDetailFragmentDynamic.newInstance(2)
+            playlistDetailFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, playlistDetailFragment, false)
+
+        } else if (type.equals(
+                "22",
+                true
+            ) || type.equals(
+                "53",
+                true
+            ) || type.equals("88888", true)
+        ) {
+            if (activity != null && activity is MainActivity) {
+                (activity as MainActivity).setPauseMusicPlayerOnVideoPlay()
+            }
+            val bundle = Bundle()
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+
+            val videoDetailsFragment = MusicVideoDetailsFragment()
+            videoDetailsFragment.arguments = bundle
+            addFragment(R.id.fl_container, this, videoDetailsFragment, false)
+
+
+        } else if (type.equals("99999", true)) {
+            var varient = 1
+            val myPlaylistDetailFragment = MyPlaylistDetailFragment(varient,
+                object : MyPlaylistDetailFragment.onBackPreesHendel {
+                    override fun backPressItem(status: Boolean) {
+
+                    }
+
+                })
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            myPlaylistDetailFragment.arguments = bundle
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            addFragment(
+                R.id.fl_container,
+                this,
+                myPlaylistDetailFragment,
+                false
+            )
+
+
+        } else if (parent.itype == 51) {
+            var deepLink = parent?.items?.get(childPosition)?.data?.deepLink
+
+            if (!deepLink?.isNullOrEmpty()!!) {
+                var intent = activity?.intent
+                intent?.setClass(requireActivity(), CommonWebViewActivity::class.java)
+                intent?.putExtra(Constant.EXTRA_URL, deepLink)
+                activity?.startActivity(intent)
+                setLog("TAG", "CommonWebViewActivity start main Activity")
+            }
+
+            setLog(TAG, "type 51 clicked")
+        } else if (parent.itype == 1) {
+
+            val storyUsersList = ArrayList<BodyDataItem>()
+            val storyUser = parent.items
+            var startPosition = childPosition
+            storyUser?.forEachIndexed { index, bodyRowsItemsItem ->
+                if (bodyRowsItemsItem?.data != null && !bodyRowsItemsItem.data?.isBrandHub!!) {
+                    storyUsersList.add(bodyRowsItemsItem.data!!)
+                } else {
+                    if (index < childPosition) {
+                        startPosition--
+                    }
+                }
+            }
+            setLog(
+                "BaseFragment",
+                "onItemDetailPageRedirection-storyClick-startPosition-$startPosition"
+            )
+            setLog(
+                TAG,
+                "onItemDetailPageRedirection is brand :${parent.items?.get(childPosition)?.data?.isBrandHub}"
+            )
+
+            if (parent.items?.get(childPosition)?.data != null && parent.items?.get(childPosition)?.data?.isBrandHub!! && parent.items?.get(
+                    childPosition
+                )?.data?.internal!!
+            ) {
+                setLog(
+                    TAG,
+                    "onItemDetailPageRedirection brand data:${parent.items?.get(childPosition)?.data}"
+                )
+                val bundle = Bundle()
+                bundle.putString(defaultContentImage, image)
+                bundle.putString(defaultContentId, id)
+                bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+                val mURL = parent.items?.get(childPosition)?.data?.deepLink + "&brandhub"
+                bundle.putString(Constant.EXTRA_DEEPLINK, mURL)
+//                bundle.putString(Constant.EXTRA_DEEPLINK, parent.items?.get(childPosition)?.data?.deepLink)
+
+                val fragment = BrandHubFragment()
+                fragment.arguments = bundle
+
+                addFragment(R.id.fl_container, this, fragment, false)
+            } else if (parent.items?.get(childPosition)?.data != null && parent.items?.get(
+                    childPosition
+                )?.data?.isBrandHub!! && !parent.items?.get(childPosition)?.data?.internal!!
+            ) {
+                setLog(
+                    TAG,
+                    "onItemDetailPageRedirection brand data:${parent.items?.get(childPosition)?.data}"
+                )
+                val deepLink = parent.items?.get(childPosition)?.data?.deepLink
+                if (!deepLink.isNullOrEmpty()) {
+                    val intent = activity?.intent
+                    intent?.setClass(requireActivity(), CommonWebViewActivity::class.java)
+                    intent?.putExtra(Constant.EXTRA_URL, deepLink)
+                    activity?.startActivity(intent)
+                    setLog("TAG", "CommonWebViewActivity start main Activity")
+                }
+
+
+            } else {
+                if (activity != null) {
+                    val status = (activity as MainActivity).getAudioPlayerPlayingStatus()
+                    if (status == Constant.pause) {
+                        SharedPrefHelper.getInstance().setLastAudioContentPlayingStatus(true)
+                    } else {
+                        SharedPrefHelper.getInstance().setLastAudioContentPlayingStatus(false)
+                    }
+                }
+                val intent = Intent(requireActivity(), StoryDisplayActivity::class.java)
+                intent.putExtra("position", startPosition)
+                intent.putParcelableArrayListExtra(
+                    "list",
+                    storyUsersList as ArrayList<BodyDataItem>
+                )
+                startActivityForResult(
+                    intent,
+                    DiscoverTabFragment.LAUNCH_STORY_DISPLAY_ACTIVITY
+                )
+            }
+
+
+        } else if (!parent.items.isNullOrEmpty()
+            && parent.items?.size!! > childPosition
+            && parent.items?.get(childPosition)?.data != null
+            && (parent.items?.get(childPosition)?.data?.type.equals("51", true)
+                    || (!parent.keywords.isNullOrEmpty() && (parent.keywords?.get(0)
+                .equals("movie-trailer") || parent.keywords?.get(0).equals("continue-watching"))))
+        ) {
+            val dpm = DownloadPlayCheckModel()
+            dpm.contentId = parent.items?.get(childPosition)?.data?.id?.toString()!!
+            dpm.contentTitle = parent.items?.get(childPosition)?.data?.title?.toString()!!
+            dpm.planName = parent.items?.get(childPosition)?.data?.misc?.movierights.toString()
+            dpm.isAudio = false
+            dpm.isDownloadAction = false
+            dpm.isDirectPaymentAction = false
+            dpm.queryParam = ""
+            dpm.isShowSubscriptionPopup = true
+            dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+            dpm.restrictedDownload =
+                RestrictedDownload.valueOf(parent.items?.get(childPosition)?.data?.misc?.restricted_download!!)
+            Constant.screen_name = "onItem DetailPage Redirection"
+
+            if (CommonUtils.userCanDownloadContent(
+                    requireContext(),
+                    view,
+                    dpm,
+                    null,
+                    Constant.drawer_restricted_download
+                )
+            ) {
+                val intent =
+                    Intent(requireContext(), VideoPlayerActivity::class.java)
+                val serviceBundle = Bundle()
+                serviceBundle.putString(Constant.LIST_TYPE, Constant.VIDEO_LIST)
+                serviceBundle.putString(
+                    Constant.SELECTED_CONTENT_ID,
+                    parent.items?.get(childPosition)?.data?.id
+                )
+                val playedDuration = TimeUnit.SECONDS.toMillis(
+                    HungamaMusicApp.getInstance()
+                        .getContentDuration(parent.items?.get(childPosition)?.data?.id!!)!!
+                )
+                setLog("VideoPlayerContent", "BaseFragment-playedDuration-$playedDuration")
+                serviceBundle.putLong(Constant.VIDEO_START_POSITION, playedDuration)
+
+                parent.items?.get(childPosition)?.data?.type?.toInt()
+                    ?.let { serviceBundle.putInt(Constant.TYPE_ID, it) }
+                intent.putExtra(Constant.BUNDLE_KEY, serviceBundle)
+                intent.putExtra(
+                    "thumbnailImg",
+                    parent.items?.get(childPosition)?.data?.image
+                )
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                if (activity != null) {
+                    val status = (activity as MainActivity).getAudioPlayerPlayingStatus()
+                    if (status == Constant.pause) {
+                        SharedPrefHelper.getInstance().setLastAudioContentPlayingStatus(true)
+                    } else {
+                        SharedPrefHelper.getInstance().setLastAudioContentPlayingStatus(false)
+                    }
+                    (activity as MainActivity).pausePlayer()
+                }
+                startActivity(intent)
+            }
+        } else if (type.equals("60", true)) {
+            val bundle = Bundle()
+            bundle.putString(defaultContentImage, image)
+            bundle.putString(defaultContentId, id)
+            bundle.putString(defaultContentPlayerType, type)
+            bundle.putBoolean(Constant.isPlayFromBanner, isPlayFromBanner)
+            val gameDetailFragment = GameDetailFragment()
+            gameDetailFragment.arguments = bundle
+
+            addFragment(R.id.fl_container, this, gameDetailFragment, false)
+        } else if (type.equals("21", true)) {
+
+            id?.let {
+                (activity as MainActivity).setUpPlayableContentListViewModel(
+                    requireContext(),
+                    it,
+                    true
+                )
+            }
+        }else {
+            Utils.showSnakbar(requireContext(),requireView(), false, "coming soon")
+        }
+    }
+
 
     fun callPageScrolledEvent(
         source: String,

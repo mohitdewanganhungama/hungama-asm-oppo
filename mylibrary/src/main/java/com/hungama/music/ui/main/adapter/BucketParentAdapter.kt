@@ -6,6 +6,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -51,18 +53,26 @@ class BucketParentAdapter(
     val onMoreItemClick: OnMoreItemClick,
     var bottomTabID: Int,
     val headItemsItem: HeadItemsItem?,
-    val varient: Int = Constant.ORIENTATION_VERTICAL
+    val varient: Int = Constant.ORIENTATION_VERTICAL,
+    val bannerItemClick: BannerItemClick? = null
 ) : RecyclerView.Adapter<BucketParentAdapter.ViewHolder>(), BaseActivity.PlayItemChangeListener {
     private val viewPool = RecyclerView.RecycledViewPool()
     var isStoryUpdate = false
     var continueWatchIndex = -1
     var commonSpaceBetweenBuckets = 0
+    var artImageUrl: String? = null
+    var pageCount = 0
+    var pagerAdapter : Itype50PagerAdapter? = null
+    var auto_scroll = false
+    var runnable: java.lang.Runnable? = null
 
     companion object {
         var isKeywordWatchCall = 999
-
         var lastHolderItem: ViewHolder? = null
         var bucketChildAdapterRecently: BucketChildAdapter? = null
+        var isVisible = true
+        var type_of_Scroll=false
+        var handler: Handler? = null
     }
 
     override fun onCreateViewHolder(
@@ -399,24 +409,161 @@ class BucketParentAdapter(
                             commonSpaceBetweenBuckets
                         )
                     }
-                    21 -> {
-                        var layoutManager: GridLayoutManager? = null
-                        if (parent.numrow != null && parent.numrow!! > 0) {
-                            layoutManager = GridLayoutManager(
+
+                    50 -> {
+                        handler?.removeCallbacksAndMessages(null)
+                        holder.rvChildItem.visibility = View.GONE
+                        holder.llHeaderTitle.visibility = View.GONE
+                        holder.dotedView.visibility = View.VISIBLE
+                        holder.dotedView.layoutParams.height = context.resources.getDimensionPixelSize(R.dimen.dimen_430)
+
+                        val param = holder.pagerIndicator.layoutParams as ViewGroup.MarginLayoutParams
+//                        param.setMargins(0,0,0,context.resources.getDimensionPixelSize(R.dimen.dimen_20))
+                        holder.pagerIndicator.layoutParams = param
+                        holder.pagerIndicator.bringToFront()
+
+
+                        if (pagerAdapter == null) {
+                            pagerAdapter = Itype50PagerAdapter(
+                                parent,
                                 context,
-                                parent.numrow!!,
-                                GridLayoutManager.HORIZONTAL,
-                                false
-                            )
-                        } else {
-                            layoutManager =
-                                GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
+                                object : Itype50PagerAdapter.OnChildItemClick {
+                                    override fun onUserClick(childPosition: Int) {
+                                        if (onParentItemClick != null) {
+                                            onParentItemClick.onParentItemClick(
+                                                parent,
+                                                position,
+                                                childPosition
+                                            )
+                                        }
+                                    }
+
+                                    override fun onIconClick(
+                                        position: Int, bodyData: BodyRowsItemsItem?
+                                    ) {
+                                        bannerItemClick?.bannerItemClick(true, position, bodyData)
+                                    }
+
+                                    override fun onCheckSatusplaylist(
+                                        position: Int,
+                                        bodyData: BodyRowsItemsItem?
+                                    ) {
+                                        bannerItemClick?.onCheckSatusplaylist(true, position, bodyData)
+                                    }
+                                })
                         }
+                        holder.pager.adapter = pagerAdapter
+                        holder.pager.offscreenPageLimit = 1
+
+                        holder.pagerIndicator.attachToPager(holder.pager)
+                        Utils.setMargins(holder.llMain, 0)
+                        holder.rvChildItem.setPadding(0, 0, 0, 0)
+                        Utils.setMargins(holder.llHeaderTitle, context.resources.getDimensionPixelSize(R.dimen.dimen_12))
+
+                        val pageSize = parent.items?.size
+
+                        var isExoPlaying = false
+                        var count = 0
+                        var auto_scroll_time = 3500L
+                        val autoScrollTimeFirebase = CommonUtils.getFirebaseConfigAdsData().hero_section_control.auto_scroll_time
+
+                        if (CommonUtils.getFirebaseConfigAdsData().hero_section_control.auto_scroll_time.isNotEmpty()) {
+                            if (autoScrollTimeFirebase.contains("."))
+                                auto_scroll_time = autoScrollTimeFirebase.replace(".","").toLong() * 100
+                            else
+                                auto_scroll_time = autoScrollTimeFirebase.toLong() * 1000
+                        }
+                        if(CommonUtils.getFirebaseConfigAdsData().hero_section_control.auto_scroll.isNotEmpty())
+                            auto_scroll = CommonUtils.getFirebaseConfigAdsData().hero_section_control.auto_scroll.toBoolean()
+                        handler = Handler(Looper.getMainLooper())
+                        runnable = Runnable {
+                            CoroutineScope(Dispatchers.Main).launch {
+                                if (isVisible) {
+                                    isExoPlaying = Itype50PagerAdapter.callPlayerList()?.isPlaying == true
+                                    if (!parent.items?.get(holder.pager.currentItem)?.data?.type.equals("video")) {
+                                        isExoPlaying = false
+                                    } else if (parent.items?.get(holder.pager.currentItem)?.data?.type.equals("video") && parent.items?.get(position)?.data?.trailer?.isNotEmpty() == true && !isExoPlaying) {
+                                        count += 1
+                                        if (count > 2) {
+                                            count = 0
+                                            isExoPlaying = false
+                                        }
+                                    }
+
+                                    setLog("alhgdfa", "$isExoPlaying " + parent.items?.get(holder.pager.currentItem)?.data?.type)
+
+                                    if (pageSize != null && !isExoPlaying) {
+                                        if (pageSize == pageCount) {
+                                            pageCount = 0
+                                        }
+                                        pageCount += 1
+                                        if (pageSize > pageCount) {
+                                            holder.pager.currentItem = pageCount
+                                        }
+
+                                    }
+                                    type_of_Scroll = true
+                                }
+                            }
+                            if (auto_scroll)
+                                handler?.postDelayed(runnable!!, auto_scroll_time)
+                        }
+                        if (auto_scroll)
+                            handler?.postDelayed(runnable!!, auto_scroll_time)
+
+                        var mScrollState = 0
+
+                        holder.pager.addOnPageChangeListener(object :
+                            ViewPager.OnPageChangeListener {
+                            override fun onPageScrolled(
+                                position: Int,
+                                positionOffset: Float,
+                                positionOffsetPixels: Int) {
+                                pageCount = position
+
+                                CoroutineScope(Dispatchers.Main).launch {
+                                    Itype50PagerAdapter.mutePlayer()
+                                    Itype50PagerAdapter.muteIconChange()
+                                    Itype50PagerAdapter.isMute = true
+                                }
+
+                                CoroutineScope(Dispatchers.Main).launch {
+                                    delay(100)
+                                    if (parent.items?.get(position)?.data?.type.equals("video") && parent.items?.get(position)?.data?.trailer?.isNotEmpty() == true && parent.items?.get(position)?.data?.playTrailer == true) {
+                                        Itype50PagerAdapter.callPlayerList()?.play()
+                                        /*                             if(Itype50PagerAdapter.isMute)
+                                                                         Itype50PagerAdapter.callPlayerList()?.volume = 0F
+                                                                     else
+                                                                         Itype50PagerAdapter.callPlayerList()?.volume = Itype50PagerAdapter.currentVolume*/
+
+                                    } else {
+                                        Itype50PagerAdapter.callPlayerList()?.pause()
+                                    }
+                                }
+                            }
+
+                            override fun onPageSelected(position: Int) {
+                            }
+
+                            override fun onPageScrollStateChanged(state: Int) {
+
+                                if (state == ViewPager.SCROLL_STATE_IDLE) {
+                                    if (pageCount == (parent.items?.size?.minus(1))) {
+                                        holder.pager.setCurrentItem(0, false)
+                                        pageCount = 0
+                                    }
+                                }
+                                mScrollState = state
+                                type_of_Scroll = false
+                            }
+                        })
+
+                    }
+
+                    21 -> {
                         holder.rvChildItem.visibility = View.GONE
                         holder.dotedView.visibility = View.VISIBLE
-                        //setChildRecyclerView(holder, layoutManager, parent, position)
-
-                        setLog("TAG", "onBindViewHolder Itype23PagerAdapter:111 ")
+                        holder.dotedView.layoutParams.height = context.resources.getDimensionPixelSize(R.dimen.dimen_225)
                         val pagerAdapter = Itype21PagerAdapter(parent, context,
                             object : Itype21PagerAdapter.OnChildItemClick {
                                 override fun onUserClick(childPosition: Int) {
@@ -445,22 +592,9 @@ class BucketParentAdapter(
                         )
                     }
                     23 -> {
-                        var layoutManager: GridLayoutManager? = null
-                        if (parent.numrow != null && parent.numrow!! > 0) {
-                            layoutManager = GridLayoutManager(
-                                context,
-                                parent.numrow!!,
-                                GridLayoutManager.HORIZONTAL,
-                                false
-                            )
-                        } else {
-                            layoutManager =
-                                GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
-                        }
                         holder.rvChildItem.visibility = View.GONE
                         holder.dotedView.visibility = View.VISIBLE
-                        //setChildRecyclerView(holder, layoutManager, parent, position)
-
+                        holder.dotedView.layoutParams.height = context.resources.getDimensionPixelSize(R.dimen.dimen_225)
                         val pagerAdapter =
                             Itype23PagerAdapter(
                                 parent,

@@ -1039,4 +1039,12 @@ into library</string>
   <string name="nudge_stream_preview_image4">మొబైల్ డేటాను సేవ్ చేయండి</string>
   <string name="nudge_stream_preview_image5">ఆఫ్‌లైన్‌లో వినండి &amp; చూడండి</string>
   <string name="nudge_stream_preview_image6">సినిమాలు, టీవీ షోలు &amp; ఒరిజినల్స్</string>
+
+  <string name="hero_banner_cta_str_1">పాటను ప్లే చేయండి</string>
+  <string name="hero_banner_cta_str_2">ఇప్పుడు అన్వేషించండి</string>
+  <string name="hero_banner_cta_str_3">ఇప్పుడు చూడు</string>
+  <string name="hero_banner_cta_str_4">ఇప్పుడే సభ్యత్వం పొందండి</string>
+  <string name="hero_banner_cta_str_5">నాకు గుర్తుచేయి</string>
+  <string name="hero_banner_cta_str_6">ఇప్పుడే కొనండి</string>
+  <string name="hero_banner_cta_str_7">ఇప్పుడు అద్దెకు ఇవ్వండి</string>
 </resources>

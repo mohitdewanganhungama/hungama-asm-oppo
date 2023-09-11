@@ -1041,4 +1041,12 @@ into library</string>
   <string name="nudge_stream_preview_image4">মোবাইল ডেটা সংরক্ষণ করুন</string>
   <string name="nudge_stream_preview_image5">অফলাইনে শুনুন এবং দেখুন</string>
   <string name="nudge_stream_preview_image6">সিনেমা, টিভি শো এবং অরিজিনাল</string>
+
+  <string name="hero_banner_cta_str_1">এখন খেলুন</string>
+  <string name="hero_banner_cta_str_2">এখনই অন্বেষণ করুন</string>
+  <string name="hero_banner_cta_str_3">এখন দেখো</string>
+  <string name="hero_banner_cta_str_4">এখন সাবস্ক্রাইব করুন</string>
+  <string name="hero_banner_cta_str_5">আমাকে মনে রেখ</string>
+  <string name="hero_banner_cta_str_6">এখন কেন</string>
+  <string name="hero_banner_cta_str_7">এখন ভাড়া</string>
 </resources>

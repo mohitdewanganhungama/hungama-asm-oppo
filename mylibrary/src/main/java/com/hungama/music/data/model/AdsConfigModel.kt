@@ -91,6 +91,9 @@ data class AdsConfigModel(
     @SerializedName("enable_payment_nudge")
     var enablePaymentNudge: Boolean = false,
 
+    @SerializedName("hero_section_control")
+    var hero_section_control: HeroSectionControl = HeroSectionControl(),
+
     @SerializedName("he_api")
     var he_api: HEApi = HEApi()
 ) : Parcelable {
@@ -202,5 +205,14 @@ data class AdsConfigModel(
         var planId: String = "",
         @SerializedName("image_url")
         var image_url: String = ""
+    ) : Parcelable
+
+    @Keep
+    @Parcelize
+    data class HeroSectionControl(
+        @SerializedName("auto_scroll")
+        var auto_scroll: String = "false",
+        @SerializedName("auto_scroll_time")
+        var auto_scroll_time: String = "3.5"
     ) : Parcelable
 }

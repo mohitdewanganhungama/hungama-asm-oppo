@@ -109,5 +109,6 @@ public enum class EventType {
     TYPENudgeBannerView,
     NudgeDrawerClick,
     NudgeBannerClick,
-    NudgeDrawerDismiss
+    NudgeDrawerDismiss,
+    Hero_card_viewed
 }

@@ -1043,4 +1043,12 @@
   <string name="nudge_stream_preview_image4">மொபைல் டேட்டாவைச் சேமிக்கவும்</string>
   <string name="nudge_stream_preview_image5">ஆஃப்லைனில் கேளுங்கள் &amp; பார்க்கவும்</string>
   <string name="nudge_stream_preview_image6">திரைப்படங்கள், டிவி நிகழ்ச்சிகள் &amp; அசல்</string>
+
+  <string name="hero_banner_cta_str_1">பாடலை இயக்கு</string>
+  <string name="hero_banner_cta_str_2">இப்போது ஆராயுங்கள்</string>
+  <string name="hero_banner_cta_str_3">இப்பொழுது பார்</string>
+  <string name="hero_banner_cta_str_4">இப்போது குழுசேரவும்</string>
+  <string name="hero_banner_cta_str_5">எனக்கு நினைவூட்டு</string>
+  <string name="hero_banner_cta_str_6">இப்போது வாங்கவும்</string>
+  <string name="hero_banner_cta_str_7">இப்போது வாடகைக்கு</string>
 </resources>

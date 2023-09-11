@@ -22,7 +22,7 @@ object Constant {
     const val BOTTOM_NAV_PODCAST = "Podcast"
 
 
-    const val CACHE_DISCOVER_PAGE = "Discover_home"
+    const val CACHE_DISCOVER_PAGE = "Discover_listen"
     const val CACHE_PODCAST_PAGE = "Podcast_page"
     const val CACHE_MUSIC_PAGE = "Music_listen"
     const val CACHE_VIDEOS_PAGE = "Videos_watch"
@@ -185,6 +185,7 @@ object Constant {
     const val BUNDLE_KEY_HEADITEMSITEM = "BUNDLE_KEY_HEADITEMSITEM"
     const val BUNDLE_KEY_BODYDATA = "BUNDLE_KEY_BODYDATA"
     const val ITEM_KEY = "ItemKey"
+    const val isPlayFromBanner = "isPlayFromBanner"
     const val ACTION_PLAY = "action-play"
     const val ACTION_PAUSE = "action-pause"
     const val ACTION_PLAY_NEXT = "action-play-next"
@@ -462,6 +463,15 @@ object Constant {
     const val digitalProduct = 2
     const val SubscriptionProduct = 3
     const val tvodProduct = 4
+
+    const val Download = "Download"
+    const val Favorited = "Favorited"
+    const val Follow_Artist = "Follow Artist"
+    const val Watchlist = "Watchlist"
+    const val View_Plans = "View Plans"
+    const val Subscribe_Now = "Subscribe Now"
+    const val Share = "Share"
+    const val Follow = "Follow"
 
     const val isTabSelection = "isTabSelection"
     const val tabName = "tabName"

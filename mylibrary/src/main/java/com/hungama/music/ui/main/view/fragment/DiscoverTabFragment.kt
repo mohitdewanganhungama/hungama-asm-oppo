@@ -304,6 +304,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
         }
         //setLog("MoengageNudgeView", "DiscoverTabFragment-onResume-addInAppLifeCycleListener")
 //        nudgeViewSetUp()
+        BucketParentAdapter.isVisible = true
     }
 
     fun nudgeViewSetUp(){

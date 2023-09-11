@@ -1041,4 +1041,12 @@
   <string name="nudge_stream_preview_image4">मोबाइल डेटा बचाएं</string>
   <string name="nudge_stream_preview_image5">ऑफ़लाइन सुनें और देखें</string>
   <string name="nudge_stream_preview_image6">फिल्में, टीवी शो और ऑरिजनल</string>
+
+  <string name="hero_banner_cta_str_1">अभी सुने</string>
+  <string name="hero_banner_cta_str_2">एक्स्प्लोर करे</string>
+  <string name="hero_banner_cta_str_3">अभी देखो</string>
+  <string name="hero_banner_cta_str_4">सब्सक्राइब करे</string>
+  <string name="hero_banner_cta_str_5">याद दिलाना</string>
+  <string name="hero_banner_cta_str_6">अभि खर्रेदे</string>
+  <string name="hero_banner_cta_str_7">रेंट करे</string>
 </resources>

@@ -1200,6 +1200,12 @@ or stream it</string>
   <string name="txt_see_all"><u>See All Plans</u></string>
 
 
-
+  <string name="hero_banner_cta_str_1">Play Now</string>
+  <string name="hero_banner_cta_str_2">Explore Now</string>
+  <string name="hero_banner_cta_str_3">Watch Now</string>
+  <string name="hero_banner_cta_str_4">Subscribe Now </string>
+  <string name="hero_banner_cta_str_5">Remind Me</string>
+  <string name="hero_banner_cta_str_6">Buy Now</string>
+  <string name="hero_banner_cta_str_7">Rent Now</string>
 
 </resources>

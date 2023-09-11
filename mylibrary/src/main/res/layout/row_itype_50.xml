@@ -5,51 +5,107 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/llMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_20">
+        android:layout_height="wrap_content">
 
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/episode_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_250"
+            android:background="@drawable/bg_gradient_placeholder"
+            android:visibility="gone"
+            android:scaleType="fitXY"
+            app:resize_mode="fill"
+            app:layout_constraintDimensionRatio="4:3"
+            app:default_artwork="@drawable/bg_gradient_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:use_controller="false" />
+
+        <View
+                android:id="@+id/vTopBottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_250"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/ic_top_bottom_gradient"
+                android:layout_centerInParent="true"/>
+        <ProgressBar
+            android:id="@+id/preViewProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyle"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMute"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@drawable/round_mute_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/episode_player_view"
+            app:layout_constraintEnd_toEndOf="@+id/episode_player_view">
+
+            <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                android:id="@+id/ivMuteUnmute"
+                style="@style/commonMediumIconStyle"
+                android:layout_marginStart="@dimen/dimen_3"
+                app:fontText="@string/icon_mute" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivUserImage"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/dimen_270"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_430"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/bg_gradient_placeholder"
+            android:visibility="visible"
             android:scaleType="fitXY" />
 
-        <View
-            android:id="@+id/vCenterGradient"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llBottom"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_300"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@drawable/row_50_center_gradient"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/ivUserImage"
-            app:layout_constraintStart_toStartOf="@+id/ivUserImage"
-            app:layout_constraintEnd_toEndOf="@id/ivUserImage"
-            android:layout_marginBottom="@dimen/dimen_34"
             android:text="@string/artist_str_10"
             android:fontFamily="@font/sf_pro_text_semibold"
             android:textSize="@dimen/font_21"
             android:textColor="@color/colorWhite"
             android:maxLines="1"
+            android:visibility="gone"
             android:ellipsize="end"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:fontFamily="@font/sf_pro_text"
             android:textStyle="normal"
             android:maxLines="1"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/dimen_4"
             android:ellipsize="end"
             android:textSize="@dimen/font_13"
@@ -58,17 +114,20 @@
             android:includeFontPadding="false"
             />
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llRent"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_42"
+            android:layout_height="@dimen/dimen_37"
             android:paddingStart="@dimen/dimen_26"
             android:paddingEnd="@dimen/dimen_26"
-            android:layout_marginTop="@dimen/dimen_10"
-            app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/corner_radius_18_bg_blue"
+            android:backgroundTint="@color/colorOffWhite"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -81,7 +140,37 @@
                 android:id="@+id/txtRent"
                 style="@style/commonMediumButtonStyle"
                 android:text="@string/reward_str_114"
-                android:textSize="@dimen/font_15"/>
+                android:textSize="@dimen/font_15"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:textColor="@color/black_op_70"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <RelativeLayout
+                android:id="@+id/rlAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/dimen_37"
+                    android:layout_height="@dimen/dimen_37"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_gradient_placeholder"
+                    android:scaleType="centerCrop"
+                    android:backgroundTint="@color/colorWhite1"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+
+                <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
+                    android:id="@+id/ivAction"
+                    android:layout_width="@dimen/dimen_37"
+                    android:layout_height="@dimen/dimen_37"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/dimen_8_5"
+                    app:fontText="@string/icon_download"
+                    app:fontTextColor="@color/colorWhite" />
+            </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -34,10 +34,6 @@ import com.hungama.music.player.audioplayer.model.Track_State
 import com.hungama.music.player.videoplayer.services.ChangeAppIconWorker
 import com.hungama.music.ui.base.BaseActivity
 import com.hungama.music.ui.main.view.fragment.*
-import com.hungama.music.ui.main.viewmodel.PlaylistViewModel
-import com.hungama.music.ui.main.viewmodel.ProductViewModel
-import com.hungama.music.ui.main.viewmodel.UserSubscriptionViewModel
-import com.hungama.music.ui.main.viewmodel.UserViewModel
 import com.hungama.music.utils.*
 import com.hungama.music.utils.CommonUtils.applyAppLogo
 import com.hungama.music.utils.CommonUtils.getDeeplinkIntentData
@@ -64,6 +60,8 @@ import com.hungama.music.utils.customview.CustomTabView
 import com.hungama.music.utils.preference.PrefConstant
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.ui.main.adapter.BucketParentAdapter
+import com.hungama.music.ui.main.viewmodel.*
 import com.moengage.cards.MoECardHelper
 import com.moengage.cards.listener.CardListener
 import com.moengage.cards.model.Card
@@ -1799,6 +1797,33 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
         super.onDestroy()
     }
 
+    fun setUpPlayableContentListViewModel(context:Context,id: String, isCallFromBanner:Boolean) {
+/*        if (isCallFromBanner) {
+            openPlayerScreen(5, Bundle(), false)
+            BucketParentAdapter.isVisible = false
+        }*/
+        val playableContentViewModel: PlayableContentViewModel
+        if (ConnectionUtil(context).isOnline) {
+            playableContentViewModel = ViewModelProvider(
+                this
+            ).get(PlayableContentViewModel::class.java)
+
+            playableContentViewModel?.getPlayableContentList(context, id)?.observe(this) {
+                when (it.status) {
+                    Status.SUCCESS -> {
+                        if (it?.data != null) {
+                            if (!TextUtils.isEmpty(it?.data?.data?.head?.headData?.misc?.url)) {
+                                SongLinkOpenInPlayer(it?.data)/*
+                                if (!isCallFromBanner)
+                                    openPlayerScreen(5, Bundle(), true)*/
+                            }
+                        }
+                    }
+                    else -> {}
+                }
+            }
+        }
+    }
 
 
     private fun setLocalBroadcast() {
@@ -2188,6 +2213,109 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
             "setLastClickedBottomMenu",
             "MainActivity bottomNavMenu:${bottomNavMenu} position:${position}"
         )
+    }
+
+    var songDataList:ArrayList<Track> = arrayListOf()
+    fun setSongList(
+        playableContentModel: PlayableContentModel
+    ): ArrayList<Track> {
+        val track: Track = Track()
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.id)){
+            track.id = playableContentModel?.data?.head?.headData?.id?.toLong()!!
+        }else{
+            track.id = 0
+        }
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.title)){
+            track.title = playableContentModel?.data?.head?.headData?.title
+        }else{
+            track.title = ""
+        }
+
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.subtitle)){
+            track.subTitle = playableContentModel?.data?.head?.headData?.subtitle
+        }else{
+            track.subTitle = ""
+        }
+
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.misc?.url)){
+            track.url = playableContentModel?.data?.head?.headData?.misc?.url
+        }else{
+            track.url = ""
+        }
+
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.misc?.downloadLink?.drm?.token)){
+            track.drmlicence = playableContentModel?.data?.head?.headData?.misc?.downloadLink?.drm?.token
+        }else{
+            track.drmlicence = ""
+        }
+
+
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.misc?.sl?.lyric?.link)) {
+            track.songLyricsUrl = playableContentModel?.data?.head?.headData?.misc?.sl?.lyric?.link
+        } else {
+            track.songLyricsUrl = ""
+        }
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.type.toString())){
+            track.playerType = playableContentModel?.data?.head?.headData?.type.toString()
+        }else{
+            track.playerType = Constant.MUSIC_PLAYER
+        }
+        /*if (!TextUtils.isEmpty(AlbumDetailFragment.albumRespModel?.data?.head?.data?.title)){
+            track.heading = AlbumDetailFragment.albumRespModel?.data?.head?.data?.title
+        }else{
+            track.heading = ""
+        }*/
+        if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.playble_image)){
+            track.image = playableContentModel?.data?.head?.headData?.playble_image
+        }else if (!TextUtils.isEmpty(playableContentModel?.data?.head?.headData?.image)){
+            track.image = playableContentModel?.data?.head?.headData?.image
+        }else{
+            track.image = ""
+        }
+        if (!playableContentModel?.data?.head?.headData?.misc?.pid.isNullOrEmpty()){
+            track.parentId = playableContentModel?.data?.head?.headData?.misc?.pid?.get(0).toString()
+        }
+
+        if (!playableContentModel?.data?.head?.headData?.misc?.pName.isNullOrEmpty()){
+            track.pName = playableContentModel?.data?.head?.headData?.misc?.pName?.get(0).toString()
+        }
+
+        /* if (!TextUtils.isEmpty(AlbumDetailFragment.albumRespModel?.data?.head?.data?.subtitle!!)){
+             track.pSubName = AlbumDetailFragment.albumRespModel?.data?.head?.data?.subtitle
+         }*/
+
+        /*if (!TextUtils.isEmpty(AlbumDetailFragment.albumRespModel?.data?.head?.data?.image!!)){
+            track.pImage = AlbumDetailFragment.albumRespModel?.data?.head?.data?.image
+        }*/
+
+        track.pType = DetailPages.SONG_DETAIL_PAGE.value
+        track.contentType = ContentTypes.AUDIO.value
+
+        track.explicit = playableContentModel?.data?.head?.headData?.misc?.explicit!!
+        track.restrictedDownload = playableContentModel?.data?.head?.headData?.misc?.restricted_download!!
+        track.attributeCensorRating =
+            playableContentModel?.data?.head?.headData?.misc?.attributeCensorRating.toString()
+
+
+        if (playableContentModel != null){
+            track.urlKey = playableContentModel.data.head.headData.misc.urlKey
+        }
+        songDataList.add(track)
+        return songDataList
+    }
+
+    fun SongLinkOpenInPlayer(playableContentModel: PlayableContentModel){
+
+        songDataList = arrayListOf()
+        setSongList(playableContentModel)
+
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(500)
+            setTrackListData(songDataList)
+            updateNowPlayingCurrentIndex(0)
+            playContent(songDataList, false, START_STATUS)
+        }
+
     }
 
 }

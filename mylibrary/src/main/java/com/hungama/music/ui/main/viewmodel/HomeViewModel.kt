@@ -27,6 +27,11 @@ class HomeViewModel : ViewModel() {
         return homeRepos?.getCommonRecommendation(context,url)
     }
 
+    fun getHomeBanner(context: Context,url: String): MutableLiveData<Resource<HomeModel>>? {
+        homeRepos= HomeRepos()
+        return homeRepos?.getHomeBanner(context,url)
+    }
+
     fun getTrendingPodcastList(context: Context,url: String): MutableLiveData<Resource<PlaylistDynamicModel>>? {
         homeRepos= HomeRepos()
         return homeRepos?.getTrendingPodcastList(context,url)

@@ -250,7 +250,45 @@ data class BodyDataItem(
     @Expose
     var isCurrentPlaying: Boolean = false,
     @SerializedName("sequence")
-    var sequence: Int = 0
+    var sequence: Int = 0,
+    @Expose
+    var playTrailer : Boolean = false,
+    var loopTrailer : Boolean = false,
+    var playWithSound : Boolean = false,
+    var setTime : Boolean = false,
+    @SerializedName("primaryCta")
+    @Expose
+    var primaryCta: PrimaryCta? = null,
+    @SerializedName("secondaryCta")
+    @Expose
+    var secondaryCta : String = "",
+    @SerializedName("trailer")
+    @Expose
+    var trailer : String = "",
+    @SerializedName("contentType")
+    @Expose
+    var contentType : String = "",
+    @SerializedName("contentTypeId")
+    @Expose
+    var contentTypeId : String = "",
+
+    @SerializedName("user")
+    var user:String = "",
+    @SerializedName("share")
+    var share:String = "",
+
+    var isFollow : Boolean = false,
+    var isDownloading : String = "",
+    var playlistSongList: ArrayList<PlaylistModel.Data.Body.Row> = ArrayList()
+) : Parcelable
+
+@Keep
+@Parcelize
+data class PrimaryCta(
+    @SerializedName("id")
+    var id: String = "",
+    @SerializedName("title")
+    var title: @RawValue List<Any>? = null
 ) : Parcelable
 
 @Keep

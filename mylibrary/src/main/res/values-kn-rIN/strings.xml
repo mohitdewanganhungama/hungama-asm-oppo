@@ -1039,4 +1039,12 @@ into library</string>
   <string name="nudge_stream_preview_image4">ಮೊಬೈಲ್ ಡೇಟಾವನ್ನು ಉಳಿಸಿ</string>
   <string name="nudge_stream_preview_image5">ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಆಲಿಸಿ ಮತ್ತು ವೀಕ್ಷಿಸಿ</string>
   <string name="nudge_stream_preview_image6">ಚಲನಚಿತ್ರಗಳು, ಟಿವಿ ಶೋಗಳು ಮತ್ತು ಮೂಲಗಳು</string>
+
+  <string name="hero_banner_cta_str_1">ಈಗ ಆಡು</string>
+  <string name="hero_banner_cta_str_2">ಈಗ ಅನ್ವೇಷಿಸಿ</string>
+  <string name="hero_banner_cta_str_3">ಈಗ ವೀಕ್ಷಿಸು</string>
+  <string name="hero_banner_cta_str_4">ಈಗ ಚಂದಾದಾರರಾಗಿ</string>
+  <string name="hero_banner_cta_str_5">ನೆನಪಿಸು</string>
+  <string name="hero_banner_cta_str_6">ಈಗ ಖರೀದಿಸು</string>
+  <string name="hero_banner_cta_str_7">ಈಗ ಬಾಡಿಗೆ</string>
 </resources>

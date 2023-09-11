@@ -617,8 +617,23 @@ class EventConstant {
         const val deeplink = "deeplink"
         const val drawer_old_buy_old = "drawer_old_buyhungamagold"
 
+        const val BannerClick = "Button Click"
+        const val secondary_cta_option_selected = "secondary_cta_option_selected"
+        const val Hero_card_viewed = "Hero card viewed"
 
+        const val hero_card_position = "hero_card_position"
+        const val banner_type = "banner_type"
+        const val banner_title = "banner_title"
+        const val hero_card_swiped = "hero_card_swiped"
+        const val trailer_played = "trailer_played"
+        const val ismuted = "ismuted"
+        const val Primary_cta = "Primary_cta"
+        const val secondary_cta = "secondary_cta"
 
+        const val TOAST_MESSAGE = "toast_popup"
+        const val BANDCOLOUR_EPROPERTY = "band_color"
+        const val STRINGVALUE_EPROPERTY = "string_value"
+        const val APINAME_EPROPERTY = "api_name"
 
 
     }

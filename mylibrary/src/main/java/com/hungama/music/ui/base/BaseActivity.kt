@@ -168,6 +168,8 @@ import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.utils.tritonbannerview.BannersWrapper
 import com.hungama.music.BuildConfig
 import com.hungama.music.R
+import com.hungama.music.ui.main.adapter.Itype50PagerAdapter
+import com.hungama.music.utils.customview.fontview.FontAwesomeImageView
 import com.moengage.inapp.MoEInAppHelper
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.sticky_ad_view_container
@@ -304,6 +306,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         var songPreviewModel = View(HungamaMusicApp.getInstance().applicationContext)
         var newPreviewModel = View(HungamaMusicApp.getInstance().applicationContext)
         var m_view_papger = ViewPager2(HungamaMusicApp.getInstance().applicationContext)
+        var ivMuteUnmute : FontAwesomeImageView? = null
         var maxMinAllowed = 0
         var isSwipableActive = false
         var inputStream : InputStream? = null
@@ -1985,6 +1988,12 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     fun playPlayer() {
         if (player11?.isPlaying == true) return
         audioPlayer?.play()
+        if(Itype50PagerAdapter.callPlayerList() != null) {
+            Itype50PagerAdapter.isMute = false
+            Itype50PagerAdapter.callPlayerList()?.volume = 0.0f
+            Itype50PagerAdapter.muteIconChange()
+//            BaseActivity.ivMuteUnmute?.setImageDrawable(faDrawable(R.string.icon_mute, R.color.colorWhite, resources.getDimensionPixelSize(R.dimen.font_16).toFloat()))
+        }
         if (BaseFragment.castPlayer != null && BaseFragment.castPlayer?.isCastSessionAvailable == true) {
             BaseFragment.castPlayer?.play()
         }

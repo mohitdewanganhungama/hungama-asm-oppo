@@ -1051,4 +1051,12 @@
   <string name="nudge_stream_preview_image4">મોબાઇલ ડેટા સાચવો</string>
   <string name="nudge_stream_preview_image5">સાંભળો અને ઑફલાઇન જુઓ</string>
   <string name="nudge_stream_preview_image6">મૂવીઝ, ટીવી શો અને ઓરિજિનલ</string>
+
+  <string name="hero_banner_cta_str_1">પ્લે કરો </string>
+  <string name="hero_banner_cta_str_2">વધુ જાણો </string>
+  <string name="hero_banner_cta_str_3">હમણાં જુઓ </string>
+  <string name="hero_banner_cta_str_4">સબસ્ક્રાઇબ કરો </string>
+  <string name="hero_banner_cta_str_5">મને યાદ કરાવો</string>
+  <string name="hero_banner_cta_str_6">હમણાં જ ખરીદો</string>
+  <string name="hero_banner_cta_str_7">રેન્ટ કરો </string>
 </resources>
