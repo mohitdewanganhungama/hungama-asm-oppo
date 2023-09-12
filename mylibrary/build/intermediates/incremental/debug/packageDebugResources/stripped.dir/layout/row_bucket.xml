@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:tag="layout/row_bucket_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/llHeaderTitle"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextView"
+                    android:id="@+id/tvTitle"
+                    android:text="Title"
+                    android:fontFamily="@font/oplus_sans_medium"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/font_16"
+                    android:lineHeight="@dimen/font_21"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorBlack"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginTop="0dp"
+                    android:includeFontPadding="false"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:id="@+id/tvSubTitle"
+                        android:fontFamily="@font/sf_pro_text"
+                        android:textColor="@color/item_sub_title_2_color"
+                        android:textSize="@dimen/font_13"
+                        android:ellipsize="end"
+                        android:maxLines="1" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchPublic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        app:trackTint="@drawable/switch_track_selector"
+                        app:thumbTint="@drawable/switch_thumb_selector"
+                        android:visibility="gone"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ivMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_gravity="end"
+                android:gravity="end|center">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More"
+                    android:paddingBottom="@dimen/dimen_2"
+                    android:fontFamily="@font/opplus_sans_regular"
+                    android:textColor="@color/colorButton"
+                    android:textSize="@dimen/font_14"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+                <ImageView
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    android:visibility="visible"
+                    android:src="@drawable/white_forward_arrow"
+                    app:tint="@color/moreArrowColor"
+                    android:contentDescription="@string/login_str_2"
+                    android:layout_marginEnd="@dimen/dimen_18_7"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBucketItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/row_recent_history" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_430"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/dotedView">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/dimen_15"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.hungama.music.utils.customview.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/pager_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:spi_dotColor="@color/half_opacity_white_color"
+                app:spi_dotSelectedColor="@color/colorWhite"
+                app:spi_dotSize="6dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+         
