@@ -125,8 +125,8 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:spi_dotColor="@color/half_opacity_white_color"
-                app:spi_dotSelectedColor="@color/colorWhite"
+                app:spi_dotColor="@color/colorButton"
+                app:spi_dotSelectedColor="@color/colorBlack"
                 app:spi_dotSize="6dp"/>
 
 
