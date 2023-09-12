@@ -207,12 +207,12 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                                 val items: MutableList<HeadItemsItem> = it.data?.data?.head?.items as MutableList<HeadItemsItem>
                                 setLog("ITEMS LIST",items.toString())
 
-                                removeMainData("1", items)
+//                                removeMainData("1", items)
 //                                removeMainData("2", items)
-                                removeMainData("4", items)
-                                removeMainData("5", items)
-                                removeMainData("9", items)
-                                removeMainData("3", items)
+//                                removeMainData("4", items)
+//                                removeMainData("5", items)
+//                                removeMainData("9", items)
+//                                removeMainData("3", items)
 
                                 homeData = it?.data
 
@@ -332,6 +332,8 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                         bundle.putBoolean(Constant.EXTRA_IS_CATEGORY_PAGE, isCategoryPage)
                         bundle.putString(Constant.EXTRA_CATEGORY_NAME, categoryName)
                         bundle.putString(Constant.EXTRA_CATEGORY_ID, categoryId)
+                        bundle.putBoolean(Constant.ONLINE_TAB_SELECTED, true)
+
                         CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--tabName=${homeModel.data.head.items.get(defaultSelectedTabPosition)?.page} && isCategory=$isCategoryPage && categoryName=$categoryName && categoryId=$categoryId")
                         fragmentList.set(defaultSelectedTabPosition, DiscoverTabFragment.newInstance(homeModel.data.head.items.get(defaultSelectedTabPosition), bundle))
                         fragmentName.set(defaultSelectedTabPosition, homeModel.data.head.items.get(defaultSelectedTabPosition)?.title!!)

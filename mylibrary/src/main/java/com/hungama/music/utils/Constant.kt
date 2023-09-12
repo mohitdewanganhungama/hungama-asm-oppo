@@ -158,6 +158,7 @@ object Constant {
     const val EXTRA_QUERYPARAM = "extra_queryParam"
     const val EXTRA_LIVESHOWARTIST_ID = "extra_liveShowArtist_Id"
     const val EXTRA_PAGE_INDEX = "extra_page_index"
+    const val ONLINE_TAB_SELECTED = "is_online_tab"
 
     const val EXTRA_IS_FROM_GEN_SETTING = "extra_is_from_gen_setting"
     const val EXTRA_IS_FROM_GEN_MUSIC_SETTING = "extra_is_from_gen_music_setting"

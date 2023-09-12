@@ -141,7 +141,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
 
                 if(discoverHomeModel!=null){
                     setProgressBarVisible(false)
-                    setData(HungamaMusicApp.getInstance().getCacheBottomTab(Constant.CACHE_PODCAST_PAGE)!!)
+                    setData(discoverHomeModel)
+                    println("$discoverHomeModel DISCOVERHOMEMODELLLL")
                     setLog("PodcastMainTabFragment", "setUpViewModel static call:${Constant.CACHE_PODCAST_PAGE}")
                 }
                 else{
@@ -249,6 +250,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                             //bundle.putParcelable(Constant.BUNDLE_KEY_BODYDATA, homeModel)
 
                         }
+                        bundle.putBoolean(Constant.ONLINE_TAB_SELECTED, false)
+
 
                         if (isTabSelected && !TextUtils.isEmpty(tabName)
                             && (headItemsItem?.page.toString().contains(tabName, true) ||  headItemsItem?.title.toString().contains(tabName, true))){
