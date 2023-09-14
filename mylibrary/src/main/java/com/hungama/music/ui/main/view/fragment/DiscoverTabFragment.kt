@@ -1,5 +1,6 @@
 package com.hungama.music.ui.main.view.fragment
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -61,6 +62,15 @@ import com.hungama.music.utils.Constant.PLAY_CONTEXT_TYPE
 import com.hungama.music.utils.Constant.SELECTED_TRACK_POSITION
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.data.database.AppDatabase
+import com.hungama.music.data.webservice.utils.Resource
+import com.hungama.music.eventanalytic.eventreporter.BannerClickedEvent
+import com.hungama.music.ui.main.viewmodel.AlbumViewModel
+import com.hungama.music.ui.main.viewmodel.PlaylistViewModel
+import com.hungama.music.ui.main.viewmodel.PodcastViewModel
+import com.hungama.music.ui.main.viewmodel.TVShowViewModel
+import com.hungama.music.ui.main.viewmodel.UserViewModel
+import com.hungama.music.utils.customview.downloadmanager.model.DownloadQueue
 import com.moe.pushlibrary.MoEHelper
 import com.moengage.inapp.MoEInAppHelper
 import com.moengage.inapp.listeners.InAppLifeCycleListener
@@ -68,6 +78,7 @@ import com.moengage.inapp.model.InAppData
 import com.moengage.widgets.NudgeView
 import kotlinx.android.synthetic.main.fr_main.*
 import kotlinx.coroutines.*
+import org.json.JSONObject
 import java.util.concurrent.TimeUnit
 
 
@@ -78,7 +89,7 @@ import java.util.concurrent.TimeUnit
  */
 class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksContract.View, BucketParentAdapter.OnMoreItemClick,
     BaseActivity.OnLocalBroadcastEventCallBack, InAppLifeCycleListener,OnUserSubscriptionUpdate, BaseActivity.OnDownloadQueueItemChanged,
-    BaseActivity.OnDownloadVideoQueueItemChanged  {
+    BaseActivity.OnDownloadVideoQueueItemChanged, BannerItemClick {
 
     var homeViewModel: HomeViewModel? = null
     var tempHomeData:HomeModel?=null
@@ -111,6 +122,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
     var deeplinkVoiceSearchText = ""
     var isNudgeViewVisible = false
     private var isOnlineTabSelected: Boolean? = null
+    var playlistSongList: ArrayList<PlaylistModel.Data.Body.Row> = ArrayList()
 
     companion object {
         val LAUNCH_STORY_DISPLAY_ACTIVITY = 101
@@ -1934,4 +1946,934 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
 
     override fun onUserSubscriptionUpdateCall(status: Int, contentId: String) {
     }
+
+    fun downloadingLogic(
+        contentTypeId: String,
+        download: Boolean,
+        data: BodyDataItem?
+    ) {
+        when(contentTypeId) {
+
+            "109" -> {
+                data?.id?.let { setUpPodcastDetailListViewModel(it,data,download) }  //pocast all list
+            }
+
+            "55555" -> {
+                data?.id?.let { setUpPlaylistDetailListViewModel(it,data,download) }  ///all playlist
+            }
+
+            "107","97","96" -> {
+                data?.id?.let { setUpTVShowDetailListViewModel(it,data,download) }
+            }
+
+            "1" -> {
+                data?.id?.let { setUpAlbumDetailListViewModel(it,data,download) }
+            }
+
+            "21","22","98","110","111" ->   data?.id?.let { callSongDownload(data)   }
+
+        }
+    }
+
+    fun EventButtonClickFunction(position: Int,data: BodyDataItem?) {
+        val hashMapPageView = HashMap<String, String>()
+
+        hashMapPageView[EventConstant.secondary_cta_option_selected] = ""
+        hashMapPageView[EventConstant.CONTENT_NAME_EPROPERTY]= data?.title.toString()
+        hashMapPageView[EventConstant.AF_TYPE]= data?.type.toString()
+        hashMapPageView[EventConstant.CONTENTTYPE_EPROPERTY]= data?.contentType.toString()
+        hashMapPageView[EventConstant.CONTENTID_EPROPERTY]= data?.id.toString()
+        hashMapPageView[EventConstant.deeplink]= data?.deeplink_url.toString()
+        hashMapPageView[EventConstant.BUCKETPOSITION_EPROPERTY]= position.toString()
+        hashMapPageView[EventConstant.GENRE_EPROPERTY]= data?.genre.toString()
+        hashMapPageView[EventConstant.LANGUAGE_EPROPERTY]= data?.misc?.languages.toString()
+        hashMapPageView[EventConstant.LYRICIST_EPROPERTY]= data?.misc?.lyricist.toString()
+        hashMapPageView[EventConstant.MUSICDIRECTOR_EPROPERTY]= data?.misc?.musicdirectorf.toString()
+
+        hashMapPageView[EventConstant.PLAYLIST_NAME_EPROPERTY]= data?.contentTypeId.toString()
+        hashMapPageView[EventConstant.SINGER_EPROPERTY]= data?.misc?.singerf.toString()
+        hashMapPageView[EventConstant.YEAROFRELEASE_EPROPERTY]= data?.deeplink_url.toString()
+        hashMapPageView[EventConstant.SOURCE]= "Hero Banner"
+
+        EventManager.getInstance().sendEvent(BannerClickedEvent(hashMapPageView))
+
+    }
+
+    private fun setAddOrRemoveFavourite(playlistRespModel: BodyDataItem?) {
+
+        playlistRespModel?.isFollow = !playlistRespModel?.isFollow!!
+        val contentId = playlistRespModel?.id
+        val typeId = playlistRespModel?.contentTypeId.toString()
+        setAddOrRemoveFavourite(contentId, typeId, playlistRespModel?.isFollow!!,false)
+        /*  baseIOScope.launch {
+              if(playlistRespModel?.isFollow){
+                  val messageModel = MessageModel(getString(R.string.album_str_3), getString(R.string.album_str_4),
+                      MessageType.NEUTRAL, true)
+                  CommonUtils.showToast(requireContext(), messageModel)
+                  val hashMap = java.util.HashMap<String, String>()
+                  hashMap.put(EventConstant.ACTOR_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.actorf!!))
+                  hashMap.put(EventConstant.ALBUMID_EPROPERTY,""+playlistRespModel?.id)
+                  var newContentId=playlistRespModel?.id!!
+                  var contentIdData=newContentId.replace("playlist-","")
+                  hashMap.put(EventConstant.CONTENTID_EPROPERTY,""+contentIdData)
+                  val albumType=playlistRespModel?.type
+                  setLog(
+                      TAG,
+                      "setAddOrRemoveFavourite: type:${Utils.getContentTypeName("" +albumType)} albumType:${albumType}"
+                  )
+                  hashMap.put(EventConstant.CONTENTTYPE_EPROPERTY,""+Utils.getContentTypeName(""+playlistRespModel?.type!!))
+                  hashMap.put(EventConstant.GENRE_EPROPERTY,Utils.arrayToString(playlistRespModel?.genre))
+                  hashMap.put(EventConstant.LANGUAGE_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.languages))
+                  hashMap.put(EventConstant.LYRICIST_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.lyricist!!))
+                  hashMap.put(EventConstant.MOOD_EPROPERTY,""+ playlistRespModel?.misc?.mood)
+                  hashMap.put(EventConstant.MUSICDIRECTOR_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.musicdirectorf!!))
+                  hashMap.put(EventConstant.NAME_EPROPERTY,""+ playlistRespModel?.title)
+                  hashMap.put(EventConstant.PODCASTHOST_EPROPERTY,"")
+                  hashMap.put(EventConstant.SINGER_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.singerf!!))
+                  hashMap.put(EventConstant.SOURCE_EPROPERTY,""+playlistRespModel?.title)
+                  hashMap.put(EventConstant.TEMPO_EPROPERTY,Utils.arrayToString(playlistRespModel?.misc?.tempo!!))
+                  hashMap.put(EventConstant.CREATOR_EPROPERTY,"Hungama")
+                  hashMap.put(EventConstant.YEAROFRELEASE_EPROPERTY,""+DateUtils.convertDate(DateUtils.DATE_FORMAT_YYYY_MM_DD_HH_MM_SS,DateUtils.DATE_YYYY,playlistRespModel?.date))
+                  EventManager.getInstance().sendEvent(FavouritedEvent(hashMap))
+
+              }else{
+                  val messageModel = MessageModel(getString(R.string.popup_str_83), getString(R.string.popup_str_84),
+                      MessageType.NEUTRAL, true)
+                  CommonUtils.showToast(requireContext(), messageModel)
+              }
+          }*/
+    }
+
+    override fun onCheckSatusplaylist(isClicked: Boolean, pos: Int, bodyData: BodyRowsItemsItem?) {
+        bodyData?.data?.contentTypeId?.let { downloadingLogic(it,false,bodyData?.data) }
+    }
+
+    override fun bannerItemClick(
+        isClicked: Boolean,
+        position: Int,
+        bodyData: BodyRowsItemsItem?
+    ) {
+
+        if (ConnectionUtil(context).isOnline) {
+            val contentTypeId = bodyData?.data?.contentTypeId.toString()
+            val secondaryCta = bodyData?.data?.secondaryCta.toString()
+            EventButtonClickFunction(position, bodyData?.data)
+
+            if (secondaryCta.contains(Constant.Favorited)) {
+                setAddOrRemoveFavourite(bodyData?.data)
+            } else if (secondaryCta.contains(Constant.Download)) {
+                downloadingLogic(contentTypeId,true,bodyData?.data)
+            } else if (secondaryCta.contains(Constant.Follow_Artist)) {
+                setFollowUnFollow(bodyData?.data)
+            } else if (secondaryCta.contains(Constant.Follow)) {
+                setFollowUnFollow(bodyData?.data)
+            } else if (secondaryCta.contains(Constant.Watchlist)) {
+                Watchlist(bodyData?.data)
+            } else if (secondaryCta.contains(Constant.Share)) {
+                shareBanner(bodyData?.data)
+            } else if (secondaryCta.contains(Constant.View_Plans)) {
+                Constant.screen_name = "Home Screen"
+                CommonUtils.openSubscriptionDialogPopup(
+                    requireContext(),
+                    PlanNames.SVOD.name,
+                    "home",
+                    true,
+                    this,
+                    "",
+                    null,
+                    Constant.drawer_default_buy_hungama_gold,"see_all"
+                )
+            }
+        }else {
+            val messageModel = MessageModel(getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                MessageType.NEGATIVE, true)
+//            CommonUtils.showToast(requireContext(), messageModel,"DiscoverTabFragment","bannerItemClick")
+        }
+    }
+
+    private fun setFollowUnFollow(data: BodyDataItem?) {
+        if (ConnectionUtil(context).isOnline) {
+
+            data?.isFollow = !data?.isFollow!!
+
+            val jsonObject = JSONObject()
+            jsonObject.put("followingId", data?.id)
+            jsonObject.put("follow", data?.isFollow)
+
+            val userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+            userViewModel?.followUnfollowSocial(requireContext(), jsonObject.toString())
+            val jsonObject1 = JSONObject()
+            jsonObject1.put("contentId", data?.id)
+            jsonObject1.put("typeId", "" + data?.type)
+            jsonObject1.put("action", data?.isFollow)
+            jsonObject1.put("module", Constant.MODULE_FOLLOW)
+            userViewModel?.followUnfollowModule(requireContext(), jsonObject1.toString())
+        } else {
+            val messageModel = MessageModel(getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                MessageType.NEGATIVE, true)
+//            CommonUtils.showToast(requireContext(), messageModel,"DiscoverTabFragment","setFollowUnFollow")
+        }
+    }
+
+    private fun setUpPodcastDetailListViewModel(selectedContentId: String, bodyDataItem: BodyDataItem,download:Boolean) {
+        var podcastListViewModel = ViewModelProvider(this).get(PodcastViewModel::class.java)
+
+        if (ConnectionUtil(context).isOnline) {
+            podcastListViewModel?.getPodcastDetailList(requireContext(),selectedContentId)
+                ?.observe(this,
+                    Observer {
+                        when (it.status) {
+                            Status.SUCCESS -> {
+                                setLog(TAG, "setUpPodcastDetailListViewModel: getPodcastDetailList called")
+
+                                if(it!=null) {
+                                    playlistSongList = it?.data?.data?.body?.rows!!
+
+                                    if (playlistSongList.get(0).data.misc.tracks[0].data.type == 111) {
+
+                                        var local = playlistSongList.get(0).data.misc.tracks[0].data.id
+                                        setUpPodcastDetailListViewModel(local, bodyDataItem, download)
+                                        return@Observer
+                                    } else {
+
+                                        bodyDataItem.playlistSongList = playlistSongList
+                                        if (download) {
+                                            callPocastListDownload(it, bodyDataItem)
+                                        }else {
+                                            Constant.notify = true
+
+                                        }
+
+                                    }
+                                }
+
+                            }
+
+                            Status.LOADING -> {
+                                setProgressBarVisible(false)
+                            }
+
+                            Status.ERROR -> {
+                                setEmptyVisible(false)
+                                setProgressBarVisible(false)
+                                Utils.showSnakbar(requireContext(),requireView(), true, it.message!!)
+                            }
+                        }
+                    })
+        } else {
+            val messageModel = MessageModel(
+                getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                MessageType.NEGATIVE, true
+            )
+            CommonUtils.showToast(requireContext(), messageModel)
+        }
+    }
+
+    public fun Watchlist(data: BodyDataItem?) {
+
+        data?.isFollow = !data?.isFollow!!
+        setAddOrRemoveWatchlist(
+            data?.id,
+            "" + data?.contentTypeId,
+            data?.isFollow!!,
+            Constant.MODULE_WATCHLIST, "home_banner"
+        )
+
+    }
+
+    fun shareBanner(data: BodyDataItem?) {
+        if (data != null && !TextUtils.isEmpty(data?.share)) {
+            val shareurl = getString(R.string.music_player_str_18) + " " + data?.share
+            Utils.shareItem(requireActivity(), shareurl)
+        } else {
+            try {
+                val downloadedAudio = AppDatabase.getInstance()?.downloadedAudio()?.findByContentId(data?.id.toString())
+                if (downloadedAudio != null && downloadedAudio?.contentId.equals(data?.id.toString()) && !TextUtils.isEmpty(
+                        downloadedAudio.contentShareLink)) {
+                    var shareurl = getString(R.string.music_player_str_18) + " " + downloadedAudio.contentShareLink
+                    shareurl += "play/"
+                    Utils.shareItem(requireActivity(), shareurl)
+                } else {
+                    setLog("TAG", "rl_music_player_menu_share share is empty")
+                }
+            } catch (e: Exception) {
+                setLog("TAG", "rl_music_player_menu_share share is empty")
+            }
+        }
+    }
+
+    private fun setUpPlaylistDetailListViewModel(
+        selectedContentId: String,
+        bodyDataItem: BodyDataItem,download:Boolean
+    ) {
+        try {
+            if (ConnectionUtil(activity).isOnline) {
+                var playlistListViewModel = ViewModelProvider(this).get(PlaylistViewModel::class.java)
+
+                playlistListViewModel?.getPlaylistDetailList(requireContext(), selectedContentId!!)
+                    ?.observe(this,
+                        Observer {
+                            when (it.status) {
+                                Status.SUCCESS -> {
+                                    playlistSongList = it?.data?.data?.body?.rows!!
+                                    bodyDataItem.playlistSongList = playlistSongList
+
+                                    if(download) {
+                                        callSongListDownload(it?.data,bodyDataItem)
+                                    }else {
+                                        Constant.notify = true
+                                    }
+                                }
+
+                                Status.LOADING -> {
+                                    setProgressBarVisible(false)
+                                }
+
+                                Status.ERROR -> {
+                                    setProgressBarVisible(false)
+                                    Utils.showSnakbar(requireContext(), requireView(), true, it.message!!)
+                                }
+                            }
+                        })
+            }
+        } catch (e: Exception) {
+
+        }
+
+    }
+
+    private fun setUpTVShowDetailListViewModel(selectedContentId: String, bodyDataItem: BodyDataItem,download:Boolean) {
+        try {
+
+            var tvShowViewModel = ViewModelProvider(this).get(TVShowViewModel::class.java)
+
+            if (ConnectionUtil(context).isOnline) {
+                tvShowViewModel?.getTVShowDetailList(requireContext(), selectedContentId,"")?.observe(this,
+                    Observer {
+                        when (it.status) {
+                            Status.SUCCESS -> {
+                                var seasonsModel = it.data?.data?.body?.rows?.get(0)!!
+
+                                if(download) {
+                                    if (seasonsModel != null && seasonsModel.seasons != null && seasonsModel.seasons?.size!! > 0) {
+                                        callTvSeriesListDownload(seasonsModel, bodyDataItem)
+
+                                    }
+                                }else {
+                                    Constant.notify = true
+
+                                }
+                            }
+
+                            Status.LOADING -> {
+                                setProgressBarVisible(false)
+                            }
+
+                            Status.ERROR -> {
+                                setEmptyVisible(false)
+                                setProgressBarVisible(false)
+                                Utils.showSnakbar(
+                                    requireContext(),
+                                    requireView(),
+                                    true,
+                                    it.message!!
+                                )
+                            }
+                        }
+                    })
+            } else {
+                val messageModel = MessageModel(
+                    getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                    MessageType.NEGATIVE, true
+                )
+                CommonUtils.showToast(requireContext(), messageModel)
+            }
+        } catch (e: Exception) {
+
+        }
+    }
+
+    @SuppressLint("SuspiciousIndentation")
+    private fun setUpAlbumDetailListViewModel(selectedContentId: String, bodyDataItem: BodyDataItem,download:Boolean) {
+        try {
+            if (ConnectionUtil(context).isOnline) {
+                var albumListViewModel = ViewModelProvider(this).get(AlbumViewModel::class.java)
+
+                albumListViewModel?.getAlbumDetailList(requireContext(), selectedContentId!!)?.observe(this,
+                    Observer {
+                        when(it.status){
+                            Status.SUCCESS->{
+                                playlistSongList = it?.data?.data?.body?.rows!!
+                                bodyDataItem.playlistSongList = playlistSongList
+
+                                if(download){
+                                    callSongListDownload(it?.data,bodyDataItem)
+                                }else {
+                                    Constant.notify = true
+
+                                }
+                            }
+
+                            Status.LOADING ->{
+                                setProgressBarVisible(false)
+                            }
+
+                            Status.ERROR ->{
+                                setEmptyVisible(false)
+                                setProgressBarVisible(false)
+                                Utils.showSnakbar(requireContext(),requireView(), true, it.message!!)
+                            }
+                        }
+                    })
+            } else {
+                val messageModel = MessageModel(getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                    MessageType.NEGATIVE, true)
+                CommonUtils.showToast(requireContext(), messageModel)
+            }
+        }catch (e:Exception){
+
+        }
+
+    }
+
+    private fun callSongDownload(playlistSongList: BodyDataItem?) {
+        val dpm = DownloadPlayCheckModel()
+        dpm.contentId = playlistSongList?.id.toString()
+        dpm.contentTitle = playlistSongList?.title.toString()
+        dpm.planName = playlistSongList?.movierights.toString()
+        dpm.isAudio = true
+        dpm.isDownloadAction = true
+        dpm.isShowSubscriptionPopup = true
+        dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+        dpm.restrictedDownload = RestrictedDownload.valueOf(0)
+        if (CommonUtils.userCanDownloadContent(
+                requireContext(),
+                null,
+                dpm, this@DiscoverTabFragment, Constant.drawer_restricted_download
+            )
+        ) {
+
+            val downloadQueueList: ArrayList<DownloadQueue> = ArrayList()
+            var dq = DownloadQueue()
+            //for (item in playlistSongList?.iterator()!!){
+
+            dq = DownloadQueue()
+            if (!TextUtils.isEmpty(playlistSongList?.id.toString())) {
+                dq.contentId =
+                    playlistSongList?.id.toString()
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.title!!)) {
+                dq.title =
+                    playlistSongList?.title!!
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.subTitle!!)) {
+                dq.subTitle =
+                    playlistSongList?.subTitle!!
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.image!!)) {
+                dq.image = playlistSongList?.image!!
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.id!!)) {
+                dq.parentId = playlistSongList?.id!!
+            }
+            if (!TextUtils.isEmpty(playlistSongList?.title!!)) {
+                dq.pName = playlistSongList?.title
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.subTitle!!)) {
+                dq.pSubName = playlistSongList?.subTitle
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.releasedate!!)) {
+                dq.pReleaseDate =
+                    playlistSongList?.releasedate
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.image!!)) {
+                dq.pImage = playlistSongList?.image
+            }
+
+
+            if (!TextUtils.isEmpty(playlistSongList?.misc?.movierights.toString()!!)) {
+                dq.planName =
+                    playlistSongList?.misc?.movierights.toString()
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.misc?.f_playcount.toString()!!)) {
+                dq.f_playcount =
+                    playlistSongList?.misc?.f_playcount.toString()
+            }
+
+            if (!TextUtils.isEmpty(playlistSongList?.misc?.f_FavCount.toString()!!)) {
+                dq.f_fav_count =
+                    playlistSongList?.misc?.f_FavCount.toString()
+            }
+
+            dq.pType = DetailPages.CHART_DETAIL_PAGE.value
+            if(playlistSongList.type?.contains("video") == true){
+                dq.contentType = ContentTypes.VIDEO.value
+            }else dq.contentType = ContentTypes.AUDIO.value
+
+            val eventModel =
+                HungamaMusicApp.getInstance().getEventData(playlistSongList?.id.toString())
+            dq.source = eventModel.sourceName
+
+            val downloadQueue = AppDatabase.getInstance()?.downloadQueue()
+                ?.findByContentId(playlistSongList?.id!!.toString())
+            val downloadedAudio = AppDatabase.getInstance()?.downloadedAudio()?.findByContentId(playlistSongList?.id!!.toString())
+            if ((!downloadQueue?.contentId.equals(
+                    playlistSongList?.id!!.toString()
+                ))
+                && (!downloadedAudio?.contentId.equals(
+                    playlistSongList?.id!!.toString()
+                ))
+            ) {
+                downloadQueueList.add(dq)
+            }
+            // }
+            //if (downloadQueueList.size > 0){
+            (requireActivity() as MainActivity).addOrUpdateDownloadMusicQueue(
+                downloadQueueList,
+                this@DiscoverTabFragment,
+                fetchMusicDownloadListener,
+                false,
+                true
+            )
+        }
+    }
+
+    fun callSongListDownload(
+        playlistRespModel: PlaylistDynamicModel?,
+        bodyDataItem: BodyDataItem
+    )
+    {
+        baseIOScope.launch {
+            val dpm = DownloadPlayCheckModel()
+            dpm.contentId = playlistRespModel?.data?.head?.data?.id.toString()
+            dpm.planName = PlanNames.NONE.name
+            dpm.isAudio = true
+            dpm.isDownloadAction = true
+            dpm.isShowSubscriptionPopup = true
+            dpm.clickAction = ClickAction.FOR_ALL_CONTENT
+            dpm.restrictedDownload = RestrictedDownload.NONE_DOWNLOAD_CONTENT
+            if (CommonUtils.userCanDownloadContent(
+                    requireContext(),
+                    rlMain,
+                    dpm,
+                    this@DiscoverTabFragment, Constant.drawer_download_all
+                )
+            ) {
+                val contentTypes: Array<Int> =
+                    arrayOf(ContentTypes.AUDIO.value, ContentTypes.PODCAST.value)
+                val allDownloadItemList = AppDatabase.getInstance()?.downloadedAudio()
+                    ?.getContentsByContentType(contentTypes)
+                var existingQueueItemsCount = 0
+                if (allDownloadItemList != null) {
+                    existingQueueItemsCount = allDownloadItemList.size
+                }
+
+                val downloadQueueList: ArrayList<DownloadQueue> = ArrayList()
+                var dq = DownloadQueue()
+                var count = 1
+                val eventModel = HungamaMusicApp.getInstance().getEventData(playlistRespModel?.data?.head?.data?.id.toString())
+                if (playlistSongList.isNotEmpty()){
+                    for (item in playlistSongList?.iterator()!!) {
+
+                        dq = DownloadQueue()
+
+                        dq.contentId = item?.data?.id
+
+
+                        if (!TextUtils.isEmpty(item?.data?.title)) {
+                            dq.title = item?.data?.title!!
+                        }
+
+                        if (!TextUtils.isEmpty(item?.data?.subtitle!!)) {
+                            dq.subTitle = item?.data?.subtitle!!
+                        }
+
+                        if (!TextUtils.isEmpty(item?.data?.image!!)) {
+                            dq.image = item?.data?.image!!
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.id!!)) {
+                            dq.parentId = playlistRespModel?.data?.head?.data?.id!!
+                        }
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.title!!)) {
+                            dq.pName = playlistRespModel?.data?.head?.data?.title
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.subtitle!!)) {
+                            dq.pSubName = playlistRespModel?.data?.head?.data?.subtitle
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.releasedate!!)) {
+                            dq.pReleaseDate = playlistRespModel?.data?.head?.data?.releasedate
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.image!!)) {
+                            dq.pImage = playlistRespModel?.data?.head?.data?.image
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.misc?.f_FavCount!!)) {
+                            dq.f_fav_count = playlistRespModel?.data?.head?.data?.misc?.f_FavCount!!
+                        }
+
+                        if (!TextUtils.isEmpty(playlistRespModel?.data?.head?.data?.misc?.f_playcount!!)) {
+                            dq.f_playcount = playlistRespModel?.data?.head?.data?.misc?.f_playcount!!
+                        }
+
+                        dq.pType = DetailPages.CHART_DETAIL_PAGE.value
+                        dq.contentType = ContentTypes.AUDIO.value
+                        dq.downloadAll = 1
+                        dq.source = eventModel.sourceName
+
+                        if (!TextUtils.isEmpty(item?.data?.misc?.movierights.toString()!!)) {
+                            dq.planName = item?.data?.misc?.movierights.toString()
+                        }
+
+                        if (existingQueueItemsCount > CommonUtils.getAvailableDownloadContentSize(requireContext())
+                        ) {
+                            break
+                        }
+                        existingQueueItemsCount += 1
+
+                        if (!AppDatabase.getInstance()?.downloadQueue()
+                                ?.findByContentId(item?.data?.id.toString())?.contentId.equals(item?.data?.id.toString())
+                            && !AppDatabase.getInstance()?.downloadedAudio()
+                                ?.findByContentId(item?.data?.id.toString())?.contentId.equals(item?.data?.id.toString())
+                        ) {
+                            //if (count <= 3){
+                            downloadQueueList.add(dq)
+                            //}
+                        }
+                        count++
+                    }
+                }
+
+                //if (downloadQueueList.size > 0){
+                (requireActivity() as MainActivity).addOrUpdateDownloadMusicQueue(
+                    downloadQueueList,
+                    this@DiscoverTabFragment,
+                    fetchMusicDownloadListener,
+                    false,
+                    true
+                )
+                //}
+
+                withContext(Dispatchers.Main) {
+                    if (isAdded && context != null) {
+                        bodyDataItem.isDownloading ="1"
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    fun callTvSeriesListDownload(
+        data: PlaylistModel.Data.Body.Row?,
+        tvShowDetailRespModel: BodyDataItem)
+    {
+        baseIOScope.launch {
+
+            var seasonList = data?.seasons?.get(0)?.data?.misc?.tracks
+
+            if (seasonList?.isNotEmpty() == true) {
+
+                var attributeCensorRating = ""
+                if (!seasonList.get(0).data?.misc?.attributeCensorRating.isNullOrEmpty()) {
+                    attributeCensorRating =
+                        seasonList.get(0).data?.misc?.attributeCensorRating?.get(
+                            0
+                        ).toString()
+                }
+                if (!CommonUtils.checkUserCensorRating(
+                        requireContext(),
+                        attributeCensorRating
+                    )
+                ) {
+                    val dpm1 = DownloadPlayCheckModel()
+
+                    dpm1.contentId = seasonList.get(0).data.id.toString()
+                    dpm1.contentTitle = seasonList.get(0).data.name.toString()
+                    dpm1.planName = seasonList.get(0).data?.misc?.movierights.toString()
+                    dpm1.isAudio = false
+                    dpm1.isDownloadAction = true
+                    dpm1.isShowSubscriptionPopup = true
+                    dpm1.clickAction = ClickAction.FOR_SINGLE_CONTENT
+                    if (CommonUtils.userCanDownloadContent(
+                            requireContext(),
+                            null,
+                            dpm1,
+                            this@DiscoverTabFragment, Constant.drawer_svod_tvshow_episode
+                        )) {
+                        for (childPosition in seasonList?.iterator()!!) {
+
+                            val dpm = DownloadPlayCheckModel()
+
+                            dpm.contentId = childPosition.data.id.toString()
+                            dpm.contentTitle = childPosition.data.name.toString()
+                            dpm.planName =
+                                childPosition.data?.misc?.movierights.toString()
+                            dpm.isAudio = false
+                            dpm.isDownloadAction = true
+                            dpm.isShowSubscriptionPopup = true
+                            dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+                            dpm.restrictedDownload = RestrictedDownload.valueOf(
+                                childPosition.data?.misc?.restricted_download!!
+                            )
+
+                            val downloadQueueList: ArrayList<DownloadQueue> = ArrayList()
+                            var dq = DownloadQueue()
+                            //for (item in podcastEpisodeList?.iterator()!!){
+
+                            dq = DownloadQueue()
+                            if (!TextUtils.isEmpty(
+                                    childPosition?.data?.id.toString()
+                                )
+                            ) {
+                                dq.contentId =
+                                    childPosition.data?.id.toString()
+                            }
+
+                            if (!TextUtils.isEmpty(
+                                    childPosition.data?.name
+                                )
+                            ) {
+                                dq.title = childPosition.data?.name
+                            }
+
+                            if (!TextUtils.isEmpty(
+                                    childPosition?.data?.subTitle
+                                )
+                            ) {
+                                dq.subTitle = childPosition.data?.subTitle
+                            }
+
+                            if (!TextUtils.isEmpty(childPosition?.data?.image!!)) {
+                                dq.image = childPosition.data?.image!!
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel.id!!)) {
+                                dq.parentId = tvShowDetailRespModel.id!!
+                            }
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.title!!)) {
+                                dq.pName = tvShowDetailRespModel?.title
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.subTitle!!)) {
+                                dq.pSubName = tvShowDetailRespModel?.subTitle
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.releasedate!!)) {
+                                dq.pReleaseDate = tvShowDetailRespModel?.releasedate
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.image!!)) {
+                                dq.pImage = tvShowDetailRespModel?.image
+                            }
+
+                            if (!TextUtils.isEmpty(childPosition?.data?.misc?.movierights.toString()!!)
+                            ) {
+                                dq.planName = childPosition.data?.misc?.movierights.toString()!!
+                                dq.planType = CommonUtils.getContentPlanType(dq.planName)
+                            }
+
+                            dq.pType = DetailPages.TVSHOW_DETAIL_ADAPTER.value
+                            dq.contentType = ContentTypes.TV_SHOWS.value
+                            val eventModel = HungamaMusicApp.getInstance()
+                                .getEventData(tvShowDetailRespModel?.id.toString())
+                            dq.source = eventModel.sourceName
+
+                            val downloadQueue = AppDatabase.getInstance()?.downloadQueue()
+                                ?.findByContentId(
+                                    childPosition.data?.id!!.toString()
+                                )
+                            val downloadedAudio = AppDatabase.getInstance()?.downloadedAudio()
+                                ?.findByContentId(
+                                    childPosition.data?.id!!.toString()
+                                )
+                            if ((!downloadQueue?.contentId.equals(
+                                    childPosition?.data?.id!!.toString()
+                                ))
+                                && (!downloadedAudio?.contentId.equals(
+                                    childPosition?.data?.id!!.toString()
+                                ))
+                            ) {
+                                downloadQueueList.add(dq)
+                            }
+                            // }
+                            //if (downloadQueueList.size > 0){
+                            (requireActivity() as MainActivity).addOrUpdateDownloadVideoQueue(
+                                downloadQueueList,
+                                this@DiscoverTabFragment,
+                                false,
+                                true
+                            )
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    fun callPocastListDownload(
+        homedata: Resource<PlaylistDynamicModel>,
+        tvShowDetailRespModel: BodyDataItem)
+    {
+
+        baseIOScope.launch {
+
+            var seasonList = homedata?.data?.data?.body?.rows?.get(0)?.data?.misc?.tracks!!
+
+            if (seasonList?.isNotEmpty() == true) {
+
+                var attributeCensorRating = ""
+                if (!seasonList.get(0).data?.misc?.attributeCensorRating.isNullOrEmpty()) {
+                    attributeCensorRating =
+                        seasonList.get(0).data?.misc?.attributeCensorRating?.get(
+                            0
+                        ).toString()
+                }
+                if (!CommonUtils.checkUserCensorRating(
+                        requireContext(),
+                        attributeCensorRating
+                    )
+                ) {
+                    val dpm1 = DownloadPlayCheckModel()
+                    dpm1.contentId = seasonList?.get(0)?.data?.id.toString()
+                    dpm1.planName =  seasonList?.get(0)?.data?.misc?.movierights.toString()
+                    dpm1.isAudio = true
+                    dpm1.isDownloadAction = true
+                    dpm1.isShowSubscriptionPopup = true
+                    dpm1.clickAction = ClickAction.FOR_ALL_CONTENT
+                    dpm1.restrictedDownload = RestrictedDownload.NONE_DOWNLOAD_CONTENT
+                    if (CommonUtils.userCanDownloadContent(
+                            requireContext(),
+                            null,
+                            dpm1,
+                            this@DiscoverTabFragment, Constant.drawer_svod_tvshow_episode
+                        )
+                    ) {
+                        for (childPosition in seasonList?.iterator()!!) {
+
+                            val dpm = DownloadPlayCheckModel()
+
+                            dpm.contentId = childPosition.data.id.toString()
+                            dpm.contentTitle = childPosition.data.name.toString()
+                            dpm.planName =
+                                childPosition.data?.misc?.movierights.toString()
+                            dpm.isAudio = false
+                            dpm.isDownloadAction = true
+                            dpm.isShowSubscriptionPopup = true
+                            dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+                            dpm.restrictedDownload =
+                                RestrictedDownload.valueOf(childPosition.data?.misc?.restricted_download!!)
+
+
+                            val downloadQueueList: ArrayList<DownloadQueue> = ArrayList()
+                            var dq = DownloadQueue()
+                            //for (item in podcastEpisodeList?.iterator()!!){
+
+                            dq = DownloadQueue()
+                            if (!TextUtils.isEmpty(
+                                    childPosition?.data?.id.toString()
+                                )
+                            ) {
+                                dq.contentId =
+                                    childPosition.data?.id.toString()
+                            }
+
+                            if (!TextUtils.isEmpty(
+                                    childPosition.data?.name
+                                )
+                            ) {
+                                dq.title = childPosition.data?.name
+                            }
+
+                            if (!TextUtils.isEmpty(
+                                    childPosition?.data?.subtitle
+                                )
+                            ) {
+                                dq.subTitle = childPosition.data?.subtitle
+                            }
+
+                            if (!TextUtils.isEmpty(childPosition?.data?.image!!)) {
+                                dq.image = childPosition.data?.image!!
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel.id!!)) {
+                                dq.parentId = tvShowDetailRespModel.id!!
+                            }
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.title!!)) {
+                                dq.pName = tvShowDetailRespModel?.title
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.subTitle!!)) {
+                                dq.pSubName = tvShowDetailRespModel?.subTitle
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.releasedate!!)) {
+                                dq.pReleaseDate = tvShowDetailRespModel?.releasedate
+                            }
+
+                            if (!TextUtils.isEmpty(tvShowDetailRespModel?.image!!)) {
+                                dq.pImage = tvShowDetailRespModel?.image
+                            }
+
+                            if (!TextUtils.isEmpty(childPosition?.data?.misc?.movierights.toString()!!)
+                            ) {
+                                dq.planName = childPosition.data?.misc?.movierights.toString()!!
+                                dq.planType = CommonUtils.getContentPlanType(dq.planName)
+                            }
+
+                            dq.pType = DetailPages.TVSHOW_DETAIL_ADAPTER.value
+                            dq.contentType = ContentTypes.PODCAST.value
+                            val eventModel = HungamaMusicApp.getInstance()
+                                .getEventData(tvShowDetailRespModel?.id.toString())
+                            dq.source = eventModel.sourceName
+
+                            val downloadQueue = AppDatabase.getInstance()?.downloadQueue()
+                                ?.findByContentId(
+                                    childPosition.data?.id!!.toString()
+                                )
+                            val downloadedAudio = AppDatabase.getInstance()?.downloadedAudio()
+                                ?.findByContentId(
+                                    childPosition.data?.id!!.toString()
+                                )
+                            if ((!downloadQueue?.contentId.equals(
+                                    childPosition?.data?.id!!.toString()
+                                ))
+                                && (!downloadedAudio?.contentId.equals(
+                                    childPosition?.data?.id!!.toString()
+                                ))
+                            ) {
+                                downloadQueueList.add(dq)
+                            }
+                            // }
+                            //if (downloadQueueList.size > 0){
+                            (requireActivity() as MainActivity).addOrUpdateDownloadVideoQueue(
+                                downloadQueueList,
+                                this@DiscoverTabFragment,
+                                false,
+                                true
+                            )
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }
