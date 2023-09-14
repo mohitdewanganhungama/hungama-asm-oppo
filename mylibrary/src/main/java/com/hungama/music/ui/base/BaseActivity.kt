@@ -28,6 +28,7 @@ import android.widget.*
 import androidx.annotation.OptIn
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
@@ -52,6 +53,8 @@ import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.source.LoadEventInfo
 import androidx.media3.exoplayer.source.MediaLoadData
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
+import androidx.mediarouter.media.MediaRouteSelector
+import androidx.mediarouter.media.MediaRouter
 import androidx.viewpager2.widget.ViewPager2
 import androidx.work.*
 import com.airbnb.lottie.LottieAnimationView
@@ -67,7 +70,11 @@ import com.google.ads.interactivemedia.v3.api.AdEvent
 import com.google.ads.interactivemedia.v3.api.AdEvent.AdEventType
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.admanager.AdManagerAdView
+import com.google.android.gms.cast.Cast
+import com.google.android.gms.cast.CastDevice
+import com.google.android.gms.cast.CastMediaControlIntent
 import com.google.android.gms.cast.framework.CastContext
+import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -180,6 +187,7 @@ import kotlinx.android.synthetic.main.layout_swipable_player_view.*
 import kotlinx.android.synthetic.main.layout_tab_view.*
 import kotlinx.android.synthetic.main.new_now_playing_bottom_sheet.*
 import kotlinx.android.synthetic.main.new_preview_model_layout.view.*
+import kotlinx.android.synthetic.main.swipable_player_native_ads_view.*
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.io.File
@@ -298,17 +306,41 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     var songDuration = SongDurationModel()
     var receiver : BroadcastReceiver? = null
     lateinit var songDurationViewModel: SongDurationConfigViewModel
-    lateinit var subscriptionDialogBottomsheetFragment : SubscriptionDialogBottomsheetFragmentFreeMinute
+    lateinit var mediaRouter : MediaRouter
+    lateinit var mSelectedDevice: CastDevice
+    lateinit var mCastListener: Cast.Listener
+    lateinit var mApiClient: GoogleApiClient
+    var totalMainCalledCount = 1
+
+    fun setVisibleTabLayouts(isClickable:Boolean){
+        BaseActivity.llDiscover.isClickable = isClickable
+        BaseActivity.llMusic.isClickable = isClickable
+        BaseActivity.llVideo.isClickable = isClickable
+        BaseActivity.llSearch.isClickable = isClickable
+        BaseActivity.llLibrary.isClickable = isClickable
+        BaseActivity.llTabPlayer.isClickable = isClickable
+    }
 
     companion object {
+        lateinit var updateDurationTask:Runnable
+        var durationHandler: Handler? = null
+        var isChromeCasted = false
+        lateinit var subscriptionDialogBottomsheetFragment : SubscriptionDialogBottomsheetFragmentFreeMinute
         var tvSleepTimer = TextView(HungamaMusicApp.getInstance().applicationContext)
         var pbDuration = ProgressBar(HungamaMusicApp.getInstance().applicationContext)
         var includeFreeMinute = View(HungamaMusicApp.getInstance().applicationContext)
         var songPreviewModel = View(HungamaMusicApp.getInstance().applicationContext)
         var newPreviewModel = View(HungamaMusicApp.getInstance().applicationContext)
+        var llDiscover = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
+        var llMusic = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
+        var llVideo = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
+        var llSearch = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
+        var llLibrary = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
+        var llTabPlayer = LinearLayoutCompat(HungamaMusicApp.getInstance().applicationContext)
         var m_view_papger = ViewPager2(HungamaMusicApp.getInstance().applicationContext)
         var ivMuteUnmute : FontAwesomeImageView? = null
         var maxMinAllowed = 0
+        var maxMinAllowedTotal = 0
         var isSwipableActive = false
         var inputStream : InputStream? = null
         var bodyRowsItemsItem : BodyRowsItemsItem = BodyRowsItemsItem()
@@ -490,9 +522,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         super.attachBaseContext(LanguageUtil.getLocal(base!!))
     }
 
+
+
     @OptIn(UnstableApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
-
         /**
          * Prevent Screenshot Or Screen Recorder in Android
          */
@@ -505,30 +538,34 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         val layoutInflater = LayoutInflater.from(this)
         val view = layoutInflater.inflate(resourceId, null)
         songDurationViewModel = ViewModelProvider(this).get(SongDurationConfigViewModel::class.java)
-
+        mCastListener = Cast.Listener()
         if (view.findViewById<View>(R.id.nowPlayingBottomSheet) == null) {
             throw IllegalAccessException("Child layout must have have a BottomSheet with id R.id.nowPlayingBottomSheet")
         }
-        if(!CommonUtils.isUserHasGoldSubscription()) {
+        if(!CommonUtils.isUserHasGoldSubscription() && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
             callSongDurationAPI()
-//            getPlayableContentUrl(CommonUtils.getNudgeAudioId(), true)
+            getPlayableContentUrl(CommonUtils.getNudgeAudioId(), true)
         }
-
+        totalMainCalledCount = SharedPrefHelper.getInstance().get("totalMainCalledCount", 1)
         var nonRepeatBroadCast = 0
         val trackSelector = DefaultTrackSelector(this).apply {
             setParameters(buildUponParameters().setMaxVideoSizeSd())
         }
 
-        subscriptionDialogBottomsheetFragment = SubscriptionDialogBottomsheetFragmentFreeMinute(
-            this,
-            "",
-            "",
-            null,
-            "",
-            null,
-            null
-        )
-        subscriptionDialogBottomsheetFragment.isCancelable = false
+        updateDurationTask = object : Runnable {
+            override fun run() {
+                updateDuration()
+                durationHandler?.postDelayed(this, 1000)//1 seconds
+                if (!HungamaMusicApp.getInstance().activityVisible) {
+                    if (Itype50PagerAdapter.callPlayerList()?.isPlaying == true) {
+                        Itype50PagerAdapter.callPlayerList()?.pause()
+                        Itype50PagerAdapter.isMute = true
+                        Itype50PagerAdapter.currentVolume = 0F
+                    }
+                }
+            }
+        }
+
         player11 = ExoPlayer.Builder(this)
             .setTrackSelector(trackSelector)
             .build()
@@ -540,12 +577,25 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 if (playbackState == Player.STATE_READY){
                     pausePlayer()
                     m_view_papger.setOnClickListener(null)
+/*                    if(BaseFragment.isCastPlayerAudio)
+                        BaseFragment.castPlayer?.let { setChromeCastForAudioAd(it) }*/
                 }
                 else if(playbackState == Player.STATE_ENDED){
                     setTouchData()
                     if (songPreviewModel.isVisible)
                     {
                         songPreviewModel.visibility = View.GONE
+                        setVisibleTabLayouts(true)
+                    }
+                    if (newPreviewModel.isVisible)
+                    {
+                        newPreviewModel.visibility = View.GONE
+                        setVisibleTabLayouts(true)
+                    }
+                    if (includeFreeMinute.isVisible)
+                    {
+                        includeFreeMinute.visibility = View.GONE
+                        setVisibleTabLayouts(true)
                     }
                     if (HungamaMusicApp.getInstance().activityVisible && subscriptionDialogBottomsheetFragment.isVisible){
                         subscriptionDialogBottomsheetFragment.dismiss()
@@ -560,8 +610,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             override fun onReceive(context: Context?, intent: Intent?) {
 
                 if(!CommonUtils.isUserHasGoldSubscription() && nonRepeatBroadCast == 0 && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
-                    setLog("lsahghsdghoa", "3")
 
+                    setLog("Datada", "BroadCast Base " + SharedPrefHelper.getInstance().getUserId().toString())
                     callSongDurationAPI()
                     CoroutineScope(Dispatchers.IO).launch {
                         delay(10000)
@@ -569,9 +619,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     }
                 }
                 nonRepeatBroadCast = 1
-                setLog("ahglahighsia", "BaseActivity Broadcast")
             }
         }
+
+        initiaizeBottomSheet()
 
         if (!CommonUtils.isUserHasGoldSubscription() && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
             val lbm = LocalBroadcastManager.getInstance(this)
@@ -587,10 +638,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
 //        setBottomSheet(bottomSheetState)
 
-        nowPlayingViewModel = NowPlayingViewModel(
-            this,
-            Injection.provideTrackRepository()
-        )
+        nowPlayingViewModel = NowPlayingViewModel(this, Injection.provideTrackRepository())
         onViewCreated(savedInstanceState)
         mainHandler = Handler(Looper.getMainLooper())
         CoroutineScope(Dispatchers.Main).launch {
@@ -604,41 +652,70 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             fetch = Fetch.getDefaultInstance()
             statusBarBg()
             firebaseAnalytics = FirebaseAnalytics.getInstance(this@BaseActivity)
-            userViewModelBookmark = ViewModelProvider(
-                this@BaseActivity
-            ).get(UserViewModel::class.java)
-            musicViewModel = ViewModelProvider(
-                this@BaseActivity
-            ).get(MusicViewModel::class.java)
+            userViewModelBookmark = ViewModelProvider(this@BaseActivity).get(UserViewModel::class.java)
+            musicViewModel = ViewModelProvider(this@BaseActivity).get(MusicViewModel::class.java)
             playAudioAdsAfterCounts = CommonUtils.getAudioAdPreference().firstServe
             totalSongsPlayedAfterLastAudioAd = 0
-            setLog("songsPlayedCurrent", totalSongsPlayedAfterLastAudioAd.toString())
             setBluetoothBroadcast()
             updateAudioAdPlayingStatusAndProvider(false, currentAudioAdsType)
 
             LocalBroadcastManager.getInstance(this@BaseActivity).registerReceiver(mNotificationMessageReceiver, IntentFilter(Constant.NOTIFICATION_PLAYER_EVENT))
             LocalBroadcastManager.getInstance(this@BaseActivity).registerReceiver(mNotificationMessageReceiver, IntentFilter(Constant.STORY_PLAYER_EVENT))
             LocalBroadcastManager.getInstance(this@BaseActivity).registerReceiver(mNotificationMessageReceiver, IntentFilter(Constant.AUDIO_QUALITY_CHANGE_EVENT));
-            setLog("BaseActivity", "Lifecycle-onCreate")
             val homeWatcher = HomeWatcher(this@BaseActivity)
             homeWatcher.setOnHomePressedListener(homeWatcherListener)
             homeWatcher.startWatch()
 
-            /**
-             * Gamification listener set
-             */
             EventManager.getInstance().findAmplitudeSubscriber().registerGamificationListener(this@BaseActivity)
             loadBottomAds()
         }
     }
 
+    public fun setChromeCastForAudioAd(mCurrentPlayer: Player) {
+        try {
+            if (!isDestroyed()) {
+                var playWhenReady = false
+                val previousPlayer: Player = this.currentPlayer!!
+                // Player state management.
+                var playbackPositionMs = C.TIME_UNSET
+                if (previousPlayer != null) {
+                    // Save state from the previous player.
+                    val playbackState = previousPlayer.playbackState
+                    if (playbackState != Player.STATE_ENDED) {
+                        playWhenReady = previousPlayer.playWhenReady
+                        playbackPositionMs = previousPlayer?.currentPosition!!
+                    }
+
+                    Log.d(TAG, "setCurrentPlayer: previousPlayer called:")
+                }
+                this.currentPlayer = mCurrentPlayer
+                this.currentPlayer?.addListener(this@BaseActivity)
+
+                mediaUrlAd.let {
+                    val mimType = MimeTypes.BASE_TYPE_AUDIO
+                    val mediaItem1 = MediaItem.Builder()
+                        .setUri(Uri.parse(mediaUrlAd))
+                        .setMediaMetadata(MediaMetadata.Builder().build())
+                        .setMediaId(mediaUrlAd)
+                        .setMimeType(mimType)
+                        .build()
+
+                    currentPlayer?.setMediaItem(mediaItem1, 0L)
+                    currentPlayer?.playWhenReady = playWhenReady
+                    currentPlayer?.prepare()
+                }
+            }
+        }catch (exp:Exception){
+            exp.printStackTrace()
+        }
+
+    }
+    val preferences = HungamaMusicApp.getInstance().getSharedPreferences(HungamaMusicApp.getInstance().getString(R.string.app_name), 0)
     fun callSongDurationAPI(){
         val songDurationData = AppDatabase.getInstance()?.songDuration()?.getSongDuration()
         if (songDurationData != null){
             songDuration = songDurationData
         }
-        setLog("SongDurationData ", " database " + songDurationData.toString())
-
 
         if (ConnectionUtil(this).isOnline(false)) {
             songDurationViewModel.getUserPreviewDetails(this, CommonUtils.getSongDurationConfig().global_limited_minutes_quota.toString())?.observe(this){
@@ -646,31 +723,33 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 if(it.status != com.hungama.music.data.webservice.utils.Status.LOADING){
                     setLog("SongDurationData ", " firebaseData " + CommonUtils.getSongDurationConfig())
                     songDuration.stream_max_min_allowed = it.data?.stream_max_minutes_allowed?.toInt()
-
                     if(it.status == com.hungama.music.data.webservice.utils.Status.SUCCESS){
                         songDuration.current_timestampm = it.data?.current_timestamp.toString()
-                        setLog("SongDurationData ", " isStreamed " + it.data?.is_first_stream_started.toString())
-                        maxMinAllowed = it.data?.user_streamed_min?.toInt()!!
+                        val userStreamMinute = it.data?.user_streamed_min
+                        it.data?.user_streamed_min?.let { maxMinAllowedTotal = it  }
+                        val streamMaxMinAllowed = it.data?.stream_max_minutes_allowed?.toInt()
+                        if (userStreamMinute != null && streamMaxMinAllowed != null) {
+
+                            maxMinAllowed = streamMaxMinAllowed - userStreamMinute
+                        }
 
                         if (it.data?.is_first_stream_started.toString().contains("false")){
-                            /*                            if (songDurationData == null)
-                                                        {
-                                                            songDuration.user_streamed_min = it.data?.stream_max_minutes_allowed?.toInt()
-                                                        }
-                                                        else
-                                                        {
-                            *//*                               if (songDuration.hungama_user_id != SharedPrefHelper.getInstance().getUserId().toString()) {
-                                   songDuration.user_streamed_min = CommonUtils.getSongDurationConfig().global_limited_minutes_quota
-                               }*//*
-
-                            }*/
-                            setLog("SongDurationData ", " firebaseData " + CommonUtils.getSongDurationConfig())
                             songDuration.user_streamed_min = it.data?.stream_max_minutes_allowed?.toInt()
                             songDuration.Is_first_stream_started = 0
                         }
                         else{
-                            songDuration.user_streamed_min = it.data?.user_streamed_min
+                            if (userStreamMinute != null){
+                                setLog("lahglhalhog", "Base " + preferences.getBoolean("restrictedAudio", false).toString())
+                                if(preferences.getBoolean("restrictedAudio", false) == true)
+                                    songDuration.user_streamed_min = userStreamMinute
+                                else
+                                    songDuration.user_streamed_min = it.data?.stream_max_minutes_allowed?.toInt()!!.minus(userStreamMinute)
 
+                            }
+                            val userStreamMinute1 = it.data?.user_streamed_min
+                            if (userStreamMinute1 != null) {
+                                maxMinAllowed = userStreamMinute1
+                            }
                             songDuration.Is_first_stream_started = 1
                         }
                     }
@@ -687,7 +766,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 else{
                     AppDatabase.getInstance()?.songDuration()?.updateSongDuration(songDuration)
                 }
-                totalGetted = songDuration.user_streamed_min!!
+                songDuration.user_streamed_min.let {
+                    if (it != null) {
+                        totalGetted = it
+                    }
+                }
                 totalPlayedSongDuration = -2
                 setLog("SongDurationData", " APi \n\n" +  Gson().toJson(songDurationData) + "\n\n " + Gson().toJson(it.data) + "\n\n$totalGetted")
             }
@@ -696,6 +779,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     fun getPlayableContentUrl(id:String, isNundge:Boolean){
         if (ConnectionUtil(this).isOnline) {
+            setLog("AudioAdid", " $id $isNundge")
             playableContentViewModel.getPlayableContentList(applicationContext, id)?.observe(this,
                 Observer {
                     when(it.status){
@@ -727,7 +811,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         } else {
             val messageModel = MessageModel(getString(R.string.toast_str_35), getString(R.string.toast_message_5),
                 MessageType.NEGATIVE, true)
-            CommonUtils.showToast(this, messageModel)
+            CommonUtils.showToast(this, messageModel,"BaseActivity","getPlayableContentUrl")
         }
     }
 
@@ -873,24 +957,33 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
             audioPlayer?.removeListener(this)
         }
+        setLog("showUpdateRequest", " setSong " + SharedPrefHelper.getInstance().getUserId().toString())
+
         SharedPrefHelper.getInstance().getUserId()?.let { setSongDuration(it) }
     }
 
     fun setSongDuration(userId:String){
         if(!CommonUtils.isUserHasGoldSubscription()) {
-            if (totalPlayedSongDuration >= 0) {
+            setLog("showUpdateRequest", " setSong " + totalPlayedSongDuration.toString())
+
+            if (totalPlayedSongDuration >= 0 || preferences.getBoolean("restrictedAudio", false)) {
 
                 val sondDbData = AppDatabase.getInstance()?.songDuration()?.getSongDuration()
-                sondDbData?.user_streamed_min = localDuration
+                val totalPlayedMin = totalPlayedSongDuration/1000/60
+                if(preferences.getBoolean("restrictedAudio", false))
+                    sondDbData?.user_streamed_min =  sondDbData?.stream_max_min_allowed?.minus((maxMinAllowedTotal - totalPlayedMin))
+                else
+                    sondDbData?.user_streamed_min =  maxMinAllowedTotal + totalPlayedMin
 
                 sondDbData?.let {
                     AppDatabase.getInstance()?.songDuration()?.updateSongDuration(it)
                 }
                 val reqJsonObject = JSONObject()
                 reqJsonObject.put("uid", userId)
-                reqJsonObject.put("user_streamed_min", localDuration.toString())
+                reqJsonObject.put("user_streamed_min", if(preferences.getBoolean("restrictedAudio", false)) sondDbData?.stream_max_min_allowed?.minus((maxMinAllowedTotal - totalPlayedMin)) else maxMinAllowedTotal + totalPlayedMin)
                 reqJsonObject.put("first_stream_start_time", sondDbData?.current_timestampm)
-                reqJsonObject.put("is_first_stream_started", "true")
+                reqJsonObject.put("is_first_stream_started", true)
+                setLog("showUpdateRequest", " setSong " + reqJsonObject.toString())
 
                 songDurationViewModel.setUserPreviewDetails(this@BaseActivity, reqJsonObject)
             }
@@ -968,17 +1061,22 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
 
 
-        /*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    val serviceIntent = Intent(this, SongDurationService::class.java)
-                    serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
-                    startForegroundService(serviceIntent)
-                }*/
+/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val serviceIntent = Intent(this, SongDurationService::class.java)
+            serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
+            startForegroundService(serviceIntent)
+        }*/
+        setLog("showUpdateRequest", " setSong " + totalPlayedSongDuration.toString())
 
         if(!CommonUtils.isUserHasGoldSubscription()) {
-            if (totalPlayedSongDuration >= 0) {
+            if (totalPlayedSongDuration >= 0 || preferences.getBoolean("restrictedAudio", false)) {
 
                 val sondDbData = AppDatabase.getInstance()?.songDuration()?.getSongDuration()
-                sondDbData?.user_streamed_min = localDuration
+                val totalPlayedMin = totalPlayedSongDuration/1000/60
+                if(preferences.getBoolean("restrictedAudio", false))
+                    sondDbData?.user_streamed_min = sondDbData?.stream_max_min_allowed?.minus((maxMinAllowedTotal - totalPlayedMin))
+                else
+                    sondDbData?.user_streamed_min = maxMinAllowedTotal + totalPlayedMin
 
                 sondDbData?.let {
                     AppDatabase.getInstance()?.songDuration()?.updateSongDuration(it)
@@ -993,11 +1091,12 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     .setConstraints(uploadDataConstraints)
                     .setInputData(inputData).build()
                 WorkManager.getInstance(this@BaseActivity).enqueue(uploadWorkRequest)
+
                 val reqJsonObject = JSONObject()
                 reqJsonObject.put("uid", SharedPrefHelper.getInstance().getUserId())
-                reqJsonObject.put("user_streamed_min", sondDbData?.user_streamed_min.toString())
+                reqJsonObject.put("user_streamed_min", if(preferences.getBoolean("restrictedAudio", false)) sondDbData?.stream_max_min_allowed?.minus((maxMinAllowedTotal - totalPlayedMin)) else maxMinAllowedTotal + totalPlayedMin)
                 reqJsonObject.put("first_stream_start_time", sondDbData?.current_timestampm)
-                reqJsonObject.put("is_first_stream_started", "true")
+                reqJsonObject.put("is_first_stream_started", true)
 
                 songDurationViewModel.setUserPreviewDetails(this@BaseActivity, reqJsonObject)
             }
@@ -1115,39 +1214,40 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     }
 
-//    fun fragmentonBackPressed(fm: FragmentManager): Boolean {
-//        if (fm != null) {
-//            setLog(TAG, "fragmentonBackPressed: 1")
-//            if (fm.getBackStackEntryCount() > 0) {
-//                setLog(TAG, "fragmentonBackPressed: 2")
-//                fm.popBackStack()
-//                return true
-//            }
-//            val fragList: List<Fragment> = fm.getFragments()
-//            if (fragList != null && fragList.size > 0) {
-//                for (frag in fragList) {
-//                    if (frag == null) {
-//                        continue
-//                    }
-//                    if (frag.isVisible) {
-//                        if (fragmentonBackPressed(frag.childFragmentManager)) {
-//                            setLog(TAG, "fragmentonBackPressed: 3")
-//                            return true
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
-//            setLog(TAG, "fragmentonBackPressed: null")
-//        }
-//        return false
-//    }
+
+/*    fun fragmentonBackPressed(fm: FragmentManager): Boolean {
+        if (fm != null) {
+            setLog(TAG, "fragmentonBackPressed: 1")
+            if (fm.getBackStackEntryCount() > 0) {
+                setLog(TAG, "fragmentonBackPressed: 2")
+                fm.popBackStack()
+                return true
+            }
+            val fragList: List<Fragment> = fm.getFragments()
+            if (fragList != null && fragList.size > 0) {
+                for (frag in fragList) {
+                    if (frag == null) {
+                        continue
+                    }
+                    if (frag.isVisible) {
+                        if (fragmentonBackPressed(frag.childFragmentManager)) {
+                            setLog(TAG, "fragmentonBackPressed: 3")
+                            return true
+                        }
+                    }
+                }
+            }
+        } else {
+            setLog(TAG, "fragmentonBackPressed: null")
+        }
+        return false
+    }*/
 
 
     override fun onBackPressed() {
         setLog("onBackPressed", "BaseActivity-onBackPressed-isFinishing-$isFinishing")
-        BucketParentAdapter.isVisible = true
         if (!isFinishing) {
+            BucketParentAdapter.isVisible = true
             if (isSwipableActive) {
                 if (includeFreeMinute.visibility == View.VISIBLE || songPreviewModel.visibility == View.VISIBLE || newPreviewModel.visibility == View.VISIBLE) {
                     return
@@ -1159,6 +1259,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             } else if (supportFragmentManager.backStackEntryCount > 0) {
                 setLog("onBackPressed", "BaseActivity-onBackPressed-3-backStackEntryCount:${supportFragmentManager.backStackEntryCount}")
                 statusBarBg()
+                if (BaseActivity.isSwipableActive && supportFragmentManager.backStackEntryCount == 1) {
+                    (getViewActivity() as MainActivity).applyScreen(0)
+                    return
+                }
                 if (supportFragmentManager.backStackEntryCount == 1) {
                     /*val backStackCount: Int = supportFragmentManager.getBackStackEntryCount()
                     for (i in 0 until backStackCount) {
@@ -1170,7 +1274,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             FragmentManager.POP_BACK_STACK_INCLUSIVE
                         )
                     }*/
-                    moveTaskToBack(true);
+                    moveTaskToBack(true)
                     //super.onBackPressed()
                 } else {
                     supportFragmentManager?.popBackStack()
@@ -1441,7 +1545,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     subtitleTextView?.text = track.subTitle
                     nowPlayingTitleTextView?.text = track.title
                     nowPlayingSubtitleTextView?.text = track.subTitle
-//                    shortPlayerControlView?.setOnClickListener { toggleSheetBehavior() }
+                    shortPlayerControlView?.setOnClickListener { toggleSheetBehavior() }
                     if (audioPlayer != null && audioPlayer?.repeatMode != Player.REPEAT_MODE_ALL){
                         callRecommendedApiOnEndOfSong()
                     }
@@ -1457,7 +1561,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 }
 
 
-
+                if (isChromeCasted){
+                    stopAudioPlayer()
+                }
             }
 
             if (playItemListener != null) {
@@ -1973,9 +2079,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 callUserStreamUpdate(-1, songDataList?.get(nowPlayingCurrentIndex()), nowPlayingCurrentIndex())
             }
-            /*        if (boundToService) {
-                        //pausePlayer()
-                        *//*playerControlView.player = null
+/*        if (boundToService) {
+            //pausePlayer()
+            *//*playerControlView.player = null
             shortPlayerControlView.player = null
             player_view.player = null
             audioPlayer?.removeListener(this)*//*
@@ -1990,10 +2096,10 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     fun playPlayer() {
         if (player11?.isPlaying == true) return
         audioPlayer?.play()
+        Itype50PagerAdapter.muteIconChange()
         if(Itype50PagerAdapter.callPlayerList() != null) {
             Itype50PagerAdapter.isMute = false
             Itype50PagerAdapter.callPlayerList()?.volume = 0.0f
-            Itype50PagerAdapter.muteIconChange()
 //            BaseActivity.ivMuteUnmute?.setImageDrawable(faDrawable(R.string.icon_mute, R.color.colorWhite, resources.getDimensionPixelSize(R.dimen.font_16).toFloat()))
         }
         if (BaseFragment.castPlayer != null && BaseFragment.castPlayer?.isCastSessionAvailable == true) {
@@ -2001,7 +2107,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
     }
 
-    open fun getAudioPlayerInstance(): SimpleExoPlayer? {
+    open fun getAudioPlayerInstance(): ExoPlayer? {
         return audioPlayer
     }
 
@@ -2625,7 +2731,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 MessageType.NEGATIVE,
                 true
             )
-            CommonUtils.showToast(this@BaseActivity, messageModel)
+            CommonUtils.showToast(this@BaseActivity, messageModel,"BaseActivity","setUpPlayableContentListViewModel")
         }
 
     }
@@ -2636,17 +2742,12 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (it != null) {
             //setLog(TAG, "isViewLoading $it")
             if (!TextUtils.isEmpty(it?.data?.head?.headData?.misc?.url)) {
-                /*setLog(
-                    "ContentOffline",
-                    "setSongLyricsData playableObserverResponse: ${it?.data?.head?.headData?.misc?.sl?.lyric?.link} title=> ${it?.data?.head?.headData?.title}"
-                )*/
-
                 setPlayableContentListData(it)
             } else {
                 //preCatch Playable Url logic
                 var index = nowPlayingCurrentIndex()
                 val track = Track()
-                track.id = it.data.head.headData.id.toLong()
+                track.id = it?.data?.head?.headData?.id!!.toLong()
                 if (isPreCatchContent(songDataList, track)) {
                     setLog(
                         "preCatchContent",
@@ -2692,6 +2793,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 setLog("preCatchApiCall", "BaseActitvity-setPlayableContentListData-1")
 
                 async {
+
                     setLog("preCatchApiCall", "BaseActitvity-setPlayableContentListData-2")
                     updateSongUrl(
                         playableContentModel,
@@ -2839,8 +2941,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             userDataMap.put(EventConstant.VIDEO_OTT_APPS, videoApps)
             userDataMap.put(EventConstant.PAYMENT_APPS, upiAps)
             userDataMap.put(EventConstant.NOTIFICATION_ON, SharedPrefHelper.getInstance().getMobileNotificationEnable().toString())
-
             EventManager.getInstance().sendUserAttribute(UserAttributeEvent(userDataMap))
+
         }
 
     }
@@ -2869,7 +2971,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 if (TextUtils.isEmpty(eventModel?.bucketName)) {
                     eventModel?.bucketName = "" + bucketName
                 }
-                if (eventModel.bucketName.contains("Good", true)) {
+                if (eventModel?.bucketName?.contains("Good", true) == true) {
                     eventModel?.bucketName = EventConstant.CONTINUE_WATCHING_NAME
                 }
 
@@ -2898,7 +3000,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                 eventModel?.sourceName = source
 
-                HungamaMusicApp.getInstance().setEventData(eventModel.contentID, eventModel)
+                eventModel?.contentID?.let { HungamaMusicApp.getInstance().setEventData(it, eventModel) }
 
                 setLog(TAG, "setEventModelDataAppLevel: eventModel:${eventModel}")
             } catch (e: Exception) {
@@ -3194,58 +3296,54 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     }
 
     fun setSongLike() {
-        if (SharedPrefHelper.getInstance().isUserLoggedIn()) {
-            CommonUtils.setLog(
-                "isGotoDownloadClicked",
-                "BaseActivity-setSongLike-isGotoDownloadClicked-${Constant.ISGOTODOWNLOADCLICKED}"
-            )
-            if (ConnectionUtil(this).isOnline(false)) {
-                if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex()) {
-                    callFavRadio(
-                        songDataList?.get(nowPlayingCurrentIndex())?.id.toString(),
-                        songDataList?.get(nowPlayingCurrentIndex())?.playerType,
-                        !songDataList?.get(nowPlayingCurrentIndex())?.isLiked!!
-                    )
+        CommonUtils.setLog(
+            "isGotoDownloadClicked",
+            "BaseActivity-setSongLike-isGotoDownloadClicked-${Constant.ISGOTODOWNLOADCLICKED}"
+        )
+        if (ConnectionUtil(this).isOnline(false)) {
+            if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex()) {
+                callFavRadio(
+                    songDataList?.get(nowPlayingCurrentIndex())?.id.toString(),
+                    songDataList?.get(nowPlayingCurrentIndex())?.playerType,
+                    !songDataList?.get(nowPlayingCurrentIndex())?.isLiked!!
+                )
 
-                    if (songDataList?.get(nowPlayingCurrentIndex())?.isLiked!!) {
-                        songDataList?.get(nowPlayingCurrentIndex())?.isLiked = false
-                    } else {
-                        songDataList?.get(nowPlayingCurrentIndex())?.isLiked = true
-                    }
-                    if (onSwipablePlayerListener != null) {
-                        setLog(
-                            TAG, "setSongLike: isLike baseActivity ${
-                                songDataList?.get(
-                                    nowPlayingCurrentIndex()
-                                )?.isLiked
-                            }"
-                        )
-                        onSwipablePlayerListener?.onFavoritedContentStateChange(
+                if (songDataList?.get(nowPlayingCurrentIndex())?.isLiked!!) {
+                    songDataList?.get(nowPlayingCurrentIndex())?.isLiked = false
+                } else {
+                    songDataList?.get(nowPlayingCurrentIndex())?.isLiked = true
+                }
+                if (onSwipablePlayerListener != null) {
+                    setLog(
+                        TAG, "setSongLike: isLike baseActivity ${
                             songDataList?.get(
                                 nowPlayingCurrentIndex()
-                            )?.isLiked!!
-                        )
-                        onMusicPlayerThreeDotMenuListener?.onFavoritedContentStateChange(
-                            songDataList?.get(
-                                nowPlayingCurrentIndex()
-                            )?.isLiked!!
-                        )
-                    }
+                            )?.isLiked
+                        }"
+                    )
+                    onSwipablePlayerListener?.onFavoritedContentStateChange(
+                        songDataList?.get(
+                            nowPlayingCurrentIndex()
+                        )?.isLiked!!
+                    )
+                    onMusicPlayerThreeDotMenuListener?.onFavoritedContentStateChange(
+                        songDataList?.get(
+                            nowPlayingCurrentIndex()
+                        )?.isLiked!!
+                    )
                 }
             }
         }
     }
 
     fun initFavoriteMusic(track: Track) {
-        if (SharedPrefHelper.getInstance().isUserLoggedIn()) {
-            if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex() && songDataList?.get(
-                    nowPlayingCurrentIndex()
-                )?.pType != DetailPages.LOCAL_DEVICE_SONG_PAGE.value
-            ) {
-                if (onSwipablePlayerListener != null) {
-                    onSwipablePlayerListener?.onFavoritedContentStateChange(track.isLiked)
-                    onMusicPlayerThreeDotMenuListener?.onFavoritedContentStateChange(track.isLiked)
-                }
+        if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex() && songDataList?.get(
+                nowPlayingCurrentIndex()
+            )?.pType != DetailPages.LOCAL_DEVICE_SONG_PAGE.value
+        ) {
+            if (onSwipablePlayerListener != null) {
+                onSwipablePlayerListener?.onFavoritedContentStateChange(track.isLiked)
+                onMusicPlayerThreeDotMenuListener?.onFavoritedContentStateChange(track.isLiked)
             }
         }
     }
@@ -3259,10 +3357,12 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             jsonObject1.put("module", Constant.MODULE_FAVORITE)
 
 
-            userViewModelBookmark?.callBookmarkApi(
-                this@BaseActivity,
-                jsonObject1.toString()
-            )
+            jsonObject1?.toString()?.let {
+                userViewModelBookmark?.callBookmarkApi(
+                    this@BaseActivity,
+                    it
+                )
+            }
             /*if (action) {
                 val messageModel = MessageModel(
                     getString(R.string.toast_str_17),
@@ -3341,15 +3441,6 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
 
             setLog(TAG, "callUserListing: callStreamEventAnalytics action:${action}")
-            /*if (action) {
-                callStreamEventAnalytics(songDataList?.get(nowPlayingCurrentIndex())!!, EventType.STREAM_START)
-                isLiveRadioStreamStratCalled = true
-            } else {
-                if (isLiveRadioStreamStratCalled){
-                    callStreamEventAnalytics(songDataList?.get(nowPlayingCurrentIndex())!!, EventType.STREAM)
-                }
-            }*/
-
 
             musicViewModel?.updateRadioListeningStream(
                 this@BaseActivity,
@@ -3367,60 +3458,52 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     }
 
     fun updatePlayerDuration() {
-        MainScope().launch(Dispatchers.Main) {
-            /*val currMinute = (TimeUnit.MILLISECONDS.toMinutes(audioPlayer?.currentPosition!!) -
-                    TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(audioPlayer?.currentPosition!!)))
-            val currSecond = TimeUnit.MILLISECONDS.toSeconds(audioPlayer?.currentPosition!!) -
-                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(audioPlayer?.currentPosition!!))
-            val curDur = String.format(
-                "%02d:%02d",
-                currMinute,
-                currSecond
-            )*/
-            //setLog("totalSonDuration", "inLong-audioPlayer?.duration-${audioPlayer?.duration}")
-            lastSongPlayedDuration = lastSongPlayDuration
-            lastSongPlayDuration = TimeUnit.MILLISECONDS.toSeconds(audioPlayer?.currentPosition!!).toInt()
-            /*setLog(
-                "PlayerAds","BaseActivity-updatePlayerDuration-lastSongPlayDuration-"+BaseActivity.lastSongPlayDuration.toString()
-            )*/
+//        MainScope().launch(Dispatchers.Main) {
 
-            /*val toMinute = TimeUnit.MILLISECONDS.toMinutes(audioPlayer?.duration!!) -
-                    TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(audioPlayer?.duration!!))
-            val toSecond = TimeUnit.MILLISECONDS.toSeconds(audioPlayer?.duration!!) -
-                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(audioPlayer?.duration!!))*/
+        lastSongPlayedDuration = lastSongPlayDuration
+        lastSongPlayDuration = TimeUnit.MILLISECONDS.toSeconds(audioPlayer?.currentPosition!!).toInt()
+        val global_limited_stream_preview_quota = CommonUtils.getSongDurationConfig().global_limited_stream_preview_quota.toLong() * 1000
 
-            val diff: Long = audioPlayer?.duration!! - audioPlayer?.currentPosition!!
-            val minutes = TimeUnit.MILLISECONDS.toMinutes(diff)
-            val seconds =
-                TimeUnit.MILLISECONDS.toSeconds(diff) - TimeUnit.MINUTES.toSeconds(minutes)
-            var totDur = ""
-            if (minutes >= 0 && minutes <= 120 && seconds >= 0 && seconds <= 120) {
-                totDur = String.format(
-                    "%02d:%02d",
-                    minutes,
-                    seconds
-                )
+        var duration = audioPlayer?.duration
+        if (!CommonUtils.isUserHasGoldSubscription() && (trackData.contentType == ContentTypes.AUDIO.value || trackData.contentType == ContentTypes.RADIO.value) && !trackData.movierights.contains("AMOD")
+            && CommonUtils.getSongDurationConfig().enable_minutes_quota && localDuration <= 0) {
 
-                setLog(
-                    "songsPlayedCurrentDuration",
-                    "title:${audioPlayer?.currentMediaItem?.mediaMetadata?.title} totDur:${totDur}"
-                )
-            }
-
-
-            /*if (isSleepTimerSetToEndOfCurrentPlay) {
-                tvSleepTimer?.visibility = View.VISIBLE
-                tvSleepTimer?.setText(totDur)
-            }*/
-            if (onSwipablePlayerListener != null && isNewSwipablePlayerOpen) {
-                onSwipablePlayerListener?.onPlayerProgressChange(
-                    audioPlayer?.currentPosition,
-                    audioPlayer?.duration,
-                    totDur
-                )
-            }
-            setTabPlayerProgress(audioPlayer?.currentPosition, audioPlayer?.duration)
+            duration = global_limited_stream_preview_quota + 2
         }
+
+        val diff: Long = duration!! - audioPlayer?.currentPosition!!
+        val minutes = TimeUnit.MILLISECONDS.toMinutes(diff)
+        val seconds = TimeUnit.MILLISECONDS.toSeconds(diff) - TimeUnit.MINUTES.toSeconds(minutes)
+        var totDur = ""
+        if (minutes in 0..120 && seconds >= 0 && seconds <= 120) {
+            totDur = String.format("%02d:%02d", minutes, seconds)
+        }
+        if (onSwipablePlayerListener != null && isNewSwipablePlayerOpen) {
+            onSwipablePlayerListener?.onPlayerProgressChange(
+                audioPlayer?.currentPosition,
+                duration,
+                totDur
+            )
+        }
+
+        if (trackData.contentType != ContentTypes.Live_Radio.value) {
+
+            if (totDur.isNotEmpty()) {
+                val asghdal = totDur.replace(":", "").toString().toInt()
+                if (asghdal <= 0) {
+//                localDuration = 0
+                    showAd = CommonUtils.getSongDurationConfig().global_limited_stream_preview_quota - 1
+                }
+            } else {
+                if (localDuration > 0)
+                    showAd = 0
+                else {
+                    showAd = CommonUtils.getSongDurationConfig().global_limited_stream_preview_quota - 1
+                    isTouch = true
+                }
+            }
+        }
+        setTabPlayerProgress(audioPlayer?.currentPosition, audioPlayer?.duration)
     }
 
     private fun startPlayerDurationCallback() {
@@ -3467,11 +3550,26 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 }else{
                     removePlayerDurationCallback()
                 }
+                if (Itype50PagerAdapter.callPlayerList() != null)
+                {
+                    Itype50PagerAdapter.callPlayerList()?.pause()
+                }
                 startDurationCallback()
                 setLog("Gapless", "ExoPlayer.STATE_READY-setAudioPlaybackActionEvents()")
                 setLog("callUserStreamUpdate1", "onPlaybackStateChanged STATE_READY")
                 //setAudioPlaybackActionEvents()
                 //isAudioPlaybackActionEventSet = true
+
+                /*         if (player11 != null){
+                             if(player11?.isPlaying == true)
+                             {
+                                 player11?.pause()
+                             }
+                         }
+                         includeFreeMinute.visibility = View.GONE
+                         songPreviewModel.visibility = View.GONE
+                         newPreviewModel.visibility = View.GONE
+                         subscriptionDialogBottomsheetFragment.dismiss()*/
             }
             else -> {
 //                callUserStreamUpdate()
@@ -3576,7 +3674,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 hashMap.put(EventConstant.CONNECTION_TYPE_EPROPERTY, ConnectionUtil(this@BaseActivity).networkType)
                 hashMap.put(EventConstant.CONSUMPTION_TYPE_EPROPERTY, "" + eventModel?.consumptionType)
                 val newContentId=eventModel?.contentID
-                val contentIdData=newContentId?.replace("playlist-","")
+                val contentIdData= newContentId?.replace("playlist-","")
                 hashMap.put(EventConstant.CONTENTID_EPROPERTY, "" + contentIdData)
                 setLog("ActualContentType","${trackData.playerType}")
 //                hashMap.put(EventConstant.CONTENTTYPE_EPROPERTY, "" + Utils.getContentTypeNameForStream("" + trackData.playerType))
@@ -3620,11 +3718,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             var diffFG = 0L
 
                             if (currentTime!! <= 0 && lastSongPlayDuration != null) {
-                                currentTime = lastSongPlayDuration.toLong()
+                                currentTime = lastSongPlayDuration?.toLong()!!
                             }
                             setLog(TAG, "callStreamEventAnalytics durationMap currentTime-2:${currentTime}")
                             if (currentTime!! <= 0 && !TextUtils.isEmpty(eventModel?.duration_fg)) {
-                                currentTime = eventModel.duration_fg.toLong()
+                                currentTime = eventModel?.duration_fg?.toLong() ?:0
 
                             }
 
@@ -3895,7 +3993,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         }
                         else{
                             setLog("CheckLocalDuration", " " + localDuration.toString())
-                            if (localDuration > 0) {
+                            if (localDuration > 0 || !CommonUtils.getSongDurationConfig().enable_minutes_quota) {
                                 EventManager.getInstance().sendEvent(StreamEvent(hashMap))
                             }
                             else
@@ -4005,7 +4103,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                     }
                                     else{
                                         setLog("CheckLocalDuration", " " + localDuration.toString())
-                                        if (localDuration > 0) {
+                                        if (localDuration > 0 || !CommonUtils.getSongDurationConfig().enable_minutes_quota) {
                                             EventManager.getInstance().sendEvent(StreamStartEvent(hashMap))
                                         }
                                         else
@@ -4255,10 +4353,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                     val dpm = DownloadPlayCheckModel()
                                     dpm.contentId =
                                         downloadQueueList.get(currentDownloadingIndex).contentId?.toString()!!
-                                    dpm.contentTitle =
-                                        downloadQueueList.get(currentDownloadingIndex).title?.toString()!!
-                                    dpm.planName =
-                                        downloadQueueList.get(currentDownloadingIndex).planName.toString()
+                                    dpm.contentTitle = downloadQueueList.get(currentDownloadingIndex).title?.toString()!!
+                                    dpm.planName = downloadQueueList.get(currentDownloadingIndex)?.planName?.toString().toString()
                                     dpm.isAudio = true
                                     dpm.isDownloadAction = true
                                     dpm.isShowSubscriptionPopup = true
@@ -4337,7 +4433,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                                         0
                                                 } else {
                                                     downloadQueueList?.get(currentDownloadingIndex)?.totalDownloadBytes =
-                                                        download.contentLength
+                                                        download?.contentLength!!
                                                 }
 
                                                 if (download.bytesDownloaded < 0) {
@@ -4345,11 +4441,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                                         0
                                                 } else {
                                                     downloadQueueList?.get(currentDownloadingIndex)?.downloadedBytes =
-                                                        download.bytesDownloaded
+                                                        download?.bytesDownloaded!!
                                                 }
 
                                                 downloadQueueList?.get(currentDownloadingIndex)?.createdDT =
-                                                    download.updateTimeMs
+                                                    download?.updateTimeMs!!
                                                 downloadQueueList?.get(currentDownloadingIndex)?.percentDownloaded =
                                                     100
                                                 addOrUpdateDownloadedAudio(
@@ -4476,7 +4572,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                                     )
                                                     CommonUtils.showToast(
                                                         this@BaseActivity,
-                                                        messageModel
+                                                        messageModel,"BaseActivity","setUpDownloadableContentListViewModel"
                                                     )
                                                     CoroutineScope(Dispatchers.IO).launch {
                                                         if (downloadQueueList != null && (downloadQueueList.size > 0 && downloadQueueList.size > currentDownloadingIndex)) {
@@ -4513,7 +4609,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             MessageType.NEGATIVE,
                             true
                         )
-                        CommonUtils.showToast(this@BaseActivity, messageModel)
+                        CommonUtils.showToast(this@BaseActivity, messageModel,"BaseActivity","setUpDownloadableContentListViewModel")
                     }
                 }
             } else {
@@ -4661,7 +4757,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     downloadQueueList.get(currentDownloadingIndex).thumbnailPath = ""
                     downloadQueueList.get(currentDownloadingIndex).heading = ""
                     downloadQueueList.get(currentDownloadingIndex).contentShareLink =
-                        playableContentModel.data.head.headData.misc.share
+                        playableContentModel?.data?.head?.headData?.misc?.share.toString()
 
                     if (playableContentModel?.data?.head?.headData?.type != null && !TextUtils.isEmpty(
                             playableContentModel?.data?.head?.headData?.type.toString()
@@ -4694,7 +4790,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         )
                     ) {
                         downloadQueueList.get(currentDownloadingIndex).duration =
-                            playableContentModel.data.head.headData.duration.toLong()
+                            playableContentModel?.data?.head?.headData?.duration?.toLong()!!
                     }
 
                     if (playableContentModel?.data?.head?.headData?.misc?.explicit != null && !TextUtils.isEmpty(
@@ -4714,7 +4810,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     }
 
                     downloadQueueList.get(currentDownloadingIndex).restrictedDownload =
-                        playableContentModel.data.head.headData.misc.restricted_download
+                        playableContentModel?.data?.head?.headData?.misc?.restricted_download!!
 
                     AppDatabase.getInstance()?.downloadQueue()
                         ?.updateDownloadQueueItem(downloadQueueList.get(currentDownloadingIndex))
@@ -4741,7 +4837,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         )
 
                         val track = Track()
-                        track.id = downloadQueueList.get(currentDownloadingIndex).contentId?.toLong()!!
+                        track.id = downloadQueueList.get(currentDownloadingIndex).contentId?.trim()?.toLong()!!
                         track.title = downloadQueueList.get(currentDownloadingIndex).title
                         track.subTitle = downloadQueueList.get(currentDownloadingIndex).subTitle
                         track.image = downloadQueueList.get(currentDownloadingIndex).image
@@ -4929,10 +5025,16 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.musicdirectorf)
                 )
 
-                hashMap.put(
-                    EventConstant.PLAYLIST_ID_EPROPERTY,
-                    TextUtils.join(",", playableContentModel.data.head.headData.misc.pid)
-                )
+                playableContentModel?.data?.head?.headData?.misc?.pid?.let {
+                    TextUtils.join(",",
+                        it
+                    )
+                }?.let {
+                    hashMap.put(
+                        EventConstant.PLAYLIST_ID_EPROPERTY,
+                        it
+                    )
+                }
                 hashMap.put(
                     EventConstant.PLAYLIST_NAME_EPROPERTY,
                     Utils.arrayToString(playableContentModel?.data?.head?.headData?.misc?.pName)
@@ -6081,7 +6183,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
              * event property
              */
             var requestTime = DateUtils.getCurrentDateTime()
-            setLog(TAG, "getPlayableContentUrl: finalURL:${finalURL}")
+            setLog(TAG, "getPlayableUrlCOntent: finalURL:${finalURL}")
             val cacheRequest: StringRequest = object : StringRequest(
                 Method.GET,
                 finalURL, Response.Listener { response ->
@@ -6160,8 +6262,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                                 if (TextUtils.isEmpty(playableContentModel.data.head.headData.misc.url) && playableContentModel.data.body.data.url.playable.size > 0) {
 
-                                    if(BaseActivity.getIsGoldUser()){
-                                        var tmpList=playableContentModel.data.body.data.url.playable?.filter { !it.key.equals("preview")}
+                                    if(getIsGoldUser()){
+                                        val tmpList=playableContentModel.data.body.data.url.playable.filter { !it.key.equals("preview")}
 
                                         if(tmpList?.size!!>0){
                                             playableContentModel.data.head.headData.misc.url =
@@ -6277,7 +6379,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
                 }, Response.ErrorListener { error ->
                     isNextSongInProgress = false
-                    setLog(Constant.Tag, "Error: " + error.message)
+                    setLog("getPlayableUrlCOntent", "Error: " + error.message)
+
                     error.printStackTrace()
 
                     /*if (apiRetryCount < 3 && (error is TimeoutError || error is NoConnectionError)) {
@@ -6452,7 +6555,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         getString(R.string.toast_str_20),
                         MessageType.NEUTRAL, true
                     )
-                    CommonUtils.showToast(this@BaseActivity, messageModel)
+                    CommonUtils.showToast(this@BaseActivity, messageModel,"BaseActivity","updateSleepTimerTask")
                 }
             }.start()
         } else {
@@ -6487,11 +6590,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             setLog("BroadcastReceiver", "mMessageReceiver-$intent")
             if (intent != null){
                 if (onLocalBroadcastEventCallBack != null && intent.hasExtra("EVENT")){
-                    setLog("BroadcastReceiver", "Base "+intent.getIntExtra("EVENT", 0))
+                    setLog("BroadcastReceiver", "mMessageReceiver-"+intent.getIntExtra("EVENT", 0))
                     onLocalBroadcastEventCallBack?.onLocalBroadcastEventCallBack(context, intent)
-                    /*                    if (intent.getIntExtra("EVENT", 0) == Constant.AUDIO_PLAYER_RESULT_CODE){
-                                            setPlayPauseOnMiniPlayer()
-                                        }*/
                 }
             }
         }
@@ -7085,7 +7185,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         setLog("TAG", " share onStoryPlatformClick data:${data?.currentTrack}")
 
         selectedStoryDataModel = data
-        if (data.title.equals("Facebook")) {
+        if (data.title?.equals("Facebook") == true) {
             setLog("TAG", " share fb story 1: ")
             shareStoryImage(
                 CommonUtils.STORY_SHARE.FACEBOOK,
@@ -7094,7 +7194,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 data?.currentTrack?.url!!,
                 data?.currentTrack?.image!!
             )
-        } else if (data.title.equals("Instagram")) {
+        } else if (data.title?.equals("Instagram") == true) {
             shareStoryImage(
                 CommonUtils.STORY_SHARE.INSTAGRAM,
                 CommonUtils.STORY_TYPE.PHOTO,
@@ -7191,7 +7291,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         playPreviousSong()
                     }
                     setLog("ExoSourceError-2", "PlayPreviousSong")
-                } else if (nowPlayingCurrentIndex() == audioPlayer?.currentWindowIndex) {
+                }
+                else if (nowPlayingCurrentIndex() == audioPlayer?.currentWindowIndex) {
                     /*if (!songDataList.isNullOrEmpty() && songDataList?.size!! > nowPlayingCurrentIndex()){
                         setLog(
                             "callUserStreamUpdate1",
@@ -7221,16 +7322,15 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 }
 
                 maxPlayerErrorRetryCount++
-            } else {
+            }
+            else {
                 callStreamFailedEvent(error)
                 setLog("ExoSourceError-4", "callStreamFailedEvent")
             }
         }
     }
 
-    private fun callStreamFailedEvent(
-        error: PlaybackException
-    ) {
+    private fun callStreamFailedEvent(error: PlaybackException) {
         val currentIndex = nowPlayingCurrentIndex()
         if (!songDataList.isNullOrEmpty() && songDataList?.size!! > currentIndex) {
             val hashMap = HashMap<String, String>()
@@ -7559,9 +7659,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (!isAdsLoadRequestInProgress && !isAudioAdPlaying && totalSongsPlayedAfterLastAudioAd > playAudioAdsAfterCounts) {
             isAdsLoadRequestInProgress = true
             setLog("PlayerAds:-", "googleIma=> Request for ads.")
-            /*            if (companionAdSlotFrame != null) {
-                            audioPlayerService?.initializeAds(this, companionAdSlotFrame)
-                        }*/
+            if (companionAdSlotFrame != null) {
+                audioPlayerService?.initializeAds(this, companionAdSlotFrame)
+            }
             if (audioPlayerService?.imaService != null) {
                 //audioAdsLoaded(googleImaAudioAds)
                 setLog("BannerAddShowing", "True")
@@ -7575,18 +7675,124 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     }
 
     fun loadTritonAds() {
-        try {
+/*        try {
             setLog("totalSondLasPlayed " + totalSongsPlayedAfterLastAudioAd.toString() + " " +playAudioAdsAfterCounts.toString())
             if (!isAudioAdPlaying && totalSongsPlayedAfterLastAudioAd > playAudioAdsAfterCounts) {
                 isAdsLoadRequestInProgress = true
+                setLog("PlayerAds:-", "tritonAds=> Request for ads.")
+                if (mAdRequestBuilder == null) {
+                    mAdRequestBuilder = AdRequestBuilder(this)
+                    mAdLoader.listener = this
+                    mBannersWrapper = BannersWrapper(findViewById(android.R.id.content))
+                }
+//            mAdRequestBuilder?.resetQueryParameters()
+                mAdRequestBuilder?.host = Constant.AD_AUDIO_TRITON_AD_UNIT_ID
+                mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.ASSET_TYPE, AdRequestBuilder.ASSET_TYPE_VALUE_AUDIO)
+                mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.TYPE, AdRequestBuilder.TYPE_VALUE_MIDROLL)
+                mAdRequestBuilder?.addQueryParameter("scenario", "vast-multiple-media")
+
+                var station = "Hungama Music"
+                station = Constant.AD_AUDIO_TRITON_STATION
+                mAdRequestBuilder?.addQueryParameter(
+                    if (TextUtils.isDigitsOnly(station)) AdRequestBuilder.STATION_ID else AdRequestBuilder.STATION_NAME,
+                    station
+                )
+//            mAdRequestBuilder?.addQueryParameter("ttag", "service:hungamamusicapp.android")
+                mAdRequestBuilder?.addQueryParameter("banners", "300x250")
+                val addTtagArray = arrayOf("service:hungamamusicapp.android")
+                mAdRequestBuilder?.addTtags(addTtagArray)
+                val adRequest = mAdRequestBuilder?.build()
+                if (adRequest != null) {
+                    setLog("PlayerAds:-", "tritonAds=> $adRequest")
+                }
+//                }
+
+                setLog("PlayerAds:-", "tritonAds=> Showing the ad from a request")
+                mAdRequestBuilder?.let {
+                    loadAdRequest(it)
+                }
+
             }
         }catch (e:Exception){
 
+        }*/
+    }
+
+/*    private fun loadAdRequest(adRequestBuilder: AdRequestBuilder) {
+        setLog("PlayerAds:-", "tritonAds=> Loading ad request-1")
+        stopTritonAudioAd()
+        setLog("PlayerAds:-", "tritonAds=> Loading ad request-2")
+        mAdLoader.load(adRequestBuilder)
+    }
+
+    override fun onAdLoaded(adLoader: AdLoader, ad: Bundle) {
+        setLog("CheckAddData", Gson().toJson(ad))
+
+        if (ad == null || ad.isEmpty()) {
+            audioAdsOnError(tritonAudioAds)
+            val audioAdPreference = CommonUtils.getAudioAdPreference()
+            setLog(
+                "PlayerAds:-",
+                "loadAudioAds: onAdLoaded-tritonAds-audioAdPreference:${audioAdPreference}"
+            )
+            if (audioAdPreference.firstPriority.equals("google", true)) {
+                setLog("PlayerAds:-", "loadInterstrialAds")
+                loadInterstitialAds()
+            } else {
+                loadGoogleImaAds()
+            }
+        } else {
+            setLog("PlayerAds:-", "imageAdd " + Gson().toJson(ad))
+            mBannersWrapper?.showAd(ad)
+            val mimeType: String? = ad.getString(Ad.MIME_TYPE)
+            setLog("PlayerAdsshaalh", mimeType.toString() + " \n" + Gson().toJson(ad))
+
+            if (mimeType == null) {
+                setLog("PlayerAds:-", "tritonAds=> Warning: No audio/video")
+                audioAdsOnError(tritonAudioAds)
+                val audioAdPreference = CommonUtils.getAudioAdPreference()
+                setLog(
+                    "PlayerAds:-",
+                    "loadAudioAds: onAdLoaded-tritonAds-audioAdPreference:${audioAdPreference}"
+                )
+                if (audioAdPreference.firstPriority.equals("google", true)) {
+                    setLog("PlayerAds:-", "loadInterstrialAds")
+                    loadInterstitialAds()
+                } else {
+                    loadGoogleImaAds()
+                }
+            } else if (mimeType.startsWith("video")) {
+                //playVideoAd(ad)
+                audioAdsOnError(tritonAudioAds)
+            } else if (mimeType.startsWith("audio")) {
+                playAudioAd(ad)
+            }
         }
     }
 
+    override fun onAdLoadingError(adLoader: AdLoader?, errorCode: Int) {
+        stopTritonAudioAd()
+        audioAdsOnError(tritonAudioAds)
+        setLog(
+            "PlayerAds:-",
+            "tritonAds=> Ad loading FAILED: " + AdLoader.debugErrorToStr(errorCode)
+        )
+        val audioAdPreference = CommonUtils.getAudioAdPreference()
+        setLog(
+            "PlayerAds:-",
+            "loadAudioAds: onAdLoadingError-tritonAds-audioAdPreference:${audioAdPreference}"
+        )
+        if (audioAdPreference.firstPriority.equals("google", true)) {
+            setLog("PlayerAds:-", "loadInterstrialAds")
+            loadInterstitialAds()
+        } else {
+            loadGoogleImaAds()
+        }
+
+    }*/
+
     private fun playAudioAd(ad: Bundle) {
-        try {
+/*        try {
             setLog("PlayerAds:-", "tritonAds=> Ad buffering")
             mAudioPlayer = MediaPlayer()
             //mAudioPlayer?.setAudioStreamType(AudioManager.STREAM_MUSIC)
@@ -7598,11 +7804,15 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             mAudioPlayer.setOnPreparedListener { mp ->
                 setLog("PlayerAds:-", "tritonAds=> Ad started.")
                 mp.start()
+                Ad.trackImpression(ad)
                 pausePlayer()
                 audioAdsStarted(tritonAudioAds)
             }
+            val mediaUrl = ad.getString(Ad.URL)
+            mAudioPlayer.setDataSource(mediaUrl)
+            mAudioPlayer.prepareAsync()
 
-            /*val renderersFactory = DefaultRenderersFactory(this)
+            val renderersFactory = DefaultRenderersFactory(this)
             var simpleExoplayer = SimpleExoPlayer.Builder(this,renderersFactory).setHandleAudioBecomingNoisy(true)
                 .build()
             audioAdUrl = ad.getString(Ad.URL).toString()
@@ -7615,11 +7825,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 simpleExoplayer.setMediaSource(mediaSource)
                 simpleExoplayer.prepare()
                 simpleExoplayer.playWhenReady = true
-            }*/
+            }
         } catch (e: Exception) {
             setLog("PlayerAds:-", "tritonAds=> Audio prepare exception: $e")
             updateAudioAdPlayingStatusAndProvider(false, tritonAudioAds)
-        }
+        }*/
     }
 
     override fun onCompletion(mp: MediaPlayer?) {
@@ -7845,20 +8055,20 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         if (isAudioAdPlaying) {
             if (getCurrentAudioAdProvider() == googleImaAudioAds) {
                 //setLog("PlayerAds:-", "googleIma=> Ad banner show.")
-//                companionAdSlotFrame?.show()
+                companionAdSlotFrame?.show()
                 mBannersWrapper?.clear()
             } else if (getCurrentAudioAdProvider() == tritonAudioAds) {
                 setLog("PlayerAds:-", "tritonAds=> Ad banner show.")
-//                companionAdSlotFrame?.hide()
+                companionAdSlotFrame?.hide()
             } else {
                 //setLog("PlayerAds:-", "showHideAudioAdView() -- All Ad banner hide.")
-//                companionAdSlotFrame?.hide()
+                companionAdSlotFrame?.hide()
                 mBannersWrapper?.clear()
             }
         } else {
             //setLog("PlayerAds:-", "showHideAudioAdView() -- No audio Ad playing.")
             //setLog("PlayerAds:-", "showHideAudioAdView() -- All Ad banner hide.")
-//            companionAdSlotFrame?.hide()
+            companionAdSlotFrame?.hide()
             mBannersWrapper?.clear()
         }
     }
@@ -8445,7 +8655,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
 
     private fun updateUserCoins() {
         CoroutineScope(Dispatchers.IO).launch {
-            var userCoinDetailRespModel = SharedPrefHelper?.getInstance()?.getObjectUserCoin(
+            var userCoinDetailRespModel = SharedPrefHelper.getInstance()?.getObjectUserCoin(
                 PrefConstant.USER_COIN
             )
 
@@ -8537,7 +8747,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 }
 
                 if (!TextUtils.isEmpty(songDataList?.get(playingIndex)?.favCount)) {
-                    dq.f_fav_count = songDataList.get(playingIndex).favCount
+                    dq.f_fav_count = songDataList?.get(playingIndex)?.favCount.toString()
                 }
 
 
@@ -9099,7 +9309,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                 param.put("totalDuration", "0")
                             }
 
-                            if (playedDuration!! > 0) {
+                            if (playedDuration > 0) {
                                 param.put("playDuration", "" + TimeUnit.MILLISECONDS.toSeconds(playedDuration))
                             } else {
                                 param.put("playDuration", "0")
@@ -9118,7 +9328,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                                 "userId",SharedPrefHelper.getInstance().getUserId()!!)
 
                             //setLog("updateUserAudioStream", "callUserStreamUpdate1 param:" + param)
-                            if (ConnectionUtil(this@BaseActivity).isOnline(false)){
+                            if (ConnectionUtil(this@BaseActivity).isOnline(false) && playerType == "5" || playerType == "22"){
                                 musicViewModel?.updateUserAudioStream(
                                     this@BaseActivity,
                                     param
@@ -9257,7 +9467,6 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
     }
 
-    var durationHandler: Handler? = null
     private fun startDurationCallback() {
         if (durationHandler != null) {
             removeDurationCallback()
@@ -9274,19 +9483,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
     }
 
-    private val updateDurationTask = object : Runnable {
-        override fun run() {
-            updateDuration()
-            durationHandler?.postDelayed(this, 1000)//1 seconds
-            if (!HungamaMusicApp.getInstance().activityVisible) {
-                if (Itype50PagerAdapter.callPlayerList()?.isPlaying == true) {
-                    Itype50PagerAdapter.callPlayerList()?.pause()
-                    Itype50PagerAdapter.isMute = true
-                    Itype50PagerAdapter.currentVolume = 0F
-                }
-            }
-        }
-    }
+
 
     private fun updateDuration() {
         if (audioPlayer != null && audioPlayer?.isPlaying == true) {
@@ -9296,15 +9493,13 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     totalPlayedSongDuration = 0
                 }
                 val localCount = totalGetted - (totalPlayedSongDuration/1000/60)
-                setLog("kagkfa", trackData.movierights.toString() + " " + trackData.contentType + " $localCount")
-                if (!trackData.movierights.contains("AMOD") && trackData.contentType == ContentTypes.AUDIO.value && localCount>0) {
+                if (!trackData.movierights.contains("AMOD") && (trackData.contentType == ContentTypes.AUDIO.value || trackData.contentType == ContentTypes.RADIO.value || trackData.contentType == ContentTypes.Live_Radio.value) && localCount>0) {
                     totalPlayedSongDuration += 1000
                 }
             }
 
             if (HungamaMusicApp.getInstance().activityVisible) {
                 addFGTime()
-                setLog("countFgTime", "5  " + totalPlayedSongDuration.toString())
             }
             else {
                 addBGTime()
@@ -9312,29 +9507,31 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             if (!CommonUtils.isUserHasGoldSubscription() && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
 
                 val sondDbData = AppDatabase.getInstance()?.songDuration()?.getSongDuration()
-                if (sondDbData?.Is_first_stream_started == 0 && sondDbData.stream_max_min_allowed!! > 0) {
-                    val currentDate: Date = Calendar.getInstance(TimeZone.getDefault()).time
-                    val inputFormat = SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss.SSS'Z'")
-                    val formattedDate = inputFormat.format(currentDate)
-                    sondDbData.Is_first_stream_started = 1
-                    sondDbData.first_stream_start_time = inputFormat.parse(formattedDate)
+                val streamMaxMinAllow : Int? = sondDbData?.stream_max_min_allowed
+                if (streamMaxMinAllow != null) {
+                    if (sondDbData?.Is_first_stream_started == 0 && streamMaxMinAllow > 0) {
+                        val currentDate: Date = Calendar.getInstance(TimeZone.getDefault()).time
+                        val inputFormat = SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss.SSS'Z'")
+                        val formattedDate = inputFormat.format(currentDate)
+                        sondDbData.Is_first_stream_started = 1
+                        sondDbData.first_stream_start_time = inputFormat.parse(formattedDate)
 
-                    AppDatabase.getInstance()?.songDuration()?.updateSongDuration(sondDbData)
+                        AppDatabase.getInstance()?.songDuration()?.updateSongDuration(sondDbData)
+                    }
                 }
             }
             if (!songDataList.isNullOrEmpty() && songDataList.size > nowPlayingCurrentIndex()) {
                 val list = durationMap.get(songDataList.get(nowPlayingCurrentIndex()).id.toString())
-                setLog("updatedDurationMapList", "list-${list.toString()}")
             }
-//            setLog("SongDurationData", " updateDuration $totalPlayedSongDuration")
-            if (!CommonUtils.isUserHasGoldSubscription() && !trackData.movierights.contains("AMOD") && trackData.contentType == ContentTypes.AUDIO.value && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
+            setLog("printContentType", trackData.contentType.toString())
+            if (!CommonUtils.isUserHasGoldSubscription() && (trackData.contentType == ContentTypes.AUDIO.value || trackData.contentType == ContentTypes.RADIO.value || trackData.contentType == ContentTypes.Live_Radio.value) &&
+                !trackData.movierights.contains("AMOD") && CommonUtils.getSongDurationConfig().enable_minutes_quota) {
                 updateTimer()
             }
         }
     }
 
     fun updateTimer(){
-
         localDuration = totalGetted - (totalPlayedSongDuration/1000/60)
         maxMinAllowed = localDuration
         if (isTouch) {
@@ -9350,16 +9547,14 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 player11?.pause()
             }
         }
+        setLog("ahsdgkalgla", localDuration.toString() + " " +showAd.toString() + " " + isTouch.toString())
         if (localDuration <= 0){
             localDuration = 0
             SharedPrefHelper.getInstance().getUserId()
                 ?.let { AppDatabase.getInstance()?.songDuration()?.updateUserStreamedMin(0, it) }
-            val global_limited_stream_preview_quota = CommonUtils.getSongDurationConfig().global_limited_stream_preview_quota + 1
-            setLog("BaseActivityLifec ", showAd.toString() + " " + isTouch + " " + CommonUtils.getSongDurationConfig().enable_minutes_quota)
-
+            val global_limited_stream_preview_quota = CommonUtils.getSongDurationConfig().global_limited_stream_preview_quota
 
             if (showAd == global_limited_stream_preview_quota && isTouch){
-                setLog("BaseActivityLifec ", "AudioId " + CommonUtils.getNudgeAudioId())
                 pausePlayer()
                 showAudioAd(true)
                 if (HungamaMusicApp.getInstance().activityVisible) {
@@ -9373,17 +9568,23 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             } else {
                                 songPreviewModel.visibility = View.GONE
                                 newPreviewModel.visibility = View.VISIBLE
-
                                 showjson()
                             }
+                            eventviewFunction()
+                            setVisibleTabLayouts(false)
                         }
                     }
                     else{
-                        if (!supportFragmentManager.isDestroyed)
-                            subscriptionDialogBottomsheetFragment.show(supportFragmentManager, "subscriptionDialogBottomsheetFragment")
+                        if (!supportFragmentManager.isDestroyed) {
+                            initiaizeBottomSheet()
+                            subscriptionDialogBottomsheetFragment.show(
+                                supportFragmentManager,
+                                "subscriptionDialogBottomsheetFragment"
+                            )
+
+                        }
                     }
                 }
-
             }
             else if(showAd in 1.. global_limited_stream_preview_quota && isTouch) {
                 if (player11 != null){
@@ -9397,6 +9598,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                         includeFreeMinute.visibility = View.GONE
                         songPreviewModel.visibility = View.GONE
                         newPreviewModel.visibility = View.GONE
+                        setVisibleTabLayouts(true)
                     }
                 }
             }
@@ -9409,9 +9611,12 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                             includeFreeMinute.visibility = View.VISIBLE
                             songPreviewModel.visibility = View.GONE
                             newPreviewModel.visibility = View.GONE
+                            setVisibleTabLayouts(false)
+                            eventviewFunction()
                         }
                     } else {
                         if(HungamaMusicApp.getInstance().activityVisible && !supportFragmentManager.isDestroyed) {
+                            initiaizeBottomSheet()
                             subscriptionDialogBottomsheetFragment.show(supportFragmentManager, "subscriptionDialogBottomsheetFragment")
                         }
                     }
@@ -9422,20 +9627,21 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             BaseActivity.tvSleepTimer.text = if (localDuration<10)"0$localDuration" else localDuration.toString()
         }
 
-        /*
-                    var progress = if(maxMinAllowed>0)((localDuration.toDouble().div(maxMinAllowed) * 100)) else 0
-                    progress = "100".toDouble().minus(progress.toDouble())
+        val streamMaxMinAllowed : Int? = songDuration.stream_max_min_allowed
+        if (streamMaxMinAllowed != null) {
+            var progress =
+                if (streamMaxMinAllowed > 0) ((maxMinAllowed.toDouble().div(
+                    streamMaxMinAllowed
+                ) * 100)) else 0
+            progress = "100".toDouble().minus(progress.toDouble())
+            if (BaseActivity.pbDuration != null)
+                BaseActivity.pbDuration.secondaryProgress = progress.toInt()
+        }
 
-                var progress = if(CommonUtils.getSongDurationConfig().global_limited_minutes_quota>0)((localDuration.toDouble().div(CommonUtils.getSongDurationConfig().global_limited_minutes_quota) * 100)) else 0
-        */
-
-        var progress = if(songDuration.stream_max_min_allowed!! >0)((maxMinAllowed.toDouble().div(
-            songDuration.stream_max_min_allowed!!) * 100)) else 0
-        progress = "100".toDouble().minus(progress.toDouble())
-        setLog("SongDurationData", "Swipable " + progress.toString() + " " + songDuration.stream_max_min_allowed.toString() + " " + maxMinAllowed.toString())
-
-        if (BaseActivity.pbDuration != null)
-            BaseActivity.pbDuration.secondaryProgress = progress.toInt()
+    }
+    fun initiaizeBottomSheet(){
+        subscriptionDialogBottomsheetFragment = SubscriptionDialogBottomsheetFragmentFreeMinute(this)
+        subscriptionDialogBottomsheetFragment.isCancelable = false
     }
 
     fun showAudioAd(isNewPreviewShow:Boolean){
@@ -9455,6 +9661,30 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             player11?.prepare()
             player11?.play()
         }
+    }
+
+    fun eventviewFunction() {
+
+        val hashMapPageView = HashMap<String, String>()
+        hashMapPageView[EventConstant.TYPE_EPROPERTY] = "nudge_minute_quota_exhausted"
+        hashMapPageView[EventConstant.SCREEN_NAME_EPROPERTY] = Constant.screen_name
+
+        if (CommonUtils.isUserHasEliableFreeContent()) {
+            hashMapPageView[EventConstant.freeTrialEligibility] = "ft"
+        } else hashMapPageView[EventConstant.freeTrialEligibility] = "nonft"
+
+        hashMapPageView[EventConstant.plan_id] = CommonUtils.getNudgePlanId()
+        val playableContentViewModel1: PlayableContentViewModel = PlayableContentViewModel()
+        playableContentViewModel1.getPlanInfo(this, CommonUtils.getNudgePlanId())
+        playableContentViewModel1.planInfoData.observe(this, Observer {
+            hashMapPageView[EventConstant.button_text_1] =
+                CommonUtils.getButtonFromFirebase(this, CommonUtils.getSongDurationConfig().nudge_minute_quota_exhausted.ft,
+                    CommonUtils.getSongDurationConfig().nudge_minute_quota_exhausted.nonft,it)
+            hashMapPageView[EventConstant.button_text_2] = "See All"
+
+            EventManager.getInstance().sendEvent(NudgeBannerView(hashMapPageView))
+
+        })
     }
 
     fun getTrackData(playableContentModel: PlayableContentModel):Track
@@ -9548,7 +9778,7 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
             if (TextUtils.isEmpty(songDataList?.get(nextContentIndex)?.url) || isForcefullyCallApi) {
                 setUpPlayableContentListViewModel(
                     songDataList.get(nextContentIndex).id,
-                    songDataList.get(nextContentIndex)?.playerType?.toInt(),
+                    songDataList?.get(nextContentIndex)?.playerType?.toInt(),
                     isPause
                 )
 
@@ -9890,7 +10120,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     }
 
                 }
-
+                stopAudioPlayer()
+                isChromeCasted = true
             }
 
             override fun onCastSessionUnavailable() {
@@ -9902,13 +10133,38 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 audioPlayer?.let {
                     setAudioCurrentPlayer((audioPlayer as ExoPlayer))
                 }
-
+                isChromeCasted = false
 
             }
 
         })
 
+        val mediaRouteSelector = MediaRouteSelector.Builder()
+            .addControlCategory(CastMediaControlIntent.categoryForCast(getString(R.string.app_id)))
+            .build()
+
+        mediaRouter = MediaRouter.getInstance(applicationContext)
+        val mediaRouterCallback = object : MediaRouter.Callback() {
+            override fun onRouteSelected(router: MediaRouter, route: MediaRouter.RouteInfo) {
+                super.onRouteSelected(router, route)
+                if (route.isEnabled) {
+
+
+                }
+
+            }
+            override fun onRouteUnselected(
+                router: MediaRouter,
+                route: MediaRouter.RouteInfo,
+                reason: Int
+            ) {
+                super.onRouteUnselected(router, route, reason)
+
+            }
+
+        }
     }
+
 
 
     public fun setAudioCurrentPlayer(mCurrentPlayer: Player) {
@@ -10010,18 +10266,17 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                     setLog("GM-SDK-APP", "onPointsAdded: gcEventModel:${gcEventModel?.toString()}")
 
                     if (gcEventModel.isDisplay!!) {
-                        if (gcEventModel?.popupType?.contains("toast") == true) {
+                        if (gcEventModel.popupType?.contains("toast") == true) {
                             var msg = ""
                             if (!TextUtils.isEmpty(gcEventModel.popupText)) {
-                                msg = gcEventModel.popupText.toString()
-                                    .replace("@coin_amount", "" + added)
+                                msg = gcEventModel.popupText.replace("@coin_amount", "" + added)
                             } else {
                                 msg = "+ $added"
                             }
                             setLog("GM-SDK-APP", "onPointsAdded: msg:${msg}")
                             val messageModel = MessageModel(msg, MessageType.GAMIFICATION, true)
-                            CommonUtils.showToast(this!!, messageModel)
-                        } else if (gcEventModel?.popupType?.contains("popup", true) == true) {
+                            CommonUtils.showToast(this, messageModel,"BaseActivity","gamificationOnPointsAdded")
+                        } else if (gcEventModel.popupType.contains("popup", true) == true) {
                             gcEventModel.addedCoin = added
                             gcEventModel.totalCoin = total
                             CommonUtils.displayPopup(this, gcEventModel)

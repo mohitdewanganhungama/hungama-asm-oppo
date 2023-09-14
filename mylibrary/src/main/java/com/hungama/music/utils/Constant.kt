@@ -575,5 +575,6 @@ object Constant {
    const val nudge_home_header_banner ="nudge_home_header_banner"
     const val drawer_default_buy_hungama_gold ="drawer_default_buy_hungama_gold"
     const val SONG_DURATION_BROADCAST ="songDurationBroadcast"
+    const val CALL_BOTTOM_SHEET ="callBottomSheet"
 
 }

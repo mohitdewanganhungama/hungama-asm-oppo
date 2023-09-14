@@ -102,6 +102,7 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
     var appLinkUrl = ""
     var liveShowArtistId = ""
     var queryParam = ""
+    var nonRepeat = 0
 
     companion object {
         var lastItemClicked = ""
@@ -258,6 +259,23 @@ class MainActivity : BaseActivity(), BaseActivity.OnLocalBroadcastEventCallBack 
             intent.putExtra("url", url)
             startActivity(intent)
         }
+
+        var receiver : BroadcastReceiver? = null
+        receiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                if (nonRepeat == 0) {
+                    CommonUtils.openSubscriptionDialogPopupNew(
+                        this@MainActivity)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        delay(5000)
+                        nonRepeat = 0
+                    }
+                }
+                nonRepeat += 1
+            }
+        }
+        val lbm = LocalBroadcastManager.getInstance(this)
+        lbm.registerReceiver(receiver as BroadcastReceiver, IntentFilter(Constant.CALL_BOTTOM_SHEET))
     }
 
     private fun checkBatteryPermisssion() {

@@ -64,7 +64,6 @@ import com.appsflyer.share.ShareInviteHelper
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.admanager.AdManagerAdRequest
 import com.google.android.gms.ads.admanager.AdManagerAdView
-import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
@@ -653,7 +652,7 @@ object CommonUtils {
                         val bitmap: Bitmap? = result.await()
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
-                                color = palette!!.getMutedColor(R.color.colorPrimary)
+                                color = palette!!.getMutedColor(com.facebook.R.attr.colorPrimary)
                                 view.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
 //                    view.setBackgroundColor(color)
 //                    rootLayout.setBackground(getGradientDrawable(getTopColor(palette), getCenterLightColor(palette), getBottomDarkColor(palette)))
@@ -692,7 +691,7 @@ object CommonUtils {
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
 //                                color = palette!!.getMutedColor(R.attr.colorPrimary)
-                                color = palette!!.getMutedColor(R.color.colorPrimary)
+                                color = palette!!.getMutedColor(com.facebook.R.attr.colorPrimary)
                                 //rootLayout.setBackgroundColor(color)
                                 rootLayout.background = getGradientDrawable(
                                     getTopColor(palette),
@@ -734,7 +733,7 @@ object CommonUtils {
                         if (status && bitmap != null) {
                             Palette.from(bitmap).generate { palette ->
                                 //color = palette!!.getMutedColor(R.attr.colorPrimary)
-                                color = palette!!.getMutedColor(R.color.colorPrimary)
+                                color = palette!!.getMutedColor(com.facebook.R.attr.colorPrimary)
                                 //rootLayout.setBackgroundColor(color)
                                 rootLayout.background = getGradientDrawable(
                                     getTopColor(palette),
@@ -2887,6 +2886,25 @@ object CommonUtils {
         return commaSeparatedString.split(",").map { it.trim() }
     }
 
+    fun openSubscriptionDialogPopupNew(context: Context) {
+        try {
+            setLog("lahsglidhsaf", "calling...")
+            BaseActivity.subscriptionDialogBottomsheetFragment = SubscriptionDialogBottomsheetFragmentFreeMinute(context)
+
+            if (BaseActivity.subscriptionDialogBottomsheetFragment.isVisible){
+                BaseActivity.subscriptionDialogBottomsheetFragment.dismiss()
+            }
+
+            BaseActivity.subscriptionDialogBottomsheetFragment.show(
+                (context as AppCompatActivity).supportFragmentManager,
+                "subscriptionDialogBottomsheetFragment"
+            )
+
+        } catch (e: Exception) {
+
+        }
+    }
+
     fun openSubscriptionDialogPopup(
         context: Context,
         planName: String,
@@ -4605,7 +4623,7 @@ object CommonUtils {
 
     }
 
-    fun showToast(context: Context, messageModel: MessageModel) {
+    fun showToast(context: Context, messageModel: MessageModel,page_name:String="",api_name:String="",error_code:String="",response_code:String="",url:String="",response_time:String="") {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 var time = Toast.LENGTH_LONG
@@ -6238,4 +6256,29 @@ object CommonUtils {
             btnSeeAllPlan.text = context.getString(R.string.btn_seeall_plan_1)
         }
     }
+
+    fun getButtonFromFirebase(context: Context, ft: SongDurationConfigModel.Ft?, nonft: SongDurationConfigModel.Nonft?, it: Resource<PlanInfoContentModel>) :String{
+        var buttonString = ""
+        if (isUserHasEliableFreeContent() && ft?.button_text_1.equals("macro_payment_buy_ft_cta")) {
+
+            buttonString = String.format(context.getString(R.string.macro_payment_buy_ft_cta),it.data?.planInfo?.planName?.lowercase())
+
+        } else if (isUserHasEliableFreeContent() && ft?.button_text_1.equals("macro_payment_buy_nonft_cta")
+        ) {
+            buttonString = String.format(context.getString(R.string.macro_payment_buy_nonft_cta),it.data?.planInfo?.planCurrencySymbol,if (it.data?.planInfo?.planCurrency == "INR") it.data?.planInfo?.planPrice.toString().replace(".0","") else it.data?.planInfo?.planPrice,it.data?.planInfo?.planName?.lowercase())
+
+        }else if (!isUserHasEliableFreeContent() && nonft?.button_text_1.equals("macro_payment_buy_nonft_cta")
+        ) {
+            buttonString = String.format(context.getString(R.string.macro_payment_buy_nonft_cta),it.data?.planInfo?.planCurrencySymbol,if (it.data?.planInfo?.planCurrency == "INR") it.data?.planInfo?.planPrice.toString().replace(".0","") else it.data?.planInfo?.planPrice,it.data?.planInfo?.planName?.lowercase())
+
+        }else if (!isUserHasEliableFreeContent() && nonft?.button_text_1.equals("macro_payment_buy_ft_cta")) {
+
+            buttonString = String.format(context.getString(R.string.macro_payment_buy_ft_cta),it.data?.planInfo?.planName?.lowercase())
+
+        } else {
+            buttonString = context.getString(R.string.drawer_download_all_CTA)
+        }
+        return  buttonString
+    }
+
 }

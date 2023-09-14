@@ -900,6 +900,9 @@ class MusicChildFragment : BaseFragment(), OnParentItemClickListener, TracksCont
                 }else if (playType == Constant.CONTENT_MUSIC){
                     track.contentType = ContentTypes.AUDIO.value
                 }
+                else if(playType == Constant.CONTENT_LIVE_RADIO){
+                    track.contentType = ContentTypes.Live_Radio.value
+                }
             }
             if(playableItem?.heading?.contains("Good Morning")!!){
                 var displayName = ""

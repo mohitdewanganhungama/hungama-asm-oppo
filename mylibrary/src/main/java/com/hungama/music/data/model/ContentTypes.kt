@@ -11,7 +11,8 @@ enum class ContentTypes(val contentTypeName: String, val value: Int) {
     RADIO("Radio", 7),
     LIVE_CONCERT("Live Concert", 8),
     TV_SHOWS("Tv Show", 9),
-    Audio_Ad("Audio Ad", 10);
+    Audio_Ad("Audio Ad", 10),
+    Live_Radio("Live Radio", 11);
 
     companion object {
 

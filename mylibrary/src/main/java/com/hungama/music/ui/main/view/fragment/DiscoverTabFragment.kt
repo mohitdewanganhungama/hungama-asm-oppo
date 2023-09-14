@@ -1164,6 +1164,15 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
             }else if (playType == Constant.CONTENT_MUSIC){
                 track.contentType = ContentTypes.AUDIO.value
             }
+            else if (playType == Constant.CONTENT_RADIO ||
+                playType == Constant.CONTENT_ARTIST_RADIO ||
+                playType == Constant.CONTENT_ON_DEMAND_RADIO ||
+                playType == Constant.CONTENT_MOOD_RADIO){
+                track.contentType = ContentTypes.RADIO.value
+            }
+            else if(playType == Constant.CONTENT_LIVE_RADIO){
+                track.contentType = ContentTypes.Live_Radio.value
+            }
         }
 
         if(playableItem?.heading?.contains("Good Morning")!!){
@@ -1308,6 +1317,17 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
         if (playableItem1.items?.get(position)?.data?.misc?.attributeCensorRating != null){
             track.attributeCensorRating =
                 playableItem1.items?.get(position)?.data?.misc?.attributeCensorRating.toString()
+        }
+
+        val playType = (activity as MainActivity).getPlayerType(track.playerType)
+        if (playType == Constant.CONTENT_RADIO ||
+            playType == Constant.CONTENT_ARTIST_RADIO ||
+            playType == Constant.CONTENT_ON_DEMAND_RADIO ||
+            playType == Constant.CONTENT_MOOD_RADIO){
+            track.contentType = ContentTypes.RADIO.value
+        }
+        else if(playType == Constant.CONTENT_LIVE_RADIO){
+            track.contentType = ContentTypes.Live_Radio.value
         }
 
         if (playableContentModel != null){

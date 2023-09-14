@@ -167,7 +167,12 @@ class PaymentWebViewActivity : AppCompatActivity() {
                     setLog(TAG, "shouldOverrideUrlLoading: "+UPI_APP_PACKAGE_NAME)
                     setLog("UpiAppPackage", UPI_APP_PACKAGE_NAME.toString())
                     val upiPayIntent = Intent(Intent.ACTION_VIEW)
-                    upiPayIntent.data = request?.url
+//                    if(request?.url.toString().contains("com.phonepe.app")){
+                    upiPayIntent.data = SplitPhonepeUrl(request?.url.toString())
+//                    }else upiPayIntent.data = request?.url
+
+
+                    //phonepe
                     upiPayIntent.setPackage(UPI_APP_PACKAGE_NAME)
                     val UPI_PAYMENT_REQUEST_CODE = 0
 
@@ -877,5 +882,14 @@ class PaymentWebViewActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
         super.onBackPressed()
+    }
+
+    fun SplitPhonepeUrl(url: String): Uri {
+
+        if(url.contains("autopay=true")) {
+            val split = url.split("&package=com.phonepe.app").toTypedArray()
+            return split[0].toUri()
+        }else return url.toUri()
+
     }
 }
