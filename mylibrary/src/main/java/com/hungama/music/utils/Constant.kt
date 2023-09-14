@@ -46,6 +46,8 @@ object Constant {
     var VERSION = ""
     var screen_name= ""
 
+    var notify = false
+
     /**
      * for test unit id
      */

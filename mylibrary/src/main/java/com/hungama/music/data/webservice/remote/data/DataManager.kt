@@ -457,10 +457,12 @@ class DataManager {
                         WSConstants.WS_HEADER_CONTENT_TYPE,
                         WSConstants.WS_HEADER_CONTENT_TYPE_JSON
                     )
-                    params.put(
-                        WSConstants.PAY_API_KEY,
-                        WSConstants.PAY_API_KEY_VALUE,
-                    )
+//                    if(!url.contains("podcast",true))
+                        params.put(
+                            WSConstants.PAY_API_KEY,
+                            WSConstants.PAY_API_KEY_VALUE,
+                        )
+
                     if(MainActivity.lastBottomItemPosClicked==0){
                         params.put(
                             WSConstants.HEADER_IDENTIFIER_KEY,

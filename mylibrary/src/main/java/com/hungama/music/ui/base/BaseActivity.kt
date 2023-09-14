@@ -577,8 +577,8 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 if (playbackState == Player.STATE_READY){
                     pausePlayer()
                     m_view_papger.setOnClickListener(null)
-/*                    if(BaseFragment.isCastPlayerAudio)
-                        BaseFragment.castPlayer?.let { setChromeCastForAudioAd(it) }*/
+                    /*                    if(BaseFragment.isCastPlayerAudio)
+                                            BaseFragment.castPlayer?.let { setChromeCastForAudioAd(it) }*/
                 }
                 else if(playbackState == Player.STATE_ENDED){
                     setTouchData()
@@ -1061,11 +1061,11 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
         }
 
 
-/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val serviceIntent = Intent(this, SongDurationService::class.java)
-            serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
-            startForegroundService(serviceIntent)
-        }*/
+        /*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    val serviceIntent = Intent(this, SongDurationService::class.java)
+                    serviceIntent.putExtra("songDurationData", (forgroundPlayed + totalBG).toString())
+                    startForegroundService(serviceIntent)
+                }*/
         setLog("showUpdateRequest", " setSong " + totalPlayedSongDuration.toString())
 
         if(!CommonUtils.isUserHasGoldSubscription()) {
@@ -1215,33 +1215,33 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     }
 
 
-/*    fun fragmentonBackPressed(fm: FragmentManager): Boolean {
-        if (fm != null) {
-            setLog(TAG, "fragmentonBackPressed: 1")
-            if (fm.getBackStackEntryCount() > 0) {
-                setLog(TAG, "fragmentonBackPressed: 2")
-                fm.popBackStack()
-                return true
-            }
-            val fragList: List<Fragment> = fm.getFragments()
-            if (fragList != null && fragList.size > 0) {
-                for (frag in fragList) {
-                    if (frag == null) {
-                        continue
-                    }
-                    if (frag.isVisible) {
-                        if (fragmentonBackPressed(frag.childFragmentManager)) {
-                            setLog(TAG, "fragmentonBackPressed: 3")
-                            return true
+    /*    fun fragmentonBackPressed(fm: FragmentManager): Boolean {
+            if (fm != null) {
+                setLog(TAG, "fragmentonBackPressed: 1")
+                if (fm.getBackStackEntryCount() > 0) {
+                    setLog(TAG, "fragmentonBackPressed: 2")
+                    fm.popBackStack()
+                    return true
+                }
+                val fragList: List<Fragment> = fm.getFragments()
+                if (fragList != null && fragList.size > 0) {
+                    for (frag in fragList) {
+                        if (frag == null) {
+                            continue
+                        }
+                        if (frag.isVisible) {
+                            if (fragmentonBackPressed(frag.childFragmentManager)) {
+                                setLog(TAG, "fragmentonBackPressed: 3")
+                                return true
+                            }
                         }
                     }
                 }
+            } else {
+                setLog(TAG, "fragmentonBackPressed: null")
             }
-        } else {
-            setLog(TAG, "fragmentonBackPressed: null")
-        }
-        return false
-    }*/
+            return false
+        }*/
 
 
     override fun onBackPressed() {
@@ -2079,9 +2079,9 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 )
                 callUserStreamUpdate(-1, songDataList?.get(nowPlayingCurrentIndex()), nowPlayingCurrentIndex())
             }
-/*        if (boundToService) {
-            //pausePlayer()
-            *//*playerControlView.player = null
+            /*        if (boundToService) {
+                        //pausePlayer()
+                        *//*playerControlView.player = null
             shortPlayerControlView.player = null
             player_view.player = null
             audioPlayer?.removeListener(this)*//*
@@ -7675,80 +7675,60 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
     }
 
     fun loadTritonAds() {
-/*        try {
-            setLog("totalSondLasPlayed " + totalSongsPlayedAfterLastAudioAd.toString() + " " +playAudioAdsAfterCounts.toString())
-            if (!isAudioAdPlaying && totalSongsPlayedAfterLastAudioAd > playAudioAdsAfterCounts) {
-                isAdsLoadRequestInProgress = true
-                setLog("PlayerAds:-", "tritonAds=> Request for ads.")
-                if (mAdRequestBuilder == null) {
-                    mAdRequestBuilder = AdRequestBuilder(this)
-                    mAdLoader.listener = this
-                    mBannersWrapper = BannersWrapper(findViewById(android.R.id.content))
-                }
-//            mAdRequestBuilder?.resetQueryParameters()
-                mAdRequestBuilder?.host = Constant.AD_AUDIO_TRITON_AD_UNIT_ID
-                mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.ASSET_TYPE, AdRequestBuilder.ASSET_TYPE_VALUE_AUDIO)
-                mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.TYPE, AdRequestBuilder.TYPE_VALUE_MIDROLL)
-                mAdRequestBuilder?.addQueryParameter("scenario", "vast-multiple-media")
+        /*        try {
+                    setLog("totalSondLasPlayed " + totalSongsPlayedAfterLastAudioAd.toString() + " " +playAudioAdsAfterCounts.toString())
+                    if (!isAudioAdPlaying && totalSongsPlayedAfterLastAudioAd > playAudioAdsAfterCounts) {
+                        isAdsLoadRequestInProgress = true
+                        setLog("PlayerAds:-", "tritonAds=> Request for ads.")
+                        if (mAdRequestBuilder == null) {
+                            mAdRequestBuilder = AdRequestBuilder(this)
+                            mAdLoader.listener = this
+                            mBannersWrapper = BannersWrapper(findViewById(android.R.id.content))
+                        }
+        //            mAdRequestBuilder?.resetQueryParameters()
+                        mAdRequestBuilder?.host = Constant.AD_AUDIO_TRITON_AD_UNIT_ID
+                        mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.ASSET_TYPE, AdRequestBuilder.ASSET_TYPE_VALUE_AUDIO)
+                        mAdRequestBuilder?.addQueryParameter(AdRequestBuilder.TYPE, AdRequestBuilder.TYPE_VALUE_MIDROLL)
+                        mAdRequestBuilder?.addQueryParameter("scenario", "vast-multiple-media")
 
-                var station = "Hungama Music"
-                station = Constant.AD_AUDIO_TRITON_STATION
-                mAdRequestBuilder?.addQueryParameter(
-                    if (TextUtils.isDigitsOnly(station)) AdRequestBuilder.STATION_ID else AdRequestBuilder.STATION_NAME,
-                    station
-                )
-//            mAdRequestBuilder?.addQueryParameter("ttag", "service:hungamamusicapp.android")
-                mAdRequestBuilder?.addQueryParameter("banners", "300x250")
-                val addTtagArray = arrayOf("service:hungamamusicapp.android")
-                mAdRequestBuilder?.addTtags(addTtagArray)
-                val adRequest = mAdRequestBuilder?.build()
-                if (adRequest != null) {
-                    setLog("PlayerAds:-", "tritonAds=> $adRequest")
-                }
-//                }
+                        var station = "Hungama Music"
+                        station = Constant.AD_AUDIO_TRITON_STATION
+                        mAdRequestBuilder?.addQueryParameter(
+                            if (TextUtils.isDigitsOnly(station)) AdRequestBuilder.STATION_ID else AdRequestBuilder.STATION_NAME,
+                            station
+                        )
+        //            mAdRequestBuilder?.addQueryParameter("ttag", "service:hungamamusicapp.android")
+                        mAdRequestBuilder?.addQueryParameter("banners", "300x250")
+                        val addTtagArray = arrayOf("service:hungamamusicapp.android")
+                        mAdRequestBuilder?.addTtags(addTtagArray)
+                        val adRequest = mAdRequestBuilder?.build()
+                        if (adRequest != null) {
+                            setLog("PlayerAds:-", "tritonAds=> $adRequest")
+                        }
+        //                }
 
-                setLog("PlayerAds:-", "tritonAds=> Showing the ad from a request")
-                mAdRequestBuilder?.let {
-                    loadAdRequest(it)
-                }
+                        setLog("PlayerAds:-", "tritonAds=> Showing the ad from a request")
+                        mAdRequestBuilder?.let {
+                            loadAdRequest(it)
+                        }
 
-            }
-        }catch (e:Exception){
+                    }
+                }catch (e:Exception){
 
-        }*/
+                }*/
     }
 
-/*    private fun loadAdRequest(adRequestBuilder: AdRequestBuilder) {
-        setLog("PlayerAds:-", "tritonAds=> Loading ad request-1")
-        stopTritonAudioAd()
-        setLog("PlayerAds:-", "tritonAds=> Loading ad request-2")
-        mAdLoader.load(adRequestBuilder)
-    }
+    /*    private fun loadAdRequest(adRequestBuilder: AdRequestBuilder) {
+            setLog("PlayerAds:-", "tritonAds=> Loading ad request-1")
+            stopTritonAudioAd()
+            setLog("PlayerAds:-", "tritonAds=> Loading ad request-2")
+            mAdLoader.load(adRequestBuilder)
+        }
 
-    override fun onAdLoaded(adLoader: AdLoader, ad: Bundle) {
-        setLog("CheckAddData", Gson().toJson(ad))
+        override fun onAdLoaded(adLoader: AdLoader, ad: Bundle) {
+            setLog("CheckAddData", Gson().toJson(ad))
 
-        if (ad == null || ad.isEmpty()) {
-            audioAdsOnError(tritonAudioAds)
-            val audioAdPreference = CommonUtils.getAudioAdPreference()
-            setLog(
-                "PlayerAds:-",
-                "loadAudioAds: onAdLoaded-tritonAds-audioAdPreference:${audioAdPreference}"
-            )
-            if (audioAdPreference.firstPriority.equals("google", true)) {
-                setLog("PlayerAds:-", "loadInterstrialAds")
-                loadInterstitialAds()
-            } else {
-                loadGoogleImaAds()
-            }
-        } else {
-            setLog("PlayerAds:-", "imageAdd " + Gson().toJson(ad))
-            mBannersWrapper?.showAd(ad)
-            val mimeType: String? = ad.getString(Ad.MIME_TYPE)
-            setLog("PlayerAdsshaalh", mimeType.toString() + " \n" + Gson().toJson(ad))
-
-            if (mimeType == null) {
-                setLog("PlayerAds:-", "tritonAds=> Warning: No audio/video")
+            if (ad == null || ad.isEmpty()) {
                 audioAdsOnError(tritonAudioAds)
                 val audioAdPreference = CommonUtils.getAudioAdPreference()
                 setLog(
@@ -7761,75 +7741,95 @@ abstract class BaseActivity : BaseServiceBoundedActivity(), View.OnClickListener
                 } else {
                     loadGoogleImaAds()
                 }
-            } else if (mimeType.startsWith("video")) {
-                //playVideoAd(ad)
-                audioAdsOnError(tritonAudioAds)
-            } else if (mimeType.startsWith("audio")) {
-                playAudioAd(ad)
+            } else {
+                setLog("PlayerAds:-", "imageAdd " + Gson().toJson(ad))
+                mBannersWrapper?.showAd(ad)
+                val mimeType: String? = ad.getString(Ad.MIME_TYPE)
+                setLog("PlayerAdsshaalh", mimeType.toString() + " \n" + Gson().toJson(ad))
+
+                if (mimeType == null) {
+                    setLog("PlayerAds:-", "tritonAds=> Warning: No audio/video")
+                    audioAdsOnError(tritonAudioAds)
+                    val audioAdPreference = CommonUtils.getAudioAdPreference()
+                    setLog(
+                        "PlayerAds:-",
+                        "loadAudioAds: onAdLoaded-tritonAds-audioAdPreference:${audioAdPreference}"
+                    )
+                    if (audioAdPreference.firstPriority.equals("google", true)) {
+                        setLog("PlayerAds:-", "loadInterstrialAds")
+                        loadInterstitialAds()
+                    } else {
+                        loadGoogleImaAds()
+                    }
+                } else if (mimeType.startsWith("video")) {
+                    //playVideoAd(ad)
+                    audioAdsOnError(tritonAudioAds)
+                } else if (mimeType.startsWith("audio")) {
+                    playAudioAd(ad)
+                }
             }
         }
-    }
 
-    override fun onAdLoadingError(adLoader: AdLoader?, errorCode: Int) {
-        stopTritonAudioAd()
-        audioAdsOnError(tritonAudioAds)
-        setLog(
-            "PlayerAds:-",
-            "tritonAds=> Ad loading FAILED: " + AdLoader.debugErrorToStr(errorCode)
-        )
-        val audioAdPreference = CommonUtils.getAudioAdPreference()
-        setLog(
-            "PlayerAds:-",
-            "loadAudioAds: onAdLoadingError-tritonAds-audioAdPreference:${audioAdPreference}"
-        )
-        if (audioAdPreference.firstPriority.equals("google", true)) {
-            setLog("PlayerAds:-", "loadInterstrialAds")
-            loadInterstitialAds()
-        } else {
-            loadGoogleImaAds()
-        }
+        override fun onAdLoadingError(adLoader: AdLoader?, errorCode: Int) {
+            stopTritonAudioAd()
+            audioAdsOnError(tritonAudioAds)
+            setLog(
+                "PlayerAds:-",
+                "tritonAds=> Ad loading FAILED: " + AdLoader.debugErrorToStr(errorCode)
+            )
+            val audioAdPreference = CommonUtils.getAudioAdPreference()
+            setLog(
+                "PlayerAds:-",
+                "loadAudioAds: onAdLoadingError-tritonAds-audioAdPreference:${audioAdPreference}"
+            )
+            if (audioAdPreference.firstPriority.equals("google", true)) {
+                setLog("PlayerAds:-", "loadInterstrialAds")
+                loadInterstitialAds()
+            } else {
+                loadGoogleImaAds()
+            }
 
-    }*/
+        }*/
 
     private fun playAudioAd(ad: Bundle) {
-/*        try {
-            setLog("PlayerAds:-", "tritonAds=> Ad buffering")
-            mAudioPlayer = MediaPlayer()
-            //mAudioPlayer?.setAudioStreamType(AudioManager.STREAM_MUSIC)
-            mAudioPlayer.setAudioAttributes(
-                AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
-            )
-            mAudioPlayer.setOnCompletionListener(this)
-            mAudioPlayer.setOnErrorListener(this)
-            mAudioPlayer.setOnPreparedListener { mp ->
-                setLog("PlayerAds:-", "tritonAds=> Ad started.")
-                mp.start()
-                Ad.trackImpression(ad)
-                pausePlayer()
-                audioAdsStarted(tritonAudioAds)
-            }
-            val mediaUrl = ad.getString(Ad.URL)
-            mAudioPlayer.setDataSource(mediaUrl)
-            mAudioPlayer.prepareAsync()
+        /*        try {
+                    setLog("PlayerAds:-", "tritonAds=> Ad buffering")
+                    mAudioPlayer = MediaPlayer()
+                    //mAudioPlayer?.setAudioStreamType(AudioManager.STREAM_MUSIC)
+                    mAudioPlayer.setAudioAttributes(
+                        AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
+                    )
+                    mAudioPlayer.setOnCompletionListener(this)
+                    mAudioPlayer.setOnErrorListener(this)
+                    mAudioPlayer.setOnPreparedListener { mp ->
+                        setLog("PlayerAds:-", "tritonAds=> Ad started.")
+                        mp.start()
+                        Ad.trackImpression(ad)
+                        pausePlayer()
+                        audioAdsStarted(tritonAudioAds)
+                    }
+                    val mediaUrl = ad.getString(Ad.URL)
+                    mAudioPlayer.setDataSource(mediaUrl)
+                    mAudioPlayer.prepareAsync()
 
-            val renderersFactory = DefaultRenderersFactory(this)
-            var simpleExoplayer = SimpleExoPlayer.Builder(this,renderersFactory).setHandleAudioBecomingNoisy(true)
-                .build()
-            audioAdUrl = ad.getString(Ad.URL).toString()
+                    val renderersFactory = DefaultRenderersFactory(this)
+                    var simpleExoplayer = SimpleExoPlayer.Builder(this,renderersFactory).setHandleAudioBecomingNoisy(true)
+                        .build()
+                    audioAdUrl = ad.getString(Ad.URL).toString()
 
-            if (!TextUtils.isEmpty(audioAdUrl)) {
-                setStatus("Start audio buffering")
-                val track = Track()
-                track.url = audioAdUrl
-                val mediaSource = buildMediaSource(track)
-                simpleExoplayer.setMediaSource(mediaSource)
-                simpleExoplayer.prepare()
-                simpleExoplayer.playWhenReady = true
-            }
-        } catch (e: Exception) {
-            setLog("PlayerAds:-", "tritonAds=> Audio prepare exception: $e")
-            updateAudioAdPlayingStatusAndProvider(false, tritonAudioAds)
-        }*/
+                    if (!TextUtils.isEmpty(audioAdUrl)) {
+                        setStatus("Start audio buffering")
+                        val track = Track()
+                        track.url = audioAdUrl
+                        val mediaSource = buildMediaSource(track)
+                        simpleExoplayer.setMediaSource(mediaSource)
+                        simpleExoplayer.prepare()
+                        simpleExoplayer.playWhenReady = true
+                    }
+                } catch (e: Exception) {
+                    setLog("PlayerAds:-", "tritonAds=> Audio prepare exception: $e")
+                    updateAudioAdPlayingStatusAndProvider(false, tritonAudioAds)
+                }*/
     }
 
     override fun onCompletion(mp: MediaPlayer?) {

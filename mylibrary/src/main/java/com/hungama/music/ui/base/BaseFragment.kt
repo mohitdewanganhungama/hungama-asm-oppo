@@ -5046,7 +5046,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
         setLog(TAG, "callOfflineSongEventAnalytics eventModel sourceName:${eventModel?.sourceName}  bucketName: ${eventModel?.bucketName} downloadQueue.audioQuality:${eventModel.audioQuality}")
     }
 
-    fun setAddOrRemoveFavourite(contentId: String?, type: String?, isFavourite: Boolean) {
+    fun setAddOrRemoveFavourite(contentId: String?, type: String?, isFavourite: Boolean, noToast: Boolean = true) {
         try {
             if (SharedPrefHelper.getInstance().isUserLoggedIn()){
             if (context != null && ConnectionUtil(context).isOnline) {
@@ -5125,11 +5125,14 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
                     }
 
                 } else {
-                    val messageModel = MessageModel(
-                        getString(R.string.toast_str_49), getString(R.string.toast_str_49),
-                        MessageType.NEUTRAL, true
-                    )
-                    CommonUtils.showToast(requireContext(), messageModel)
+                    if(noToast){
+                        val messageModel = MessageModel(
+                            getString(R.string.toast_str_49), getString(R.string.toast_str_49),
+                            MessageType.NEUTRAL, true
+                        )
+                        CommonUtils.showToast(requireContext(), messageModel)
+                    }
+
                 }
 
              }
@@ -5143,7 +5146,8 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
         contentId: String?,
         type: String?,
         isFavourite: Boolean,
-        module: Int
+        module: Int,
+        source: String=""
     ) {
         if (ConnectionUtil(context).isOnline) {
             val jsonObject = JSONObject()
@@ -5158,6 +5162,14 @@ abstract class BaseFragment : Fragment(), View.OnClickListener,
             }
 
             userViewModelBookmark?.callBookmarkApi(requireContext(), jsonObject.toString())
+
+            if(source!= "home_banner") {
+                val messageModel = MessageModel(
+                    getString(R.string.artist_str_3), getString(R.string.artist_str_17),
+                    MessageType.NEUTRAL, true
+                )
+//                CommonUtils.showToast(requireContext(), messageModel,"BaseFragment","setAddOrRemoveWatchlist")
+            }
 
         }
     }
