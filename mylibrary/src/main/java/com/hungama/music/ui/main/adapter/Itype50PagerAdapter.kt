@@ -172,27 +172,27 @@ class Itype50PagerAdapter(
                 ivRent.setImageDrawable(
                     ctx.faDrawable(
                         R.string.icon_play_2,
-                        R.color.colorBlack
+                        R.color.colorWhite1
                     )
                 )
             } else if (ctaId == "Subscribe Now" || ctaId == "Buy Now")
-                ivRent.setImageDrawable(ctx.faDrawable(R.string.icon_crown, R.color.colorBlack))
+                ivRent.setImageDrawable(ctx.faDrawable(R.string.icon_crown, R.color.colorWhite1))
             else if (ctaId == "Remind Me") {
                 val keyName= SharedPrefHelper.getInstance().getUserId()+"_"+ rowsItem.items?.get(position)?.data?.id
                 if(!keyName.isNullOrEmpty())
                     if(SharedPrefHelper.getInstance().has(keyName)){
                         ivRent?.setImageDrawable(ContextCompat.getDrawable(ctx,R.drawable.ic_baseline_done_24))
-                        DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorBlack))
+                        DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorWhite1))
                     }else{
                         ivRent?.setImageDrawable(ContextCompat.getDrawable(ctx,R.drawable.ic_clock))
-                        DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorBlack))
+                        DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorWhite1))
                     }
             }
             else/* if (ctaId == "Remind Me")*/ {
                 ivRent.setImageDrawable(
                     ctx.faDrawable(
                         R.string.icon_watch_later,
-                        R.color.colorBlack
+                        R.color.colorWhite1
                     )
                 )
             }
@@ -220,9 +220,14 @@ class Itype50PagerAdapter(
                     ctx,
                     ivUserImage,
                     rowsItem.items?.get(position)?.data?.image.toString(),
-                    R.drawable.bg_gradient_placeholder
+                    R.drawable.bg_button_gradient_box
                 )
             }
+            println("${rowsItem.items?.get(position)?.data?.image} imageeeeee   " +
+                    rowsItem.items?.get(
+                        position
+                    )?.data?.secondaryCta.toString()
+            )
 
             onClickEvent(position, ivAction)
 
@@ -305,7 +310,7 @@ class Itype50PagerAdapter(
                     ivMuteUnmute?.setImageDrawable(
                         ctx.faDrawable(
                             R.string.icon_mute,
-                            R.color.colorWhite,
+                            R.color.colorWhite1,
                             ctx.resources.getDimensionPixelSize(R.dimen.font_16)
                                 .toFloat()
                         )
@@ -315,7 +320,7 @@ class Itype50PagerAdapter(
                     ivMuteUnmute?.setImageDrawable(
                         ctx.faDrawable(
                             R.string.icon_unmute,
-                            R.color.colorWhite,
+                            R.color.colorWhite1,
                             ctx.resources.getDimensionPixelSize(R.dimen.font_16)
                                 .toFloat()
                         )
@@ -359,7 +364,7 @@ class Itype50PagerAdapter(
                                     ivMuteUnmute?.setImageDrawable(
                                         ctx.faDrawable(
                                             R.string.icon_unmute,
-                                            R.color.colorWhite,
+                                            R.color.colorWhite1,
                                             ctx.resources.getDimensionPixelSize(R.dimen.font_16)
                                                 .toFloat()
                                         )
@@ -372,7 +377,7 @@ class Itype50PagerAdapter(
                                     ivMuteUnmute?.setImageDrawable(
                                         ctx.faDrawable(
                                             R.string.icon_mute,
-                                            R.color.colorWhite,
+                                            R.color.colorWhite1,
                                             ctx.resources.getDimensionPixelSize(R.dimen.font_16)
                                                 .toFloat()
                                         )
@@ -458,7 +463,7 @@ class Itype50PagerAdapter(
                             if(!SharedPrefHelper.getInstance().has(keyName)){
 
                                 ivRent?.setImageDrawable(ContextCompat.getDrawable(ctx,R.drawable.ic_baseline_done_24))
-                                DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorBlack))
+                                DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorWhite1))
                                 //llRemindMe?.isEnabled=false
 
                                 SharedPrefHelper.getInstance().save(keyName,true)
@@ -475,7 +480,7 @@ class Itype50PagerAdapter(
                             }else{
                                 SharedPrefHelper.getInstance().delete(keyName)
                                 ivRent?.setImageDrawable(ContextCompat.getDrawable(ctx,R.drawable.ic_clock))
-                                DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorBlack))
+                                DrawableCompat.setTint(DrawableCompat.wrap(ivRent.drawable), ContextCompat.getColor(ctx, R.color.colorWhite1))
 
                                 //llRemindMe?.isEnabled=true
                             }
@@ -572,7 +577,7 @@ class Itype50PagerAdapter(
                         ivAction.setImageDrawable(
                             ctx.faDrawable(
                                 R.string.icon_downloading,
-                                R.color.colorWhite
+                                R.color.colorWhite1
                             )
                         )
                     }
@@ -584,7 +589,7 @@ class Itype50PagerAdapter(
                     ivAction.setImageDrawable(
                         ctx.faDrawable(
                             R.string.icon_downloaded2,
-                            R.color.colorWhite
+                            R.color.colorWhite1
                         )
                     )
 
@@ -660,12 +665,12 @@ class Itype50PagerAdapter(
         if (rowsItem.items?.get(position)?.data?.secondaryCta.toString()
                 .equals(Constant.Download)
         ) {
-            ivAction.setImageDrawable(ctx.faDrawable(R.string.icon_download, R.color.colorWhite))
+            ivAction.setImageDrawable(ctx.faDrawable(R.string.icon_download, R.color.colorWhite1))
         } else if (rowsItem.items?.get(position)?.data?.secondaryCta.toString()
                 .equals(Constant.Download)
             && rowsItem.items?.get(position)?.data?.isFollow == true
         ) {
-            ivAction.setImageDrawable(ctx.faDrawable(R.string.icon_downloading, R.color.colorWhite))
+            ivAction.setImageDrawable(ctx.faDrawable(R.string.icon_downloading, R.color.colorWhite1))
         } else if (rowsItem.items?.get(position)?.data?.isFollow == false) {
             setActionImage(
                 rowsItem.items?.get(position)?.data?.secondaryCta.toString(),
@@ -718,42 +723,42 @@ class Itype50PagerAdapter(
             Constant.Favorited -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_like,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Follow_Artist -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_follow,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Follow -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_follow,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Watchlist -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_watchlist,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Share -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_share,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.View_Plans -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_watchlist,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
         }
@@ -771,28 +776,28 @@ class Itype50PagerAdapter(
             Constant.Favorited -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_liked,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Follow_Artist -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_tick,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Follow -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_tick,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 
             Constant.Watchlist -> ivAction.setImageDrawable(
                 ctx.faDrawable(
                     R.string.icon_tick,
-                    R.color.colorWhite
+                    R.color.colorWhite1
                 )
             )
 

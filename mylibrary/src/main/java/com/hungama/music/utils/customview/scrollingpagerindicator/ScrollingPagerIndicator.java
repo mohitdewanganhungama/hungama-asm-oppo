@@ -1,14 +1,18 @@
 package com.hungama.music.utils.customview.scrollingpagerindicator;
 
 import android.animation.ArgbEvaluator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.IntDef;
@@ -25,7 +29,8 @@ import com.hungama.music.R;
 public class ScrollingPagerIndicator extends View {
 
     @IntDef({RecyclerView.HORIZONTAL, RecyclerView.VERTICAL})
-    public @interface Orientation{};
+    public @interface Orientation {
+    }
 
     private int infiniteDotCount;
 
@@ -54,12 +59,21 @@ public class ScrollingPagerIndicator extends View {
     @ColorInt
     private int selectedDotColor;
 
+    @Nullable
+    private final Drawable firstDotDrawable;
+
+    @Nullable
+    private final Drawable lastDotDrawable;
+
     private boolean looped;
 
     private Runnable attachRunnable;
     private PagerAttacher<?> currentAttacher;
+    private boolean autoRtl = true;
 
     private boolean dotCountInitialized;
+
+    private int currentpos = Integer.MIN_VALUE;
 
     public ScrollingPagerIndicator(Context context) {
         this(context, null);
@@ -87,6 +101,9 @@ public class ScrollingPagerIndicator extends View {
         setVisibleDotCount(visibleDotCount);
         visibleDotThreshold = attributes.getInt(R.styleable.ScrollingPagerIndicator_spi_visibleDotThreshold, 2);
         orientation = attributes.getInt(R.styleable.ScrollingPagerIndicator_spi_orientation, RecyclerView.HORIZONTAL);
+
+        firstDotDrawable = attributes.getDrawable(R.styleable.ScrollingPagerIndicator_spi_firstDotDrawable);
+        lastDotDrawable = attributes.getDrawable(R.styleable.ScrollingPagerIndicator_spi_lastDotDrawable);
         attributes.recycle();
 
         paint = new Paint();
@@ -314,6 +331,7 @@ public class ScrollingPagerIndicator extends View {
             currentAttacher.detachFromPager();
             currentAttacher = null;
             attachRunnable = null;
+            autoRtl = true;
         }
         dotCountInitialized = false;
     }
@@ -342,6 +360,8 @@ public class ScrollingPagerIndicator extends View {
             throw new IllegalArgumentException("Offset must be [0, 1]");
         } else if (page < 0 || page != 0 && page >= itemCount) {
             throw new IndexOutOfBoundsException("page must be [0, adapter.getItemCount())");
+        } else {
+            currentpos = page;
         }
 
         if (!looped || itemCount <= visibleDotCount && itemCount > 1) {
@@ -355,8 +375,7 @@ public class ScrollingPagerIndicator extends View {
                 } else if (itemCount > 1) {
                     scaleDotByOffset(0, 1 - offset);
                 }
-            }
-            else { // Vertical orientation
+            } else { // Vertical orientation
                 scaleDotByOffset(page - 1, offset);
                 scaleDotByOffset(page, 1 - offset);
             }
@@ -394,6 +413,17 @@ public class ScrollingPagerIndicator extends View {
         }
         adjustFramePosition(0, position);
         updateScaleInIdleState(position);
+    }
+
+    /**
+     * Sets Rtl direction availability when the view has Rtl direction.
+     * autoRtl is on by default.
+     *
+     * @param autoRtl false means rtl direction doesn't be apply even if view direction is Rtl.
+     */
+    public void setAutoRtl(boolean autoRtl) {
+        this.autoRtl = autoRtl;
+        invalidate();
     }
 
     @Override
@@ -460,6 +490,7 @@ public class ScrollingPagerIndicator extends View {
         setMeasuredDimension(measuredWidth, measuredHeight);
     }
 
+    @SuppressLint("SuspiciousIndentation")
     @Override
     protected void onDraw(Canvas canvas) {
         int dotCount = getDotCount();
@@ -537,8 +568,40 @@ public class ScrollingPagerIndicator extends View {
                 }
 
                 paint.setColor(calculateDotColor(scale));
-                if (orientation == LinearLayoutManager.HORIZONTAL) {
-                    canvas.drawCircle(dot - visibleFramePosition,
+
+//                for(int j = firstVisibleDotPos; j<=lastVisibleDotPos; j++){
+                final Drawable dotDrawable;
+//                    paint.setColor(calculateDotColor(scale));
+
+//                    if(j==i){
+                if (currentpos != Integer.MIN_VALUE && i == currentpos) {
+                    dotDrawable = null;
+                } else
+                    dotDrawable = firstDotDrawable;
+
+                if (dotDrawable != null) {
+                    if (orientation == LinearLayoutManager.HORIZONTAL) {
+                        dotDrawable.setBounds((int) (dot - visibleFramePosition - dotSelectedSize / 2),
+                                getMeasuredHeight() / 2 - dotSelectedSize / 2,
+                                (int) (dot - visibleFramePosition + dotSelectedSize / 2),
+                                getMeasuredHeight() / 2 + dotSelectedSize / 2);
+                    } else {
+                        dotDrawable.setBounds(getMeasuredWidth() / 2 - dotSelectedSize / 2,
+                                (int) (dot - visibleFramePosition - dotSelectedSize / 2),
+                                getMeasuredWidth() / 2 + dotSelectedSize / 2,
+                                (int) (dot - visibleFramePosition + dotSelectedSize / 2));
+                    }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        dotDrawable.setTint(paint.getColor());
+                    }
+                    dotDrawable.draw(canvas);
+                } else if (orientation == LinearLayoutManager.HORIZONTAL) {
+                    float cx = dot - visibleFramePosition;
+                    if (autoRtl && isRtl()) {
+                        cx = getWidth() - cx;
+                    }
+
+                    canvas.drawCircle(cx,
                             getMeasuredHeight() / 2,
                             diameter / 2,
                             paint);
@@ -548,12 +611,25 @@ public class ScrollingPagerIndicator extends View {
                             diameter / 2,
                             paint);
                 }
+//                }
+
             }
         }
     }
 
+    private boolean isRtl() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 &&
+                getLayoutDirection() == LAYOUT_DIRECTION_RTL;
+    }
+
     @ColorInt
     private int calculateDotColor(float dotScale) {
+        return (Integer) colorEvaluator.evaluate(dotScale, dotColor, selectedDotColor);
+    }
+
+    private int calculateNonSelectedDotColor(float dotScale) {
+        int dotColor = getResources().getColor(R.color.colorWhite1);
+        int selectedDotColor = getResources().getColor(R.color.colorWhite1);
         return (Integer) colorEvaluator.evaluate(dotScale, dotColor, selectedDotColor);
     }
 

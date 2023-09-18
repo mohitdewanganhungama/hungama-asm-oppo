@@ -11,12 +11,12 @@
             android:id="@+id/episode_player_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_250"
-            android:background="@drawable/bg_gradient_placeholder"
+            android:background="@drawable/bg_alpha_with_4dp_round_corner"
             android:visibility="gone"
             android:scaleType="fitXY"
             app:resize_mode="fill"
             app:layout_constraintDimensionRatio="4:3"
-            app:default_artwork="@drawable/bg_gradient_placeholder"
+            app:default_artwork="@drawable/bg_alpha_with_4dp_round_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -71,7 +71,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/bg_gradient_placeholder"
+            android:background="@drawable/bg_button_gradient_box"
             android:visibility="visible"
             android:scaleType="fitXY" />
 
@@ -127,7 +127,7 @@
             android:paddingStart="@dimen/dimen_26"
             android:paddingEnd="@dimen/dimen_26"
             android:background="@drawable/corner_radius_18_bg_blue"
-            android:backgroundTint="@color/colorOffWhite"
+            android:backgroundTint="@color/colorBlack"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -142,7 +142,7 @@
                 android:text="@string/reward_str_114"
                 android:textSize="@dimen/font_15"
                 android:fontFamily="@font/sf_pro_text_bold"
-                android:textColor="@color/black_op_70"/>
+                android:textColor="@color/colorWhite1"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
             <RelativeLayout
@@ -157,7 +157,6 @@
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_gradient_placeholder"
                     android:scaleType="centerCrop"
-                    android:backgroundTint="@color/colorWhite1"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
 
                 <com.hungama.music.utils.customview.fontview.FontAwesomeImageView
@@ -167,7 +166,7 @@
                     android:layout_centerInParent="true"
                     android:padding="@dimen/dimen_8_5"
                     app:fontText="@string/icon_download"
-                    app:fontTextColor="@color/colorWhite" />
+                    app:fontTextColor="@color/colorWhite1" />
             </RelativeLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
