@@ -125,6 +125,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
     var playlistSongList: ArrayList<PlaylistModel.Data.Body.Row> = ArrayList()
 
     companion object {
+        var updateBanner = 0
         val LAUNCH_STORY_DISPLAY_ACTIVITY = 101
         const val UPDATED_STORY_USER_LIST = "updatedStoryUserList"
 

@@ -578,5 +578,7 @@ object Constant {
     const val drawer_default_buy_hungama_gold ="drawer_default_buy_hungama_gold"
     const val SONG_DURATION_BROADCAST ="songDurationBroadcast"
     const val CALL_BOTTOM_SHEET ="callBottomSheet"
+    const val HeroSection ="HeroSection"
+
 
 }

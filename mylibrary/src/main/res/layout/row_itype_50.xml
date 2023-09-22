@@ -166,6 +166,7 @@
                     android:layout_centerInParent="true"
                     android:padding="@dimen/dimen_8_5"
                     app:fontText="@string/icon_download"
+                    android:backgroundTint="@color/colorWhite1"
                     app:fontTextColor="@color/colorWhite1" />
             </RelativeLayout>
 

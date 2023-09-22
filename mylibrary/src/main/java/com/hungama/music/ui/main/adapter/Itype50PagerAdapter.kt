@@ -555,6 +555,10 @@ class Itype50PagerAdapter(
                         "107",
                         true
                     ) && rowsItem.items?.get(position)?.data?.secondaryCta.equals(Constant.Download)
+                    || rowsItem.items?.get(position)?.data?.contentTypeId.equals(
+                        "109",
+                        true
+                    ) && rowsItem.items?.get(position)?.data?.secondaryCta.equals(Constant.Download)
                 ) {
 
                     if (rowsItem.items?.get(position)?.data?.isFollow == false) {
@@ -567,8 +571,11 @@ class Itype50PagerAdapter(
                     if (CommonUtils.isUserHasGoldSubscription()) rowsItem.items?.get(position)?.data?.isFollow =
                         true
 
-                } else if (rowsItem.items?.get(position)?.data?.secondaryCta.toString()
-                        .equals(Constant.Download)
+                }else if(rowsItem.items?.get(position)?.data?.contentTypeId.equals("4", true)
+                    && rowsItem.items?.get(position)?.data?.secondaryCta.equals(Constant.Download))
+                {
+
+                }else if (rowsItem.items?.get(position)?.data?.secondaryCta.toString().equals(Constant.Download)
                     && rowsItem.items?.get(position)?.data?.isFollow == false
                 ) {
 
@@ -582,10 +589,8 @@ class Itype50PagerAdapter(
                         )
                     }
 
-                } else if (rowsItem.items?.get(position)?.data?.secondaryCta.toString()
-                        .equals(Constant.Download)
-                    && rowsItem.items?.get(position)?.data?.isFollow == true
-                ) {
+                } else if (rowsItem.items?.get(position)?.data?.secondaryCta.toString().equals(Constant.Download)
+                    && rowsItem.items?.get(position)?.data?.isFollow == true) {
                     ivAction.setImageDrawable(
                         ctx.faDrawable(
                             R.string.icon_downloaded2,
@@ -690,25 +695,25 @@ class Itype50PagerAdapter(
         when (status) {
             Status.NONE.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite1))
                 ivDownload.setImageDrawable(drawable)
             }
 
             Status.QUEUED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_download_queue)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite1))
                 ivDownload.setImageDrawable(drawable)
             }
 
             Status.DOWNLOADING.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_downloading)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite1))
                 ivDownload.setImageDrawable(drawable)
             }
 
             Status.COMPLETED.value -> {
                 val drawable = FontDrawable(ctx, R.string.icon_downloaded2)
-                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite))
+                drawable.setTextColor(ContextCompat.getColor(ctx, R.color.colorWhite1))
                 ivDownload.setImageDrawable(drawable)
                 data?.isFollow = true
             }
@@ -926,7 +931,7 @@ class Itype50PagerAdapter(
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             if (isAllDownloadInQueue) {
-             //       icon.setImageDrawable(ctx.faDrawable(R.string.icon_downloading, R.color.colorWhite))
+             //       icon.setImageDrawable(ctx.faDrawable(R.string.icon_downloading, R.color.colorWhite1))
                     data?.isDownloading = "2"
 
             } else {
@@ -935,7 +940,7 @@ class Itype50PagerAdapter(
                 /*        icon.setImageDrawable(
                             ctx.faDrawable(
                                 R.string.icon_downloaded2,
-                                R.color.colorWhite
+                                R.color.colorWhite1
                             )
                         )*/
 
@@ -944,7 +949,7 @@ class Itype50PagerAdapter(
                    /* icon.setImageDrawable(
                             ctx.faDrawable(
                                 R.string.icon_download,
-                                R.color.colorWhite
+                                R.color.colorWhite1
                             )
                     )*/
                 }

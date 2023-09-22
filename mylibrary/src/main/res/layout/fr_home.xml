@@ -113,7 +113,6 @@
             android:layout_centerVertical="true"
             android:paddingEnd="@dimen/dimen_18"
             android:clipToPadding="false"
-            app:tabBackground="@drawable/selector_tab_home"
             app:tabGravity="fill"
             app:tabIndicatorHeight="0dp"
             app:tabMaxWidth="0dp"

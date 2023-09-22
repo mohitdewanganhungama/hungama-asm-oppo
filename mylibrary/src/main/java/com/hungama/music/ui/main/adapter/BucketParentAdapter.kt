@@ -21,6 +21,7 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
@@ -41,9 +42,11 @@ import com.hungama.music.utils.CommonUtils.setLog
 import com.hungama.music.utils.customview.scrollingpagerindicator.ScrollingPagerIndicator
 import com.hungama.music.utils.preference.SharedPrefHelper
 import com.hungama.music.R
+import com.hungama.music.ui.main.view.fragment.DiscoverTabFragment
 import com.moengage.inapp.MoEInAppHelper
 import kotlinx.android.synthetic.main.row_bucket.view.*
 import kotlinx.coroutines.*
+import java.util.HashMap
 
 
 class BucketParentAdapter(
@@ -62,6 +65,7 @@ class BucketParentAdapter(
     var commonSpaceBetweenBuckets = 0
     var artImageUrl: String? = null
     var pageCount = 0
+    var isTimerCancelled = false
     var pagerAdapter : Itype50PagerAdapter? = null
     var auto_scroll = false
     var runnable: java.lang.Runnable? = null
@@ -132,7 +136,6 @@ class BucketParentAdapter(
             } catch (exp: Exception) {
                 exp.printStackTrace()
             }
-
         }
     }
 
@@ -168,6 +171,17 @@ class BucketParentAdapter(
             if (parent?.keywords != null && parent.keywords?.contains("continue-watching")!! && isKeywordWatchCall == 999 && isCalledMultipalTime()) {
 
 
+                val receiver = object : BroadcastReceiver() {
+                    override fun onReceive(context: Context?, intent: Intent?) {
+
+                        pagerAdapter?.notifyDataSetChanged();
+                    }
+                }
+
+                val lbm = LocalBroadcastManager.getInstance(context)
+                lbm.registerReceiver(receiver as BroadcastReceiver, IntentFilter(Constant.HeroSection))
+
+
                 setLog("continue-watching", "continue-watching 0 called")
                 continueWatchIndex = holder.adapterPosition
                 lastHolderItem = holder
@@ -201,14 +215,8 @@ class BucketParentAdapter(
                     }
 
                     if (TextUtils.isEmpty(displayName)) {
-                        /*if (!TextUtils.isEmpty(SharedPrefHelper.getInstance().getHandleName())){
-                            displayName += SharedPrefHelper.getInstance().getHandleName()!!
-                            holder.tvTitle.text = getDayGreetings(context) + " " + displayName
-                        }else{*/
                         CommonUtils.getDayGreetings(context)
                         holder.tvTitle.text = CommonUtils.greeting.value
-                        //}
-
                     } else {
                         CommonUtils.getDayGreetings(context)
                         holder.tvTitle.text = CommonUtils.greeting.value+" "+displayName
@@ -543,6 +551,18 @@ class BucketParentAdapter(
                             }
 
                             override fun onPageSelected(position: Int) {
+                                if(DiscoverTabFragment.updateBanner<=2) {
+                                    if (position == 0 || position == 1) {
+
+                                        val handler = Handler()
+                                        handler.postDelayed({
+
+                                            notifyItemChanged(position)
+                                            DiscoverTabFragment.updateBanner = DiscoverTabFragment.updateBanner+1
+
+                                        }, 100)
+                                    }
+                                }else DiscoverTabFragment.updateBanner = DiscoverTabFragment.updateBanner++
                             }
 
                             override fun onPageScrollStateChanged(state: Int) {
@@ -721,18 +741,17 @@ class BucketParentAdapter(
                     else -> {
                         setLog("NoView", "NoVIew 2")
                         holder.rvChildItem.visibility = View.GONE
+                        holder.pager.visibility = View.GONE
                     }
                 }
 
                 if (position == 0) {
-
-
                     Utils.setMarginsTop(
                         holder.llHeaderTitle,
                         context.resources.getDimensionPixelSize(R.dimen.dimen_8)
                     )
 
-                } else if (position == 1 && parents.get(0)?.items?.size!! <= 0) {
+                } else if (position == 1 && parents.get(0)?.items?.isEmpty() == true) {
                     Utils.setMarginsTop(
                         holder.llHeaderTitle,
                         context.resources.getDimensionPixelSize(R.dimen.dimen_28)
@@ -741,6 +760,7 @@ class BucketParentAdapter(
             } else {
                 setLog("NoView", "NoVIew 1")
                 holder.rvChildItem.visibility = View.GONE
+                holder.dotedView.visibility = View.GONE
             }
         }
 
@@ -904,10 +924,6 @@ class BucketParentAdapter(
     }
 
     fun updateList(data: ArrayList<BodyDataItem>?, parentPosition: Int) {
-        /*for (stories in data?.indices!!) {
-            *//*this.parents.get(parentPosition)!!.items!!.get(stories)!!.data!!.viewInex =
-                data[stories].viewInex*//*
-        }*/
         CoroutineScope(Dispatchers.IO).launch {
             if (!data.isNullOrEmpty()) {
                 data.forEachIndexed { index, bodyDataItem ->

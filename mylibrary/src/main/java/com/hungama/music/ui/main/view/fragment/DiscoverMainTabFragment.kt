@@ -2,6 +2,7 @@ package com.hungama.music.ui.main.view.fragment
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.TextUtils
@@ -388,12 +389,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
                 tabs?.addOnTabSelectedListener(this@DiscoverMainTabFragment)
                 tabs?.getTabAt(defaultSelectedTabPosition)?.select()
 
-                for (i in 0 until tabs.tabCount) {
-                    val tab = (tabs.getChildAt(0) as ViewGroup).getChildAt(i)
-                    val p = tab.layoutParams as ViewGroup.MarginLayoutParams
-                    p.setMargins(10, 0, 40, 0)
-                    tab.requestLayout()
-                }
+                setTabDrawable()
 
                 MainActivity.lastItemClickedForBTab = MainActivity.lastItemClicked
                 MainActivity.headerItemName = tabs?.getTabAt(defaultSelectedTabPosition)!!.text.toString()
@@ -457,6 +453,7 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
         BucketParentAdapter.isVisible = tab.position <= 0
 
         setLog("alkghlasdhgf", " " +tab.position.toString())
+        setTabDrawable()
 
 /*        if(tab.position==0){
             headerHome.setBackgroundColor(resources.getColor(R.color.transparent))
@@ -557,6 +554,29 @@ class DiscoverMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener,
             }
 
 
+        }
+
+    }
+
+    private fun setTabDrawable(){
+        if(tabs.tabCount>1 && tabs.selectedTabPosition!=0){
+            tabs.setTabTextColors(Color.parseColor("#000000"), Color.parseColor("#ffffff"))
+            for (i in 0 until tabs.tabCount) {
+                val tab = (tabs.getChildAt(0) as ViewGroup).getChildAt(i)
+                val p = tab.layoutParams as ViewGroup.MarginLayoutParams
+                p.setMargins(10, 0, 40, 0)
+                tab.setBackgroundResource(R.drawable.selector_tab_home)
+                tab.requestLayout()
+            }
+        } else {
+            tabs.setTabTextColors(Color.parseColor("#ffffff"), Color.parseColor("#ffffff"))
+            for (i in 0 until tabs.tabCount) {
+                val tab = (tabs.getChildAt(0) as ViewGroup).getChildAt(i)
+                val p = tab.layoutParams as ViewGroup.MarginLayoutParams
+                p.setMargins(10, 0, 40, 0)
+                tab.setBackgroundResource(R.drawable.selector_tab_home_transparent)
+                tab.requestLayout()
+            }
         }
 
     }
