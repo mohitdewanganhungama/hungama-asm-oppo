@@ -66,6 +66,7 @@ import com.hungama.music.data.database.AppDatabase
 import com.hungama.music.data.webservice.utils.Resource
 import com.hungama.music.eventanalytic.eventreporter.BannerClickedEvent
 import com.hungama.music.ui.main.viewmodel.AlbumViewModel
+import com.hungama.music.ui.main.viewmodel.MovieViewModel
 import com.hungama.music.ui.main.viewmodel.PlaylistViewModel
 import com.hungama.music.ui.main.viewmodel.PodcastViewModel
 import com.hungama.music.ui.main.viewmodel.TVShowViewModel
@@ -1956,22 +1957,204 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
         when(contentTypeId) {
 
             "109" -> {
-                data?.id?.let { setUpPodcastDetailListViewModel(it,data,download) }  //pocast all list
+                data?.id?.let {
+                    if(it.isNotBlank())
+                        setUpPodcastDetailListViewModel(it,data,download) }  //pocast all list
             }
 
             "55555" -> {
-                data?.id?.let { setUpPlaylistDetailListViewModel(it,data,download) }  ///all playlist
+                data?.id?.let {  if(it.isNotBlank())  setUpPlaylistDetailListViewModel(it,data,download) }  ///all playlist
             }
 
             "107","97","96" -> {
-                data?.id?.let { setUpTVShowDetailListViewModel(it,data,download) }
+                data?.id?.let {  if(it.isNotBlank())  setUpTVShowDetailListViewModel(it,data,download) }
             }
 
             "1" -> {
-                data?.id?.let { setUpAlbumDetailListViewModel(it,data,download) }
+                data?.id?.let {  if(it.isNotBlank())  setUpAlbumDetailListViewModel(it,data,download) }
             }
 
-            "21","22","98","110","111" ->   data?.id?.let { callSongDownload(data)   }
+            "21","22","98","110","111" ->   data?.id?.let {  if(it.isNotBlank()) callSongDownload(data,it)   }
+
+            "4" -> {
+                if(data?.primaryCta?.id == "Rent Now" && data?.secondaryCta == "Download")
+                {
+                    data.id?.let {  if(it.isNotBlank())  setUpMovieTrailerListViewModel(it) }
+                }
+                else{
+                    data?.id?.let {  if(it.isNotBlank())  RentalMoiveLogic(data,it) }
+                }
+            }
+
+        }
+    }
+
+    private fun RentalMoiveLogic(data: BodyDataItem?, selectedContentId: String) {
+        val dpm = DownloadPlayCheckModel()
+        dpm.contentId = data?.id?.toString()!!
+        dpm.contentTitle = data?.title?.toString()!!
+        dpm.planName = data?.misc?.movierights.toString()
+        dpm.isAudio = false
+        dpm.isDownloadAction = true
+        dpm.isShowSubscriptionPopup = true
+        dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+        dpm.restrictedDownload = RestrictedDownload.valueOf(1)
+
+        if (data != null) {
+            var attributeCensorRating = ""
+            if (!data?.misc?.attributeCensorRating.isNullOrEmpty()){
+                attributeCensorRating = data?.misc?.attributeCensorRating?.get(0).toString()
+            }
+            if (CommonUtils.userCanDownloadContent(
+                    requireContext(),
+                    null,
+                    dpm,
+                    this@DiscoverTabFragment,Constant.drawer_svod_download
+                )
+            ) {
+                if (!CommonUtils.checkUserCensorRating(
+                        requireContext(),
+                        attributeCensorRating
+                    )
+                ) {
+                    setLog("onDwClick", "Clicked")
+                    // self download
+                    /*startDRMDownloadSong()
+                    downloadIconStates(Download.STATE_QUEUED, ivDownload)
+                    tvDownload?.text = getString(R.string.in_queue)*/
+                    val downloadQueueList: ArrayList<DownloadQueue> = ArrayList()
+                    var dq = DownloadQueue()
+                    //for (item in playlistSongList?.iterator()!!){
+
+                    dq = DownloadQueue()
+                    if (data != null) {
+                        if (!TextUtils.isEmpty(data?.id!!)) {
+                            dq.parentId =  data?.id!!
+                            dq.contentId = data?.id!!
+                        }
+                        if (!TextUtils.isEmpty(data?.title!!)) {
+                            dq.pName = data?.title
+                            dq.title = data?.title
+                        }
+
+                        if (!TextUtils.isEmpty(data?.subTitle!!)) {
+                            dq.pSubName = data?.subTitle
+                            dq.subTitle = data?.subTitle
+                        }
+
+                        if (!TextUtils.isEmpty(data?.releasedate!!)) {
+                            dq.pReleaseDate =
+                                data?.releasedate
+                        }
+
+                        if (!TextUtils.isEmpty(data?.image!!)) {
+                            dq.pImage = data?.image
+                            dq.image = data?.image
+                        }
+
+
+                        if (!TextUtils.isEmpty(data?.misc?.movierights.toString()!!)) {
+                            dq.planName = data?.misc?.movierights.toString()
+                            dq.planType = CommonUtils.getContentPlanType(dq.planName)
+                        }
+
+                        dq.pType = DetailPages.MOVIE_DETAIL_PAGE.value
+                        if (data.contentTypeId=="4") {
+                            dq.contentType = ContentTypes.MOVIES.value
+                        } else {
+                            dq.contentType = ContentTypes.SHORT_FILMS.value
+                        }
+
+                        val eventModel = HungamaMusicApp.getInstance().getEventData(selectedContentId.toString())
+                        dq.source = eventModel.sourceName
+
+                        val downloadQueue =
+                            AppDatabase.getInstance()?.downloadQueue()?.findByContentId(data?.id!!.toString()
+                            )
+                        val downloadedAudio =
+                            AppDatabase.getInstance()?.downloadedAudio()
+                                ?.findByContentId(
+                                    data?.id!!.toString()
+                                )
+                        if ((!downloadQueue?.contentId.equals(data?.id!!.toString()))
+                            && (!downloadedAudio?.contentId.equals(data?.id!!.toString()))
+                        ) {
+                            downloadQueueList.add(dq)
+                        }
+
+                        (requireActivity() as MainActivity).addOrUpdateDownloadVideoQueue(
+                            downloadQueueList,
+                            this@DiscoverTabFragment,
+                            false,
+                            true
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private fun directPayment(movieRespModel: PlaylistDynamicModel?){
+        baseIOScope.launch {
+            if (isAdded && context != null && movieRespModel != null && movieRespModel?.data != null && movieRespModel?.data?.head != null && movieRespModel?.data?.head?.data != null) {
+                val dpm = DownloadPlayCheckModel()
+                dpm.contentId = movieRespModel?.data?.head?.data?.id!!
+                dpm.contentTitle = movieRespModel?.data?.head?.data?.title!!
+                dpm.planName = movieRespModel?.data?.head?.data?.misc?.movierights.toString()
+                dpm.isAudio = false
+                dpm.isDownloadAction = false
+                dpm.isDirectPaymentAction = true
+//                dpm.queryParam = queryParam
+                dpm.isShowSubscriptionPopup = true
+                dpm.clickAction = ClickAction.FOR_SINGLE_CONTENT
+                dpm.restrictedDownload =
+                    RestrictedDownload.valueOf(movieRespModel?.data?.head?.data?.misc?.restricted_download!!)
+                var attributeCensorRating = ""
+                if (!movieRespModel?.data?.head?.data?.misc?.attributeCensorRating.isNullOrEmpty()){
+                    attributeCensorRating = movieRespModel?.data?.head?.data?.misc?.attributeCensorRating?.get(0).toString()
+                }
+
+                if (CommonUtils.userCanDownloadContent(requireContext(), rlMain, dpm, this@DiscoverTabFragment,Constant.drawer_svod_download)) {
+                    if (!CommonUtils.checkUserCensorRating(requireContext(), attributeCensorRating)) {
+//                        playAllMovies()
+                    }
+                }
+
+            }
+        }
+    }
+
+    private fun setUpMovieTrailerListViewModel(selectedContentId:String) {
+        try {
+            if (isAdded && context != null){
+                val movieViewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
+                setProgressBarVisible(true)
+                if (ConnectionUtil(context).isOnline) {
+                    movieViewModel?.getMovieDetail(requireContext(), selectedContentId)?.observe(this,
+                        Observer {
+                            when(it.status){
+                                com.hungama.music.data.webservice.utils.Status.SUCCESS->{
+                                    directPayment(it?.data!!)
+                                }
+
+                                com.hungama.music.data.webservice.utils.Status.LOADING ->{
+                                    setProgressBarVisible(true)
+                                }
+
+                                com.hungama.music.data.webservice.utils.Status.ERROR ->{
+                                    setEmptyVisible(false)
+                                    setProgressBarVisible(false)
+                                    Utils.showSnakbar(requireContext(),requireView(), true, it.message!!)
+                                }
+                            }
+                        })
+                } else {
+                    val messageModel = MessageModel(getString(R.string.toast_str_35), getString(R.string.toast_message_5),
+                        MessageType.NEGATIVE, true)
+                    CommonUtils.showToast(requireContext(), messageModel,"MovieV1Fragment","setUpMovieTrailerListViewModel")
+                }
+            }
+        }catch (e:Exception){
 
         }
     }
@@ -2338,7 +2521,7 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
 
     }
 
-    private fun callSongDownload(playlistSongList: BodyDataItem?) {
+    private fun callSongDownload(playlistSongList: BodyDataItem?,id: String="") {
         val dpm = DownloadPlayCheckModel()
         dpm.contentId = playlistSongList?.id.toString()
         dpm.contentTitle = playlistSongList?.title.toString()
@@ -2418,6 +2601,9 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
             dq.pType = DetailPages.CHART_DETAIL_PAGE.value
             if(playlistSongList.type?.contains("video") == true){
                 dq.contentType = ContentTypes.VIDEO.value
+            }else if(id.equals("110")){
+                dq.contentType = ContentTypes.PODCAST.value
+
             }else dq.contentType = ContentTypes.AUDIO.value
 
             val eventModel =
