@@ -46,7 +46,7 @@ import java.io.*
  * Use the [PodcastMainTabFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, BaseActivity.OnLocalBroadcastEventCallBack {
+class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, BaseActivity.OnLocalBroadcastEventCallBack, DiscoverScrollChange {
     var homeViewModel: HomeViewModel? = null
     var fragmentList: ArrayList<Fragment> = ArrayList()
     var fragmentName: ArrayList<String> = ArrayList()
@@ -257,7 +257,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                             && (headItemsItem?.page.toString().contains(tabName, true) ||  headItemsItem?.title.toString().contains(tabName, true))){
                             defaultSelectedTabPosition = index
                         }
-                        val fragment = DiscoverTabFragment.newInstance(headItemsItem, bundle)
+                        val fragment = DiscoverTabFragment.newInstance(headItemsItem, bundle, this@PodcastMainTabFragment)
                         fragmentList.add(fragment)
                         fragmentName.add(headItemsItem?.title!!)
                     }
@@ -273,7 +273,7 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                         bundle.putString(Constant.EXTRA_CATEGORY_NAME, categoryName)
                         bundle.putString(Constant.EXTRA_CATEGORY_ID, categoryId)
                         CommonUtils.setLog("deepLinkUrl", "DiscoverMainFragment-setData--tabName=${homeModel.data.head.items.get(defaultSelectedTabPosition)?.page} && isCategory=$isCategoryPage && categoryName=$categoryName && categoryId=$categoryId")
-                        fragmentList.set(defaultSelectedTabPosition, DiscoverTabFragment.newInstance(homeModel.data.head.items.get(defaultSelectedTabPosition), bundle))
+                        fragmentList.set(defaultSelectedTabPosition, DiscoverTabFragment.newInstance(homeModel.data.head.items.get(defaultSelectedTabPosition), bundle, this@PodcastMainTabFragment))
                         fragmentName.set(defaultSelectedTabPosition, homeModel.data.head.items.get(defaultSelectedTabPosition)?.title!!)
                     }
                     withContext(Dispatchers.Main){
@@ -637,7 +637,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
         }
     }
 
-
+    override fun onScroll(position: Int) {
+    }
 
 
 }
