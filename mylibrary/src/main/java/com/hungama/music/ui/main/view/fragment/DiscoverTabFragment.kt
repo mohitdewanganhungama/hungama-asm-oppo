@@ -130,6 +130,8 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
     var deeplinkVoiceSearchText = ""
     var isNudgeViewVisible = false
     var flag = true
+    private var isOnlineTabSelected: Boolean? = null
+
 
     companion object {
         var updateBanner = 0
@@ -197,6 +199,11 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                 }
                 if (arguments?.containsKey(Constant.deeplinkVoiceSearchText)!!){
                     deeplinkVoiceSearchText = arguments?.getString(Constant.deeplinkVoiceSearchText)!!
+                }
+
+                if(arguments?.containsKey(Constant.ONLINE_TAB_SELECTED)!!){
+                    isOnlineTabSelected = arguments?.getBoolean(Constant.ONLINE_TAB_SELECTED)!!
+
                 }
             }
             if (isDirectPlay == 1 && isRadio && (radioType == CONTENT_RADIO || radioType == CONTENT_LIVE_RADIO)){
@@ -2921,6 +2928,14 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+
+                    headItemsItem?.page?.let {
+                        if(it=="podcast" && isOnlineTabSelected==false){
+                            CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_8),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                        }
+                    }
                 }else{
                     val nudgeHeight = 0
                     var rvTopPadding = resources.getDimensionPixelSize(R.dimen.dimen_120)
@@ -2933,6 +2948,13 @@ class DiscoverTabFragment : BaseFragment(), OnParentItemClickListener, TracksCon
                     CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
                         resources.getDimensionPixelSize(R.dimen.dimen_0), rvTopPadding,
                         resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                    headItemsItem?.page?.let {
+                        if(it=="podcast" && isOnlineTabSelected==false){
+                            CommonUtils.setPageBottomSpacing(rvRecentHistory, requireContext(),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), resources.getDimensionPixelSize(R.dimen.dimen_8),
+                                resources.getDimensionPixelSize(R.dimen.dimen_0), 0)
+                        }
+                    }
                 }
             }
         }

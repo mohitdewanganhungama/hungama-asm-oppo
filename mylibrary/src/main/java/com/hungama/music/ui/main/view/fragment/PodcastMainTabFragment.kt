@@ -301,6 +301,8 @@ class PodcastMainTabFragment : BaseFragment(), TabLayout.OnTabSelectedListener, 
                     bundle.putBoolean(Constant.isDeeplinkVoiceSearchText, isDeeplinkVoiceSearchText)
                     bundle.putString(Constant.deeplinkVoiceSearchText, deeplinkVoiceSearchText)
                     bundle.putString(Constant.EXTRA_PAGE_DETAIL_NAME, EXTRA_PAGE_DETAIL_NAME)
+                    bundle.putBoolean(Constant.ONLINE_TAB_SELECTED, false)
+
                     fragmentList.add(0, PodcastTabFragment.newInstance(HeadItemsItem(page="podcast", title="podcast"),bundle))
                     fragmentName.add(0, "Podcast")
 
